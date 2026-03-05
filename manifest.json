@@ -28,9 +28,9 @@
             "description": "Email candidates about the pledge"
         },
         {
-            "name": "Bill Updates",
-            "url": "/updates.html",
-            "description": "Latest bill status changes"
+            "name": "Media & Press",
+            "url": "/press.html",
+            "description": "Legislative news for journalists and advocates"
         }
     ]
 }
