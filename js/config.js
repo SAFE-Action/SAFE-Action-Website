@@ -28,8 +28,9 @@ const SAFE_CONFIG = {
     // Set to true once you've configured the Google Script URL above
     IS_CONFIGURED: false,
 
-    // All 50 states + DC
+    // All 50 states + DC + Federal
     STATES: {
+        'US': 'Federal (U.S. Congress)',
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas',
         'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware',
         'DC': 'District of Columbia', 'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii',

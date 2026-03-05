@@ -67,13 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
             stateSelect.appendChild(opt);
         });
 
-        // Check URL for pre-selected state
+        // Check URL for pre-selected state, default to ALL (auto-load bills)
         const params = new URLSearchParams(window.location.search);
-        const stateParam = params.get('state');
-        if (stateParam) {
-            stateSelect.value = stateParam;
-            loadLegislation(stateParam);
-        }
+        const stateParam = params.get('state') || 'ALL';
+        stateSelect.value = stateParam;
+        loadLegislation(stateParam);
 
         // Event listeners
         trackBtn.addEventListener('click', () => {

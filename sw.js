@@ -1,5 +1,5 @@
 // SAFE Action Service Worker
-const CACHE_NAME = 'safe-action-v9';
+const CACHE_NAME = 'safe-action-v10';
 const ASSETS = [
     '/',
     '/index.html',
