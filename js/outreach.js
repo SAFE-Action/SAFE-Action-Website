@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const stored = JSON.parse(localStorage.getItem('safe_outreach_counts'));
             if (stored) return stored[key] || 0;
         } catch (e) {}
-        return key === 'contacted' ? 47 : (key === 'pledged' ? 12 : 0);
+        return 0;
     }
 
     function setEl(id, val) {
@@ -269,7 +269,7 @@ Taking the pledge is quick and free. You can complete it at: [SAFE Action Websit
 
 By taking the pledge, your name will appear in the SAFE Action candidate directory, showing voters that you are committed to defending science and individual health freedom.
 
-Over 1,100 civic actions have already been taken through SAFE Action. This is a growing movement and your constituents are watching.
+SAFE Action is a growing movement and your constituents are watching.
 
 I urge you to take the pledge today.
 
@@ -321,7 +321,7 @@ ${yourCity}`;
 
     function trackOutreach(type) {
         try {
-            const stored = JSON.parse(localStorage.getItem('safe_outreach_counts')) || { contacted: 47, pledged: 12 };
+            const stored = JSON.parse(localStorage.getItem('safe_outreach_counts')) || { contacted: 0, pledged: 0 };
             stored[type] = (stored[type] || 0) + 1;
             localStorage.setItem('safe_outreach_counts', JSON.stringify(stored));
             initImpact();
@@ -339,46 +339,7 @@ ${yourCity}`;
     }
 
     function getDemoElectionCandidates() {
-        return [
-            // Federal - US Senate
-            { name: 'Sen. Jane Mitchell', office: 'U.S. Senate', level: 'Federal', party: 'Democrat', state: 'TX', district: '', email: 'mitchell@senate.gov', phone: '(202) 555-0101', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Robert Chen', office: 'U.S. Senate', level: 'Federal', party: 'Republican', state: 'TX', district: '', email: 'chen2026@campaign.com', phone: '(512) 555-0202', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Sen. Maria Gonzalez', office: 'U.S. Senate', level: 'Federal', party: 'Democrat', state: 'FL', district: '', email: 'gonzalez@senate.gov', phone: '(202) 555-0303', pledgeStatus: 'taken', candidateId: 'demo-1' },
-            { name: 'William Parks', office: 'U.S. Senate', level: 'Federal', party: 'Republican', state: 'FL', district: '', email: 'parks4florida@campaign.com', phone: '(305) 555-0404', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Sen. David Kim', office: 'U.S. Senate', level: 'Federal', party: 'Democrat', state: 'CA', district: '', email: 'kim@senate.gov', phone: '(202) 555-0505', pledgeStatus: 'taken', candidateId: 'demo-2' },
-
-            // Federal - US House
-            { name: 'Rep. Sarah Thompson', office: 'U.S. House', level: 'Federal', party: 'Democrat', state: 'TX', district: 'District 7', email: 'thompson@house.gov', phone: '(202) 555-0601', pledgeStatus: 'none', candidateId: '' },
-            { name: 'James Walker', office: 'U.S. House', level: 'Federal', party: 'Republican', state: 'TX', district: 'District 7', email: 'walker2026@campaign.com', phone: '(713) 555-0702', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Rep. Michael Brown', office: 'U.S. House', level: 'Federal', party: 'Republican', state: 'OH', district: 'District 12', email: 'brown@house.gov', phone: '(202) 555-0801', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Angela Davis', office: 'U.S. House', level: 'Federal', party: 'Democrat', state: 'OH', district: 'District 12', email: 'davis4ohio@campaign.com', phone: '(614) 555-0902', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Rep. Lisa Nakamura', office: 'U.S. House', level: 'Federal', party: 'Democrat', state: 'CA', district: 'District 33', email: 'nakamura@house.gov', phone: '(202) 555-1001', pledgeStatus: 'taken', candidateId: 'demo-3' },
-
-            // State - Governor
-            { name: 'Tom Anderson', office: 'Governor', level: 'State', party: 'Republican', state: 'TX', district: '', email: 'anderson4governor@campaign.com', phone: '(512) 555-1101', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Patricia Wells', office: 'Governor', level: 'State', party: 'Democrat', state: 'TX', district: '', email: 'wells2026@campaign.com', phone: '(214) 555-1201', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Mark Reynolds', office: 'Governor', level: 'State', party: 'Republican', state: 'FL', district: '', email: 'reynolds4fl@campaign.com', phone: '(850) 555-1301', pledgeStatus: 'none', candidateId: '' },
-
-            // State - State Senate / House
-            { name: 'Jennifer Clark', office: 'State Senate', level: 'State', party: 'Democrat', state: 'TX', district: 'District 15', email: 'clark@txsenate.gov', phone: '(512) 555-1401', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Brian Foster', office: 'State Senate', level: 'State', party: 'Republican', state: 'TX', district: 'District 15', email: 'foster4tx@campaign.com', phone: '(817) 555-1501', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Rep. Karen Lee', office: 'State Representative', level: 'State', party: 'Democrat', state: 'OH', district: 'District 23', email: 'lee@ohiohouse.gov', phone: '(614) 555-1601', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Daniel White', office: 'State Representative', level: 'State', party: 'Republican', state: 'FL', district: 'District 42', email: 'white4fl@campaign.com', phone: '(407) 555-1701', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Samantha Green', office: 'State Senate', level: 'State', party: 'Democrat', state: 'CA', district: 'District 8', email: 'green@casenate.gov', phone: '(916) 555-1801', pledgeStatus: 'taken', candidateId: 'demo-4' },
-            { name: 'Richard Taylor', office: 'State Representative', level: 'State', party: 'Republican', state: 'ID', district: 'District 2', email: 'taylor@idhouse.gov', phone: '(208) 555-1901', pledgeStatus: 'none', candidateId: '' },
-
-            // Local
-            { name: 'Mayor Linda Rodriguez', office: 'Mayor', level: 'Local', party: 'Democrat', state: 'TX', district: 'Austin', email: 'rodriguez@austintx.gov', phone: '(512) 555-2001', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Council Member Steve Jackson', office: 'City Council', level: 'Local', party: 'Independent', state: 'FL', district: 'Miami-Dade District 3', email: 'jackson@miamidade.gov', phone: '(305) 555-2101', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Emily Watts', office: 'School Board', level: 'Local', party: 'Independent', state: 'OH', district: 'Columbus City Schools', email: 'watts4schools@campaign.com', phone: '(614) 555-2201', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Commissioner Alan Brooks', office: 'County Commissioner', level: 'Local', party: 'Republican', state: 'GA', district: 'Fulton County', email: 'brooks@fultoncounty.gov', phone: '(404) 555-2301', pledgeStatus: 'none', candidateId: '' },
-
-            // More Federal
-            { name: 'Rep. Carlos Rivera', office: 'U.S. House', level: 'Federal', party: 'Democrat', state: 'NY', district: 'District 14', email: 'rivera@house.gov', phone: '(202) 555-2401', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Rebecca Hart', office: 'U.S. House', level: 'Federal', party: 'Republican', state: 'PA', district: 'District 7', email: 'hart4pa@campaign.com', phone: '(215) 555-2501', pledgeStatus: 'none', candidateId: '' },
-            { name: 'Sen. Andrew Patel', office: 'U.S. Senate', level: 'Federal', party: 'Democrat', state: 'CO', district: '', email: 'patel@senate.gov', phone: '(202) 555-2601', pledgeStatus: 'taken', candidateId: 'demo-5' },
-            { name: 'Christine Moore', office: 'U.S. Senate', level: 'Federal', party: 'Republican', state: 'GA', district: '', email: 'moore4georgia@campaign.com', phone: '(404) 555-2701', pledgeStatus: 'none', candidateId: '' },
-        ];
+        return [];
     }
 
     // --- Utilities ---

@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function getActionCounts() {
-        const BASE_ACTIONS = 1128;
-        const BASE_EMAILS = 743;
-        const BASE_CALLS = 385;
+        const BASE_ACTIONS = 0;
+        const BASE_EMAILS = 0;
+        const BASE_CALLS = 0;
 
         try {
             const stored = JSON.parse(localStorage.getItem('safe_action_counts'));
