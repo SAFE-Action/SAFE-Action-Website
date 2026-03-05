@@ -3,11 +3,13 @@
 import json
 import time
 from pathlib import Path
-from ..config import CACHE_DIR, LEGISLATOR_CACHE_HOURS, NEWS_CACHE_HOURS, ANALYSIS_CACHE_HOURS
+from ..config import CACHE_DIR, LEGISLATOR_CACHE_HOURS, BILL_CACHE_HOURS, NEWS_CACHE_HOURS, ANALYSIS_CACHE_HOURS
 
 CACHE_TTLS = {
     "congress_members": LEGISLATOR_CACHE_HOURS,
     "state_legislators": LEGISLATOR_CACHE_HOURS,
+    "bills": BILL_CACHE_HOURS,
+    "openstates_bills": BILL_CACHE_HOURS,  # legacy key
     "news": NEWS_CACHE_HOURS,
     "analysis": ANALYSIS_CACHE_HOURS,
 }

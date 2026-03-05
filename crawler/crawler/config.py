@@ -20,6 +20,11 @@ OPENSTATES_API_KEY = os.getenv("OPENSTATES_API_KEY", "")
 OPENSTATES_BASE_URL = "https://v3.openstates.org"
 OPENSTATES_RATE_LIMIT = 1.0  # seconds between requests
 
+# ── LegiScan API ────────────────────────────────────
+LEGISCAN_API_KEY = os.getenv("LEGISCAN_API_KEY", "")
+LEGISCAN_BASE_URL = "https://api.legiscan.com/"
+LEGISCAN_RATE_LIMIT = 0.5  # seconds between requests (generous with 30k/month)
+
 # ── Crawl Targets ─────────────────────────────────────
 CONGRESS_GOV_BASE = "https://www.congress.gov"
 

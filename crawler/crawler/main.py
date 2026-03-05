@@ -4,10 +4,11 @@ import asyncio
 import sys
 from datetime import datetime, timezone
 
-from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, ANTHROPIC_API_KEY, OPENSTATES_API_KEY
+from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, ANTHROPIC_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
 from .sources.congress import crawl_congress_members, crawl_member_detail
 from .sources.state_legislatures import crawl_all_priority_states
-from .sources.openstates import fetch_all_priority_legislators, fetch_all_science_bills
+from .sources.openstates import fetch_all_priority_legislators, fetch_all_science_bills as openstates_fetch_bills
+from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, refresh_tracked_bills as legiscan_refresh_bills
 from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
@@ -82,27 +83,47 @@ async def run_full_crawl(news_only: bool = False):
         print(f"  Loaded {len(all_legislators)} cached legislators")
         print("[2/5] Skipped (news-only mode)")
 
-    # ── Step 2b: Bill data from Open States ────────────
+    # ── Step 2b: Bill data (LegiScan primary, Open States fallback) ──
     all_bills: list[dict] = []
+    bill_source = "none"
     if not news_only:
-        if OPENSTATES_API_KEY:
-            if should_recrawl("openstates_bills"):
-                print("[2b/5] Fetching science/health bills via Open States API (6-month lookback)...")
-                all_bills = await fetch_all_science_bills()
-                save_cached_data("openstates_bills", all_bills)
-                update_cache_timestamp("openstates_bills")
+        if should_recrawl("bills"):
+            # Try LegiScan first (better coverage: 50 states + Congress, keyword search)
+            if LEGISCAN_API_KEY:
+                print("[2b/5] Fetching science/health bills via LegiScan API...")
+                all_bills = await legiscan_fetch_bills()
+                bill_source = "legiscan"
+
+            # Fall back to Open States if LegiScan returned nothing or no key
+            if not all_bills and OPENSTATES_API_KEY:
+                print("[2b/5] Falling back to Open States API for bill data...")
+                all_bills = await openstates_fetch_bills()
+                bill_source = "openstates"
+
+            if all_bills:
+                save_cached_data("bills", all_bills)
+                update_cache_timestamp("bills")
+                print(f"  Fetched {len(all_bills)} bills via {bill_source}")
             else:
-                print("[2b/5] Open States bills cache fresh, loading cached...")
-                cached = load_cached_data("openstates_bills")
-                if cached:
-                    all_bills = cached
+                print("[2b/5] No bill API keys configured or no bills found")
         else:
-            print("[2b/5] Open States API key not set, skipping bill search")
+            print("[2b/5] Bills cache fresh, loading cached...")
+            cached = load_cached_data("bills")
+            if cached:
+                all_bills = cached
+                bill_source = "cache"
     else:
-        cached = load_cached_data("openstates_bills")
+        # News-only mode: load cached bills
+        cached = load_cached_data("bills")
         if cached:
             all_bills = cached
-            print(f"  Loaded {len(all_bills)} cached bills from Open States")
+            bill_source = "cache"
+            print(f"  Loaded {len(all_bills)} cached bills")
+
+    # ── Step 2c: Refresh tracked bills with latest status ──
+    if not news_only and all_bills and LEGISCAN_API_KEY and bill_source != "cache":
+        print("[2c/5] Refreshing tracked bill statuses via LegiScan...")
+        all_bills = await legiscan_refresh_bills(all_bills)
 
     # ── Step 3: News crawl ────────────────────────────
     print("[3/5] Crawling news sources...")
@@ -160,7 +181,7 @@ async def run_full_crawl(news_only: bool = False):
     if all_bills:
         output_files["bills.json"] = {
             "generated_at": now,
-            "source": "openstates",
+            "source": bill_source,
             "total": len(all_bills),
             "bills": all_bills,
         }

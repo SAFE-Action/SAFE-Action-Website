@@ -55,6 +55,8 @@ jobs:
       - name: Run crawler
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LEGISCAN_API_KEY: ${{ secrets.LEGISCAN_API_KEY }}
+          OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
         run: |
           if [ "${{ steps.mode.outputs.mode }}" = "news-only" ]; then
             python -m crawler.main --news-only
