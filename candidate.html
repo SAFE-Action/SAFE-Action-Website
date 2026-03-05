@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Response - SAFE Action</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tracker.html" class="nav-link">Take Action</a>
+                    <a href="intelligence.html" class="nav-link">Intelligence</a>
+                    <a href="directory.html" class="nav-link">Pledge Directory</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Candidate Detail -->
+    <section class="candidate-detail-section">
+        <div class="container">
+            <a href="directory.html" class="back-link">&larr; Back to Directory</a>
+
+            <div id="candidate-loading" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading candidate information...</p>
+            </div>
+
+            <div id="candidate-detail" style="display: none;">
+                <!-- Candidate Header -->
+                <div class="candidate-detail-header">
+                    <div id="candidate-avatar-container">
+                        <div class="candidate-avatar-lg" id="candidate-avatar"></div>
+                    </div>
+                    <div class="candidate-header-info">
+                        <h1 id="candidate-name" class="candidate-detail-name"></h1>
+                        <div class="candidate-meta-row">
+                            <span class="badge badge-party" id="candidate-party"></span>
+                            <span class="meta-item" id="candidate-position"></span>
+                        </div>
+                        <div class="candidate-meta-row">
+                            <span class="meta-item" id="candidate-office"></span>
+                            <span class="meta-item" id="candidate-district" style="display:none;"></span>
+                            <span class="meta-item" id="candidate-city" style="display:none;"></span>
+                            <span class="meta-item" id="candidate-state" style="display:none;"></span>
+                        </div>
+                        <!-- Share on Social Media -->
+                        <div class="candidate-share-section">
+                            <button class="share-btn-lg twitter" id="candidate-share-twitter">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                Share on X
+                            </button>
+                            <button class="share-btn-lg facebook" id="candidate-share-facebook">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                Share on Facebook
+                            </button>
+                            <button class="share-btn-lg linkedin" id="candidate-share-linkedin">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                Share on LinkedIn
+                            </button>
+                            <button class="share-btn-lg copy-link" id="candidate-share-copy">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Contact Information</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <a id="candidate-email" href="" class="contact-value"></a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Phone</span>
+                            <a id="candidate-phone" href="" class="contact-value"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vaccine Position -->
+                <div class="detail-card highlight-card">
+                    <h2 class="detail-card-title">Vaccine Position</h2>
+                    <div class="vaccine-answer">
+                        <span class="vaccine-label">Do you support vaccines?</span>
+                        <span class="vaccine-value" id="candidate-vaccine"></span>
+                    </div>
+                </div>
+
+                <!-- Short Answer Responses -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Detailed Responses</h2>
+
+                    <div class="response-block">
+                        <h3 class="response-question">What is your position on medical freedom and informed consent for vaccines?</h3>
+                        <p class="response-answer" id="candidate-q1"></p>
+                    </div>
+
+                    <div class="response-block" id="q2-block" style="display:none;">
+                        <h3 class="response-question">What would you do to protect individual health choices if elected?</h3>
+                        <p class="response-answer" id="candidate-q2"></p>
+                    </div>
+
+                    <div class="response-block" id="q3-block" style="display:none;">
+                        <h3 class="response-question">Is there anything else you would like voters to know about your platform?</h3>
+                        <p class="response-answer" id="candidate-q3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Not Found -->
+            <div id="candidate-not-found" class="empty-state" style="display: none;">
+                <h3>Candidate Not Found</h3>
+                <p>The candidate you're looking for doesn't exist or may have been removed.</p>
+                <a href="directory.html" class="btn btn-primary">Back to Directory</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tracker.html">Take Action</a>
+                    <a href="intelligence.html">Intelligence</a>
+                    <a href="directory.html">Pledge Directory</a>
+                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="updates.html">Bill Updates</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
+                </div>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="#donate" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/sheets.js"></script>
+    <script src="js/candidate.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

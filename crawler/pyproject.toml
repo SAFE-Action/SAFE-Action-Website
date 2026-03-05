@@ -1,0 +1,20 @@
+[project]
+name = "safe-action-crawler"
+version = "0.1.0"
+description = "Intelligence crawler for SAFE Action — gathers legislator data, news, and persuadability analysis"
+requires-python = ">=3.10"
+dependencies = [
+    "crawl4ai>=0.4.0",
+    "anthropic>=0.40.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.0",
+]
+
+[project.scripts]
+safe-crawl = "crawler.main:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"

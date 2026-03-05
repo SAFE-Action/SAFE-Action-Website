@@ -1,0 +1,36 @@
+{
+    "name": "SAFE Action",
+    "short_name": "SAFE Action",
+    "description": "Track anti-science legislation, contact representatives, and defend public health.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#3C3B6E",
+    "theme_color": "#3C3B6E",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "icons/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["news", "politics", "social"],
+    "shortcuts": [
+        {
+            "name": "Track Legislation",
+            "url": "/tracker.html",
+            "description": "Monitor bills in your state"
+        },
+        {
+            "name": "Contact Candidates",
+            "url": "/outreach.html",
+            "description": "Email candidates about the pledge"
+        },
+        {
+            "name": "Bill Updates",
+            "url": "/updates.html",
+            "description": "Latest bill status changes"
+        }
+    ]
+}

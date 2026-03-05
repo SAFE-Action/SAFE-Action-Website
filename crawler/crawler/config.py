@@ -1,0 +1,85 @@
+"""Central configuration for the SAFE Action crawler."""
+
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# ── Paths ─────────────────────────────────────────────
+PROJECT_ROOT = Path(__file__).parent.parent.parent  # SAFE Action Website root
+DATA_DIR = PROJECT_ROOT / "data"
+CACHE_DIR = Path(__file__).parent.parent / ".cache"
+
+# ── API Keys ──────────────────────────────────────────
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+
+# ── Open States API ──────────────────────────────────
+OPENSTATES_API_KEY = os.getenv("OPENSTATES_API_KEY", "")
+OPENSTATES_BASE_URL = "https://v3.openstates.org"
+OPENSTATES_RATE_LIMIT = 1.0  # seconds between requests
+
+# ── Crawl Targets ─────────────────────────────────────
+CONGRESS_GOV_BASE = "https://www.congress.gov"
+
+STATE_LEGISLATURE_URLS = {
+    "TX": "https://capitol.texas.gov/Members/Members.aspx",
+    "FL": "https://www.myfloridahouse.gov/Representatives",
+    "CA": "https://www.legislature.ca.gov/legislators",
+    "OH": "https://www.legislature.ohio.gov/legislators",
+    "NY": "https://www.nysenate.gov/senators-committees",
+    "CO": "https://leg.colorado.gov/legislators",
+    "WA": "https://leg.wa.gov/legislature/pages/memberinformation.aspx",
+    "ID": "https://legislature.idaho.gov/legislators/",
+    "MO": "https://www.house.mo.gov/MemberGridCluster.aspx",
+    "GA": "https://www.legis.ga.gov/members/senate",
+    "PA": "https://www.legis.state.pa.us/cfdocs/legis/home/member_information/",
+    "MA": "https://malegislature.gov/Legislators/Members/Senate",
+}
+
+NEWS_SEARCH_TERMS = [
+    "vaccine legislation 2026",
+    "anti-vaccine bill state legislature",
+    "public health committee hearing vaccine",
+    "medical freedom bill",
+    "science education legislation",
+    "vaccine mandate bill",
+    "informed consent vaccine law",
+]
+
+# ── Rate Limiting ─────────────────────────────────────
+CRAWL_DELAY_SECONDS = 2.0
+MAX_CONCURRENT_REQUESTS = 3
+NEWS_CRAWL_DELAY = 1.5
+
+# ── Cache TTLs (hours) ────────────────────────────────
+LEGISLATOR_CACHE_HOURS = 168   # 7 days
+BILL_CACHE_HOURS = 24          # 1 day — bills update frequently
+NEWS_CACHE_HOURS = 12
+ANALYSIS_CACHE_HOURS = 72      # 3 days
+
+# ── Analysis Settings ─────────────────────────────────
+MAX_LEGISLATORS_PER_BATCH = 20
+
+PERSUADABILITY_CATEGORIES = {
+    "champion":     (9, 10),
+    "likely-win":   (7, 8),
+    "fence-sitter": (4, 6),
+    "unlikely":     (2, 3),
+    "opposed":      (0, 1),
+}
+
+# Priority states — these match the site's focus areas
+PRIORITY_STATES = ["TX", "FL", "CA", "OH", "NY", "CO", "WA", "ID", "MO", "GA", "PA", "MA"]
+
+HEALTH_COMMITTEE_KEYWORDS = [
+    "health", "public health", "human services", "energy and commerce",
+    "HELP", "appropriations", "labor", "education", "ways and means",
+]
+
+SCIENCE_BACKGROUND_KEYWORDS = [
+    "physician", "doctor", "nurse", "pharmacist", "scientist",
+    "researcher", "epidemiologist", "biologist", "chemist",
+    "MD", "RN", "PhD", "DO", "PharmD", "MPH",
+]

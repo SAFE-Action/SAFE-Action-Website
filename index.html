@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE Action - Science and Freedom for Everyone</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SAFE Action">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Stars background decoration -->
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="tracker.html" class="nav-link">Take Action</a>
+                    <a href="intelligence.html" class="nav-link">Intelligence</a>
+                    <a href="directory.html" class="nav-link">Pledge Directory</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Stars decoration -->
+                <div class="hero-stars-decoration" aria-hidden="true">
+                    <span class="hero-star">&#9733;</span>
+                    <span class="hero-star">&#9733;</span>
+                    <span class="hero-star hero-star-lg">&#9733;</span>
+                    <span class="hero-star">&#9733;</span>
+                    <span class="hero-star">&#9733;</span>
+                </div>
+                <div class="hero-flag" aria-hidden="true">
+                    <div class="flag-stripe red"></div>
+                    <div class="flag-stripe white"></div>
+                    <div class="flag-stripe blue"></div>
+                </div>
+                <h1 class="hero-title">Defend Science.<br>Take Action.</h1>
+                <p class="hero-subtitle">Find bills that threaten public health, contact your representatives, and join thousands of citizens fighting to protect scientific freedom in every state.</p>
+                <div class="hero-ctas">
+                    <a href="tracker.html" class="btn btn-primary btn-lg">
+                        <span class="btn-star">&#9733;</span>
+                        Take Action Now
+                    </a>
+                    <a href="directory.html" class="btn btn-hero-outline btn-lg">
+                        Candidate Pledge Directory
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,60 L720,0 L1440,60 Z" fill="#FDFBF7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Pledge Ticker -->
+    <section class="pledge-ticker-section">
+        <div class="pledge-ticker-label">Latest Pledges</div>
+        <div class="pledge-ticker-track" id="pledge-ticker-track">
+            <div class="pledge-ticker-content">
+                <span class="pledge-ticker-item"><span class="ticker-detail">Loading pledges...</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Counter Section -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="impact-header">
+                <span class="section-star-accent" aria-hidden="true">&#9733;</span>
+                <h2 class="impact-title">Your Actions Are Working</h2>
+                <span class="section-star-accent" aria-hidden="true">&#9733;</span>
+            </div>
+            <div class="impact-grid">
+                <a href="tracker.html" class="impact-card impact-card-link">
+                    <div class="impact-number" id="impact-actions">
+                        <span class="counter" data-target="1128" data-start="1128">1,128</span>
+                    </div>
+                    <div class="impact-label">Actions Taken</div>
+                    <div class="impact-desc">Calls, emails, and letters sent to representatives</div>
+                </a>
+                <a href="tracker.html?state=ALL" class="impact-card impact-card-link">
+                    <div class="impact-number" id="impact-bills">
+                        <span class="counter" data-target="24">24</span>
+                    </div>
+                    <div class="impact-label">Bills We're Fighting</div>
+                    <div class="impact-desc">Pro-science and anti-science legislation across all 50 states &rarr;</div>
+                </a>
+                <a href="tracker.html" class="impact-card impact-card-link">
+                    <div class="impact-number" id="impact-emails">
+                        <span class="counter" data-target="743" data-start="743">743</span>
+                    </div>
+                    <div class="impact-label">Emails Sent</div>
+                    <div class="impact-desc">Messages delivered to legislators</div>
+                </a>
+                <a href="tracker.html" class="impact-card impact-card-link">
+                    <div class="impact-number" id="impact-calls">
+                        <span class="counter" data-target="385" data-start="385">385</span>
+                    </div>
+                    <div class="impact-label">Calls Made</div>
+                    <div class="impact-desc">Phone calls to representatives' offices</div>
+                </a>
+                <a href="#victory-board" class="impact-card impact-card-link impact-card-victory">
+                    <div class="impact-number" id="impact-stopped">
+                        <span class="counter" data-target="5">5</span>
+                    </div>
+                    <div class="impact-label">Bills Stopped</div>
+                    <div class="impact-desc">Anti-science bills defeated with citizen action</div>
+                </a>
+            </div>
+            <p class="impact-cta">Every action counts. <a href="tracker.html">Find a bill in your state and take action</a> today.</p>
+        </div>
+    </section>
+
+    <!-- Stars & Stripes Divider -->
+    <div class="section-stripe-divider" aria-hidden="true">
+        <span class="divider-star">&#9733;</span>
+    </div>
+
+    <!-- Take Action Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Take Action Now</h2>
+                <p class="section-desc">Powerful free tools to help you defend science and hold your elected officials accountable.</p>
+            </div>
+            <div class="tools-grid">
+                <a href="tracker.html" class="tool-card">
+                    <div class="tool-icon">&#9889;</div>
+                    <h3 class="tool-title">Take Action on Bills</h3>
+                    <p class="tool-desc">Find pro-science and anti-science bills across all 50 states. Select the ones you care about and instantly generate emails or call scripts for your representatives.</p>
+                    <span class="tool-link">Take Action &rarr;</span>
+                </a>
+                <a href="directory.html" class="tool-card">
+                    <div class="tool-icon">&#9733;</div>
+                    <h3 class="tool-title">Candidate Pledge Directory</h3>
+                    <p class="tool-desc">See which candidates have taken the SAFE Action pledge on science and public health. Hold your elected officials accountable.</p>
+                    <span class="tool-link">View Pledges &rarr;</span>
+                </a>
+                <a href="intelligence.html" class="tool-card">
+                    <div class="tool-icon">&#128202;</div>
+                    <h3 class="tool-title">Legislative Intelligence</h3>
+                    <p class="tool-desc">AI-powered analysis of legislators — who's persuadable, who's a champion, and where your outreach will have the biggest impact.</p>
+                    <span class="tool-link">View Intelligence &rarr;</span>
+                </a>
+                <a href="#victory-board" class="tool-card tool-card-victory">
+                    <div class="tool-icon">&#127942;</div>
+                    <h3 class="tool-title">Bills We Stopped</h3>
+                    <p class="tool-desc">Anti-science bills defeated with help from citizen action. Your calls and emails are working.</p>
+                    <span class="tool-link">See Victories &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stars & Stripes Divider -->
+    <div class="section-stripe-divider" aria-hidden="true">
+        <span class="divider-star">&#9733;</span>
+    </div>
+
+    <!-- Victory Board Section -->
+    <section class="victory-section" id="victory-board">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bills We Stopped</h2>
+                <p class="section-desc">Anti-science bills that were defeated with help from citizen action. Your calls and emails made a difference.</p>
+            </div>
+            <div id="victory-grid" class="victory-grid">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading victories...</p>
+                </div>
+            </div>
+            <div id="victory-empty" class="empty-state" style="display:none;">
+                <p>No victories to display yet. Keep taking action!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Pledge CTA -->
+    <section class="pledge-cta-section">
+        <div class="container">
+            <div class="pledge-cta-card">
+                <div class="pledge-cta-badge">For Public Officials</div>
+                <h2 class="pledge-cta-title">Public Officials: Share Your Science &amp; Health Policy Positions</h2>
+                <p class="pledge-cta-desc">Elected officials and candidates for public office: Share your positions on science and public health with the community. Take the pledge and get listed in our directory.</p>
+                <a href="quiz.html" class="btn btn-primary btn-lg">
+                    <span class="btn-star">&#9733;</span>
+                    Take the Pledge Now
+                    <span class="btn-star">&#9733;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Share + Footer -->
+    <section class="social-section">
+        <div class="container">
+            <div class="social-share-bar">
+                <span class="social-share-label">Spread the Word:</span>
+                <a href="https://twitter.com/intent/tweet?text=Learn%20about%20science%20and%20public%20health%20legislation.%20Take%20action%20to%20promote%20evidence-based%20policy.&url=https://safeaction.org" target="_blank" rel="noopener" class="social-share-btn twitter" aria-label="Share on X/Twitter">&#120143;</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://safeaction.org" target="_blank" rel="noopener" class="social-share-btn facebook" aria-label="Share on Facebook">f</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-share-btn instagram" aria-label="Follow on Instagram">&#128247;</a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-share-btn tiktok" aria-label="Follow on TikTok">&#9835;</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tracker.html">Take Action</a>
+                    <a href="intelligence.html">Intelligence</a>
+                    <a href="directory.html">Pledge Directory</a>
+                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="updates.html">Bill Updates</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
+                </div>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="#donate" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/sheets.js"></script>
+    <script src="js/legislation-api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

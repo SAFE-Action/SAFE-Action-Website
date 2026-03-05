@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-03-05T06:00:00Z",
+  "articles": [
+    {
+      "article_id": "a1b2c3d4",
+      "title": "Idaho Health Committee Advances Vaccine Exemption Bill",
+      "source": "Idaho Statesman",
+      "url": "https://www.idahostatesman.com/news/politics-government/state-politics/article123456.html",
+      "date": "2026-03-03",
+      "summary": "The Idaho House Health & Welfare committee voted to advance a bill expanding religious and philosophical exemptions for childhood vaccines. Chair Megan Blanksma allowed the bill to proceed despite opposition from medical groups.",
+      "sentiment": "negative",
+      "legislator_ids": ["ID-State-House-Blanksma"],
+      "topics": ["vaccine exemption", "committee hearing", "religious exemption"]
+    },
+    {
+      "article_id": "e5f6g7h8",
+      "title": "Rep. Carter Pushes Pharmacy Access Act Through Energy & Commerce",
+      "source": "Roll Call",
+      "url": "https://rollcall.com/2026/02/28/carter-pharmacy-access-act/",
+      "date": "2026-02-28",
+      "summary": "Rep. Buddy Carter (R-GA), the only pharmacist in Congress, successfully moved his Pharmacy Access Act through the Energy and Commerce committee. The bill would expand pharmacist authority to administer vaccines.",
+      "sentiment": "positive",
+      "legislator_ids": ["GA-House-Carter"],
+      "topics": ["pharmacy access", "vaccine administration", "bipartisan"]
+    },
+    {
+      "article_id": "i9j0k1l2",
+      "title": "Pediatrician-Turned-Lawmaker Champions Vaccine Research Funding",
+      "source": "Denver Post",
+      "url": "https://www.denverpost.com/2026/03/01/caraveo-vaccine-research-funding/",
+      "date": "2026-03-01",
+      "summary": "Rep. Yadira Caraveo (D-CO), a pediatrician, introduced legislation to increase NIH funding for vaccine safety research. The bill has drawn bipartisan interest from members with medical backgrounds.",
+      "sentiment": "positive",
+      "legislator_ids": ["CO-House-Caraveo"],
+      "topics": ["vaccine research", "NIH funding", "bipartisan"]
+    },
+    {
+      "article_id": "m3n4o5p6",
+      "title": "Senate HELP Committee to Hold Hearings on Vaccine Safety Transparency",
+      "source": "The Hill",
+      "url": "https://thehill.com/policy/healthcare/2026/02/25/senate-help-vaccine-transparency/",
+      "date": "2026-02-25",
+      "summary": "The Senate HELP committee announced upcoming hearings on vaccine safety data transparency. New member Dave McCormick (R-PA) signaled interest in ensuring public access to safety monitoring data.",
+      "sentiment": "neutral",
+      "legislator_ids": ["PA-Senate-Casey-replacement"],
+      "topics": ["vaccine safety", "transparency", "HELP committee", "hearings"]
+    },
+    {
+      "article_id": "q7r8s9t0",
+      "title": "Texas Lawmakers Debate Medical Freedom Act",
+      "source": "Texas Tribune",
+      "url": "https://www.texastribune.org/2026/03/02/texas-medical-freedom-act/",
+      "date": "2026-03-02",
+      "summary": "Texas state legislators debated a Medical Freedom Act that would prohibit employer vaccine mandates. Sen. Cornyn expressed cautious support for 'balanced' approach to medical decisions.",
+      "sentiment": "neutral",
+      "legislator_ids": ["TX-Senate-Cornyn"],
+      "topics": ["medical freedom", "employer mandates", "informed consent"]
+    },
+    {
+      "article_id": "u1v2w3x4",
+      "title": "Anti-Vaccine Bills Surge in State Legislatures Across the Country",
+      "source": "Associated Press",
+      "url": "https://apnews.com/article/anti-vaccine-bills-state-legislatures-2026",
+      "date": "2026-03-04",
+      "summary": "A new wave of anti-vaccine legislation has been introduced in over 30 state legislatures, with bills targeting school immunization requirements and employer mandates. Public health officials express concern about rising exemption rates.",
+      "sentiment": "negative",
+      "legislator_ids": [],
+      "topics": ["anti-vaccine legislation", "state legislatures", "school immunization", "exemptions"]
+    }
+  ]
+}

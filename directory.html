@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pledge Directory - SAFE Action</title>
+    <meta name="description" content="See which candidates have taken the SAFE Action pledge on science and public health. Filter by party, office, state, and more.">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tracker.html" class="nav-link">Take Action</a>
+                    <a href="intelligence.html" class="nav-link">Intelligence</a>
+                    <a href="directory.html" class="nav-link active">Pledge Directory</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="quiz-hero">
+        <div class="container">
+            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
+                <span class="hero-star">&#9733;</span>
+                <span class="hero-star hero-star-lg">&#9733;</span>
+                <span class="hero-star">&#9733;</span>
+            </div>
+            <h1 class="hero-title">Candidate Pledge Directory</h1>
+            <p class="hero-subtitle">See which candidates have taken the SAFE Action pledge. Click on a candidate to view their full responses on science and public health.</p>
+        </div>
+    </section>
+
+    <!-- Sub-Nav Tabs -->
+    <div class="tracker-sub-nav">
+        <div class="container">
+            <a href="directory.html" class="sub-nav-link active">View Pledges</a>
+            <a href="quiz.html" class="sub-nav-link">Take the Pledge</a>
+        </div>
+    </div>
+
+    <!-- Directory Section -->
+    <section class="tracker-section">
+        <div class="container">
+            <!-- Filter Controls -->
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="filter-party">Party</label>
+                    <select id="filter-party">
+                        <option value="">All Parties</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-office">Office</label>
+                    <select id="filter-office">
+                        <option value="">All Offices</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-state">State</label>
+                    <select id="filter-state">
+                        <option value="">All States</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-search">Search</label>
+                    <input type="text" id="filter-search" placeholder="Search by name, district, or city...">
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-toolbar" id="directory-toolbar" style="display:none;">
+                <span class="results-count" id="directory-count"></span>
+            </div>
+
+            <!-- Candidate Grid -->
+            <div id="candidate-grid" class="candidate-grid">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading candidates...</p>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <div class="empty-icon">&#9733;</div>
+                <h3>No Candidates Yet</h3>
+                <p>Be the first candidate to take the pledge!</p>
+                <a href="quiz.html" class="btn btn-primary">Take the Pledge</a>
+            </div>
+
+            <!-- No Results State -->
+            <div id="no-results" class="empty-state" style="display: none;">
+                <h3>No Matching Candidates</h3>
+                <p>Try adjusting your filters.</p>
+            </div>
+
+            <!-- CTAs -->
+            <div class="signup-section">
+                <h2>Are You an Elected Official or Candidate?</h2>
+                <p>Take the SAFE Action pledge and share your positions on science and public health with the community.</p>
+                <a href="quiz.html" class="btn btn-primary btn-lg">
+                    <span class="btn-star">&#9733;</span>
+                    Take the Pledge Now
+                    <span class="btn-star">&#9733;</span>
+                </a>
+            </div>
+
+            <div class="signup-section" style="margin-top:0;padding-top:0;">
+                <p>Want to ask candidates to take the pledge?</p>
+                <a href="outreach.html" class="btn btn-hero-outline btn-lg">Contact Candidates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tracker.html">Take Action</a>
+                    <a href="intelligence.html">Intelligence</a>
+                    <a href="directory.html">Pledge Directory</a>
+                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="updates.html">Bill Updates</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
+                </div>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="#donate" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/sheets.js"></script>
+    <script src="js/intelligence.js"></script>
+    <script src="js/directory.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

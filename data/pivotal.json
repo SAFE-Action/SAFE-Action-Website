@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-03-05T06:00:00Z",
+  "targets": [
+    {
+      "legislator_id": "GA-House-Carter",
+      "name": "Buddy Carter",
+      "state": "GA",
+      "party": "Republican",
+      "reason": "Health committee member (Energy and Commerce) + Professional background: pharmacist + Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "fence-sitter",
+      "outreach_priority": 1,
+      "recommended_approach": "Appeal to their scientific/medical training. Share peer-reviewed data and emphasize evidence-based policy. Frame as protecting professional integrity."
+    },
+    {
+      "legislator_id": "PA-Senate-Casey-replacement",
+      "name": "Dave McCormick",
+      "state": "PA",
+      "party": "Republican",
+      "reason": "Health committee member (HELP) + Professional background: PhD + Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "fence-sitter",
+      "outreach_priority": 1,
+      "recommended_approach": "Appeal to their scientific/medical training. Share peer-reviewed data and emphasize evidence-based policy. Frame as protecting professional integrity."
+    },
+    {
+      "legislator_id": "ID-State-House-Blanksma",
+      "name": "Megan Blanksma",
+      "state": "ID",
+      "party": "Republican",
+      "reason": "Health committee chair (Health & Welfare (Chair)) + Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "fence-sitter",
+      "outreach_priority": 1,
+      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health."
+    },
+    {
+      "legislator_id": "TX-Senate-Cornyn",
+      "name": "John Cornyn",
+      "state": "TX",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "fence-sitter",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates."
+    },
+    {
+      "legislator_id": "OH-Senate-Vance-replacement",
+      "name": "Bernie Moreno",
+      "state": "OH",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "fence-sitter",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates."
+    },
+    {
+      "legislator_id": "CA-House-Schiff",
+      "name": "Adam Schiff",
+      "state": "CA",
+      "party": "Democrat",
+      "reason": "Likely ally — reinforce support",
+      "persuadability_category": "likely-win",
+      "outreach_priority": 4,
+      "recommended_approach": "Thank them for their support. Ask them to co-sponsor pro-science bills and use their influence to bring colleagues on board."
+    }
+  ]
+}

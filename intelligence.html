@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislative Intelligence - SAFE Action</title>
+    <meta name="description" content="AI-powered intelligence on legislators. Persuadability scores, pivotal vote targets, and news analysis to prioritize your outreach.">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tracker.html" class="nav-link">Take Action</a>
+                    <a href="intelligence.html" class="nav-link active">Intelligence</a>
+                    <a href="directory.html" class="nav-link">Pledge Directory</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="quiz-hero">
+        <div class="container">
+            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
+                <span class="hero-star">&#9733;</span>
+                <span class="hero-star hero-star-lg">&#9733;</span>
+                <span class="hero-star">&#9733;</span>
+            </div>
+            <h1 class="hero-title">Legislative Intelligence</h1>
+            <p class="hero-subtitle">AI-powered analysis of legislators. Find persuadable votes, pivotal targets, and prioritize your outreach where it matters most.</p>
+        </div>
+    </section>
+
+    <!-- Intelligence Dashboard -->
+    <section class="tracker-section">
+        <div class="container">
+
+            <!-- Summary Cards -->
+            <div id="intel-summary" class="intel-summary-grid">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading intelligence data...</p>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="intel-filters">
+                <div class="feed-filter-row">
+                    <div class="form-group">
+                        <label for="intel-state">State</label>
+                        <select id="intel-state">
+                            <option value="">All States</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="intel-party">Party</label>
+                        <select id="intel-party">
+                            <option value="">All Parties</option>
+                            <option value="Republican">Republican</option>
+                            <option value="Democrat">Democrat</option>
+                            <option value="Independent">Independent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="intel-category">Persuadability</label>
+                        <select id="intel-category">
+                            <option value="">All Categories</option>
+                            <option value="champion">Champions (9-10)</option>
+                            <option value="likely-win">Likely Wins (7-8)</option>
+                            <option value="fence-sitter">Fence-Sitters (4-6)</option>
+                            <option value="unlikely">Unlikely (2-3)</option>
+                            <option value="opposed">Opposed (0-1)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="intel-search">Search</label>
+                        <input type="text" id="intel-search" placeholder="Search legislators...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pivotal Targets -->
+            <div class="intel-section">
+                <h2 class="intel-section-title">
+                    <span class="section-icon">&#127919;</span>
+                    Priority Outreach Targets
+                </h2>
+                <p class="intel-section-desc">These legislators have the highest potential impact. Focus outreach here first.</p>
+                <div id="pivotal-grid" class="pivotal-grid"></div>
+            </div>
+
+            <!-- Legislator Grid -->
+            <div class="intel-section">
+                <h2 class="intel-section-title">
+                    <span class="section-icon">&#128101;</span>
+                    All Legislators
+                    <span class="results-count" id="intel-count"></span>
+                </h2>
+                <div id="legislator-grid" class="legislator-grid"></div>
+            </div>
+
+            <!-- News Feed -->
+            <div class="intel-section">
+                <h2 class="intel-section-title">
+                    <span class="section-icon">&#128240;</span>
+                    Recent News &amp; Coverage
+                </h2>
+                <div id="news-feed" class="news-feed"></div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="intel-empty" class="empty-state" style="display: none;">
+                <div class="empty-icon">&#128269;</div>
+                <h3>No Intelligence Data Available</h3>
+                <p>Intelligence data hasn't been generated yet. Run the crawler to populate this dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tracker.html">Take Action</a>
+                    <a href="intelligence.html">Intelligence</a>
+                    <a href="directory.html">Pledge Directory</a>
+                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="updates.html">Bill Updates</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
+                </div>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="#donate" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/intelligence.js"></script>
+    <script src="js/intelligence-page.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

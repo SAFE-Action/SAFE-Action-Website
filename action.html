@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Action - SAFE Action</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tracker.html" class="nav-link active">Take Action</a>
+                    <a href="intelligence.html" class="nav-link">Intelligence</a>
+                    <a href="directory.html" class="nav-link">Pledge Directory</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Action Content -->
+    <section class="action-section">
+        <div class="container">
+            <a href="#" class="back-link" id="back-link">&larr; Back to Tracker</a>
+
+            <!-- Loading -->
+            <div id="action-loading" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading bill details...</p>
+            </div>
+
+            <!-- Main Content (hidden until loaded) -->
+            <div id="action-content" style="display: none;">
+
+                <!-- Bill Header -->
+                <div class="candidate-detail-header">
+                    <div>
+                        <div class="candidate-meta-row" style="margin-bottom:8px;">
+                            <span class="badge" id="bill-type-badge"></span>
+                            <span class="badge badge-stance" id="bill-stance-badge"></span>
+                            <span class="badge badge-level" id="bill-level-badge"></span>
+                            <span class="badge badge-impact" id="bill-impact-badge"></span>
+                        </div>
+                        <h1 class="candidate-detail-name" id="bill-heading"></h1>
+                    </div>
+                </div>
+
+                <!-- Bill Details -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Bill Details</h2>
+                    <div class="bill-info-grid">
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Bill Number</span>
+                            <span class="bill-info-value" id="bill-number"></span>
+                        </div>
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Status</span>
+                            <span class="bill-info-value" id="bill-status"></span>
+                        </div>
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Chamber</span>
+                            <span class="bill-info-value" id="bill-chamber"></span>
+                        </div>
+                        <div class="bill-info-item" id="bill-committee-row">
+                            <span class="bill-info-label">Committee</span>
+                            <span class="bill-info-value" id="bill-committee"></span>
+                        </div>
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Category</span>
+                            <span class="bill-info-value" id="bill-category"></span>
+                        </div>
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Last Action</span>
+                            <span class="bill-info-value" id="bill-last-action"></span>
+                        </div>
+                        <div class="bill-info-item">
+                            <span class="bill-info-label">Last Action Date</span>
+                            <span class="bill-info-value" id="bill-last-date"></span>
+                        </div>
+                    </div>
+                    <p class="bill-summary-full" id="bill-summary"></p>
+                    <a href="#" class="btn btn-outline" id="bill-full-text" target="_blank" rel="noopener">Read Full Bill Text &rarr;</a>
+                </div>
+
+                <!-- Status Pipeline -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Bill Progress</h2>
+                    <div class="status-pipeline" id="status-pipeline"></div>
+                </div>
+
+                <!-- Representatives -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Your Representatives</h2>
+                    <p style="color:var(--text-mid);margin-bottom:16px;">These representatives may vote on this bill. Click "Use Template" to populate your message.</p>
+                    <div class="rep-grid" id="rep-grid"></div>
+                    <div id="no-reps" style="display:none;">
+                        <p style="color:var(--text-mid);text-align:center;padding:20px;">No representative data available for this state yet.</p>
+                    </div>
+                </div>
+
+                <!-- Take Action -->
+                <div class="detail-card highlight-card">
+                    <h2 class="detail-card-title">Take Action</h2>
+
+                    <!-- User Info -->
+                    <div class="user-info-row">
+                        <input type="text" id="user-name" placeholder="Your Full Name">
+                        <input type="text" id="user-city" placeholder="Your City">
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="action-tabs">
+                        <button class="tab-btn active" data-tab="email-panel">Email Template</button>
+                        <button class="tab-btn" data-tab="phone-panel">Phone Script</button>
+                    </div>
+
+                    <!-- Email Panel -->
+                    <div class="tab-panel active" id="email-panel">
+                        <div class="template-field">
+                            <label>Subject</label>
+                            <input type="text" id="email-subject">
+                        </div>
+                        <div class="template-field">
+                            <label>Body</label>
+                            <textarea id="email-body"></textarea>
+                        </div>
+                        <div class="template-actions">
+                            <button class="btn btn-primary" id="copy-email">Copy to Clipboard</button>
+                            <button class="btn btn-outline" id="open-mailto">Open in Email App</button>
+                            <span class="copy-success" id="copy-email-success">Copied!</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone Panel -->
+                    <div class="tab-panel" id="phone-panel">
+                        <div class="template-field">
+                            <label>Phone Script</label>
+                            <textarea id="phone-script"></textarea>
+                        </div>
+                        <div id="phone-numbers" style="margin-bottom:16px;"></div>
+                        <div class="template-actions">
+                            <button class="btn btn-primary" id="copy-phone">Copy Script</button>
+                            <span class="copy-success" id="copy-phone-success">Copied!</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Confirmation Bar -->
+                    <div id="action-confirm" class="action-confirm-bar" style="display:none;"></div>
+                </div>
+
+                <!-- Email Signup -->
+                <div class="signup-section">
+                    <h2>Stay Informed</h2>
+                    <p>Get updates when this bill's status changes.</p>
+                    <form class="signup-form" id="email-signup-form">
+                        <input type="email" id="signup-email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                    <p class="signup-success" id="signup-success">You're signed up! We'll keep you informed.</p>
+                </div>
+            </div>
+
+            <!-- Not Found -->
+            <div id="action-not-found" class="empty-state" style="display: none;">
+                <h3>Bill Not Found</h3>
+                <p>The bill you're looking for doesn't exist or may have been removed.</p>
+                <a href="tracker.html" class="btn btn-primary">Back to Tracker</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="tracker.html">Take Action</a>
+                    <a href="intelligence.html">Intelligence</a>
+                    <a href="directory.html">Pledge Directory</a>
+                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="updates.html">Bill Updates</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
+                </div>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="#donate" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/legislation-api.js"></script>
+    <script src="js/action.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-03-05T06:00:00Z",
+  "total_legislators": 8,
+  "by_category": {
+    "champion": 1,
+    "likely-win": 1,
+    "fence-sitter": 4,
+    "unlikely": 1,
+    "opposed": 0,
+    "unscored": 1
+  },
+  "top_outreach_targets": [
+    "GA-House-Carter",
+    "PA-Senate-Casey-replacement",
+    "ID-State-House-Blanksma",
+    "TX-Senate-Cornyn",
+    "OH-Senate-Vance-replacement"
+  ],
+  "state_summaries": {
+    "TX": {"total": 2, "fence_sitters": 1, "champions": 0, "opposed": 0},
+    "CO": {"total": 1, "fence_sitters": 0, "champions": 1, "opposed": 0},
+    "OH": {"total": 1, "fence_sitters": 1, "champions": 0, "opposed": 0},
+    "GA": {"total": 1, "fence_sitters": 1, "champions": 0, "opposed": 0},
+    "ID": {"total": 1, "fence_sitters": 1, "champions": 0, "opposed": 0},
+    "PA": {"total": 1, "fence_sitters": 1, "champions": 0, "opposed": 0},
+    "CA": {"total": 1, "fence_sitters": 0, "champions": 0, "opposed": 0}
+  }
+}
