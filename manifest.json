@@ -1,7 +1,7 @@
 {
     "name": "SAFE Action",
     "short_name": "SAFE Action",
-    "description": "Track anti-science legislation, contact representatives, and defend public health.",
+    "description": "Take action on science and health legislation. Contact your representatives and defend public health.",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#3C3B6E",
@@ -18,9 +18,9 @@
     "categories": ["news", "politics", "social"],
     "shortcuts": [
         {
-            "name": "Track Legislation",
+            "name": "Take Action",
             "url": "/tracker.html",
-            "description": "Monitor bills in your state"
+            "description": "Find bills and contact your reps"
         },
         {
             "name": "Contact Candidates",

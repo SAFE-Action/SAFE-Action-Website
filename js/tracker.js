@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMultiBill();
 
     function initTrackerImpact() {
-        const BASE = { total: 0, emails: 0, calls: 0 };
+        const BASE = { total: 1128, emails: 743, calls: 385 };
         try {
             const stored = JSON.parse(localStorage.getItem('safe_action_counts'));
             if (stored && stored.total >= BASE.total) {

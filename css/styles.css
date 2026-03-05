@@ -4246,3 +4246,153 @@ input.warning {
     color: rgba(255,255,255,0.4);
     font-size: 0.8rem;
 }
+
+/* ============================================
+   PWA "Get the App" Header Button
+   ============================================ */
+.header-install-btn {
+    display: none; /* Hidden by default on desktop */
+    align-items: center;
+    gap: 6px;
+    background: var(--gold);
+    color: var(--blue);
+    border: none;
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background var(--transition), transform var(--transition);
+    line-height: 1.2;
+}
+
+.header-install-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+}
+
+.header-install-btn .install-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Show on mobile only */
+@media (max-width: 768px) {
+    .header-install-btn {
+        display: flex;
+    }
+}
+
+/* Hide when app is running in standalone mode */
+@media (display-mode: standalone) {
+    .header-install-btn {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   PWA Install Instructions Modal
+   ============================================ */
+.pwa-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.pwa-modal-overlay.show {
+    display: flex;
+}
+
+.pwa-modal {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    max-width: 380px;
+    width: 100%;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+    position: relative;
+    animation: pwaModalIn 0.3s ease;
+}
+
+@keyframes pwaModalIn {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.pwa-modal-close {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+.pwa-modal-close:hover {
+    color: var(--text-dark);
+}
+
+.pwa-modal-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.pwa-modal h3 {
+    font-family: var(--font-heading);
+    color: var(--blue);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+.pwa-modal-steps {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pwa-modal-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pwa-modal-steps li:last-child {
+    border-bottom: none;
+}
+
+.pwa-modal-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 26px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pwa-modal-note {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    font-style: italic;
+}

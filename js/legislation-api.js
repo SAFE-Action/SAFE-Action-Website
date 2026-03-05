@@ -160,12 +160,45 @@ const LegislationAPI = {
 
     // --- Demo Data ---
 
-    _getDemoLegislation(state) {
-        return [];
+    async _getDemoLegislation(state) {
+        // Load from static bill data file (populated by crawler)
+        try {
+            const resp = await fetch('data/bills.json');
+            if (!resp.ok) return [];
+            const data = await resp.json();
+            const bills = data.bills || [];
+            if (!state || state === 'ALL') return bills;
+            return bills.filter(b => b.state === state);
+        } catch (e) {
+            console.warn('No bill data available yet');
+            return [];
+        }
     },
 
-    _getDemoRepresentatives(state) {
-        return [];
+    async _getDemoRepresentatives(state) {
+        // Load from static legislator data file (populated by crawler)
+        try {
+            const resp = await fetch('data/legislators.json');
+            if (!resp.ok) return [];
+            const data = await resp.json();
+            const legislators = data.legislators || [];
+            if (!state) return legislators;
+            const filtered = legislators.filter(l => l.state === state);
+            // Transform to the rep format the tracker expects
+            return filtered.map(l => ({
+                name: l.name,
+                title: l.chamber === 'Senate' ? 'Sen.' : 'Rep.',
+                party: l.party,
+                phone: (l.contact || {}).phone || '',
+                email: (l.contact || {}).email || '',
+                office: l.office,
+                district: l.district,
+                state: l.state
+            }));
+        } catch (e) {
+            console.warn('No legislator data available yet');
+            return [];
+        }
     },
 
     _getDemoTemplates() {

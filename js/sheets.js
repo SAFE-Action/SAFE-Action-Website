@@ -80,61 +80,7 @@ const SheetsAPI = {
      * Demo data for testing before Google Sheets is connected
      */
     _getDemoData() {
-        return [
-            {
-                id: 'demo-1',
-                firstName: 'Jane',
-                lastName: 'Smith',
-                email: 'jane.smith@example.com',
-                phone: '(555) 123-4567',
-                party: 'Republican',
-                office: 'U.S. Senate',
-                position: 'Senator',
-                district: '',
-                city: 'Austin',
-                state: 'TX',
-                vaccineSupport: 'It depends / Nuanced position',
-                question1: 'I believe in individual liberty and the right of every American to make their own medical decisions. As a strong advocate for informed consent, I support transparency in vaccine research and oppose any government mandates that force medical procedures on unwilling citizens.',
-                question2: 'I plan to introduce legislation that protects the right to medical choice and ensures that no American faces discrimination based on their personal health decisions.',
-                question3: 'My campaign is focused on liberty, transparency, and putting the power back in the hands of the people.',
-                timestamp: '2026-03-01T10:00:00Z'
-            },
-            {
-                id: 'demo-2',
-                firstName: 'John',
-                lastName: 'Davis',
-                email: 'john.davis@example.com',
-                phone: '(555) 987-6543',
-                party: 'Libertarian',
-                office: 'State Representative',
-                position: 'Representative',
-                district: 'District 12',
-                city: 'Denver',
-                state: 'CO',
-                vaccineSupport: 'No',
-                question1: 'Medical freedom is a fundamental right. The government should never have the authority to mandate what goes into your body. I oppose all vaccine mandates at every level of government.',
-                question2: 'I will work to repeal any existing mandates and ensure robust religious and philosophical exemptions are protected by law.',
-                question3: '',
-                timestamp: '2026-03-02T14:30:00Z'
-            },
-            {
-                id: 'demo-3',
-                firstName: 'Maria',
-                lastName: 'Gonzalez',
-                email: 'maria.gonzalez@example.com',
-                phone: '(555) 456-7890',
-                party: 'Independent',
-                office: 'City Council',
-                position: 'Council Member',
-                district: 'Ward 5',
-                city: 'Phoenix',
-                state: 'AZ',
-                vaccineSupport: 'Yes',
-                question1: 'While I support vaccines as a public health tool, I firmly believe in informed consent and parental choice. No one should be forced to take any medical treatment against their will.',
-                question2: '',
-                question3: 'I bring 15 years of community organizing experience and am committed to representing ALL residents regardless of their personal health choices.',
-                timestamp: '2026-03-03T09:15:00Z'
-            }
-        ];
+        // No demo pledges — real pledges come from the Google Sheet
+        return [];
     }
 };
