@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Officials - SAFE Action</title>
-    <meta name="description" content="Learn where elected officials and candidates stand on science and public health. Promote civic engagement by asking officials to share their policy positions.">
+    <title>My Representatives - SAFE Action</title>
+    <meta name="description" content="Find your elected representatives and take action. AI-powered recommendations tell you who to contact and about what to defend science in your district.">
+    <meta property="og:title" content="SAFE Action - My Representatives">
+    <meta property="og:description" content="Find your reps. Take the most impactful action to defend science.">
+    <meta property="og:type" content="website">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#3C3B6E">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,8 +29,7 @@
                 </div>
                 <nav class="main-nav">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="tracker.html" class="nav-link">Take Action</a>
-                    <a href="elections.html" class="nav-link">2026 Elections</a>
+                    <a href="outreach.html" class="nav-link active">Take Action</a>
                     <a href="intelligence.html" class="nav-link">Intelligence</a>
                     <a href="directory.html" class="nav-link">Pledges</a>
                 </nav>
@@ -43,137 +45,102 @@
                 <span class="hero-star hero-star-lg">&#9733;</span>
                 <span class="hero-star">&#9733;</span>
             </div>
-            <h1 class="hero-title">Contact Your Elected Officials</h1>
-            <p class="hero-subtitle">Find elected officials and candidates for public office. Ask them to share their positions on science and public health issues with the community.</p>
+            <h1 class="hero-title">Find Your Representatives</h1>
+            <p class="hero-subtitle">Enter your address to see who represents you, which bills threaten science in your area, and exactly what to do about it.</p>
         </div>
     </section>
 
-    <!-- Impact Bar -->
-    <section class="tracker-impact-bar">
+    <!-- Sub-Nav Tabs -->
+    <div class="tracker-sub-nav">
         <div class="container">
-            <div class="tracker-impact-grid">
-                <div class="tracker-impact-item">
-                    <span class="tracker-impact-number" id="outreach-impact-contacted">0</span>
-                    <span class="tracker-impact-label">Candidates Contacted</span>
-                </div>
-                <div class="tracker-impact-item">
-                    <span class="tracker-impact-number" id="outreach-impact-pledged">0</span>
-                    <span class="tracker-impact-label">Have Taken Pledge</span>
-                </div>
-                <div class="tracker-impact-item">
-                    <span class="tracker-impact-number" id="outreach-impact-pending">0</span>
-                    <span class="tracker-impact-label">Awaiting Response</span>
-                </div>
-                <div class="tracker-impact-item">
-                    <span class="tracker-impact-number" id="outreach-impact-total">0</span>
-                    <span class="tracker-impact-label">Candidates Found</span>
-                </div>
-            </div>
+            <a href="outreach.html" class="sub-nav-link active">My Representatives</a>
+            <a href="tracker.html" class="sub-nav-link">Browse Bills</a>
+            <a href="press.html" class="sub-nav-link">Media &amp; Press</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Outreach Section -->
+    <!-- Hub Section -->
     <section class="tracker-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Find Elected Officials &amp; Candidates</h2>
-                <p class="section-desc">Select a state to find officials and candidates for public office. Send them an inquiry about their policy positions on science and public health.</p>
+            <!-- Address Input -->
+            <div id="address-section" class="address-lookup">
+                <form id="address-form" class="address-form">
+                    <div class="address-input-wrap">
+                        <input type="text" id="address-input" placeholder="Enter your full address (e.g., 123 Main St, Austin, TX 78701)" autocomplete="street-address" required>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <span class="btn-star">&#9733;</span>
+                            Find My Reps
+                        </button>
+                    </div>
+                    <p class="address-privacy">Your address is stored only in your browser and never sent to our servers.</p>
+                </form>
             </div>
 
-            <!-- State Selector -->
-            <div class="state-selector">
-                <div class="form-group">
-                    <label for="outreach-state">State</label>
-                    <select id="outreach-state">
-                        <option value="">Choose a state...</option>
-                        <option value="ALL">All States</option>
-                    </select>
+            <!-- State Fallback (shown when no Civic API key) -->
+            <div id="state-fallback" class="state-fallback" style="display:none;">
+                <div class="section-header">
+                    <h2 class="section-title">Select Your State</h2>
+                    <p class="section-desc">Choose your state to see your federal representatives and active bills.</p>
                 </div>
-                <div class="form-group">
-                    <label for="outreach-level">Level</label>
-                    <select id="outreach-level">
-                        <option value="">All Levels</option>
-                        <option value="Federal">Federal</option>
-                        <option value="State">State</option>
-                        <option value="Local">Local</option>
-                    </select>
+                <div class="state-selector">
+                    <div class="form-group">
+                        <label for="state-select">State</label>
+                        <select id="state-select">
+                            <option value="">Choose your state...</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="state-lookup-btn">Look Up</button>
                 </div>
-                <div class="form-group">
-                    <label for="outreach-party">Party</label>
-                    <select id="outreach-party">
-                        <option value="">All Parties</option>
-                        <option value="Republican">Republican</option>
-                        <option value="Democrat">Democrat</option>
-                        <option value="Libertarian">Libertarian</option>
-                        <option value="Independent">Independent</option>
-                        <option value="Green">Green</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="outreach-search">Search</label>
-                    <input type="text" id="outreach-search" placeholder="Search by name, office...">
-                </div>
-                <button class="btn btn-primary" id="outreach-find-btn">Find Candidates</button>
             </div>
 
-            <!-- Results -->
-            <div id="outreach-results" style="display: none;">
-                <div class="results-toolbar">
-                    <span class="results-count" id="outreach-count"></span>
-                    <div>
-                        <button class="btn btn-outline btn-sm" id="email-all-btn">Email All Candidates</button>
+            <!-- Saved Address Bar -->
+            <div id="saved-address-bar" class="saved-address-bar" style="display:none;">
+                <span>Showing representatives for: <strong id="saved-address-text"></strong></span>
+                <button class="btn btn-outline btn-sm" id="change-address-btn">Change Address</button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div id="hub-stats" class="tracker-impact-bar hub-stats" style="display:none;">
+                <div class="tracker-impact-grid">
+                    <div class="tracker-impact-item">
+                        <span class="tracker-impact-number" id="stat-reps-found">0</span>
+                        <span class="tracker-impact-label">Your Representatives</span>
+                    </div>
+                    <div class="tracker-impact-item">
+                        <span class="tracker-impact-number" id="stat-active-bills">0</span>
+                        <span class="tracker-impact-label">Anti-Science Bills</span>
+                    </div>
+                    <div class="tracker-impact-item">
+                        <span class="tracker-impact-number" id="stat-no-pledge">0</span>
+                        <span class="tracker-impact-label">Haven't Taken Pledge</span>
                     </div>
                 </div>
-
-                <!-- Candidate Grid -->
-                <div id="outreach-grid" class="outreach-grid"></div>
-
-                <!-- No Results -->
-                <div id="outreach-no-results" class="empty-state" style="display: none;">
-                    <h3>No Candidates Found</h3>
-                    <p>Try adjusting your filters or selecting a different state.</p>
-                </div>
             </div>
 
-            <!-- Initial State -->
-            <div id="outreach-initial" class="empty-state">
-                <div class="empty-icon">&#9733;</div>
-                <h3>Select a State to Get Started</h3>
-                <p>Choose your state to find officials and candidates. You can email them directly to ask about their positions on science and public health policy.</p>
+            <!-- Loading -->
+            <div id="hub-loading" class="loading-spinner" style="display:none;">
+                <div class="spinner"></div>
+                <p>Finding your representatives...</p>
             </div>
 
-            <!-- Email Template Section -->
-            <div class="detail-card highlight-card" id="outreach-template-section" style="display: none;">
-                <h2 class="detail-card-title">Email Template</h2>
-                <p style="color:var(--text-mid);margin-bottom:12px;">Customize this template before sending. Your personal touch makes a bigger impact.</p>
+            <!-- Error -->
+            <div id="hub-error" class="empty-state" style="display:none;">
+                <h3>Could Not Find Representatives</h3>
+                <p>Please check your address and try again.</p>
+            </div>
 
-                <div class="user-info-row">
-                    <input type="text" id="outreach-your-name" placeholder="Your Full Name">
-                    <input type="text" id="outreach-your-city" placeholder="Your City">
-                </div>
-
-                <div class="template-field">
-                    <label>Subject</label>
-                    <input type="text" id="outreach-email-subject" value="Will you take the SAFE Action pledge on science and public health?">
-                </div>
-                <div class="template-field">
-                    <label>Body</label>
-                    <textarea id="outreach-email-body" rows="10"></textarea>
-                </div>
-                <div class="template-actions">
-                    <button class="btn btn-primary" id="outreach-copy-email">Copy to Clipboard</button>
-                    <button class="btn btn-outline" id="outreach-open-mailto">Open in Email App</button>
-                    <span class="copy-success" id="outreach-copy-success">Copied!</span>
-                </div>
+            <!-- Rep Cards Section -->
+            <div id="rep-section" style="display:none;">
+                <div id="rep-grid" class="rep-hub-grid"></div>
             </div>
 
             <!-- CTA -->
-            <div class="signup-section">
-                <h2>Are You an Elected Official or Candidate?</h2>
-                <p>Take the SAFE Action pledge and share your positions on science and public health with the community.</p>
+            <div class="signup-section" style="text-align:center;">
+                <h2>Are You an Elected Official?</h2>
+                <p>Take the SAFE Action pledge and show your constituents you support science.</p>
                 <a href="quiz.html" class="btn btn-primary btn-lg">
                     <span class="btn-star">&#9733;</span>
-                    Take the Pledge Now
+                    Take the Pledge
                     <span class="btn-star">&#9733;</span>
                 </a>
             </div>
@@ -191,11 +158,11 @@
                 <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
                 <nav class="footer-nav">
                     <a href="index.html">Home</a>
-                    <a href="tracker.html">Take Action</a>
-                    <a href="elections.html">2026 Elections</a>
+                    <a href="outreach.html">My Representatives</a>
+                    <a href="tracker.html">Browse Bills</a>
                     <a href="intelligence.html">Intelligence</a>
                     <a href="directory.html">Pledges</a>
-                    <a href="outreach.html">Contact Candidates</a>
+                    <a href="elections.html">2026 Elections</a>
                     <a href="press.html">Media &amp; Press</a>
                 </nav>
                 <div class="footer-social">
@@ -217,7 +184,8 @@
     <script src="js/config.js"></script>
     <script src="js/legislation-api.js"></script>
     <script src="js/intelligence.js"></script>
-    <script src="js/outreach.js"></script>
+    <script src="js/my-reps.js"></script>
+    <script src="js/my-reps-page.js"></script>
     <script src="js/pwa.js"></script>
 </body>
 </html>

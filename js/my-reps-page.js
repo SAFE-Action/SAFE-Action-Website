@@ -1,0 +1,579 @@
+// ============================================
+// SAFE Action - My Representatives Page Controller
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addressForm = document.getElementById('address-form');
+    const addressInput = document.getElementById('address-input');
+    const addressSection = document.getElementById('address-section');
+    const savedAddressBar = document.getElementById('saved-address-bar');
+    const savedAddressText = document.getElementById('saved-address-text');
+    const changeAddressBtn = document.getElementById('change-address-btn');
+    const stateFallback = document.getElementById('state-fallback');
+    const stateSelect = document.getElementById('state-select');
+    const stateLookupBtn = document.getElementById('state-lookup-btn');
+    const repGrid = document.getElementById('rep-grid');
+    const repSection = document.getElementById('rep-section');
+    const statsBar = document.getElementById('hub-stats');
+    const loadingEl = document.getElementById('hub-loading');
+    const errorEl = document.getElementById('hub-error');
+
+    // Escape HTML to prevent XSS from API data
+    function esc(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = String(str);
+        return div.innerHTML;
+    }
+
+    function escapeAttr(str) {
+        return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // Check if Civic API is available
+    const hasCivicKey = SAFE_CONFIG.GOOGLE_CIVIC_API_KEY && SAFE_CONFIG.GOOGLE_CIVIC_API_KEY.length > 5;
+
+    // Show/hide address vs state fallback
+    if (!hasCivicKey) {
+        if (addressSection) addressSection.style.display = 'none';
+        if (stateFallback) stateFallback.style.display = '';
+        populateStateDropdown();
+    } else {
+        if (stateFallback) stateFallback.style.display = 'none';
+    }
+
+    // Check for saved address on load
+    const saved = MyRepsHub.getSavedAddress();
+    if (saved && hasCivicKey) {
+        showSavedAddress(saved.address);
+        loadFromSaved(saved);
+    }
+
+    // Address form submission
+    if (addressForm) {
+        addressForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const address = addressInput.value.trim();
+            if (!address) return;
+            await doAddressLookup(address);
+        });
+    }
+
+    // Change address
+    if (changeAddressBtn) {
+        changeAddressBtn.addEventListener('click', () => {
+            MyRepsHub.clearSavedAddress();
+            if (savedAddressBar) savedAddressBar.style.display = 'none';
+            if (addressSection) addressSection.style.display = '';
+            if (repSection) repSection.style.display = 'none';
+            if (statsBar) statsBar.style.display = 'none';
+            if (addressInput) { addressInput.value = ''; addressInput.focus(); }
+        });
+    }
+
+    // State fallback
+    if (stateLookupBtn) {
+        stateLookupBtn.addEventListener('click', async () => {
+            const state = stateSelect.value;
+            if (!state) return;
+            await doStateLookup(state);
+        });
+    }
+    if (stateSelect) {
+        stateSelect.addEventListener('change', async () => {
+            const state = stateSelect.value;
+            if (state) await doStateLookup(state);
+        });
+    }
+
+    function populateStateDropdown() {
+        if (!stateSelect) return;
+        const states = SAFE_CONFIG.STATES;
+        Object.keys(states).forEach(code => {
+            if (code === 'US') return;
+            const opt = document.createElement('option');
+            opt.value = code;
+            opt.textContent = states[code];
+            stateSelect.appendChild(opt);
+        });
+    }
+
+    function showSavedAddress(address) {
+        if (savedAddressBar) {
+            savedAddressBar.style.display = '';
+            if (savedAddressText) savedAddressText.textContent = address;
+        }
+        if (addressSection) addressSection.style.display = 'none';
+    }
+
+    function showLoading() {
+        if (loadingEl) loadingEl.style.display = '';
+        if (repGrid) repGrid.textContent = '';
+        if (repSection) repSection.style.display = '';
+        if (errorEl) errorEl.style.display = 'none';
+    }
+
+    function hideLoading() {
+        if (loadingEl) loadingEl.style.display = 'none';
+    }
+
+    function showError(msg) {
+        hideLoading();
+        if (errorEl) {
+            errorEl.style.display = '';
+            errorEl.querySelector('p').textContent = msg;
+        }
+    }
+
+    async function doAddressLookup(address) {
+        showLoading();
+        const civicReps = await MyRepsHub.lookupAddress(address);
+        if (!civicReps || civicReps.length === 0) {
+            showError('Could not find representatives for that address. Please check the address and try again.');
+            return;
+        }
+        showSavedAddress(address);
+        const enriched = await MyRepsHub.enrichReps(civicReps);
+        hideLoading();
+        renderReps(enriched);
+    }
+
+    async function loadFromSaved(saved) {
+        showLoading();
+        const civicReps = MyRepsHub._parseCivicResponse({ officials: saved.officials, offices: saved.offices });
+        const enriched = await MyRepsHub.enrichReps(civicReps);
+        hideLoading();
+        renderReps(enriched);
+    }
+
+    async function doStateLookup(stateCode) {
+        showLoading();
+        const reps = await MyRepsHub.getRepsByState(stateCode);
+        hideLoading();
+        if (reps.length === 0) {
+            showError('No federal representatives found for this state.');
+            return;
+        }
+        renderReps(reps);
+    }
+
+    function renderReps(reps) {
+        if (!repGrid) return;
+
+        // Sort by action priority (most urgent first)
+        reps.sort((a, b) => (a.primaryAction?.priority || 9) - (b.primaryAction?.priority || 9));
+
+        // Update stats
+        renderStats(reps);
+
+        // Build cards via DOM methods
+        repGrid.textContent = '';
+        reps.forEach((rep, i) => {
+            const card = buildRepCard(rep, i, reps);
+            repGrid.appendChild(card);
+        });
+
+        if (repSection) repSection.style.display = '';
+        if (statsBar) statsBar.style.display = '';
+    }
+
+    function renderStats(reps) {
+        let totalBills = 0;
+        let noPledge = 0;
+
+        reps.forEach(rep => {
+            if (rep.bills) {
+                totalBills += rep.bills.filter(b => b.billType === 'anti').length;
+            }
+            if (!rep.intel || rep.intel.persuadability?.category !== 'champion') {
+                noPledge++;
+            }
+        });
+
+        const el = (id, val) => {
+            const e = document.getElementById(id);
+            if (e) e.textContent = val;
+        };
+        el('stat-active-bills', totalBills);
+        el('stat-reps-found', reps.length);
+        el('stat-no-pledge', noPledge);
+    }
+
+    function buildRepCard(rep, idx, allReps) {
+        const card = document.createElement('div');
+        const action = rep.primaryAction || {};
+        const actionClass = action.type === 'oppose-bill' ? 'action-oppose' : 'action-pledge';
+        card.className = `rep-hub-card ${actionClass}`;
+
+        // ── Header ──
+        const header = document.createElement('div');
+        header.className = 'rep-hub-card-header';
+
+        // Photo
+        const photoWrap = document.createElement('div');
+        photoWrap.className = 'rep-hub-photo-wrap';
+        if (rep.photoUrl) {
+            const img = document.createElement('img');
+            img.src = rep.photoUrl;
+            img.alt = rep.name;
+            img.className = 'rep-hub-photo';
+            img.onerror = function() { this.style.display = 'none'; this.nextElementSibling.style.display = 'flex'; };
+            photoWrap.appendChild(img);
+            const placeholder = document.createElement('div');
+            placeholder.className = 'rep-hub-photo-placeholder';
+            placeholder.style.display = 'none';
+            placeholder.textContent = rep.name.charAt(0);
+            photoWrap.appendChild(placeholder);
+        } else {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'rep-hub-photo-placeholder';
+            placeholder.textContent = rep.name.charAt(0);
+            photoWrap.appendChild(placeholder);
+        }
+        header.appendChild(photoWrap);
+
+        // Info block
+        const info = document.createElement('div');
+        info.className = 'rep-hub-info';
+        const nameEl = document.createElement('h3');
+        nameEl.className = 'rep-hub-name';
+        nameEl.textContent = rep.name;
+        info.appendChild(nameEl);
+
+        const party = rep.party || '?';
+        const partyBadge = document.createElement('span');
+        partyBadge.className = `rep-hub-party badge ${party === 'R' ? 'party-r' : party === 'D' ? 'party-d' : 'party-i'}`;
+        partyBadge.textContent = party === 'R' ? 'Republican' : party === 'D' ? 'Democrat' : rep.partyFull || party;
+        info.appendChild(partyBadge);
+
+        const officeEl = document.createElement('span');
+        officeEl.className = 'rep-hub-office';
+        officeEl.textContent = rep.office;
+        info.appendChild(officeEl);
+        header.appendChild(info);
+
+        // Persuadability badge
+        if (rep.intel && rep.intel.persuadability) {
+            const p = rep.intel.persuadability;
+            const cat = p.category || 'unknown';
+            const score = p.score ?? '?';
+            const pDiv = document.createElement('div');
+            pDiv.className = `rep-hub-persuadability ${IntelligenceAPI.getCategoryBadgeClass(cat)}`;
+            const scoreSpan = document.createElement('span');
+            scoreSpan.className = 'persuadability-score';
+            scoreSpan.textContent = `${score}/10`;
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'persuadability-label';
+            labelSpan.textContent = IntelligenceAPI.getCategoryLabel(cat);
+            pDiv.appendChild(scoreSpan);
+            pDiv.appendChild(labelSpan);
+            header.appendChild(pDiv);
+        }
+        card.appendChild(header);
+
+        // ── Primary Action Bar ──
+        const actionBar = document.createElement('div');
+        actionBar.className = 'rep-hub-action';
+
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'action-icon';
+        iconSpan.innerHTML = action.type === 'oppose-bill' ? '&#9888;' : '&#9733;';
+        actionBar.appendChild(iconSpan);
+
+        const actionContent = document.createElement('div');
+        actionContent.className = 'action-content';
+        const actionStrong = document.createElement('strong');
+        actionStrong.textContent = action.label || 'Take Action';
+        actionContent.appendChild(actionStrong);
+        const actionDesc = document.createElement('p');
+        actionDesc.textContent = action.description || '';
+        actionContent.appendChild(actionDesc);
+        actionBar.appendChild(actionContent);
+
+        const emailBtn = document.createElement('button');
+        emailBtn.className = 'btn btn-primary rep-hub-email-btn';
+        emailBtn.textContent = rep.email ? 'Send Email' : 'Get Template';
+        emailBtn.addEventListener('click', () => openEmailAction(rep));
+        actionBar.appendChild(emailBtn);
+
+        if (rep.phone) {
+            const callBtn = document.createElement('button');
+            callBtn.className = 'btn btn-outline rep-hub-call-btn';
+            callBtn.innerHTML = '&#128222; Call';
+            callBtn.addEventListener('click', () => window.open('tel:' + rep.phone));
+            actionBar.appendChild(callBtn);
+        }
+        card.appendChild(actionBar);
+
+        // ── Expand Button ──
+        const expandBtn = document.createElement('button');
+        expandBtn.className = 'rep-hub-expand-btn';
+        expandBtn.textContent = 'Show Details';
+        card.appendChild(expandBtn);
+
+        // ── Detail Section (hidden) ──
+        const detail = document.createElement('div');
+        detail.className = 'rep-hub-detail';
+        detail.style.display = 'none';
+
+        // Intelligence profile
+        if (rep.intel && rep.intel.persuadability) {
+            const p = rep.intel.persuadability;
+            const intelDiv = document.createElement('div');
+            intelDiv.className = 'rep-hub-intel';
+            const intelTitle = document.createElement('h4');
+            intelTitle.textContent = 'Intelligence Profile';
+            intelDiv.appendChild(intelTitle);
+            const intelP = document.createElement('p');
+            intelP.textContent = p.reasoning || 'No detailed analysis available.';
+            intelDiv.appendChild(intelP);
+            if (p.key_factors && p.key_factors.length) {
+                const factorsDiv = document.createElement('div');
+                factorsDiv.className = 'intel-factors';
+                factorsDiv.textContent = 'Key Factors: ' + p.key_factors.join(', ');
+                intelDiv.appendChild(factorsDiv);
+            }
+            detail.appendChild(intelDiv);
+        }
+
+        // Bills
+        if (rep.bills && rep.bills.length > 0) {
+            const billsDiv = document.createElement('div');
+            billsDiv.className = 'rep-hub-bills';
+            const billsTitle = document.createElement('h4');
+            billsTitle.textContent = `Active Bills in Their Jurisdiction (${rep.bills.length})`;
+            billsDiv.appendChild(billsTitle);
+            rep.bills.slice(0, 5).forEach(b => {
+                const item = document.createElement('div');
+                item.className = 'rep-bill-item';
+                const badge = document.createElement('span');
+                badge.className = `badge ${b.billType === 'anti' ? 'badge-anti' : b.billType === 'pro' ? 'badge-pro' : 'badge-monitor'}`;
+                badge.textContent = b.billType === 'anti' ? 'Oppose' : b.billType === 'pro' ? 'Support' : 'Monitor';
+                item.appendChild(badge);
+                const num = document.createElement('strong');
+                num.textContent = ' ' + b.billNumber;
+                item.appendChild(num);
+                const titleText = document.createTextNode(' — ' + (b.title.length > 80 ? b.title.substring(0, 80) + '...' : b.title));
+                item.appendChild(titleText);
+                const statusSpan = document.createElement('span');
+                statusSpan.className = 'rep-bill-status';
+                statusSpan.textContent = b.status;
+                item.appendChild(statusSpan);
+                billsDiv.appendChild(item);
+            });
+            detail.appendChild(billsDiv);
+        }
+
+        // Contact info
+        if (rep.phone || rep.email) {
+            const contactDiv = document.createElement('div');
+            contactDiv.className = 'rep-hub-contact';
+            const contactTitle = document.createElement('h4');
+            contactTitle.textContent = 'Contact Information';
+            contactDiv.appendChild(contactTitle);
+            if (rep.phone) {
+                const phoneP = document.createElement('p');
+                phoneP.innerHTML = '<strong>Phone:</strong> ';
+                const phoneLink = document.createElement('a');
+                phoneLink.href = 'tel:' + rep.phone;
+                phoneLink.textContent = rep.phone;
+                phoneP.appendChild(phoneLink);
+                contactDiv.appendChild(phoneP);
+            }
+            if (rep.email) {
+                const emailP = document.createElement('p');
+                emailP.innerHTML = '<strong>Email:</strong> ';
+                const emailLink = document.createElement('a');
+                emailLink.href = 'mailto:' + rep.email;
+                emailLink.textContent = rep.email;
+                emailP.appendChild(emailLink);
+                contactDiv.appendChild(emailP);
+            }
+            detail.appendChild(contactDiv);
+        }
+
+        // Email template
+        const template = generateTemplate(rep, action);
+        const templateDiv = document.createElement('div');
+        templateDiv.className = 'rep-hub-template';
+        const templateTitle = document.createElement('h4');
+        templateTitle.textContent = 'Email Template';
+        templateDiv.appendChild(templateTitle);
+
+        const subjectField = document.createElement('div');
+        subjectField.className = 'template-field';
+        const subjectLabel = document.createElement('label');
+        subjectLabel.textContent = 'Subject';
+        subjectField.appendChild(subjectLabel);
+        const subjectInput = document.createElement('input');
+        subjectInput.type = 'text';
+        subjectInput.value = template.subject;
+        subjectInput.readOnly = true;
+        subjectField.appendChild(subjectInput);
+        templateDiv.appendChild(subjectField);
+
+        const bodyField = document.createElement('div');
+        bodyField.className = 'template-field';
+        const bodyLabel = document.createElement('label');
+        bodyLabel.textContent = 'Body';
+        bodyField.appendChild(bodyLabel);
+        const bodyTextarea = document.createElement('textarea');
+        bodyTextarea.rows = 8;
+        bodyTextarea.readOnly = true;
+        bodyTextarea.value = template.body;
+        bodyField.appendChild(bodyTextarea);
+        templateDiv.appendChild(bodyField);
+
+        const templateActions = document.createElement('div');
+        templateActions.className = 'template-actions';
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'btn btn-primary';
+        copyBtn.textContent = 'Copy to Clipboard';
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(bodyTextarea.value).then(() => {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => { copyBtn.textContent = 'Copy to Clipboard'; }, 2000);
+            });
+        });
+        templateActions.appendChild(copyBtn);
+        if (rep.email) {
+            const mailtoLink = document.createElement('a');
+            mailtoLink.className = 'btn btn-outline';
+            mailtoLink.href = `mailto:${rep.email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`;
+            mailtoLink.textContent = 'Open in Email App';
+            templateActions.appendChild(mailtoLink);
+        }
+        templateDiv.appendChild(templateActions);
+        detail.appendChild(templateDiv);
+
+        // Phone script
+        if (rep.phone) {
+            const phoneDiv = document.createElement('div');
+            phoneDiv.className = 'rep-hub-template';
+            const phoneTitle = document.createElement('h4');
+            phoneTitle.textContent = 'Phone Script';
+            phoneDiv.appendChild(phoneTitle);
+            const phoneTextarea = document.createElement('textarea');
+            phoneTextarea.rows = 6;
+            phoneTextarea.readOnly = true;
+            phoneTextarea.value = generatePhoneScript(rep, action);
+            phoneDiv.appendChild(phoneTextarea);
+            const phoneActions = document.createElement('div');
+            phoneActions.className = 'template-actions';
+            const phoneCopyBtn = document.createElement('button');
+            phoneCopyBtn.className = 'btn btn-primary';
+            phoneCopyBtn.textContent = 'Copy Script';
+            phoneCopyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(phoneTextarea.value).then(() => {
+                    phoneCopyBtn.textContent = 'Copied!';
+                    setTimeout(() => { phoneCopyBtn.textContent = 'Copy Script'; }, 2000);
+                });
+            });
+            phoneActions.appendChild(phoneCopyBtn);
+            const phoneLink = document.createElement('a');
+            phoneLink.className = 'btn btn-outline';
+            phoneLink.href = 'tel:' + rep.phone;
+            phoneLink.innerHTML = '&#128222; Open in Phone App';
+            phoneActions.appendChild(phoneLink);
+            phoneDiv.appendChild(phoneActions);
+            detail.appendChild(phoneDiv);
+        }
+
+        card.appendChild(detail);
+
+        // Expand/collapse toggle
+        expandBtn.addEventListener('click', () => {
+            const isOpen = detail.style.display !== 'none';
+            detail.style.display = isOpen ? 'none' : '';
+            expandBtn.textContent = isOpen ? 'Show Details' : 'Hide Details';
+        });
+
+        return card;
+    }
+
+    function generateTemplate(rep, action) {
+        const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
+        const lastName = rep.name.split(' ').pop();
+
+        if (action.type === 'oppose-bill' && action.bill) {
+            return {
+                subject: `Please OPPOSE ${action.bill.billNumber} - ${action.bill.title.substring(0, 60)}`,
+                body: `Dear ${title} ${lastName},
+
+I am writing as a concerned constituent to urge you to OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
+
+This legislation undermines public health protections that keep our communities safe. As your constituent, I urge you to stand with science and evidence-based policy by voting NO on this bill.
+
+Thank you for your time and service.
+
+Sincerely,
+[Your Name]
+[Your City, ${rep.state}]`
+            };
+        }
+
+        return {
+            subject: 'Will you take the SAFE Action pledge on science and public health?',
+            body: `Dear ${title} ${lastName},
+
+I am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.
+
+The SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.
+
+Taking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://safeaction.org/pledge.html
+
+Thank you for your time and service.
+
+Sincerely,
+[Your Name]
+[Your City, ${rep.state}]`
+        };
+    }
+
+    function generatePhoneScript(rep, action) {
+        const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
+        const lastName = rep.name.split(' ').pop();
+
+        if (action.type === 'oppose-bill' && action.bill) {
+            return `Hello, my name is [Your Name] and I'm a constituent from [Your City].
+
+I'm calling to ask ${title} ${lastName} to please OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
+
+This bill would weaken important public health protections and I believe it puts our community at risk. I urge the ${title} to vote NO on this bill.
+
+Thank you for taking my call.`;
+        }
+
+        return `Hello, my name is [Your Name] and I'm a constituent from [Your City].
+
+I'm calling to ask ${title} ${lastName} to take the SAFE Action pledge on science and public health.
+
+The pledge commits officials to supporting evidence-based public health measures, including strong vaccination programs. I believe this is important for our community.
+
+Thank you for taking my call.`;
+    }
+
+    function openEmailAction(rep) {
+        const action = rep.primaryAction || {};
+        const template = generateTemplate(rep, action);
+
+        if (rep.email) {
+            window.open(`mailto:${rep.email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`);
+        } else {
+            navigator.clipboard.writeText(`Subject: ${template.subject}\n\n${template.body}`).then(() => {
+                alert('Email template copied to clipboard! Find your representative\'s email on their official website.');
+            });
+        }
+        trackAction('email');
+    }
+
+    function trackAction(type) {
+        try {
+            const key = 'safe_actions';
+            const actions = JSON.parse(localStorage.getItem(key) || '{}');
+            actions[type] = (actions[type] || 0) + 1;
+            actions.total = (actions.total || 0) + 1;
+            localStorage.setItem(key, JSON.stringify(actions));
+        } catch (e) {}
+    }
+});

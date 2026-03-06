@@ -1,5 +1,5 @@
 // SAFE Action Service Worker
-const CACHE_NAME = 'safe-action-v12';
+const CACHE_NAME = 'safe-action-v13';
 const ASSETS = [
     '/',
     '/index.html',
@@ -25,10 +25,13 @@ const ASSETS = [
     '/js/tracker.js',
     '/js/directory.js',
     '/js/outreach.js',
+    '/js/my-reps.js',
+    '/js/my-reps-page.js',
     '/js/updates.js',
     '/js/pwa.js',
     '/data/bills.json',
-    '/data/legislators.json'
+    '/data/legislators.json',
+    '/data/seats.json'
 ];
 
 // Install: cache core assets

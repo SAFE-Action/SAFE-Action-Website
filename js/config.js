@@ -28,6 +28,10 @@ const SAFE_CONFIG = {
     // Set to true once you've configured the Google Script URL above
     IS_CONFIGURED: false,
 
+    // Google Civic Information API key (free tier, 25k req/day)
+    // Get one at: https://console.cloud.google.com/apis/credentials
+    GOOGLE_CIVIC_API_KEY: '',
+
     // All 50 states + DC + Federal
     STATES: {
         'US': 'Federal (U.S. Congress)',
