@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounterDisplay('impact-emails', stored.emails);
         updateCounterDisplay('impact-calls', stored.calls);
 
+        // Load bill count from data file
+        LegislationAPI.getLegislation(null).then(bills => {
+            const active = bills.filter(b => b.isActive === 'Yes').length;
+            updateCounterDisplay('impact-bills', active || bills.length);
+        }).catch(() => {});
+
         // Animate counters when they scroll into view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
