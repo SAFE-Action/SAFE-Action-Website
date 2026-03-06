@@ -15,10 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounterDisplay('impact-emails', stored.emails);
         updateCounterDisplay('impact-calls', stored.calls);
 
-        // Load bill count from data file
+        // Load bill count from data file (async)
         LegislationAPI.getLegislation(null).then(bills => {
             const active = bills.filter(b => b.isActive === 'Yes').length;
-            updateCounterDisplay('impact-bills', active || bills.length);
+            const count = active || bills.length;
+            updateCounterDisplay('impact-bills', count);
+            // Re-animate just this counter since data arrived async
+            const el = document.getElementById('impact-bills');
+            if (el) animateSingleCounter(el.querySelector('.counter'), count);
         }).catch(() => {});
 
         // Animate counters when they scroll into view
@@ -35,9 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (impactSection) observer.observe(impactSection);
     }
 
+    function animateSingleCounter(counter, target) {
+        if (!counter || !target) return;
+        const duration = 1500;
+        const startTime = performance.now();
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.floor(target * eased).toLocaleString();
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
     function animateCounters() {
         document.querySelectorAll('.counter').forEach(counter => {
             const target = parseInt(counter.textContent.replace(/,/g, ''));
+            if (!target) return; // skip counters that haven't loaded yet
             const duration = 1500;
             const start = 0;
             const startTime = performance.now();
