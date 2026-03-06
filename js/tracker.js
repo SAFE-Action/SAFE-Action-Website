@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
             filtered = filtered.filter(b => b.billType === 'pro');
         } else if (stance === 'anti') {
             filtered = filtered.filter(b => b.billType === 'anti');
+        } else if (stance === 'monitor') {
+            filtered = filtered.filter(b => b.billType === 'monitor');
         }
 
         if (level) filtered = filtered.filter(b => b.level === level);
@@ -207,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         billGrid.innerHTML = bills.map(bill => {
-            const typeClass = bill.billType === 'pro' ? 'pro-science' : 'anti-science';
+            const typeClass = bill.billType === 'pro' ? 'pro-science' : (bill.billType === 'monitor' ? 'monitor' : 'anti-science');
             const stanceClass = bill.stance ? bill.stance.toLowerCase() : '';
             const impactClass = bill.impact ? bill.impact.toLowerCase() : '';
             const levelClass = bill.level === 'Federal' ? 'federal' : (bill.level === 'Local' ? 'local' : '');
@@ -215,8 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const statusDotClass = isDead ? 'dead' : (bill.impact === 'High' ? 'urgent' : 'active');
             const summaryExcerpt = bill.summary ? (bill.summary.length > 150 ? bill.summary.substring(0, 150) + '...' : bill.summary) : '';
             const stateName = (selectedState === 'ALL' && bill.state !== 'US') ? (SAFE_CONFIG.STATES[bill.state] || bill.state) : '';
-            const billTypeLabel = bill.billType === 'pro' ? 'PRO-SCIENCE' : 'ANTI-SCIENCE';
-            const billTypeClass = bill.billType === 'pro' ? 'badge-pro' : 'badge-anti';
+            const billTypeLabel = bill.billType === 'pro' ? 'PRO-SCIENCE' : (bill.billType === 'monitor' ? 'MONITORING' : 'ANTI-SCIENCE');
+            const billTypeClass = bill.billType === 'pro' ? 'badge-pro' : (bill.billType === 'monitor' ? 'badge-monitor' : 'badge-anti');
             const isSelected = selectedBills.has(bill.billId);
 
             return `

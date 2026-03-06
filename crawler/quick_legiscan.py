@@ -80,12 +80,43 @@ async def api_call(client, op, **params):
         return None
 
 
+RELEVANCE_KEYWORDS = [
+    "vaccine", "vaccin", "immuniz", "immunis", "inoculat",
+    "public health", "communicable disease", "infectious disease",
+    "exemption", "mandate", "medical freedom", "informed consent",
+    "fluorid", "pandemic", "epidemic", "quarantine", "isolation order",
+    "school health", "childhood disease", "measles", "polio", "whooping",
+    "health freedom", "bodily autonomy", "parental rights",
+    "vaccine injury", "vaers", "adverse event",
+]
+
+
+def is_relevant(title, description=""):
+    """Check if a bill is actually about science/health topics we track."""
+    text = f"{title} {description}".lower()
+    return any(kw in text for kw in RELEVANCE_KEYWORDS)
+
+
 def classify_bill(title, description=""):
     text = f"{title} {description}".lower()
     anti = sum(1 for kw in ANTI_KEYWORDS if kw in text)
     pro = sum(1 for kw in PRO_KEYWORDS if kw in text)
-    bill_type = "pro" if pro > anti else "anti"
-    stance = "Support" if pro > anti else "Oppose"
+
+    if anti == 0 and pro == 0:
+        # No signal — default to monitor/neutral, not anti
+        bill_type = "monitor"
+        stance = "Monitor"
+    elif pro > anti:
+        bill_type = "pro"
+        stance = "Support"
+    elif anti > pro:
+        bill_type = "anti"
+        stance = "Oppose"
+    else:
+        # Tied — default to monitor
+        bill_type = "monitor"
+        stance = "Monitor"
+
     category = "public-health"
     best = 0
     for cat, patterns in CATEGORY_PATTERNS.items():
@@ -215,6 +246,11 @@ async def main():
                     if relevance and relevance < 50:
                         continue
 
+                    # Relevance check: skip bills that don't mention health/science topics
+                    bill_title = val.get("title", "")
+                    if not is_relevant(bill_title):
+                        continue
+
                     all_bills[bid] = {
                         "_legiscan_id": val.get("bill_id"),
                         "_state": state,
@@ -277,6 +313,11 @@ async def main():
 
             bill = data.get("bill", {})
             if bill:
+                # Double-check relevance with full description
+                desc = bill.get("description", "")
+                title = bill.get("title", "")
+                if not is_relevant(title, desc):
+                    continue
                 enriched.append(normalize_bill(bill, entry["_state"]))
 
         print(f"\nDone! {len(enriched)} bills enriched ({requests_used} total API requests)")

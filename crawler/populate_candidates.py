@@ -20,6 +20,25 @@ RATE_LIMIT = 0.35  # seconds between requests
 
 last_request = 0
 
+# State name to code mapping (Congress.gov returns full names)
+STATE_NAME_TO_CODE = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+    "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+    "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
+    "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+    "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+    "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+    "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+    "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+    "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+    "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+    "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC",
+    "American Samoa": "AS", "Guam": "GU", "Northern Mariana Islands": "MP",
+    "Puerto Rico": "PR", "Virgin Islands": "VI",
+}
+
 
 async def rate_limited_get(client, url, **kwargs):
     global last_request
@@ -41,7 +60,7 @@ async def rate_limited_get(client, url, **kwargs):
 # https://api.congress.gov/v3/member
 
 CONGRESS_API = "https://api.congress.gov/v3"
-CONGRESS_API_KEY = "ioZ2kWqXLnTjfJMU8lNWOWWXNaiSf8s6Gq0xkDXv"  # public demo key from docs
+CONGRESS_API_KEY = "6f7LARVfphwm0brj3Z9HkorUXhzfE3fafSrM00eI"
 
 
 async def fetch_all_congress_members(client):
@@ -90,7 +109,9 @@ def match_congress_to_seats(members, seats):
     for member in members:
         name = member.get("name", "")
         party_code = member.get("partyName", "")
-        state = member.get("state", "")
+        state_raw = member.get("state", "")
+        # Convert full state name to two-letter code
+        state = STATE_NAME_TO_CODE.get(state_raw, state_raw)
         district = member.get("district")
         terms = member.get("terms", {}).get("item", [])
 
@@ -119,31 +140,49 @@ def match_congress_to_seats(members, seats):
                 seat_id = f"US-HOUSE-{state}-AL"
 
             if seat_id in seat_map:
+                # Format name from "Last, First" to "First Last"
+                formatted_name = name
+                if "," in name:
+                    parts = name.split(",", 1)
+                    last = parts[0].strip()
+                    first = parts[1].strip() if len(parts) > 1 else ""
+                    formatted_name = f"{first} {last}".strip()
+
+                depiction = member.get("depiction", {})
                 seat_map[seat_id]["incumbent"] = {
-                    "name": name,
+                    "name": formatted_name,
                     "party": party,
                     "bioguideId": member.get("bioguideId", ""),
+                    "photoUrl": depiction.get("imageUrl", ""),
                 }
                 matched += 1
 
         elif chamber == "Senate":
-            # Try to match to Class II seat
+            # Try to match to Class II seat (up in 2026)
             seat_id = f"US-SENATE-{state}-II"
             if seat_id in seat_map:
-                # Check if this is actually the Class II senator
-                # The Class II data already has incumbents, so verify/update
                 existing = seat_map[seat_id].get("incumbent", {})
-                if existing and existing.get("name"):
-                    # Already have incumbent from our static data
-                    # Add bioguideId if available
+                # Match by last name if we have static incumbent
+                member_last = name.split(",")[0].strip().lower() if "," in name else name.split()[-1].strip().lower()
+                existing_name = (existing.get("name", "") if existing else "").lower()
+
+                if existing_name and member_last in existing_name:
+                    # This senator matches the Class II seat - enrich with bioguideId + photo
                     existing["bioguideId"] = member.get("bioguideId", "")
-                else:
+                    depiction = member.get("depiction", {})
+                    if depiction.get("imageUrl"):
+                        existing["photoUrl"] = depiction["imageUrl"]
+                    matched += 1
+                elif not existing_name:
+                    # No existing incumbent yet, set it
+                    depiction = member.get("depiction", {})
                     seat_map[seat_id]["incumbent"] = {
                         "name": name,
                         "party": party,
                         "bioguideId": member.get("bioguideId", ""),
+                        "photoUrl": depiction.get("imageUrl", ""),
                     }
-                matched += 1
+                    matched += 1
 
     print(f"  Matched {matched} Congress members to seats")
     return seats
@@ -154,7 +193,7 @@ def match_congress_to_seats(members, seats):
 # Get candidates who have filed for 2026
 
 FEC_API = "https://api.open.fec.gov/v1"
-FEC_API_KEY = "DEMO_KEY"  # Free demo key, 1000 requests/hr
+FEC_API_KEY = "UVND2QWrvna2qkOqHj2jCbzIbRUfKGp5fKeVSMZt"
 
 
 async def fetch_fec_candidates(client, state=None, office="H"):

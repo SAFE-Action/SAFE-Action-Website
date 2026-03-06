@@ -1821,6 +1821,19 @@ a:hover { color: var(--red); }
     letter-spacing: 0.5px;
 }
 
+.badge-monitor {
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.badge-stance.monitor {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
 /* State Badge (for "All States" view) */
 .badge-state {
     background: var(--blue);
@@ -4398,4 +4411,248 @@ input.warning {
 
 .media-info-item a:hover {
     text-decoration: underline;
+}
+
+/* ============================================
+   2026 Elections Page
+   ============================================ */
+
+/* Seat Card Styles */
+.seat-card {
+    padding: 18px;
+    cursor: default;
+}
+
+.seat-card-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.seat-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.seat-incumbent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: var(--off-white);
+    border-radius: var(--radius-sm);
+}
+
+.seat-incumbent-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-light);
+    flex-shrink: 0;
+}
+
+.seat-incumbent-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.seat-no-incumbent {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    background: var(--off-white);
+    border-radius: var(--radius-sm);
+}
+
+.seat-candidates {
+    border-top: 1px solid var(--border-light);
+    padding-top: 10px;
+}
+
+.seat-candidates-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.seat-candidates-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.seat-candidate-chip {
+    display: inline-block;
+    font-size: 0.78rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: var(--off-white);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    line-height: 1.4;
+}
+
+.seat-candidate-chip.republican {
+    background: #FEE2E2;
+    border-color: #FECACA;
+    color: #991B1B;
+}
+
+.seat-candidate-chip.democrat {
+    background: #DBEAFE;
+    border-color: #BFDBFE;
+    color: #1E40AF;
+}
+
+.seat-candidate-chip.independent {
+    background: #EDE9FE;
+    border-color: #DDD6FE;
+    color: #5B21B6;
+}
+
+.seat-candidate-chip.libertarian {
+    background: #FEF3C7;
+    border-color: #FDE68A;
+    color: #92400E;
+}
+
+.seat-candidate-chip.more {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    font-weight: 600;
+}
+
+.chip-party {
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.seat-no-candidates {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+}
+
+/* Body type badges */
+.badge-body {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-us-house { background: var(--blue); color: white; }
+.badge-us-senate { background: var(--red); color: white; }
+.badge-governor { background: #7C3AED; color: white; }
+.badge-state-house { background: #059669; color: white; }
+.badge-state-senate { background: #0891B2; color: white; }
+
+/* Table view */
+.seat-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--white);
+}
+
+.seat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.seat-table th {
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+}
+
+.seat-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-dark);
+}
+
+.seat-table tr:hover td {
+    background: var(--off-white);
+}
+
+.text-muted {
+    color: var(--text-light);
+}
+
+/* View toggle buttons */
+.results-toolbar-right {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-view-toggle {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: all var(--transition);
+}
+
+.btn-view-toggle.active {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+}
+
+.btn-view-toggle:hover:not(.active) {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+/* Load more */
+.load-more-wrap {
+    text-align: center;
+    padding: 24px 0;
+}
+
+.load-more-hint {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* Responsive elections */
+@media (max-width: 768px) {
+    .seat-card-title {
+        font-size: 0.95rem;
+    }
+    .seat-incumbent {
+        flex-direction: column;
+        text-align: center;
+    }
 }
