@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('pledge-form');
+    if (!form) return;
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('success-message');
     const errorMsg = document.getElementById('error-message');
