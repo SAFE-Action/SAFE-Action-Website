@@ -30,7 +30,7 @@ const SAFE_CONFIG = {
 
     // Google Civic Information API key (free tier, 25k req/day)
     // Get one at: https://console.cloud.google.com/apis/credentials
-    GOOGLE_CIVIC_API_KEY: '',
+    GOOGLE_CIVIC_API_KEY: 'AIzaSyBapcQaTbdLhAZVc5p9KUckaw5zk_hLtzs',
 
     // All 50 states + DC + Federal
     STATES: {

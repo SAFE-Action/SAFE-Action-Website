@@ -17,7 +17,8 @@ const MyRepsHub = {
             return null;
         }
 
-        const url = `https://www.googleapis.com/civicinfo/v2/representatives?address=${encodeURIComponent(address)}&key=${apiKey}`;
+        // Use divisionsByAddress (representatives endpoint was retired April 2025)
+        const url = `https://civicinfo.googleapis.com/civicinfo/v2/divisionsByAddress?address=${encodeURIComponent(address)}&key=${apiKey}`;
         try {
             const resp = await fetch(url);
             if (!resp.ok) {
@@ -27,15 +28,23 @@ const MyRepsHub = {
             const data = await resp.json();
             this._civicCache = data;
 
-            // Persist address
+            // Extract state and districts from OCD division IDs
+            const parsed = this._parseDivisionsResponse(data);
+            if (!parsed.state) {
+                throw new Error('Could not determine state from address');
+            }
+
+            // Persist address and parsed divisions
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify({
                 address: address,
                 timestamp: Date.now(),
-                officials: data.officials,
-                offices: data.offices,
+                state: parsed.state,
+                districts: parsed.districts,
+                normalizedAddress: data.normalizedInput || {},
             }));
 
-            return this._parseCivicResponse(data);
+            // Use parsed divisions to load reps from seats.json
+            return this._loadRepsFromDivisions(parsed);
         } catch (e) {
             console.error('Civic API error:', e);
             return null;
@@ -59,76 +68,126 @@ const MyRepsHub = {
         localStorage.removeItem(this.STORAGE_KEY);
     },
 
-    _parseCivicResponse(data) {
-        const officials = data.officials || [];
-        const offices = data.offices || [];
-        const reps = [];
+    _parseDivisionsResponse(data) {
+        const divisions = data.divisions || {};
+        const normalizedInput = data.normalizedInput || {};
+        let state = '';
+        const districts = [];
 
-        offices.forEach(office => {
-            const level = this._classifyOfficeLevel(office);
-            const body = this._classifyOfficeBody(office);
-            const indices = office.officialIndices || [];
+        for (const [ocdId, info] of Object.entries(divisions)) {
+            // Extract state from OCD ID: ocd-division/country:us/state:tx
+            const stateMatch = ocdId.match(/(?:state|district):(\w{2})(?:\/|$)/i);
+            if (stateMatch && !state) {
+                state = stateMatch[1].toUpperCase();
+            }
 
-            indices.forEach(idx => {
-                const official = officials[idx];
-                if (!official) return;
-
-                const party = (official.party || '').charAt(0);
-                const partyFull = official.party || '';
-                const phone = (official.phones || [])[0] || '';
-                const email = (official.emails || [])[0] || '';
-                const photoUrl = official.photoUrl || '';
-                const urls = official.urls || [];
-                const channels = official.channels || [];
-
-                reps.push({
-                    name: official.name,
-                    party: party === 'R' ? 'R' : party === 'D' ? 'D' : party === 'I' ? 'I' : party,
-                    partyFull: partyFull,
-                    office: office.name,
-                    level: level,
-                    body: body,
-                    phone: phone,
-                    email: email,
-                    photoUrl: photoUrl,
-                    urls: urls,
-                    channels: channels,
-                    divisionId: office.divisionId || '',
-                    state: this._extractState(office.divisionId || ''),
+            // Extract congressional district: ocd-division/country:us/state:tx/cd:10
+            const cdMatch = ocdId.match(/\/cd:(\S+)/i);
+            if (cdMatch) {
+                districts.push({
+                    type: 'cd',
+                    number: cdMatch[1],
+                    name: info.name || '',
+                    ocdId: ocdId,
                 });
-            });
+            }
+
+            // Extract state legislative districts
+            const sldlMatch = ocdId.match(/\/sldl:(\S+)/i);
+            if (sldlMatch) {
+                districts.push({
+                    type: 'state-house',
+                    number: sldlMatch[1],
+                    name: info.name || '',
+                    ocdId: ocdId,
+                });
+            }
+            const slduMatch = ocdId.match(/\/sldu:(\S+)/i);
+            if (slduMatch) {
+                districts.push({
+                    type: 'state-senate',
+                    number: slduMatch[1],
+                    name: info.name || '',
+                    ocdId: ocdId,
+                });
+            }
+        }
+
+        // Fallback: try normalizedInput for state
+        if (!state && normalizedInput.state) {
+            state = normalizedInput.state.toUpperCase();
+        }
+
+        return { state, districts };
+    },
+
+    async _loadRepsFromDivisions(parsed) {
+        const { state, districts } = parsed;
+        const cdNumbers = districts.filter(d => d.type === 'cd').map(d => d.number);
+
+        // Load seats.json and match to the user's specific districts
+        const [seatsData, legislators, bills] = await Promise.all([
+            fetch('data/seats.json').then(r => r.ok ? r.json() : { seats: [] }).catch(() => ({ seats: [] })),
+            typeof IntelligenceAPI !== 'undefined' ? IntelligenceAPI.getLegislators(state).catch(() => []) : [],
+            typeof LegislationAPI !== 'undefined' ? LegislationAPI.getLegislation(state).catch(() => []) : [],
+        ]);
+
+        const seats = (seatsData.seats || []).filter(s => {
+            if (s.state !== state) return false;
+            if (!s.incumbent) return false;
+
+            // US Senate: always include for the state
+            if (s.body === 'US Senate') return true;
+            // Governor: always include for the state
+            if (s.body === 'Governor') return true;
+            // US House: match by district number
+            if (s.body === 'US House') {
+                if (cdNumbers.length === 0) return true; // at-large or no district info
+                const seatDistrict = String(s.district || '').replace(/^0+/, '');
+                // Handle at-large districts
+                if (seatDistrict.toLowerCase() === 'at-large' || seatDistrict === '') {
+                    return true;
+                }
+                return cdNumbers.some(cd => {
+                    const cdClean = String(cd).replace(/^0+/, '');
+                    return cdClean === seatDistrict || cd === 'at-large';
+                });
+            }
+            // State legislature: include for now (can refine later with sldl/sldu)
+            if (s.body === 'State House' || s.body === 'State Senate') return true;
+            return false;
         });
 
-        return reps;
-    },
+        this._bills = bills;
 
-    _classifyOfficeLevel(office) {
-        const levels = office.levels || [];
-        if (levels.includes('country')) return 'Federal';
-        if (levels.includes('administrativeArea1')) return 'State';
-        if (levels.includes('locality') || levels.includes('administrativeArea2')) return 'Local';
-        // Fallback: check division ID
-        const div = office.divisionId || '';
-        if (div.includes('state') && !div.includes('place') && !div.includes('county')) {
-            return div.includes('cd:') ? 'Federal' : 'State';
-        }
-        return 'Other';
-    },
+        return seats.map(seat => {
+            const inc = seat.incumbent || {};
+            const rep = {
+                name: inc.name || (seat.body + ' ' + (seat.district || '')).trim(),
+                party: inc.party || '?',
+                partyFull: inc.party === 'R' ? 'Republican' : inc.party === 'D' ? 'Democrat' : inc.party || '',
+                office: seat.body + (seat.district ? ' District ' + seat.district : ''),
+                level: seat.level || 'Federal',
+                body: seat.body,
+                phone: '',
+                email: '',
+                photoUrl: inc.photoUrl || '',
+                state: state,
+            };
 
-    _classifyOfficeBody(office) {
-        const name = (office.name || '').toLowerCase();
-        if (name.includes('u.s. senate') || name.includes('united states senate')) return 'US Senate';
-        if (name.includes('u.s. house') || name.includes('united states house')) return 'US House';
-        if (name.includes('governor')) return 'Governor';
-        if (name.includes('state senate') || name.includes('state upper')) return 'State Senate';
-        if (name.includes('state house') || name.includes('state lower') || name.includes('state representative') || name.includes('assembly')) return 'State House';
-        return office.name || '';
-    },
+            const intelMatch = this._matchIntelligence(rep, legislators);
+            const repBills = this._findRepBills(rep, bills);
+            const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
 
-    _extractState(divisionId) {
-        // e.g. "ocd-division/country:us/state:tx/cd:10"
-        const match = divisionId.match(/state:(\w{2})/i);
-        return match ? match[1].toUpperCase() : '';
+            return {
+                ...rep,
+                seat: seat,
+                intel: intelMatch,
+                bills: repBills,
+                primaryAction: primaryAction,
+                candidates: seat.candidates || [],
+            };
+        });
     },
 
     // ── Data Matching ─────────────────────────────
