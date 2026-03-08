@@ -151,7 +151,60 @@
     <div id="tab-browse-bills" class="tab-panel" style="display:none;">
         <section class="tracker-section">
             <div class="container">
-                <p style="text-align:center;color:#666;padding:3em 0;">Browse Bills content will be added here.</p>
+                <h2 style="text-align:center;margin-bottom:0.5em;">Browse Anti-Science Legislation</h2>
+                <p style="text-align:center;color:#666;margin-bottom:2em;">Track bills across all 50 states that threaten public health and scientific freedom.</p>
+
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="bb-state">State</label>
+                        <select id="bb-state"><option value="">All States</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="bb-stance">Type</label>
+                        <select id="bb-stance">
+                            <option value="">All Bills</option>
+                            <option value="anti">Anti-Science</option>
+                            <option value="pro">Pro-Science</option>
+                            <option value="monitor">Monitoring</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="bb-status">Status</label>
+                        <select id="bb-status">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active Only</option>
+                            <option value="Introduced">Introduced</option>
+                            <option value="In Committee">In Committee</option>
+                            <option value="Passed Committee">Passed Committee</option>
+                            <option value="Passed One Chamber">Passed One Chamber</option>
+                            <option value="Passed Both Chambers">Passed Both Chambers</option>
+                            <option value="Signed into Law">Signed into Law</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="bb-impact">Priority</label>
+                        <select id="bb-impact">
+                            <option value="">All</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="bb-search">Search</label>
+                        <input type="text" id="bb-search" placeholder="Search bills...">
+                    </div>
+                </div>
+
+                <div id="bb-count" style="text-align:center;color:#666;margin:1em 0;"></div>
+                <div id="bb-grid" class="bill-grid"></div>
+                <div id="bb-empty" class="empty-state" style="display:none;">
+                    <p>No bills match your filters.</p>
+                </div>
+                <div id="bb-loading" class="loading-spinner" style="display:none;">
+                    <div class="spinner"></div>
+                    <p>Loading legislation data...</p>
+                </div>
             </div>
         </section>
     </div>

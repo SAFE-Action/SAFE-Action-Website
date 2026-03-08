@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 target.style.display = '';
                 target.classList.add('active');
             }
+            // Lazy-init bill browser
+            if (tabId === 'browse-bills') {
+                BillBrowser.init();
+            }
         });
     });
 
@@ -612,3 +616,207 @@ Thank you for taking my call.`;
         } catch (e) {}
     }
 });
+
+// ============================================
+// Bill Browser (Browse Bills Tab)
+// ============================================
+var BillBrowser = {
+    _initialized: false,
+    _allBills: [],
+
+    init: function() {
+        if (this._initialized) return;
+        this._initialized = true;
+
+        // Populate state dropdown
+        var stateSelect = document.getElementById('bb-state');
+        if (stateSelect && typeof SAFE_CONFIG !== 'undefined') {
+            var states = SAFE_CONFIG.STATES;
+            Object.keys(states).forEach(function(code) {
+                if (code === 'US') return; // Skip federal — bills are state-level
+                var opt = document.createElement('option');
+                opt.value = code;
+                opt.textContent = states[code];
+                stateSelect.appendChild(opt);
+            });
+        }
+
+        // Add filter listeners
+        var self = this;
+        ['bb-state', 'bb-stance', 'bb-status', 'bb-impact'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.addEventListener('change', function() { self.render(); });
+        });
+        var searchEl = document.getElementById('bb-search');
+        if (searchEl) {
+            var debounceTimer;
+            searchEl.addEventListener('input', function() {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(function() { self.render(); }, 300);
+            });
+        }
+
+        // Load data
+        this.loadBills();
+    },
+
+    loadBills: function() {
+        var self = this;
+        var loading = document.getElementById('bb-loading');
+        if (loading) loading.style.display = '';
+
+        if (typeof LegislationAPI === 'undefined') {
+            if (loading) loading.style.display = 'none';
+            return;
+        }
+
+        LegislationAPI.getLegislation(null).then(function(bills) {
+            self._allBills = bills || [];
+            if (loading) loading.style.display = 'none';
+            self.render();
+        }).catch(function(err) {
+            console.error('Bill browser load error:', err);
+            if (loading) loading.style.display = 'none';
+            self.render();
+        });
+    },
+
+    getFilteredBills: function() {
+        var state = (document.getElementById('bb-state') || {}).value || '';
+        var stance = (document.getElementById('bb-stance') || {}).value || '';
+        var status = (document.getElementById('bb-status') || {}).value || '';
+        var impact = (document.getElementById('bb-impact') || {}).value || '';
+        var search = ((document.getElementById('bb-search') || {}).value || '').toLowerCase().trim();
+
+        return this._allBills.filter(function(bill) {
+            if (state && bill.state !== state) return false;
+            if (stance && bill.billType !== stance) return false;
+            if (status === 'active') {
+                if (bill.isActive !== 'Yes') return false;
+            } else if (status && bill.status !== status) {
+                return false;
+            }
+            if (impact && bill.impact !== impact) return false;
+            if (search) {
+                var haystack = [
+                    bill.billNumber || '',
+                    bill.title || '',
+                    bill.summary || '',
+                    bill.sponsor || '',
+                    bill.state || ''
+                ].join(' ').toLowerCase();
+                if (haystack.indexOf(search) === -1) return false;
+            }
+            return true;
+        });
+    },
+
+    render: function() {
+        var grid = document.getElementById('bb-grid');
+        var countEl = document.getElementById('bb-count');
+        var emptyEl = document.getElementById('bb-empty');
+        if (!grid) return;
+
+        var bills = this.getFilteredBills();
+
+        // Update count
+        if (countEl) {
+            countEl.textContent = bills.length + ' bill' + (bills.length !== 1 ? 's' : '') + ' found';
+        }
+
+        // Clear grid
+        grid.innerHTML = '';
+
+        if (bills.length === 0) {
+            if (emptyEl) emptyEl.style.display = '';
+            return;
+        }
+        if (emptyEl) emptyEl.style.display = 'none';
+
+        // Sort: high impact first, then by state
+        var impactOrder = { 'High': 0, 'Medium': 1, 'Low': 2 };
+        bills.sort(function(a, b) {
+            var ia = impactOrder[a.impact] !== undefined ? impactOrder[a.impact] : 3;
+            var ib = impactOrder[b.impact] !== undefined ? impactOrder[b.impact] : 3;
+            if (ia !== ib) return ia - ib;
+            return (a.state || '').localeCompare(b.state || '');
+        });
+
+        // Render cards
+        var self = this;
+        bills.forEach(function(bill) {
+            grid.appendChild(self.buildCard(bill));
+        });
+    },
+
+    buildCard: function(bill) {
+        var card = document.createElement('a');
+        card.href = 'action.html?bill=' + encodeURIComponent(bill.billId || '');
+        card.className = 'bill-card';
+        if (bill.billType === 'anti') card.classList.add('stance-oppose');
+        else if (bill.billType === 'pro') card.classList.add('stance-support');
+        else card.classList.add('stance-monitor');
+
+        // Header
+        var header = document.createElement('div');
+        header.className = 'bill-card-header';
+
+        var number = document.createElement('span');
+        number.className = 'bill-card-number';
+        number.textContent = bill.billNumber || 'Unknown';
+        header.appendChild(number);
+
+        var stateBadge = document.createElement('span');
+        stateBadge.className = 'bill-card-state';
+        stateBadge.textContent = bill.state || '';
+        stateBadge.style.cssText = 'background:#3C3B6E;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
+        header.appendChild(stateBadge);
+
+        card.appendChild(header);
+
+        // Title
+        var title = document.createElement('h3');
+        title.className = 'bill-card-title';
+        title.textContent = bill.title || 'Untitled';
+        card.appendChild(title);
+
+        // Summary (truncated)
+        if (bill.summary) {
+            var summary = document.createElement('p');
+            summary.className = 'bill-card-summary';
+            var text = bill.summary;
+            if (text.length > 120) text = text.substring(0, 120) + '...';
+            summary.textContent = text;
+            card.appendChild(summary);
+        }
+
+        // Meta row
+        var meta = document.createElement('div');
+        meta.className = 'bill-card-meta';
+
+        var statusSpan = document.createElement('span');
+        statusSpan.textContent = bill.status || 'Unknown';
+        meta.appendChild(statusSpan);
+
+        if (bill.impact) {
+            var impactSpan = document.createElement('span');
+            impactSpan.textContent = bill.impact + ' Priority';
+            impactSpan.style.cssText = 'font-weight:600;' + (bill.impact === 'High' ? 'color:#dc2626;' : bill.impact === 'Medium' ? 'color:#d97706;' : 'color:#6b7280;');
+            meta.appendChild(impactSpan);
+        }
+
+        card.appendChild(meta);
+
+        // Footer with sponsor
+        if (bill.sponsor) {
+            var footer = document.createElement('div');
+            footer.className = 'bill-card-footer';
+            var sponsorText = document.createElement('span');
+            sponsorText.textContent = 'Sponsor: ' + bill.sponsor;
+            footer.appendChild(sponsorText);
+            card.appendChild(footer);
+        }
+
+        return card;
+    }
+};
