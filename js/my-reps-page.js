@@ -3,6 +3,35 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ── Tab Switching ────────────────────────────
+    document.querySelectorAll('.sub-nav-link[data-tab]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var tabId = this.getAttribute('data-tab');
+            // Update active button
+            document.querySelectorAll('.sub-nav-link[data-tab]').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+            // Update active panel
+            document.querySelectorAll('.tab-panel').forEach(function(panel) {
+                panel.style.display = 'none';
+                panel.classList.remove('active');
+            });
+            var target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.style.display = '';
+                target.classList.add('active');
+            }
+        });
+    });
+
+    // Handle hash-based tab navigation (e.g., outreach.html#take-pledge)
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+        var hashBtn = document.querySelector('.sub-nav-link[data-tab="' + hash + '"]');
+        if (hashBtn) hashBtn.click();
+    }
+
     const addressForm = document.getElementById('address-form');
     const addressInput = document.getElementById('address-input');
     const addressSection = document.getElementById('address-section');
@@ -127,23 +156,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function doAddressLookup(address) {
         showLoading();
-        const civicReps = await MyRepsHub.lookupAddress(address);
-        if (!civicReps || civicReps.length === 0) {
+        const reps = await MyRepsHub.lookupAddress(address);
+        if (!reps || reps.length === 0) {
             showError('Could not find representatives for that address. Please check the address and try again.');
             return;
         }
         showSavedAddress(address);
-        const enriched = await MyRepsHub.enrichReps(civicReps);
         hideLoading();
-        renderReps(enriched);
+        renderReps(reps);
     }
 
     async function loadFromSaved(saved) {
         showLoading();
-        const civicReps = MyRepsHub._parseCivicResponse({ officials: saved.officials, offices: saved.offices });
-        const enriched = await MyRepsHub.enrichReps(civicReps);
-        hideLoading();
-        renderReps(enriched);
+        // New saved format has state + districts instead of officials/offices
+        if (saved.state) {
+            const parsed = { state: saved.state, districts: saved.districts || [] };
+            const reps = await MyRepsHub._loadRepsFromDivisions(parsed);
+            hideLoading();
+            renderReps(reps);
+        } else {
+            // Legacy fallback: use state from address
+            hideLoading();
+            showError('Saved address format outdated. Please enter your address again.');
+        }
     }
 
     async function doStateLookup(stateCode) {

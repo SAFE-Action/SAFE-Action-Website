@@ -5002,3 +5002,16 @@ input.warning {
         white-space: normal;
     }
 }
+
+/* Tab Panels */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.sub-nav-link[data-tab] {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: inherit;
+}
