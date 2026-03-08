@@ -403,6 +403,33 @@ document.addEventListener('DOMContentLoaded', () => {
             detail.appendChild(billsDiv);
         }
 
+        // Candidates running for this seat
+        if (rep.candidates && rep.candidates.length > 0) {
+            var candSection = document.createElement('div');
+            candSection.className = 'rep-hub-candidates';
+
+            var candTitle = document.createElement('h4');
+            candTitle.textContent = 'Candidates Running for This Seat';
+            candSection.appendChild(candTitle);
+
+            var candList = document.createElement('div');
+            candList.className = 'candidate-chip-list';
+
+            rep.candidates.forEach(function(c) {
+                var chip = document.createElement('span');
+                chip.className = 'candidate-chip';
+                var partyLetter = (c.party || '?').charAt(0).toUpperCase();
+                if (partyLetter === 'R') chip.classList.add('party-r');
+                else if (partyLetter === 'D') chip.classList.add('party-d');
+                else chip.classList.add('party-i');
+                chip.textContent = c.name + ' (' + (c.party || '?') + ')';
+                candList.appendChild(chip);
+            });
+
+            candSection.appendChild(candList);
+            detail.appendChild(candSection);
+        }
+
         // Contact info
         if (rep.phone || rep.email) {
             const contactDiv = document.createElement('div');

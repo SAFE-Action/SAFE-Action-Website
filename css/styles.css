@@ -5015,3 +5015,12 @@ input.warning {
     color: inherit;
     padding: inherit;
 }
+
+/* Candidate Chips in Rep Cards */
+.rep-hub-candidates { margin-top: 1.5em; padding-top: 1em; border-top: 1px solid #e5e7eb; }
+.rep-hub-candidates h4 { font-size: 0.85rem; color: #374151; margin-bottom: 0.5em; }
+.candidate-chip-list { display: flex; flex-wrap: wrap; gap: 0.4em; }
+.candidate-chip { font-size: 0.75rem; padding: 0.25em 0.6em; border-radius: 999px; background: #f3f4f6; color: #374151; }
+.candidate-chip.party-r { background: #fee2e2; color: #991b1b; }
+.candidate-chip.party-d { background: #dbeafe; color: #1e40af; }
+.candidate-chip.party-i { background: #fef3c7; color: #92400e; }
