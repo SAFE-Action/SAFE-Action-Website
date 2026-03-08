@@ -409,21 +409,129 @@ document.addEventListener('DOMContentLoaded', () => {
             candSection.className = 'rep-hub-candidates';
 
             var candTitle = document.createElement('h4');
-            candTitle.textContent = 'Candidates Running for This Seat';
+            candTitle.textContent = 'Ask Candidates to Take the Pledge';
             candSection.appendChild(candTitle);
 
+            var candSubtext = document.createElement('p');
+            candSubtext.className = 'cand-subtext';
+            candSubtext.textContent = 'These candidates are running for this seat. Ask each one to take the SAFE Action pledge.';
+            candSection.appendChild(candSubtext);
+
             var candList = document.createElement('div');
-            candList.className = 'candidate-chip-list';
+            candList.className = 'candidate-card-list';
 
             rep.candidates.forEach(function(c) {
-                var chip = document.createElement('span');
-                chip.className = 'candidate-chip';
+                var card = document.createElement('div');
+                card.className = 'candidate-action-card';
                 var partyLetter = (c.party || '?').charAt(0).toUpperCase();
-                if (partyLetter === 'R') chip.classList.add('party-r');
-                else if (partyLetter === 'D') chip.classList.add('party-d');
-                else chip.classList.add('party-i');
-                chip.textContent = c.name + ' (' + (c.party || '?') + ')';
-                candList.appendChild(chip);
+                if (partyLetter === 'R') card.classList.add('party-r');
+                else if (partyLetter === 'D') card.classList.add('party-d');
+                else card.classList.add('party-i');
+
+                // Candidate header row
+                var cardHeader = document.createElement('div');
+                cardHeader.className = 'cand-card-header';
+                var nameSpan = document.createElement('span');
+                nameSpan.className = 'cand-card-name';
+                nameSpan.textContent = c.name;
+                cardHeader.appendChild(nameSpan);
+                var partyBadge = document.createElement('span');
+                partyBadge.className = 'cand-card-party';
+                partyBadge.textContent = c.party || '?';
+                cardHeader.appendChild(partyBadge);
+                card.appendChild(cardHeader);
+
+                var seatLabel = document.createElement('div');
+                seatLabel.className = 'cand-card-seat';
+                seatLabel.textContent = 'Running for: ' + rep.office;
+                card.appendChild(seatLabel);
+
+                // Get Template button
+                var templateBtn = document.createElement('button');
+                templateBtn.className = 'btn btn-sm cand-template-btn';
+                templateBtn.textContent = 'Get Pledge Template';
+                card.appendChild(templateBtn);
+
+                // Template panel (hidden initially)
+                var templatePanel = document.createElement('div');
+                templatePanel.className = 'cand-template-panel';
+                templatePanel.style.display = 'none';
+
+                var candLastName = c.name.split(' ').pop();
+                var candFullParty = c.party === 'R' ? 'Republican' : c.party === 'D' ? 'Democrat' : c.party || '';
+
+                var emailSubject = 'Will you take the SAFE Action pledge on science and public health?';
+                var emailBody = 'Dear ' + c.name + ',\n\n' +
+                    'I am writing to ask you to take the SAFE Action pledge on science and public health policy.\n\n' +
+                    'As a candidate for ' + rep.office + ', your position on science-based public health policy matters to voters in our community. The SAFE Action pledge commits candidates to supporting evidence-based public health measures, including maintaining strong vaccination programs.\n\n' +
+                    'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://safeaction.org/pledge.html\n\n' +
+                    'Thank you for your time.\n\n' +
+                    'Sincerely,\n[Your Name]\n[Your City, ' + rep.state + ']';
+
+                // Subject line
+                var subjLabel = document.createElement('div');
+                subjLabel.className = 'template-field-label';
+                subjLabel.textContent = 'Subject:';
+                templatePanel.appendChild(subjLabel);
+                var subjBox = document.createElement('div');
+                subjBox.className = 'template-content template-subject';
+                subjBox.textContent = emailSubject;
+                templatePanel.appendChild(subjBox);
+
+                // Body
+                var bodyLabel = document.createElement('div');
+                bodyLabel.className = 'template-field-label';
+                bodyLabel.textContent = 'Email Body:';
+                templatePanel.appendChild(bodyLabel);
+                var bodyBox = document.createElement('pre');
+                bodyBox.className = 'template-content template-body';
+                bodyBox.textContent = emailBody;
+                templatePanel.appendChild(bodyBox);
+
+                // Copy button
+                var copyBtn = document.createElement('button');
+                copyBtn.className = 'btn btn-sm btn-outline cand-copy-btn';
+                copyBtn.textContent = 'Copy Email';
+                copyBtn.addEventListener('click', function() {
+                    var fullText = 'Subject: ' + emailSubject + '\n\n' + emailBody;
+                    navigator.clipboard.writeText(fullText).then(function() {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(function() { copyBtn.textContent = 'Copy Email'; }, 2000);
+                    }).catch(function() {
+                        // Fallback
+                        var ta = document.createElement('textarea');
+                        ta.value = fullText;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(function() { copyBtn.textContent = 'Copy Email'; }, 2000);
+                    });
+                });
+                templatePanel.appendChild(copyBtn);
+
+                // FEC lookup link if available
+                if (c.fecId) {
+                    var fecLink = document.createElement('a');
+                    fecLink.href = 'https://www.fec.gov/data/candidate/' + c.fecId + '/';
+                    fecLink.target = '_blank';
+                    fecLink.rel = 'noopener';
+                    fecLink.className = 'cand-fec-link';
+                    fecLink.textContent = 'Find contact info on FEC.gov \u2192';
+                    templatePanel.appendChild(fecLink);
+                }
+
+                card.appendChild(templatePanel);
+
+                // Toggle template visibility
+                templateBtn.addEventListener('click', function() {
+                    var isVisible = templatePanel.style.display !== 'none';
+                    templatePanel.style.display = isVisible ? 'none' : '';
+                    templateBtn.textContent = isVisible ? 'Get Pledge Template' : 'Hide Template';
+                });
+
+                candList.appendChild(card);
             });
 
             candSection.appendChild(candList);
