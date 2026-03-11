@@ -1,19 +1,20 @@
-"""Persuadability scoring using Anthropic Claude API."""
+"""Persuadability scoring using free LLM via Groq."""
 
+import asyncio
 import json
 from datetime import datetime, timezone
-import anthropic
+from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_exponential
-from ..config import ANTHROPIC_API_KEY, CLAUDE_MODEL, MAX_LEGISLATORS_PER_BATCH
+from ..config import GROQ_API_KEY, GROQ_BASE_URL, REASONING_MODEL, MAX_LEGISLATORS_PER_BATCH
 
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+client = OpenAI(api_key=GROQ_API_KEY, base_url=GROQ_BASE_URL)
 
-SCORING_SYSTEM_PROMPT = """You are an expert political analyst assessing legislators' persuadability on science and public health policy — specifically regarding vaccine safety, informed consent, and evidence-based medicine.
+SCORING_SYSTEM_PROMPT = """You are an expert political analyst assessing legislators' persuadability on science and public health policy -- specifically regarding vaccine safety, informed consent, and evidence-based medicine.
 
 Score each legislator from 0-10:
 - 9-10 (champion): Active pro-science advocate, sponsors pro-science bills
 - 7-8 (likely-win): Leans positive, history of supporting science/health policy
-- 4-6 (fence-sitter): Mixed signals, undecided, or no clear record — KEY outreach target
+- 4-6 (fence-sitter): Mixed signals, undecided, or no clear record -- KEY outreach target
 - 2-3 (unlikely): Leans anti-science but not firmly committed
 - 0-1 (opposed): Actively pushes anti-science legislation
 
@@ -25,19 +26,26 @@ Key factors to weigh:
 5. Public statements and news coverage about vaccines/science
 6. Whether they've co-sponsored pro or anti-science bills
 
-Return ONLY valid JSON — an array of objects."""
+Return ONLY valid JSON -- an array of objects."""
+
+# Rate limit delay between batches (seconds).  Groq free tier is
+# ~12,000 TPM for llama-3.3-70b-versatile.  Each batch uses ~8,000
+# tokens (input + output), so we need ~45-50s between requests.
+INTER_BATCH_DELAY = 50
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=30))
-async def _call_claude(user_prompt: str) -> str:
-    """Call Claude API with retry logic."""
-    response = client.messages.create(
-        model=CLAUDE_MODEL,
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=15, max=120))
+async def _call_llm(user_prompt: str) -> str:
+    """Call reasoning LLM via Groq with retry logic."""
+    response = client.chat.completions.create(
+        model=REASONING_MODEL,
         max_tokens=4096,
-        system=SCORING_SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_prompt}],
+        messages=[
+            {"role": "system", "content": SCORING_SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ],
     )
-    return response.content[0].text
+    return response.choices[0].message.content
 
 
 async def score_legislators_batch(
@@ -46,16 +54,22 @@ async def score_legislators_batch(
 ) -> list[dict]:
     """
     Batch-analyze legislators for persuadability.
-    Processes in batches of MAX_LEGISLATORS_PER_BATCH to control costs.
+    Processes in batches of MAX_LEGISLATORS_PER_BATCH with rate-limit delays.
     """
     now = datetime.now(timezone.utc).isoformat()
     results = []
     news_context = news_context or []
+    total_batches = (len(legislators) + MAX_LEGISLATORS_PER_BATCH - 1) // MAX_LEGISLATORS_PER_BATCH
 
     for i in range(0, len(legislators), MAX_LEGISLATORS_PER_BATCH):
         batch = legislators[i : i + MAX_LEGISLATORS_PER_BATCH]
         batch_num = (i // MAX_LEGISLATORS_PER_BATCH) + 1
-        total_batches = (len(legislators) + MAX_LEGISLATORS_PER_BATCH - 1) // MAX_LEGISLATORS_PER_BATCH
+
+        # Rate limit: wait between batches (skip first)
+        if i > 0:
+            print(f"    Waiting {INTER_BATCH_DELAY}s for rate limit cooldown...")
+            await asyncio.sleep(INTER_BATCH_DELAY)
+
         print(f"    Scoring batch {batch_num}/{total_batches} ({len(batch)} legislators)...")
 
         # Build concise legislator summaries for the prompt
@@ -63,6 +77,10 @@ async def score_legislators_batch(
         batch_names = set()
         for leg in batch:
             batch_names.add(leg.get("name", ""))
+            committees = leg.get("committees", [])
+            # Flatten committee list for compact representation
+            if committees and isinstance(committees[0], dict):
+                committees = [c.get("name", "") for c in committees]
             leg_summaries.append({
                 "legislator_id": leg.get("legislator_id", ""),
                 "name": leg.get("name", ""),
@@ -70,7 +88,7 @@ async def score_legislators_batch(
                 "state": leg.get("state", ""),
                 "chamber": leg.get("chamber", ""),
                 "office": leg.get("office", ""),
-                "committees": leg.get("committees", []),
+                "committees": committees[:5],  # limit to reduce tokens
                 "professional_background": leg.get("professional_background"),
                 "bio_summary": leg.get("bio_summary"),
                 "voting_record_summary": leg.get("voting_record_summary"),
@@ -87,7 +105,7 @@ async def score_legislators_batch(
                     "sentiment": article.get("sentiment", "neutral"),
                     "date": article.get("date", ""),
                 })
-            if len(relevant_news) >= 15:
+            if len(relevant_news) >= 10:
                 break
 
         user_prompt = (
@@ -108,7 +126,7 @@ async def score_legislators_batch(
         )
 
         try:
-            response_text = await _call_claude(user_prompt)
+            response_text = await _call_llm(user_prompt)
             # Extract JSON from response (handle markdown code blocks)
             json_text = response_text.strip()
             if json_text.startswith("```"):
@@ -121,6 +139,7 @@ async def score_legislators_batch(
                 for item in parsed:
                     item["last_analyzed"] = now
                 results.extend(parsed)
+                print(f"    Scored {len(parsed)} legislators in batch {batch_num}")
         except (json.JSONDecodeError, Exception) as e:
             print(f"    Warning: Failed to parse batch {batch_num}: {e}")
 

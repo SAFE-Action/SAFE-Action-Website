@@ -12,8 +12,12 @@ DATA_DIR = PROJECT_ROOT / "data"
 CACHE_DIR = Path(__file__).parent.parent / ".cache"
 
 # ── API Keys ──────────────────────────────────────────
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_BASE_URL = "https://api.groq.com/openai/v1"
+
+# Free models via Groq (llama-3.3-70b-versatile, qwen/qwen3-32b)
+EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "llama-3.3-70b-versatile")
+REASONING_MODEL = os.getenv("REASONING_MODEL", "llama-3.3-70b-versatile")
 
 # ── Open States API ──────────────────────────────────
 OPENSTATES_API_KEY = os.getenv("OPENSTATES_API_KEY", "")

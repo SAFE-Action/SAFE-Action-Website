@@ -4,9 +4,8 @@ import asyncio
 import sys
 from datetime import datetime, timezone
 
-from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, ANTHROPIC_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
-from .sources.congress import crawl_congress_members, crawl_member_detail
-from .sources.state_legislatures import crawl_all_priority_states
+from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, GROQ_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
+from .sources.congress import crawl_congress_members
 from .sources.openstates import fetch_all_priority_legislators, fetch_all_science_bills as openstates_fetch_bills
 from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, refresh_tracked_bills as legiscan_refresh_bills
 from .sources.news import crawl_news_articles
@@ -27,27 +26,15 @@ async def run_full_crawl(news_only: bool = False):
     now = datetime.now(timezone.utc).isoformat()
     all_legislators = []
 
-    if not ANTHROPIC_API_KEY:
-        print("ERROR: ANTHROPIC_API_KEY not set. Copy .env.example to .env and add your key.")
-        sys.exit(1)
+    if not GROQ_API_KEY:
+        print("WARNING: GROQ_API_KEY not set. Scoring/analysis will be skipped.")
+        print("  Get a free key at https://console.groq.com")
 
     # ── Step 1: Federal legislators ───────────────────
     if not news_only:
         if should_recrawl("congress_members"):
-            print("[1/5] Crawling congress.gov for federal legislators...")
+            print("[1/5] Fetching federal legislators from unitedstates.io...")
             federal = await crawl_congress_members()
-
-            # Enrich top candidates with detail pages (costly, so limit)
-            print(f"  Enriching top member profiles...")
-            enriched = 0
-            for member in federal:
-                if enriched >= 50:  # Cap to control API costs
-                    break
-                detail = await crawl_member_detail(member)
-                if detail:
-                    member.update(detail)
-                    enriched += 1
-
             save_cached_data("congress_members", federal)
             update_cache_timestamp("congress_members")
             all_legislators.extend(federal)
@@ -63,10 +50,12 @@ async def run_full_crawl(news_only: bool = False):
                 print("[2/5] Fetching state legislators via Open States API...")
                 state_legs = await fetch_all_priority_legislators()
             else:
-                print("[2/5] Crawling state legislature sites (no Open States API key)...")
-                state_legs = await crawl_all_priority_states()
-            save_cached_data("state_legislators", state_legs)
-            update_cache_timestamp("state_legislators")
+                print("[2/5] No Open States API key -- skipping state legislators")
+                print("      Get a free key at https://openstates.org/accounts/signup/")
+                state_legs = []
+            if state_legs:
+                save_cached_data("state_legislators", state_legs)
+                update_cache_timestamp("state_legislators")
             all_legislators.extend(state_legs)
         else:
             print("[2/5] State legislators cache fresh, loading cached...")
@@ -126,14 +115,14 @@ async def run_full_crawl(news_only: bool = False):
         all_bills = await legiscan_refresh_bills(all_bills)
 
     # ── Step 3: News crawl ────────────────────────────
-    print("[3/5] Crawling news sources...")
+    print("[3/5] Fetching news from Google News RSS...")
     legislator_names = [leg.get("name", "") for leg in all_legislators if leg.get("name")]
     news_articles = await crawl_news_articles(legislator_names)
     save_cached_data("news", news_articles)
     update_cache_timestamp("news")
 
     # ── Step 4: Claude analysis ───────────────────────
-    if not news_only and should_recrawl("analysis"):
+    if not news_only and GROQ_API_KEY and should_recrawl("analysis"):
         print(f"[4/5] Running persuadability analysis on {len(all_legislators)} legislators...")
         scores = await score_legislators_batch(all_legislators, news_articles)
 
@@ -154,7 +143,8 @@ async def run_full_crawl(news_only: bool = False):
 
         update_cache_timestamp("analysis")
     else:
-        print("[4/5] Analysis cache fresh or news-only mode, skipping...")
+        reason = "no GROQ_API_KEY" if not GROQ_API_KEY else "cache fresh or news-only"
+        print(f"[4/5] Skipping analysis ({reason})")
 
     # ── Step 5: Identify pivotal targets & write output ──
     print("[5/5] Identifying pivotal targets and writing output...")
@@ -197,6 +187,7 @@ def _serialize_legislator(leg: dict) -> dict:
     """Ensure legislator dict is JSON-serializable with all expected keys."""
     return {
         "legislator_id": leg.get("legislator_id", ""),
+        "bioguide_id": leg.get("bioguide_id", ""),
         "name": leg.get("name", ""),
         "party": leg.get("party", ""),
         "state": leg.get("state", ""),

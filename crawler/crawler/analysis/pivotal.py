@@ -52,13 +52,21 @@ def _build_flags(leg: dict) -> dict:
     }
 
     for committee in leg.get("committees", []):
-        cl = committee.lower()
+        # Handle both dict format {name, role} and plain string format
+        if isinstance(committee, dict):
+            cl = committee.get("name", "").lower()
+            role = committee.get("role", "").lower()
+            display_name = committee.get("name", "")
+        else:
+            cl = str(committee).lower()
+            role = ""
+            display_name = str(committee)
         if any(kw in cl for kw in HEALTH_COMMITTEE_KEYWORDS):
             flags["is_health_committee"] = True
-            flags["committee_relevance"] = committee
-        if "chair" in cl:
+            flags["committee_relevance"] = display_name
+        if "chair" in role or "chair" in cl:
             flags["is_committee_chair"] = True
-        if "ranking" in cl:
+        if "ranking" in role or "ranking" in cl:
             flags["is_ranking_member"] = True
 
     bg = (leg.get("professional_background") or "").lower()
