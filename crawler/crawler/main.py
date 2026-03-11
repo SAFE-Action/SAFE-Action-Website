@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 
 from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, GROQ_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
 from .sources.congress import crawl_congress_members
+from .sources.state_legislatures import crawl_all_state_legislators
+from .sources.govinfo import fetch_federal_bills
 from .sources.openstates import fetch_all_priority_legislators, fetch_all_science_bills as openstates_fetch_bills
 from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, refresh_tracked_bills as legiscan_refresh_bills
 from .sources.news import crawl_news_articles
@@ -44,15 +46,10 @@ async def run_full_crawl(news_only: bool = False):
             if cached:
                 all_legislators.extend(cached)
 
-        # ── Step 2: State legislators ─────────────────────
+        # ── Step 2: State legislators (free CSV, all 50 states) ─────
         if should_recrawl("state_legislators"):
-            if OPENSTATES_API_KEY:
-                print("[2/5] Fetching state legislators via Open States API...")
-                state_legs = await fetch_all_priority_legislators()
-            else:
-                print("[2/5] No Open States API key -- skipping state legislators")
-                print("      Get a free key at https://openstates.org/accounts/signup/")
-                state_legs = []
+            print("[2/5] Fetching state legislators from Open States CSV (all 50 states)...")
+            state_legs = await crawl_all_state_legislators()
             if state_legs:
                 save_cached_data("state_legislators", state_legs)
                 update_cache_timestamp("state_legislators")
@@ -77,24 +74,31 @@ async def run_full_crawl(news_only: bool = False):
     bill_source = "none"
     if not news_only:
         if should_recrawl("bills"):
-            # Try LegiScan first (better coverage: 50 states + Congress, keyword search)
-            if LEGISCAN_API_KEY:
-                print("[2b/5] Fetching science/health bills via LegiScan API...")
-                all_bills = await legiscan_fetch_bills()
-                bill_source = "legiscan"
+            # GovInfo: free federal bills (no API key needed)
+            print("[2b/5] Fetching federal bills from GovInfo (free)...")
+            all_bills = await fetch_federal_bills()
+            bill_source = "govinfo"
 
-            # Fall back to Open States if LegiScan returned nothing or no key
-            if not all_bills and OPENSTATES_API_KEY:
-                print("[2b/5] Falling back to Open States API for bill data...")
-                all_bills = await openstates_fetch_bills()
-                bill_source = "openstates"
+            # Also try LegiScan for state bills if key available
+            if LEGISCAN_API_KEY:
+                print("[2b/5] Also fetching state bills via LegiScan...")
+                state_bills = await legiscan_fetch_bills()
+                all_bills.extend(state_bills)
+                bill_source = "govinfo+legiscan"
+
+            # Fall back to Open States for state bills if no LegiScan
+            elif OPENSTATES_API_KEY:
+                print("[2b/5] Also fetching state bills via Open States...")
+                state_bills = await openstates_fetch_bills()
+                all_bills.extend(state_bills)
+                bill_source = "govinfo+openstates"
 
             if all_bills:
                 save_cached_data("bills", all_bills)
                 update_cache_timestamp("bills")
                 print(f"  Fetched {len(all_bills)} bills via {bill_source}")
             else:
-                print("[2b/5] No bill API keys configured or no bills found")
+                print("[2b/5] No bills found")
         else:
             print("[2b/5] Bills cache fresh, loading cached...")
             cached = load_cached_data("bills")

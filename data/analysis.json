@@ -1,318 +1,318 @@
 {
-  "generated_at": "2026-03-11T07:59:43.248086+00:00",
-  "total_legislators": 538,
+  "generated_at": "2026-03-11T15:52:22.661714+00:00",
+  "total_legislators": 7900,
   "by_category": {
     "champion": 0,
     "likely-win": 0,
     "fence-sitter": 0,
     "unlikely": 0,
     "opposed": 0,
-    "unscored": 538
+    "unscored": 7900
   },
   "top_outreach_targets": [],
   "state_summaries": {
     "WA": {
-      "total": 12,
+      "total": 159,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MN": {
-      "total": 10,
+      "total": 211,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "VT": {
-      "total": 3,
+      "total": 183,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "RI": {
-      "total": 4,
+      "total": 117,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "WY": {
-      "total": 3,
+      "total": 96,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MS": {
-      "total": 6,
+      "total": 180,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "ME": {
-      "total": 4,
+      "total": 190,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "TX": {
-      "total": 40,
+      "total": 220,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "IL": {
-      "total": 19,
+      "total": 196,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "SC": {
-      "total": 9,
+      "total": 179,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "KY": {
-      "total": 8,
+      "total": 146,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "OR": {
-      "total": 8,
+      "total": 98,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "ID": {
-      "total": 4,
+      "total": 109,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NH": {
-      "total": 4,
+      "total": 422,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "VA": {
-      "total": 13,
+      "total": 153,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NY": {
-      "total": 28,
+      "total": 241,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "DE": {
-      "total": 3,
+      "total": 65,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "AL": {
-      "total": 9,
+      "total": 149,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "WI": {
-      "total": 10,
+      "total": 142,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "CO": {
-      "total": 10,
+      "total": 110,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "FL": {
-      "total": 30,
+      "total": 186,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "GA": {
-      "total": 15,
+      "total": 248,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "TN": {
-      "total": 11,
+      "total": 143,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "CT": {
-      "total": 7,
+      "total": 194,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "AR": {
-      "total": 6,
+      "total": 139,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "CA": {
-      "total": 53,
+      "total": 173,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "WV": {
-      "total": 4,
+      "total": 137,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "IN": {
-      "total": 11,
+      "total": 161,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "LA": {
-      "total": 8,
+      "total": 149,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MO": {
-      "total": 10,
+      "total": 202,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "OK": {
-      "total": 7,
+      "total": 153,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NC": {
-      "total": 16,
+      "total": 186,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "AZ": {
-      "total": 11,
+      "total": 101,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "IA": {
-      "total": 6,
+      "total": 156,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MD": {
-      "total": 10,
+      "total": 198,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NM": {
-      "total": 5,
+      "total": 117,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "HI": {
-      "total": 4,
+      "total": 80,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "ND": {
-      "total": 3,
+      "total": 144,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MI": {
-      "total": 15,
+      "total": 162,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "OH": {
-      "total": 17,
+      "total": 149,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MA": {
-      "total": 11,
+      "total": 208,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "PA": {
-      "total": 19,
+      "total": 267,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "UT": {
-      "total": 6,
+      "total": 110,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "KS": {
-      "total": 6,
+      "total": 171,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "AK": {
-      "total": 3,
+      "total": 63,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "DC": {
-      "total": 1,
+      "total": 14,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NJ": {
-      "total": 13,
+      "total": 133,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NE": {
-      "total": 5,
+      "total": 54,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "SD": {
-      "total": 3,
+      "total": 108,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "NV": {
-      "total": 6,
+      "total": 69,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "MT": {
-      "total": 4,
+      "total": 154,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0

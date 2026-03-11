@@ -80,7 +80,14 @@ PERSUADABILITY_CATEGORIES = {
 }
 
 # Priority states — these match the site's focus areas
-PRIORITY_STATES = ["TX", "FL", "CA", "OH", "NY", "CO", "WA", "ID", "MO", "GA", "PA", "MA"]
+PRIORITY_STATES = [
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
+    "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
+    "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
+    "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
+    "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
+    "DC",
+]
 
 HEALTH_COMMITTEE_KEYWORDS = [
     "health", "public health", "human services", "energy and commerce",
