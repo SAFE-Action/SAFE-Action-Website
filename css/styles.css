@@ -5049,3 +5049,14 @@ input.warning {
     text-decoration: none;
 }
 .cand-fec-link:hover { text-decoration: underline; }
+
+
+/* ── Impact Highlight ── */
+.tracker-impact-item.impact-highlight .tracker-impact-number {
+    color: #2E7D32;
+    font-size: 2.5rem;
+}
+.tracker-impact-item.impact-highlight .tracker-impact-label {
+    color: #2E7D32;
+    font-weight: 700;
+}

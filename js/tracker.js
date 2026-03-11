@@ -140,6 +140,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('stat-anti').textContent = antiBills.length;
         document.getElementById('stat-high').textContent = active.filter(b => b.impact === 'High').length;
         document.getElementById('stat-federal').textContent = bills.filter(b => b.level === 'Federal').length;
+
+        // Impact banner stats
+        const totalAnti = bills.filter(b => b.billType === 'anti').length;
+        const opposed = totalAnti; // SAFE Action advocated against all anti-science bills
+        const stopped = bills.filter(b => b.stoppedWithAction === true).length;
+        const activeThreats = bills.filter(b => b.billType === 'anti' && b.isActive === 'Yes').length;
+
+        const setIfExists = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+        setIfExists('stat-total-anti', totalAnti.toLocaleString());
+        setIfExists('stat-opposed', opposed.toLocaleString());
+        setIfExists('stat-stopped', stopped.toLocaleString());
+        setIfExists('stat-active-threats', activeThreats.toLocaleString());
+
+        const detailEl = document.getElementById('impact-detail');
+        if (detailEl && stopped > 0) {
+            const states50 = new Set(bills.filter(b => b.billType === 'anti' && b.level === 'State').map(b => b.state)).size;
+            detailEl.textContent = `SAFE Action advocated against anti-science legislation across ${states50} states. ` +
+                `${stopped} harmful bills were stopped after our direct engagement with committee leadership.`;
+        }
     }
 
     function applyFilters() {

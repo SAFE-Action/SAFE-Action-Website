@@ -152,7 +152,30 @@
         <section class="tracker-section">
             <div class="container">
                 <h2 style="text-align:center;margin-bottom:0.5em;">Browse Anti-Science Legislation</h2>
-                <p style="text-align:center;color:#666;margin-bottom:2em;">Track bills across all 50 states that threaten public health and scientific freedom.</p>
+                <p style="text-align:center;color:#666;margin-bottom:1em;">Track bills across all 50 states that threaten public health and scientific freedom.</p>
+
+                <!-- SAFE Action Impact Stats -->
+                <div id="impact-banner" class="tracker-impact-bar" style="margin-bottom:2em;">
+                    <div class="tracker-impact-grid">
+                        <div class="tracker-impact-item">
+                            <span class="tracker-impact-number" id="stat-total-anti">—</span>
+                            <span class="tracker-impact-label">Anti-Science Bills Tracked</span>
+                        </div>
+                        <div class="tracker-impact-item">
+                            <span class="tracker-impact-number" id="stat-opposed">—</span>
+                            <span class="tracker-impact-label">Bills SAFE Action Opposed</span>
+                        </div>
+                        <div class="tracker-impact-item impact-highlight">
+                            <span class="tracker-impact-number" id="stat-stopped">—</span>
+                            <span class="tracker-impact-label">Anti-Science Bills Stopped</span>
+                        </div>
+                        <div class="tracker-impact-item">
+                            <span class="tracker-impact-number" id="stat-active-threats">—</span>
+                            <span class="tracker-impact-label">Active Threats to Watch</span>
+                        </div>
+                    </div>
+                    <p id="impact-detail" style="text-align:center;color:#666;font-size:0.85rem;margin-top:0.75em;"></p>
+                </div>
 
                 <div class="filter-bar">
                     <div class="filter-group">
@@ -179,6 +202,7 @@
                             <option value="Passed One Chamber">Passed One Chamber</option>
                             <option value="Passed Both Chambers">Passed Both Chambers</option>
                             <option value="Signed into Law">Signed into Law</option>
+                            <option value="dead">Stopped / Dead</option>
                         </select>
                     </div>
                     <div class="filter-group">
