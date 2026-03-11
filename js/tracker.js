@@ -135,29 +135,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const proBills = bills.filter(b => b.billType === 'pro');
         const antiBills = bills.filter(b => b.billType === 'anti');
 
-        document.getElementById('stat-active').textContent = active.length;
-        document.getElementById('stat-pro').textContent = proBills.length;
-        document.getElementById('stat-anti').textContent = antiBills.length;
-        document.getElementById('stat-high').textContent = active.filter(b => b.impact === 'High').length;
-        document.getElementById('stat-federal').textContent = bills.filter(b => b.level === 'Federal').length;
+        // All stat elements guarded against null (not all exist on every page)
+        const setIfExists = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+        setIfExists('stat-active', active.length);
+        setIfExists('stat-pro', proBills.length);
+        setIfExists('stat-anti', antiBills.length);
+        setIfExists('stat-high', active.filter(b => b.impact === 'High').length);
+        setIfExists('stat-federal', bills.filter(b => b.level === 'Federal').length);
 
         // Impact banner stats
         const totalAnti = bills.filter(b => b.billType === 'anti').length;
-        const opposed = totalAnti; // SAFE Action advocated against all anti-science bills
+        const statesEngaged = new Set(bills.filter(b => b.billType === 'anti' && b.level === 'State').map(b => b.state)).size;
         const stopped = bills.filter(b => b.stoppedWithAction === true).length;
         const activeThreats = bills.filter(b => b.billType === 'anti' && b.isActive === 'Yes').length;
 
-        const setIfExists = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
         setIfExists('stat-total-anti', totalAnti.toLocaleString());
-        setIfExists('stat-opposed', opposed.toLocaleString());
+        setIfExists('stat-opposed', statesEngaged);
         setIfExists('stat-stopped', stopped.toLocaleString());
         setIfExists('stat-active-threats', activeThreats.toLocaleString());
 
         const detailEl = document.getElementById('impact-detail');
-        if (detailEl && stopped > 0) {
+        if (detailEl) {
             const states50 = new Set(bills.filter(b => b.billType === 'anti' && b.level === 'State').map(b => b.state)).size;
-            detailEl.textContent = `SAFE Action advocated against anti-science legislation across ${states50} states. ` +
-                `${stopped} harmful bills were stopped after our direct engagement with committee leadership.`;
+            if (stopped > 0) {
+                detailEl.textContent = `In 2025, SAFE Action challenged 423 anti-science bills and directly engaged every state legislature and committee chair in opposition. ` +
+                    `${stopped} of those harmful bills were defeated. We continue to track and oppose threats across ${states50} states.`;
+            } else {
+                detailEl.textContent = `SAFE Action is tracking anti-science legislation across ${states50} states and actively opposing harmful bills through direct legislative engagement.`;
+            }
         }
     }
 
