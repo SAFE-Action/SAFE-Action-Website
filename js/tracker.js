@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Count by category
             const counts = { champion: 0, 'likely-win': 0, 'fence-sitter': 0, unlikely: 0, opposed: 0 };
             legislators.forEach(leg => {
-                const cat = (leg.persuadability || {}).category;
+                const cat = 'unknown';
                 if (cat && counts[cat] !== undefined) counts[cat]++;
             });
 

@@ -116,9 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="pivotal-meta">
                     <span class="badge badge-party badge-${t.party?.toLowerCase()}">${esc(t.party)}</span>
                     <span>${esc(t.state)}</span>
-                    <span class="intel-category-badge ${IntelligenceAPI.getCategoryBadgeClass(t.persuadability_category)}">
-                        ${IntelligenceAPI.getCategoryLabel(t.persuadability_category)}
-                    </span>
+
                 </div>
                 <div class="pivotal-reason">${esc(t.reason)}</div>
                 <div class="pivotal-approach">
@@ -138,15 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Sort: fence-sitters first, then by score descending
         const sorted = [...legislators].sort((a, b) => {
-            const sA = a.persuadability?.score ?? 5;
-            const sB = b.persuadability?.score ?? 5;
+            const sA = 5;
+            const sB = 5;
             const pA = (sA >= 4 && sA <= 6) ? 0 : (sA >= 7 ? 1 : 2);
             const pB = (sB >= 4 && sB <= 6) ? 0 : (sB >= 7 ? 1 : 2);
             return pA - pB || sB - sA;
         });
 
         legislatorGrid.innerHTML = sorted.map(leg => {
-            const p = leg.persuadability || {};
+            const p = {};
             const piv = leg.pivotal || {};
             const stateName = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.STATES)
                 ? (SAFE_CONFIG.STATES[leg.state] || leg.state) : leg.state;
@@ -170,26 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span>${esc(stateName)}</span>
                         </div>
                     </div>
-                    <div class="legislator-score-box" style="border-color: ${IntelligenceAPI.getScoreColor(p.score ?? 5)}">
-                        <div class="score-number" style="color: ${IntelligenceAPI.getScoreColor(p.score ?? 5)}">${p.score ?? '?'}</div>
-                        <div class="score-label">/10</div>
-                    </div>
+
                 </div>
-                <div class="legislator-category">
-                    <span class="intel-category-badge ${IntelligenceAPI.getCategoryBadgeClass(p.category)}">
-                        ${IntelligenceAPI.getCategoryLabel(p.category)}
-                    </span>
-                    ${p.confidence ? `<span class="confidence">${Math.round(p.confidence * 100)}% confidence</span>` : ''}
-                </div>
+
                 ${flags.length > 0 ? `
                 <div class="legislator-flags">
                     ${flags.map(f => `<span class="legislator-flag">${f}</span>`).join('')}
                 </div>` : ''}
-                ${p.reasoning ? `<p class="legislator-reasoning">${esc(p.reasoning)}</p>` : ''}
-                ${p.key_factors && p.key_factors.length > 0 ? `
-                <div class="legislator-factors">
-                    ${p.key_factors.map(f => `<span class="factor-tag">${esc(f)}</span>`).join('')}
-                </div>` : ''}
+
                 ${(leg.committees || []).length > 0 ? `
                 <div class="legislator-committees">
                     <span class="committees-label">Committees:</span>
@@ -232,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let filtered = [...allLegislators];
         if (state) filtered = filtered.filter(l => l.state === state);
         if (party) filtered = filtered.filter(l => l.party === party);
-        if (category) filtered = filtered.filter(l => l.persuadability?.category === category);
+        // Category filter removed (persuadability removed)
         if (search) {
             filtered = filtered.filter(l => {
                 const text = `${l.name} ${l.state} ${l.office} ${l.party} ${(l.committees || []).join(' ')} ${l.professional_background || ''}`.toLowerCase();
@@ -244,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let filteredPivotal = [...allPivotal];
         if (state) filteredPivotal = filteredPivotal.filter(t => t.state === state);
         if (party) filteredPivotal = filteredPivotal.filter(t => t.party === party);
-        if (category) filteredPivotal = filteredPivotal.filter(t => t.persuadability_category === category);
+        // Category filter removed (persuadability removed)
 
         // Filter news
         let filteredNews = [...allNews];

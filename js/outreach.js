@@ -124,40 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Sort by persuadability if intelligence data is available
-        sortByPersuadability(filteredCandidates).then(sorted => {
-            filteredCandidates = sorted;
-            renderCandidates(filteredCandidates);
-        });
+        renderCandidates(filteredCandidates);
     }
 
-    async function sortByPersuadability(candidates) {
-        if (typeof IntelligenceAPI === 'undefined') return candidates;
-        const available = await IntelligenceAPI.isAvailable();
-        if (!available) return candidates;
-
-        const legislators = await IntelligenceAPI.getLegislators();
-        if (legislators.length === 0) return candidates;
-
-        // Build a map of legislator names to persuadability scores
-        const scoreMap = new Map();
-        legislators.forEach(leg => {
-            const name = leg.name.toLowerCase().replace(/^(rep\.|sen\.|dr\.)\s*/i, '');
-            const score = (leg.persuadability || {}).score;
-            if (score !== undefined) scoreMap.set(name, score);
-        });
-
-        return [...candidates].sort((a, b) => {
-            const nameA = (a.name || '').toLowerCase();
-            const nameB = (b.name || '').toLowerCase();
-            const scoreA = scoreMap.get(nameA) ?? 5;
-            const scoreB = scoreMap.get(nameB) ?? 5;
-            // Fence-sitters (4-6) first, then likely-wins (7-8), then rest
-            const prioA = (scoreA >= 4 && scoreA <= 6) ? 0 : (scoreA >= 7 ? 1 : 2);
-            const prioB = (scoreB >= 4 && scoreB <= 6) ? 0 : (scoreB >= 7 ? 1 : 2);
-            return prioA - prioB || scoreB - scoreA;
-        });
-    }
 
     function renderCandidates(candidates) {
         noResults.style.display = 'none';
@@ -265,7 +234,7 @@ I am a constituent from ${yourCity}, and I am writing to ask you to take the SAF
 
 The SAFE Action pledge is a simple, public commitment to support science-based policymaking and protect the public health of your constituents. Voters want to know where their candidates stand on science and public health, and this is your chance to stand with them.
 
-Taking the pledge is quick and free. You can complete it at: [SAFE Action Website URL]
+Taking the pledge is quick and free. You can complete it at: https://scienceandfreedom.com/quiz.html
 
 By taking the pledge, your name will appear in the SAFE Action candidate directory, showing voters that you are committed to defending science and individual health freedom.
 

@@ -50,8 +50,8 @@ const IntelligenceAPI = {
     async getLegislatorsByState(state) {
         const legs = await this.getLegislators(state);
         return legs.sort((a, b) => {
-            const sA = a.persuadability ? a.persuadability.score : 5;
-            const sB = b.persuadability ? b.persuadability.score : 5;
+            const sA = 5;
+            const sB = 5;
             const pA = (sA >= 4 && sA <= 6) ? 0 : (sA >= 7 ? 1 : 2);
             const pB = (sB >= 4 && sB <= 6) ? 0 : (sB >= 7 ? 1 : 2);
             return pA - pB || sB - sA;

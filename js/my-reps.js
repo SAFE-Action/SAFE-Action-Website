@@ -125,16 +125,20 @@ const MyRepsHub = {
         const { state, districts } = parsed;
         const cdNumbers = districts.filter(d => d.type === 'cd').map(d => d.number);
 
-        // Load seats.json and match to the user's specific districts
-        const [seatsData, legislators, bills] = await Promise.all([
+        // Load seats.json, legislators.json, and bills
+        const [seatsData, legislatorsData, legislators, bills] = await Promise.all([
             fetch('data/seats.json').then(r => r.ok ? r.json() : { seats: [] }).catch(() => ({ seats: [] })),
+            fetch('data/legislators.json').then(r => r.ok ? r.json() : { legislators: [] }).catch(() => ({ legislators: [] })),
             typeof IntelligenceAPI !== 'undefined' ? IntelligenceAPI.getLegislators(state).catch(() => []) : [],
             typeof LegislationAPI !== 'undefined' ? LegislationAPI.getLegislation(state).catch(() => []) : [],
         ]);
+        const allLegislators = legislatorsData.legislators || [];
 
-        const seats = (seatsData.seats || []).filter(s => {
+        // ── Federal reps from seats.json (have incumbents) ──
+        const federalSeats = (seatsData.seats || []).filter(s => {
             if (s.state !== state) return false;
             if (!s.incumbent) return false;
+            const bodyLower = s.body.toLowerCase();
 
             // US Senate: always include for the state
             if (s.body === 'US Senate') return true;
@@ -142,25 +146,50 @@ const MyRepsHub = {
             if (s.body === 'Governor') return true;
             // US House: match by district number
             if (s.body === 'US House') {
-                if (cdNumbers.length === 0) return true; // at-large or no district info
+                if (cdNumbers.length === 0) return true;
                 const seatDistrict = String(s.district || '').replace(/^0+/, '');
-                // Handle at-large districts
-                if (seatDistrict.toLowerCase() === 'at-large' || seatDistrict === '') {
-                    return true;
-                }
+                if (seatDistrict.toLowerCase() === 'at-large' || seatDistrict === '') return true;
                 return cdNumbers.some(cd => {
                     const cdClean = String(cd).replace(/^0+/, '');
                     return cdClean === seatDistrict || cd === 'at-large';
                 });
             }
-            // State legislature: include for now (can refine later with sldl/sldu)
-            if (s.body === 'State House' || s.body === 'State Senate') return true;
+            return false;
+        });
+
+        // ── State reps from legislators.json (full data with contact info) ──
+        const stateHouseDistricts = districts.filter(d => d.type === 'state-house').map(d => d.number);
+        const stateSenateDistricts = districts.filter(d => d.type === 'state-senate').map(d => d.number);
+
+        const stateLegs = allLegislators.filter(leg => {
+            if (leg.state !== state) return false;
+            if (leg.level !== 'State') return false;
+
+            const chamber = (leg.chamber || '').toLowerCase();
+            const dist = String(leg.district || '').replace(/^0+/, '');
+
+            // Senate chamber: match state-senate districts
+            if (chamber === 'senate' || chamber.includes('senate')) {
+                if (stateSenateDistricts.length > 0) {
+                    return stateSenateDistricts.some(d => String(d).replace(/^0+/, '') === dist);
+                }
+            }
+            // House/Assembly/Legislature: match state-house districts
+            if (chamber === 'house' || chamber.includes('house') || chamber.includes('assembly') || chamber === 'legislature') {
+                if (stateHouseDistricts.length > 0) {
+                    return stateHouseDistricts.some(d => String(d).replace(/^0+/, '') === dist);
+                }
+            }
+
+            // No district info from Civic API - include all state legislators for this state
+            if (stateHouseDistricts.length === 0 && stateSenateDistricts.length === 0) return true;
             return false;
         });
 
         this._bills = bills;
 
-        return seats.map(seat => {
+        // Map federal seats to rep objects
+        const federalReps = federalSeats.map(seat => {
             const inc = seat.incumbent || {};
             const rep = {
                 name: inc.name || (seat.body + ' ' + (seat.district || '')).trim(),
@@ -174,20 +203,37 @@ const MyRepsHub = {
                 photoUrl: inc.photoUrl || '',
                 state: state,
             };
-
             const intelMatch = this._matchIntelligence(rep, legislators);
             const repBills = this._findRepBills(rep, bills);
             const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
-
-            return {
-                ...rep,
-                seat: seat,
-                intel: intelMatch,
-                bills: repBills,
-                primaryAction: primaryAction,
-                candidates: seat.candidates || [],
-            };
+            return { ...rep, seat, intel: intelMatch, bills: repBills, primaryAction, candidates: seat.candidates || [] };
         });
+
+        // Map state legislators to rep objects
+        const stateReps = stateLegs.map(leg => {
+            const party = leg.party || 'Unknown';
+            const partyShort = party.startsWith('Dem') ? 'D' : party.startsWith('Rep') ? 'R' : party.charAt(0);
+            const contact = leg.contact || {};
+            const rep = {
+                name: leg.name,
+                party: partyShort,
+                partyFull: party,
+                office: (leg.office || 'State ' + (leg.chamber || '')).trim() + (leg.district ? ' District ' + leg.district : ''),
+                level: 'State',
+                body: leg.office || 'State ' + (leg.chamber || ''),
+                phone: contact.phone || '',
+                email: contact.email || '',
+                photoUrl: leg.photo_url || '',
+                state: state,
+                website: contact.website || '',
+            };
+            const intelMatch = this._matchIntelligence(rep, legislators);
+            const repBills = this._findRepBills(rep, bills);
+            const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
+            return { ...rep, seat: null, intel: intelMatch, bills: repBills, primaryAction, candidates: [] };
+        });
+
+        return [...federalReps, ...stateReps];
     },
 
     // ── Data Matching ─────────────────────────────
@@ -303,9 +349,8 @@ const MyRepsHub = {
     },
 
     _determinePrimaryAction(rep, intel, bills) {
-        const persuadability = intel?.persuadability;
-        const score = persuadability?.score ?? 5;
-        const category = persuadability?.category || 'unknown';
+        const score = 5;
+        const category = 'unknown';
 
         // Priority 1: High-impact anti-science bill in committee
         const urgentBill = bills.find(b =>
@@ -340,7 +385,7 @@ const MyRepsHub = {
                 type: 'ask-pledge',
                 priority: 3,
                 label: 'Ask to take the SAFE Action pledge',
-                description: intel ? `${category} — ${persuadability?.reasoning?.substring(0, 100) || 'Persuadable target'}` : 'Help hold this official accountable on science policy',
+                description: 'Help hold this official accountable on science policy',
             };
         }
 

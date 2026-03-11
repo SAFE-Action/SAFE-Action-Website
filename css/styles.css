@@ -4800,30 +4800,7 @@ input.warning {
     margin-top: 4px;
 }
 
-/* Persuadability Badge */
-.rep-hub-persuadability {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(0,0,0,0.03);
-    flex-shrink: 0;
-}
-.persuadability-score {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-.persuadability-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-.rep-hub-persuadability.badge-champion { background: rgba(6,95,70,0.1); color: #065F46; }
-.rep-hub-persuadability.badge-likely-win { background: rgba(6,95,70,0.08); color: #065F46; }
-.rep-hub-persuadability.badge-fence-sitter { background: rgba(146,64,14,0.1); color: #92400E; }
-.rep-hub-persuadability.badge-unlikely { background: rgba(153,27,27,0.08); color: #991B1B; }
-.rep-hub-persuadability.badge-opposed { background: rgba(153,27,27,0.1); color: #991B1B; }
+
 
 /* Primary Action Bar */
 .rep-hub-action {
@@ -4984,12 +4961,7 @@ input.warning {
     .rep-hub-card-header {
         flex-wrap: wrap;
     }
-    .rep-hub-persuadability {
-        flex-direction: row;
-        gap: 6px;
-        width: 100%;
-        justify-content: center;
-    }
+
     .saved-address-bar {
         flex-direction: column;
         text-align: center;
@@ -5010,10 +4982,21 @@ input.warning {
     cursor: pointer;
     background: none;
     border: none;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    padding: inherit;
+    border-bottom: 3px solid transparent;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    padding: 12px 24px;
+    transition: all var(--transition);
+}
+.sub-nav-link[data-tab]:hover {
+    color: var(--white);
+    background: rgba(255,255,255,0.05);
+}
+.sub-nav-link[data-tab].active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
 }
 
 /* Candidate Action Cards in Rep Cards */

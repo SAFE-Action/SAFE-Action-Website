@@ -186,20 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return legName.includes(fullName) || fullName.includes(legName);
             });
 
-            if (match && match.persuadability) {
-                const badge = document.createElement('div');
-                badge.className = 'intel-score-badge';
-                badge.innerHTML = `
-                    <span class="intel-category-badge ${IntelligenceAPI.getCategoryBadgeClass(match.persuadability.category)}">
-                        ${IntelligenceAPI.getCategoryLabel(match.persuadability.category)}
-                    </span>
-                    <span class="intel-score" style="color:${IntelligenceAPI.getScoreColor(match.persuadability.score)}">
-                        ${match.persuadability.score}/10
-                    </span>
-                `;
-                const details = cardEl.querySelector('.card-details');
-                if (details) details.appendChild(badge);
-            }
         });
     }
 });

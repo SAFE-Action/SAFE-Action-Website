@@ -63,6 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
+    // ── Personalization (name + city for templates) ──
+    const PERSON_KEY = 'safe_user_info';
+    function getUserInfo() {
+        try {
+            return JSON.parse(localStorage.getItem(PERSON_KEY)) || {};
+        } catch(e) { return {}; }
+    }
+    function saveUserInfo(name, city) {
+        localStorage.setItem(PERSON_KEY, JSON.stringify({ name: name, city: city }));
+    }
+    function getUserName() { return getUserInfo().name || ''; }
+    function getUserCity() { return getUserInfo().city || ''; }
+
+
     // Check if Civic API is available
     const hasCivicKey = SAFE_CONFIG.GOOGLE_CIVIC_API_KEY && SAFE_CONFIG.GOOGLE_CIVIC_API_KEY.length > 5;
 
@@ -224,9 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rep.bills) {
                 totalBills += rep.bills.filter(b => b.billType === 'anti').length;
             }
-            if (!rep.intel || rep.intel.persuadability?.category !== 'champion') {
-                noPledge++;
-            }
+            noPledge++;
         });
 
         const el = (id, val) => {
@@ -291,24 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         info.appendChild(officeEl);
         header.appendChild(info);
 
-        // Persuadability badge
-        if (rep.intel && rep.intel.persuadability) {
-            const p = rep.intel.persuadability;
-            const cat = p.category || 'unknown';
-            const score = p.score ?? '?';
-            const pDiv = document.createElement('div');
-            pDiv.className = `rep-hub-persuadability ${IntelligenceAPI.getCategoryBadgeClass(cat)}`;
-            const scoreSpan = document.createElement('span');
-            scoreSpan.className = 'persuadability-score';
-            scoreSpan.textContent = `${score}/10`;
-            const labelSpan = document.createElement('span');
-            labelSpan.className = 'persuadability-label';
-            labelSpan.textContent = IntelligenceAPI.getCategoryLabel(cat);
-            pDiv.appendChild(scoreSpan);
-            pDiv.appendChild(labelSpan);
-            header.appendChild(pDiv);
-        }
-        card.appendChild(header);
+                card.appendChild(header);
 
         // ── Primary Action Bar ──
         const actionBar = document.createElement('div');
@@ -355,26 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
         detail.className = 'rep-hub-detail';
         detail.style.display = 'none';
 
-        // Intelligence profile
-        if (rep.intel && rep.intel.persuadability) {
-            const p = rep.intel.persuadability;
-            const intelDiv = document.createElement('div');
-            intelDiv.className = 'rep-hub-intel';
-            const intelTitle = document.createElement('h4');
-            intelTitle.textContent = 'Intelligence Profile';
-            intelDiv.appendChild(intelTitle);
-            const intelP = document.createElement('p');
-            intelP.textContent = p.reasoning || 'No detailed analysis available.';
-            intelDiv.appendChild(intelP);
-            if (p.key_factors && p.key_factors.length) {
-                const factorsDiv = document.createElement('div');
-                factorsDiv.className = 'intel-factors';
-                factorsDiv.textContent = 'Key Factors: ' + p.key_factors.join(', ');
-                intelDiv.appendChild(factorsDiv);
-            }
-            detail.appendChild(intelDiv);
-        }
 
+        
         // Bills
         if (rep.bills && rep.bills.length > 0) {
             const billsDiv = document.createElement('div');
@@ -464,9 +441,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 var emailBody = 'Dear ' + c.name + ',\n\n' +
                     'I am writing to ask you to take the SAFE Action pledge on science and public health policy.\n\n' +
                     'As a candidate for ' + rep.office + ', your position on science-based public health policy matters to voters in our community. The SAFE Action pledge commits candidates to supporting evidence-based public health measures, including maintaining strong vaccination programs.\n\n' +
-                    'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://safeaction.org/pledge.html\n\n' +
+                    'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\n' +
                     'Thank you for your time.\n\n' +
-                    'Sincerely,\n[Your Name]\n[Your City, ' + rep.state + ']';
+                    'Sincerely,\n' + (getUserName() || '[Your Name]') + '\n' + (getUserCity() ? getUserCity() + ', ' + rep.state : '[Your City, ' + rep.state + ']');
 
                 // Subject line
                 var subjLabel = document.createElement('div');
@@ -566,13 +543,50 @@ document.addEventListener('DOMContentLoaded', () => {
             detail.appendChild(contactDiv);
         }
 
-        // Email template
-        const template = generateTemplate(rep, action);
+        // Email template — with personalization inputs
         const templateDiv = document.createElement('div');
         templateDiv.className = 'rep-hub-template';
         const templateTitle = document.createElement('h4');
         templateTitle.textContent = 'Email Template';
         templateDiv.appendChild(templateTitle);
+
+        // Name + City inputs
+        const personalizeRow = document.createElement('div');
+        personalizeRow.className = 'template-personalize';
+        personalizeRow.style.cssText = 'display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap;';
+
+        const nameGroup = document.createElement('div');
+        nameGroup.style.cssText = 'flex:1;min-width:150px;';
+        const nameLabel = document.createElement('label');
+        nameLabel.textContent = 'Your Name';
+        nameLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:#4A4A6A;margin-bottom:4px;';
+        nameGroup.appendChild(nameLabel);
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.placeholder = 'Enter your name';
+        nameInput.value = getUserName();
+        nameInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid #D1D5DB;border-radius:6px;font-size:0.9rem;';
+        nameGroup.appendChild(nameInput);
+        personalizeRow.appendChild(nameGroup);
+
+        const cityGroup = document.createElement('div');
+        cityGroup.style.cssText = 'flex:1;min-width:150px;';
+        const cityLabel = document.createElement('label');
+        cityLabel.textContent = 'Your City';
+        cityLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:#4A4A6A;margin-bottom:4px;';
+        cityGroup.appendChild(cityLabel);
+        const cityInput = document.createElement('input');
+        cityInput.type = 'text';
+        cityInput.placeholder = 'Enter your city';
+        cityInput.value = getUserCity();
+        cityInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid #D1D5DB;border-radius:6px;font-size:0.9rem;';
+        cityGroup.appendChild(cityInput);
+        personalizeRow.appendChild(cityGroup);
+
+        templateDiv.appendChild(personalizeRow);
+
+        // Generate template with user info
+        const template = generateTemplate(rep, action, nameInput.value, cityInput.value);
 
         const subjectField = document.createElement('div');
         subjectField.className = 'template-field';
@@ -582,7 +596,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const subjectInput = document.createElement('input');
         subjectInput.type = 'text';
         subjectInput.value = template.subject;
-        subjectInput.readOnly = true;
         subjectField.appendChild(subjectInput);
         templateDiv.appendChild(subjectField);
 
@@ -593,10 +606,24 @@ document.addEventListener('DOMContentLoaded', () => {
         bodyField.appendChild(bodyLabel);
         const bodyTextarea = document.createElement('textarea');
         bodyTextarea.rows = 8;
-        bodyTextarea.readOnly = true;
         bodyTextarea.value = template.body;
         bodyField.appendChild(bodyTextarea);
         templateDiv.appendChild(bodyField);
+
+        // Live-update template when name/city change
+        function refreshTemplate() {
+            const n = nameInput.value;
+            const c = cityInput.value;
+            saveUserInfo(n, c);
+            const updated = generateTemplate(rep, action, n, c);
+            subjectInput.value = updated.subject;
+            bodyTextarea.value = updated.body;
+            // Update phone script too if present
+            const phoneTA = detail.querySelector('.phone-script-textarea');
+            if (phoneTA) phoneTA.value = generatePhoneScript(rep, action, n, c);
+        }
+        nameInput.addEventListener('input', refreshTemplate);
+        cityInput.addEventListener('input', refreshTemplate);
 
         const templateActions = document.createElement('div');
         templateActions.className = 'template-actions';
@@ -613,7 +640,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rep.email) {
             const mailtoLink = document.createElement('a');
             mailtoLink.className = 'btn btn-outline';
-            mailtoLink.href = `mailto:${rep.email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`;
+            mailtoLink.href = `mailto:${rep.email}?subject=${encodeURIComponent(subjectInput.value)}&body=${encodeURIComponent(bodyTextarea.value)}`;
+            // Update mailto when clicking (use current values)
+            mailtoLink.addEventListener('click', (e) => {
+                mailtoLink.href = `mailto:${rep.email}?subject=${encodeURIComponent(subjectInput.value)}&body=${encodeURIComponent(bodyTextarea.value)}`;
+            });
             mailtoLink.textContent = 'Open in Email App';
             templateActions.appendChild(mailtoLink);
         }
@@ -629,8 +660,8 @@ document.addEventListener('DOMContentLoaded', () => {
             phoneDiv.appendChild(phoneTitle);
             const phoneTextarea = document.createElement('textarea');
             phoneTextarea.rows = 6;
-            phoneTextarea.readOnly = true;
-            phoneTextarea.value = generatePhoneScript(rep, action);
+            phoneTextarea.className = 'phone-script-textarea';
+            phoneTextarea.value = generatePhoneScript(rep, action, nameInput.value, cityInput.value);
             phoneDiv.appendChild(phoneTextarea);
             const phoneActions = document.createElement('div');
             phoneActions.className = 'template-actions';
@@ -665,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     }
 
-    function generateTemplate(rep, action) {
+    function generateTemplate(rep, action, userName, userCity) {
         const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
         const lastName = rep.name.split(' ').pop();
 
@@ -681,8 +712,8 @@ This legislation undermines public health protections that keep our communities 
 Thank you for your time and service.
 
 Sincerely,
-[Your Name]
-[Your City, ${rep.state}]`
+${userName || '[Your Name]'}
+${userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']'}`
             };
         }
 
@@ -694,22 +725,22 @@ I am writing as a concerned constituent to ask you to take the SAFE Action pledg
 
 The SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.
 
-Taking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://safeaction.org/pledge.html
+Taking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html
 
 Thank you for your time and service.
 
 Sincerely,
-[Your Name]
-[Your City, ${rep.state}]`
+${userName || '[Your Name]'}
+${userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']'}`
         };
     }
 
-    function generatePhoneScript(rep, action) {
+    function generatePhoneScript(rep, action, userName, userCity) {
         const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
         const lastName = rep.name.split(' ').pop();
 
         if (action.type === 'oppose-bill' && action.bill) {
-            return `Hello, my name is [Your Name] and I'm a constituent from [Your City].
+            return `Hello, my name is ${userName || '[Your Name]'} and I'm a constituent from ${userCity || '[Your City]'}.
 
 I'm calling to ask ${title} ${lastName} to please OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
 
@@ -718,7 +749,7 @@ This bill would weaken important public health protections and I believe it puts
 Thank you for taking my call.`;
         }
 
-        return `Hello, my name is [Your Name] and I'm a constituent from [Your City].
+        return `Hello, my name is ${userName || '[Your Name]'} and I'm a constituent from ${userCity || '[Your City]'}.
 
 I'm calling to ask ${title} ${lastName} to take the SAFE Action pledge on science and public health.
 
@@ -729,7 +760,7 @@ Thank you for taking my call.`;
 
     function openEmailAction(rep) {
         const action = rep.primaryAction || {};
-        const template = generateTemplate(rep, action);
+        const template = generateTemplate(rep, action, getUserName(), getUserCity());
 
         if (rep.email) {
             window.open(`mailto:${rep.email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`);
