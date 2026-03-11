@@ -462,8 +462,48 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
                 enriched_bills[normalized["billId"]] = normalized
                 bills_enriched += 1
 
+    # Also include non-enriched search results with basic classification
+    for bill_id, entry in all_bills.items():
+        if bill_id not in enriched_bills:
+            title = entry.get('title', '')
+            bill_type, stance, category = _classify_bill(title)
+            status_label = 'Introduced'
+            last_action = entry.get('lastAction', '')
+            la_lower = last_action.lower() if last_action else ''
+            if 'signed' in la_lower or 'enacted' in la_lower:
+                status_label = 'Signed into Law'
+            elif 'died' in la_lower or 'failed' in la_lower or 'tabled' in la_lower:
+                status_label = 'Died in Committee'
+            elif 'passed' in la_lower:
+                status_label = 'Passed One Chamber'
+            elif 'committee' in la_lower:
+                status_label = 'In Committee'
+            dead_statuses = {'Vetoed', 'Died in Committee', 'Tabled', 'Withdrawn', 'Signed into Law'}
+            is_active = 'No' if status_label in dead_statuses else 'Yes'
+            enriched_bills[bill_id] = {
+                'billId': bill_id,
+                'state': entry['state'],
+                'billNumber': entry['billNumber'],
+                'title': title,
+                'status': status_label,
+                'isActive': is_active,
+                'billType': bill_type,
+                'stance': stance,
+                'category': category,
+                'level': 'Federal' if entry['state'] == 'US' else 'State',
+                'impact': 'Medium',
+                'summary': title,
+                'sponsor': '',
+                'lastAction': last_action,
+                'lastActionDate': entry.get('lastActionDate', ''),
+                'actionCount': 0,
+                'stoppedWithAction': False,
+                'sourceUrl': entry.get('sourceUrl', ''),
+                'legiscan_bill_id': entry.get('_legiscan_bill_id'),
+            }
+
     result = list(enriched_bills.values())
-    print(f"  LegiScan search complete: {len(result)} bills, {bills_enriched} enriched ({requests_used} API requests)")
+    print(f'  LegiScan search complete: {len(result)} bills, {bills_enriched} enriched ({requests_used} API requests)')
     return result
 
 
