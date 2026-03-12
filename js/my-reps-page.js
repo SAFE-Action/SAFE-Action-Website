@@ -257,18 +257,42 @@ document.addEventListener('DOMContentLoaded', () => {
     function autofillCityFromAddress() {
         try {
             var saved = JSON.parse(localStorage.getItem(MyRepsHub.STORAGE_KEY));
-            if (saved && saved.normalizedAddress) {
-                var city = saved.normalizedAddress.city || '';
-                var state = saved.normalizedAddress.state || saved.state || '';
-                var cityState = city && state ? city + ', ' + state : city || state || '';
-                if (cityState && !getUserCity()) {
-                    saveUserInfo(getUserName(), cityState);
+            if (!saved) return;
+
+            var city = '';
+            var state = saved.state || '';
+
+            // Prefer parsing city from the original address the user typed
+            // (Civic API normalizedInput sometimes returns wrong city)
+            if (saved.address) {
+                var parts = saved.address.split(',').map(function(s) { return s.trim(); });
+                // Typical format: "123 Street, City, ST 12345" or "123 Street, City, ST"
+                if (parts.length >= 3) {
+                    city = parts[1]; // second part is usually the city
+                } else if (parts.length === 2) {
+                    // Could be "City, ST" or "Street, City"
+                    var secondPart = parts[1].trim();
+                    if (/^[A-Z]{2}\b/.test(secondPart) || /\d{5}/.test(secondPart)) {
+                        city = parts[0]; // first part is city
+                    } else {
+                        city = secondPart;
+                    }
                 }
-                // Always update the city input if it's empty
+            }
+
+            // Fall back to normalizedAddress if we couldn't parse
+            if (!city && saved.normalizedAddress) {
+                city = saved.normalizedAddress.city || '';
+                if (!state) state = saved.normalizedAddress.state || '';
+            }
+
+            var cityState = city && state ? city + ', ' + state : city || state || '';
+            if (cityState) {
+                // Always update city when a new address is looked up
+                saveUserInfo(getUserName(), cityState);
                 var cityInput = document.getElementById('email-all-city');
-                if (cityInput && !cityInput.value) {
+                if (cityInput) {
                     cityInput.value = cityState;
-                    saveUserInfo(getUserName(), cityState);
                 }
             }
         } catch (e) {}

@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounterDisplay('impact-calls', stored.calls);
         updateCounterDisplay('impact-engaged', 423);
 
-        // Reps contacted = unique reps emailed/called (from localStorage actions)
-        var repsContacted = stored.emails + stored.calls;
+        // Reps contacted = baseline (~8 per state) + user's own actions
+        var repsBaseline = 400;
+        var repsContacted = repsBaseline + stored.emails + stored.calls;
         updateCounterDisplay('impact-reps', repsContacted);
 
         // Load bill count from data file (async)
