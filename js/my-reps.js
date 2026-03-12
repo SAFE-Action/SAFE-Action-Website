@@ -121,6 +121,69 @@ const MyRepsHub = {
         return { state, districts };
     },
 
+    // ── Census Geocoder Fallback ──────────────────
+    // When Google Civic API doesn't return sldl/sldu, try Census Bureau
+
+    async _censusDistrictLookup(normalizedAddress, originalAddress) {
+        try {
+            const { line1, city, state, zip } = normalizedAddress;
+
+            // Strategy 1: Address-based Census lookup
+            if (line1 && state) {
+                const params = new URLSearchParams({
+                    street: line1, city: city || '', state: state, zip: zip || '',
+                });
+                const resp = await fetch('/api/districts?' + params.toString());
+                if (resp.ok) {
+                    const data = await resp.json();
+                    if (data.found && data.districts && data.districts.length > 0) {
+                        console.log('Census address lookup found districts:', data.districts);
+                        return data.districts;
+                    }
+                }
+            }
+
+            // Strategy 2: Geocode via Nominatim (free), then coordinate-based Census lookup
+            console.log('Census address lookup failed, trying Nominatim coordinate fallback...');
+            const nomQueries = [];
+            // Try full address first
+            const fullAddr = originalAddress || [line1, city, state, zip].filter(Boolean).join(', ');
+            if (fullAddr) nomQueries.push('q=' + encodeURIComponent(fullAddr));
+            // Then try structured city/state/zip (more reliable for rural areas)
+            if (city && state) nomQueries.push('city=' + encodeURIComponent(city) + '&state=' + encodeURIComponent(state) + (zip ? '&postalcode=' + encodeURIComponent(zip) : ''));
+
+            for (const nomQ of nomQueries) {
+                try {
+                    const nomUrl = 'https://nominatim.openstreetmap.org/search?' + nomQ + '&format=json&limit=1&countrycodes=us';
+                    const geoResp = await fetch(nomUrl);
+                    if (geoResp.ok) {
+                        const geoData = await geoResp.json();
+                        const loc = geoData && geoData[0];
+                        if (loc && loc.lat && loc.lon) {
+                            console.log('Nominatim geocoded to:', loc.lat, loc.lon);
+                            const coordParams = new URLSearchParams({ lat: loc.lat, lng: loc.lon });
+                            const coordResp = await fetch('/api/districts?' + coordParams.toString());
+                            if (coordResp.ok) {
+                                const coordData = await coordResp.json();
+                                if (coordData.found && coordData.districts && coordData.districts.length > 0) {
+                                    console.log('Census coordinate lookup found districts:', coordData.districts);
+                                    return coordData.districts;
+                                }
+                            }
+                        }
+                    }
+                } catch (nomErr) {
+                    console.warn('Nominatim attempt failed:', nomErr.message);
+                }
+            }
+
+            return [];
+        } catch (e) {
+            console.warn('Census district lookup failed:', e.message);
+            return [];
+        }
+    },
+
     async _loadRepsFromDivisions(parsed) {
         const { state, districts } = parsed;
         const cdNumbers = districts.filter(d => d.type === 'cd').map(d => d.number);
@@ -158,8 +221,25 @@ const MyRepsHub = {
         });
 
         // ── State reps from legislators.json (full data with contact info) ──
-        const stateHouseDistricts = districts.filter(d => d.type === 'state-house').map(d => d.number);
-        const stateSenateDistricts = districts.filter(d => d.type === 'state-senate').map(d => d.number);
+        let stateHouseDistricts = districts.filter(d => d.type === 'state-house').map(d => d.number);
+        let stateSenateDistricts = districts.filter(d => d.type === 'state-senate').map(d => d.number);
+
+        // Census fallback: when Civic API didn't return state legislative districts
+        if (stateHouseDistricts.length === 0 && stateSenateDistricts.length === 0) {
+            console.log('No state legislative districts from Civic API, trying Census fallback...');
+            const saved = this.getSavedAddress();
+            const normAddr = saved?.normalizedAddress || {};
+            const censusDistricts = await this._censusDistrictLookup(normAddr, saved?.address);
+            for (const d of censusDistricts) {
+                if (d.type === 'state-house') stateHouseDistricts.push(d.number);
+                if (d.type === 'state-senate') stateSenateDistricts.push(d.number);
+            }
+            if (stateHouseDistricts.length > 0 || stateSenateDistricts.length > 0) {
+                console.log('Census fallback found:', { stateHouseDistricts, stateSenateDistricts });
+            } else {
+                console.warn('Census fallback also returned no state districts');
+            }
+        }
 
         const stateLegs = allLegislators.filter(leg => {
             if (leg.state !== state) return false;
@@ -181,8 +261,7 @@ const MyRepsHub = {
                 }
             }
 
-            // No district info from Civic API - include all state legislators for this state
-            if (stateHouseDistricts.length === 0 && stateSenateDistricts.length === 0) return true;
+            // NEVER fall back to all state legislators - if no districts found, skip state reps
             return false;
         });
 
@@ -204,6 +283,7 @@ const MyRepsHub = {
                 state: state,
             };
             const intelMatch = this._matchIntelligence(rep, legislators);
+            this._enrichContact(rep, intelMatch);
             const repBills = this._findRepBills(rep, bills);
             const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
             return { ...rep, seat, intel: intelMatch, bills: repBills, primaryAction, candidates: seat.candidates || [] };
@@ -226,14 +306,57 @@ const MyRepsHub = {
                 photoUrl: leg.photo_url || '',
                 state: state,
                 website: contact.website || '',
+                contactForm: contact.contact_form || '',
             };
             const intelMatch = this._matchIntelligence(rep, legislators);
+            this._enrichContact(rep, intelMatch);
             const repBills = this._findRepBills(rep, bills);
             const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
             return { ...rep, seat: null, intel: intelMatch, bills: repBills, primaryAction, candidates: [] };
         });
 
-        return [...federalReps, ...stateReps];
+        // ── Fill in missing federal reps from legislators.json ──
+        // seats.json may not have all senators (only those up for re-election)
+        const federalNames = new Set(federalReps.map(r => r.name.toLowerCase()));
+        const missingFederal = allLegislators.filter(leg => {
+            if (leg.state !== state || leg.level !== 'Federal') return false;
+            // Skip if already covered by seats.json
+            const legName = (leg.name || '').toLowerCase();
+            for (const fn of federalNames) {
+                if (fn === legName || fn.includes(legName.split(' ').pop()) && legName.includes(fn.split(' ')[0])) return false;
+            }
+            // Include US Senators and Governor not already in federal reps
+            const chamber = (leg.chamber || '').toLowerCase();
+            if (chamber === 'senate') return true;
+            return false;
+        });
+
+        const missingFederalReps = missingFederal.map(leg => {
+            const party = leg.party || 'Unknown';
+            const partyShort = party.startsWith('Dem') ? 'D' : party.startsWith('Rep') ? 'R' : party.charAt(0);
+            const contact = leg.contact || {};
+            const rep = {
+                name: leg.name,
+                party: partyShort,
+                partyFull: party,
+                office: leg.office || 'U.S. Senate',
+                level: 'Federal',
+                body: 'US Senate',
+                phone: contact.phone || '',
+                email: contact.email || '',
+                photoUrl: leg.photo_url || '',
+                state: state,
+                website: contact.website || '',
+                contactForm: contact.contact_form || '',
+            };
+            const intelMatch = this._matchIntelligence(rep, legislators);
+            this._enrichContact(rep, intelMatch);
+            const repBills = this._findRepBills(rep, bills);
+            const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
+            return { ...rep, seat: null, intel: intelMatch, bills: repBills, primaryAction, candidates: [] };
+        });
+
+        return [...federalReps, ...missingFederalReps, ...stateReps];
     },
 
     // ── Data Matching ─────────────────────────────
@@ -298,6 +421,18 @@ const MyRepsHub = {
             }
         }
         return null;
+    },
+
+    // Fill in missing contact info from the intelligence match
+    _enrichContact(rep, intelMatch) {
+        if (!intelMatch) return rep;
+        const c = intelMatch.contact || {};
+        if (!rep.email && c.email) rep.email = c.email;
+        if (!rep.phone && c.phone) rep.phone = c.phone;
+        if (!rep.website && c.website) rep.website = c.website;
+        if (!rep.contactForm && c.contact_form) rep.contactForm = c.contact_form;
+        if (!rep.photoUrl && intelMatch.photo_url) rep.photoUrl = intelMatch.photo_url;
+        return rep;
     },
 
     _matchIntelligence(rep, legislators) {
@@ -431,6 +566,7 @@ const MyRepsHub = {
             };
 
             const intelMatch = this._matchIntelligence(rep, legislators);
+            this._enrichContact(rep, intelMatch);
             const repBills = this._findRepBills(rep, bills);
             const primaryAction = this._determinePrimaryAction(rep, intelMatch, repBills);
 

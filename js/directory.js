@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 : `<div class="candidate-avatar">${escapeHtml(initials)}</div>`;
 
             return `
-                <a href="candidate.html?id=${encodeURIComponent(candidate.id)}" class="candidate-card">
+                <a href="/candidates/${encodeURIComponent(SheetsAPI.getSlug(candidate))}" class="candidate-card">
                     <div class="card-top">
                         ${avatarHtml}
                         <div>

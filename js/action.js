@@ -192,6 +192,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 grid.querySelectorAll('.rep-card').forEach(c => c.classList.remove('selected'));
                 grid.querySelector(`[data-rep-index="${index}"]`).classList.add('selected');
                 fillTemplateFields();
+                updateSelectedRepContact();
+                // Scroll to the Take Action section
+                const actionSection = document.getElementById('take-action-section');
+                if (actionSection) {
+                    actionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
     }
@@ -205,6 +211,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         window._bill = b;
 
         fillTemplateFields();
+        updateSelectedRepContact();
 
         document.getElementById('user-name').addEventListener('input', debounce(fillTemplateFields, 300));
         document.getElementById('user-city').addEventListener('input', debounce(fillTemplateFields, 300));
@@ -234,7 +241,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('email-body').value = LegislationAPI.fillTemplate(window._emailTemplate.body, data);
         } else {
             document.getElementById('email-subject').value = `Please ${b.stance === 'Support' ? 'SUPPORT' : 'OPPOSE'} ${b.billNumber}`;
-            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\nSincerely,\n${data.yourName}\n${data.yourCity}, ${stateName}`;
+            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\nSincerely,\n${data.yourName}\n${data.yourCity}, ${stateName}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`;
         }
 
         // Phone
@@ -242,6 +249,63 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('phone-script').value = LegislationAPI.fillTemplate(window._phoneTemplate.body, data);
         } else {
             document.getElementById('phone-script').value = `Hello, my name is ${data.yourName} and I'm a constituent from ${data.yourCity}.\n\nI'm calling to ask ${data.repName} to please ${b.stance === 'Support' ? 'SUPPORT' : 'OPPOSE'} ${b.billNumber}, the ${b.title}.\n\nThank you for taking my call.`;
+        }
+
+        // Selected rep email/contact button
+        const emailAddresses = document.getElementById('email-addresses');
+        if (emailAddresses && selectedRep) {
+            emailAddresses.textContent = '';
+
+            if (selectedRep.email) {
+                // Direct email available - create mailto link
+                const subject = encodeURIComponent(document.getElementById('email-subject').value);
+                const body = encodeURIComponent(document.getElementById('email-body').value);
+                const link = document.createElement('a');
+                link.href = 'mailto:' + selectedRep.email + '?subject=' + subject + '&body=' + body;
+                link.className = 'rep-email-btn';
+                const icon = document.createElement('span');
+                icon.className = 'rep-email-icon';
+                icon.textContent = '\u2709';
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'rep-email-name';
+                nameSpan.textContent = 'Email ' + selectedRep.name;
+                const addr = document.createElement('span');
+                addr.className = 'rep-email-addr';
+                addr.textContent = selectedRep.email;
+                link.appendChild(icon);
+                link.appendChild(document.createTextNode(' '));
+                link.appendChild(nameSpan);
+                link.appendChild(addr);
+                emailAddresses.appendChild(link);
+
+            } else if (selectedRep.contactForm || selectedRep.website) {
+                // No email but has web contact form - show instructions
+                var container = document.createElement('div');
+                container.className = 'rep-webform-notice';
+
+                var notice = document.createElement('p');
+                notice.className = 'rep-webform-text';
+                notice.textContent = selectedRep.name + ' uses a web contact form instead of direct email. Copy the template above, then paste it on their contact page:';
+                container.appendChild(notice);
+
+                var formLink = document.createElement('a');
+                formLink.href = selectedRep.contactForm || selectedRep.website;
+                formLink.target = '_blank';
+                formLink.rel = 'noopener';
+                formLink.className = 'rep-email-btn rep-webform-btn';
+                var formIcon = document.createElement('span');
+                formIcon.className = 'rep-email-icon';
+                formIcon.textContent = '\uD83C\uDF10';
+                var formName = document.createElement('span');
+                formName.className = 'rep-email-name';
+                formName.textContent = 'Open ' + selectedRep.name + '\'s Contact Page';
+                formLink.appendChild(formIcon);
+                formLink.appendChild(document.createTextNode(' '));
+                formLink.appendChild(formName);
+                container.appendChild(formLink);
+
+                emailAddresses.appendChild(container);
+            }
         }
 
         // Phone numbers list
@@ -274,14 +338,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             showActionConfirm('email');
         });
 
-        // Open mailto - with action tracking
-        document.getElementById('open-mailto').addEventListener('click', () => {
-            const subject = encodeURIComponent(document.getElementById('email-subject').value);
-            const body = encodeURIComponent(document.getElementById('email-body').value);
-            const to = selectedRep && selectedRep.email ? selectedRep.email : '';
-            window.open(`mailto:${to}?subject=${subject}&body=${body}`, '_self');
-            showActionConfirm('email');
-        });
+        // Open mailto now handled by per-rep email buttons
 
         // Copy phone script - with action tracking
         document.getElementById('copy-phone').addEventListener('click', () => {
@@ -396,6 +453,59 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.error('Signup error:', error);
             }
         });
+    }
+
+    function updateSelectedRepContact() {
+        const contactEl = document.getElementById('selected-rep-contact');
+        if (!contactEl || !selectedRep) {
+            if (contactEl) contactEl.style.display = 'none';
+            return;
+        }
+
+        contactEl.style.display = '';
+        document.getElementById('selected-rep-name').textContent = selectedRep.name;
+
+        const detailParts = [];
+        if (selectedRep.party) detailParts.push(selectedRep.party);
+        if (selectedRep.district) detailParts.push(selectedRep.district);
+        if (selectedRep.chamber) detailParts.push(selectedRep.chamber);
+        document.getElementById('selected-rep-detail').textContent = detailParts.join(' ' + String.fromCharCode(183) + ' ');
+
+        // Email button
+        const emailBtn = document.getElementById('selected-rep-email-btn');
+        const emailText = document.getElementById('selected-rep-email-text');
+        const webformBtn = document.getElementById('selected-rep-webform-btn');
+        const webformText = document.getElementById('selected-rep-webform-text');
+
+        if (selectedRep.email) {
+            const subject = encodeURIComponent(document.getElementById('email-subject').value);
+            const body = encodeURIComponent(document.getElementById('email-body').value);
+            emailBtn.href = 'mailto:' + selectedRep.email + '?subject=' + subject + '&body=' + body;
+            emailText.textContent = selectedRep.email;
+            emailBtn.style.display = '';
+            if (webformBtn) webformBtn.style.display = 'none';
+        } else {
+            emailBtn.style.display = 'none';
+            // Show web contact form button if available
+            if (webformBtn && (selectedRep.contactForm || selectedRep.website)) {
+                webformBtn.href = selectedRep.contactForm || selectedRep.website;
+                webformText.textContent = 'Contact Form';
+                webformBtn.style.display = '';
+            } else if (webformBtn) {
+                webformBtn.style.display = 'none';
+            }
+        }
+
+        // Phone button
+        const phoneBtn = document.getElementById('selected-rep-phone-btn');
+        const phoneText = document.getElementById('selected-rep-phone-text');
+        if (selectedRep.phone) {
+            phoneBtn.href = 'tel:' + selectedRep.phone.replace(/[^+\d]/g, '');
+            phoneText.textContent = selectedRep.phone;
+            phoneBtn.style.display = '';
+        } else {
+            phoneBtn.style.display = 'none';
+        }
     }
 
     function showNotFound() {

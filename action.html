@@ -102,19 +102,28 @@
                     <div class="status-pipeline" id="status-pipeline"></div>
                 </div>
 
-                <!-- Representatives -->
-                <div class="detail-card">
-                    <h2 class="detail-card-title">Your Representatives</h2>
-                    <p style="color:var(--text-mid);margin-bottom:16px;">These representatives may vote on this bill. Click "Use Template" to populate your message.</p>
-                    <div class="rep-grid" id="rep-grid"></div>
-                    <div id="no-reps" style="display:none;">
-                        <p style="color:var(--text-mid);text-align:center;padding:20px;">No representative data available for this state yet.</p>
-                    </div>
-                </div>
-
                 <!-- Take Action -->
-                <div class="detail-card highlight-card">
+                <div class="detail-card highlight-card" id="take-action-section">
                     <h2 class="detail-card-title">Take Action</h2>
+
+                    <!-- Selected Rep Contact -->
+                    <div id="selected-rep-contact" class="selected-rep-contact" style="display:none;">
+                        <div class="selected-rep-info">
+                            <strong id="selected-rep-name"></strong>
+                            <span id="selected-rep-detail" style="color:var(--text-mid);font-size:0.9rem;"></span>
+                        </div>
+                        <div class="selected-rep-actions">
+                            <a href="#" id="selected-rep-email-btn" class="rep-contact-btn rep-contact-email" style="display:none;">
+                                <span class="rep-contact-icon">&#9993;</span> <span id="selected-rep-email-text">Email</span>
+                            </a>
+                            <a href="#" id="selected-rep-webform-btn" class="rep-contact-btn rep-contact-webform" target="_blank" rel="noopener" style="display:none;">
+                                <span class="rep-contact-icon">&#127760;</span> <span id="selected-rep-webform-text">Contact Form</span>
+                            </a>
+                            <a href="#" id="selected-rep-phone-btn" class="rep-contact-btn rep-contact-phone" style="display:none;">
+                                <span class="rep-contact-icon">&#9742;</span> <span id="selected-rep-phone-text">Call</span>
+                            </a>
+                        </div>
+                    </div>
 
                     <!-- User Info -->
                     <div class="user-info-row">
@@ -138,9 +147,9 @@
                             <label>Body</label>
                             <textarea id="email-body"></textarea>
                         </div>
+                        <div id="email-addresses" style="margin-bottom:16px;"></div>
                         <div class="template-actions">
                             <button class="btn btn-primary" id="copy-email">Copy to Clipboard</button>
-                            <button class="btn btn-outline" id="open-mailto">Open in Email App</button>
                             <span class="copy-success" id="copy-email-success">Copied!</span>
                         </div>
                     </div>
@@ -160,6 +169,16 @@
 
                     <!-- Action Confirmation Bar -->
                     <div id="action-confirm" class="action-confirm-bar" style="display:none;"></div>
+                </div>
+
+                <!-- Representatives -->
+                <div class="detail-card">
+                    <h2 class="detail-card-title">Your Representatives</h2>
+                    <p style="color:var(--text-mid);margin-bottom:16px;">Select a representative to customize your message.</p>
+                    <div class="rep-grid" id="rep-grid"></div>
+                    <div id="no-reps" style="display:none;">
+                        <p style="color:var(--text-mid);text-align:center;padding:20px;">No representative data available for this state yet.</p>
+                    </div>
                 </div>
 
                 <!-- Email Signup -->
@@ -197,12 +216,6 @@
                     <a href="outreach.html">Take Action</a>
                     <a href="directory.html">Pledges</a>
                 </nav>
-                <div class="footer-social">
-                    <a href="https://twitter.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="X/Twitter">&#120143;</a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">f</a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">&#128247;</a>
-                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">&#9835;</a>
-                </div>
                 <div class="footer-donate">
                     <p class="footer-donate-text">Support science-based public health policy</p>
                     <a href="https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00" class="btn-donate" target="_blank" rel="noopener">Donate</a>

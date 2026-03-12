@@ -106,6 +106,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Google Places Autocomplete ──────────────────
+    // Validates the API key works before loading the full Maps JS SDK,
+    // to avoid Google's intrusive error dialogs when APIs aren't enabled.
+    function initAddressAutocomplete() {
+        if (!addressInput) return;
+
+        var apiKey = SAFE_CONFIG.GOOGLE_MAPS_API_KEY || SAFE_CONFIG.GOOGLE_CIVIC_API_KEY;
+        if (!apiKey) return;
+
+        // First, test the key with a lightweight geocode request.
+        // If it fails, don't load the Maps JS SDK at all (avoids error dialogs).
+        fetch('https://maps.googleapis.com/maps/api/geocode/json?address=test&key=' + apiKey)
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.error_message && data.error_message.includes('not activated')) {
+                    console.warn('Maps API not fully activated — skipping Places Autocomplete');
+                    return;
+                }
+                loadPlacesScript(apiKey);
+            })
+            .catch(function() {
+                // Network error — skip autocomplete silently
+                console.warn('Could not validate Maps API key — skipping autocomplete');
+            });
+    }
+
+    function loadPlacesScript(apiKey) {
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=__initSAFEPlaces';
+        script.async = true;
+        script.defer = true;
+        script.onerror = function() {
+            console.warn('Google Places API not available');
+        };
+
+        window.__initSAFEPlaces = function() {
+            try {
+                var autocomplete = new google.maps.places.Autocomplete(addressInput, {
+                    types: ['address'],
+                    componentRestrictions: { country: 'us' },
+                    fields: ['formatted_address', 'address_components']
+                });
+
+                autocomplete.addListener('place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    if (place && place.formatted_address) {
+                        addressInput.value = place.formatted_address;
+                        setTimeout(function() {
+                            if (addressForm) {
+                                addressForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                            }
+                        }, 100);
+                    }
+                });
+
+                addressInput.setAttribute('placeholder', 'Start typing your address...');
+            } catch (e) {
+                console.warn('Places Autocomplete init failed:', e);
+                cleanupPlacesWidget();
+            }
+        };
+
+        document.head.appendChild(script);
+    }
+
+    function cleanupPlacesWidget() {
+        var pacContainers = document.querySelectorAll('.pac-container');
+        pacContainers.forEach(function(el) { el.remove(); });
+        if (addressInput) {
+            addressInput.removeAttribute('aria-expanded');
+            addressInput.removeAttribute('aria-owns');
+            addressInput.removeAttribute('aria-autocomplete');
+            addressInput.classList.remove('pac-target-input');
+        }
+        // Hide any remaining Google-injected elements
+        var style = document.createElement('style');
+        style.textContent = '.pac-icon, .pac-container, .pac-item, .dismissButton, .gm-err-container, .gm-style-pbc { display: none !important; }';
+        document.head.appendChild(style);
+    }
+
+    initAddressAutocomplete();
+
     // Change address
     if (changeAddressBtn) {
         changeAddressBtn.addEventListener('click', () => {
@@ -172,6 +254,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function autofillCityFromAddress() {
+        try {
+            var saved = JSON.parse(localStorage.getItem(MyRepsHub.STORAGE_KEY));
+            if (saved && saved.normalizedAddress) {
+                var city = saved.normalizedAddress.city || '';
+                var state = saved.normalizedAddress.state || saved.state || '';
+                var cityState = city && state ? city + ', ' + state : city || state || '';
+                if (cityState && !getUserCity()) {
+                    saveUserInfo(getUserName(), cityState);
+                }
+                // Always update the city input if it's empty
+                var cityInput = document.getElementById('email-all-city');
+                if (cityInput && !cityInput.value) {
+                    cityInput.value = cityState;
+                    saveUserInfo(getUserName(), cityState);
+                }
+            }
+        } catch (e) {}
+    }
+
     async function doAddressLookup(address) {
         showLoading();
         const reps = await MyRepsHub.lookupAddress(address);
@@ -182,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSavedAddress(address);
         hideLoading();
         renderReps(reps);
+        autofillCityFromAddress();
     }
 
     async function loadFromSaved(saved) {
@@ -192,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const reps = await MyRepsHub._loadRepsFromDivisions(parsed);
             hideLoading();
             renderReps(reps);
+            autofillCityFromAddress();
         } else {
             // Legacy fallback: use state from address
             hideLoading();
@@ -210,24 +314,483 @@ document.addEventListener('DOMContentLoaded', () => {
         renderReps(reps);
     }
 
+    var _currentReps = [];
+
     function renderReps(reps) {
         if (!repGrid) return;
+        _currentReps = reps;
 
         // Sort by action priority (most urgent first)
-        reps.sort((a, b) => (a.primaryAction?.priority || 9) - (b.primaryAction?.priority || 9));
+        reps.sort(function(a, b) { return (a.primaryAction ? a.primaryAction.priority : 9) - (b.primaryAction ? b.primaryAction.priority : 9); });
 
         // Update stats
         renderStats(reps);
 
+        // Build name/city personalization bar (below stats, above everything else)
+        buildPersonalizeBar();
+
+        // Build "Email All" action bar
+        buildEmailAllBar(reps);
+
         // Build cards via DOM methods
         repGrid.textContent = '';
-        reps.forEach((rep, i) => {
-            const card = buildRepCard(rep, i, reps);
+        reps.forEach(function(rep, i) {
+            var card = buildRepCard(rep, i, reps);
             repGrid.appendChild(card);
         });
 
         if (repSection) repSection.style.display = '';
         if (statsBar) statsBar.style.display = '';
+    }
+
+    function buildPersonalizeBar() {
+        var existing = document.getElementById('personalize-bar');
+        if (existing) existing.remove();
+
+        var bar = document.createElement('div');
+        bar.id = 'personalize-bar';
+        bar.style.cssText = 'background:linear-gradient(135deg,#1a1a2e,#2d2d5e);border-radius:12px;padding:16px 20px;margin:16px 0 8px;border-left:4px solid #B22234;';
+
+        var heading = document.createElement('strong');
+        heading.style.cssText = 'color:#fff;font-size:0.95rem;display:block;margin-bottom:8px;';
+        heading.textContent = 'Personalize Your Emails';
+        bar.appendChild(heading);
+
+        var row = document.createElement('div');
+        row.style.cssText = 'display:flex;gap:12px;flex-wrap:wrap;';
+
+        var nameGroup = document.createElement('div');
+        nameGroup.style.cssText = 'flex:1;min-width:140px;';
+        var nameLabel = document.createElement('label');
+        nameLabel.textContent = 'Your Name';
+        nameLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:4px;';
+        nameGroup.appendChild(nameLabel);
+        var nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.id = 'email-all-name';
+        nameInput.placeholder = 'Enter your name';
+        nameInput.value = getUserName();
+        nameInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid rgba(255,255,255,0.3);border-radius:6px;font-size:0.9rem;background:rgba(255,255,255,0.95);color:#1a1a2e;';
+        nameInput.addEventListener('change', function() { saveUserInfo(nameInput.value.trim(), document.getElementById('email-all-city').value.trim()); });
+        nameGroup.appendChild(nameInput);
+        row.appendChild(nameGroup);
+
+        var cityGroup = document.createElement('div');
+        cityGroup.style.cssText = 'flex:1;min-width:140px;';
+        var cityLabel = document.createElement('label');
+        cityLabel.textContent = 'Your City';
+        cityLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:4px;';
+        cityGroup.appendChild(cityLabel);
+        var cityInput = document.createElement('input');
+        cityInput.type = 'text';
+        cityInput.id = 'email-all-city';
+        cityInput.placeholder = 'Enter your city';
+        cityInput.value = getUserCity();
+        cityInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid rgba(255,255,255,0.3);border-radius:6px;font-size:0.9rem;background:rgba(255,255,255,0.95);color:#1a1a2e;';
+        cityInput.addEventListener('change', function() { saveUserInfo(document.getElementById('email-all-name').value.trim(), cityInput.value.trim()); });
+        cityGroup.appendChild(cityInput);
+        row.appendChild(cityGroup);
+
+        bar.appendChild(row);
+
+        // Insert after stats bar
+        if (statsBar && statsBar.parentNode) {
+            statsBar.parentNode.insertBefore(bar, statsBar.nextSibling);
+        }
+    }
+
+    function validatePersonalizeInputs() {
+        var nameInput = document.getElementById('email-all-name');
+        var cityInput = document.getElementById('email-all-city');
+        var name = nameInput ? nameInput.value.trim() : '';
+        var city = cityInput ? cityInput.value.trim() : '';
+        if (!name) { if (nameInput) { nameInput.focus(); nameInput.style.borderColor = '#B22234'; } return false; }
+        if (!city) { if (cityInput) { cityInput.focus(); cityInput.style.borderColor = '#B22234'; } return false; }
+        saveUserInfo(name, city);
+        return true;
+    }
+
+    function buildEmailAllBar(reps) {
+        var existing = document.getElementById('email-all-bar');
+        if (existing) existing.remove();
+
+        if (reps.length === 0) return;
+
+        var bar = document.createElement('div');
+        bar.id = 'email-all-bar';
+        bar.className = 'email-all-bar';
+
+        var inner = document.createElement('div');
+        inner.className = 'email-all-inner';
+
+        var text = document.createElement('div');
+        text.className = 'email-all-text';
+        var heading = document.createElement('strong');
+        heading.textContent = 'Take Action Now';
+        text.appendChild(heading);
+        var desc = document.createElement('p');
+        desc.textContent = 'Send each of your ' + reps.length + ' representatives a personalized email asking them to take the SAFE Action pledge on science.';
+        text.appendChild(desc);
+        inner.appendChild(text);
+
+        var btnWrap = document.createElement('div');
+        btnWrap.className = 'email-all-buttons';
+
+        var emailAllBtn = document.createElement('button');
+        emailAllBtn.className = 'btn btn-primary email-all-btn';
+        emailAllBtn.textContent = 'Email All ' + reps.length + ' Reps';
+        emailAllBtn.addEventListener('click', function() {
+            if (!validatePersonalizeInputs()) return;
+            emailAllReps(reps, emailAllBtn, bar);
+        });
+        btnWrap.appendChild(emailAllBtn);
+
+        inner.appendChild(btnWrap);
+        bar.appendChild(inner);
+
+        // Insert before rep grid
+        if (repGrid && repGrid.parentNode) {
+            repGrid.parentNode.insertBefore(bar, repGrid);
+        }
+    }
+
+    function emailAllReps(reps, startBtn, bar) {
+        var idx = 0;
+        var total = reps.length;
+        var userName = getUserName();
+        var userCity = getUserCity();
+
+        // Replace the bar content with a step-by-step UI
+        var inner = bar.querySelector('.email-all-inner');
+        inner.textContent = '';
+
+        // Progress header
+        var progressHeader = document.createElement('div');
+        progressHeader.className = 'email-all-text';
+        inner.appendChild(progressHeader);
+
+        // Current rep info area
+        var repInfo = document.createElement('div');
+        repInfo.className = 'email-all-rep-info';
+        repInfo.style.cssText = 'background:rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;margin:8px 0;';
+        inner.appendChild(repInfo);
+
+        // Button area
+        var btnArea = document.createElement('div');
+        btnArea.className = 'email-all-buttons';
+        btnArea.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;';
+        inner.appendChild(btnArea);
+
+        function showStep() {
+            if (idx >= total) {
+                // Collect all candidates from all reps
+                var allCandidates = [];
+                reps.forEach(function(rep) {
+                    if (rep.candidates && rep.candidates.length > 0) {
+                        rep.candidates.forEach(function(cand) {
+                            // Avoid duplicates and skip if same as incumbent
+                            if (cand.name && cand.name !== rep.name) {
+                                allCandidates.push({
+                                    name: cand.name,
+                                    party: cand.party || '?',
+                                    partyFull: cand.party === 'R' ? 'Republican' : cand.party === 'D' ? 'Democrat' : cand.party || '',
+                                    office: rep.office + ' (Candidate)',
+                                    email: cand.email || '',
+                                    website: cand.website || '',
+                                    contactForm: cand.contact_form || cand.contactForm || '',
+                                });
+                            }
+                        });
+                    }
+                });
+
+                if (allCandidates.length > 0) {
+                    progressHeader.innerHTML = '<strong>Representatives Done!</strong><p>You contacted all ' + total + ' current representatives. There are also <strong>' + allCandidates.length + ' candidates</strong> running for office. Ask them to take the SAFE Action pledge too!</p>';
+                    repInfo.style.display = 'none';
+                    btnArea.textContent = '';
+
+                    var emailCandsBtn = document.createElement('button');
+                    emailCandsBtn.className = 'btn btn-primary';
+                    emailCandsBtn.textContent = 'Email ' + allCandidates.length + ' Candidates';
+                    emailCandsBtn.addEventListener('click', function() {
+                        emailAllCandidates(allCandidates, bar);
+                    });
+                    btnArea.appendChild(emailCandsBtn);
+
+                    var skipCandsBtn = document.createElement('button');
+                    skipCandsBtn.className = 'btn btn-outline';
+                    skipCandsBtn.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+                    skipCandsBtn.textContent = "I'm Done";
+                    skipCandsBtn.addEventListener('click', function() {
+                        buildEmailAllBar(_currentReps);
+                    });
+                    btnArea.appendChild(skipCandsBtn);
+                } else {
+                    progressHeader.innerHTML = '<strong>All Done!</strong><p>You contacted all ' + total + ' representatives. Thank you for taking action!</p>';
+                    repInfo.style.display = 'none';
+                    btnArea.textContent = '';
+                    var doneBtn = document.createElement('button');
+                    doneBtn.className = 'btn btn-primary';
+                    doneBtn.textContent = 'Finished';
+                    doneBtn.addEventListener('click', function() {
+                        buildEmailAllBar(_currentReps);
+                    });
+                    btnArea.appendChild(doneBtn);
+                }
+                return;
+            }
+
+            var rep = reps[idx];
+            progressHeader.innerHTML = '<strong>Representative ' + (idx + 1) + ' of ' + total + '</strong>';
+
+            // Show rep details
+            var partyLabel = rep.party === 'R' ? 'Republican' : rep.party === 'D' ? 'Democrat' : rep.partyFull || rep.party;
+            repInfo.style.display = '';
+            repInfo.innerHTML = '';
+            var repName = document.createElement('div');
+            repName.style.cssText = 'font-weight:700;font-size:1.05rem;color:#fff;';
+            repName.textContent = rep.name;
+            repInfo.appendChild(repName);
+            var repDetail = document.createElement('div');
+            repDetail.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:2px;';
+            repDetail.textContent = partyLabel + ' — ' + rep.office;
+            repInfo.appendChild(repDetail);
+            if (rep.email) {
+                var repEmail = document.createElement('div');
+                repEmail.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:2px;';
+                repEmail.textContent = rep.email;
+                repInfo.appendChild(repEmail);
+            }
+
+            // Action buttons
+            btnArea.textContent = '';
+
+            // Determine contact URL: prefer contactForm, then try /contact on their website, then website root
+            var contactUrl = rep.contactForm || '';
+            if (!contactUrl && rep.website) {
+                // Most congressional sites have a /contact page
+                var base = rep.website.replace(/\/+$/, '');
+                contactUrl = base + '/contact';
+            }
+
+            // Pre-generate the template for this rep
+            var pledgeAction = { type: 'ask-pledge' };
+            var template = generateTemplate(rep, pledgeAction, userName, userCity);
+            var fullText = 'Subject: ' + template.subject + '\n\n' + template.body;
+
+            // For reps WITH email: use a real <a href="mailto:..."> so the browser handles it natively
+            // For reps WITHOUT email: use a button that opens the contact form
+            var sendBtn;
+            if (rep.email) {
+                sendBtn = document.createElement('a');
+                sendBtn.href = 'mailto:' + rep.email + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
+                sendBtn.className = 'btn btn-primary';
+                sendBtn.style.cssText = 'text-decoration:none;display:inline-block;';
+                sendBtn.textContent = 'Open Email to ' + rep.name.split(' ').pop();
+                sendBtn.target = '_blank';
+            } else {
+                sendBtn = document.createElement('button');
+                sendBtn.className = 'btn btn-primary';
+                sendBtn.textContent = 'Open Contact Form for ' + rep.name.split(' ').pop();
+            }
+
+            sendBtn.addEventListener('click', function() {
+                // Copy to clipboard
+                navigator.clipboard.writeText(fullText).catch(function() {});
+
+                if (rep.email) {
+                    showToast('Email template copied & opening Gmail for ' + rep.name);
+                } else if (contactUrl) {
+                    window.open(contactUrl, '_blank');
+                    showToast('Template copied! Paste it into ' + rep.name.split(' ').pop() + "'s contact form.");
+                } else {
+                    showToast('Template copied to clipboard!');
+                }
+                trackAction('email');
+
+                // Hide skip button
+                if (skipBtn) skipBtn.style.display = 'none';
+
+                // Only add "Next Rep" button once
+                if (!btnArea.querySelector('.next-rep-btn')) {
+                    if (!rep.email) {
+                        var pasteNote = document.createElement('div');
+                        pasteNote.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.7);margin:6px 0;';
+                        pasteNote.textContent = 'The email template has been copied to your clipboard. Paste it into the contact form that just opened.';
+                        btnArea.appendChild(pasteNote);
+                    }
+
+                    var nextBtn = document.createElement('button');
+                    nextBtn.className = 'btn btn-primary next-rep-btn';
+                    nextBtn.textContent = idx + 1 < total ? 'Next Rep (' + (total - idx - 1) + ' remaining)' : 'Finish';
+                    nextBtn.addEventListener('click', function() {
+                        idx++;
+                        showStep();
+                    });
+                    btnArea.appendChild(nextBtn);
+                }
+            });
+            btnArea.appendChild(sendBtn);
+
+            var skipBtn = document.createElement('button');
+            skipBtn.className = 'btn btn-outline';
+            skipBtn.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+            skipBtn.textContent = 'Skip';
+            skipBtn.addEventListener('click', function() {
+                idx++;
+                showStep();
+            });
+            btnArea.appendChild(skipBtn);
+        }
+
+        showStep();
+    }
+
+    var candidateSubjects = [
+        'Will you take the SAFE Action pledge on science?',
+        'A voter\'s request: support science and public health',
+        'Will you commit to evidence-based health policy?',
+        'Voters want to know: where do you stand on science?',
+        'Please take the SAFE Action pledge for public health',
+        'Science and public health matter to voters like me',
+        'Can we count on your support for evidence-based policy?',
+        'A question about your stance on science and health policy',
+        'Supporting science: will you take the pledge?',
+        'Public health matters — a request from a concerned voter',
+    ];
+
+    function generateCandidateTemplate(candidate, userName, userCity) {
+        var title = candidate.office.includes('Senate') ? 'Senator' : 'Representative';
+        var lastName = candidate.name.split(' ').pop();
+        return {
+            subject: pickRandom(candidateSubjects),
+            body: 'Dear ' + candidate.name + ',\n\n' +
+                'I am writing as a concerned voter in your district to ask you to take the SAFE Action pledge on science and public health policy.\n\n' +
+                'The SAFE Action pledge commits candidates and elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\n' +
+                'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\n' +
+                'Thank you for your time.\n\n' +
+                'Sincerely,\n' +
+                (userName || '[Your Name]') + '\n' +
+                (userCity || '[Your City]')
+        };
+    }
+
+    function emailAllCandidates(candidates, bar) {
+        var idx = 0;
+        var total = candidates.length;
+        var userName = getUserName();
+        var userCity = getUserCity();
+
+        var inner = bar.querySelector('.email-all-inner');
+        inner.textContent = '';
+
+        var progressHeader = document.createElement('div');
+        progressHeader.className = 'email-all-text';
+        inner.appendChild(progressHeader);
+
+        var repInfo = document.createElement('div');
+        repInfo.style.cssText = 'background:rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;margin:8px 0;';
+        inner.appendChild(repInfo);
+
+        var btnArea = document.createElement('div');
+        btnArea.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;';
+        inner.appendChild(btnArea);
+
+        function showCandStep() {
+            if (idx >= total) {
+                progressHeader.innerHTML = '<strong>All Done!</strong><p>You contacted all ' + total + ' candidates. Thank you for going the extra mile!</p>';
+                repInfo.style.display = 'none';
+                btnArea.textContent = '';
+                var doneBtn = document.createElement('button');
+                doneBtn.className = 'btn btn-primary';
+                doneBtn.textContent = 'Finished';
+                doneBtn.addEventListener('click', function() {
+                    buildEmailAllBar(_currentReps);
+                });
+                btnArea.appendChild(doneBtn);
+                return;
+            }
+
+            var cand = candidates[idx];
+            progressHeader.innerHTML = '<strong>Candidate ' + (idx + 1) + ' of ' + total + '</strong>';
+
+            var partyLabel = cand.party === 'R' ? 'Republican' : cand.party === 'D' ? 'Democrat' : cand.partyFull || cand.party;
+            repInfo.style.display = '';
+            repInfo.innerHTML = '';
+            var candName = document.createElement('div');
+            candName.style.cssText = 'font-weight:700;font-size:1.05rem;color:#fff;';
+            candName.textContent = cand.name;
+            repInfo.appendChild(candName);
+            var candDetail = document.createElement('div');
+            candDetail.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:2px;';
+            candDetail.textContent = partyLabel + ' — ' + cand.office;
+            repInfo.appendChild(candDetail);
+
+            btnArea.textContent = '';
+
+            var template = generateCandidateTemplate(cand, userName, userCity);
+            var fullText = 'Subject: ' + template.subject + '\n\n' + template.body;
+
+            // Determine contact method
+            var contactUrl = cand.contactForm || '';
+            if (!contactUrl && cand.website) {
+                contactUrl = cand.website.replace(/\/+$/, '') + '/contact';
+            }
+
+            var sendBtn;
+            if (cand.email) {
+                sendBtn = document.createElement('a');
+                sendBtn.href = 'mailto:' + cand.email + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
+                sendBtn.className = 'btn btn-primary';
+                sendBtn.style.cssText = 'text-decoration:none;display:inline-block;';
+                sendBtn.textContent = 'Open Email to ' + cand.name.split(' ').pop();
+                sendBtn.target = '_blank';
+            } else {
+                sendBtn = document.createElement('button');
+                sendBtn.className = 'btn btn-primary';
+                sendBtn.textContent = 'Copy Pledge Template';
+            }
+
+            sendBtn.addEventListener('click', function() {
+                navigator.clipboard.writeText(fullText).catch(function() {});
+
+                if (cand.email) {
+                    showToast('Email opening for ' + cand.name);
+                } else if (contactUrl) {
+                    window.open(contactUrl, '_blank');
+                    showToast('Template copied! Paste it into the contact form.');
+                } else {
+                    showToast('Pledge template copied to clipboard! Search for ' + cand.name + "'s website to send it.");
+                }
+                trackAction('email');
+
+                if (skipBtn) skipBtn.style.display = 'none';
+
+                if (!btnArea.querySelector('.next-rep-btn')) {
+                    var nextBtn = document.createElement('button');
+                    nextBtn.className = 'btn btn-primary next-rep-btn';
+                    nextBtn.textContent = idx + 1 < total ? 'Next Candidate (' + (total - idx - 1) + ' remaining)' : 'Finish';
+                    nextBtn.addEventListener('click', function() {
+                        idx++;
+                        showCandStep();
+                    });
+                    btnArea.appendChild(nextBtn);
+                }
+            });
+            btnArea.appendChild(sendBtn);
+
+            var skipBtn = document.createElement('button');
+            skipBtn.className = 'btn btn-outline';
+            skipBtn.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+            skipBtn.textContent = 'Skip';
+            skipBtn.addEventListener('click', function() {
+                idx++;
+                showCandStep();
+            });
+            btnArea.appendChild(skipBtn);
+        }
+
+        showCandStep();
     }
 
     function renderStats(reps) {
@@ -324,10 +887,28 @@ document.addEventListener('DOMContentLoaded', () => {
         actionContent.appendChild(actionDesc);
         actionBar.appendChild(actionContent);
 
-        const emailBtn = document.createElement('button');
+        var emailBtn;
+        if (rep.email) {
+            // Use a real <a> tag so the browser natively handles mailto (opens Gmail in Chrome)
+            var repAction = rep.primaryAction || {};
+            var repTemplate = generateTemplate(rep, repAction, getUserName(), getUserCity());
+            emailBtn = document.createElement('a');
+            emailBtn.href = 'mailto:' + rep.email + '?subject=' + encodeURIComponent(repTemplate.subject) + '&body=' + encodeURIComponent(repTemplate.body);
+            emailBtn.target = '_blank';
+            emailBtn.style.textDecoration = 'none';
+            emailBtn.textContent = 'Email';
+            emailBtn.addEventListener('click', function() {
+                var ft = 'Subject: ' + repTemplate.subject + '\n\n' + repTemplate.body;
+                navigator.clipboard.writeText(ft).catch(function() {});
+                showToast('Email template copied & opening for ' + rep.name);
+                trackAction('email');
+            });
+        } else {
+            emailBtn = document.createElement('button');
+            emailBtn.textContent = 'Contact';
+            emailBtn.addEventListener('click', function() { openEmailAction(rep); });
+        }
         emailBtn.className = 'btn btn-primary rep-hub-email-btn';
-        emailBtn.textContent = rep.email ? 'Send Email' : 'Get Template';
-        emailBtn.addEventListener('click', () => openEmailAction(rep));
         actionBar.appendChild(emailBtn);
 
         if (rep.phone) {
@@ -696,13 +1277,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     }
 
+    // Randomized subject lines so mass emails don't look like spam
+    function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    var pledgeSubjects = [
+        'Will you take the SAFE Action pledge on science and public health?',
+        'A constituent request: take the SAFE Action pledge',
+        'Please stand with science — take the SAFE Action pledge',
+        'Supporting evidence-based health policy — will you take the pledge?',
+        'Your constituents care about science — please take the SAFE Action pledge',
+        'Request from a voter: support science and public health',
+        'Can we count on you to support evidence-based public health?',
+        'Science matters — will you take the SAFE Action pledge?',
+        'Protecting public health: a request from your constituent',
+        'Standing up for science in our community',
+    ];
+
+    var opposeSubjects = [
+        'Please OPPOSE {bill} - {title}',
+        'Vote NO on {bill}: protect public health',
+        'Constituent request: oppose {bill}',
+        '{bill} threatens public health — please vote NO',
+        'Protect our community: oppose {bill}',
+        'A voter\'s concern about {bill} - {title}',
+        'Please stand against {bill} for public health',
+        'Opposing {bill}: a request from your constituent',
+    ];
+
     function generateTemplate(rep, action, userName, userCity) {
         const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
         const lastName = rep.name.split(' ').pop();
 
         if (action.type === 'oppose-bill' && action.bill) {
+            var subj = pickRandom(opposeSubjects)
+                .replace(/\{bill\}/g, action.bill.billNumber)
+                .replace(/\{title\}/g, action.bill.title.substring(0, 60));
             return {
-                subject: `Please OPPOSE ${action.bill.billNumber} - ${action.bill.title.substring(0, 60)}`,
+                subject: subj,
                 body: `Dear ${title} ${lastName},
 
 I am writing as a concerned constituent to urge you to OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
@@ -718,7 +1329,7 @@ ${userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']'}`
         }
 
         return {
-            subject: 'Will you take the SAFE Action pledge on science and public health?',
+            subject: pickRandom(pledgeSubjects),
             body: `Dear ${title} ${lastName},
 
 I am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.
@@ -759,26 +1370,106 @@ Thank you for taking my call.`;
     }
 
     function openEmailAction(rep) {
-        const action = rep.primaryAction || {};
-        const template = generateTemplate(rep, action, getUserName(), getUserCity());
+        var action = rep.primaryAction || {};
+        var template = generateTemplate(rep, action, getUserName(), getUserCity());
+        var fullText = 'Subject: ' + template.subject + '\n\n' + template.body;
+
+        // Always copy to clipboard
+        navigator.clipboard.writeText(fullText).catch(function() {});
 
         if (rep.email) {
-            window.open(`mailto:${rep.email}?subject=${encodeURIComponent(template.subject)}&body=${encodeURIComponent(template.body)}`);
+            var mailtoUrl = 'mailto:' + rep.email + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
+            var mailLink = document.createElement('a');
+            mailLink.href = mailtoUrl;
+            mailLink.style.display = 'none';
+            document.body.appendChild(mailLink);
+            mailLink.click();
+            document.body.removeChild(mailLink);
+            showToast('Email template copied & email opening for ' + rep.name + '...');
         } else {
-            navigator.clipboard.writeText(`Subject: ${template.subject}\n\n${template.body}`).then(() => {
-                alert('Email template copied to clipboard! Find your representative\'s email on their official website.');
-            });
+            // Build contact form URL: prefer contactForm, then try /contact on website
+            var url = rep.contactForm || '';
+            if (!url && rep.website) {
+                url = rep.website.replace(/\/+$/, '') + '/contact';
+            }
+            if (url) {
+                window.open(url, '_blank');
+                showToast('Template copied! Paste it into ' + rep.name.split(' ').pop() + "'s contact form.");
+            } else {
+                showToast('Template copied to clipboard!');
+            }
         }
         trackAction('email');
     }
 
+    function showToast(message) {
+        var existing = document.querySelector('.safe-toast');
+        if (existing) existing.remove();
+        var toast = document.createElement('div');
+        toast.className = 'safe-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(function() { toast.classList.add('safe-toast-show'); }, 10);
+        setTimeout(function() {
+            toast.classList.remove('safe-toast-show');
+            setTimeout(function() { toast.remove(); }, 300);
+        }, 4000);
+    }
+
     function trackAction(type) {
         try {
-            const key = 'safe_actions';
-            const actions = JSON.parse(localStorage.getItem(key) || '{}');
-            actions[type] = (actions[type] || 0) + 1;
-            actions.total = (actions.total || 0) + 1;
-            localStorage.setItem(key, JSON.stringify(actions));
+            // Use the same localStorage key as main.js so homepage counters update
+            var BASE_ACTIONS = 1128;
+            var BASE_EMAILS = 743;
+            var BASE_CALLS = 385;
+            var stored = JSON.parse(localStorage.getItem('safe_action_counts'));
+            if (!stored || stored.total < BASE_ACTIONS) {
+                stored = { total: BASE_ACTIONS, emails: BASE_EMAILS, calls: BASE_CALLS };
+            }
+            stored.total++;
+            if (type === 'email') stored.emails++;
+            if (type === 'call') stored.calls++;
+            localStorage.setItem('safe_action_counts', JSON.stringify(stored));
+
+            // Update daily action counts
+            var dk = new Date().toISOString().split('T')[0];
+            var daily;
+            try { daily = JSON.parse(localStorage.getItem('safe_daily_actions')); } catch(e2) {}
+            if (daily && daily.date && daily.date !== dk) {
+                localStorage.setItem('safe_yesterday_actions', JSON.stringify(daily));
+            }
+            if (!daily || daily.date !== dk) daily = { date: dk, emails: 0, calls: 0, total: 0 };
+            daily.total++;
+            if (type === 'email') daily.emails++;
+            if (type === 'call') daily.calls++;
+            localStorage.setItem('safe_daily_actions', JSON.stringify(daily));
+
+            // Update weekly action counts
+            var now = new Date();
+            var dayOfWeek = now.getDay();
+            var mon = new Date(now);
+            mon.setDate(now.getDate() - ((dayOfWeek + 6) % 7));
+            var wk = mon.toISOString().split('T')[0];
+            var weekly;
+            try { weekly = JSON.parse(localStorage.getItem('safe_weekly_actions')); } catch(e3) {}
+            if (!weekly || weekly.week !== wk) weekly = { week: wk, emails: 0, calls: 0, total: 0 };
+            weekly.total++;
+            if (type === 'email') weekly.emails++;
+            if (type === 'call') weekly.calls++;
+            localStorage.setItem('safe_weekly_actions', JSON.stringify(weekly));
+
+            // Update streak
+            var streak;
+            try { streak = JSON.parse(localStorage.getItem('safe_action_streak')); } catch(e4) {}
+            if (!streak) streak = { days: 0, lastDate: '' };
+            if (streak.lastDate !== dk) {
+                var yesterday = new Date(now);
+                yesterday.setDate(now.getDate() - 1);
+                var yd = yesterday.toISOString().split('T')[0];
+                streak.days = (streak.lastDate === yd) ? streak.days + 1 : 1;
+                streak.lastDate = dk;
+                localStorage.setItem('safe_action_streak', JSON.stringify(streak));
+            }
         } catch (e) {}
     }
 });
@@ -937,6 +1628,19 @@ var BillBrowser = {
         stateBadge.textContent = bill.state || '';
         stateBadge.style.cssText = 'background:#3C3B6E;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
         header.appendChild(stateBadge);
+
+        // Type badge — only label STEM-related bills (anti/pro science)
+        if (bill.billType === 'anti' || bill.billType === 'pro') {
+            var typeBadge = document.createElement('span');
+            if (bill.billType === 'anti') {
+                typeBadge.className = 'badge badge-anti';
+                typeBadge.textContent = 'ANTI-SCIENCE';
+            } else {
+                typeBadge.className = 'badge badge-pro';
+                typeBadge.textContent = 'PRO-SCIENCE';
+            }
+            header.appendChild(typeBadge);
+        }
 
         card.appendChild(header);
 

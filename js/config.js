@@ -32,6 +32,9 @@ const SAFE_CONFIG = {
     // Get one at: https://console.cloud.google.com/apis/credentials
     GOOGLE_CIVIC_API_KEY: 'AIzaSyBapcQaTbdLhAZVc5p9KUckaw5zk_hLtzs',
 
+    // Google Maps JavaScript API key (for Places Autocomplete on address input)
+    GOOGLE_MAPS_API_KEY: 'AIzaSyCESkag17Z_jM_ROlla20LAhtcunYHwymI',
+
     // All 50 states + DC + Federal
     STATES: {
         'US': 'Federal (U.S. Congress)',
@@ -66,5 +69,21 @@ const SAFE_CONFIG = {
     // Persuadability categories
     PERSUADABILITY_CATEGORIES: [
         'champion', 'likely-win', 'fence-sitter', 'unlikely', 'opposed'
-    ]
+    ],
+
+    // Firebase configuration (fill in after creating Firebase project)
+    // 1. Go to https://console.firebase.google.com
+    // 2. Create project "safe-action" (or similar)
+    // 3. Enable Authentication > Google provider
+    // 4. Enable Cloud Firestore (us-central1)
+    // 5. Add scienceandfreedom.com to Auth > Settings > Authorized domains
+    // 6. Copy config from Project Settings > General > Your apps > Web app
+    FIREBASE_CONFIG: {
+        apiKey: 'AIzaSyCrFIiez7bv24UIEeiQQKPCCIyQE4NJVpI',
+        authDomain: 'safe-action-840f0.firebaseapp.com',
+        projectId: 'safe-action-840f0',
+        storageBucket: 'safe-action-840f0.firebasestorage.app',
+        messagingSenderId: '319198603686',
+        appId: '1:319198603686:web:3669c7b74f8a51c5630767'
+    }
 };

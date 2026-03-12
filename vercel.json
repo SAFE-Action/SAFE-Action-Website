@@ -1,0 +1,18 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/candidates/:slug",
+      "destination": "/candidate.html?slug=:slug"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/feed",
+      "destination": "/feed.html"
+    }
+  ]
+}

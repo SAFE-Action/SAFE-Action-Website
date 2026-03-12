@@ -7,17 +7,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     const detailEl = document.getElementById('candidate-detail');
     const notFoundEl = document.getElementById('candidate-not-found');
 
-    // Get candidate ID from URL
+    // Support both clean URLs (/candidates/sarah-mitchell) and legacy (?id=123)
     const params = new URLSearchParams(window.location.search);
+    const candidateSlug = params.get('slug');
     const candidateId = params.get('id');
 
-    if (!candidateId) {
+    if (!candidateSlug && !candidateId) {
         showNotFound();
         return;
     }
 
     try {
-        const candidate = await SheetsAPI.getCandidate(candidateId);
+        var candidate;
+        if (candidateSlug) {
+            candidate = await SheetsAPI.getCandidateBySlug(candidateSlug);
+        } else {
+            candidate = await SheetsAPI.getCandidate(candidateId);
+        }
 
         if (!candidate) {
             showNotFound();
@@ -28,8 +34,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         populateDetail(candidate);
         setupShareButtons(candidate);
 
-        // Update page title
-        document.title = `${candidate.firstName} ${candidate.lastName} - SAFE Action`;
+        // Update page title and meta for SEO
+        document.title = candidate.firstName + ' ' + candidate.lastName + ' - SAFE Action Pledge';
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.content = 'See where ' + candidate.firstName + ' ' + candidate.lastName + ' (' + (candidate.party || '') + ', ' + (candidate.state || '') + ') stands on science and public health. View their SAFE Action pledge.';
+        }
+        // Set canonical URL to clean format
+        var slug = typeof SheetsAPI !== 'undefined' ? SheetsAPI.getSlug(candidate) : '';
+        if (slug) {
+            var link = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+            link.rel = 'canonical';
+            link.href = window.location.origin + '/candidates/' + slug;
+            if (!link.parentNode) document.head.appendChild(link);
+        }
 
         // Show detail, hide loading
         loadingEl.style.display = 'none';
@@ -116,7 +134,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function setupShareButtons(c) {
         const fullName = `${c.firstName} ${c.lastName}`;
-        const pageUrl = window.location.href;
+        // Use clean candidate URL for sharing
+        var slug = typeof SheetsAPI !== 'undefined' ? SheetsAPI.getSlug(c) : '';
+        var pageUrl = slug
+            ? window.location.origin + '/candidates/' + slug
+            : window.location.href;
         const shareText = `See where ${fullName} stands on science and public health issues. Check their SAFE Action pledge:`;
 
         // Twitter/X

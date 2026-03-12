@@ -191,6 +191,10 @@ const LegislationAPI = {
                 party: l.party,
                 phone: (l.contact || {}).phone || '',
                 email: (l.contact || {}).email || '',
+                contactForm: (l.contact || {}).contact_form || '',
+                website: (l.contact || {}).website || '',
+                level: l.level || '',
+                chamber: l.chamber || '',
                 office: l.office,
                 district: l.district,
                 state: l.state
@@ -220,7 +224,9 @@ Thank you for your time and service.
 
 Sincerely,
 {YOUR_NAME}
-{YOUR_CITY}, {STATE}`,
+{YOUR_CITY}, {STATE}
+
+P.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`,
                 category: 'general'
             },
             {
@@ -254,7 +260,9 @@ Thank you for your time and service.
 
 Sincerely,
 {YOUR_NAME}
-{YOUR_CITY}, {STATE}`,
+{YOUR_CITY}, {STATE}
+
+P.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`,
                 category: 'general'
             },
             {
