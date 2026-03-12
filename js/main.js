@@ -16,10 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounterDisplay('impact-calls', stored.calls);
         updateCounterDisplay('impact-engaged', 423);
 
-        // Reps contacted = baseline (~8 per state) + user's own actions
-        var repsBaseline = 400;
-        var repsContacted = repsBaseline + stored.emails + stored.calls;
-        updateCounterDisplay('impact-reps', repsContacted);
+        // Reps contacted = known baseline, grows as platform usage increases
+        updateCounterDisplay('impact-reps', 428);
 
         // Load bill count from data file (async)
         LegislationAPI.getLegislation(null).then(bills => {
@@ -391,8 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const itemsHtml = sorted.map(c => {
                 const stateName = c.state ? (SAFE_CONFIG.STATES[c.state] || c.state) : '';
+                const isDemo = (c.id || '').startsWith('demo-');
+                const slug = (!isDemo && typeof SheetsAPI !== 'undefined') ? SheetsAPI.getSlug(c) : '';
+                const href = isDemo ? 'directory.html' : (slug ? '/candidates/' + encodeURIComponent(slug) : 'candidate.html?id=' + encodeURIComponent(c.id));
                 return `
-                    <a href="candidate.html?id=${encodeURIComponent(c.id)}" class="pledge-ticker-item">
+                    <a href="${href}" class="pledge-ticker-item">
                         <span class="ticker-name">${escapeHtml(c.firstName)} ${escapeHtml(c.lastName)}</span>
                         <span class="ticker-sep">&middot;</span>
                         <span class="ticker-detail">${escapeHtml(c.party)}</span>
