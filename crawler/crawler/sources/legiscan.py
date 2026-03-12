@@ -53,32 +53,127 @@ SEARCH_QUERIES = [
 
 # ── Heuristic classification ───────────────────────────────────────────
 
-# Keywords in title/description that suggest anti-science stance
-_ANTI_KEYWORDS = [
-    "exemption", "exempt", "medical freedom", "freedom act",
-    "informed consent", "prohibit mandate", "prohibit vaccination",
-    "eliminate requirement", "remove requirement", "parental rights",
-    "conscience", "religious exemption", "philosophical exemption",
-    "ban mandate", "liability", "injury compensation",
-    "opt out", "opt-out", "voluntary", "prohibit require",
+# ── Core topics that qualify for anti-science classification ──────────
+# Only bills explicitly about these topics get classified as anti/pro.
+# Everything else found via search is classified as "monitor".
+# Based on AP/Plural Policy analysis of 420+ curated anti-science bills.
+_CORE_TOPICS = [
+    # Vaccines (350+ bills tracked by AP in 2025)
+    "vaccine", "vaccination", "immunization", "immunize", "unvaccinated",
+    # Raw milk (part of 70+ bills)
+    "raw milk", "unpasteurized milk", "unpasteurised milk",
+    # Fluoride (part of 70+ bills)
+    "fluoride", "fluoridation", "water fluorid",
+    # mRNA / anti-vaccine coded language
+    "mrna", "mRNA",
+    # Geoengineering / chemtrails (FL made it a felony)
+    "geoengineering", "chemtrail",
 ]
 
-# Keywords that suggest pro-science stance
+# Anti-science keywords — expanded from AP/Plural Policy curated bill patterns.
+# Anti-vaccine activists use coded language like "informed consent", "medical
+# freedom", "health freedom", and even designate mRNA vaccines as "weapons of
+# mass destruction" (MN SF 3456).
+_ANTI_KEYWORDS = [
+    # Exemption expansion (most common category)
+    "exemption", "exempt", "religious exemption", "philosophical exemption",
+    "personal belief", "conscience", "nonmedical exemption",
+    "opt out", "opt-out", "voluntary",
+    # "Freedom" framing
+    "medical freedom", "freedom act", "health freedom",
+    "right to refuse", "bodily autonomy", "personal liberty",
+    "informed health decision",
+    # Anti-mandate
+    "prohibit mandate", "prohibit vaccination", "ban mandate",
+    "prohibit require", "eliminate requirement", "remove requirement",
+    # Informed consent (primary coded language per user feedback)
+    "informed consent",
+    # Anti-vaccine discrimination protections
+    "discrimination against unvaccinated", "vaccine status",
+    "vaccination status discrimination",
+    # Vaccine injury / liability
+    "vaccine injury", "vaccine harm", "injury compensation",
+    "liability", "criminal offense of vaccine",
+    # mRNA reclassification (MN SF 3456 pattern)
+    "weapons of mass destruction", "gene therapy", "experimental",
+    "biological agent",
+    # Waiting periods / blood bank testing
+    "vaccine waiting period", "blood bank",
+    # Fluoride opposition
+    "ban fluoride", "prohibit fluoride", "remove fluoride",
+    "fluoride choice",
+    # Raw milk expansion
+    "raw milk sales", "real milk", "unpasteurized sales",
+    # Parental rights framing
+    "parental rights", "parent right",
+    # Vaccine passport (surveillance concern)
+    "vaccine passport", "vaccination passport",
+    # Vaccination status (same intent as "vaccine status")
+    "vaccination status",
+    # "No mandates" pattern (opposing mandates)
+    "no mandate",
+    # Repeal existing vaccine requirements
+    "repeal",
+    # Prohibition pattern (banning vaccine requirements, fluoride, etc.)
+    "prohibition",
+    # Unprofessional conduct (penalizing pro-vaccine doctors)
+    "unprofessional conduct",
+    # Specific anti patterns
+    "vaccine injured",
+    "harmful vaccine",
+    "vaccine carveout",
+    "non-discrimination",
+    "no vaccine mandate",
+    "no vaccination mandate",
+    "no immunization mandate",
+]
+
+# Pro-science keywords
 _PRO_KEYWORDS = [
+    # Vaccine strengthening
     "strengthen immunization", "require vaccination", "require immunization",
-    "safeguard vaccine", "protect public health", "limit exemption",
-    "remove exemption", "tighten exemption", "vaccine access",
+    "safeguard vaccine", "protect public health",
+    "limit exemption", "remove exemption", "tighten exemption",
+    "eliminate exemption", "restrict exemption",
+    "vaccine access", "expand vaccine",
     "immunization registry", "disease surveillance", "outbreak response",
+    # Fluoride support
+    "fluoridation program", "community water fluoridation",
+    "optimal fluoride", "dental health",
+    # Pasteurization support
+    "pasteurization", "pasteurized", "food safety standard",
+    # Science education
+    "evidence-based", "science-based",
+    # Funding / access expansion
+    "fund research", "fund vaccine", "vaccine program",
+    "vaccination program", "immunization program",
+    "vaccination strategy", "vaccine strategy",
+    "vaccine transportation",
 ]
 
 # Category detection from title/description
+# Expanded with patterns from AP/Plural Policy bill tracking
 _CATEGORY_PATTERNS = {
-    "vaccine-exemption": ["exemption", "exempt", "opt out", "opt-out"],
-    "vaccine-mandate": ["mandate", "require", "requirement", "compulsory"],
-    "medical-freedom": ["medical freedom", "freedom act", "health freedom"],
-    "informed-consent": ["informed consent"],
-    "public-health": ["public health", "disease surveillance", "outbreak", "immunization registry"],
-    "vaccine-liability": ["liability", "injury", "compensation", "indemnity"],
+    "vaccine-exemption": ["exemption", "exempt", "opt out", "opt-out",
+                          "nonmedical", "personal belief", "philosophical",
+                          "religious exemption", "conscience"],
+    "vaccine-mandate": ["mandate", "require", "requirement", "compulsory",
+                        "prohibit mandate", "ban mandate"],
+    "medical-freedom": ["medical freedom", "freedom act", "health freedom",
+                        "bodily autonomy", "right to refuse", "personal liberty"],
+    "informed-consent": ["informed consent", "informed health decision"],
+    "vaccine-discrimination": ["discrimination", "vaccine status",
+                               "unvaccinated", "vaccination status"],
+    "mRNA-reclassification": ["mrna", "mRNA", "gene therapy",
+                              "weapons of mass destruction", "biological agent"],
+    "vaccine-injury": ["vaccine injury", "vaccine harm", "injury compensation",
+                       "liability", "adverse event"],
+    "raw-milk": ["raw milk", "unpasteurized", "unpasteurised", "real milk",
+                 "donkey milk"],
+    "fluoride": ["fluoride", "fluoridation", "fluoride choice"],
+    "geoengineering": ["geoengineering", "chemtrail", "cloud seeding"],
+    "public-health": ["public health", "disease surveillance", "outbreak",
+                      "immunization registry", "quarantine"],
 }
 
 # Status mapping from LegiScan status codes to our labels
@@ -100,22 +195,14 @@ def _classify_bill(title: str, description: str = "") -> tuple[str, str, str]:
     """Classify a bill as pro/anti science and assign a category.
 
     Returns (billType, stance, category).
+
+    STRICT CLASSIFICATION: Only bills explicitly about vaccines, raw milk,
+    or fluoride are classified as anti/pro-science. All other health-related
+    bills are classified as "monitor" to avoid false positives.
     """
     text = f"{title} {description}".lower()
 
-    # Determine pro vs anti
-    anti_score = sum(1 for kw in _ANTI_KEYWORDS if kw in text)
-    pro_score = sum(1 for kw in _PRO_KEYWORDS if kw in text)
-
-    if pro_score > anti_score:
-        bill_type = "pro"
-        stance = "Support"
-    else:
-        # Default to anti for vaccine/health bills if ambiguous
-        bill_type = "anti"
-        stance = "Oppose"
-
-    # Determine category
+    # Determine category first
     category = "public-health"  # default
     best_score = 0
     for cat, patterns in _CATEGORY_PATTERNS.items():
@@ -123,6 +210,28 @@ def _classify_bill(title: str, description: str = "") -> tuple[str, str, str]:
         if score > best_score:
             best_score = score
             category = cat
+
+    # GATE: Only classify as anti/pro if bill is about core topics
+    is_core_topic = any(topic.lower() in text for topic in _CORE_TOPICS)
+
+    if not is_core_topic:
+        # Not about vaccines, raw milk, or fluoride — track but don't label
+        return "monitor", "Monitor", category
+
+    # For core-topic bills, use keyword scoring
+    anti_score = sum(1 for kw in _ANTI_KEYWORDS if kw in text)
+    pro_score = sum(1 for kw in _PRO_KEYWORDS if kw in text)
+
+    if pro_score > anti_score:
+        bill_type = "pro"
+        stance = "Support"
+    elif anti_score > 0:
+        bill_type = "anti"
+        stance = "Oppose"
+    else:
+        # Core topic but no clear anti/pro signals — monitor
+        bill_type = "monitor"
+        stance = "Monitor"
 
     return bill_type, stance, category
 
@@ -172,27 +281,49 @@ def _determine_status(bill: dict) -> tuple[str, str]:
 
 
 def _determine_impact(bill: dict, bill_type: str) -> str:
-    """Heuristic impact scoring based on bill characteristics."""
+    """3-tier impact scoring based on bill language, status, and momentum."""
     title = (bill.get("title") or "").lower()
     desc = (bill.get("description") or "").lower()
     text = f"{title} {desc}"
+    status = bill.get("status", 0)
+    sponsors = bill.get("sponsors", [])
+    sponsor_count = len(sponsors) if isinstance(sponsors, list) else 0
+    last_action = bill.get("last_action", "")
+    last_action_date = bill.get("last_action_date", "")
 
-    # High impact indicators
+    # HIGH: aggressive language, advanced status, or strong co-sponsorship
     high_signals = [
         "all vaccine", "eliminate", "prohibit", "ban",
         "compulsory", "mandatory", "statewide",
         "all school", "every child", "all children",
-        "repeal", "remove all",
+        "repeal", "remove all", "abolish",
+        "weapons of mass destruction", "gene therapy",
+        "criminal penalty", "felony", "misdemeanor",
     ]
-
     if any(s in text for s in high_signals):
         return "High"
-
-    # Medium by default for bills that passed a chamber
-    status = bill.get("status", 0)
     if status >= 2:  # engrossed or further
         return "High"
+    if sponsor_count >= 5:
+        return "High"
 
+    # LOW: stalled, no recent action, single sponsor just introduced
+    if last_action_date:
+        try:
+            from datetime import datetime as _dt
+            action_dt = _dt.strptime(last_action_date[:10], "%Y-%m-%d")
+            days_since = (_dt.now() - action_dt).days
+            if days_since > 90 and status <= 1:
+                return "Low"
+        except (ValueError, TypeError):
+            pass
+
+    if sponsor_count <= 1 and status <= 1:
+        la = (last_action or "").lower()
+        if "introduced" in la or "referred" in la or "filed" in la:
+            return "Low"
+
+    # MEDIUM: active but not yet critical
     return "Medium"
 
 

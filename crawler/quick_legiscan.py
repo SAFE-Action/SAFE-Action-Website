@@ -151,12 +151,48 @@ def determine_status(bill):
 
 
 def determine_impact(bill, bill_type):
+    """3-tier impact scoring based on bill language, status, and momentum."""
     text = f"{bill.get('title', '')} {bill.get('description', '')}".lower()
-    high = ["all vaccine", "eliminate", "prohibit", "ban", "compulsory", "mandatory", "statewide", "repeal", "remove all"]
-    if any(s in text for s in high):
+    status = bill.get("status", 0)
+    sponsors = bill.get("sponsors", [])
+    sponsor_count = len(sponsors) if isinstance(sponsors, list) else 0
+    last_action = bill.get("last_action", "")
+    last_action_date = bill.get("last_action_date", "")
+
+    # HIGH: aggressive language, advanced status, or many sponsors
+    high_keywords = [
+        "all vaccine", "eliminate", "prohibit", "ban", "compulsory",
+        "mandatory", "statewide", "repeal", "remove all", "abolish",
+        "weapons of mass destruction", "gene therapy", "no exemption",
+        "criminal penalty", "felony", "misdemeanor",
+    ]
+    if any(s in text for s in high_keywords):
         return "High"
-    if bill.get("status", 0) >= 2:
+    # Passed committee or beyond
+    if status >= 2:
         return "High"
+    # Many co-sponsors = political momentum
+    if sponsor_count >= 5:
+        return "High"
+
+    # LOW: stalled, no action in 60+ days, no co-sponsors, or dead
+    import re as _re
+    if last_action_date:
+        try:
+            from datetime import datetime as _dt, timezone as _tz
+            action_dt = _dt.strptime(last_action_date[:10], "%Y-%m-%d")
+            days_since = (_dt.now() - action_dt).days
+            if days_since > 90 and status <= 1:
+                return "Low"
+        except (ValueError, TypeError):
+            pass
+
+    if sponsor_count <= 1 and status <= 1:
+        # Single sponsor, still introduced — low momentum
+        if "introduced" in (last_action or "").lower() or "referred" in (last_action or "").lower():
+            return "Low"
+
+    # MEDIUM: everything else — active but not yet critical
     return "Medium"
 
 

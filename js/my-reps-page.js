@@ -1524,7 +1524,7 @@ var BillBrowser = {
 
         // Add filter listeners
         var self = this;
-        ['bb-state', 'bb-stance', 'bb-status', 'bb-impact'].forEach(function(id) {
+        ['bb-state', 'bb-stance', 'bb-status', 'bb-impact', 'bb-category'].forEach(function(id) {
             var el = document.getElementById(id);
             if (el) el.addEventListener('change', function() { self.render(); });
         });
@@ -1567,6 +1567,7 @@ var BillBrowser = {
         var stance = (document.getElementById('bb-stance') || {}).value || '';
         var status = (document.getElementById('bb-status') || {}).value || '';
         var impact = (document.getElementById('bb-impact') || {}).value || '';
+        var category = (document.getElementById('bb-category') || {}).value || '';
         var search = ((document.getElementById('bb-search') || {}).value || '').toLowerCase().trim();
 
         return this._allBills.filter(function(bill) {
@@ -1578,6 +1579,7 @@ var BillBrowser = {
                 return false;
             }
             if (impact && bill.impact !== impact) return false;
+            if (category && bill.category !== category) return false;
             if (search) {
                 var haystack = [
                     bill.billNumber || '',
@@ -1673,6 +1675,27 @@ var BillBrowser = {
         title.className = 'bill-card-title';
         title.textContent = bill.title || 'Untitled';
         card.appendChild(title);
+
+        // Category tag
+        if (bill.category) {
+            var catLabels = {
+                'vaccine-exemption': 'Vaccine Exemptions',
+                'vaccine-mandate': 'Vaccine Mandates',
+                'medical-freedom': 'Medical Freedom',
+                'informed-consent': 'Informed Consent',
+                'vaccine-discrimination': 'Vaccine Discrimination',
+                'mRNA-reclassification': 'mRNA Reclassification',
+                'vaccine-injury': 'Vaccine Injury',
+                'raw-milk': 'Raw Milk',
+                'fluoride': 'Fluoride',
+                'geoengineering': 'Geoengineering',
+                'public-health': 'Public Health'
+            };
+            var catTag = document.createElement('span');
+            catTag.className = 'bill-category-tag';
+            catTag.textContent = catLabels[bill.category] || bill.category;
+            card.appendChild(catTag);
+        }
 
         // Summary (truncated)
         if (bill.summary) {

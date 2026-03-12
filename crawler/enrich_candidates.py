@@ -1,13 +1,15 @@
-"""Enrich candidates in seats.json with email and website from FEC committee data
-and campaign website scraping.
+"""Enrich candidates in seats.json with email and website from FEC committee data,
+campaign website scraping, and Ballotpedia/domain guessing.
 
 Phase 1: FEC committee API → get campaign website + treasurer email
 Phase 2: Scrape campaign websites for candidate contact email
-Phase 3: Write enriched data back to seats.json
+Phase 3: Ballotpedia lookup + domain guessing for candidates still missing websites
+Phase 4: Write enriched data back to seats.json
 
 Usage: python crawler/enrich_candidates.py
-       python crawler/enrich_candidates.py --scrape-only   (skip FEC, just scrape websites)
-       python crawler/enrich_candidates.py --fec-only      (skip website scraping)
+       python crawler/enrich_candidates.py --scrape-only       (skip FEC, just scrape websites)
+       python crawler/enrich_candidates.py --fec-only          (skip website scraping + ballotpedia)
+       python crawler/enrich_candidates.py --ballotpedia-only  (only run phase 3)
 """
 
 import asyncio
@@ -285,7 +287,216 @@ async def enrich_from_websites(cache):
     return cache
 
 
-# ── Phase 3: Write Back to seats.json ──────────────────────────────────
+# ── Phase 3: Ballotpedia + Domain Guessing ─────────────────────────────
+
+# Common campaign domain patterns
+DOMAIN_PATTERNS = [
+    "{last}forcongress.com",
+    "{last}forsenate.com",
+    "elect{last}.com",
+    "vote{last}.com",
+    "{last}forus.com",
+    "{last}2026.com",
+    "{first}{last}.com",
+    "{last}campaign.com",
+    "{first}{last}forcongress.com",
+    "{last}foramerica.com",
+]
+
+BALLOTPEDIA_RATE = 1.5  # be polite to Ballotpedia
+last_bp_request = 0
+
+
+def candidate_name_parts(name):
+    """Extract first/last name parts for URL/domain generation."""
+    parts = name.strip().split()
+    if not parts:
+        return "", ""
+    first = parts[0].lower().replace(".", "").replace("'", "")
+    last = parts[-1].lower().replace(".", "").replace("'", "")
+    # Skip suffixes
+    if last in ("jr", "jr.", "sr", "sr.", "ii", "iii", "iv"):
+        last = parts[-2].lower().replace(".", "").replace("'", "") if len(parts) > 2 else first
+    return first, last
+
+
+async def find_ballotpedia_website(client, name, seat_id):
+    """Search Ballotpedia for a candidate's campaign website."""
+    global last_bp_request
+
+    first, last = candidate_name_parts(name)
+    if not first or not last:
+        return None, []
+
+    # Ballotpedia URL pattern: First_Last
+    bp_name = name.strip().replace(" ", "_")
+    # Also try with title case
+    bp_url = f"https://ballotpedia.org/{bp_name}"
+
+    elapsed = time.time() - last_bp_request
+    if elapsed < BALLOTPEDIA_RATE:
+        await asyncio.sleep(BALLOTPEDIA_RATE - elapsed)
+
+    try:
+        resp = await client.get(
+            bp_url,
+            timeout=12.0,
+            follow_redirects=True,
+            headers={
+                "User-Agent": "SAFE Action Foundation Research Bot (scienceandfreedom.com)",
+                "Accept": "text/html",
+            }
+        )
+        last_bp_request = time.time()
+
+        if resp.status_code != 200:
+            return None, []
+
+        html = resp.text
+        if not html or "does not currently have" in html and "a page called" in html:
+            return None, []
+
+        # Look for campaign website link
+        website = None
+        # Ballotpedia lists campaign website in infobox or "Campaign website" section
+        website_patterns = [
+            r'Campaign\s*website[^"]*?href="(https?://[^"]+)"',
+            r'class="website"[^>]*>\s*<a[^>]*href="(https?://[^"]+)"',
+            r'Official\s*website[^"]*?href="(https?://[^"]+)"',
+            r'href="(https?://(?:www\.)?[^"]*(?:' + re.escape(last) + r')[^"]*\.com[^"]*)"',
+        ]
+
+        for pattern in website_patterns:
+            match = re.search(pattern, html, re.IGNORECASE)
+            if match:
+                url = match.group(1)
+                # Filter out ballotpedia/social media links
+                parsed = urlparse(url)
+                domain = parsed.netloc.lower()
+                if not any(skip in domain for skip in [
+                    'ballotpedia', 'wikipedia', 'facebook.com', 'twitter.com',
+                    'instagram.com', 'youtube.com', 'linkedin.com', 'x.com'
+                ]):
+                    website = url
+                    break
+
+        # Also grab any emails from the Ballotpedia page itself
+        emails = []
+        found = EMAIL_REGEX.findall(html)
+        for email in found:
+            if is_valid_contact_email(email) and 'ballotpedia' not in email.lower():
+                emails.append(email.lower())
+
+        return website, emails
+
+    except Exception:
+        last_bp_request = time.time()
+        return None, []
+
+
+async def try_domain_guesses(client, name):
+    """Try common campaign domain patterns to find a website."""
+    first, last = candidate_name_parts(name)
+    if not first or not last:
+        return None
+
+    for pattern in DOMAIN_PATTERNS:
+        domain = pattern.format(first=first, last=last)
+        url = f"https://{domain}"
+
+        try:
+            resp = await client.get(
+                url,
+                timeout=6.0,
+                follow_redirects=True,
+                headers={
+                    "User-Agent": "SAFE Action Foundation Research Bot (scienceandfreedom.com)",
+                    "Accept": "text/html",
+                }
+            )
+            if resp.status_code == 200 and len(resp.text) > 500:
+                # Looks like a real site
+                return url
+        except Exception:
+            continue
+
+    return None
+
+
+async def enrich_from_ballotpedia(candidates_by_id, cache):
+    """Phase 3: Find websites via Ballotpedia + domain guessing for candidates with no website."""
+    # Get candidates with no website yet
+    to_search = [
+        (fid, cand)
+        for fid, cand in candidates_by_id.items()
+        if not cache.get(fid, {}).get("website") and not cache.get(fid, {}).get("bp_done")
+    ]
+
+    total = len(to_search)
+    print(f"\nPhase 3: Searching Ballotpedia + domain guessing for {total} candidates...")
+
+    if total == 0:
+        print("  All candidates already searched. Skipping.")
+        return cache
+
+    # Build fecId → seatId lookup once
+    fec_to_seat = {}
+    seats_data = json.loads((DATA_DIR / "seats.json").read_text())
+    for seat in seats_data["seats"]:
+        for c in seat.get("candidates", []):
+            if c.get("fecId"):
+                fec_to_seat[c["fecId"]] = seat["seatId"]
+
+    async with httpx.AsyncClient() as client:
+        for i, (fec_id, cand) in enumerate(to_search):
+            name = cand.get("name", "")
+            seat_id = fec_to_seat.get(fec_id, "")
+
+            if fec_id not in cache:
+                cache[fec_id] = {"fecId": fec_id}
+
+            # Try Ballotpedia first
+            website, bp_emails = await find_ballotpedia_website(client, name, seat_id)
+
+            if bp_emails:
+                existing = cache[fec_id].get("scraped_emails", [])
+                cache[fec_id]["scraped_emails"] = list(set(existing + bp_emails))
+
+            # If no website from Ballotpedia, try domain guessing
+            if not website:
+                website = await try_domain_guesses(client, name)
+
+            if website:
+                if not website.startswith("http"):
+                    website = "https://" + website
+                cache[fec_id]["website"] = website.lower()
+
+                # Scrape the found website for emails if we don't have any yet
+                if not cache[fec_id].get("scraped_emails"):
+                    emails = await scrape_website_for_email(client, website)
+                    if emails:
+                        cache[fec_id]["scraped_emails"] = emails
+                    cache[fec_id]["scrape_done"] = True
+
+            cache[fec_id]["bp_done"] = True
+
+            if (i + 1) % 25 == 0 or i == total - 1:
+                pct = ((i + 1) / total) * 100
+                new_websites = sum(1 for v in cache.values() if v.get("website") and v.get("bp_done"))
+                new_emails = sum(1 for v in cache.values() if v.get("scraped_emails") and v.get("bp_done"))
+                print(f"  [{i+1}/{total}] ({pct:.0f}%) - {new_websites} websites, {new_emails} emails found")
+                save_cache(cache)
+
+    save_cache(cache)
+
+    bp_websites = sum(1 for v in cache.values() if v.get("website") and v.get("bp_done"))
+    bp_emails = sum(1 for v in cache.values() if v.get("scraped_emails") and v.get("bp_done"))
+    print(f"  Ballotpedia/domain phase complete: {bp_websites} new websites, {bp_emails} emails")
+
+    return cache
+
+
+# ── Phase 4: Write Back to seats.json ──────────────────────────────────
 
 def apply_enrichment(seats, cache):
     """Apply enriched data back to seats.json candidates."""
@@ -325,8 +536,10 @@ def apply_enrichment(seats, cache):
 
 async def main():
     args = sys.argv[1:]
-    skip_fec = "--scrape-only" in args
-    skip_scrape = "--fec-only" in args
+    skip_fec = "--scrape-only" in args or "--ballotpedia-only" in args
+    skip_scrape = "--fec-only" in args or "--ballotpedia-only" in args
+    skip_bp = "--fec-only" in args or "--scrape-only" in args
+    bp_only = "--ballotpedia-only" in args
 
     seats_path = DATA_DIR / "seats.json"
     if not seats_path.exists():
@@ -357,8 +570,12 @@ async def main():
     if not skip_scrape:
         cache = await enrich_from_websites(cache)
 
-    # Phase 3: Apply to seats.json
-    print("\nPhase 3: Applying enrichment to seats.json...")
+    # Phase 3: Ballotpedia + domain guessing
+    if not skip_bp:
+        cache = await enrich_from_ballotpedia(candidates_by_id, cache)
+
+    # Phase 4: Apply to seats.json
+    print("\nPhase 4: Applying enrichment to seats.json...")
     seats, enriched, emails, websites = apply_enrichment(seats, cache)
 
     seats_data["seats"] = seats
