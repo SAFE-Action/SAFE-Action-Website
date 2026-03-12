@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCounterDisplay('impact-emails', stored.emails);
         updateCounterDisplay('impact-calls', stored.calls);
         updateCounterDisplay('impact-engaged', 423);
-        updateCounterDisplay('impact-states', 50);
+
+        // Reps contacted = unique reps emailed/called (from localStorage actions)
+        var repsContacted = stored.emails + stored.calls;
+        updateCounterDisplay('impact-reps', repsContacted);
 
         // Load bill count from data file (async)
         LegislationAPI.getLegislation(null).then(bills => {
@@ -25,13 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-animate just this counter since data arrived async
             const el = document.getElementById('impact-bills');
             if (el) animateSingleCounter(el.querySelector('.counter'), count);
-
-            // Count unique states with anti-science bills engaged
-            const statesSet = new Set(bills.filter(b => b.billType === 'anti' && b.level === 'State').map(b => b.state));
-            const statesCount = statesSet.size || 50;
-            updateCounterDisplay('impact-states', statesCount);
-            const statesEl = document.getElementById('impact-states');
-            if (statesEl) animateSingleCounter(statesEl.querySelector('.counter'), statesCount);
         }).catch(() => {});
 
         // Animate counters when they scroll into view

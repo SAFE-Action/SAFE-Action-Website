@@ -2386,6 +2386,11 @@ a:hover { color: var(--red); }
 }
 
 /* --- Daily Goal Progress Bar --- */
+.daily-goal-hero {
+    padding: 24px 0 8px;
+    background: #FDFBF7;
+}
+
 .daily-goal-section {
     margin-top: 28px;
 }

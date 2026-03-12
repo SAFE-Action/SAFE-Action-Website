@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=58">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -83,6 +83,30 @@
         </div>
     </section>
 
+    <!-- Daily Goal Progress -->
+    <section class="daily-goal-hero" id="daily-goal" style="display:none;">
+        <div class="container">
+            <div class="daily-goal-card">
+                <div class="daily-goal-header">
+                    <span class="daily-goal-flame" aria-hidden="true">&#128293;</span>
+                    <span class="daily-goal-title" id="daily-goal-title">Today's Goal</span>
+                    <span class="daily-goal-streak" id="daily-goal-streak"></span>
+                </div>
+                <div class="daily-goal-bar-wrap">
+                    <div class="daily-goal-bar">
+                        <div class="daily-goal-fill" id="daily-goal-fill" style="width:0%"></div>
+                    </div>
+                    <span class="daily-goal-pct" id="daily-goal-pct">0%</span>
+                </div>
+                <div class="daily-goal-stats" id="daily-goal-stats"></div>
+                <div class="daily-goal-message" id="daily-goal-message"></div>
+                <a href="outreach.html" class="btn btn-primary btn-sm daily-goal-cta" id="daily-goal-cta">
+                    <span class="btn-star">&#9733;</span> Take Action Now
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Impact Counter Section -->
     <section class="impact-section">
         <div class="container">
@@ -128,36 +152,14 @@
                     <div class="impact-desc">Anti-science bills tracked &amp; challenged across all 50 states</div>
                 </a>
                 <a href="outreach.html" class="impact-card impact-card-link impact-card-states">
-                    <div class="impact-number" id="impact-states">
+                    <div class="impact-number" id="impact-reps">
                         <span class="counter" data-target="0">0</span>
                     </div>
-                    <div class="impact-label">States Reached</div>
-                    <div class="impact-desc">States where citizens have contacted their representatives</div>
+                    <div class="impact-label">Reps Contacted</div>
+                    <div class="impact-desc">Legislators who have heard directly from their constituents</div>
                 </a>
             </div>
             <p class="impact-cta">Every action counts. <a href="tracker.html">Find a bill in your state and take action</a> today.</p>
-
-            <!-- Daily Goal Progress -->
-            <div id="daily-goal" class="daily-goal-section" style="display:none;">
-                <div class="daily-goal-card">
-                    <div class="daily-goal-header">
-                        <span class="daily-goal-flame" aria-hidden="true">&#128293;</span>
-                        <span class="daily-goal-title" id="daily-goal-title">Today's Goal</span>
-                        <span class="daily-goal-streak" id="daily-goal-streak"></span>
-                    </div>
-                    <div class="daily-goal-bar-wrap">
-                        <div class="daily-goal-bar">
-                            <div class="daily-goal-fill" id="daily-goal-fill" style="width:0%"></div>
-                        </div>
-                        <span class="daily-goal-pct" id="daily-goal-pct">0%</span>
-                    </div>
-                    <div class="daily-goal-stats" id="daily-goal-stats"></div>
-                    <div class="daily-goal-message" id="daily-goal-message"></div>
-                    <a href="outreach.html" class="btn btn-primary btn-sm daily-goal-cta" id="daily-goal-cta">
-                        <span class="btn-star">&#9733;</span> Take Action Now
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -203,7 +205,7 @@
     <script src="js/config.js"></script>
     <script src="js/sheets.js"></script>
     <script src="js/legislation-api.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=58"></script>
     <script src="js/pwa.js"></script>
 </body>
 </html>
