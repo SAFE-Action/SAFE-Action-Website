@@ -2,6 +2,22 @@
 // SAFE Action - Candidate Detail Page
 // ============================================
 
+function getDemoCandidate(slug) {
+    var demos = {
+        'sarah-mitchell': { firstName: 'Sarah', lastName: 'Mitchell', party: 'Democrat', office: 'State Senator', state: 'CA', timestamp: '2026-03-10', _isDemo: true,
+            pledgeText: 'I pledge to support evidence-based science policy and protect public health in California.' },
+        'james-rodriguez': { firstName: 'James', lastName: 'Rodriguez', party: 'Republican', office: 'State Representative', state: 'TX', timestamp: '2026-03-09', _isDemo: true,
+            pledgeText: 'I pledge to champion science-based legislation and defend public health standards in Texas.' },
+        'emily-chen': { firstName: 'Emily', lastName: 'Chen', party: 'Democrat', office: 'City Council', state: 'NY', timestamp: '2026-03-08', _isDemo: true,
+            pledgeText: 'I pledge to stand for evidence-based public health policy in my community.' },
+        'robert-thompson': { firstName: 'Robert', lastName: 'Thompson', party: 'Independent', office: 'County Commissioner', state: 'FL', timestamp: '2026-03-07', _isDemo: true,
+            pledgeText: 'I pledge to put science first and support public health protections in Florida.' },
+        'maria-gonzalez': { firstName: 'Maria', lastName: 'Gonzalez', party: 'Democrat', office: 'School Board', state: 'AZ', timestamp: '2026-03-06', _isDemo: true,
+            pledgeText: 'I pledge to protect science education and evidence-based health policy in our schools.' },
+    };
+    return slug ? (demos[slug.toLowerCase()] || null) : null;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const loadingEl = document.getElementById('candidate-loading');
     const detailEl = document.getElementById('candidate-detail');
@@ -26,13 +42,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (!candidate) {
-            showNotFound();
-            return;
+            // Check if this is a demo candidate from the ticker
+            var demoData = getDemoCandidate(candidateSlug);
+            if (demoData) {
+                candidate = demoData;
+            } else {
+                showNotFound();
+                return;
+            }
         }
 
         // Populate the page
         populateDetail(candidate);
         setupShareButtons(candidate);
+
+        // Show demo disclaimer if this is a demo candidate
+        if (candidate._isDemo) {
+            var disclaimer = document.createElement('div');
+            disclaimer.style.cssText = 'text-align:center;color:#999;font-size:0.75rem;margin-top:2em;padding:1em;border-top:1px solid #eee;';
+            disclaimer.textContent = 'This is a demo profile for preview purposes only. Actual candidate pledges will appear here once submitted.';
+            detailEl.appendChild(disclaimer);
+        }
 
         // Update page title and meta for SEO
         document.title = candidate.firstName + ' ' + candidate.lastName + ' - SAFE Action Pledge';

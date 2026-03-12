@@ -389,9 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const itemsHtml = sorted.map(c => {
                 const stateName = c.state ? (SAFE_CONFIG.STATES[c.state] || c.state) : '';
-                const isDemo = (c.id || '').startsWith('demo-');
-                const slug = (!isDemo && typeof SheetsAPI !== 'undefined') ? SheetsAPI.getSlug(c) : '';
-                const href = isDemo ? 'directory.html' : (slug ? '/candidates/' + encodeURIComponent(slug) : 'candidate.html?id=' + encodeURIComponent(c.id));
+                const first = (c.firstName || '').toLowerCase().trim();
+                const last = (c.lastName || '').toLowerCase().trim();
+                const slug = (first + '-' + last).replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+                const href = '/candidates/' + encodeURIComponent(slug);
                 return `
                     <a href="${href}" class="pledge-ticker-item">
                         <span class="ticker-name">${escapeHtml(c.firstName)} ${escapeHtml(c.lastName)}</span>
