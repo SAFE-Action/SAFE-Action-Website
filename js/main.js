@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const first = (c.firstName || '').toLowerCase().trim();
                 const last = (c.lastName || '').toLowerCase().trim();
                 const slug = (first + '-' + last).replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-                const href = '/candidates/' + encodeURIComponent(slug);
+                const href = '/candidate?slug=' + encodeURIComponent(slug);
                 return `
                     <a href="${href}" class="pledge-ticker-item">
                         <span class="ticker-name">${escapeHtml(c.firstName)} ${escapeHtml(c.lastName)}</span>
