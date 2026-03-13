@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const detailEl = document.getElementById('candidate-detail');
     const notFoundEl = document.getElementById('candidate-not-found');
 
-    // Support both clean URLs (/candidates/sarah-mitchell) and legacy (?id=123)
+    // Support clean URLs (/candidates/sarah-mitchell), query params (?slug=...), and legacy (?id=123)
     const params = new URLSearchParams(window.location.search);
-    const candidateSlug = params.get('slug');
+    const pathMatch = window.location.pathname.match(/\/candidates\/([^/]+)/);
+    const candidateSlug = params.get('slug') || (pathMatch ? decodeURIComponent(pathMatch[1]) : null);
     const candidateId = params.get('id');
 
     if (!candidateSlug && !candidateId) {
