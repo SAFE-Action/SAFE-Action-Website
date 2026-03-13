@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Media &amp; Content Creators - SAFE Action</title>
+    <meta name="description" content="Resources for journalists, reporters, bloggers, and content creators covering anti-science legislation. Browse bills, download data, and find expert sources.">
+    <meta property="og:title" content="SAFE Action - Media &amp; Content Creator Resources">
+    <meta property="og:description" content="The most comprehensive database of anti-science legislation in America. Free resources for journalists and creators.">
+    <meta property="og:type" content="website">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=62">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .media-hero {
+            background: linear-gradient(135deg, var(--blue) 0%, #1E1E4E 100%);
+            color: white;
+            padding: 3em 0 2.5em;
+            text-align: center;
+        }
+        .media-hero h1 { font-size: 2.2rem; margin-bottom: 0.3em; }
+        .media-hero p { color: rgba(255,255,255,0.8); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+        .media-section { padding: 3em 0; }
+        .media-section:nth-child(even) { background: var(--off-white); }
+
+        .media-section h2 {
+            text-align: center;
+            margin-bottom: 0.3em;
+            color: var(--blue);
+        }
+        .media-section > .container > p.section-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5em;
+            margin-bottom: 2em;
+        }
+        .quick-link-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5em;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--red);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .quick-link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .quick-link-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4em;
+            color: var(--blue);
+        }
+        .quick-link-card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.8em;
+            line-height: 1.5;
+        }
+        .quick-link-card a {
+            color: var(--red);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .quick-link-card a:hover { text-decoration: underline; }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75em;
+        }
+        .category-chip {
+            display: block;
+            padding: 0.7em 1em;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .category-chip:hover {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+        .category-chip .chip-count {
+            display: block;
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.2em;
+        }
+        .category-chip:hover .chip-count { color: rgba(255,255,255,0.7); }
+
+        .tip-box {
+            background: #FFF9E6;
+            border: 1px solid #E6D9A8;
+            border-radius: 10px;
+            padding: 1.2em 1.5em;
+            margin-top: 2em;
+        }
+        .tip-box strong { color: var(--blue); }
+        .tip-box code {
+            background: rgba(0,0,0,0.06);
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .state-filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 0.5em;
+            margin-top: 1em;
+        }
+        .state-link {
+            display: block;
+            padding: 0.5em;
+            text-align: center;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .state-link:hover {
+            background: var(--blue);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="outreach.html" class="nav-link">Take Action</a>
+                    <a href="directory.html" class="nav-link">Pledges</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="media-hero">
+        <div class="container">
+            <h1>For News, Media &amp; Content Creators</h1>
+            <p>Free access to the most comprehensive database of anti-science legislation in America. Browse, filter, bookmark, and share.</p>
+        </div>
+    </section>
+
+    <!-- Quick Access Links -->
+    <section class="media-section">
+        <div class="container">
+            <h2>Quick Access</h2>
+            <p class="section-sub">Jump straight into the data. Every link is bookmarkable with filters saved in the URL.</p>
+
+            <div class="quick-links-grid">
+                <div class="quick-link-card">
+                    <h3>All Anti-Science Bills</h3>
+                    <p>Every bill we're tracking that threatens public health, science education, or evidence-based policy.</p>
+                    <a href="outreach.html?type=anti#browse-bills">Browse all anti-science bills &rarr;</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>High Priority / Active Threats</h3>
+                    <p>Bills actively moving through legislatures that pose the greatest risk right now.</p>
+                    <a href="outreach.html?type=anti&status=active&priority=High#browse-bills">View high-priority active bills &rarr;</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>Pro-Science Legislation</h3>
+                    <p>Bills that strengthen public health protections, fund research, or support evidence-based policy.</p>
+                    <a href="outreach.html?type=pro#browse-bills">Browse pro-science bills &rarr;</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>Bills Signed into Law</h3>
+                    <p>Anti-science legislation that has already been signed. Track what passed and where.</p>
+                    <a href="outreach.html?type=anti&status=Signed+into+Law#browse-bills">View signed bills &rarr;</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>Defeated / Dead Bills</h3>
+                    <p>Harmful bills that were stopped. Evidence that advocacy works.</p>
+                    <a href="outreach.html?type=anti&status=dead#browse-bills">View defeated bills &rarr;</a>
+                </div>
+                <div class="quick-link-card">
+                    <h3>All Legislation</h3>
+                    <p>The full, unfiltered database. Apply your own filters and bookmark the result.</p>
+                    <a href="outreach.html#browse-bills">Browse all bills &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Category -->
+    <section class="media-section">
+        <div class="container">
+            <h2>Browse by Category</h2>
+            <p class="section-sub">Covering a specific topic? Jump straight to the bills that matter for your story.</p>
+
+            <div class="category-grid">
+                <a class="category-chip" href="outreach.html?category=vaccine-exemption&type=anti#browse-bills">
+                    Vaccine Exemptions
+                </a>
+                <a class="category-chip" href="outreach.html?category=vaccine-mandate&type=anti#browse-bills">
+                    Vaccine Mandates
+                </a>
+                <a class="category-chip" href="outreach.html?category=medical-freedom&type=anti#browse-bills">
+                    Medical Freedom
+                </a>
+                <a class="category-chip" href="outreach.html?category=informed-consent&type=anti#browse-bills">
+                    Informed Consent
+                </a>
+                <a class="category-chip" href="outreach.html?category=vaccine-discrimination#browse-bills">
+                    Vaccine Discrimination
+                </a>
+                <a class="category-chip" href="outreach.html?category=mRNA-reclassification#browse-bills">
+                    mRNA Reclassification
+                </a>
+                <a class="category-chip" href="outreach.html?category=vaccine-injury#browse-bills">
+                    Vaccine Injury
+                </a>
+                <a class="category-chip" href="outreach.html?category=raw-milk#browse-bills">
+                    Raw Milk
+                </a>
+                <a class="category-chip" href="outreach.html?category=fluoride#browse-bills">
+                    Fluoride
+                </a>
+                <a class="category-chip" href="outreach.html?category=geoengineering#browse-bills">
+                    Geoengineering
+                </a>
+                <a class="category-chip" href="outreach.html?category=public-health#browse-bills">
+                    Public Health
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by State -->
+    <section class="media-section">
+        <div class="container">
+            <h2>Browse by State</h2>
+            <p class="section-sub">Covering your state legislature? See every anti-science bill in your state.</p>
+
+            <div class="state-filter-grid" id="state-grid"></div>
+        </div>
+    </section>
+
+    <!-- Bookmark Tip -->
+    <section class="media-section">
+        <div class="container">
+            <h2>Bookmark &amp; Share</h2>
+            <p class="section-sub">Every filter combination creates a unique URL you can save, share, or embed.</p>
+
+            <div class="tip-box">
+                <strong>How it works:</strong> When you apply filters on the Browse Bills page, the URL updates automatically. Copy the URL from your browser bar to save your exact filter setup. Share it with colleagues, embed it in articles, or bookmark it for future reference.
+                <br><br>
+                <strong>Example URLs:</strong><br>
+                <code>outreach.html?state=TX&type=anti&status=active#browse-bills</code> &mdash; Active anti-science bills in Texas<br>
+                <code>outreach.html?category=vaccine-exemption&priority=High#browse-bills</code> &mdash; High-priority vaccine exemption bills<br>
+                <code>outreach.html?q=fluoride#browse-bills</code> &mdash; All bills mentioning fluoride
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="outreach.html">Take Action</a>
+                    <a href="directory.html">Pledges</a>
+                    <a href="media.html">Media</a>
+                </nav>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00" class="btn-donate" target="_blank" rel="noopener">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (status pending). Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script>
+        // Populate state grid with links
+        document.addEventListener('DOMContentLoaded', function() {
+            var grid = document.getElementById('state-grid');
+            if (!grid || typeof SAFE_CONFIG === 'undefined') return;
+            var states = SAFE_CONFIG.STATES;
+            Object.keys(states).forEach(function(code) {
+                if (code === 'US') return;
+                var a = document.createElement('a');
+                a.className = 'state-link';
+                a.href = 'outreach.html?state=' + code + '&type=anti#browse-bills';
+                a.textContent = code;
+                a.title = states[code];
+                grid.appendChild(a);
+            });
+        });
+    </script>
+</body>
+</html>

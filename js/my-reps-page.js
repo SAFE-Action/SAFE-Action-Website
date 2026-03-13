@@ -30,7 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle hash-based tab navigation (e.g., outreach.html#take-pledge)
+    // Also auto-open browse-bills if URL has filter params
     var hash = window.location.hash.replace('#', '');
+    var params = new URLSearchParams(window.location.search);
+    var billFilterKeys = ['state', 'type', 'status', 'priority', 'category', 'q'];
+    var hasBillFilters = billFilterKeys.some(function(k) { return params.has(k); });
+    if (hasBillFilters && !hash) hash = 'browse-bills';
     if (hash) {
         var hashBtn = document.querySelector('.sub-nav-link[data-tab="' + hash + '"]');
         if (hashBtn) hashBtn.click();
@@ -507,19 +512,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function showStep() {
             if (idx >= total) {
-                // Collect all candidates from all reps
+                // Collect candidates that actually have contact info (email or website)
                 var allCandidates = [];
+                var seenNames = {};
                 reps.forEach(function(rep) {
                     if (rep.candidates && rep.candidates.length > 0) {
                         rep.candidates.forEach(function(cand) {
-                            // Avoid duplicates and skip if same as incumbent
-                            if (cand.name && cand.name !== rep.name) {
+                            // Only include candidates with email — skip paper filers with no contact
+                            if (cand.name && cand.name !== rep.name && cand.email && !seenNames[cand.name]) {
+                                seenNames[cand.name] = true;
                                 allCandidates.push({
                                     name: cand.name,
                                     party: cand.party || '?',
                                     partyFull: cand.party === 'R' ? 'Republican' : cand.party === 'D' ? 'Democrat' : cand.party || '',
                                     office: rep.office + ' (Candidate)',
-                                    email: cand.email || '',
+                                    email: cand.email,
                                     website: cand.website || '',
                                     contactForm: cand.contact_form || cand.contactForm || '',
                                 });
@@ -1522,23 +1529,56 @@ var BillBrowser = {
             });
         }
 
-        // Add filter listeners
+        // Restore filters from URL params (for bookmarkable links)
+        this._restoreFiltersFromURL();
+
+        // Add filter listeners — sync to URL on change
         var self = this;
         ['bb-state', 'bb-stance', 'bb-status', 'bb-impact', 'bb-category'].forEach(function(id) {
             var el = document.getElementById(id);
-            if (el) el.addEventListener('change', function() { self.render(); });
+            if (el) el.addEventListener('change', function() { self._syncFiltersToURL(); self.render(); });
         });
         var searchEl = document.getElementById('bb-search');
         if (searchEl) {
             var debounceTimer;
             searchEl.addEventListener('input', function() {
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(function() { self.render(); }, 300);
+                debounceTimer = setTimeout(function() { self._syncFiltersToURL(); self.render(); }, 300);
             });
         }
 
         // Load data
         this.loadBills();
+    },
+
+    _filterParamMap: { 'bb-state': 'state', 'bb-stance': 'type', 'bb-status': 'status', 'bb-impact': 'priority', 'bb-category': 'category', 'bb-search': 'q' },
+
+    _restoreFiltersFromURL: function() {
+        var params = new URLSearchParams(window.location.search);
+        var map = this._filterParamMap;
+        Object.keys(map).forEach(function(elId) {
+            var val = params.get(map[elId]);
+            if (val) {
+                var el = document.getElementById(elId);
+                if (el) el.value = val;
+            }
+        });
+    },
+
+    _syncFiltersToURL: function() {
+        var params = new URLSearchParams(window.location.search);
+        var map = this._filterParamMap;
+        Object.keys(map).forEach(function(elId) {
+            var el = document.getElementById(elId);
+            var val = el ? el.value : '';
+            if (val) {
+                params.set(map[elId], val);
+            } else {
+                params.delete(map[elId]);
+            }
+        });
+        var newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+        history.replaceState(null, '', newURL);
     },
 
     loadBills: function() {
