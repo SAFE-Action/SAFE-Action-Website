@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=58">
+    <link rel="stylesheet" href="css/styles.css?v=63">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -163,6 +163,76 @@
         </div>
     </section>
 
+    <!-- Database Stats Section -->
+    <section class="database-section">
+        <div class="database-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,0 L720,60 L1440,0 Z" fill="var(--off-white)"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="database-header">
+                <span class="database-star" aria-hidden="true">&#9733;</span>
+                <h2 class="database-title">The Most Comprehensive Pro-Science Advocacy Database in America</h2>
+                <p class="database-subtitle">We've done the hard work so you don't have to. Every legislator. Every candidate. Every email. One click away.</p>
+            </div>
+            <div class="database-grid">
+                <div class="database-card">
+                    <div class="database-number" id="db-people">
+                        <span class="counter" data-target="0">0</span>
+                    </div>
+                    <div class="database-label">Officials &amp; Candidates</div>
+                    <div class="database-desc">Current legislators and 2026 challengers across every level of government</div>
+                </div>
+                <div class="database-card">
+                    <div class="database-number" id="db-emails">
+                        <span class="counter" data-target="0">0</span>
+                    </div>
+                    <div class="database-label">Direct Email Addresses</div>
+                    <div class="database-desc">Verified emails for instant constituent contact — no middleman, no contact forms</div>
+                </div>
+                <div class="database-card">
+                    <div class="database-number" id="db-seats">
+                        <span class="counter" data-target="0">0</span>
+                    </div>
+                    <div class="database-label">Seats Monitored</div>
+                    <div class="database-desc">Federal, state legislative, and gubernatorial races tracked in real time</div>
+                </div>
+                <div class="database-card">
+                    <div class="database-number" id="db-bills">
+                        <span class="counter" data-target="0">0</span><span class="counter-plus">+</span>
+                    </div>
+                    <div class="database-label">Bills Tracked</div>
+                    <div class="database-desc">Science and health policy legislation monitored across all 50 states</div>
+                </div>
+            </div>
+            <!-- Data Sources -->
+            <div class="database-sources">
+                <div class="sources-header">
+                    <div class="sources-line" aria-hidden="true"></div>
+                    <span class="sources-label">Powered by Authoritative Public Data</span>
+                    <div class="sources-line" aria-hidden="true"></div>
+                </div>
+                <div class="sources-chips">
+                    <span class="source-chip">&#127963;&#65039; U.S. Congress</span>
+                    <span class="source-chip">&#127961;&#65039; Open States</span>
+                    <span class="source-chip">&#128220; Ballotpedia</span>
+                    <span class="source-chip">&#128202; LegiScan</span>
+                    <span class="source-chip">&#128205; Google Civic Info</span>
+                    <span class="source-chip">&#9878;&#65039; FEC &amp; State SOS</span>
+                </div>
+                <p class="sources-tagline">All contact information sourced from official government directories, public campaign filings, and verified open-data repositories.</p>
+            </div>
+
+            <div class="database-cta">
+                <a href="outreach.html" class="btn btn-database btn-lg">
+                    <span class="btn-star">&#9733;</span>
+                    Find Your Representatives
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Candidate Pledge CTA -->
     <section class="pledge-cta-section">
         <div class="container">
@@ -205,7 +275,7 @@
     <script src="js/config.js"></script>
     <script src="js/sheets.js"></script>
     <script src="js/legislation-api.js"></script>
-    <script src="js/main.js?v=58"></script>
+    <script src="js/main.js?v=63"></script>
     <script src="js/pwa.js"></script>
 </body>
 </html>

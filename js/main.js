@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initImpactCounters();
+    initDatabaseStats();
     initVictoryBoard();
     initPledgeTicker();
 
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animateSingleCounter(counter, target) {
         if (!counter || !target) return;
+        counter.dataset.target = target; // store real target for observers
         const duration = 1500;
         const startTime = performance.now();
         function update(currentTime) {
@@ -84,6 +86,99 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
             const counter = el.querySelector('.counter');
             if (counter) counter.textContent = value.toLocaleString();
+        }
+    }
+
+    // --- Database Stats Section ---
+    function initDatabaseStats() {
+        // Load seats.json to compute live database stats
+        fetch('data/seats.json?v=62')
+            .then(r => r.json())
+            .then(data => {
+                var seats = data.seats || [];
+                var totalSeats = seats.length;
+
+                // Count unique people across all formats, merging email status
+                // A person appearing as both incumbent (no email) and incumbents[] (with email)
+                // should count as having email
+                var globalSeen = {}; // state|name -> {hasEmail: bool}
+                seats.forEach(function(seat) {
+                    var localPeople = {}; // name -> hasEmail (within this seat)
+                    function addPerson(p) {
+                        if (!p || !p.name) return;
+                        var n = p.name;
+                        if (!localPeople[n]) localPeople[n] = false;
+                        if (p.email) localPeople[n] = true;
+                    }
+                    // Singular incumbent
+                    addPerson(seat.incumbent);
+                    // Incumbents array
+                    (seat.incumbents || []).forEach(addPerson);
+                    // Candidates
+                    (seat.candidates || []).forEach(addPerson);
+                    // Merge into global
+                    for (var name in localPeople) {
+                        var key = seat.state + '|' + name;
+                        if (!globalSeen[key]) {
+                            globalSeen[key] = localPeople[name];
+                        } else if (localPeople[name]) {
+                            globalSeen[key] = true;
+                        }
+                    }
+                });
+                var totalPeople = 0, totalEmails = 0;
+                for (var k in globalSeen) {
+                    totalPeople++;
+                    if (globalSeen[k]) totalEmails++;
+                }
+
+                updateCounterDisplay('db-people', totalPeople);
+                updateCounterDisplay('db-emails', totalEmails);
+                updateCounterDisplay('db-seats', totalSeats);
+
+                // Bills — total count from LegislationAPI
+                LegislationAPI.getLegislation(null).then(function(bills) {
+                    updateCounterDisplay('db-bills', bills.length);
+                    var el = document.getElementById('db-bills');
+                    if (el) animateSingleCounter(el.querySelector('.counter'), bills.length);
+                }).catch(function() {
+                    updateCounterDisplay('db-bills', 200);
+                });
+
+                // Animate the rest when scrolling into view
+                var el = document.getElementById('db-people');
+                if (el) animateSingleCounter(el.querySelector('.counter'), totalPeople);
+                el = document.getElementById('db-emails');
+                if (el) animateSingleCounter(el.querySelector('.counter'), totalEmails);
+                el = document.getElementById('db-seats');
+                if (el) animateSingleCounter(el.querySelector('.counter'), totalSeats);
+            })
+            .catch(function() {
+                // Fallback hardcoded values if fetch fails
+                updateCounterDisplay('db-people', 13797);
+                updateCounterDisplay('db-emails', 8500);
+                updateCounterDisplay('db-seats', 6718);
+                updateCounterDisplay('db-bills', 10455);
+            });
+
+        // Observe for scroll animation
+        var dbSection = document.querySelector('.database-section');
+        if (dbSection) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        dbSection.querySelectorAll('.counter').forEach(function(counter) {
+                            // Use stored target (set by animateSingleCounter) to avoid
+                            // reading a mid-animation textContent value
+                            var target = parseInt(counter.dataset.target) ||
+                                         parseInt(counter.textContent.replace(/,/g, ''));
+                            if (target) animateSingleCounter(counter, target);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(dbSection);
         }
     }
 
