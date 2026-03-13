@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/candidates/:slug",
-      "destination": "/candidate.html?slug=:slug"
+      "destination": "/candidate?slug=:slug"
     },
     {
       "source": "/admin",
