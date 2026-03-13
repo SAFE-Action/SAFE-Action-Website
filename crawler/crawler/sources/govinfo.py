@@ -12,21 +12,17 @@ import httpx
 CONGRESS = 119
 GOVINFO_BASE = "https://www.govinfo.gov/bulkdata"
 BILL_TYPES = ["hr", "s"]
+# Focused on vaccines, raw milk, fluoride + closely related terms
 BILL_KEYWORDS = [
-    "vaccine", "immunization", "vaccination", "public health",
-    "pandemic", "epidemic", "quarantine", "communicable disease",
-    "fluoride", "medical freedom", "informed consent",
-    "health department", "health officer", "nih", "cdc",
-    "gain of function", "biosecurity", "biodefense",
-    "drug safety", "pharmaceutical", "clinical trial",
-    "health insurance", "medicaid", "medicare",
-    "mental health", "opioid", "fentanyl", "substance abuse",
-    "environmental health", "clean water", "clean air",
-    "climate", "carbon", "emissions", "renewable energy",
-    "science education", "stem", "research funding",
-    "raw milk", "food safety",
+    "vaccine", "immunization", "vaccination", "immunize",
+    "fluoride", "fluoridation",
+    "raw milk", "unpasteurized",
+    "medical freedom", "informed consent",
     "exemption", "mandate", "religious exemption",
-    "school health", "childhood",
+    "school immunization", "childhood vaccination",
+    "public health emergency", "communicable disease",
+    "quarantine", "pandemic preparedness",
+    "mrna", "gene therapy",
 ]
 
 
@@ -117,16 +113,51 @@ def _parse_bill_xml(xml_text):
 
 
 def _classify_stance(title, policy_area, subjects):
+    """Classify federal bill stance with strict core-topic gating.
+
+    Only bills about vaccines, raw milk, or fluoride get anti/pro labels.
+    Everything else is classified as 'monitor'.
+    """
     combined = (title + " " + policy_area + " " + " ".join(subjects)).lower()
-    pro_kw = ["fund", "research", "protect", "strengthen", "support",
-              "improve", "expand", "enhance", "increase funding"]
-    anti_kw = ["ban", "prohibit", "restrict", "repeal", "eliminate",
-               "exemption", "opt out", "freedom from"]
+
+    # Gate: only classify if about core science topics
+    core_topics = [
+        "vaccine", "vaccination", "immunization",
+        "raw milk", "unpasteurized",
+        "fluoride", "fluoridation",
+        "mrna", "informed consent",
+    ]
+    is_core = any(kw in combined for kw in core_topics)
+
+    if not is_core:
+        return "monitor"
+
+    pro_kw = ["fund research", "protect public health", "strengthen immunization",
+              "require vaccination", "vaccine access", "limit exemption",
+              "remove exemption", "fluoridation program", "pasteurization",
+              "fund vaccine", "vaccine program", "vaccination program",
+              "immunization program", "vaccination strategy",
+              "vaccine strategy", "vaccine transportation"]
+    anti_kw = ["ban mandate", "prohibit mandate", "repeal", "eliminate requirement",
+               "exemption", "opt out", "freedom from", "medical freedom",
+               "informed consent", "parental rights", "personal belief",
+               "right to refuse", "bodily autonomy", "health freedom",
+               "vaccine injury", "vaccine harm", "gene therapy",
+               "weapons of mass destruction", "biological agent",
+               "ban fluoride", "prohibit fluoride", "fluoride choice",
+               "raw milk sales", "discrimination against unvaccinated",
+               "vaccine status", "personal liberty",
+               "vaccine passport", "vaccination passport",
+               "vaccination status", "no mandate", "prohibition",
+               "unprofessional conduct", "vaccine injured",
+               "harmful vaccine", "vaccine carveout",
+               "non-discrimination", "no vaccine mandate",
+               "no vaccination mandate", "no immunization mandate"]
     pro = sum(1 for kw in pro_kw if kw in combined)
     anti = sum(1 for kw in anti_kw if kw in combined)
     if pro > anti:
         return "pro"
-    elif anti > pro:
+    elif anti > 0:
         return "anti"
     return "monitor"
 

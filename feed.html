@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Feed - SAFE Action</title>
+    <meta name="description" content="Track science-related legislation across all 50 states. See which bills are being flagged as anti-science or pro-science.">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="feed-page">
+
+    <div class="feed-header">
+        <h1>SAFE Action Bill Feed</h1>
+        <p>Tracking science-related legislation across the United States</p>
+    </div>
+
+    <div class="feed-toolbar">
+        <select id="feed-state">
+            <option value="">All States</option>
+        </select>
+        <select id="feed-type">
+            <option value="">All Types</option>
+            <option value="anti">Anti-Science</option>
+            <option value="pro">Pro-Science</option>
+        </select>
+        <input type="text" id="feed-search" placeholder="Search bills...">
+        <span id="feed-count"></span>
+    </div>
+
+    <div class="feed-list" id="feed-list"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/feed.js"></script>
+</body>
+</html>

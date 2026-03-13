@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Email domain verification
     setupEmailVerification();
 
+    // Photo upload
+    setupPhotoUpload();
+
     // Form submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -55,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 vaccineSupport: document.querySelector('input[name="vaccineSupport"]:checked')?.value || '',
                 question1: val('question1'),
                 question2: val('question2'),
-                question3: val('question3')
+                question3: val('question3'),
+                photoData: window._pledgePhotoData || ''
             };
 
             await SheetsAPI.submitPledge(formData);
@@ -191,5 +195,96 @@ document.addEventListener('DOMContentLoaded', () => {
                 warningEl.classList.add('show');
             }
         });
+    }
+
+    function setupPhotoUpload() {
+        const uploadArea = document.getElementById('photo-upload-area');
+        const fileInput = document.getElementById('photoFile');
+        const preview = document.getElementById('photo-preview');
+        const previewImg = document.getElementById('photo-preview-img');
+        const placeholder = document.getElementById('photo-placeholder');
+        const removeBtn = document.getElementById('photo-remove');
+        if (!uploadArea || !fileInput) return;
+
+        // Store processed photo data globally for form submission
+        window._pledgePhotoData = '';
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file) processPhoto(file);
+        });
+
+        // File input change
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) processPhoto(file);
+        });
+
+        // Remove photo
+        removeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window._pledgePhotoData = '';
+            fileInput.value = '';
+            preview.style.display = 'none';
+            placeholder.style.display = '';
+        });
+
+        function processPhoto(file) {
+            // Validate file type
+            if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+                alert('Please upload a JPG, PNG, or WebP image.');
+                return;
+            }
+
+            // Validate file size (5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Photo must be under 5MB. Please choose a smaller image.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    // Resize to max 300x300, maintaining aspect ratio and cropping to square
+                    const canvas = document.createElement('canvas');
+                    const size = 300;
+                    canvas.width = size;
+                    canvas.height = size;
+                    const ctx = canvas.getContext('2d');
+
+                    // Calculate crop to center-square
+                    const minDim = Math.min(img.width, img.height);
+                    const sx = (img.width - minDim) / 2;
+                    const sy = (img.height - minDim) / 2;
+
+                    ctx.drawImage(img, sx, sy, minDim, minDim, 0, 0, size, size);
+
+                    // Convert to JPEG at 85% quality for smaller payload
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                    window._pledgePhotoData = dataUrl;
+
+                    // Show preview
+                    previewImg.src = dataUrl;
+                    preview.style.display = '';
+                    placeholder.style.display = 'none';
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
     }
 });

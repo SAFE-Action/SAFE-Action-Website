@@ -31,3 +31,12 @@ firebase-debug.log
 .claude/settings.local.json
 
 .vercel
+
+# Large data caches (API responses, enrichment intermediates)
+data/ballotpedia_candidates_cache.json
+data/openstates_cache.json
+data/candidate_enrichment_cache.json
+data/removed_emails_audit.json
+data/removed_candidates.json
+phase2.log
+_fix_persuadability.py

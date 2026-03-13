@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "safe-action-site",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "3000"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["dev-server.js"],
       "port": 3000
     }
   ]

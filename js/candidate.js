@@ -56,8 +56,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         populateDetail(candidate);
         setupShareButtons(candidate);
 
-        // Show demo disclaimer if this is a demo candidate
-        if (candidate._isDemo) {
+        // Show demo badge if this is a demo candidate (either from fallback or matching demo list)
+        var isDemo = candidate._isDemo || getDemoCandidate(candidateSlug);
+        if (isDemo) {
+            // Add DEMO badge next to name
+            var nameEl = document.getElementById('candidate-name');
+            var badge = document.createElement('span');
+            badge.style.cssText = 'display:inline-block;background:#E5E7EB;color:#6B7280;font-size:0.65rem;font-weight:700;padding:3px 8px;border-radius:4px;margin-left:10px;vertical-align:middle;letter-spacing:0.05em;';
+            badge.textContent = 'DEMO';
+            nameEl.appendChild(badge);
+
+            // Add disclaimer at bottom
             var disclaimer = document.createElement('div');
             disclaimer.style.cssText = 'text-align:center;color:#999;font-size:0.75rem;margin-top:2em;padding:1em;border-top:1px solid #eee;';
             disclaimer.textContent = 'This is a demo profile for preview purposes only. Actual candidate pledges will appear here once submitted.';

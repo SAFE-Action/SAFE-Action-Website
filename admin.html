@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Queue - SAFE Action</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="SAFE Action bill review queue - internal admin tool">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+
+    <!-- Auth: Login Screen -->
+    <div id="auth-login" class="admin-auth-overlay">
+        <div class="admin-auth-card">
+            <div class="admin-auth-logo">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3C3B6E" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <h1>SAFE Action Admin</h1>
+            <p>Sign in to review the bill approval queue</p>
+            <button id="login-btn" class="admin-google-btn">
+                <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                Sign in with Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Auth: Access Denied -->
+    <div id="auth-denied" class="admin-auth-overlay" style="display:none">
+        <div class="admin-auth-card">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B22234" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <h1>Access Denied</h1>
+            <p>Your account is not authorized to access the admin panel.</p>
+            <p class="admin-auth-email" id="denied-email"></p>
+            <button id="denied-back-btn" class="admin-link-btn">Try a different account</button>
+        </div>
+    </div>
+
+    <!-- Auth: Loading -->
+    <div id="auth-loading" class="admin-auth-overlay" style="display:none">
+        <div class="admin-auth-card">
+            <div class="admin-spinner"></div>
+            <p>Checking access...</p>
+        </div>
+    </div>
+
+    <!-- Admin UI (hidden until authenticated) -->
+    <div id="admin-app" style="display:none">
+
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-header-inner">
+                <div class="admin-header-left">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <h1>SAFE Action <span class="admin-header-badge">Admin</span></h1>
+                </div>
+                <div class="admin-header-right">
+                    <span id="user-email" class="admin-user-email"></span>
+                    <button id="logout-btn" class="admin-logout-btn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Tabs -->
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="pending">
+                <span class="admin-tab-count" id="count-pending">0</span>
+                Pending
+            </button>
+            <button class="admin-tab" data-tab="approved">
+                <span class="admin-tab-count" id="count-approved">0</span>
+                Approved
+            </button>
+            <button class="admin-tab" data-tab="denied">
+                <span class="admin-tab-count" id="count-denied">0</span>
+                Denied
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="admin-filters">
+            <select id="filter-state">
+                <option value="">All States</option>
+            </select>
+            <select id="filter-category">
+                <option value="">All Categories</option>
+                <option value="vaccine-exemption">Vaccine Exemption</option>
+                <option value="vaccine-mandate">Vaccine Mandate</option>
+                <option value="medical-freedom">Medical Freedom</option>
+                <option value="informed-consent">Informed Consent</option>
+                <option value="vaccine-discrimination">Vaccine Discrimination</option>
+                <option value="vaccine-injury">Vaccine Injury</option>
+                <option value="mRNA-reclassification">mRNA Reclassification</option>
+                <option value="raw-milk">Raw Milk</option>
+                <option value="fluoride">Fluoride</option>
+                <option value="geoengineering">Geoengineering</option>
+                <option value="public-health">Public Health</option>
+            </select>
+            <input type="text" id="filter-search" placeholder="Search bills..." class="admin-search">
+        </div>
+
+        <!-- Content: Queue List + Detail Panel -->
+        <div class="admin-content">
+            <!-- Queue List -->
+            <div class="admin-queue" id="queue-list">
+                <div class="admin-queue-empty" id="queue-empty">
+                    <p>No bills in this queue</p>
+                </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="admin-detail" id="detail-panel">
+                <div class="admin-detail-placeholder" id="detail-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                    <p>Select a bill from the queue to review</p>
+                </div>
+                <div id="detail-content" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (compat mode for vanilla JS) -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
