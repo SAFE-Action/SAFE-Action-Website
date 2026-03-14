@@ -3,51 +3,75 @@
     "public": ".",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
+      ".firebaserc",
+      "node_modules",
+      "functions/**",
       "crawler/**",
-      "data/**",
-      "**/*.md",
-      "**/*.py",
-      "**/*.yml",
-      "**/*.yaml"
+      "docs/**",
+      ".git/**",
+      "*.py",
+      "*.log",
+      "*.md",
+      "data/ballotpedia_candidates_cache.json",
+      "data/openstates_cache.json",
+      "data/candidate_enrichment_cache.json",
+      "data/removed_emails_audit.json",
+      "data/removed_candidates.json"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "/candidates/:slug",
+        "destination": "/candidate.html"
+      },
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/feed",
+        "destination": "/feed.html"
+      },
+      {
+        "source": "/volunteer",
+        "destination": "/volunteer.html"
+      },
+      {
+        "source": "/volunteer/nda",
+        "destination": "/nda.html"
+      },
+      {
+        "source": "/api/districts",
+        "function": "districts"
+      },
+      {
+        "source": "/api/volunteer/apply",
+        "function": "volunteerApply"
+      },
+      {
+        "source": "/api/admin/volunteers/**",
+        "function": "adminVolunteers"
+      },
+      {
+        "source": "/api/volunteer/*/nda/sign",
+        "function": "volunteerSignNda"
+      }
     ],
     "headers": [
       {
-        "source": "**/*.@(js|css)",
+        "source": "data/**",
         "headers": [
           {
             "key": "Cache-Control",
             "value": "public, max-age=3600"
           }
         ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=86400"
-          }
-        ]
-      },
-      {
-        "source": "sw.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
       }
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs20"
   }
 }

@@ -26,6 +26,8 @@ desktop.ini
 # Firebase
 .firebase/
 firebase-debug.log
+functions/node_modules/
+functions/.env
 
 # Claude local settings
 .claude/settings.local.json
