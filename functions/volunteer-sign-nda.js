@@ -1,6 +1,7 @@
 const admin = require('firebase-admin');
 const PDFDocument = require('pdfkit');
 const { google } = require('googleapis');
+const { GoogleAuth } = require('google-auth-library');
 const ndaTemplate = require('./nda-template');
 const stream = require('stream');
 
@@ -37,21 +38,19 @@ exports.volunteerSignNda = async (req, res) => {
         const pdfBuffer = await generateNdaPdf(volunteer.name, name, now, ip);
 
         // Upload to Drive if folder exists
-        if (volunteer.driveFolder && process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+        if (volunteer.driveFolder) {
             try {
                 // Extract folder ID from URL
                 const folderMatch = volunteer.driveFolder.match(/folders\/([^?/]+)/);
                 const folderId = folderMatch ? folderMatch[1] : null;
 
                 if (folderId) {
-                    const key = JSON.parse(Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_KEY, 'base64').toString());
-                    const auth = new google.auth.JWT({
-                        email: key.client_email,
-                        key: key.private_key,
+                    const authInstance = new GoogleAuth({
                         scopes: ['https://www.googleapis.com/auth/drive'],
-                        subject: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com'
+                        clientOptions: { subject: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com' }
                     });
-                    const drive = google.drive({ version: 'v3', auth });
+                    const authClient = await authInstance.getClient();
+                    const drive = google.drive({ version: 'v3', auth: authClient });
 
                     const bufferStream = new stream.PassThrough();
                     bufferStream.end(pdfBuffer);

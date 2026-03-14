@@ -1,17 +1,18 @@
 const { google } = require('googleapis');
+const { GoogleAuth } = require('google-auth-library');
 
 /**
- * Get authenticated Gmail client via service account impersonation
+ * Get authenticated Gmail client via Application Default Credentials
+ * with domain-wide delegation to impersonate the officer email
  */
 async function getGmailClient() {
-    const key = JSON.parse(Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_KEY, 'base64').toString());
-    const auth = new google.auth.JWT({
-        email: key.client_email,
-        key: key.private_key,
+    const subject = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
+    const auth = new GoogleAuth({
         scopes: ['https://www.googleapis.com/auth/gmail.send'],
-        subject: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com'
+        clientOptions: { subject }
     });
-    return google.gmail({ version: 'v1', auth });
+    const authClient = await auth.getClient();
+    return google.gmail({ version: 'v1', auth: authClient });
 }
 
 /**

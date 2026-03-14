@@ -1,22 +1,25 @@
 const { google } = require('googleapis');
+const { GoogleAuth } = require('google-auth-library');
 
-function getAuth(scopes, subject) {
-    const key = JSON.parse(Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_KEY, 'base64').toString());
-    return new google.auth.JWT({
-        email: key.client_email,
-        key: key.private_key,
+/**
+ * Get an authenticated Google API client using Application Default Credentials
+ * with domain-wide delegation to impersonate a Workspace user
+ */
+async function getAuthClient(scopes) {
+    const subject = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
+    const auth = new GoogleAuth({
         scopes,
-        subject
+        clientOptions: { subject }
     });
+    return auth.getClient();
 }
 
 /**
  * Create a Google Drive folder for the volunteer, shared with their email
  */
 async function createDriveFolder({ volunteerName, volunteerEmail }) {
-    const adminEmail = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
-    const auth = getAuth(['https://www.googleapis.com/auth/drive'], adminEmail);
-    const drive = google.drive({ version: 'v3', auth });
+    const authClient = await getAuthClient(['https://www.googleapis.com/auth/drive']);
+    const drive = google.drive({ version: 'v3', auth: authClient });
 
     // Create folder
     const folder = await drive.files.create({
@@ -45,9 +48,8 @@ async function createDriveFolder({ volunteerName, volunteerEmail }) {
  * Add volunteer to Google Contacts (People API) with skills/interests in notes
  */
 async function createContact({ name, email, skills, interests }) {
-    const adminEmail = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
-    const auth = getAuth(['https://www.googleapis.com/auth/contacts'], adminEmail);
-    const people = google.people({ version: 'v1', auth });
+    const authClient = await getAuthClient(['https://www.googleapis.com/auth/contacts']);
+    const people = google.people({ version: 'v1', auth: authClient });
 
     const nameParts = name.trim().split(/\s+/);
     const firstName = nameParts[0];
@@ -72,9 +74,8 @@ async function createContact({ name, email, skills, interests }) {
  * Add volunteer to weekly Google Calendar event
  */
 async function addToCalendarEvent({ email }) {
-    const adminEmail = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
-    const auth = getAuth(['https://www.googleapis.com/auth/calendar'], adminEmail);
-    const calendar = google.calendar({ version: 'v3', auth });
+    const authClient = await getAuthClient(['https://www.googleapis.com/auth/calendar']);
+    const calendar = google.calendar({ version: 'v3', auth: authClient });
 
     const eventId = process.env.GOOGLE_CALENDAR_EVENT_ID;
 
@@ -101,9 +102,8 @@ async function addToCalendarEvent({ email }) {
  * Add volunteer to Google Chat space
  */
 async function addToChatSpace({ email }) {
-    const adminEmail = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
-    const auth = getAuth(['https://www.googleapis.com/auth/chat.memberships'], adminEmail);
-    const chat = google.chat({ version: 'v1', auth });
+    const authClient = await getAuthClient(['https://www.googleapis.com/auth/chat.memberships']);
+    const chat = google.chat({ version: 'v1', auth: authClient });
 
     const spaceName = process.env.GOOGLE_CHAT_SPACE;
 
