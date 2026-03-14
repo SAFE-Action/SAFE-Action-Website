@@ -5879,6 +5879,311 @@ input.warning {
     .email-all-btn { width: 100%; }
 }
 
+/* ── Email All Hero CTA ────────────────────────────────────── */
+.email-all-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #3C3B6E 50%, #2d2c54 100%);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin: 16px 0 24px;
+    color: #fff;
+    text-align: center;
+    border: 2px solid rgba(178, 34, 52, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.email-all-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(178, 34, 52, 0.15), transparent 70%);
+    pointer-events: none;
+}
+.hero-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+.hero-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: #fff;
+}
+.hero-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 20px;
+    line-height: 1.5;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-input-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.hero-input-group {
+    flex: 1;
+    min-width: 160px;
+    max-width: 220px;
+}
+.hero-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a2e;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+.hero-input:focus {
+    outline: none;
+    border-color: #B22234;
+}
+.hero-input::placeholder {
+    color: #999;
+}
+.hero-btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hero-email-btn {
+    background: #B22234 !important;
+    color: #fff !important;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+.hero-email-btn:hover {
+    background: #8B1A29 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(178, 34, 52, 0.4);
+}
+.hero-call-btn {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.hero-call-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7) !important;
+}
+/* Pulse animation for primary CTA */
+.pulse-btn {
+    animation: heroPulse 2s ease-in-out infinite;
+}
+.pulse-btn:hover { animation: none; }
+@keyframes heroPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(178, 34, 52, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(178, 34, 52, 0); }
+}
+@media (max-width: 600px) {
+    .email-all-hero { padding: 24px 16px; }
+    .hero-heading { font-size: 1.25rem; }
+    .hero-input-group { max-width: 100%; }
+    .hero-btn-row { flex-direction: column; }
+    .hero-email-btn, .hero-call-btn { width: 100%; }
+}
+
+/* ── Rep List Toggle Button ────────────────────────────────── */
+.rep-list-toggle-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(60, 59, 110, 0.08);
+    border: 2px dashed rgba(60, 59, 110, 0.25);
+    border-radius: 10px;
+    color: #3C3B6E;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+.rep-list-toggle-btn:hover {
+    background: rgba(60, 59, 110, 0.14);
+    border-color: rgba(60, 59, 110, 0.4);
+}
+.rep-list-toggle-btn .toggle-icon {
+    font-size: 0.75rem;
+    margin-right: 6px;
+}
+
+/* ── Anti-Spam Notice ──────────────────────────────────────── */
+.anti-spam-notice {
+    background: rgba(255, 193, 7, 0.15);
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+}
+
+/* ── Call/Text Mode Overlay ────────────────────────────────── */
+.call-text-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+.call-card {
+    background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
+    border-radius: 20px;
+    padding: 32px 28px;
+    max-width: 480px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.call-card-done {
+    text-align: center;
+    padding: 48px 28px;
+}
+.call-card-emoji {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+.call-card-progress {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.call-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.call-card-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+.call-card-header h3 {
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+    font-weight: 700;
+}
+.call-card-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+.call-card-phone {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    background: rgba(178, 34, 52, 0.3);
+    border: 2px solid #B22234;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.call-card-phone:hover {
+    background: rgba(178, 34, 52, 0.5);
+    transform: scale(1.02);
+}
+.call-card-script-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.call-card-script {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0 0 20px;
+    font-family: inherit;
+}
+.call-card-script:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+.call-card-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.call-card-btns .btn {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+.call-card-skip {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    flex: 0 !important;
+    min-width: 70px !important;
+}
+.call-card-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.call-card-close:hover {
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .call-card { padding: 24px 16px; border-radius: 16px; }
+    .call-card-phone { font-size: 1.3rem; padding: 14px; }
+    .call-card-btns { flex-direction: column; }
+    .call-card-btns .btn { flex: none; width: 100%; }
+    .call-card-skip { width: 100% !important; }
+}
+
 /* ── Toast Notification ─────────────────────────────────────── */
 .safe-toast {
     position: fixed;

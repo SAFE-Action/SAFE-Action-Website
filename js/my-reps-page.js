@@ -81,6 +81,72 @@ document.addEventListener('DOMContentLoaded', () => {
     function getUserName() { return getUserInfo().name || ''; }
     function getUserCity() { return getUserInfo().city || ''; }
 
+    // ── Anti-Spam Contact Tracking ──────────────────
+    var CONTACT_LOG_KEY = 'safe_contact_log';
+
+    function getContactKey(rep) {
+        return (rep.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '_');
+    }
+
+    function getContactLog() {
+        try { return JSON.parse(localStorage.getItem(CONTACT_LOG_KEY)) || {}; }
+        catch(e) { return {}; }
+    }
+
+    function logContact(rep, method) {
+        var log = getContactLog();
+        var today = new Date().toISOString().split('T')[0];
+        if (!log[today]) log[today] = {};
+        var key = getContactKey(rep);
+        if (!log[today][key]) log[today][key] = { emails: 0, calls: 0, lastEmail: 0 };
+        if (method === 'email') {
+            log[today][key].emails++;
+            log[today][key].lastEmail = Date.now();
+        } else if (method === 'call') {
+            log[today][key].calls++;
+        }
+        // Clean out entries older than 7 days
+        var cutoff = new Date();
+        cutoff.setDate(cutoff.getDate() - 7);
+        var cutoffStr = cutoff.toISOString().split('T')[0];
+        Object.keys(log).forEach(function(d) { if (d < cutoffStr) delete log[d]; });
+        localStorage.setItem(CONTACT_LOG_KEY, JSON.stringify(log));
+    }
+
+    function getContactCount(rep) {
+        var log = getContactLog();
+        var today = new Date().toISOString().split('T')[0];
+        var key = getContactKey(rep);
+        if (log[today] && log[today][key]) return log[today][key];
+        return { emails: 0, calls: 0, lastEmail: 0 };
+    }
+
+    function shouldSuggestCallInstead(rep) {
+        return getContactCount(rep).emails >= 2;
+    }
+
+    // ── Contact Prioritization ──────────────────────
+    // Returns { method, label, url, priority }
+    function getBestContactMethod(rep) {
+        if (rep.email) {
+            return { method: 'email', label: 'Email', url: 'mailto:' + rep.email, priority: 1 };
+        }
+        // Contact form
+        var contactUrl = rep.contactForm || '';
+        if (!contactUrl && rep.website) {
+            contactUrl = rep.website.replace(/\/+$/, '') + '/contact';
+        }
+        if (contactUrl) {
+            return { method: 'contact_form', label: 'Contact Form', url: contactUrl, priority: 2 };
+        }
+        // FEC filing (lowest priority)
+        if (rep.fecId) {
+            return { method: 'fec', label: 'FEC Page', url: 'https://www.fec.gov/data/candidate/' + rep.fecId + '/', priority: 3 };
+        }
+        // Nothing
+        return { method: 'none', label: 'No Contact Info', url: '', priority: 4 };
+    }
+
 
     // Check if Civic API is available
     const hasCivicKey = SAFE_CONFIG.GOOGLE_CIVIC_API_KEY && SAFE_CONFIG.GOOGLE_CIVIC_API_KEY.length > 5;
@@ -355,76 +421,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update stats
         renderStats(reps);
 
-        // Build name/city personalization bar (below stats, above everything else)
-        buildPersonalizeBar();
+        // Build the dominant hero CTA (replaces old personalize bar + email all bar)
+        buildEmailAllHero(reps);
 
-        // Build "Email All" action bar
-        buildEmailAllBar(reps);
-
-        // Build cards via DOM methods
+        // Build cards inside a collapsible container
         repGrid.textContent = '';
         reps.forEach(function(rep, i) {
             var card = buildRepCard(rep, i, reps);
             repGrid.appendChild(card);
         });
 
+        // Collapse the rep list by default — hero CTA is the star
+        buildRepListToggle(reps);
+
         if (repSection) repSection.style.display = '';
         if (statsBar) statsBar.style.display = '';
     }
 
-    function buildPersonalizeBar() {
-        var existing = document.getElementById('personalize-bar');
+    // ── Collapsible Rep List ────────────────────────
+    function buildRepListToggle(reps) {
+        var existing = document.getElementById('rep-list-toggle');
         if (existing) existing.remove();
 
-        var bar = document.createElement('div');
-        bar.id = 'personalize-bar';
-        bar.style.cssText = 'background:linear-gradient(135deg,#1a1a2e,#2d2d5e);border-radius:12px;padding:16px 20px;margin:16px 0 8px;border-left:4px solid #B22234;';
+        if (!repGrid || reps.length === 0) return;
 
-        var heading = document.createElement('strong');
-        heading.style.cssText = 'color:#fff;font-size:0.95rem;display:block;margin-bottom:8px;';
-        heading.textContent = 'Personalize Your Emails';
-        bar.appendChild(heading);
+        // Hide grid by default
+        repGrid.style.display = 'none';
 
-        var row = document.createElement('div');
-        row.style.cssText = 'display:flex;gap:12px;flex-wrap:wrap;';
+        var toggleBtn = document.createElement('button');
+        toggleBtn.id = 'rep-list-toggle';
+        toggleBtn.className = 'rep-list-toggle-btn';
+        toggleBtn.innerHTML = '<span class="toggle-icon">&#9660;</span> Show Individual Representatives (' + reps.length + ')';
 
-        var nameGroup = document.createElement('div');
-        nameGroup.style.cssText = 'flex:1;min-width:140px;';
-        var nameLabel = document.createElement('label');
-        nameLabel.textContent = 'Your Name';
-        nameLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:4px;';
-        nameGroup.appendChild(nameLabel);
-        var nameInput = document.createElement('input');
-        nameInput.type = 'text';
-        nameInput.id = 'email-all-name';
-        nameInput.placeholder = 'Enter your name';
-        nameInput.value = getUserName();
-        nameInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid rgba(255,255,255,0.3);border-radius:6px;font-size:0.9rem;background:rgba(255,255,255,0.95);color:#1a1a2e;';
-        nameInput.addEventListener('change', function() { saveUserInfo(nameInput.value.trim(), document.getElementById('email-all-city').value.trim()); });
-        nameGroup.appendChild(nameInput);
-        row.appendChild(nameGroup);
+        toggleBtn.addEventListener('click', function() {
+            var isHidden = repGrid.style.display === 'none';
+            repGrid.style.display = isHidden ? '' : 'none';
+            toggleBtn.innerHTML = (isHidden ? '<span class="toggle-icon">&#9650;</span> Hide Individual Representatives' : '<span class="toggle-icon">&#9660;</span> Show Individual Representatives (' + reps.length + ')');
+        });
 
-        var cityGroup = document.createElement('div');
-        cityGroup.style.cssText = 'flex:1;min-width:140px;';
-        var cityLabel = document.createElement('label');
-        cityLabel.textContent = 'Your City';
-        cityLabel.style.cssText = 'display:block;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:4px;';
-        cityGroup.appendChild(cityLabel);
-        var cityInput = document.createElement('input');
-        cityInput.type = 'text';
-        cityInput.id = 'email-all-city';
-        cityInput.placeholder = 'Enter your city';
-        cityInput.value = getUserCity();
-        cityInput.style.cssText = 'width:100%;padding:8px 12px;border:1px solid rgba(255,255,255,0.3);border-radius:6px;font-size:0.9rem;background:rgba(255,255,255,0.95);color:#1a1a2e;';
-        cityInput.addEventListener('change', function() { saveUserInfo(document.getElementById('email-all-name').value.trim(), cityInput.value.trim()); });
-        cityGroup.appendChild(cityInput);
-        row.appendChild(cityGroup);
-
-        bar.appendChild(row);
-
-        // Insert after stats bar
-        if (statsBar && statsBar.parentNode) {
-            statsBar.parentNode.insertBefore(bar, statsBar.nextSibling);
+        // Insert right before the grid
+        if (repGrid.parentNode) {
+            repGrid.parentNode.insertBefore(toggleBtn, repGrid);
         }
     }
 
@@ -439,48 +476,254 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-    function buildEmailAllBar(reps) {
-        var existing = document.getElementById('email-all-bar');
-        if (existing) existing.remove();
+    // ── Hero CTA (replaces buildPersonalizeBar + buildEmailAllBar) ──
+    function buildEmailAllHero(reps) {
+        // Remove old elements
+        var old1 = document.getElementById('personalize-bar');
+        var old2 = document.getElementById('email-all-bar');
+        var old3 = document.getElementById('email-all-hero');
+        if (old1) old1.remove();
+        if (old2) old2.remove();
+        if (old3) old3.remove();
 
         if (reps.length === 0) return;
 
-        var bar = document.createElement('div');
-        bar.id = 'email-all-bar';
-        bar.className = 'email-all-bar';
+        var hero = document.createElement('div');
+        hero.id = 'email-all-hero';
+        hero.className = 'email-all-hero';
 
-        var inner = document.createElement('div');
-        inner.className = 'email-all-inner';
+        // Emoji banner
+        var emoji = document.createElement('div');
+        emoji.className = 'hero-emoji';
+        emoji.textContent = '\u2709\uFE0F';
+        hero.appendChild(emoji);
 
-        var text = document.createElement('div');
-        text.className = 'email-all-text';
-        var heading = document.createElement('strong');
-        heading.textContent = 'Take Action Now';
-        text.appendChild(heading);
+        // Heading
+        var heading = document.createElement('h2');
+        heading.className = 'hero-heading';
+        heading.textContent = 'Email All ' + reps.length + ' Representatives';
+        hero.appendChild(heading);
+
         var desc = document.createElement('p');
-        desc.textContent = 'Send each of your ' + reps.length + ' representatives a personalized email asking them to take the SAFE Action pledge on science.';
-        text.appendChild(desc);
-        inner.appendChild(text);
+        desc.className = 'hero-desc';
+        desc.textContent = 'Send each representative a unique, personalized email in just a few clicks. Each email uses a different template to avoid spam filters.';
+        hero.appendChild(desc);
 
-        var btnWrap = document.createElement('div');
-        btnWrap.className = 'email-all-buttons';
+        // Inline name/city inputs
+        var inputRow = document.createElement('div');
+        inputRow.className = 'hero-input-row';
+
+        var nameGroup = document.createElement('div');
+        nameGroup.className = 'hero-input-group';
+        var nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.id = 'email-all-name';
+        nameInput.placeholder = 'Your Name';
+        nameInput.value = getUserName();
+        nameInput.className = 'hero-input';
+        nameInput.addEventListener('change', function() {
+            var cityEl = document.getElementById('email-all-city');
+            saveUserInfo(nameInput.value.trim(), cityEl ? cityEl.value.trim() : '');
+        });
+        nameGroup.appendChild(nameInput);
+        inputRow.appendChild(nameGroup);
+
+        var cityGroup = document.createElement('div');
+        cityGroup.className = 'hero-input-group';
+        var cityInput = document.createElement('input');
+        cityInput.type = 'text';
+        cityInput.id = 'email-all-city';
+        cityInput.placeholder = 'Your City';
+        cityInput.value = getUserCity();
+        cityInput.className = 'hero-input';
+        cityInput.addEventListener('change', function() {
+            var nameEl = document.getElementById('email-all-name');
+            saveUserInfo(nameEl ? nameEl.value.trim() : '', cityInput.value.trim());
+        });
+        cityGroup.appendChild(cityInput);
+        inputRow.appendChild(cityGroup);
+
+        hero.appendChild(inputRow);
+
+        // Button row
+        var btnRow = document.createElement('div');
+        btnRow.className = 'hero-btn-row';
 
         var emailAllBtn = document.createElement('button');
-        emailAllBtn.className = 'btn btn-primary email-all-btn';
-        emailAllBtn.textContent = 'Email All ' + reps.length + ' Reps';
+        emailAllBtn.className = 'btn btn-primary hero-email-btn pulse-btn';
+        emailAllBtn.innerHTML = '\u2709\uFE0F Email All ' + reps.length + ' Reps';
         emailAllBtn.addEventListener('click', function() {
             if (!validatePersonalizeInputs()) return;
-            emailAllReps(reps, emailAllBtn, bar);
+            emailAllReps(reps, emailAllBtn, hero);
         });
-        btnWrap.appendChild(emailAllBtn);
+        btnRow.appendChild(emailAllBtn);
 
-        inner.appendChild(btnWrap);
-        bar.appendChild(inner);
+        var callBtn = document.createElement('button');
+        callBtn.className = 'btn btn-outline hero-call-btn';
+        callBtn.innerHTML = '\uD83D\uDCDE Call/Text Reps Instead';
+        callBtn.addEventListener('click', function() {
+            if (!validatePersonalizeInputs()) return;
+            startCallTextMode(reps);
+        });
+        btnRow.appendChild(callBtn);
 
-        // Insert before rep grid
-        if (repGrid && repGrid.parentNode) {
-            repGrid.parentNode.insertBefore(bar, repGrid);
+        hero.appendChild(btnRow);
+
+        // Insert after stats bar
+        if (statsBar && statsBar.parentNode) {
+            statsBar.parentNode.insertBefore(hero, statsBar.nextSibling);
         }
+    }
+
+    // ── Rep-by-Rep Call/Text Mode ──────────────────
+    function startCallTextMode(reps) {
+        // Filter to reps that have a phone number
+        var callableReps = reps.filter(function(r) { return r.phone; });
+        if (callableReps.length === 0) {
+            showToast('None of your representatives have phone numbers on file. Try email instead!');
+            return;
+        }
+
+        var idx = 0;
+        var userName = getUserName();
+        var userCity = getUserCity();
+
+        // Create full-screen overlay
+        var overlay = document.createElement('div');
+        overlay.className = 'call-text-overlay';
+
+        function renderCallCard() {
+            overlay.textContent = '';
+
+            if (idx >= callableReps.length) {
+                // Done
+                var doneCard = document.createElement('div');
+                doneCard.className = 'call-card call-card-done';
+                doneCard.innerHTML = '<div class="call-card-emoji">\u2705</div>';
+                var doneH = document.createElement('h2');
+                doneH.textContent = 'All Done!';
+                doneCard.appendChild(doneH);
+                var doneP = document.createElement('p');
+                doneP.textContent = 'You reached out to ' + callableReps.length + ' representative' + (callableReps.length > 1 ? 's' : '') + '. Thank you for taking action!';
+                doneCard.appendChild(doneP);
+                var closeBtn = document.createElement('button');
+                closeBtn.className = 'btn btn-primary';
+                closeBtn.textContent = 'Close';
+                closeBtn.addEventListener('click', function() { overlay.remove(); });
+                doneCard.appendChild(closeBtn);
+                overlay.appendChild(doneCard);
+                return;
+            }
+
+            var rep = callableReps[idx];
+            var action = rep.primaryAction || {};
+            var script = generatePhoneScript(rep, action, userName, userCity);
+
+            var card = document.createElement('div');
+            card.className = 'call-card';
+
+            // Progress
+            var progress = document.createElement('div');
+            progress.className = 'call-card-progress';
+            progress.textContent = 'Rep ' + (idx + 1) + ' of ' + callableReps.length;
+            card.appendChild(progress);
+
+            // Rep info
+            var repHeader = document.createElement('div');
+            repHeader.className = 'call-card-header';
+
+            if (rep.photoUrl) {
+                var photo = document.createElement('img');
+                photo.src = rep.photoUrl;
+                photo.alt = rep.name;
+                photo.className = 'call-card-photo';
+                photo.onerror = function() { this.style.display = 'none'; };
+                repHeader.appendChild(photo);
+            }
+            var repInfo = document.createElement('div');
+            var repName = document.createElement('h3');
+            repName.textContent = rep.name;
+            repInfo.appendChild(repName);
+            var repMeta = document.createElement('p');
+            repMeta.className = 'call-card-meta';
+            var partyLabel = rep.party === 'R' ? 'Republican' : rep.party === 'D' ? 'Democrat' : rep.partyFull || rep.party;
+            repMeta.textContent = partyLabel + ' — ' + rep.office;
+            repInfo.appendChild(repMeta);
+            repHeader.appendChild(repInfo);
+            card.appendChild(repHeader);
+
+            // Phone number (large, tappable)
+            var phoneLink = document.createElement('a');
+            phoneLink.href = 'tel:' + rep.phone;
+            phoneLink.className = 'call-card-phone';
+            phoneLink.textContent = '\uD83D\uDCDE ' + rep.phone;
+            card.appendChild(phoneLink);
+
+            // Phone script
+            var scriptLabel = document.createElement('div');
+            scriptLabel.className = 'call-card-script-label';
+            scriptLabel.textContent = 'Phone Script (tap to copy):';
+            card.appendChild(scriptLabel);
+
+            var scriptBox = document.createElement('pre');
+            scriptBox.className = 'call-card-script';
+            scriptBox.textContent = script;
+            scriptBox.addEventListener('click', function() {
+                navigator.clipboard.writeText(script).then(function() {
+                    showToast('Phone script copied!');
+                }).catch(function() {});
+            });
+            card.appendChild(scriptBox);
+
+            // Action buttons
+            var btnRow = document.createElement('div');
+            btnRow.className = 'call-card-btns';
+
+            var calledBtn = document.createElement('button');
+            calledBtn.className = 'btn btn-primary';
+            calledBtn.textContent = '\u2705 I Called';
+            calledBtn.addEventListener('click', function() {
+                logContact(rep, 'call');
+                trackAction('call');
+                idx++;
+                renderCallCard();
+            });
+            btnRow.appendChild(calledBtn);
+
+            var textBtn = document.createElement('a');
+            textBtn.href = 'sms:' + rep.phone;
+            textBtn.className = 'btn btn-outline';
+            textBtn.style.textDecoration = 'none';
+            textBtn.textContent = '\uD83D\uDCF1 Text Instead';
+            textBtn.addEventListener('click', function() {
+                logContact(rep, 'call');
+                trackAction('call');
+            });
+            btnRow.appendChild(textBtn);
+
+            var skipBtn = document.createElement('button');
+            skipBtn.className = 'btn btn-outline call-card-skip';
+            skipBtn.textContent = 'Skip';
+            skipBtn.addEventListener('click', function() {
+                idx++;
+                renderCallCard();
+            });
+            btnRow.appendChild(skipBtn);
+
+            card.appendChild(btnRow);
+
+            // Close X
+            var closeX = document.createElement('button');
+            closeX.className = 'call-card-close';
+            closeX.innerHTML = '&times;';
+            closeX.addEventListener('click', function() { overlay.remove(); });
+            card.appendChild(closeX);
+
+            overlay.appendChild(card);
+        }
+
+        renderCallCard();
+        document.body.appendChild(overlay);
     }
 
     function emailAllReps(reps, startBtn, bar) {
@@ -489,9 +732,12 @@ document.addEventListener('DOMContentLoaded', () => {
         var userName = getUserName();
         var userCity = getUserCity();
 
-        // Replace the bar content with a step-by-step UI
-        var inner = bar.querySelector('.email-all-inner');
-        inner.textContent = '';
+        // Replace the hero/bar content with a step-by-step UI
+        bar.textContent = '';
+        bar.className = 'email-all-bar'; // Use the step-through styling
+        var inner = document.createElement('div');
+        inner.className = 'email-all-inner';
+        bar.appendChild(inner);
 
         // Progress header
         var progressHeader = document.createElement('div');
@@ -553,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     skipCandsBtn.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
                     skipCandsBtn.textContent = "I'm Done";
                     skipCandsBtn.addEventListener('click', function() {
-                        buildEmailAllBar(_currentReps);
+                        buildEmailAllHero(_currentReps);
                     });
                     btnArea.appendChild(skipCandsBtn);
                 } else {
@@ -564,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     doneBtn.className = 'btn btn-primary';
                     doneBtn.textContent = 'Finished';
                     doneBtn.addEventListener('click', function() {
-                        buildEmailAllBar(_currentReps);
+                        buildEmailAllHero(_currentReps);
                     });
                     btnArea.appendChild(doneBtn);
                 }
@@ -596,44 +842,105 @@ document.addEventListener('DOMContentLoaded', () => {
             // Action buttons
             btnArea.textContent = '';
 
-            // Determine contact URL: prefer contactForm, then try /contact on their website, then website root
-            var contactUrl = rep.contactForm || '';
-            if (!contactUrl && rep.website) {
-                // Most congressional sites have a /contact page
-                var base = rep.website.replace(/\/+$/, '');
-                contactUrl = base + '/contact';
+            // Use contact prioritization
+            var contact = getBestContactMethod(rep);
+
+            // Anti-spam check
+            if (shouldSuggestCallInstead(rep)) {
+                var spamNotice = document.createElement('div');
+                spamNotice.className = 'anti-spam-notice';
+                spamNotice.innerHTML = "You've already emailed <strong>" + esc(rep.name) + "</strong> today. Try calling instead!";
+                btnArea.appendChild(spamNotice);
+
+                if (rep.phone) {
+                    var callInstead = document.createElement('a');
+                    callInstead.href = 'tel:' + rep.phone;
+                    callInstead.className = 'btn btn-primary';
+                    callInstead.style.textDecoration = 'none';
+                    callInstead.textContent = '\uD83D\uDCDE Call ' + rep.name.split(' ').pop();
+                    btnArea.appendChild(callInstead);
+
+                    var textInstead = document.createElement('a');
+                    textInstead.href = 'sms:' + rep.phone;
+                    textInstead.className = 'btn btn-outline';
+                    textInstead.style.cssText = 'text-decoration:none;border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+                    textInstead.textContent = '\uD83D\uDCF1 Text';
+                    btnArea.appendChild(textInstead);
+                }
+
+                var emailAnywayBtn = document.createElement('button');
+                emailAnywayBtn.className = 'btn btn-outline';
+                emailAnywayBtn.style.cssText = 'border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.6);font-size:0.85rem;';
+                emailAnywayBtn.textContent = 'Email Anyway';
+                emailAnywayBtn.addEventListener('click', function() {
+                    // Remove notice and re-render without anti-spam
+                    spamNotice.remove();
+                    emailAnywayBtn.remove();
+                    if (callInstead) callInstead.remove();
+                    if (textInstead) textInstead.remove();
+                    renderEmailButton();
+                });
+                btnRow = document.createElement('div');
+                btnRow.style.cssText = 'margin-top:8px;';
+                btnRow.appendChild(emailAnywayBtn);
+                btnArea.appendChild(btnRow);
+
+                // Skip button
+                var skipBtnSpam = document.createElement('button');
+                skipBtnSpam.className = 'btn btn-outline';
+                skipBtnSpam.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+                skipBtnSpam.textContent = 'Skip';
+                skipBtnSpam.addEventListener('click', function() { idx++; showStep(); });
+                btnArea.appendChild(skipBtnSpam);
+                return;
             }
 
+            renderEmailButton();
+            function renderEmailButton() {
+
             // Pre-generate the template for this rep
-            var pledgeAction = { type: 'ask-pledge' };
+            var pledgeAction = rep.primaryAction || { type: 'ask-pledge' };
             var template = generateTemplate(rep, pledgeAction, userName, userCity);
             var fullText = 'Subject: ' + template.subject + '\n\n' + template.body;
 
-            // For reps WITH email: use a real <a href="mailto:..."> so the browser handles it natively
-            // For reps WITHOUT email: use a button that opens the contact form
             var sendBtn;
-            if (rep.email) {
+            if (contact.method === 'email') {
                 sendBtn = document.createElement('a');
                 sendBtn.href = 'mailto:' + rep.email + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
                 sendBtn.className = 'btn btn-primary';
                 sendBtn.style.cssText = 'text-decoration:none;display:inline-block;';
                 sendBtn.textContent = 'Open Email to ' + rep.name.split(' ').pop();
                 sendBtn.target = '_blank';
-            } else {
+            } else if (contact.method === 'contact_form') {
                 sendBtn = document.createElement('button');
                 sendBtn.className = 'btn btn-primary';
                 sendBtn.textContent = 'Open Contact Form for ' + rep.name.split(' ').pop();
+            } else if (contact.method === 'fec') {
+                sendBtn = document.createElement('button');
+                sendBtn.className = 'btn btn-outline';
+                sendBtn.style.cssText = 'border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);';
+                sendBtn.textContent = 'Find Contact on FEC.gov';
+            } else {
+                sendBtn = document.createElement('button');
+                sendBtn.className = 'btn btn-outline';
+                sendBtn.style.cssText = 'border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.6);';
+                sendBtn.textContent = 'No Contact Info';
+                sendBtn.disabled = true;
             }
 
             sendBtn.addEventListener('click', function() {
                 // Copy to clipboard
                 navigator.clipboard.writeText(fullText).catch(function() {});
+                logContact(rep, 'email');
 
-                if (rep.email) {
+                if (contact.method === 'email') {
                     showToast('Email template copied & opening Gmail for ' + rep.name);
-                } else if (contactUrl) {
-                    window.open(contactUrl, '_blank');
+                } else if (contact.method === 'contact_form') {
+                    window.open(contact.url, '_blank');
                     showToast('Template copied! Paste it into ' + rep.name.split(' ').pop() + "'s contact form.");
+                } else if (contact.method === 'fec') {
+                    window.open(contact.url, '_blank');
+                    showToast('Template copied! Check FEC page for contact info.');
                 } else {
                     showToast('Template copied to clipboard!');
                 }
@@ -672,37 +979,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 showStep();
             });
             btnArea.appendChild(skipBtn);
+
+            } // end renderEmailButton
         }
 
         showStep();
     }
 
-    var candidateSubjects = [
-        'Will you take the SAFE Action pledge on science?',
-        'A voter\'s request: support science and public health',
-        'Will you commit to evidence-based health policy?',
-        'Voters want to know: where do you stand on science?',
-        'Please take the SAFE Action pledge for public health',
-        'Science and public health matter to voters like me',
-        'Can we count on your support for evidence-based policy?',
-        'A question about your stance on science and health policy',
-        'Supporting science: will you take the pledge?',
-        'Public health matters — a request from a concerned voter',
-    ];
-
     function generateCandidateTemplate(candidate, userName, userCity) {
-        var title = candidate.office.includes('Senate') ? 'Senator' : 'Representative';
         var lastName = candidate.name.split(' ').pop();
+        var vars = {
+            name: userName || '[Your Name]',
+            city: userCity || '[Your City]',
+            state: candidate.state || '',
+            title: candidate.office.includes('Senate') ? 'Senator' : 'Representative',
+            lastName: lastName,
+            fullName: candidate.name,
+            pledgeUrl: 'https://scienceandfreedom.com/quiz'
+        };
+
+        var hasLibrary = typeof EMAIL_TEMPLATES !== 'undefined' && typeof getTemplateIndex === 'function' && typeof fillTemplate === 'function';
+        if (hasLibrary && EMAIL_TEMPLATES.candidate) {
+            var si = getTemplateIndex(candidate.name, EMAIL_TEMPLATES.candidate.subjects.length, 'cand-subj');
+            var bi = getTemplateIndex(candidate.name, EMAIL_TEMPLATES.candidate.bodies.length, 'cand-body');
+            return {
+                subject: fillTemplate(EMAIL_TEMPLATES.candidate.subjects[si], vars),
+                body: fillTemplate(EMAIL_TEMPLATES.candidate.bodies[bi], vars)
+            };
+        }
+        // Fallback
         return {
-            subject: pickRandom(candidateSubjects),
-            body: 'Dear ' + candidate.name + ',\n\n' +
-                'I am writing as a concerned voter in your district to ask you to take the SAFE Action pledge on science and public health policy.\n\n' +
-                'The SAFE Action pledge commits candidates and elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\n' +
-                'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\n' +
-                'Thank you for your time.\n\n' +
-                'Sincerely,\n' +
-                (userName || '[Your Name]') + '\n' +
-                (userCity || '[Your City]')
+            subject: 'Will you take the SAFE Action pledge on science?',
+            body: 'Dear ' + candidate.name + ',\n\nI am writing as a concerned voter in your district to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits candidates and elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\nThank you for your time.\n\nSincerely,\n' + (userName || '[Your Name]') + '\n' + (userCity || '[Your City]')
         };
     }
 
@@ -712,8 +1020,10 @@ document.addEventListener('DOMContentLoaded', () => {
         var userName = getUserName();
         var userCity = getUserCity();
 
-        var inner = bar.querySelector('.email-all-inner');
-        inner.textContent = '';
+        bar.textContent = '';
+        var inner = document.createElement('div');
+        inner.className = 'email-all-inner';
+        bar.appendChild(inner);
 
         var progressHeader = document.createElement('div');
         progressHeader.className = 'email-all-text';
@@ -736,7 +1046,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 doneBtn.className = 'btn btn-primary';
                 doneBtn.textContent = 'Finished';
                 doneBtn.addEventListener('click', function() {
-                    buildEmailAllBar(_currentReps);
+                    buildEmailAllHero(_currentReps);
                 });
                 btnArea.appendChild(doneBtn);
                 return;
@@ -918,9 +1228,9 @@ document.addEventListener('DOMContentLoaded', () => {
         actionContent.appendChild(actionDesc);
         actionBar.appendChild(actionContent);
 
+        var repContact = getBestContactMethod(rep);
         var emailBtn;
-        if (rep.email) {
-            // Use a real <a> tag so the browser natively handles mailto (opens Gmail in Chrome)
+        if (repContact.method === 'email') {
             var repAction = rep.primaryAction || {};
             var repTemplate = generateTemplate(rep, repAction, getUserName(), getUserCity());
             emailBtn = document.createElement('a');
@@ -931,13 +1241,25 @@ document.addEventListener('DOMContentLoaded', () => {
             emailBtn.addEventListener('click', function() {
                 var ft = 'Subject: ' + repTemplate.subject + '\n\n' + repTemplate.body;
                 navigator.clipboard.writeText(ft).catch(function() {});
+                logContact(rep, 'email');
                 showToast('Email template copied & opening for ' + rep.name);
                 trackAction('email');
             });
+        } else if (repContact.method === 'contact_form') {
+            emailBtn = document.createElement('button');
+            emailBtn.textContent = 'Contact Form';
+            emailBtn.addEventListener('click', function() { openEmailAction(rep); });
+        } else if (repContact.method === 'fec') {
+            emailBtn = document.createElement('a');
+            emailBtn.href = repContact.url;
+            emailBtn.target = '_blank';
+            emailBtn.style.textDecoration = 'none';
+            emailBtn.textContent = 'FEC Page';
         } else {
             emailBtn = document.createElement('button');
-            emailBtn.textContent = 'Contact';
-            emailBtn.addEventListener('click', function() { openEmailAction(rep); });
+            emailBtn.textContent = 'No Contact';
+            emailBtn.disabled = true;
+            emailBtn.style.opacity = '0.5';
         }
         emailBtn.className = 'btn btn-primary rep-hub-email-btn';
         actionBar.appendChild(emailBtn);
@@ -1311,69 +1633,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // Randomized subject lines so mass emails don't look like spam
     function pickRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
-    var pledgeSubjects = [
+    // Legacy inline subjects as fallback if email-templates.js not loaded
+    var _legacyPledgeSubjects = [
         'Will you take the SAFE Action pledge on science and public health?',
         'A constituent request: take the SAFE Action pledge',
         'Please stand with science — take the SAFE Action pledge',
-        'Supporting evidence-based health policy — will you take the pledge?',
-        'Your constituents care about science — please take the SAFE Action pledge',
-        'Request from a voter: support science and public health',
-        'Can we count on you to support evidence-based public health?',
-        'Science matters — will you take the SAFE Action pledge?',
-        'Protecting public health: a request from your constituent',
-        'Standing up for science in our community',
     ];
-
-    var opposeSubjects = [
+    var _legacyOpposeSubjects = [
         'Please OPPOSE {bill} - {title}',
         'Vote NO on {bill}: protect public health',
         'Constituent request: oppose {bill}',
-        '{bill} threatens public health — please vote NO',
-        'Protect our community: oppose {bill}',
-        'A voter\'s concern about {bill} - {title}',
-        'Please stand against {bill} for public health',
-        'Opposing {bill}: a request from your constituent',
     ];
 
     function generateTemplate(rep, action, userName, userCity) {
-        const title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
-        const lastName = rep.name.split(' ').pop();
+        var title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
+        var lastName = rep.name.split(' ').pop();
+        var vars = {
+            name: userName || '[Your Name]',
+            city: userCity || '[Your City]',
+            state: rep.state || '',
+            title: title,
+            lastName: lastName,
+            fullName: rep.name,
+            pledgeUrl: 'https://scienceandfreedom.com/quiz',
+            billNumber: '',
+            billTitle: ''
+        };
+        var signoff = (userName || '[Your Name]') + '\n' + (userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']');
+
+        // Use template library if available
+        var hasLibrary = typeof EMAIL_TEMPLATES !== 'undefined' && typeof getTemplateIndex === 'function' && typeof fillTemplate === 'function';
 
         if (action.type === 'oppose-bill' && action.bill) {
-            var subj = pickRandom(opposeSubjects)
+            vars.billNumber = action.bill.billNumber;
+            vars.billTitle = action.bill.title.length > 60 ? action.bill.title.substring(0, 60) + '...' : action.bill.title;
+
+            if (hasLibrary && EMAIL_TEMPLATES.oppose) {
+                var si = getTemplateIndex(rep.name, EMAIL_TEMPLATES.oppose.subjects.length, 'oppose-subj');
+                var bi = getTemplateIndex(rep.name, EMAIL_TEMPLATES.oppose.bodies.length, 'oppose-body');
+                return {
+                    subject: fillTemplate(EMAIL_TEMPLATES.oppose.subjects[si], vars),
+                    body: fillTemplate(EMAIL_TEMPLATES.oppose.bodies[bi], vars)
+                };
+            }
+            // Fallback
+            var subj = pickRandom(_legacyOpposeSubjects)
                 .replace(/\{bill\}/g, action.bill.billNumber)
                 .replace(/\{title\}/g, action.bill.title.substring(0, 60));
             return {
                 subject: subj,
-                body: `Dear ${title} ${lastName},
-
-I am writing as a concerned constituent to urge you to OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
-
-This legislation undermines public health protections that keep our communities safe. As your constituent, I urge you to stand with science and evidence-based policy by voting NO on this bill.
-
-Thank you for your time and service.
-
-Sincerely,
-${userName || '[Your Name]'}
-${userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']'}`
+                body: 'Dear ' + title + ' ' + lastName + ',\n\nI am writing as a concerned constituent to urge you to OPPOSE ' + action.bill.billNumber + ', "' + action.bill.title + '".\n\nThis legislation undermines public health protections that keep our communities safe. As your constituent, I urge you to stand with science and evidence-based policy by voting NO on this bill.\n\nThank you for your time and service.\n\nSincerely,\n' + signoff
             };
         }
 
+        // Pledge request
+        if (hasLibrary && EMAIL_TEMPLATES.pledge) {
+            var si2 = getTemplateIndex(rep.name, EMAIL_TEMPLATES.pledge.subjects.length, 'pledge-subj');
+            var bi2 = getTemplateIndex(rep.name, EMAIL_TEMPLATES.pledge.bodies.length, 'pledge-body');
+            return {
+                subject: fillTemplate(EMAIL_TEMPLATES.pledge.subjects[si2], vars),
+                body: fillTemplate(EMAIL_TEMPLATES.pledge.bodies[bi2], vars)
+            };
+        }
+        // Fallback
         return {
-            subject: pickRandom(pledgeSubjects),
-            body: `Dear ${title} ${lastName},
-
-I am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.
-
-The SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.
-
-Taking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html
-
-Thank you for your time and service.
-
-Sincerely,
-${userName || '[Your Name]'}
-${userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']'}`
+            subject: pickRandom(_legacyPledgeSubjects),
+            body: 'Dear ' + title + ' ' + lastName + ',\n\nI am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\nThank you for your time and service.\n\nSincerely,\n' + signoff
         };
     }
 
