@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign NDA - SAFE Action</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Simple header (no nav, since this is a one-time signing page) -->
+    <header class="nda-header">
+        <div class="container">
+            <span class="logo-icon">&#9733;</span>
+            <span class="logo-text">SAFE Action</span>
+        </div>
+    </header>
+
+    <!-- Loading state -->
+    <div id="nda-loading" class="nda-section container">
+        <p>Loading agreement...</p>
+    </div>
+
+    <!-- Error state (invalid/expired token) -->
+    <div id="nda-error" class="nda-section container" style="display:none">
+        <div class="volunteer-error" style="display:block">
+            <h2>Invalid or Expired Link</h2>
+            <p>This NDA signing link is no longer valid. Please contact SAFE Action for a new link.</p>
+        </div>
+    </div>
+
+    <!-- Already signed state -->
+    <div id="nda-already-signed" class="nda-section container" style="display:none">
+        <div class="volunteer-success" style="display:block">
+            <h2>NDA Already Signed</h2>
+            <p>You have already signed this agreement. A copy has been saved to your Google Drive folder.</p>
+        </div>
+    </div>
+
+    <!-- NDA content + signing form -->
+    <div id="nda-content" class="nda-section container" style="display:none">
+        <div class="nda-document">
+            <h1 class="nda-title">SAFE Action Volunteer Non-Disclosure Agreement</h1>
+            <p class="nda-intro">This Non-Disclosure Agreement ("Agreement") is entered into by and between <strong>Science and Freedom for Everyone Action Fund</strong> ("SAFE Action") and <strong id="nda-volunteer-name">[Volunteer Name]</strong> ("Volunteer").</p>
+            <div id="nda-sections"></div>
+        </div>
+
+        <div class="nda-signing">
+            <h3>Electronic Signature</h3>
+            <p>By typing your full legal name below and clicking "I Agree & Sign", you are electronically signing this agreement pursuant to the U.S. Electronic Signatures in Global and National Commerce Act (ESIGN Act).</p>
+            <div class="form-group">
+                <label for="nda-sig-name">Full Legal Name</label>
+                <input type="text" id="nda-sig-name" required placeholder="Type your full name">
+            </div>
+            <label class="nda-checkbox-label">
+                <input type="checkbox" id="nda-agree"> I have read, understand, and agree to the terms of this Non-Disclosure Agreement
+            </label>
+            <div id="nda-sign-error" class="volunteer-error" style="display:none"></div>
+            <button id="nda-sign-btn" class="volunteer-submit" disabled>I Agree & Sign</button>
+        </div>
+    </div>
+
+    <!-- Success state -->
+    <div id="nda-success" class="nda-section container" style="display:none">
+        <div class="volunteer-success" style="display:block">
+            <h2>NDA Signed Successfully!</h2>
+            <p>Thank you for signing. A PDF copy has been saved to your Google Drive folder.</p>
+            <p><a href="/" class="btn-primary" style="display:inline-block;margin-top:16px;">Go to SAFE Action</a></p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/nda.js"></script>
+</body>
+</html>

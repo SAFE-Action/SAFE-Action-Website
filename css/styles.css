@@ -6862,3 +6862,101 @@ input.warning {
     font-weight: 600;
     cursor: pointer;
 }
+
+/* ============================================
+   NDA Page
+   ============================================ */
+
+.nda-header {
+    background: var(--blue);
+    color: var(--white);
+    padding: 16px 0;
+}
+
+.nda-header .container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nda-section {
+    padding: 40px 0;
+}
+
+.nda-document {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.nda-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--blue);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nda-intro {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.nda-section-block {
+    margin-bottom: 20px;
+}
+
+.nda-section-block h3 {
+    font-size: 1rem;
+    color: var(--blue);
+    margin-bottom: 6px;
+}
+
+.nda-section-block p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-mid);
+}
+
+.nda-signing {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--blue);
+}
+
+.nda-signing h3 {
+    font-family: var(--font-heading);
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.nda-signing p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+}
+
+.nda-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.nda-checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--blue);
+}
