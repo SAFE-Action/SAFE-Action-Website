@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pledge Directory - SAFE Action</title>
-    <meta name="description" content="See which candidates have taken the SAFE Action pledge on science and public health. Filter by party, office, state, and more.">
+    <title>Volunteer - SAFE Action</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#3C3B6E">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" href="icons/icon.svg">
+    <link rel="stylesheet" href="css/styles.css?v=63">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Stars background decoration -->
     <div class="stars-bg" aria-hidden="true"></div>
 
     <!-- Header -->
@@ -27,103 +30,81 @@
                 <nav class="main-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="outreach.html" class="nav-link">Take Action</a>
-                    <a href="directory.html" class="nav-link active">Pledges</a>
+                    <a href="directory.html" class="nav-link">Pledges</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="quiz-hero">
+    <!-- Hero Section -->
+    <section class="volunteer-hero">
         <div class="container">
-            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
-                <span class="hero-star">&#9733;</span>
-                <span class="hero-star hero-star-lg">&#9733;</span>
-                <span class="hero-star">&#9733;</span>
-            </div>
-            <h1 class="hero-title">Candidate Pledge Directory</h1>
-            <p class="hero-subtitle">See which candidates have taken the SAFE Action pledge. Click on a candidate to view their full responses on science and public health.</p>
+            <h1>Join the SAFE Action Team</h1>
+            <p>Volunteer your skills to help defend science-based public health policy. Whether you code, design, write, or organize, there's a place for you in the fight for scientific freedom.</p>
         </div>
     </section>
 
-    <!-- Sub-Nav Tabs -->
-    <div class="tracker-sub-nav">
+    <!-- Application Form -->
+    <section class="volunteer-form-section">
         <div class="container">
-            <a href="directory.html" class="sub-nav-link active">View Pledges</a>
-            <a href="quiz.html" class="sub-nav-link">Take the Pledge</a>
-        </div>
-    </div>
+            <form class="volunteer-form" id="volunteer-form">
+                <div id="volunteer-error" class="volunteer-error"></div>
 
-    <!-- Directory Section -->
-    <section class="tracker-section">
-        <div class="container">
-            <!-- Filter Controls -->
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label for="filter-party">Party</label>
-                    <select id="filter-party">
-                        <option value="">All Parties</option>
+                <div class="form-group">
+                    <label for="volunteer-name">Full Name <span style="color:var(--red)">*</span></label>
+                    <input type="text" id="volunteer-name" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="volunteer-email">Email <span style="color:var(--red)">*</span></label>
+                    <input type="email" id="volunteer-email" name="email" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <p class="form-group-label">Skills <span style="color:var(--red)">*</span></p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+                        <label><input type="checkbox" name="skills" value="Backend Development"> Backend Development</label>
+                        <label><input type="checkbox" name="skills" value="Design"> Design</label>
+                        <label><input type="checkbox" name="skills" value="Product"> Product</label>
+                        <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
+                        <label><input type="checkbox" name="skills" value="Operations"> Operations</label>
+                        <label><input type="checkbox" name="skills" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="volunteer-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
+                    <select id="volunteer-availability" name="availability" required>
+                        <option value="">Select availability...</option>
+                        <option value="5">5 hours/month</option>
+                        <option value="10">10 hours/month</option>
+                        <option value="20">20 hours/month</option>
+                        <option value="40+">40+ hours/month</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label for="filter-office">Office</label>
-                    <select id="filter-office">
-                        <option value="">All Offices</option>
-                    </select>
+
+                <div class="form-group">
+                    <p class="form-group-label">Interests</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="Developing Web Apps"> Developing Web Apps</label>
+                        <label><input type="checkbox" name="interests" value="Developing New Tools"> Developing New Tools</label>
+                        <label><input type="checkbox" name="interests" value="Curating Pipeline"> Curating Pipeline</label>
+                        <label><input type="checkbox" name="interests" value="Research"> Research</label>
+                        <label><input type="checkbox" name="interests" value="Community Building"> Community Building</label>
+                    </div>
                 </div>
-                <div class="filter-group">
-                    <label for="filter-state">State</label>
-                    <select id="filter-state">
-                        <option value="">All States</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="filter-search">Search</label>
-                    <input type="text" id="filter-search" placeholder="Search by name, district, or city...">
-                </div>
-            </div>
 
-            <!-- Results Count -->
-            <div class="results-toolbar" id="directory-toolbar" style="display:none;">
-                <span class="results-count" id="directory-count"></span>
-            </div>
+                <button type="submit" id="volunteer-submit" class="volunteer-submit">Submit Application</button>
+            </form>
 
-            <!-- Candidate Grid -->
-            <div id="candidate-grid" class="candidate-grid">
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Loading candidates...</p>
-                </div>
-            </div>
-
-            <!-- Empty State -->
-            <div id="empty-state" class="empty-state" style="display: none;">
-                <div class="empty-icon">&#9733;</div>
-                <h3>No Candidates Yet</h3>
-                <p>Be the first candidate to take the pledge!</p>
-                <a href="quiz.html" class="btn btn-primary">Take the Pledge</a>
-            </div>
-
-            <!-- No Results State -->
-            <div id="no-results" class="empty-state" style="display: none;">
-                <h3>No Matching Candidates</h3>
-                <p>Try adjusting your filters.</p>
-            </div>
-
-            <!-- CTAs -->
-            <div class="signup-section">
-                <h2>Are You an Elected Official or Candidate?</h2>
-                <p>Take the SAFE Action pledge and share your positions on science and public health with the community.</p>
-                <a href="outreach.html#take-pledge" class="btn btn-primary btn-lg">
-                    <span class="btn-star">&#9733;</span>
-                    Take the Pledge Now
-                    <span class="btn-star">&#9733;</span>
-                </a>
+            <div id="volunteer-success" class="volunteer-success" style="display:none;">
+                <h2>Application Submitted!</h2>
+                <p>We'll review your application and get back to you soon.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-inner">
@@ -151,9 +132,7 @@
     </footer>
 
     <script src="js/config.js"></script>
-    <script src="js/sheets.js"></script>
-    <script src="js/intelligence.js"></script>
-    <script src="js/directory.js"></script>
+    <script src="js/volunteer.js"></script>
     <script src="js/pwa.js"></script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}

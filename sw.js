@@ -1,5 +1,5 @@
 // SAFE Action Service Worker
-const CACHE_NAME = 'safe-action-v66';
+const CACHE_NAME = 'safe-action-v67';
 const ASSETS = [
     '/',
     '/index.html',
@@ -11,6 +11,7 @@ const ASSETS = [
     '/pledge.html',
     '/admin.html',
     '/feed.html',
+    '/volunteer.html',
     '/css/styles.css',
     '/js/config.js',
     '/js/sheets.js',
@@ -22,6 +23,7 @@ const ASSETS = [
     '/js/my-reps.js',
     '/js/email-templates.js',
     '/js/my-reps-page.js',
+    '/js/volunteer.js',
     '/js/pwa.js',
     '/data/bills.json',
     '/data/legislators.json',
