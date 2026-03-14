@@ -8,6 +8,13 @@
     var selectedBillId = null;
     var unsubscribe = null;
 
+    // Volunteer management
+    var currentSection = 'bills';
+    var currentVTab = 'pending';
+    var allVolunteers = [];
+    var selectedVolunteerId = null;
+    var vUnsubscribe = null;
+
     function esc(s) { return String(s || ''); }
 
     function init() {
@@ -54,13 +61,25 @@
             auth.signOut();
         });
 
-        document.querySelectorAll('.admin-tab').forEach(function(tab) {
+        document.querySelectorAll('[data-tab]').forEach(function(tab) {
             tab.addEventListener('click', function() { switchTab(this.dataset.tab); });
         });
 
         document.getElementById('filter-state').addEventListener('change', renderQueue);
         document.getElementById('filter-category').addEventListener('change', renderQueue);
         document.getElementById('filter-search').addEventListener('input', renderQueue);
+
+        // Section switcher
+        document.querySelectorAll('.admin-section-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                switchSection(this.dataset.section);
+            });
+        });
+
+        // Volunteer tab listeners
+        document.querySelectorAll('[data-vtab]').forEach(function(tab) {
+            tab.addEventListener('click', function() { switchVTab(this.dataset.vtab); });
+        });
 
         populateStates();
     }
@@ -112,7 +131,7 @@
 
     function switchTab(tab) {
         currentTab = tab;
-        document.querySelectorAll('.admin-tab').forEach(function(t) {
+        document.querySelectorAll('[data-tab]').forEach(function(t) {
             t.classList.toggle('active', t.dataset.tab === tab);
         });
         selectedBillId = null;
@@ -445,6 +464,260 @@
         document.body.appendChild(t);
         setTimeout(function() { t.classList.add('admin-toast-hide'); setTimeout(function() { t.remove(); }, 300); }, 3000);
     }
+
+    // --- Volunteer Management ---
+
+    function switchSection(section) {
+        currentSection = section;
+        document.querySelectorAll('.admin-section-btn').forEach(function(b) {
+            b.classList.toggle('active', b.dataset.section === section);
+        });
+        document.getElementById('bills-section').style.display = section === 'bills' ? '' : 'none';
+        document.getElementById('volunteers-section').style.display = section === 'volunteers' ? '' : 'none';
+
+        if (section === 'volunteers' && !vUnsubscribe) {
+            loadVolunteers();
+        }
+    }
+
+    function switchVTab(tab) {
+        currentVTab = tab;
+        document.querySelectorAll('[data-vtab]').forEach(function(t) {
+            t.classList.toggle('active', t.dataset.vtab === tab);
+        });
+        selectedVolunteerId = null;
+        showVolunteerPlaceholder();
+        renderVolunteerQueue();
+    }
+
+    function showVolunteerPlaceholder() {
+        document.getElementById('volunteer-detail-placeholder').style.display = '';
+        document.getElementById('volunteer-detail-content').style.display = 'none';
+    }
+
+    function loadVolunteers() {
+        vUnsubscribe = db.collection('volunteers').orderBy('createdAt', 'desc')
+            .onSnapshot(function(snap) {
+                allVolunteers = [];
+                snap.forEach(function(doc) {
+                    allVolunteers.push(Object.assign({ id: doc.id }, doc.data()));
+                });
+                updateVCounts();
+                renderVolunteerQueue();
+            }, function(err) { console.error('Volunteer listener:', err); });
+    }
+
+    function updateVCounts() {
+        var counts = { pending: 0, approved: 0, rejected: 0 };
+        allVolunteers.forEach(function(v) {
+            if (counts[v.status] !== undefined) counts[v.status]++;
+        });
+        document.getElementById('vcount-pending').textContent = counts.pending;
+        document.getElementById('vcount-approved').textContent = counts.approved;
+        document.getElementById('vcount-rejected').textContent = counts.rejected;
+    }
+
+    function renderVolunteerQueue() {
+        var list = document.getElementById('volunteer-queue-list');
+        var empty = document.getElementById('volunteer-queue-empty');
+        var filtered = allVolunteers.filter(function(v) { return v.status === currentVTab; });
+
+        // Remove old cards (keep empty message)
+        Array.from(list.querySelectorAll('.admin-queue-item')).forEach(function(el) { el.remove(); });
+
+        empty.style.display = filtered.length ? 'none' : '';
+
+        filtered.forEach(function(v) {
+            var card = document.createElement('div');
+            card.className = 'admin-queue-item' + (v.id === selectedVolunteerId ? ' active' : '');
+            var titleDiv = document.createElement('div');
+            titleDiv.className = 'queue-item-title';
+            titleDiv.textContent = esc(v.name);
+            card.appendChild(titleDiv);
+            var emailDiv = document.createElement('div');
+            emailDiv.className = 'queue-item-meta';
+            emailDiv.textContent = esc(v.email);
+            card.appendChild(emailDiv);
+            var metaDiv = document.createElement('div');
+            metaDiv.className = 'queue-item-meta';
+            metaDiv.textContent = esc(v.availability) + ' \u2022 ' + (v.skills || []).length + ' skills';
+            card.appendChild(metaDiv);
+            card.addEventListener('click', function() { showVolunteerDetail(v.id); });
+            list.appendChild(card);
+        });
+    }
+
+    function showVolunteerDetail(id) {
+        selectedVolunteerId = id;
+        renderVolunteerQueue(); // update active state
+
+        var v = allVolunteers.find(function(vol) { return vol.id === id; });
+        if (!v) return;
+
+        document.getElementById('volunteer-detail-placeholder').style.display = 'none';
+        var el = document.getElementById('volunteer-detail-content');
+        el.style.display = '';
+        while (el.firstChild) el.removeChild(el.firstChild);
+
+        var appliedDate = v.appliedAt ? new Date(v.appliedAt.seconds * 1000).toLocaleDateString() : 'Unknown';
+
+        // Header
+        var header = document.createElement('div');
+        header.className = 'volunteer-detail-header';
+        var h2 = document.createElement('h2');
+        h2.textContent = esc(v.name);
+        header.appendChild(h2);
+        var badge = document.createElement('span');
+        badge.className = 'volunteer-status-badge volunteer-status-' + v.status;
+        badge.textContent = v.status;
+        header.appendChild(badge);
+        el.appendChild(header);
+
+        // Fields
+        addVolunteerField(el, 'Email', esc(v.email));
+        addVolunteerField(el, 'Applied', appliedDate);
+        addVolunteerField(el, 'Availability', esc(v.availability));
+
+        // Skills
+        addVolunteerField(el, 'Skills', '');
+        var skillTags = document.createElement('div');
+        skillTags.className = 'volunteer-tags';
+        (v.skills || []).forEach(function(s) {
+            var tag = document.createElement('span');
+            tag.className = 'volunteer-tag';
+            tag.textContent = esc(s);
+            skillTags.appendChild(tag);
+        });
+        el.appendChild(skillTags);
+
+        // Interests
+        addVolunteerField(el, 'Interests', '');
+        var intTags = document.createElement('div');
+        intTags.className = 'volunteer-tags';
+        (v.interests || []).forEach(function(s) {
+            var tag = document.createElement('span');
+            tag.className = 'volunteer-tag volunteer-tag-interest';
+            tag.textContent = esc(s);
+            intTags.appendChild(tag);
+        });
+        el.appendChild(intTags);
+
+        // Onboarding status for approved volunteers
+        if (v.status === 'approved' && v.onboardingSteps) {
+            addVolunteerField(el, 'Onboarding', '');
+            var stepsDiv = document.createElement('div');
+            stepsDiv.className = 'volunteer-onboarding-steps';
+            Object.keys(v.onboardingSteps).forEach(function(step) {
+                var done = v.onboardingSteps[step];
+                var stepEl = document.createElement('div');
+                stepEl.className = 'onboarding-step' + (done ? ' done' : '');
+                stepEl.textContent = (done ? '\u2713 ' : '\u2610 ') + step.replace(/([A-Z])/g, ' $1').trim();
+                stepsDiv.appendChild(stepEl);
+            });
+            el.appendChild(stepsDiv);
+
+            var ndaText = v.ndaSigned ? 'Signed on ' + new Date(v.ndaSignedAt.seconds * 1000).toLocaleDateString() : 'Not signed';
+            addVolunteerField(el, 'NDA', ndaText);
+        }
+
+        // Action buttons for pending
+        if (v.status === 'pending') {
+            var actDiv = document.createElement('div');
+            actDiv.className = 'volunteer-actions';
+            var appBtn = document.createElement('button');
+            appBtn.className = 'btn-approve';
+            appBtn.textContent = 'Approve & Onboard';
+            appBtn.addEventListener('click', function() { window._approveVolunteer(v.id); });
+            actDiv.appendChild(appBtn);
+            var rejBtn = document.createElement('button');
+            rejBtn.className = 'btn-reject';
+            rejBtn.textContent = 'Reject';
+            rejBtn.addEventListener('click', function() { showVolunteerRejectForm(v.id, el); });
+            actDiv.appendChild(rejBtn);
+            el.appendChild(actDiv);
+        }
+
+        if (v.status === 'rejected' && v.rejectionReason) {
+            addVolunteerField(el, 'Rejection Reason', esc(v.rejectionReason));
+        }
+    }
+
+    function addVolunteerField(parent, label, value) {
+        var field = document.createElement('div');
+        field.className = 'volunteer-detail-field';
+        var strong = document.createElement('strong');
+        strong.textContent = label + ': ';
+        field.appendChild(strong);
+        if (value) {
+            var span = document.createElement('span');
+            span.textContent = value;
+            field.appendChild(span);
+        }
+        parent.appendChild(field);
+    }
+
+    function showVolunteerRejectForm(id, parentEl) {
+        var existingForm = document.getElementById('reject-form-' + id);
+        if (existingForm) { existingForm.style.display = ''; return; }
+
+        var formDiv = document.createElement('div');
+        formDiv.id = 'reject-form-' + id;
+        formDiv.className = 'reject-form';
+
+        var ta = document.createElement('textarea');
+        ta.id = 'reject-reason-' + id;
+        ta.placeholder = 'Rejection reason (optional)...';
+        ta.rows = 3;
+        formDiv.appendChild(ta);
+
+        var confirmBtn = document.createElement('button');
+        confirmBtn.className = 'btn-reject-confirm';
+        confirmBtn.textContent = 'Confirm Rejection';
+        confirmBtn.addEventListener('click', function() { window._rejectVolunteer(id); });
+        formDiv.appendChild(confirmBtn);
+
+        parentEl.appendChild(formDiv);
+    }
+
+    window._approveVolunteer = async function(id) {
+        if (!confirm('Approve this volunteer and start onboarding?')) return;
+        try {
+            var token = await currentUser.getIdToken();
+            var resp = await fetch('/api/admin/volunteers/approve', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify({ volunteerId: id })
+            });
+            var data = await resp.json();
+            if (!resp.ok) throw new Error(data.error || 'Failed to approve');
+            toast('Volunteer approved! Onboarding started.');
+        } catch (e) {
+            toast('Error: ' + e.message, true);
+        }
+    };
+
+    window._showRejectForm = function(id) {
+        var form = document.getElementById('reject-form-' + id);
+        if (form) form.style.display = '';
+    };
+
+    window._rejectVolunteer = async function(id) {
+        var reasonEl = document.getElementById('reject-reason-' + id);
+        var reason = reasonEl ? reasonEl.value : '';
+        try {
+            var token = await currentUser.getIdToken();
+            var resp = await fetch('/api/admin/volunteers/reject', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify({ volunteerId: id, reason: reason })
+            });
+            var data = await resp.json();
+            if (!resp.ok) throw new Error(data.error || 'Failed to reject');
+            toast('Volunteer rejected.');
+        } catch (e) {
+            toast('Error: ' + e.message, true);
+        }
+    };
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();

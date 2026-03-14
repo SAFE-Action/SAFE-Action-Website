@@ -69,65 +69,106 @@
             </div>
         </header>
 
-        <!-- Stats Tabs -->
-        <div class="admin-tabs">
-            <button class="admin-tab active" data-tab="pending">
-                <span class="admin-tab-count" id="count-pending">0</span>
-                Pending
-            </button>
-            <button class="admin-tab" data-tab="approved">
-                <span class="admin-tab-count" id="count-approved">0</span>
-                Approved
-            </button>
-            <button class="admin-tab" data-tab="denied">
-                <span class="admin-tab-count" id="count-denied">0</span>
-                Denied
-            </button>
+        <!-- Section Switcher -->
+        <div class="admin-section-switcher">
+            <button class="admin-section-btn active" data-section="bills">Bills Queue</button>
+            <button class="admin-section-btn" data-section="volunteers">Volunteers</button>
         </div>
 
-        <!-- Filters -->
-        <div class="admin-filters">
-            <select id="filter-state">
-                <option value="">All States</option>
-            </select>
-            <select id="filter-category">
-                <option value="">All Categories</option>
-                <option value="vaccine-exemption">Vaccine Exemption</option>
-                <option value="vaccine-mandate">Vaccine Mandate</option>
-                <option value="medical-freedom">Medical Freedom</option>
-                <option value="informed-consent">Informed Consent</option>
-                <option value="vaccine-discrimination">Vaccine Discrimination</option>
-                <option value="vaccine-injury">Vaccine Injury</option>
-                <option value="mRNA-reclassification">mRNA Reclassification</option>
-                <option value="raw-milk">Raw Milk</option>
-                <option value="fluoride">Fluoride</option>
-                <option value="geoengineering">Geoengineering</option>
-                <option value="public-health">Public Health</option>
-            </select>
-            <input type="text" id="filter-search" placeholder="Search bills..." class="admin-search">
-        </div>
-
-        <!-- Content: Queue List + Detail Panel -->
-        <div class="admin-content">
-            <!-- Queue List -->
-            <div class="admin-queue" id="queue-list">
-                <div class="admin-queue-empty" id="queue-empty">
-                    <p>No bills in this queue</p>
-                </div>
+        <!-- Bills Section -->
+        <div id="bills-section">
+            <!-- Stats Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="pending">
+                    <span class="admin-tab-count" id="count-pending">0</span>
+                    Pending
+                </button>
+                <button class="admin-tab" data-tab="approved">
+                    <span class="admin-tab-count" id="count-approved">0</span>
+                    Approved
+                </button>
+                <button class="admin-tab" data-tab="denied">
+                    <span class="admin-tab-count" id="count-denied">0</span>
+                    Denied
+                </button>
             </div>
 
-            <!-- Detail Panel -->
-            <div class="admin-detail" id="detail-panel">
-                <div class="admin-detail-placeholder" id="detail-placeholder">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                    </svg>
-                    <p>Select a bill from the queue to review</p>
+            <!-- Filters -->
+            <div class="admin-filters">
+                <select id="filter-state">
+                    <option value="">All States</option>
+                </select>
+                <select id="filter-category">
+                    <option value="">All Categories</option>
+                    <option value="vaccine-exemption">Vaccine Exemption</option>
+                    <option value="vaccine-mandate">Vaccine Mandate</option>
+                    <option value="medical-freedom">Medical Freedom</option>
+                    <option value="informed-consent">Informed Consent</option>
+                    <option value="vaccine-discrimination">Vaccine Discrimination</option>
+                    <option value="vaccine-injury">Vaccine Injury</option>
+                    <option value="mRNA-reclassification">mRNA Reclassification</option>
+                    <option value="raw-milk">Raw Milk</option>
+                    <option value="fluoride">Fluoride</option>
+                    <option value="geoengineering">Geoengineering</option>
+                    <option value="public-health">Public Health</option>
+                </select>
+                <input type="text" id="filter-search" placeholder="Search bills..." class="admin-search">
+            </div>
+
+            <!-- Content: Queue List + Detail Panel -->
+            <div class="admin-content">
+                <!-- Queue List -->
+                <div class="admin-queue" id="queue-list">
+                    <div class="admin-queue-empty" id="queue-empty">
+                        <p>No bills in this queue</p>
+                    </div>
                 </div>
-                <div id="detail-content" style="display:none"></div>
+
+                <!-- Detail Panel -->
+                <div class="admin-detail" id="detail-panel">
+                    <div class="admin-detail-placeholder" id="detail-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <p>Select a bill from the queue to review</p>
+                    </div>
+                    <div id="detail-content" style="display:none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Volunteers Section -->
+        <div id="volunteers-section" style="display:none">
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-vtab="pending">
+                    <span class="admin-tab-count" id="vcount-pending">0</span> Pending
+                </button>
+                <button class="admin-tab" data-vtab="approved">
+                    <span class="admin-tab-count" id="vcount-approved">0</span> Approved
+                </button>
+                <button class="admin-tab" data-vtab="rejected">
+                    <span class="admin-tab-count" id="vcount-rejected">0</span> Rejected
+                </button>
+            </div>
+            <div class="admin-content">
+                <div class="admin-queue" id="volunteer-queue-list">
+                    <div class="admin-queue-empty" id="volunteer-queue-empty">
+                        <p>No volunteer applications in this queue</p>
+                    </div>
+                </div>
+                <div class="admin-detail" id="volunteer-detail-panel">
+                    <div class="admin-detail-placeholder" id="volunteer-detail-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <p>Select a volunteer application to review</p>
+                    </div>
+                    <div id="volunteer-detail-content" style="display:none"></div>
+                </div>
             </div>
         </div>
     </div>
