@@ -9,7 +9,43 @@
  *   firebase functions:secrets:set STRIPE_SECRET_KEY
  */
 
-const stripe = require("stripe");
+const https = require("https");
+
+function stripeRequest(secretKey, params) {
+    return new Promise(function(resolve, reject) {
+        var postData = new URLSearchParams(params).toString();
+        var options = {
+            hostname: "api.stripe.com",
+            port: 443,
+            path: "/v1/checkout/sessions",
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + secretKey,
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Length": Buffer.byteLength(postData)
+            }
+        };
+        var req = https.request(options, function(res) {
+            var data = "";
+            res.on("data", function(chunk) { data += chunk; });
+            res.on("end", function() {
+                try {
+                    var parsed = JSON.parse(data);
+                    if (parsed.error) {
+                        reject(new Error(parsed.error.message));
+                    } else {
+                        resolve(parsed);
+                    }
+                } catch (e) {
+                    reject(new Error("Invalid response from Stripe"));
+                }
+            });
+        });
+        req.on("error", function(e) { reject(e); });
+        req.write(postData);
+        req.end();
+    });
+}
 
 async function createCheckout(req, res) {
     // Only allow POST
@@ -35,61 +71,42 @@ async function createCheckout(req, res) {
     }
 
     // Get Stripe key from environment/secrets
-    var stripeKey = process.env.STRIPE_SECRET_KEY;
+    var stripeKey = (process.env.STRIPE_SECRET_KEY || "").trim();
     if (!stripeKey) {
         console.error("STRIPE_SECRET_KEY not configured");
         res.status(500).json({ error: "Payment system not configured" });
         return;
     }
 
-    var stripeClient = stripe(stripeKey);
-
     try {
-        var sessionParams = {
-            payment_method_types: undefined, // let Stripe auto-detect (dynamic payment methods)
-            success_url: "https://safe-action-website.web.app/donate?success=true",
-            cancel_url: "https://safe-action-website.web.app/donate?canceled=true",
-            submit_type: frequency === "onetime" ? "donate" : undefined,
-            metadata: {
-                source: "safe-action-donate-page",
-                frequency: frequency
-            }
+        var params = {
+            "success_url": "https://safe-action-website.web.app/donate?success=true",
+            "cancel_url": "https://safe-action-website.web.app/donate?canceled=true",
+            "metadata[source]": "safe-action-donate-page",
+            "metadata[frequency]": frequency
         };
 
         if (frequency === "monthly") {
-            // Recurring subscription - create a price on the fly
-            sessionParams.mode = "subscription";
-            sessionParams.line_items = [{
-                price_data: {
-                    currency: "usd",
-                    unit_amount: amount * 100, // cents
-                    recurring: {
-                        interval: "month"
-                    },
-                    product_data: {
-                        name: "SAFE Action Fund Monthly Donation",
-                        description: "$" + amount + "/month recurring donation to SAFE Action Fund"
-                    }
-                },
-                quantity: 1
-            }];
+            params["mode"] = "subscription";
+            params["line_items[0][price_data][currency]"] = "usd";
+            params["line_items[0][price_data][unit_amount]"] = String(amount * 100);
+            params["line_items[0][price_data][recurring][interval]"] = "month";
+            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Fund Monthly Donation";
+            params["line_items[0][price_data][product_data][description]"] = "$" + amount + "/month recurring donation";
+            params["line_items[0][quantity]"] = "1";
         } else {
-            // One-time payment
-            sessionParams.mode = "payment";
-            sessionParams.line_items = [{
-                price_data: {
-                    currency: "usd",
-                    unit_amount: amount * 100, // cents
-                    product_data: {
-                        name: "SAFE Action Fund Donation",
-                        description: "One-time $" + amount + " donation to SAFE Action Fund"
-                    }
-                },
-                quantity: 1
-            }];
+            params["mode"] = "payment";
+            params["submit_type"] = "donate";
+            params["line_items[0][price_data][currency]"] = "usd";
+            params["line_items[0][price_data][unit_amount]"] = String(amount * 100);
+            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Fund Donation";
+            params["line_items[0][price_data][product_data][description]"] = "One-time $" + amount + " donation";
+            params["line_items[0][quantity]"] = "1";
         }
 
-        var session = await stripeClient.checkout.sessions.create(sessionParams);
+        console.log("Creating checkout session:", JSON.stringify({ amount: amount, frequency: frequency }));
+        var session = await stripeRequest(stripeKey, params);
+        console.log("Checkout session created:", session.id);
 
         res.status(200).json({ url: session.url });
     } catch (err) {
