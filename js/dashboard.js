@@ -77,8 +77,26 @@ var STATE_COORDS = {
 };
 
 // ---------------------
-// Map Rendering
+// Map Rendering — Stacking Dots
 // ---------------------
+
+// Track per-state action counts and types
+var stateActions = {};
+
+function getStateColor(stateData) {
+    if (stateData.emails > 0 && stateData.calls > 0) return 'mixed';
+    if (stateData.calls > 0) return 'call';
+    return 'email';
+}
+
+function getDotRadius(count) {
+    // Base radius 18, grows with count, caps at 36
+    if (count <= 1) return 18;
+    if (count <= 3) return 22;
+    if (count <= 6) return 26;
+    if (count <= 10) return 30;
+    return 36;
+}
 
 function addActionToMap(data) {
     var coords = STATE_COORDS[data.state];
@@ -88,28 +106,63 @@ function addActionToMap(data) {
     if (!svg) return;
     var ns = 'http://www.w3.org/2000/svg';
 
-    // Slight random offset so dots don't stack exactly
-    var offsetX = (Math.random() - 0.5) * 20;
-    var offsetY = (Math.random() - 0.5) * 20;
+    // Update state action tracker
+    if (!stateActions[data.state]) {
+        stateActions[data.state] = { emails: 0, calls: 0, total: 0, dot: null, label: null };
+    }
+    var st = stateActions[data.state];
+    if (data.type === 'call') { st.calls++; } else { st.emails++; }
+    st.total++;
 
-    // Add small persistent dot
-    var dot = document.createElementNS(ns, 'circle');
-    dot.setAttribute('cx', coords.x + offsetX);
-    dot.setAttribute('cy', coords.y + offsetY);
-    dot.setAttribute('r', '8');
-    dot.setAttribute('class', 'map-dot map-dot-' + data.type);
-    svg.appendChild(dot);
+    var colorType = getStateColor(st);
+    var radius = getDotRadius(st.total);
+
+    // Create or update the dot for this state
+    if (!st.dot) {
+        // Create new dot
+        st.dot = document.createElementNS(ns, 'circle');
+        st.dot.setAttribute('cx', coords.x);
+        st.dot.setAttribute('cy', coords.y);
+        st.dot.setAttribute('class', 'map-dot map-dot-' + colorType);
+        svg.appendChild(st.dot);
+
+        // Create count label
+        st.label = document.createElementNS(ns, 'text');
+        st.label.setAttribute('x', coords.x);
+        st.label.setAttribute('y', coords.y);
+        st.label.setAttribute('class', 'map-count');
+        svg.appendChild(st.label);
+    }
+
+    // Update dot size and color
+    st.dot.setAttribute('r', radius);
+    st.dot.setAttribute('class', 'map-dot map-dot-' + colorType);
+
+    // Update count label (show count when > 1)
+    if (st.total > 1) {
+        st.label.textContent = st.total;
+        st.label.style.fontSize = (radius > 26 ? 16 : 13) + 'px';
+    }
+
+    // Highlight the state path
+    var stateEl = document.getElementById(data.state);
+    if (stateEl) {
+        if (st.total >= 5) {
+            stateEl.classList.add('hot');
+        } else {
+            stateEl.classList.add('has-activity');
+        }
+    }
 
     // Add ripple animation (only after initial load)
     if (initialLoadDone) {
         var ripple = document.createElementNS(ns, 'circle');
-        ripple.setAttribute('cx', coords.x + offsetX);
-        ripple.setAttribute('cy', coords.y + offsetY);
-        ripple.setAttribute('r', '8');
-        ripple.setAttribute('class', 'map-ripple map-ripple-' + data.type);
+        ripple.setAttribute('cx', coords.x);
+        ripple.setAttribute('cy', coords.y);
+        ripple.setAttribute('r', String(radius));
+        ripple.setAttribute('class', 'map-ripple map-ripple-' + colorType);
         svg.appendChild(ripple);
-        // Remove ripple after animation completes
-        setTimeout(function() { ripple.remove(); }, 1500);
+        setTimeout(function() { ripple.remove(); }, 1700);
     }
 }
 

@@ -266,43 +266,60 @@ body.dashboard-body {
 
 /* Map dot base */
 .map-dot {
-  r: 8;
   opacity: 0.95;
   transition: r var(--transition-fast), opacity var(--transition-fast);
   cursor: pointer;
 }
 
 .map-dot:hover {
-  r: 14;
   opacity: 1;
 }
 
 .map-dot-email {
   fill: var(--accent-blue);
-  filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.9)) drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
+  filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.95)) drop-shadow(0 0 50px rgba(96, 165, 250, 0.5));
 }
 
 .map-dot-call {
   fill: var(--accent-gold);
-  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.9)) drop-shadow(0 0 30px rgba(251, 191, 36, 0.4));
+  filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.95)) drop-shadow(0 0 50px rgba(251, 191, 36, 0.5));
+}
+
+.map-dot-mixed {
+  fill: var(--accent-purple);
+  filter: drop-shadow(0 0 18px rgba(167, 139, 250, 0.95)) drop-shadow(0 0 50px rgba(167, 139, 250, 0.5));
+}
+
+/* State count label on map */
+.map-count {
+  fill: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  font-family: var(--font-stack);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8));
 }
 
 /* Ripple expanding circle */
 .map-ripple {
   fill: none;
-  stroke-width: 3;
-  animation: ripple 1.4s ease-out forwards;
+  stroke-width: 4;
+  animation: ripple 1.6s ease-out forwards;
   pointer-events: none;
 }
 
-.map-dot-email + .map-ripple,
-.map-ripple.ripple-email {
+.map-ripple-email {
   stroke: var(--accent-blue);
 }
 
-.map-dot-call + .map-ripple,
-.map-ripple.ripple-call {
+.map-ripple-call {
   stroke: var(--accent-gold);
+}
+
+.map-ripple-mixed {
+  stroke: var(--accent-purple);
 }
 
 /* --- Activity Feed --- */
@@ -458,7 +475,7 @@ body.dashboard-body {
 /* --- Progress Bar --- */
 .progress-bar-wrap {
   width: 100%;
-  height: 40px;
+  height: 56px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-pill);
   overflow: hidden;
@@ -704,12 +721,12 @@ body.dashboard-body {
 /* Map ripple */
 @keyframes ripple {
   0% {
-    r: 8;
+    r: 20;
     opacity: 0.9;
-    stroke-width: 3;
+    stroke-width: 4;
   }
   100% {
-    r: 50;
+    r: 70;
     opacity: 0;
     stroke-width: 0.5;
   }
@@ -875,7 +892,7 @@ body.dashboard-body {
 }
 
 .progress-title {
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -883,7 +900,7 @@ body.dashboard-body {
 }
 
 .progress-count {
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--text-primary);
@@ -894,9 +911,9 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;
   flex-shrink: 0;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -905,7 +922,7 @@ body.dashboard-body {
 .ticker-sep {
   color: var(--accent-purple);
   opacity: 0.5;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .ticker-item strong {
