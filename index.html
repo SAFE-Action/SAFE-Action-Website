@@ -23,19 +23,78 @@
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
-                <div class="logo">
+                <a href="index.html" class="logo-link">
                     <span class="logo-icon">&#9733;</span>
                     <span class="logo-text">SAFE Action</span>
-                </div>
+                </a>
                 <nav class="main-nav">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="outreach.html" class="nav-link">Take Action</a>
-                    <a href="directory.html" class="nav-link">Pledges</a>
-                    <a href="about.html" class="nav-link">About</a>
+                    <div class="nav2-item">
+                        <a href="outreach.html">Take Action <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="outreach.html">&#128231; Email Your Reps</a>
+                            <a href="outreach.html">&#128222; Call/Text Reps</a>
+                            <hr>
+                            <a href="action.html">&#128200; Action Tracker</a>
+                            <a href="dashboard.html">&#128506; Live Dashboard</a>
+                        </div>
+                    </div>
+                    <div class="nav2-item">
+                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="directory.html">&#128203; Pledge Directory</a>
+                            <a href="quiz.html">&#128221; Candidate Quiz</a>
+                            <hr>
+                            <a href="elections.html">&#128499;&#65039; Elections</a>
+                        </div>
+                    </div>
+                    <div class="nav2-item">
+                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="about.html">&#9878;&#65039; Our Mission</a>
+                            <a href="about.html#volunteer">&#129309; Volunteer</a>
+                            <a href="about.html#donate">&#10084;&#65039; Donate</a>
+                            <hr>
+                            <a href="media.html">&#127908; Media Kit</a>
+                            <a href="updates.html">&#128240; Updates</a>
+                        </div>
+                    </div>
                 </nav>
+                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo-link">
+                <span class="logo-icon">&#9733;</span>
+                <span>SAFE Action</span>
+            </a>
+            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">Take Action</span>
+            <a href="outreach.html">&#128231; Email Your Reps</a>
+            <a href="outreach.html">&#128222; Call/Text Reps</a>
+            <a href="action.html">&#128200; Action Tracker</a>
+            <a href="dashboard.html">&#128506; Live Dashboard</a>
+        </div>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">Vaccine Pledges</span>
+            <a href="directory.html">&#128203; Pledge Directory</a>
+            <a href="quiz.html">&#128221; Candidate Quiz</a>
+            <a href="elections.html">&#128499;&#65039; Elections</a>
+        </div>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">About</span>
+            <a href="about.html">&#9878;&#65039; Our Mission</a>
+            <a href="about.html#volunteer">&#129309; Volunteer</a>
+            <a href="about.html#donate">&#10084;&#65039; Donate</a>
+            <a href="media.html">&#127908; Media Kit</a>
+            <a href="updates.html">&#128240; Updates</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -55,16 +114,12 @@
                     <div class="flag-stripe blue"></div>
                 </div>
                 <h1 class="hero-title">Defend Science.<br>Take Action.</h1>
-                <p class="hero-subtitle">Find bills that threaten public health, contact your representatives, and join thousands of citizens fighting to protect scientific freedom in every state.</p>
-                <div class="hero-ctas">
-                    <a href="outreach.html" class="btn btn-primary btn-lg">
-                        <span class="btn-star">&#9733;</span>
-                        Find Your Representatives
-                    </a>
-                    <a href="directory.html" class="btn btn-hero-outline btn-lg">
-                        Candidate Pledge Directory
-                    </a>
-                </div>
+                <p class="hero-subtitle">Tell your representatives to support evidence-based policy</p>
+                <form class="hero-address-form" id="hero-address-form" onsubmit="return false;">
+                    <input type="text" id="hero-address" placeholder="Enter your address to find your reps..." autocomplete="street-address">
+                    <button type="submit">Find My Reps</button>
+                </form>
+                <a href="outreach.html" class="hero-learn-link">Learn how it works &rarr;</a>
             </div>
         </div>
         <div class="hero-divider" aria-hidden="true">
@@ -131,6 +186,22 @@
         </div>
     </section>
 
+    <!-- Pledge Showcase -->
+    <section class="pledge-showcase">
+        <div class="container">
+            <div class="pledge-showcase-header">
+                <h2>Leaders Taking the Pledge <span class="pledge-count-badge" id="pledge-total-count">0</span></h2>
+                <p>Public officials and candidates committing to evidence-based policy</p>
+            </div>
+            <div class="pledge-showcase-scroll" id="pledge-showcase-cards">
+                <p style="color: var(--text-muted); padding: 2rem;">Loading pledges...</p>
+            </div>
+            <div class="pledge-showcase-footer">
+                <a href="directory.html">View All Pledges &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Impact Counter Section -->
     <section class="impact-section">
         <div class="container">
@@ -187,116 +258,6 @@
         </div>
     </section>
 
-    <!-- Database Stats Section -->
-    <section class="database-section">
-        <div class="database-divider" aria-hidden="true">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,0 L720,60 L1440,0 Z" fill="var(--off-white)"/>
-            </svg>
-        </div>
-        <div class="container">
-            <div class="database-header">
-                <span class="database-star" aria-hidden="true">&#9733;</span>
-                <h2 class="database-title">The Most Comprehensive Pro-Science Advocacy Database in America</h2>
-                <p class="database-subtitle">We've done the hard work so you don't have to. Every legislator. Every candidate. Every email. One click away.</p>
-            </div>
-            <div class="database-grid">
-                <div class="database-card">
-                    <div class="database-number" id="db-people">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="database-label">Officials &amp; Candidates</div>
-                    <div class="database-desc">Current legislators and 2026 challengers across every level of government</div>
-                </div>
-                <div class="database-card">
-                    <div class="database-number" id="db-emails">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="database-label">Direct Email Addresses</div>
-                    <div class="database-desc">Verified emails for instant constituent contact — no middleman, no contact forms</div>
-                </div>
-                <div class="database-card">
-                    <div class="database-number" id="db-seats">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="database-label">Seats Monitored</div>
-                    <div class="database-desc">Federal, state legislative, and gubernatorial races tracked in real time</div>
-                </div>
-                <div class="database-card">
-                    <div class="database-number" id="db-bills">
-                        <span class="counter" data-target="0">0</span><span class="counter-plus">+</span>
-                    </div>
-                    <div class="database-label">Bills Tracked</div>
-                    <div class="database-desc">Science and health policy legislation monitored across all 50 states</div>
-                </div>
-            </div>
-            <!-- Data Sources -->
-            <div class="database-sources">
-                <div class="sources-header">
-                    <div class="sources-line" aria-hidden="true"></div>
-                    <span class="sources-label">Powered by Authoritative Public Data</span>
-                    <div class="sources-line" aria-hidden="true"></div>
-                </div>
-                <div class="sources-chips">
-                    <span class="source-chip">&#127963;&#65039; U.S. Congress</span>
-                    <span class="source-chip">&#127961;&#65039; Open States</span>
-                    <span class="source-chip">&#128220; Ballotpedia</span>
-                    <span class="source-chip">&#128202; LegiScan</span>
-                    <span class="source-chip">&#128205; Google Civic Info</span>
-                    <span class="source-chip">&#9878;&#65039; FEC &amp; State SOS</span>
-                </div>
-                <p class="sources-tagline">All contact information sourced from official government directories, public campaign filings, and verified open-data repositories.</p>
-            </div>
-
-            <div class="database-cta">
-                <a href="outreach.html" class="btn btn-database btn-lg">
-                    <span class="btn-star">&#9733;</span>
-                    Find Your Representatives
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Candidate Pledge CTA -->
-    <section class="pledge-cta-section">
-        <div class="container">
-            <div class="pledge-cta-card">
-                <div class="pledge-cta-badge">For Public Officials</div>
-                <h2 class="pledge-cta-title">Public Officials: Share Your Science &amp; Health Policy Positions</h2>
-                <p class="pledge-cta-desc">Elected officials and candidates for public office: Share your positions on science and public health with the community. Take the pledge and get listed in our directory.</p>
-                <a href="quiz.html" class="btn btn-primary btn-lg">
-                    <span class="btn-star">&#9733;</span>
-                    Take the Pledge Now
-                    <span class="btn-star">&#9733;</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Volunteer CTA -->
-    <section class="volunteer-cta-section">
-        <div class="container">
-            <div class="volunteer-cta-card">
-                <div class="volunteer-cta-badge">Join the Team</div>
-                <h2 class="volunteer-cta-title">Help Build the Future of Science Advocacy</h2>
-                <p class="volunteer-cta-desc">We're a growing team of developers, designers, researchers, and organizers building tools to defend scientific freedom. Volunteer your skills — whether it's 5 hours a month or 40.</p>
-                <div class="volunteer-cta-skills">
-                    <span class="volunteer-cta-chip">Web Development</span>
-                    <span class="volunteer-cta-chip">Design</span>
-                    <span class="volunteer-cta-chip">Research</span>
-                    <span class="volunteer-cta-chip">Marketing</span>
-                    <span class="volunteer-cta-chip">Operations</span>
-                    <span class="volunteer-cta-chip">Community Building</span>
-                </div>
-                <a href="volunteer.html" class="btn btn-volunteer btn-lg">
-                    <span class="btn-star">&#9733;</span>
-                    Apply to Volunteer
-                    <span class="btn-star">&#9733;</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <footer class="site-footer">
         <div class="container">
             <div class="footer-inner">
@@ -337,5 +298,87 @@ function openReportEmailModal(){var o=document.createElement('div');o.className=
 function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#B22234';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
 </script>
 <script src="js/header.js"></script>
+<script>
+// Hero address form - redirect to outreach page
+document.getElementById('hero-address-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var address = document.getElementById('hero-address').value.trim();
+    if (address) {
+        window.location.href = 'outreach.html?address=' + encodeURIComponent(address);
+    }
+});
+
+// Load recent pledges from Firestore
+(function loadPledgeShowcase() {
+    if (typeof firebase === 'undefined' || !firebase.firestore) return;
+    var db = firebase.firestore();
+    db.collection('candidateResponses')
+        .orderBy('timestamp', 'desc')
+        .limit(8)
+        .get()
+        .then(function(snapshot) {
+            var container = document.getElementById('pledge-showcase-cards');
+            var countBadge = document.getElementById('pledge-total-count');
+            if (snapshot.empty) {
+                container.textContent = 'No pledges yet — be the first!';
+                container.style.padding = '2rem';
+                container.style.color = 'var(--text-muted)';
+                return;
+            }
+            // Clear loading text
+            while (container.firstChild) container.removeChild(container.firstChild);
+
+            snapshot.forEach(function(doc) {
+                var d = doc.data();
+                var party = (d.party || '').toLowerCase();
+                var partyClass = party.indexOf('dem') >= 0 ? 'dem' : party.indexOf('rep') >= 0 ? 'rep' : 'ind';
+                var partyLabel = party.indexOf('dem') >= 0 ? 'DEM' : party.indexOf('rep') >= 0 ? 'REP' : 'IND';
+                var name = d.name || 'Unknown';
+                var initials = name.split(' ').map(function(w) { return w[0]; }).join('').toUpperCase().slice(0, 2);
+
+                var card = document.createElement('a');
+                card.href = 'candidate.html?id=' + doc.id;
+                card.className = 'pledge-card-mini';
+
+                var avatarDiv = document.createElement('div');
+                avatarDiv.className = 'avatar';
+                if (d.photoUrl) {
+                    var img = document.createElement('img');
+                    img.src = d.photoUrl;
+                    img.alt = name;
+                    avatarDiv.appendChild(img);
+                } else {
+                    avatarDiv.textContent = initials;
+                }
+                card.appendChild(avatarDiv);
+
+                var nameDiv = document.createElement('div');
+                nameDiv.className = 'name';
+                nameDiv.textContent = name;
+                card.appendChild(nameDiv);
+
+                var badgeSpan = document.createElement('span');
+                badgeSpan.className = 'party-badge ' + partyClass;
+                badgeSpan.textContent = partyLabel;
+                card.appendChild(badgeSpan);
+
+                var officeDiv = document.createElement('div');
+                officeDiv.className = 'office';
+                officeDiv.textContent = (d.position || d.office || '') + (d.state ? ', ' + d.state : '');
+                card.appendChild(officeDiv);
+
+                container.appendChild(card);
+            });
+
+            // Update total count
+            db.collection('candidateResponses').get().then(function(all) {
+                countBadge.textContent = all.size + ' pledges';
+            });
+        })
+        .catch(function(err) {
+            console.warn('Pledge showcase error:', err);
+        });
+})();
+</script>
 </body>
 </html>
