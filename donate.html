@@ -486,12 +486,20 @@
                 </div>
 
                 <!-- Custom Amount -->
+                <div class="custom-amount" id="custom-amount-wrap" style="display:none;">
+                    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+                        <span style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--blue);">$</span>
+                        <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount"
+                            style="width:160px; padding:12px 16px; font-size:1.1rem; font-family:var(--font-body); font-weight:600; border:2px solid var(--blue); border-radius:10px; text-align:center; outline:none;">
+                    </div>
+                </div>
                 <div class="custom-amount">
-                    <a href="https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00" target="_blank" rel="noopener">Enter a custom amount &rarr;</a>
+                    <a href="#" id="custom-amount-toggle">Enter a custom amount &rarr;</a>
                 </div>
 
                 <!-- Donate Button -->
-                <a href="https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00" target="_blank" rel="noopener" class="donate-cta-btn" id="donate-now-btn">Donate Now</a>
+                <button type="button" class="donate-cta-btn" id="donate-now-btn">Donate Now</button>
+                <div id="donate-status" style="text-align:center; margin-top:12px; font-family:var(--font-body); font-size:0.95rem; color:var(--text-mid); display:none;"></div>
             </div>
         </div>
     </section>
@@ -547,7 +555,7 @@
         <div class="container">
             <h2>Ready to Make a Difference?</h2>
             <p>Join hundreds of supporters who believe that science should guide public health policy.</p>
-            <a href="https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00" target="_blank" rel="noopener" class="donate-cta-btn">Donate Now</a>
+            <button type="button" class="donate-cta-btn" onclick="document.getElementById('donate-now-btn').click(); window.scrollTo({top: document.querySelector('.donation-section').offsetTop, behavior: 'smooth'});">Donate Now</button>
             <p class="disclosure">SAFE Action Fund is a 501(c)(4) social welfare organization (application pending). Contributions are not tax-deductible.</p>
         </div>
     </section>
@@ -581,17 +589,21 @@
 
     <script>
         (function() {
-            var STRIPE_URL = 'https://buy.stripe.com/14A14naSf8nQ3N403f1sQ00';
+            var selectedAmount = 50;
+            var frequency = 'onetime';
+            var isCustom = false;
 
             // Frequency toggle
             var btnOnetime = document.getElementById('btn-onetime');
             var btnMonthly = document.getElementById('btn-monthly');
 
             btnOnetime.addEventListener('click', function() {
+                frequency = 'onetime';
                 btnOnetime.classList.add('active');
                 btnMonthly.classList.remove('active');
             });
             btnMonthly.addEventListener('click', function() {
+                frequency = 'monthly';
                 btnMonthly.classList.add('active');
                 btnOnetime.classList.remove('active');
             });
@@ -600,11 +612,102 @@
             var cards = document.querySelectorAll('.amount-card');
             cards.forEach(function(card) {
                 card.addEventListener('click', function() {
+                    isCustom = false;
                     cards.forEach(function(c) { c.classList.remove('selected'); });
                     card.classList.add('selected');
-                    window.open(STRIPE_URL, '_blank');
+                    selectedAmount = parseInt(card.getAttribute('data-amount'), 10);
+                    document.getElementById('custom-amount-wrap').style.display = 'none';
                 });
             });
+
+            // Custom amount toggle
+            var customToggle = document.getElementById('custom-amount-toggle');
+            var customWrap = document.getElementById('custom-amount-wrap');
+            var customInput = document.getElementById('custom-amount-input');
+
+            customToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                isCustom = true;
+                cards.forEach(function(c) { c.classList.remove('selected'); });
+                customWrap.style.display = 'block';
+                customInput.focus();
+            });
+
+            customInput.addEventListener('input', function() {
+                selectedAmount = parseInt(this.value, 10) || 0;
+            });
+
+            // Donate button
+            var donateBtn = document.getElementById('donate-now-btn');
+            var statusEl = document.getElementById('donate-status');
+
+            donateBtn.addEventListener('click', function() {
+                var amt = isCustom ? (parseInt(customInput.value, 10) || 0) : selectedAmount;
+
+                if (!amt || amt < 1) {
+                    statusEl.style.display = 'block';
+                    statusEl.style.color = '#c53030';
+                    statusEl.textContent = 'Please select or enter an amount.';
+                    return;
+                }
+
+                if (amt > 50000) {
+                    statusEl.style.display = 'block';
+                    statusEl.style.color = '#c53030';
+                    statusEl.textContent = 'Maximum donation is $50,000. For larger amounts, contact us directly.';
+                    return;
+                }
+
+                // Show loading state
+                donateBtn.disabled = true;
+                donateBtn.textContent = 'Redirecting to secure checkout...';
+                statusEl.style.display = 'block';
+                statusEl.style.color = 'var(--text-mid)';
+                statusEl.textContent = 'Creating secure checkout session...';
+
+                fetch('/api/donate/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: amt, frequency: frequency })
+                })
+                .then(function(resp) { return resp.json(); })
+                .then(function(data) {
+                    if (data.url) {
+                        window.location.href = data.url;
+                    } else {
+                        throw new Error(data.error || 'Failed to create checkout');
+                    }
+                })
+                .catch(function(err) {
+                    console.error('Checkout error:', err);
+                    statusEl.style.display = 'block';
+                    statusEl.style.color = '#c53030';
+                    statusEl.textContent = 'Something went wrong. Please try again.';
+                    donateBtn.disabled = false;
+                    donateBtn.textContent = 'Donate Now';
+                });
+            });
+
+            // Handle success/canceled return from Stripe
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('success') === 'true') {
+                // Show success message by updating hero elements
+                var heroTitle = document.querySelector('.donate-hero h1');
+                var heroDesc = document.querySelector('.donate-hero p');
+                var heroSection = document.querySelector('.donate-hero');
+                if (heroTitle) heroTitle.textContent = 'Thank You for Your Donation!';
+                if (heroDesc) heroDesc.textContent = 'Your generous support helps keep science at the center of public health policy. Together, we are building a more informed democracy. A receipt has been sent to your email.';
+                if (heroSection) heroSection.style.background = 'linear-gradient(135deg, #1a472a 0%, #2d6a4f 50%, #40916c 100%)';
+                window.history.replaceState({}, '', '/donate');
+            }
+            if (params.get('canceled') === 'true') {
+                if (statusEl) {
+                    statusEl.style.display = 'block';
+                    statusEl.style.color = '#c53030';
+                    statusEl.textContent = 'Donation was canceled. You can try again anytime.';
+                }
+                window.history.replaceState({}, '', '/donate');
+            }
         })();
     </script>
 </body>
