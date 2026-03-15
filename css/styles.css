@@ -90,6 +90,11 @@ a:hover { color: var(--red); }
     background: var(--blue);
     border-bottom: 3px solid var(--red);
     box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .header-inner {
@@ -97,6 +102,29 @@ a:hover { color: var(--red); }
     align-items: center;
     justify-content: space-between;
     padding: 16px 0;
+    transition: padding 0.3s ease;
+}
+
+.site-header.scrolled .header-inner {
+    padding: 6px 0;
+}
+
+.site-header.scrolled .logo {
+    font-size: 1.2rem;
+}
+
+.site-header.scrolled .logo-icon {
+    font-size: 1.4rem;
+}
+
+.site-header.scrolled .nav-link {
+    padding: 6px 14px;
+    font-size: 0.88rem;
+}
+
+.site-header.scrolled .btn-donate.nav-donate {
+    padding: 6px 16px;
+    font-size: 0.88rem;
 }
 
 .logo {
