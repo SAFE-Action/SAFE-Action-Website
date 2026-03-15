@@ -67,6 +67,10 @@
       {
         "source": "/api/actions/track",
         "function": "trackAction"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
       }
     ],
     "headers": [

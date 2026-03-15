@@ -1805,6 +1805,21 @@ Thank you for taking my call.`;
     }
 
     function trackAction(type) {
+        // Gather metadata for live dashboard
+        var meta = { type: type };
+        try {
+            var addrData = JSON.parse(localStorage.getItem('safe_my_address'));
+            if (addrData && addrData.normalizedAddress) {
+                meta.city = addrData.normalizedAddress.city || '';
+                meta.state = addrData.normalizedAddress.state || '';
+            }
+        } catch (e) {}
+        // Current bill info
+        if (window._bill) {
+            meta.billId = window._bill.billNumber || '';
+            meta.billTitle = window._bill.title || '';
+        }
+
         try {
             // Use the same localStorage key as main.js so homepage counters update
             var BASE_ACTIONS = 1128;
@@ -1859,6 +1874,13 @@ Thank you for taking my call.`;
                 localStorage.setItem('safe_action_streak', JSON.stringify(streak));
             }
         } catch (e) {}
+
+        // Report to national counter Cloud Function with metadata
+        fetch('/api/actions/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(meta)
+        }).catch(function() {});
     }
 });
 

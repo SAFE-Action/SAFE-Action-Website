@@ -43,6 +43,13 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // Action events - public read for live dashboard
+    // Writes only via Cloud Functions (admin SDK)
+    match /actionEvents/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     // Default deny
     match /{document=**} {
       allow read, write: if false;

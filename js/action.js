@@ -393,11 +393,27 @@ document.addEventListener('DOMContentLoaded', async () => {
                 localStorage.setItem('safe_action_counts', JSON.stringify(stored));
             } catch (e) {}
         }
-        // Always report to national counter Cloud Function
+        // Report to national counter Cloud Function with metadata
+        var meta = { type: type };
+        try {
+            var addrData = JSON.parse(localStorage.getItem('safe_my_address'));
+            if (addrData && addrData.normalizedAddress) {
+                meta.city = addrData.normalizedAddress.city || '';
+                meta.state = addrData.normalizedAddress.state || '';
+            }
+        } catch (em) {}
+        if (window._bill) {
+            meta.billId = window._bill.billNumber || '';
+            meta.billTitle = window._bill.title || '';
+        }
+        if (selectedRep) {
+            meta.repName = selectedRep.name || '';
+            meta.repTitle = selectedRep.district || '';
+        }
         fetch('/api/actions/track', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ type: type })
+            body: JSON.stringify(meta)
         }).catch(function() {});
     }
 

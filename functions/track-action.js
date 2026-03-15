@@ -5,7 +5,7 @@ async function trackAction(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { type } = req.body;
+  const { type, city, state, repName, repTitle, billId, billTitle } = req.body;
   if (!type || !["email", "call"].includes(type)) {
     return res.status(400).json({ error: "Invalid action type. Must be 'email' or 'call'." });
   }
@@ -25,6 +25,7 @@ async function trackAction(req, res) {
   try {
     const counterRef = db.collection("actionStats").doc("counters");
 
+    // 1. Increment aggregate counters
     await counterRef.set({
       // Daily counters
       [`daily_${dayKey}_total`]: increment,
@@ -40,6 +41,20 @@ async function trackAction(req, res) {
       currentDayKey: dayKey,
       currentWeekKey: weekKey,
     }, { merge: true });
+
+    // 2. Store individual action event for live dashboard
+    const eventData = {
+      type,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    };
+    if (city) eventData.city = city;
+    if (state) eventData.state = state;
+    if (repName) eventData.repName = repName;
+    if (repTitle) eventData.repTitle = repTitle;
+    if (billId) eventData.billId = billId;
+    if (billTitle) eventData.billTitle = billTitle;
+
+    await db.collection("actionEvents").add(eventData);
 
     return res.status(200).json({ success: true, type, dayKey, weekKey });
   } catch (error) {
