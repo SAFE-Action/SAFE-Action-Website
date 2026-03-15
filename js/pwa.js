@@ -41,6 +41,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 function showInstallBanner() {
+    // Only show on mobile/tablet — not desktop
+    if (window.innerWidth > 900) return;
     // Don't show if already dismissed this session
     if (sessionStorage.getItem('pwa_dismissed')) return;
 

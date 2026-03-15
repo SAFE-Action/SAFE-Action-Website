@@ -393,6 +393,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 localStorage.setItem('safe_action_counts', JSON.stringify(stored));
             } catch (e) {}
         }
+        // Always report to national counter Cloud Function
+        fetch('/api/actions/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type: type })
+        }).catch(function() {});
     }
 
     function getActionCount() {

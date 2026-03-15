@@ -83,53 +83,50 @@
         </div>
     </section>
 
-    <!-- Daily Goal Progress -->
-    <section class="daily-goal-hero" id="daily-goal" style="display:none;">
+    <!-- Movement Momentum Banner -->
+    <section class="momentum-banner" id="daily-goal">
         <div class="container">
-            <div class="daily-goal-card">
-                <div class="daily-goal-header">
-                    <span class="daily-goal-flame" aria-hidden="true">&#128293;</span>
-                    <span class="daily-goal-title" id="daily-goal-title">Action Tracker</span>
-                    <span class="daily-goal-streak" id="daily-goal-streak"></span>
+            <div class="momentum-card">
+                <div class="momentum-header">
+                    <span class="momentum-flame">&#128293;</span>
+                    <span class="momentum-title">Daily Action Tracker</span>
                 </div>
-                <div class="daily-goal-columns">
-                    <!-- National Stats (left) — hidden until data loads -->
-                    <div class="daily-goal-col daily-goal-national" style="display:none;">
-                        <div class="daily-goal-col-label">Nationally</div>
-                        <div class="daily-goal-national-stats" id="national-stats">
-                            <div class="national-stat-row">
-                                <span class="national-stat-number" id="national-today-total">0</span>
-                                <span class="national-stat-label">actions today</span>
-                            </div>
-                            <div class="national-stat-row">
-                                <span class="national-stat-number" id="national-week-total">0</span>
-                                <span class="national-stat-label">this week</span>
-                            </div>
-                            <div class="national-stat-row">
-                                <span class="national-stat-number" id="national-alltime-total">0</span>
-                                <span class="national-stat-label">all time</span>
-                            </div>
-                        </div>
+                <div class="momentum-headline" id="momentum-headline">
+                    People are taking action today &mdash; join them
+                </div>
+                <div class="momentum-breakdown" id="momentum-breakdown">
+                    <span class="momentum-breakdown-item"><strong id="national-emails">0</strong> emails</span>
+                    <span class="momentum-breakdown-dot">&middot;</span>
+                    <span class="momentum-breakdown-item"><strong id="national-calls">0</strong> calls</span>
+                </div>
+                <div class="momentum-today-line" id="momentum-today-line">
+                    <span class="momentum-number momentum-number-big" id="national-today-total">0</span>
+                    <span class="momentum-today-label">political actions <strong>TODAY!</strong></span>
+                </div>
+                <div class="momentum-progress-wrap" id="momentum-progress">
+                    <div class="momentum-progress-header">
+                        <span>Daily Goal</span>
+                        <span class="momentum-progress-count" id="momentum-progress-label">0 / 50</span>
                     </div>
-                    <!-- Divider — hidden until national data loads -->
-                    <div class="daily-goal-divider" style="display:none;"></div>
-                    <!-- Your Impact (right) -->
-                    <div class="daily-goal-col daily-goal-personal">
-                        <div class="daily-goal-col-label">Your Impact</div>
-                        <div class="daily-goal-bar-wrap">
-                            <div class="daily-goal-bar">
-                                <div class="daily-goal-fill" id="daily-goal-fill" style="width:0%"></div>
-                            </div>
-                            <span class="daily-goal-pct" id="daily-goal-pct">0%</span>
-                        </div>
-                        <div class="daily-goal-stats" id="daily-goal-stats"></div>
+                    <div class="momentum-progress-bar">
+                        <div class="momentum-progress-fill" id="momentum-progress-fill" style="width:0%"></div>
                     </div>
                 </div>
-                <div class="daily-goal-message" id="daily-goal-message"></div>
-                <a href="outreach.html" class="btn btn-primary btn-sm daily-goal-cta" id="daily-goal-cta">
-                    <span class="btn-star">&#9733;</span> Take Action Now
+                <div class="momentum-personal" id="momentum-personal">
+                    <span class="momentum-you-badge" id="daily-goal-streak"></span>
+                    <span class="momentum-you-stat" id="daily-goal-stats"></span>
+                </div>
+                <div class="momentum-message" id="daily-goal-message"></div>
+                <a href="outreach.html" class="momentum-cta" id="daily-goal-cta">
+                    Join Them &mdash; Send an Email Now &#8594;
                 </a>
             </div>
+        </div>
+        <!-- Hidden elements for JS compatibility -->
+        <div style="display:none;">
+            <div id="daily-goal-fill"></div>
+            <div id="daily-goal-pct"></div>
+            <div id="national-alltime-total"></div>
         </div>
     </section>
 
@@ -330,7 +327,7 @@
     <script src="js/config.js"></script>
     <script src="js/sheets.js"></script>
     <script src="js/legislation-api.js"></script>
-    <script src="js/main.js?v=63"></script>
+    <script src="js/main.js?v=65"></script>
     <script src="js/pwa.js"></script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}

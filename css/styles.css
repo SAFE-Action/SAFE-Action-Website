@@ -2710,28 +2710,28 @@ a:hover { color: var(--red); }
 }
 
 /* --- Daily Goal Progress Bar --- */
-.daily-goal-hero {
-    padding: 40px 0 8px;
-    background: #FDFBF7;
+/* ============================================
+   Movement Momentum Banner
+   ============================================ */
+.momentum-banner {
+    padding: 0;
+    background: linear-gradient(180deg, #FDFBF7 0%, #f5f0e8 100%);
 }
 
-.daily-goal-section {
-    margin-top: 28px;
-}
-
-.daily-goal-card {
-    background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
+.momentum-card {
+    background: linear-gradient(135deg, #1a2744 0%, #243352 50%, #1e3a5f 100%);
     border-radius: 16px;
-    padding: 24px 28px;
+    padding: 28px 32px 24px;
     color: #fff;
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 32px rgba(26, 39, 68, 0.3);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
-.daily-goal-card::before {
+.momentum-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -2739,64 +2739,158 @@ a:hover { color: var(--red); }
     background: linear-gradient(90deg, var(--red) 0%, var(--gold) 50%, var(--blue) 100%);
 }
 
-.daily-goal-header {
+.momentum-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 4px;
 }
 
-.daily-goal-flame {
-    font-size: 1.4rem;
+.momentum-flame {
+    font-size: 1.3rem;
     line-height: 1;
 }
 
-.daily-goal-title {
-    font-size: 1.1rem;
+.momentum-title {
+    font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
 
-.daily-goal-streak {
-    margin-left: auto;
-    font-size: 0.82rem;
+.momentum-headline {
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--gold);
-    background: rgba(255,193,7,0.15);
-    padding: 3px 10px;
-    border-radius: 20px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
 }
 
-.daily-goal-bar-wrap {
+/* Big number counters */
+.momentum-counters {
     display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 6px;
+}
+
+.momentum-counter {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+}
+
+.momentum-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.momentum-number-big {
+    font-size: 3rem;
+}
+
+.momentum-number.tick {
+    color: var(--gold);
+    transform: scale(1.08);
+}
+
+/* Sub-counters (today / this week) */
+.momentum-sub-counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Breakdown line (emails · calls) */
+.momentum-breakdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+}
+
+.momentum-breakdown-item strong {
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+}
+
+.momentum-breakdown-dot {
+    color: rgba(255,255,255,0.25);
+}
+
+/* Today hero line */
+.momentum-today-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 14px;
 }
 
-.daily-goal-bar {
-    flex: 1;
-    height: 14px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 10px;
+.momentum-today-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+}
+
+.momentum-today-label strong {
+    color: var(--gold);
+}
+
+/* Progress bar */
+.momentum-progress-wrap {
+    max-width: 400px;
+    margin: 0 auto 16px;
+}
+
+.momentum-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.momentum-progress-count {
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+}
+
+.momentum-progress-bar {
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
     overflow: hidden;
     position: relative;
 }
 
-.daily-goal-fill {
+.momentum-progress-fill {
     height: 100%;
-    border-radius: 10px;
+    border-radius: 6px;
     background: linear-gradient(90deg, var(--red) 0%, var(--gold) 100%);
     transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
     min-width: 0;
+    position: relative;
 }
 
-.daily-goal-fill.goal-met {
-    background: linear-gradient(90deg, #2e7d32 0%, #43a047 100%);
-}
-
-.daily-goal-fill::after {
+.momentum-progress-fill::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -2809,157 +2903,101 @@ a:hover { color: var(--red); }
     100% { transform: translateX(100%); }
 }
 
-.daily-goal-pct {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--gold);
-    min-width: 38px;
-    text-align: right;
+.momentum-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
 }
 
-.daily-goal-stats {
+/* Personal stats line */
+.momentum-personal {
     display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
+    align-items: center;
     justify-content: center;
-    text-align: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.momentum-you-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gold);
+    background: rgba(255,193,7,0.12);
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+.momentum-you-badge:empty {
+    display: none;
+}
+
+.momentum-you-stat {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+}
+
+.momentum-you-stat:empty {
+    display: none;
 }
 
 .daily-goal-stat {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
+    color: rgba(255,255,255,0.5);
 }
 
 .daily-goal-stat strong {
-    color: #fff;
-    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
 }
 
-.daily-goal-message {
-    font-size: 0.92rem;
-    font-weight: 600;
-    margin-bottom: 14px;
+/* Message */
+.momentum-message {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
     line-height: 1.4;
-    text-align: center;
 }
 
-.daily-goal-message .goal-emoji {
-    font-size: 1.1rem;
-    margin-right: 4px;
-}
-
-.daily-goal-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin: 0 auto;
-}
-
-.daily-goal-card {
-    text-align: center;
-}
-
-.daily-goal-header {
-    text-align: left;
-}
-
-/* Side-by-side columns */
-.daily-goal-columns {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    margin-bottom: 14px;
-}
-
-.daily-goal-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.daily-goal-col-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 10px;
-}
-
-.daily-goal-divider {
-    width: 1px;
-    background: rgba(255,255,255,0.15);
-    margin: 0 20px;
-    align-self: stretch;
-}
-
-/* National stats */
-.daily-goal-national-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.national-stat-row {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-}
-
-.national-stat-number {
-    font-size: 1.5rem;
-    font-weight: 800;
+/* CTA */
+.momentum-cta {
+    display: inline-block;
+    background: var(--red);
     color: #fff;
-    min-width: 40px;
-    font-variant-numeric: tabular-nums;
-    transition: color 0.3s;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
 }
 
-.national-stat-number.tick {
-    color: var(--gold);
-}
-
-.national-stat-label {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
-}
-
-/* Personal side adjustments */
-.daily-goal-personal .daily-goal-bar-wrap {
-    margin-bottom: 10px;
-}
-
-.daily-goal-personal .daily-goal-stats {
-    justify-content: flex-start;
-    text-align: left;
-}
-
-/* When goal is met, hide the CTA */
-.daily-goal-card.goal-complete .daily-goal-cta {
-    background: #2e7d32;
-    border-color: #2e7d32;
+.momentum-cta:hover {
+    background: #9b1b2a;
+    transform: translateY(-1px);
 }
 
 @media (max-width: 600px) {
-    .daily-goal-card {
-        padding: 18px 16px;
+    .momentum-card {
+        padding: 22px 18px 20px;
         border-radius: 12px;
     }
-    .daily-goal-columns {
-        flex-direction: column;
-        gap: 14px;
+    .momentum-counters {
+        gap: 20px;
     }
-    .daily-goal-divider {
-        width: 100%;
-        height: 1px;
-        margin: 0;
+    .momentum-number {
+        font-size: 1.8rem;
     }
-    .daily-goal-stats {
-        gap: 10px;
+    .momentum-headline {
+        font-size: 0.88rem;
     }
 }
 

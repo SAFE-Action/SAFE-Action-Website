@@ -318,7 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
             statsEl.appendChild(s);
         }
 
-        addStat(todayEmails, 'emails today');
+        // Only show personal stats if user has done something
+        if (todayEmails > 0) addStat(todayEmails, 'emails today');
         if (weekTotal > 0) addStat(weekTotal, 'actions this week');
 
         // Comparative stat
@@ -433,8 +434,9 @@ document.addEventListener('DOMContentLoaded', () => {
             var db = firebase.firestore();
 
             var todayEl = document.getElementById('national-today-total');
-            var weekEl = document.getElementById('national-week-total');
-            var alltimeEl = document.getElementById('national-alltime-total');
+            var emailsEl = document.getElementById('national-emails');
+            var callsEl = document.getElementById('national-calls');
+            var headlineEl = document.getElementById('momentum-headline');
             if (!todayEl) return;
 
             // Compute current date keys
@@ -449,18 +451,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             var lastValues = {};
 
-            var nationalCol = document.querySelector('.daily-goal-national');
-            var divider = document.querySelector('.daily-goal-divider');
-
-            function hideNational() {
-                if (nationalCol) nationalCol.style.display = 'none';
-                if (divider) divider.style.display = 'none';
-            }
-
             // Real-time listener
             db.collection('actionStats').doc('counters').onSnapshot(function(doc) {
                 if (!doc.exists) {
-                    hideNational();
+                    if (headlineEl) headlineEl.textContent = 'Be the first to defend science today';
                     return;
                 }
 
@@ -471,16 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 var todayTotal = (data['daily_' + dk + '_total'] || 0);
                 var weekTotal = (data['weekly_' + wk + '_total'] || 0);
                 var allTimeTotal = (data['allTime_total'] || 0);
-
-                // If no stats at all, hide national column
-                if (allTimeTotal === 0) {
-                    hideNational();
-                    return;
-                }
-
-                // Show national column
-                if (nationalCol) nationalCol.style.display = '';
-                if (divider) divider.style.display = '';
 
                 // Animate tick effect when number changes
                 function updateStat(el, key, val) {
@@ -493,16 +477,51 @@ document.addEventListener('DOMContentLoaded', () => {
                     lastValues[key] = val;
                 }
 
-                updateStat(todayEl, 'today', todayTotal);
-                updateStat(weekEl, 'week', weekTotal);
-                updateStat(alltimeEl, 'alltime', allTimeTotal);
+                // Emails and calls breakdown
+                var todayEmails = (data['daily_' + dk + '_emails'] || 0);
+                var todayCalls = (data['daily_' + dk + '_calls'] || 0);
 
-                // Hide individual rows if they're zero
-                todayEl.parentElement.style.display = todayTotal > 0 ? '' : 'none';
-                weekEl.parentElement.style.display = weekTotal > 0 ? '' : 'none';
+                updateStat(todayEl, 'today', todayTotal);
+                if (emailsEl) updateStat(emailsEl, 'emails', todayEmails);
+                if (callsEl) updateStat(callsEl, 'calls', todayCalls);
+
+                // Daily goal progress bar — target grows as people hit it
+                var progressFill = document.getElementById('momentum-progress-fill');
+                var progressLabel = document.getElementById('momentum-progress-label');
+                if (progressFill && progressLabel) {
+                    // Dynamic target: round up to nearest milestone
+                    var dailyGoal;
+                    if (todayTotal < 25) dailyGoal = 25;
+                    else if (todayTotal < 50) dailyGoal = 50;
+                    else if (todayTotal < 100) dailyGoal = 100;
+                    else if (todayTotal < 250) dailyGoal = 250;
+                    else if (todayTotal < 500) dailyGoal = 500;
+                    else if (todayTotal < 1000) dailyGoal = 1000;
+                    else dailyGoal = Math.ceil(todayTotal / 500) * 500 + 500;
+
+                    var pct = Math.min(Math.round((todayTotal / dailyGoal) * 100), 100);
+                    if (todayTotal > 0 && pct < 5) pct = 5;
+
+                    setTimeout(function() {
+                        progressFill.style.width = pct + '%';
+                    }, 300);
+                    progressLabel.textContent = todayTotal.toLocaleString() + ' / ' + dailyGoal.toLocaleString();
+                }
+
+                // Dynamic headline based on activity
+                if (headlineEl) {
+                    if (todayTotal >= 50) {
+                        headlineEl.textContent = 'Americans are defending science right now';
+                    } else if (todayTotal >= 10) {
+                        headlineEl.textContent = 'Momentum is building \u2014 join the movement';
+                    } else if (todayTotal >= 1) {
+                        headlineEl.textContent = 'People are taking action today \u2014 join them';
+                    } else if (allTimeTotal > 0) {
+                        headlineEl.textContent = 'A growing movement for science';
+                    }
+                }
             }, function(err) {
                 console.warn('National stats listener error:', err);
-                hideNational();
             });
         } catch (e) {
             console.warn('Failed to init national stats:', e);
