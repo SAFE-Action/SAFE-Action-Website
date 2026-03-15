@@ -11,26 +11,26 @@
   --bg-card-hover: #1a1a3a;
   --bg-overlay: rgba(10, 10, 26, 0.92);
 
-  --accent-blue: #3b82f6;
-  --accent-blue-dim: rgba(59, 130, 246, 0.3);
-  --accent-purple: #8b5cf6;
-  --accent-purple-dim: rgba(139, 92, 246, 0.3);
-  --accent-gold: #f59e0b;
-  --accent-gold-dim: rgba(245, 158, 11, 0.3);
-  --accent-red: #ef4444;
-  --accent-green: #22c55e;
+  --accent-blue: #60a5fa;
+  --accent-blue-dim: rgba(96, 165, 250, 0.4);
+  --accent-purple: #a78bfa;
+  --accent-purple-dim: rgba(167, 139, 250, 0.4);
+  --accent-gold: #fbbf24;
+  --accent-gold-dim: rgba(251, 191, 36, 0.4);
+  --accent-red: #f87171;
+  --accent-green: #4ade80;
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
 
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-glow: rgba(59, 130, 246, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(96, 165, 250, 0.3);
 
-  --glow-blue: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.1);
-  --glow-gold: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 60px rgba(245, 158, 11, 0.1);
-  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.1);
-  --glow-red: 0 0 12px rgba(239, 68, 68, 0.6);
+  --glow-blue: 0 0 30px rgba(96, 165, 250, 0.6), 0 0 80px rgba(96, 165, 250, 0.2);
+  --glow-gold: 0 0 30px rgba(251, 191, 36, 0.6), 0 0 80px rgba(251, 191, 36, 0.2);
+  --glow-purple: 0 0 30px rgba(167, 139, 250, 0.6), 0 0 80px rgba(167, 139, 250, 0.2);
+  --glow-red: 0 0 20px rgba(248, 113, 113, 0.8);
 
   --font-stack: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
@@ -90,7 +90,7 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 40px;
+  padding: 36px 60px;
   background: linear-gradient(180deg, rgba(16, 16, 42, 0.95) 0%, rgba(10, 10, 26, 0.85) 100%);
   border-bottom: 1px solid var(--border-subtle);
   backdrop-filter: blur(12px);
@@ -126,7 +126,7 @@ body.dashboard-body {
 }
 
 .top-brand {
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -137,7 +137,7 @@ body.dashboard-body {
 }
 
 .top-label {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -153,13 +153,13 @@ body.dashboard-body {
 }
 
 .counter-divider {
-  width: 1px;
-  height: 32px;
-  background: var(--border-subtle);
+  width: 2px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .counter-icon {
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1;
 }
 
@@ -173,14 +173,14 @@ body.dashboard-body {
 }
 
 .counter-value-total {
-  font-size: 4.5rem;
+  font-size: 8rem;
   color: var(--accent-purple) !important;
   text-shadow: var(--glow-purple) !important;
 }
 
 .live-dot {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--accent-red);
   box-shadow: var(--glow-red);
@@ -201,15 +201,15 @@ body.dashboard-body {
 }
 
 .counter-label {
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .counter-value {
-  font-size: 3.5rem;
+  font-size: 6rem;
   font-weight: 900;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -266,31 +266,31 @@ body.dashboard-body {
 
 /* Map dot base */
 .map-dot {
-  r: 3;
-  opacity: 0.9;
+  r: 8;
+  opacity: 0.95;
   transition: r var(--transition-fast), opacity var(--transition-fast);
   cursor: pointer;
 }
 
 .map-dot:hover {
-  r: 6;
+  r: 14;
   opacity: 1;
 }
 
 .map-dot-email {
   fill: var(--accent-blue);
-  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.6));
+  filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.9)) drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
 }
 
 .map-dot-call {
   fill: var(--accent-gold);
-  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6));
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.9)) drop-shadow(0 0 30px rgba(251, 191, 36, 0.4));
 }
 
 /* Ripple expanding circle */
 .map-ripple {
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 3;
   animation: ripple 1.4s ease-out forwards;
   pointer-events: none;
 }
@@ -348,12 +348,12 @@ body.dashboard-body {
 .feed-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 14px 18px;
-  margin-bottom: 8px;
+  gap: 20px;
+  padding: 24px 28px;
+  margin-bottom: 12px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   transition: background var(--transition-fast), border-color var(--transition-fast);
   opacity: 1;
   transform: translateX(0);
@@ -369,10 +369,10 @@ body.dashboard-body {
 }
 
 .feed-icon {
-  font-size: 1.6rem;
+  font-size: 2.8rem;
   line-height: 1;
   flex-shrink: 0;
-  width: 36px;
+  width: 50px;
   text-align: center;
 }
 
@@ -384,7 +384,7 @@ body.dashboard-body {
 }
 
 .feed-city {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
@@ -393,7 +393,7 @@ body.dashboard-body {
 }
 
 .feed-rep {
-  font-size: 0.95rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--text-secondary);
   white-space: nowrap;
@@ -402,7 +402,7 @@ body.dashboard-body {
 }
 
 .feed-bill {
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--text-muted);
   white-space: nowrap;
@@ -424,8 +424,8 @@ body.dashboard-body {
   grid-area: bottom;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px 40px 24px;
+  gap: 20px;
+  padding: 32px 60px 40px;
   background: linear-gradient(0deg, rgba(16, 16, 42, 0.95) 0%, rgba(10, 10, 26, 0.85) 100%);
   border-top: 1px solid var(--border-subtle);
   position: relative;
@@ -454,7 +454,7 @@ body.dashboard-body {
 /* --- Progress Bar --- */
 .progress-bar-wrap {
   width: 100%;
-  height: 24px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-pill);
   overflow: hidden;
@@ -700,12 +700,12 @@ body.dashboard-body {
 /* Map ripple */
 @keyframes ripple {
   0% {
-    r: 3;
-    opacity: 0.8;
-    stroke-width: 2;
+    r: 8;
+    opacity: 0.9;
+    stroke-width: 3;
   }
   100% {
-    r: 30;
+    r: 50;
     opacity: 0;
     stroke-width: 0.5;
   }
@@ -792,25 +792,25 @@ body.dashboard-body {
 
 /* --- Feed Header --- */
 .feed-header {
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-  padding: 4px 8px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .feed-header-dot {
-  width: 6px;
-  height: 6px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--accent-green);
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 16px rgba(74, 222, 128, 0.7);
   animation: pulse-live 2s ease-in-out infinite;
 }
 
@@ -836,22 +836,22 @@ body.dashboard-body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  gap: 8px;
+  height: 300px;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  gap: 16px;
   text-align: center;
 }
 
 .feed-empty-icon {
-  font-size: 2rem;
-  opacity: 0.5;
+  font-size: 4rem;
+  opacity: 0.6;
 }
 
 .feed-empty-sub {
-  font-size: 0.7rem;
+  font-size: 1.3rem;
   color: var(--text-muted);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* --- Progress Section --- */
@@ -869,15 +869,15 @@ body.dashboard-body {
 }
 
 .progress-title {
-  font-size: 0.85rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .progress-count {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--text-primary);
@@ -888,10 +888,10 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
   flex-shrink: 0;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-size: 1.6rem;
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
 }
@@ -938,22 +938,22 @@ body.dashboard-body {
    MAP STATE STYLING (US map fills)
    ============================================================ */
 .dashboard-map-wrap .state {
-  fill: #1a1a3a;
-  stroke: rgba(255, 255, 255, 0.08);
-  stroke-width: 0.5;
+  fill: #1e1e40;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1;
   transition: fill var(--transition-med);
 }
 
 .dashboard-map-wrap .state:hover {
-  fill: #252550;
+  fill: #2a2a5a;
 }
 
 .dashboard-map-wrap .state.has-activity {
-  fill: #1e1e45;
+  fill: #252555;
 }
 
 .dashboard-map-wrap .state.hot {
-  fill: #252560;
+  fill: #303070;
 }
 
 /* ============================================================

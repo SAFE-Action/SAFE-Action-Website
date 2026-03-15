@@ -96,7 +96,7 @@ function addActionToMap(data) {
     var dot = document.createElementNS(ns, 'circle');
     dot.setAttribute('cx', coords.x + offsetX);
     dot.setAttribute('cy', coords.y + offsetY);
-    dot.setAttribute('r', '4');
+    dot.setAttribute('r', '8');
     dot.setAttribute('class', 'map-dot map-dot-' + data.type);
     svg.appendChild(dot);
 
@@ -105,7 +105,7 @@ function addActionToMap(data) {
         var ripple = document.createElementNS(ns, 'circle');
         ripple.setAttribute('cx', coords.x + offsetX);
         ripple.setAttribute('cy', coords.y + offsetY);
-        ripple.setAttribute('r', '4');
+        ripple.setAttribute('r', '8');
         ripple.setAttribute('class', 'map-ripple map-ripple-' + data.type);
         svg.appendChild(ripple);
         // Remove ripple after animation completes
