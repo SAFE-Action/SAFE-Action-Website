@@ -277,29 +277,29 @@ body.dashboard-body {
 
 .map-dot-email {
   fill: var(--accent-blue);
-  filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.95)) drop-shadow(0 0 50px rgba(96, 165, 250, 0.5));
+  filter: drop-shadow(0 0 30px rgba(96, 165, 250, 1)) drop-shadow(0 0 80px rgba(96, 165, 250, 0.6));
 }
 
 .map-dot-call {
   fill: var(--accent-gold);
-  filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.95)) drop-shadow(0 0 50px rgba(251, 191, 36, 0.5));
+  filter: drop-shadow(0 0 30px rgba(251, 191, 36, 1)) drop-shadow(0 0 80px rgba(251, 191, 36, 0.6));
 }
 
 .map-dot-mixed {
   fill: var(--accent-purple);
-  filter: drop-shadow(0 0 18px rgba(167, 139, 250, 0.95)) drop-shadow(0 0 50px rgba(167, 139, 250, 0.5));
+  filter: drop-shadow(0 0 30px rgba(167, 139, 250, 1)) drop-shadow(0 0 80px rgba(167, 139, 250, 0.6));
 }
 
 /* State count label on map */
 .map-count {
   fill: #ffffff;
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 900;
   font-family: var(--font-stack);
   text-anchor: middle;
   dominant-baseline: central;
   pointer-events: none;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
 }
 
 /* Ripple expanding circle */
@@ -475,7 +475,7 @@ body.dashboard-body {
 /* --- Progress Bar --- */
 .progress-bar-wrap {
   width: 100%;
-  height: 56px;
+  height: 70px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-pill);
   overflow: hidden;
@@ -721,14 +721,14 @@ body.dashboard-body {
 /* Map ripple */
 @keyframes ripple {
   0% {
-    r: 20;
+    r: 35;
     opacity: 0.9;
-    stroke-width: 4;
+    stroke-width: 6;
   }
   100% {
-    r: 70;
+    r: 100;
     opacity: 0;
-    stroke-width: 0.5;
+    stroke-width: 1;
   }
 }
 
@@ -892,7 +892,7 @@ body.dashboard-body {
 }
 
 .progress-title {
-  font-size: 2.4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -900,7 +900,7 @@ body.dashboard-body {
 }
 
 .progress-count {
-  font-size: 3.2rem;
+  font-size: 4.5rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--text-primary);
@@ -911,9 +911,9 @@ body.dashboard-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 40px;
   flex-shrink: 0;
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -922,7 +922,7 @@ body.dashboard-body {
 .ticker-sep {
   color: var(--accent-purple);
   opacity: 0.5;
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 .ticker-item strong {

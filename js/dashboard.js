@@ -90,12 +90,13 @@ function getStateColor(stateData) {
 }
 
 function getDotRadius(count) {
-    // Base radius 18, grows with count, caps at 36
-    if (count <= 1) return 18;
-    if (count <= 3) return 22;
-    if (count <= 6) return 26;
-    if (count <= 10) return 30;
-    return 36;
+    // Base radius 30, grows with count, caps at 60
+    if (count <= 1) return 30;
+    if (count <= 3) return 38;
+    if (count <= 6) return 44;
+    if (count <= 10) return 50;
+    if (count <= 20) return 56;
+    return 60;
 }
 
 function addActionToMap(data) {
@@ -141,7 +142,7 @@ function addActionToMap(data) {
     // Update count label (show count when > 1)
     if (st.total > 1) {
         st.label.textContent = st.total;
-        st.label.style.fontSize = (radius > 26 ? 16 : 13) + 'px';
+        st.label.style.fontSize = (radius > 44 ? 24 : 18) + 'px';
     }
 
     // Highlight the state path
