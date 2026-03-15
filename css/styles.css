@@ -5163,6 +5163,24 @@ input.warning {
     background: var(--gold-light, #F0C75E);
     transform: translateY(-1px);
 }
+
+/* Nav donate button — stands out in header nav */
+.nav-donate {
+    margin-left: 8px;
+    padding: 8px 22px !important;
+    border-radius: 6px;
+    font-size: 0.9rem !important;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(201, 168, 76, 0.3);
+}
+.nav-donate:hover {
+    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.5);
+}
+.nav-donate.active {
+    background: var(--gold-light) !important;
+    color: var(--blue-dark) !important;
+}
 .footer-donate-disclosure {
     font-size: 0.75rem;
     color: rgba(255,255,255,0.45);

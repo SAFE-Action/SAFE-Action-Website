@@ -71,6 +71,14 @@
       {
         "source": "/dashboard",
         "destination": "/dashboard.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "/donate",
+        "destination": "/donate.html"
       }
     ],
     "headers": [

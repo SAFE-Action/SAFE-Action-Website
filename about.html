@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - SAFE Action Fund</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3C3B6E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SAFE Action">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon.svg">
+    <link rel="stylesheet" href="css/styles.css?v=63">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* About page hero */
+        .about-hero {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '\2733 \2733 \2733 \2733 \2733';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.1);
+            letter-spacing: 2rem;
+            pointer-events: none;
+        }
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--red);
+        }
+        .about-hero h1 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 3rem;
+            color: var(--white);
+            margin: 0 0 24px;
+            line-height: 1.2;
+        }
+        .about-hero .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        .about-hero .hero-stars {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 28px;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 1.4rem;
+        }
+        .about-hero .hero-stars .star-lg {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* Mission section */
+        .about-mission {
+            background: var(--cream);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .about-mission h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            margin: 0 0 32px;
+        }
+        .about-mission p {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-mid);
+            max-width: 780px;
+            margin: 0 auto;
+            line-height: 1.85;
+        }
+        .about-mission .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+
+        /* About SAFE section */
+        .about-detail {
+            background: var(--off-white);
+            padding: 80px 0;
+        }
+        .about-detail h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--blue-dark);
+            margin: 0 0 12px;
+            text-align: center;
+        }
+        .about-detail .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 36px;
+            border-radius: 2px;
+        }
+        .about-detail-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .about-detail-content p {
+            font-family: var(--font-body);
+            font-size: 1.08rem;
+            color: var(--text-mid);
+            line-height: 1.85;
+            margin: 0 0 24px;
+        }
+        .about-detail-content .about-note {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            opacity: 0.8;
+            font-style: italic;
+            border-left: 3px solid var(--red);
+            padding-left: 16px;
+            margin-top: 32px;
+        }
+
+        /* What we do cards */
+        .about-cards {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        .about-cards h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            text-align: center;
+            margin: 0 0 12px;
+        }
+        .about-cards .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 48px;
+            border-radius: 2px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--red);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .card h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--blue-dark);
+            margin: 0 0 12px;
+        }
+        .card p {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Why this matters */
+        .about-why {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        .about-why h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin: 0 0 12px;
+        }
+        .about-why .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 36px;
+            border-radius: 2px;
+        }
+        .about-why-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .about-why-content p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.85;
+            margin: 0 0 24px;
+        }
+
+        /* Get involved */
+        .about-cta {
+            background: var(--cream);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .about-cta h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            margin: 0 0 12px;
+        }
+        .about-cta .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+        .about-cta > .container > p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-mid);
+            max-width: 720px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+        .about-cta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 40px;
+            max-width: 400px;
+            text-align: left;
+        }
+        .about-cta ul li {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .about-cta ul li::before {
+            content: '\2605';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-size: 0.85rem;
+            top: 12px;
+        }
+        .about-cta .btn-action {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 16px 48px;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: var(--shadow-md);
+        }
+        .about-cta .btn-action:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 72px 0 56px;
+            }
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            .about-hero .hero-subtitle {
+                font-size: 1.05rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .about-mission, .about-detail, .about-cards, .about-why, .about-cta {
+                padding: 56px 0;
+            }
+            .about-mission h2, .about-detail h2, .about-cards h2, .about-why h2, .about-cta h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars background decoration -->
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE Action</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="outreach.html" class="nav-link">Take Action</a>
+                    <a href="directory.html" class="nav-link">Pledges</a>
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="donate.html" class="btn-donate nav-donate">Donate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-stars" aria-hidden="true">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span class="star-lg">&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+            </div>
+            <h1>Protecting science in public policy.</h1>
+            <p class="hero-subtitle">When science is ignored, public health suffers. SAFE Action Fund works to ensure that evidence &mdash; not misinformation &mdash; guides the laws that protect our communities.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="about-mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <div class="section-bar"></div>
+            <p>SAFE Action Fund advances clinical integrity, scientific transparency, and evidence-based public health policy through legislative advocacy, public accountability, and civic engagement. The organization works to ensure that healthcare laws and public health decisions are guided by credible scientific evidence and serve the common good.</p>
+        </div>
+    </section>
+
+    <!-- About SAFE Action Fund Section -->
+    <section class="about-detail">
+        <div class="container">
+            <h2>About SAFE Action Fund</h2>
+            <div class="section-bar"></div>
+            <div class="about-detail-content">
+                <p>SAFE Action Fund advocates for science-based public health policy and works to counter misinformation that threatens clinical integrity and public trust in science. By tracking legislation, engaging citizens, and holding elected officials accountable, the organization works to ensure that public health decisions reflect credible scientific evidence and protect communities.</p>
+                <p>SAFE Action Fund is organized and operated to promote social welfare by advancing clinical integrity, scientific transparency, and evidence-based public health policy. The organization engages in legislative advocacy, candidate accountability, and public education to help ensure that healthcare laws protect the common good and general welfare of the community.</p>
+                <p class="about-note">SAFE Action Fund is a 501(c)(4) social welfare organization. Contributions are not tax deductible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="about-cards">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="section-bar"></div>
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">&#128203;</span>
+                    <h3>Legislative Monitoring</h3>
+                    <p>SAFE Action Fund tracks state and federal legislation that affects public health, scientific research, and healthcare policy.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">&#128300;</span>
+                    <h3>Policy Analysis</h3>
+                    <p>We analyze legislative proposals and public health policy to identify where scientific evidence is being ignored, distorted, or misrepresented.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">&#128499;&#65039;</span>
+                    <h3>Civic Engagement</h3>
+                    <p>We provide tools that allow citizens to contact elected officials and advocate for evidence-based public health decisions.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon" aria-hidden="true">&#9878;&#65039;</span>
+                    <h3>Accountability</h3>
+                    <p>We monitor how policymakers respond to public health legislation and promote transparency in government decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters Section -->
+    <section class="about-why">
+        <div class="container">
+            <h2>Why This Matters</h2>
+            <div class="section-bar"></div>
+            <div class="about-why-content">
+                <p>Public health policies shape the safety, well-being, and resilience of communities across the country. Decisions made by lawmakers affect everything from vaccine policy and medical research to healthcare access and the strength of our public health systems.</p>
+                <p>When misinformation or political pressure overrides credible scientific evidence, the consequences can affect entire communities. SAFE Action Fund exists to ensure that science remains central to public policy discussions and that decision-makers remain accountable to the public good.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <div class="section-bar"></div>
+            <p>Protecting science in public policy requires informed citizens and engaged communities. Join SAFE Action Fund and help ensure that evidence &mdash; not misinformation &mdash; guides the laws that shape our healthcare system.</p>
+            <ul>
+                <li>Track legislation</li>
+                <li>Contact your representatives</li>
+                <li>Stay informed about public health policy</li>
+            </ul>
+            <a href="outreach.html" class="btn-action">Take Action</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9733;</span>
+                    <span>SAFE Action</span>
+                </div>
+                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="outreach.html">Take Action</a>
+                    <a href="directory.html">Pledges</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="about.html">About</a>
+                    <a href="donate.html">Donate</a>
+                </nav>
+                <div class="footer-donate">
+                    <p class="footer-donate-text">Support science-based public health policy</p>
+                    <a href="donate.html" class="btn-donate">Donate</a>
+                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization. Contributions are not tax-deductible.</p>
+                </div>
+                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
