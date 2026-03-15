@@ -241,7 +241,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('email-body').value = LegislationAPI.fillTemplate(window._emailTemplate.body, data);
         } else {
             document.getElementById('email-subject').value = `Please ${b.stance === 'Support' ? 'SUPPORT' : 'OPPOSE'} ${b.billNumber}`;
-            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\nSincerely,\n${data.yourName}\n${data.yourCity}, ${stateName}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`;
+            const cityHasState = data.yourCity.match(/,\s*[A-Z]{2}\s*$/);
+            const signoffLoc = data.yourCity && data.yourCity !== '[Your City]' ? (cityHasState ? data.yourCity : data.yourCity + ', ' + stateName) : '[Your City], ' + stateName;
+            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\nSincerely,\n${data.yourName}\n${signoffLoc}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`;
         }
 
         // Phone

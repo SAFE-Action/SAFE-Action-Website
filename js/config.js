@@ -79,11 +79,11 @@ const SAFE_CONFIG = {
     // 5. Add scienceandfreedom.com to Auth > Settings > Authorized domains
     // 6. Copy config from Project Settings > General > Your apps > Web app
     FIREBASE_CONFIG: {
-        apiKey: 'AIzaSyCrFIiez7bv24UIEeiQQKPCCIyQE4NJVpI',
-        authDomain: 'safe-action-840f0.firebaseapp.com',
-        projectId: 'safe-action-840f0',
-        storageBucket: 'safe-action-840f0.firebasestorage.app',
-        messagingSenderId: '319198603686',
-        appId: '1:319198603686:web:3669c7b74f8a51c5630767'
+        apiKey: 'AIzaSyDQul9vsl7oEj43VSlzLi_S4SXrm3liZWc',
+        authDomain: 'safe-action-website.firebaseapp.com',
+        projectId: 'safe-action-website',
+        storageBucket: 'safe-action-website.firebasestorage.app',
+        messagingSenderId: '1035666846416',
+        appId: '1:1035666846416:web:1c0bac14e6569b4f41a4d5'
     }
 };

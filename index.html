@@ -89,16 +89,42 @@
             <div class="daily-goal-card">
                 <div class="daily-goal-header">
                     <span class="daily-goal-flame" aria-hidden="true">&#128293;</span>
-                    <span class="daily-goal-title" id="daily-goal-title">Today's Goal</span>
+                    <span class="daily-goal-title" id="daily-goal-title">Action Tracker</span>
                     <span class="daily-goal-streak" id="daily-goal-streak"></span>
                 </div>
-                <div class="daily-goal-bar-wrap">
-                    <div class="daily-goal-bar">
-                        <div class="daily-goal-fill" id="daily-goal-fill" style="width:0%"></div>
+                <div class="daily-goal-columns">
+                    <!-- National Stats (left) — hidden until data loads -->
+                    <div class="daily-goal-col daily-goal-national" style="display:none;">
+                        <div class="daily-goal-col-label">Nationally</div>
+                        <div class="daily-goal-national-stats" id="national-stats">
+                            <div class="national-stat-row">
+                                <span class="national-stat-number" id="national-today-total">0</span>
+                                <span class="national-stat-label">actions today</span>
+                            </div>
+                            <div class="national-stat-row">
+                                <span class="national-stat-number" id="national-week-total">0</span>
+                                <span class="national-stat-label">this week</span>
+                            </div>
+                            <div class="national-stat-row">
+                                <span class="national-stat-number" id="national-alltime-total">0</span>
+                                <span class="national-stat-label">all time</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="daily-goal-pct" id="daily-goal-pct">0%</span>
+                    <!-- Divider — hidden until national data loads -->
+                    <div class="daily-goal-divider" style="display:none;"></div>
+                    <!-- Your Impact (right) -->
+                    <div class="daily-goal-col daily-goal-personal">
+                        <div class="daily-goal-col-label">Your Impact</div>
+                        <div class="daily-goal-bar-wrap">
+                            <div class="daily-goal-bar">
+                                <div class="daily-goal-fill" id="daily-goal-fill" style="width:0%"></div>
+                            </div>
+                            <span class="daily-goal-pct" id="daily-goal-pct">0%</span>
+                        </div>
+                        <div class="daily-goal-stats" id="daily-goal-stats"></div>
+                    </div>
                 </div>
-                <div class="daily-goal-stats" id="daily-goal-stats"></div>
                 <div class="daily-goal-message" id="daily-goal-message"></div>
                 <a href="outreach.html" class="btn btn-primary btn-sm daily-goal-cta" id="daily-goal-cta">
                     <span class="btn-star">&#9733;</span> Take Action Now
@@ -299,6 +325,8 @@
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
     <script src="js/config.js"></script>
     <script src="js/sheets.js"></script>
     <script src="js/legislation-api.js"></script>

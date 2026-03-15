@@ -46,7 +46,7 @@ exports.volunteerApply = async (req, res) => {
         });
 
         // Send notification to officer
-        if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+        try {
             const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
             await sendEmail({
                 to: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com',
@@ -62,6 +62,8 @@ exports.volunteerApply = async (req, res) => {
                     <p><a href="${siteUrl}/admin">Review in Admin Panel</a></p>
                 `
             });
+        } catch (emailErr) {
+            console.warn('Failed to send notification email (non-fatal):', emailErr.message);
         }
 
         return res.status(200).json({ success: true, id: docRef.id });

@@ -148,7 +148,7 @@ async function handleApprove(req, res, adminEmail) {
 
     // Step e: Send welcome email with NDA link
     try {
-        const siteUrl = process.env.SITE_URL || 'https://safeaction.org';
+        const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
         const htmlBody = `<h2>Welcome to SAFE Action, ${volunteerName}!</h2>
 <p>Your volunteer application has been approved. We're excited to have you on the team!</p>
 <h3>Next Steps:</h3>

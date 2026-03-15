@@ -6,6 +6,31 @@ const ndaTemplate = require('./nda-template');
 const stream = require('stream');
 
 exports.volunteerSignNda = async (req, res) => {
+    // GET: Lookup volunteer by NDA token (for the NDA signing page)
+    if (req.method === 'GET') {
+        const token = req.query.token;
+        if (!token) {
+            return res.status(400).json({ error: 'Missing token' });
+        }
+        try {
+            const snap = await admin.firestore().collection('volunteers')
+                .where('ndaToken', '==', token).limit(1).get();
+            if (snap.empty) {
+                return res.status(404).json({ error: 'Invalid or expired token' });
+            }
+            const doc = snap.docs[0];
+            const data = doc.data();
+            return res.status(200).json({
+                id: doc.id,
+                name: data.name,
+                ndaSigned: data.ndaSigned || false
+            });
+        } catch (e) {
+            console.error('NDA lookup error:', e);
+            return res.status(500).json({ error: 'Failed to look up token' });
+        }
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }

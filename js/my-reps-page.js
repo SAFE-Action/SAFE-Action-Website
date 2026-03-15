@@ -949,15 +949,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Hide skip button
                 if (skipBtn) skipBtn.style.display = 'none';
 
-                // Only add "Next Rep" button once
+                // Only add "Next Rep" button and template preview once
                 if (!btnArea.querySelector('.next-rep-btn')) {
-                    if (!rep.email) {
-                        var pasteNote = document.createElement('div');
-                        pasteNote.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.7);margin:6px 0;';
-                        pasteNote.textContent = 'The email template has been copied to your clipboard. Paste it into the contact form that just opened.';
-                        btnArea.appendChild(pasteNote);
-                    }
-
                     var nextBtn = document.createElement('button');
                     nextBtn.className = 'btn btn-primary next-rep-btn';
                     nextBtn.textContent = idx + 1 < total ? 'Next Rep (' + (total - idx - 1) + ' remaining)' : 'Finish';
@@ -966,6 +959,41 @@ document.addEventListener('DOMContentLoaded', () => {
                         showStep();
                     });
                     btnArea.appendChild(nextBtn);
+
+                    // Show copyable template preview below buttons
+                    var templatePreview = document.createElement('div');
+                    templatePreview.style.cssText = 'width:100%;flex-basis:100%;order:10;margin-top:8px;';
+                    var toggleBtn = document.createElement('button');
+                    toggleBtn.style.cssText = 'background:none;border:none;color:rgba(255,255,255,0.7);font-size:0.8rem;cursor:pointer;padding:0;text-decoration:underline;';
+                    toggleBtn.textContent = '\u2709 Show email template (copied to clipboard)';
+                    var previewBox = document.createElement('div');
+                    previewBox.style.cssText = 'display:none;margin-top:6px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:12px;max-height:200px;overflow-y:auto;';
+                    var previewText = document.createElement('pre');
+                    previewText.style.cssText = 'white-space:pre-wrap;word-wrap:break-word;font-size:0.8rem;color:rgba(255,255,255,0.85);margin:0;font-family:inherit;';
+                    previewText.textContent = fullText;
+                    var copyAgainBtn = document.createElement('button');
+                    copyAgainBtn.className = 'btn btn-outline';
+                    copyAgainBtn.style.cssText = 'margin-top:8px;font-size:0.75rem;padding:4px 12px;border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);';
+                    copyAgainBtn.textContent = 'Copy Again';
+                    copyAgainBtn.addEventListener('click', function() {
+                        navigator.clipboard.writeText(fullText).catch(function() {});
+                        copyAgainBtn.textContent = '\u2713 Copied!';
+                        setTimeout(function() { copyAgainBtn.textContent = 'Copy Again'; }, 2000);
+                    });
+                    previewBox.appendChild(previewText);
+                    previewBox.appendChild(copyAgainBtn);
+                    toggleBtn.addEventListener('click', function() {
+                        if (previewBox.style.display === 'none') {
+                            previewBox.style.display = '';
+                            toggleBtn.textContent = '\u2709 Hide email template';
+                        } else {
+                            previewBox.style.display = 'none';
+                            toggleBtn.textContent = '\u2709 Show email template (copied to clipboard)';
+                        }
+                    });
+                    templatePreview.appendChild(toggleBtn);
+                    templatePreview.appendChild(previewBox);
+                    btnArea.appendChild(templatePreview);
                 }
             });
             btnArea.appendChild(sendBtn);
@@ -1659,7 +1687,11 @@ document.addEventListener('DOMContentLoaded', () => {
             billNumber: '',
             billTitle: ''
         };
-        var signoff = (userName || '[Your Name]') + '\n' + (userCity ? userCity + ', ' + rep.state : '[Your City, ' + rep.state + ']');
+        // Avoid duplicating state if user already typed "City, ST"
+        var cityStr = userCity || '';
+        var stateAbbr = rep.state || '';
+        var cityHasState = cityStr.match(/,\s*[A-Z]{2}\s*$/);
+        var signoff = (userName || '[Your Name]') + '\n' + (cityStr ? (cityHasState ? cityStr : cityStr + ', ' + stateAbbr) : '[Your City, ' + stateAbbr + ']');
 
         // Use template library if available
         var hasLibrary = typeof EMAIL_TEMPLATES !== 'undefined' && typeof getTemplateIndex === 'function' && typeof fillTemplate === 'function';

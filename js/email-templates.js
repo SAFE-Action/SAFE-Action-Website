@@ -27,10 +27,15 @@ function getTemplateIndex(repName, poolLength, type) {
  *            {billNumber}, {billTitle}, {pledgeUrl}
  */
 function fillTemplate(template, vars) {
+    var city = vars.city || '';
+    var state = vars.state || '';
+    // If city already contains state abbreviation (e.g. "Fallbrook, CA"), don't duplicate
+    var cityHasState = city.match(/,\s*[A-Z]{2}\s*$/);
     return template
+        .replace(/\{city\},?\s*\{state\}/g, cityHasState ? city : (city + ', ' + state))
         .replace(/\{name\}/g, vars.name || '')
-        .replace(/\{city\}/g, vars.city || '')
-        .replace(/\{state\}/g, vars.state || '')
+        .replace(/\{city\}/g, city)
+        .replace(/\{state\}/g, state)
         .replace(/\{title\}/g, vars.title || '')
         .replace(/\{lastName\}/g, vars.lastName || '')
         .replace(/\{fullName\}/g, vars.fullName || '')

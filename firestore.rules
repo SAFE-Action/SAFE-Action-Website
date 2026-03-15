@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Admin collection - only authenticated admins can read their own doc
+    match /admins/{email} {
+      allow read: if request.auth != null && request.auth.token.email == email;
+      allow write: if false; // Admin docs managed via console/CLI only
+    }
+
+    // Volunteers collection
+    match /volunteers/{docId} {
+      // Admins can read all volunteers (checked via admin collection)
+      allow read: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+
+      // NDA page: allow unauthenticated read if querying by ndaToken
+      // (Cloud Functions handle the actual NDA signing securely)
+      allow read: if resource.data.ndaToken != null &&
+        request.auth == null;
+
+      // No client-side writes - all writes go through Cloud Functions
+      allow write: if false;
+    }
+
+    // Queue bills - admins only
+    match /queue_bills/{docId} {
+      allow read, write: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    // Review log - admins only
+    match /review_log/{docId} {
+      allow read, write: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    // Action stats - public read for real-time national counter
+    // Writes only via Cloud Functions (admin SDK)
+    match /actionStats/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

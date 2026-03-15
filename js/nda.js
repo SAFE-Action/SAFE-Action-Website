@@ -1,5 +1,4 @@
 (function() {
-    var db;
     var volunteerId = null;
     var volunteerData = null;
 
@@ -44,10 +43,6 @@
     ];
 
     function init() {
-        if (!SAFE_CONFIG.FIREBASE_CONFIG) return;
-        if (!firebase.apps.length) firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
-        db = firebase.firestore();
-
         var params = new URLSearchParams(window.location.search);
         var token = params.get('token');
         if (!token) {
@@ -55,18 +50,17 @@
             return;
         }
 
-        // Look up volunteer by NDA token
-        db.collection('volunteers').where('ndaToken', '==', token).limit(1).get()
-            .then(function(snap) {
-                if (snap.empty) {
-                    showState('error');
-                    return;
-                }
-                var doc = snap.docs[0];
-                volunteerId = doc.id;
-                volunteerData = doc.data();
+        // Look up volunteer by NDA token via API (no client-side Firestore needed)
+        fetch('/api/volunteer/nda/lookup?token=' + encodeURIComponent(token))
+            .then(function(resp) {
+                if (!resp.ok) throw new Error('Invalid token');
+                return resp.json();
+            })
+            .then(function(data) {
+                volunteerId = data.id;
+                volunteerData = data;
 
-                if (volunteerData.ndaSigned) {
+                if (data.ndaSigned) {
                     showState('already-signed');
                     return;
                 }

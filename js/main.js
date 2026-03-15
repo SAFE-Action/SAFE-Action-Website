@@ -411,8 +411,105 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('safe_action_streak', JSON.stringify(streak));
         }
 
+        // Also report to Cloud Function for national counter
+        fetch('/api/actions/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type: type })
+        }).catch(function() { /* silent fail — localStorage already updated */ });
+
         return result;
     };
+
+    // --- National Stats (real-time Firestore listener) ---
+    function initNationalStats() {
+        if (typeof firebase === 'undefined' || !SAFE_CONFIG || !SAFE_CONFIG.FIREBASE_CONFIG) return;
+
+        try {
+            // Initialize Firebase if not already done
+            if (!firebase.apps.length) {
+                firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
+            }
+            var db = firebase.firestore();
+
+            var todayEl = document.getElementById('national-today-total');
+            var weekEl = document.getElementById('national-week-total');
+            var alltimeEl = document.getElementById('national-alltime-total');
+            if (!todayEl) return;
+
+            // Compute current date keys
+            function dateKey() { return new Date().toISOString().split('T')[0]; }
+            function weekKey() {
+                var now = new Date();
+                var day = now.getDay();
+                var mon = new Date(now);
+                mon.setDate(now.getDate() - ((day + 6) % 7));
+                return mon.toISOString().split('T')[0];
+            }
+
+            var lastValues = {};
+
+            var nationalCol = document.querySelector('.daily-goal-national');
+            var divider = document.querySelector('.daily-goal-divider');
+
+            function hideNational() {
+                if (nationalCol) nationalCol.style.display = 'none';
+                if (divider) divider.style.display = 'none';
+            }
+
+            // Real-time listener
+            db.collection('actionStats').doc('counters').onSnapshot(function(doc) {
+                if (!doc.exists) {
+                    hideNational();
+                    return;
+                }
+
+                var data = doc.data();
+                var dk = dateKey();
+                var wk = weekKey();
+
+                var todayTotal = (data['daily_' + dk + '_total'] || 0);
+                var weekTotal = (data['weekly_' + wk + '_total'] || 0);
+                var allTimeTotal = (data['allTime_total'] || 0);
+
+                // If no stats at all, hide national column
+                if (allTimeTotal === 0) {
+                    hideNational();
+                    return;
+                }
+
+                // Show national column
+                if (nationalCol) nationalCol.style.display = '';
+                if (divider) divider.style.display = '';
+
+                // Animate tick effect when number changes
+                function updateStat(el, key, val) {
+                    var formatted = val.toLocaleString();
+                    if (lastValues[key] !== undefined && lastValues[key] !== val) {
+                        el.classList.add('tick');
+                        setTimeout(function() { el.classList.remove('tick'); }, 600);
+                    }
+                    el.textContent = formatted;
+                    lastValues[key] = val;
+                }
+
+                updateStat(todayEl, 'today', todayTotal);
+                updateStat(weekEl, 'week', weekTotal);
+                updateStat(alltimeEl, 'alltime', allTimeTotal);
+
+                // Hide individual rows if they're zero
+                todayEl.parentElement.style.display = todayTotal > 0 ? '' : 'none';
+                weekEl.parentElement.style.display = weekTotal > 0 ? '' : 'none';
+            }, function(err) {
+                console.warn('National stats listener error:', err);
+                hideNational();
+            });
+        } catch (e) {
+            console.warn('Failed to init national stats:', e);
+        }
+    }
+
+    initNationalStats();
 
     // --- Victory Board ---
     async function initVictoryBoard() {

@@ -1,4 +1,7 @@
 {
+  "firestore": {
+    "rules": "firestore.rules"
+  },
   "hosting": {
     "public": ".",
     "ignore": [
@@ -54,8 +57,16 @@
         "function": "adminVolunteers"
       },
       {
+        "source": "/api/volunteer/nda/lookup",
+        "function": "volunteerSignNda"
+      },
+      {
         "source": "/api/volunteer/*/nda/sign",
         "function": "volunteerSignNda"
+      },
+      {
+        "source": "/api/actions/track",
+        "function": "trackAction"
       }
     ],
     "headers": [
