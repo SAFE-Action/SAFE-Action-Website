@@ -306,6 +306,273 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* Volunteer section */
+        .about-volunteer {
+            background: var(--off-white);
+            padding: 80px 0;
+        }
+        .about-volunteer h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            text-align: center;
+            margin: 0 0 12px;
+        }
+        .about-volunteer .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+        .about-volunteer-intro {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-mid);
+            max-width: 720px;
+            margin: 0 auto 36px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .volunteer-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-md);
+        }
+        .volunteer-form .form-group {
+            margin-bottom: 24px;
+        }
+        .volunteer-form label,
+        .volunteer-form .form-group-label {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 8px;
+        }
+        .volunteer-form input[type="text"],
+        .volunteer-form input[type="email"],
+        .volunteer-form select {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s ease;
+            box-sizing: border-box;
+        }
+        .volunteer-form input:focus,
+        .volunteer-form select:focus {
+            border-color: var(--blue);
+        }
+        .volunteer-form .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .volunteer-form .checkbox-group label {
+            font-weight: 400;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .volunteer-submit {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--blue);
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .volunteer-submit:hover {
+            background: var(--blue-dark);
+            transform: translateY(-1px);
+        }
+        .volunteer-error {
+            background: #fef2f2;
+            color: #c53030;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            display: none;
+        }
+        .volunteer-success {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .volunteer-success h2 {
+            color: #2d6a4f;
+            margin-bottom: 12px;
+        }
+        .volunteer-success p {
+            font-family: var(--font-body);
+            color: var(--text-mid);
+            font-size: 1.05rem;
+        }
+
+        /* Donate section */
+        .about-donate {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        .about-donate h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+            text-align: center;
+            margin: 0 0 12px;
+        }
+        .about-donate .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+        .about-donate-intro {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-mid);
+            max-width: 720px;
+            margin: 0 auto 36px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .about-donate .donation-box {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--off-white);
+            border-radius: var(--radius-lg);
+            padding: 40px 36px;
+            box-shadow: var(--shadow-md);
+        }
+        .about-donate .frequency-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 4px;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid var(--blue);
+        }
+        .about-donate .frequency-toggle button {
+            flex: 1;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: transparent;
+            color: var(--blue);
+        }
+        .about-donate .frequency-toggle button.active {
+            background: var(--blue);
+            color: var(--white);
+        }
+        .about-donate .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .about-donate .amount-card {
+            background: var(--white);
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .about-donate .amount-card:hover {
+            border-color: var(--blue);
+            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.12);
+        }
+        .about-donate .amount-card.selected {
+            border-color: var(--blue);
+            background: rgba(60, 59, 110, 0.06);
+            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.15);
+        }
+        .about-donate .amount-card .amount {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--blue);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .about-donate .amount-card .amount-desc {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--text-mid);
+            line-height: 1.4;
+        }
+        .about-donate .custom-amount {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .about-donate .custom-amount a {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--blue);
+            text-decoration: underline;
+            font-size: 0.95rem;
+        }
+        .about-donate .donate-cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .about-donate .donate-cta-btn:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+        }
+        .about-donate-disclosure {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            text-align: center;
+            max-width: 480px;
+            margin: 24px auto 0;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .about-hero {
@@ -321,11 +588,20 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
-            .about-mission, .about-detail, .about-cards, .about-why, .about-cta {
+            .about-mission, .about-detail, .about-cards, .about-why, .about-cta, .about-volunteer, .about-donate {
                 padding: 56px 0;
             }
-            .about-mission h2, .about-detail h2, .about-cards h2, .about-why h2, .about-cta h2 {
+            .about-mission h2, .about-detail h2, .about-cards h2, .about-why h2, .about-cta h2, .about-volunteer h2, .about-donate h2 {
                 font-size: 1.7rem;
+            }
+            .volunteer-form {
+                padding: 24px 20px;
+            }
+            .about-donate .donation-box {
+                padding: 28px 20px;
+            }
+            .about-donate .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -346,9 +622,7 @@
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="outreach.html" class="nav-link">Take Action</a>
                     <a href="directory.html" class="nav-link">Pledges</a>
-                    <a href="volunteer.html" class="nav-link">Volunteer</a>
                     <a href="about.html" class="nav-link active">About</a>
-                    <a href="donate.html" class="btn-donate nav-donate">Donate</a>
                 </nav>
             </div>
         </div>
@@ -448,6 +722,131 @@
         </div>
     </section>
 
+    <!-- Volunteer Section -->
+    <section class="about-volunteer" id="volunteer">
+        <div class="container">
+            <h2>Volunteer</h2>
+            <div class="section-bar"></div>
+            <p class="about-volunteer-intro">Volunteer your skills to help defend science-based public health policy. Whether you code, design, write, or organize, there's a place for you in the fight for scientific freedom.</p>
+            <form class="volunteer-form" id="volunteer-form">
+                <div id="volunteer-error" class="volunteer-error"></div>
+
+                <div class="form-group">
+                    <label for="volunteer-name">Full Name <span style="color:var(--red)">*</span></label>
+                    <input type="text" id="volunteer-name" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="volunteer-email">Email <span style="color:var(--red)">*</span></label>
+                    <input type="email" id="volunteer-email" name="email" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <p class="form-group-label">Skills <span style="color:var(--red)">*</span></p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+                        <label><input type="checkbox" name="skills" value="Backend Development"> Backend Development</label>
+                        <label><input type="checkbox" name="skills" value="Design"> Design</label>
+                        <label><input type="checkbox" name="skills" value="Product"> Product</label>
+                        <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
+                        <label><input type="checkbox" name="skills" value="Operations"> Operations</label>
+                        <label><input type="checkbox" name="skills" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="volunteer-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
+                    <select id="volunteer-availability" name="availability" required>
+                        <option value="">Select availability...</option>
+                        <option value="5">5 hours/month</option>
+                        <option value="10">10 hours/month</option>
+                        <option value="20">20 hours/month</option>
+                        <option value="40+">40+ hours/month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <p class="form-group-label">Interests</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="Developing Web Apps"> Developing Web Apps</label>
+                        <label><input type="checkbox" name="interests" value="Developing New Tools"> Developing New Tools</label>
+                        <label><input type="checkbox" name="interests" value="Curating Pipeline"> Curating Pipeline</label>
+                        <label><input type="checkbox" name="interests" value="Research"> Research</label>
+                        <label><input type="checkbox" name="interests" value="Community Building"> Community Building</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="volunteer-submit" class="volunteer-submit">Submit Application</button>
+            </form>
+
+            <div id="volunteer-success" class="volunteer-success" style="display:none;">
+                <h2>Application Submitted!</h2>
+                <p>We'll review your application and get back to you soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="about-donate" id="donate">
+        <div class="container">
+            <h2>Support Our Work</h2>
+            <div class="section-bar"></div>
+            <p class="about-donate-intro">Your contribution funds the tools, research, and advocacy that keep science at the center of public health policy. Every dollar helps us build a more informed, engaged democracy.</p>
+            <div class="donation-box">
+                <!-- Frequency Toggle -->
+                <div class="frequency-toggle">
+                    <button class="active" id="btn-onetime" type="button">One-Time</button>
+                    <button id="btn-monthly" type="button">Monthly</button>
+                </div>
+
+                <!-- Amount Cards -->
+                <div class="amount-grid">
+                    <div class="amount-card" data-amount="10">
+                        <span class="amount">$10</span>
+                        <span class="amount-desc">Helps send action alerts to 100 citizens</span>
+                    </div>
+                    <div class="amount-card" data-amount="25">
+                        <span class="amount">$25</span>
+                        <span class="amount-desc">Funds one day of legislative monitoring</span>
+                    </div>
+                    <div class="amount-card selected" data-amount="50">
+                        <span class="amount">$50</span>
+                        <span class="amount-desc">Supports development of new civic tools</span>
+                    </div>
+                    <div class="amount-card" data-amount="100">
+                        <span class="amount">$100</span>
+                        <span class="amount-desc">Covers a week of policy analysis</span>
+                    </div>
+                    <div class="amount-card" data-amount="250">
+                        <span class="amount">$250</span>
+                        <span class="amount-desc">Funds a community outreach campaign</span>
+                    </div>
+                    <div class="amount-card" data-amount="500">
+                        <span class="amount">$500</span>
+                        <span class="amount-desc">Becomes a founding partner for the quarter</span>
+                    </div>
+                </div>
+
+                <!-- Custom Amount -->
+                <div class="custom-amount" id="custom-amount-wrap" style="display:none;">
+                    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+                        <span style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--blue);">$</span>
+                        <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount"
+                            style="width:160px; padding:12px 16px; font-size:1.1rem; font-family:var(--font-body); font-weight:600; border:2px solid var(--blue); border-radius:10px; text-align:center; outline:none;">
+                    </div>
+                </div>
+                <div class="custom-amount">
+                    <a href="#" id="custom-amount-toggle">Enter a custom amount &rarr;</a>
+                </div>
+
+                <!-- Donate Button -->
+                <button type="button" class="donate-cta-btn" id="donate-now-btn">Donate Now</button>
+                <div id="donate-status" style="text-align:center; margin-top:12px; font-family:var(--font-body); font-size:0.95rem; color:var(--text-mid); display:none;"></div>
+            </div>
+            <p class="about-donate-disclosure">SAFE Action Fund is a 501(c)(4) social welfare organization (application pending). Contributions are not tax-deductible.</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -474,6 +873,116 @@
             </div>
         </div>
     </footer>
+<script src="js/config.js"></script>
+<script src="js/volunteer.js"></script>
+<script>
+(function() {
+    var selectedAmount = 50;
+    var frequency = 'onetime';
+    var isCustom = false;
+
+    var btnOnetime = document.getElementById('btn-onetime');
+    var btnMonthly = document.getElementById('btn-monthly');
+
+    if (btnOnetime) {
+        btnOnetime.addEventListener('click', function() {
+            frequency = 'onetime';
+            btnOnetime.classList.add('active');
+            btnMonthly.classList.remove('active');
+        });
+    }
+    if (btnMonthly) {
+        btnMonthly.addEventListener('click', function() {
+            frequency = 'monthly';
+            btnMonthly.classList.add('active');
+            btnOnetime.classList.remove('active');
+        });
+    }
+
+    var cards = document.querySelectorAll('.amount-card');
+    cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            isCustom = false;
+            cards.forEach(function(c) { c.classList.remove('selected'); });
+            card.classList.add('selected');
+            selectedAmount = parseInt(card.getAttribute('data-amount'), 10);
+            var cw = document.getElementById('custom-amount-wrap');
+            if (cw) cw.style.display = 'none';
+        });
+    });
+
+    var customToggle = document.getElementById('custom-amount-toggle');
+    var customWrap = document.getElementById('custom-amount-wrap');
+    var customInput = document.getElementById('custom-amount-input');
+
+    if (customToggle) {
+        customToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            isCustom = true;
+            cards.forEach(function(c) { c.classList.remove('selected'); });
+            if (customWrap) customWrap.style.display = 'block';
+            if (customInput) customInput.focus();
+        });
+    }
+
+    if (customInput) {
+        customInput.addEventListener('input', function() {
+            selectedAmount = parseInt(this.value, 10) || 0;
+        });
+    }
+
+    var donateBtn = document.getElementById('donate-now-btn');
+    var statusEl = document.getElementById('donate-status');
+
+    if (donateBtn) {
+        donateBtn.addEventListener('click', function() {
+            var amt = isCustom ? (parseInt(customInput.value, 10) || 0) : selectedAmount;
+
+            if (!amt || amt < 1) {
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#c53030';
+                statusEl.textContent = 'Please select or enter an amount.';
+                return;
+            }
+
+            if (amt > 50000) {
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#c53030';
+                statusEl.textContent = 'Maximum donation is $50,000. For larger amounts, contact us directly.';
+                return;
+            }
+
+            donateBtn.disabled = true;
+            donateBtn.textContent = 'Redirecting to secure checkout...';
+            statusEl.style.display = 'block';
+            statusEl.style.color = 'var(--text-mid)';
+            statusEl.textContent = 'Creating secure checkout session...';
+
+            fetch('/api/donate/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: amt, frequency: frequency })
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(data) {
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    throw new Error(data.error || 'Failed to create checkout');
+                }
+            })
+            .catch(function(err) {
+                console.error('Checkout error:', err);
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#c53030';
+                statusEl.textContent = 'Something went wrong. Please try again.';
+                donateBtn.disabled = false;
+                donateBtn.textContent = 'Donate Now';
+            });
+        });
+    }
+})();
+</script>
 <script src="js/header.js"></script>
 </body>
 </html>
