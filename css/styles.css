@@ -3415,7 +3415,7 @@ a:hover { color: var(--red); }
 }
 @media (min-width: 900px) {
     .mobile-tip-banner {
-        display: block;
+        display: block !important;
     }
 }
 
