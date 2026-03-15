@@ -160,11 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stateFallback) stateFallback.style.display = 'none';
     }
 
-    // Check for saved address on load
-    const saved = MyRepsHub.getSavedAddress();
-    if (saved && hasCivicKey) {
-        showSavedAddress(saved.address);
-        loadFromSaved(saved);
+    // Check for address in URL query params (e.g., outreach.html?address=123+Main+St)
+    const urlAddress = params.get('address');
+    if (urlAddress && hasCivicKey && addressInput) {
+        addressInput.value = urlAddress;
+        doAddressLookup(urlAddress);
+    } else {
+        // Check for saved address on load
+        const saved = MyRepsHub.getSavedAddress();
+        if (saved && hasCivicKey) {
+            showSavedAddress(saved.address);
+            loadFromSaved(saved);
+        }
     }
 
     // Address form submission
