@@ -165,8 +165,13 @@ function addActionToFeed(data) {
 
     var item = buildFeedItem(data);
 
-    // Insert at top
-    feed.insertBefore(item, feed.firstChild);
+    // During initial load, append (docs arrive newest-first, so append keeps that order)
+    // After initial load, insert at top so new events appear first
+    if (initialLoadDone) {
+        feed.insertBefore(item, feed.firstChild);
+    } else {
+        feed.appendChild(item);
+    }
 
     // Limit feed to 50 items
     while (feed.children.length > 50) {
