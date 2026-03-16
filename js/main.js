@@ -40,13 +40,14 @@ function safeMain() {
         }
 
         // Load bill count and update both "Bills Tracked" and "Bills Engaged"
-        // Bills Engaged = 423 (historical) + total bills in current DB
+        // Bills Engaged = 423 (historical anti-science) + current anti-science bills
         // Dead bills stay counted (total count, not just active)
         LegislationAPI.getLegislation(null).then(function(bills) {
             var active = bills.filter(function(b) { return b.isActive === 'Yes'; }).length;
             setCounter('impact-bills', active || bills.length);
-            // Bills Engaged: historical baseline + all bills ever tracked this cycle
-            setCounter('impact-engaged', HISTORICAL_BILLS_ENGAGED + bills.length);
+            // Bills Engaged: historical + all anti-science bills tracked this cycle
+            var antiScience = bills.filter(function(b) { return b.billType === 'anti'; }).length;
+            setCounter('impact-engaged', HISTORICAL_BILLS_ENGAGED + antiScience);
         }).catch(function(err) { console.warn('SAFE Action bills error:', err); });
     }
 
