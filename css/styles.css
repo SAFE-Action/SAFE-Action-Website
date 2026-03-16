@@ -387,18 +387,26 @@ a:hover { color: var(--red); }
 
 .mobile-nav-link {
     display: block;
-    color: rgba(255,255,255,0.9);
-    font-size: 1.15rem;
-    font-weight: 600;
-    padding: 12px 0;
+    background: var(--red);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 20px;
+    margin: 16px 0;
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 3px 10px rgba(178,34,52,0.3);
     transition: all var(--transition);
 }
 
 .mobile-nav-link:hover {
+    background: #9a1c2e;
     color: var(--white);
-    padding-left: 10px;
+    box-shadow: 0 5px 16px rgba(178,34,52,0.45);
+    transform: translateY(-1px);
 }
 
 /* Responsive mega-nav */
