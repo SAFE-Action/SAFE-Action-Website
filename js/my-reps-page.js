@@ -734,6 +734,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function emailAllReps(reps, startBtn, bar) {
+        // Sort: direct emails first, then contact forms, then others
+        // This keeps users on-site longer before navigating away
+        reps = reps.slice().sort(function(a, b) {
+            return getBestContactMethod(a).priority - getBestContactMethod(b).priority;
+        });
+
         var idx = 0;
         var total = reps.length;
         var userName = getUserName();
