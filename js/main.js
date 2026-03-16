@@ -10,15 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Impact Counters ---
     function initImpactCounters() {
-        // Load stored action counts (localStorage for demo, Firebase in production)
-        const stored = getActionCounts();
-        updateCounterDisplay('impact-actions', stored.total);
-        updateCounterDisplay('impact-emails', stored.emails);
-        updateCounterDisplay('impact-calls', stored.calls);
+        var BASE_ACTIONS = SAFE_CONFIG.BASE_ACTIONS;
+        var BASE_EMAILS = SAFE_CONFIG.BASE_EMAILS;
+        var BASE_CALLS = SAFE_CONFIG.BASE_CALLS;
+
+        // Show base values immediately, then update from Firestore
+        updateCounterDisplay('impact-actions', BASE_ACTIONS);
+        updateCounterDisplay('impact-emails', BASE_EMAILS);
+        updateCounterDisplay('impact-calls', BASE_CALLS);
         updateCounterDisplay('impact-engaged', 423);
 
         // Reps contacted = known baseline, grows as platform usage increases
         updateCounterDisplay('impact-reps', 428);
+
+        // Live update from Firestore (authoritative source)
+        if (typeof firebase !== 'undefined' && firebase.firestore) {
+            var db = firebase.firestore();
+            db.collection('actionStats').doc('counters').onSnapshot(function(doc) {
+                if (!doc.exists) return;
+                var data = doc.data();
+                var total = BASE_ACTIONS + (data.allTime_total || 0);
+                var emails = BASE_EMAILS + (data.allTime_emails || 0);
+                var calls = BASE_CALLS + (data.allTime_calls || 0);
+                updateCounterDisplay('impact-actions', total);
+                updateCounterDisplay('impact-emails', emails);
+                updateCounterDisplay('impact-calls', calls);
+                // Also sync to localStorage for offline fallback
+                localStorage.setItem('safe_action_counts', JSON.stringify({ total: total, emails: emails, calls: calls }));
+            }, function(err) { console.warn('Firestore listener error:', err); });
+        }
 
         // Load bill count from data file (async)
         LegislationAPI.getLegislation(null).then(bills => {
@@ -28,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-animate just this counter since data arrived async
             const el = document.getElementById('impact-bills');
             if (el) animateSingleCounter(el.querySelector('.counter'), count);
-        }).catch(() => {});
+        }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
 
         // Animate counters when they scroll into view
         const observer = new IntersectionObserver((entries) => {
@@ -196,9 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function getActionCounts() {
-        const BASE_ACTIONS = 1128;
-        const BASE_EMAILS = 743;
-        const BASE_CALLS = 385;
+        var BASE_ACTIONS = SAFE_CONFIG.BASE_ACTIONS;
+        var BASE_EMAILS = SAFE_CONFIG.BASE_EMAILS;
+        var BASE_CALLS = SAFE_CONFIG.BASE_CALLS;
 
         try {
             const stored = JSON.parse(localStorage.getItem('safe_action_counts'));

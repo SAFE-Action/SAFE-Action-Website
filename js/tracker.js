@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMultiBill();
 
     function initTrackerImpact() {
-        const BASE = { total: 1128, emails: 743, calls: 385 };
+        const BASE = { total: SAFE_CONFIG.BASE_ACTIONS, emails: SAFE_CONFIG.BASE_EMAILS, calls: SAFE_CONFIG.BASE_CALLS };
         try {
             const stored = JSON.parse(localStorage.getItem('safe_action_counts'));
             if (stored && stored.total >= BASE.total) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Load stopped bills count
         LegislationAPI.getVictories().then(victories => {
             setImpact('tracker-impact-stopped', victories.length);
-        }).catch(() => {});
+        }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
     }
 
     function init() {

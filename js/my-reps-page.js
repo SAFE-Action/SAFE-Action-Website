@@ -678,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scriptBox.addEventListener('click', function() {
                 navigator.clipboard.writeText(script).then(function() {
                     showToast('Phone script copied!');
-                }).catch(function() {});
+                }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
             });
             card.appendChild(scriptBox);
 
@@ -937,7 +937,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             sendBtn.addEventListener('click', function() {
                 // Copy to clipboard
-                navigator.clipboard.writeText(fullText).catch(function() {});
+                navigator.clipboard.writeText(fullText).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
                 logContact(rep, 'email');
 
                 if (contact.method === 'email') {
@@ -983,7 +983,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     copyAgainBtn.style.cssText = 'margin-top:8px;font-size:0.75rem;padding:4px 12px;border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);';
                     copyAgainBtn.textContent = 'Copy Again';
                     copyAgainBtn.addEventListener('click', function() {
-                        navigator.clipboard.writeText(fullText).catch(function() {});
+                        navigator.clipboard.writeText(fullText).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
                         copyAgainBtn.textContent = '\u2713 Copied!';
                         setTimeout(function() { copyAgainBtn.textContent = 'Copy Again'; }, 2000);
                     });
@@ -1128,7 +1128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             sendBtn.addEventListener('click', function() {
-                navigator.clipboard.writeText(fullText).catch(function() {});
+                navigator.clipboard.writeText(fullText).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
 
                 if (cand.email) {
                     showToast('Email opening for ' + cand.name);
@@ -1275,7 +1275,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emailBtn.textContent = 'Email';
             emailBtn.addEventListener('click', function() {
                 var ft = 'Subject: ' + repTemplate.subject + '\n\n' + repTemplate.body;
-                navigator.clipboard.writeText(ft).catch(function() {});
+                navigator.clipboard.writeText(ft).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
                 logContact(rep, 'email');
                 showToast('Email template copied & opening for ' + rep.name);
                 trackAction('email');
@@ -1770,7 +1770,7 @@ Thank you for taking my call.`;
         var fullText = 'Subject: ' + template.subject + '\n\n' + template.body;
 
         // Always copy to clipboard
-        navigator.clipboard.writeText(fullText).catch(function() {});
+        navigator.clipboard.writeText(fullText).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
 
         if (rep.email) {
             var mailtoUrl = 'mailto:' + rep.email + '?subject=' + encodeURIComponent(template.subject) + '&body=' + encodeURIComponent(template.body);
@@ -1829,9 +1829,9 @@ Thank you for taking my call.`;
 
         try {
             // Use the same localStorage key as main.js so homepage counters update
-            var BASE_ACTIONS = 1128;
-            var BASE_EMAILS = 743;
-            var BASE_CALLS = 385;
+            var BASE_ACTIONS = SAFE_CONFIG.BASE_ACTIONS;
+            var BASE_EMAILS = SAFE_CONFIG.BASE_EMAILS;
+            var BASE_CALLS = SAFE_CONFIG.BASE_CALLS;
             var stored = JSON.parse(localStorage.getItem('safe_action_counts'));
             if (!stored || stored.total < BASE_ACTIONS) {
                 stored = { total: BASE_ACTIONS, emails: BASE_EMAILS, calls: BASE_CALLS };
@@ -1887,7 +1887,7 @@ Thank you for taking my call.`;
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(meta)
-        }).catch(function() {});
+        }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
     }
 });
 

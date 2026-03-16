@@ -78,6 +78,11 @@ const SAFE_CONFIG = {
     // 4. Enable Cloud Firestore (us-central1)
     // 5. Add scienceandfreedom.com to Auth > Settings > Authorized domains
     // 6. Copy config from Project Settings > General > Your apps > Web app
+    // Base action counts (pre-launch baseline)
+    BASE_ACTIONS: 1128,
+    BASE_EMAILS: 743,
+    BASE_CALLS: 385,
+
     FIREBASE_CONFIG: {
         apiKey: 'AIzaSyDQul9vsl7oEj43VSlzLi_S4SXrm3liZWc',
         authDomain: 'safe-action-website.firebaseapp.com',

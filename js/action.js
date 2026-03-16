@@ -384,9 +384,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             window.SAFE_ACTIONS.trackAction(type);
         } else {
             // Standalone tracking
-            const BASE = 1128;
+            var BASE = SAFE_CONFIG.BASE_ACTIONS;
             try {
-                const stored = JSON.parse(localStorage.getItem('safe_action_counts')) || { total: BASE, emails: 743, calls: 385 };
+                const stored = JSON.parse(localStorage.getItem('safe_action_counts')) || { total: BASE, emails: SAFE_CONFIG.BASE_EMAILS, calls: SAFE_CONFIG.BASE_CALLS };
                 stored.total++;
                 if (type === 'email') stored.emails++;
                 if (type === 'call') stored.calls++;
@@ -414,15 +414,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(meta)
-        }).catch(function() {});
+        }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
     }
 
     function getActionCount() {
         try {
             const stored = JSON.parse(localStorage.getItem('safe_action_counts'));
-            return stored ? stored.total : 1128;
+            return stored ? stored.total : SAFE_CONFIG.BASE_ACTIONS;
         } catch (e) {
-            return 1128;
+            return SAFE_CONFIG.BASE_ACTIONS;
         }
     }
 

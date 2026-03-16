@@ -34,7 +34,7 @@
                             <a href="outreach.html">&#128231; Email Your Reps</a>
                             <a href="outreach.html">&#128222; Call/Text Reps</a>
                             <hr>
-                            <a href="action.html">&#128200; Action Tracker</a>
+                            <a href="outreach.html">&#128200; Action Tracker</a>
                         </div>
                     </div>
                     <div class="nav2-item">
@@ -75,7 +75,7 @@
             <span class="mobile-nav-section-title">Take Action</span>
             <a href="outreach.html">&#128231; Email Your Reps</a>
             <a href="outreach.html">&#128222; Call/Text Reps</a>
-            <a href="action.html">&#128200; Action Tracker</a>
+            <a href="outreach.html">&#128200; Action Tracker</a>
         </div>
         <div class="mobile-nav-section">
             <span class="mobile-nav-section-title">Vaccine Pledges</span>
@@ -130,7 +130,7 @@
         <div class="pledge-ticker-label">Latest Pledges</div>
         <div class="pledge-ticker-track" id="pledge-ticker-track">
             <div class="pledge-ticker-content">
-                <span class="pledge-ticker-item"><span class="ticker-detail">Loading pledges...</span></span>
+                <span class="pledge-ticker-item"><span class="ticker-detail">Fetching latest pledges...</span></span>
             </div>
         </div>
     </section>
@@ -186,11 +186,16 @@
     <section class="pledge-showcase">
         <div class="container">
             <div class="pledge-showcase-header">
-                <h2>Leaders Taking the Pledge <span class="pledge-count-badge" id="pledge-total-count">0</span></h2>
+                <h2>Leaders Taking the Pledge <span class="pledge-count-badge" id="pledge-total-count" style="display:none;"></span></h2>
                 <p>Public officials and candidates committing to evidence-based policy</p>
             </div>
             <div class="pledge-showcase-scroll" id="pledge-showcase-cards">
-                <p style="color: var(--text-muted); padding: 2rem;">Loading pledges...</p>
+                <div class="pledge-empty-state" id="pledge-empty-state">
+                    <div class="pledge-empty-icon">&#9733;</div>
+                    <p class="pledge-empty-headline">No pledges yet &mdash; be part of the movement that changes that.</p>
+                    <p class="pledge-empty-body">Contact your representatives and ask them to take the SAFE Action pledge to support evidence-based policy.</p>
+                    <a href="outreach.html" class="pledge-empty-cta">Ask Your Rep to Pledge &rarr;</a>
+                </div>
             </div>
             <div class="pledge-showcase-footer">
                 <a href="directory.html">View All Pledges &rarr;</a>
@@ -255,29 +260,53 @@
     </section>
 
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    <span class="logo-icon">&#9733;</span>
-                    <span>SAFE Action</span>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-col footer-col-brand">
+                        <div class="footer-brand">
+                            <span class="logo-icon">&#9733;</span>
+                            <span>SAFE Action</span>
+                        </div>
+                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
+                        <p class="footer-opensource">Open source &mdash; view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Take Action</h4>
+                        <ul class="footer-col-links">
+                            <li><a href="outreach.html">Email Your Reps</a></li>
+                            <li><a href="outreach.html">Call / Text Reps</a></li>
+                            <li><a href="action.html">Action Tracker</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-col-links">
+                            <li><a href="directory.html">Pledge Directory</a></li>
+                            <li><a href="quiz.html">Candidate Quiz</a></li>
+                            <li><a href="media.html">Media Kit</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul class="footer-col-links">
+                            <li><a href="about.html">Our Mission</a></li>
+                            <li><a href="about.html#volunteer">Volunteer</a></li>
+                            <li><a href="about.html#donate">Donate</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="footer-text">Science and Freedom for Everyone Action Fund</p>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="outreach.html">Take Action</a>
-                    <a href="directory.html">Pledges</a>
-                    <a href="volunteer.html">Volunteer</a>
-                    <a href="about.html">About</a>
-                    <a href="donate.html">Donate</a>
-                    <a href="media.html">Media</a>
-                    <a href="#" class="report-email-link" onclick="openReportEmailModal();return false;">Report Invalid Email</a>
-                </nav>
-                <div class="footer-donate">
-                    <p class="footer-donate-text">Support science-based public health policy</p>
-                    <a href="donate.html" class="btn-donate">Donate</a>
-                    <p class="footer-donate-disclosure">SAFE Action is a 501(c)(4) social welfare organization (application pending). Contributions are not tax-deductible.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+                    <div class="footer-bottom-right">
+                        <span>Licensed under GPLv3</span>
+                        <a href="#" onclick="openReportEmailModal();return false;">Report Invalid Email</a>
+                    </div>
                 </div>
-                <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund. Promoting social welfare through civic engagement and public education on science and health policy.</p>
             </div>
         </div>
     </footer>
@@ -315,13 +344,14 @@ document.getElementById('hero-address-form').addEventListener('submit', function
         .then(function(snapshot) {
             var container = document.getElementById('pledge-showcase-cards');
             var countBadge = document.getElementById('pledge-total-count');
+            var emptyState = document.getElementById('pledge-empty-state');
             if (snapshot.empty) {
-                container.textContent = 'No pledges yet — be the first!';
-                container.style.padding = '2rem';
-                container.style.color = 'var(--text-muted)';
+                // Show the empty-state placeholder (already in HTML)
+                if (emptyState) emptyState.style.display = '';
+                countBadge.style.display = 'none';
                 return;
             }
-            // Clear loading text
+            // Clear empty state and show cards
             while (container.firstChild) container.removeChild(container.firstChild);
 
             snapshot.forEach(function(doc) {
@@ -368,11 +398,17 @@ document.getElementById('hero-address-form').addEventListener('submit', function
 
             // Update total count
             db.collection('candidateResponses').get().then(function(all) {
-                countBadge.textContent = all.size + ' pledges';
+                if (all.size > 0) {
+                    countBadge.textContent = all.size + ' pledges';
+                    countBadge.style.display = '';
+                }
             });
         })
         .catch(function(err) {
             console.warn('Pledge showcase error:', err);
+            // On error, show empty state placeholder instead of loading text
+            var emptyState = document.getElementById('pledge-empty-state');
+            if (emptyState) emptyState.style.display = '';
         });
 })();
 </script>
