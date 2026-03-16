@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#3C3B6E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=75">
+    <link rel="stylesheet" href="css/styles.css?v=78">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -190,6 +190,7 @@
             <div id="bb-empty" class="empty-state" style="display:none;">
                 <p>No bills match your filters.</p>
             </div>
+            <button id="bb-load-more" class="btn btn-outline" style="display:none;margin:2em auto;width:100%;max-width:300px;">Load More Bills</button>
             <div id="bb-loading" class="loading-spinner" style="display:none;">
                 <div class="spinner"></div>
                 <p>Loading legislation data...</p>
@@ -248,9 +249,16 @@
         </div>
     </footer>
 
-    <script src="js/config.js?v=75"></script>
-    <script src="js/legislation-api.js?v=75"></script>
-    <script src="js/my-reps-page.js?v=75"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="js/config.js?v=78"></script>
+    <script>
+    if (typeof firebase !== 'undefined' && typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG) {
+        firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
+    }
+    </script>
+    <script src="js/legislation-api.js?v=78"></script>
+    <script src="js/my-reps-page.js?v=78"></script>
     <script src="js/pwa.js"></script>
     <script>
     // Auto-init bill browser on this standalone page

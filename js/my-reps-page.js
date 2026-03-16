@@ -1897,10 +1897,18 @@ Thank you for taking my call.`;
 var BillBrowser = {
     _initialized: false,
     _allBills: [],
+    _lastDoc: null,
+    _hasMore: false,
+    _loading: false,
+    _useFirestore: true,
+    PAGE_SIZE: 50,
 
     init: function() {
         if (this._initialized) return;
         this._initialized = true;
+
+        // Detect Firestore availability
+        this._useFirestore = (typeof firebase !== 'undefined' && typeof firebase.firestore === 'function');
 
         // Populate state dropdown
         var stateSelect = document.getElementById('bb-state');
@@ -1918,23 +1926,41 @@ var BillBrowser = {
         // Restore filters from URL params (for bookmarkable links)
         this._restoreFiltersFromURL();
 
-        // Add filter listeners — sync to URL on change
+        // Add filter listeners — sync to URL on change, reset pagination
         var self = this;
         ['bb-state', 'bb-stance', 'bb-status', 'bb-impact', 'bb-category'].forEach(function(id) {
             var el = document.getElementById(id);
-            if (el) el.addEventListener('change', function() { self._syncFiltersToURL(); self.render(); });
+            if (el) el.addEventListener('change', function() {
+                self._syncFiltersToURL();
+                self._lastDoc = null;
+                self._allBills = [];
+                self.loadBills(false);
+            });
         });
         var searchEl = document.getElementById('bb-search');
         if (searchEl) {
             var debounceTimer;
             searchEl.addEventListener('input', function() {
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(function() { self._syncFiltersToURL(); self.render(); }, 300);
+                debounceTimer = setTimeout(function() {
+                    self._syncFiltersToURL();
+                    self._lastDoc = null;
+                    self._allBills = [];
+                    self.loadBills(false);
+                }, 300);
+            });
+        }
+
+        // Load More button
+        var loadMoreBtn = document.getElementById('bb-load-more');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                self.loadBills(true);
             });
         }
 
         // Load data
-        this.loadBills();
+        this.loadBills(false);
     },
 
     _filterParamMap: { 'bb-state': 'state', 'bb-stance': 'type', 'bb-status': 'status', 'bb-impact': 'priority', 'bb-category': 'category', 'bb-search': 'q' },
@@ -1967,46 +1993,96 @@ var BillBrowser = {
         history.replaceState(null, '', newURL);
     },
 
-    loadBills: function() {
+    _getFilters: function() {
+        return {
+            state: (document.getElementById('bb-state') || {}).value || '',
+            billType: (document.getElementById('bb-stance') || {}).value || '',
+            status: (document.getElementById('bb-status') || {}).value || '',
+            impact: (document.getElementById('bb-impact') || {}).value || '',
+            category: (document.getElementById('bb-category') || {}).value || '',
+            search: ((document.getElementById('bb-search') || {}).value || '').trim()
+        };
+    },
+
+    loadBills: function(append) {
+        if (this._loading) return;
+        this._loading = true;
+
         var self = this;
         var loading = document.getElementById('bb-loading');
         if (loading) loading.style.display = '';
 
         if (typeof LegislationAPI === 'undefined') {
+            this._loading = false;
             if (loading) loading.style.display = 'none';
             return;
         }
 
-        LegislationAPI.getLegislation(null).then(function(bills) {
-            self._allBills = bills || [];
-            if (loading) loading.style.display = 'none';
-            self.render();
-        }).catch(function(err) {
-            console.error('Bill browser load error:', err);
-            if (loading) loading.style.display = 'none';
-            self.render();
-        });
+        var filters = this._getFilters();
+        var startAfter = append ? this._lastDoc : null;
+
+        if (this._useFirestore && typeof LegislationAPI.queryBills === 'function') {
+            LegislationAPI.queryBills(filters, this.PAGE_SIZE, startAfter).then(function(result) {
+                self._loading = false;
+                if (loading) loading.style.display = 'none';
+
+                if (append) {
+                    self._allBills = self._allBills.concat(result.bills);
+                } else {
+                    self._allBills = result.bills;
+                }
+                self._lastDoc = result.lastDoc;
+                self._hasMore = result.hasMore;
+                self.render();
+            }).catch(function(err) {
+                console.error('Firestore queryBills failed, switching to static:', err);
+                self._useFirestore = false;
+                self._loading = false;
+                self._lastDoc = null;
+                self._allBills = [];
+                self.loadBills(false);
+            });
+        } else {
+            // Static fallback — load all bills, filter client-side
+            LegislationAPI.getLegislation(null).then(function(bills) {
+                self._loading = false;
+                if (loading) loading.style.display = 'none';
+                self._allBills = bills || [];
+                self._hasMore = false;
+                self._lastDoc = null;
+                self.render();
+            }).catch(function(err) {
+                console.error('Bill browser load error:', err);
+                self._loading = false;
+                if (loading) loading.style.display = 'none';
+                self.render();
+            });
+        }
     },
 
     getFilteredBills: function() {
-        var state = (document.getElementById('bb-state') || {}).value || '';
-        var stance = (document.getElementById('bb-stance') || {}).value || '';
-        var status = (document.getElementById('bb-status') || {}).value || '';
-        var impact = (document.getElementById('bb-impact') || {}).value || '';
-        var category = (document.getElementById('bb-category') || {}).value || '';
-        var search = ((document.getElementById('bb-search') || {}).value || '').toLowerCase().trim();
+        // If using Firestore pagination, bills are already filtered server-side
+        if (this._useFirestore) {
+            return this._allBills;
+        }
 
+        // Static fallback: client-side filtering
+        var filters = this._getFilters();
         return this._allBills.filter(function(bill) {
-            if (state && bill.state !== state) return false;
-            if (stance && bill.billType !== stance) return false;
-            if (status === 'active') {
+            if (filters.state && bill.state !== filters.state) return false;
+            if (filters.billType && bill.billType !== filters.billType) return false;
+            if (filters.status === 'active') {
                 if (bill.isActive !== 'Yes') return false;
-            } else if (status && bill.status !== status) {
+            } else if (filters.status === 'dead') {
+                var deadStatuses = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.DEAD_STATUSES) || [];
+                if (deadStatuses.indexOf(bill.status) === -1) return false;
+            } else if (filters.status && bill.status !== filters.status) {
                 return false;
             }
-            if (impact && bill.impact !== impact) return false;
-            if (category && bill.category !== category) return false;
-            if (search) {
+            if (filters.impact && bill.impact !== filters.impact) return false;
+            if (filters.category && bill.category !== filters.category) return false;
+            if (filters.search) {
+                var searchLower = filters.search.toLowerCase();
                 var haystack = [
                     bill.billNumber || '',
                     bill.title || '',
@@ -2014,7 +2090,7 @@ var BillBrowser = {
                     bill.sponsor || '',
                     bill.state || ''
                 ].join(' ').toLowerCase();
-                if (haystack.indexOf(search) === -1) return false;
+                if (haystack.indexOf(searchLower) === -1) return false;
             }
             return true;
         });
@@ -2024,20 +2100,25 @@ var BillBrowser = {
         var grid = document.getElementById('bb-grid');
         var countEl = document.getElementById('bb-count');
         var emptyEl = document.getElementById('bb-empty');
+        var loadMoreBtn = document.getElementById('bb-load-more');
         if (!grid) return;
 
         var bills = this.getFilteredBills();
 
         // Update count
         if (countEl) {
-            countEl.textContent = bills.length + ' bill' + (bills.length !== 1 ? 's' : '') + ' found';
+            var countText = bills.length + (this._hasMore ? '+' : '') + ' bill' + (bills.length !== 1 ? 's' : '') + ' found';
+            countEl.textContent = countText;
         }
 
         // Clear grid
-        grid.innerHTML = '';
+        while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
+        }
 
         if (bills.length === 0) {
             if (emptyEl) emptyEl.style.display = '';
+            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             return;
         }
         if (emptyEl) emptyEl.style.display = 'none';
@@ -2056,6 +2137,11 @@ var BillBrowser = {
         bills.forEach(function(bill) {
             grid.appendChild(self.buildCard(bill));
         });
+
+        // Show/hide Load More button
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display = this._hasMore ? '' : 'none';
+        }
     },
 
     buildCard: function(bill) {
