@@ -22,6 +22,7 @@ var audioCtx = null;
 var isMuted = false;
 
 // State centroid coordinates for SVG viewBox "0 0 960 600"
+// Fallback coords used if D3 map hasn't loaded yet; overridden by computed centroids
 var STATE_COORDS = {
     'AL': {x: 680, y: 420},
     'AK': {x: 150, y: 530},
@@ -75,6 +76,17 @@ var STATE_COORDS = {
     'WY': {x: 300, y: 230},
     'DC': {x: 820, y: 290}
 };
+
+// Override with D3-computed centroids when the map finishes rendering
+if (window._stateCoords) {
+    Object.keys(window._stateCoords).forEach(function(k) { STATE_COORDS[k] = window._stateCoords[k]; });
+} else {
+    document.addEventListener('map-ready', function() {
+        if (window._stateCoords) {
+            Object.keys(window._stateCoords).forEach(function(k) { STATE_COORDS[k] = window._stateCoords[k]; });
+        }
+    });
+}
 
 // ---------------------
 // Map Rendering — Stacking Dots
