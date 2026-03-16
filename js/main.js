@@ -23,7 +23,8 @@ function safeMain() {
         setCounter('impact-actions', BASE_ACTIONS);
         setCounter('impact-emails', BASE_EMAILS);
         setCounter('impact-calls', BASE_CALLS);
-        setCounter('impact-engaged', 423);
+        var HISTORICAL_BILLS_ENGAGED = 423; // Last year's baseline - never decreases
+        setCounter('impact-engaged', HISTORICAL_BILLS_ENGAGED);
         setCounter('impact-reps', 428);
 
         // Live update from Firestore (authoritative source)
@@ -38,10 +39,14 @@ function safeMain() {
             }, function(err) { console.warn('Firestore listener error:', err); });
         }
 
-        // Load bill count from data file (async)
+        // Load bill count and update both "Bills Tracked" and "Bills Engaged"
+        // Bills Engaged = 423 (historical) + total bills in current DB
+        // Dead bills stay counted (total count, not just active)
         LegislationAPI.getLegislation(null).then(function(bills) {
             var active = bills.filter(function(b) { return b.isActive === 'Yes'; }).length;
             setCounter('impact-bills', active || bills.length);
+            // Bills Engaged: historical baseline + all bills ever tracked this cycle
+            setCounter('impact-engaged', HISTORICAL_BILLS_ENGAGED + bills.length);
         }).catch(function(err) { console.warn('SAFE Action bills error:', err); });
     }
 
