@@ -103,7 +103,6 @@
         <div class="container">
             <button class="sub-nav-link active" data-tab="my-reps">My Representatives</button>
             <button class="sub-nav-link" data-tab="browse-bills">Browse Bills</button>
-            <button class="sub-nav-link" data-tab="take-pledge">Take the Pledge</button>
         </div>
     </div>
 
@@ -183,16 +182,6 @@
                 <div id="rep-grid" class="rep-hub-grid"></div>
             </div>
 
-            <!-- CTA -->
-            <div class="signup-section" style="text-align:center;">
-                <h2>Are You an Elected Official?</h2>
-                <p>Take the SAFE Action pledge and show your constituents you support science.</p>
-                <a href="#take-pledge" class="btn btn-primary btn-lg" onclick="var btn=document.querySelector('[data-tab=&quot;take-pledge&quot;]');if(btn){btn.click();window.scrollTo({top:0,behavior:'smooth'});}return false;">
-                    <span class="btn-star">&#9733;</span>
-                    Take the Pledge
-                    <span class="btn-star">&#9733;</span>
-                </a>
-            </div>
         </div>
     </section>
     </div>
@@ -299,193 +288,7 @@
         </section>
     </div>
 
-    <div id="tab-take-pledge" class="tab-panel" style="display:none;">
-    <section class="quiz-section">
-        <div class="container">
-            <div class="pledge-form-wrap">
-                <h2 style="text-align:center;margin-bottom:0.25em;">SAFE Action Candidate Pledge</h2>
-                <p style="text-align:center;color:#666;margin-bottom:2em;">Are you an elected official or candidate? Fill out the form below to let voters know where you stand on science and public health.</p>
-            </div>
-
-            <form id="pledge-form" class="pledge-form" novalidate>
-
-                <!-- Candidate Information -->
-                <div class="form-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">1</span>
-                        Candidate Information
-                    </h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name <span class="required">*</span></label>
-                            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
-                            <span class="error-msg" id="firstName-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name <span class="required">*</span></label>
-                            <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
-                            <span class="error-msg" id="lastName-error"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Official Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="your.name@official-office.gov">
-                            <span class="error-msg" id="email-error"></span>
-                            <div class="email-warning" id="email-warning">
-                                For verification, please use your official government or office email address. Submissions from personal email addresses (gmail.com, yahoo.com, etc.) may require additional verification.
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Official Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                            <span class="error-msg" id="phone-error"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="party">Party <span class="required">*</span></label>
-                            <select id="party" name="party" required>
-                                <option value="">Select your party</option>
-                                <option value="Republican">Republican</option>
-                                <option value="Democrat">Democrat</option>
-                                <option value="Libertarian">Libertarian</option>
-                                <option value="Independent">Independent</option>
-                                <option value="Green">Green</option>
-                                <option value="Constitution">Constitution</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <span class="error-msg" id="party-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="office">Office Running For <span class="required">*</span></label>
-                            <input type="text" id="office" name="office" required placeholder="e.g., U.S. Senate, State Representative">
-                            <span class="error-msg" id="office-error"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="position">Position Running For <span class="required">*</span></label>
-                            <input type="text" id="position" name="position" required placeholder="e.g., Senator, Representative, Governor">
-                            <span class="error-msg" id="position-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="district">District <span class="optional-label">(if applicable)</span></label>
-                            <input type="text" id="district" name="district" placeholder="e.g., District 5, At-Large">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="city">City <span class="optional-label">(if applicable)</span></label>
-                            <input type="text" id="city" name="city" placeholder="e.g., Springfield">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State <span class="required">*</span></label>
-                            <select id="state" name="state" required>
-                                <option value="">Select your state</option>
-                            </select>
-                            <span class="error-msg" id="state-error"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vaccine Question -->
-                <div class="form-card highlight-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">2</span>
-                        Vaccine Position
-                    </h2>
-
-                    <div class="form-group">
-                        <label class="question-label">Do you support vaccines? <span class="required">*</span></label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="Yes" required>
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">Yes</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="No">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">No</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="It depends / Nuanced position">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">It depends / Nuanced position</span>
-                            </label>
-                        </div>
-                        <span class="error-msg" id="vaccineSupport-error"></span>
-                    </div>
-                </div>
-
-                <!-- Short Answer Questions -->
-                <div class="form-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">3</span>
-                        Short Answer Questions
-                    </h2>
-
-                    <div class="form-group">
-                        <label for="question1">
-                            What is your position on medical freedom and informed consent for vaccines?
-                            <span class="required">*</span>
-                        </label>
-                        <textarea id="question1" name="question1" required rows="4" placeholder="Please share your detailed position..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q1-count">0</span>/2000</div>
-                        <span class="error-msg" id="question1-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="question2">
-                            What would you do to protect individual health choices if elected?
-                            <span class="optional-label">(Optional)</span>
-                        </label>
-                        <textarea id="question2" name="question2" rows="4" placeholder="Share your plan..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q2-count">0</span>/2000</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="question3">
-                            Is there anything else you would like voters to know about your platform?
-                            <span class="optional-label">(Optional)</span>
-                        </label>
-                        <textarea id="question3" name="question3" rows="4" placeholder="Share additional information..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q3-count">0</span>/2000</div>
-                    </div>
-                </div>
-
-                <!-- Submit -->
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
-                        <span class="btn-star">&#9733;</span>
-                        Submit Your Pledge
-                        <span class="btn-star">&#9733;</span>
-                    </button>
-                    <p class="form-note">Your responses will be publicly visible in our candidate directory.</p>
-                </div>
-            </form>
-
-            <!-- Success Message -->
-            <div id="success-message" class="success-message" style="display: none;">
-                <div class="success-icon">&#10003;</div>
-                <h2>Thank You for Taking the Pledge!</h2>
-                <p>Your responses have been submitted and will appear in our candidate directory.</p>
-                <a href="directory.html" class="btn btn-primary">View Candidate Directory</a>
-            </div>
-
-            <!-- Error Message -->
-            <div id="error-message" class="error-banner" style="display: none;">
-                <p>There was an error submitting your pledge. Please try again.</p>
-            </div>
-        </div>
-    </section>
-    </div>
+    <!-- Pledge form removed — candidates use quiz.html instead -->
 
     <!-- Footer -->
     <footer class="site-footer">
