@@ -2,26 +2,29 @@
 // SAFE Action - Main Page (Impact + Victory + Ticker)
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    initImpactCounters();
-    initDatabaseStats();
-    initVictoryBoard();
-    initPledgeTicker();
-
+function safeMain() {
     // --- Impact Counters ---
+    // Dead simple: set the number, show it. No animation race conditions.
+    function setCounter(id, value) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var counter = el.querySelector('.counter');
+        if (!counter) return;
+        counter.dataset.target = value;
+        counter.textContent = value.toLocaleString();
+    }
+
     function initImpactCounters() {
         var BASE_ACTIONS = SAFE_CONFIG.BASE_ACTIONS;
         var BASE_EMAILS = SAFE_CONFIG.BASE_EMAILS;
         var BASE_CALLS = SAFE_CONFIG.BASE_CALLS;
 
-        // Show base values immediately, then update from Firestore
-        updateCounterDisplay('impact-actions', BASE_ACTIONS);
-        updateCounterDisplay('impact-emails', BASE_EMAILS);
-        updateCounterDisplay('impact-calls', BASE_CALLS);
-        updateCounterDisplay('impact-engaged', 423);
-
-        // Reps contacted = known baseline, grows as platform usage increases
-        updateCounterDisplay('impact-reps', 428);
+        // Set base values immediately
+        setCounter('impact-actions', BASE_ACTIONS);
+        setCounter('impact-emails', BASE_EMAILS);
+        setCounter('impact-calls', BASE_CALLS);
+        setCounter('impact-engaged', 423);
+        setCounter('impact-reps', 428);
 
         // Live update from Firestore (authoritative source)
         if (typeof firebase !== 'undefined' && firebase.firestore) {
@@ -29,84 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
             db.collection('actionStats').doc('counters').onSnapshot(function(doc) {
                 if (!doc.exists) return;
                 var data = doc.data();
-                var total = BASE_ACTIONS + (data.allTime_total || 0);
-                var emails = BASE_EMAILS + (data.allTime_emails || 0);
-                var calls = BASE_CALLS + (data.allTime_calls || 0);
-                updateCounterDisplay('impact-actions', total);
-                updateCounterDisplay('impact-emails', emails);
-                updateCounterDisplay('impact-calls', calls);
-                // Also sync to localStorage for offline fallback
-                localStorage.setItem('safe_action_counts', JSON.stringify({ total: total, emails: emails, calls: calls }));
+                setCounter('impact-actions', BASE_ACTIONS + (data.allTime_total || 0));
+                setCounter('impact-emails', BASE_EMAILS + (data.allTime_emails || 0));
+                setCounter('impact-calls', BASE_CALLS + (data.allTime_calls || 0));
             }, function(err) { console.warn('Firestore listener error:', err); });
         }
 
         // Load bill count from data file (async)
-        LegislationAPI.getLegislation(null).then(bills => {
-            const active = bills.filter(b => b.isActive === 'Yes').length;
-            const count = active || bills.length;
-            updateCounterDisplay('impact-bills', count);
-            // Re-animate just this counter since data arrived async
-            const el = document.getElementById('impact-bills');
-            if (el) animateSingleCounter(el.querySelector('.counter'), count);
-        }).catch(function(err) { console.warn('SAFE Action:', err.message || err); });
-
-        // Animate counters when they scroll into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        const impactSection = document.querySelector('.impact-section');
-        if (impactSection) observer.observe(impactSection);
-    }
-
-    function animateSingleCounter(counter, target) {
-        if (!counter || !target) return;
-        counter.dataset.target = target; // store real target for observers
-        const duration = 1500;
-        const startTime = performance.now();
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            counter.textContent = Math.floor(target * eased).toLocaleString();
-            if (progress < 1) requestAnimationFrame(update);
-        }
-        requestAnimationFrame(update);
-    }
-
-    function animateCounters() {
-        document.querySelectorAll('.counter').forEach(counter => {
-            const target = parseInt(counter.textContent.replace(/,/g, ''));
-            if (!target) return; // skip counters that haven't loaded yet
-            const duration = 1500;
-            const start = 0;
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                // Ease out cubic
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(start + (target - start) * eased);
-                counter.textContent = current.toLocaleString();
-                if (progress < 1) requestAnimationFrame(update);
-            }
-
-            requestAnimationFrame(update);
-        });
-    }
-
-    function updateCounterDisplay(elementId, value) {
-        const el = document.getElementById(elementId);
-        if (el) {
-            const counter = el.querySelector('.counter');
-            if (counter) counter.textContent = value.toLocaleString();
-        }
+        LegislationAPI.getLegislation(null).then(function(bills) {
+            var active = bills.filter(function(b) { return b.isActive === 'Yes'; }).length;
+            setCounter('impact-bills', active || bills.length);
+        }).catch(function(err) { console.warn('SAFE Action bills error:', err); });
     }
 
     // --- Database Stats Section ---
@@ -652,4 +588,17 @@ document.addEventListener('DOMContentLoaded', () => {
         div.textContent = str;
         return div.innerHTML;
     }
-});
+
+    // --- Initialize everything ---
+    initImpactCounters();
+    initDatabaseStats();
+    initVictoryBoard();
+    initPledgeTicker();
+}
+
+// Run immediately if DOM is ready, otherwise wait for it
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', safeMain);
+} else {
+    safeMain();
+}
