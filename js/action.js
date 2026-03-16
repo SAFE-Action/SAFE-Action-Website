@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const state = params.get('state');
 
     // Set back link
-    backLink.href = state ? `tracker.html?state=${encodeURIComponent(state)}` : 'tracker.html';
+    backLink.href = state ? `outreach.html?state=${encodeURIComponent(state)}` : 'outreach.html';
 
     if (!billId) { showNotFound(); return; }
 
