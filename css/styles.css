@@ -2608,12 +2608,43 @@ a:hover { color: var(--red); }
     }
 }
 @media (max-width: 480px) {
+    .footer-top {
+        padding: 32px 0 24px;
+    }
     .footer-columns {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 16px;
     }
     .footer-col-brand {
-        grid-column: auto;
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .footer-col-brand .footer-brand {
+        justify-content: center;
+    }
+    .footer-col-brand .footer-tagline,
+    .footer-col-brand .footer-opensource {
+        text-align: center;
+    }
+    .footer-col h4 {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+    .footer-col-links a {
+        font-size: 0.82rem;
+        padding: 3px 0;
+    }
+    .footer-donate-btn {
+        padding: 8px 18px;
+        font-size: 0.78rem;
+    }
+    .footer-bottom {
+        padding: 12px 0;
+    }
+    .footer-bottom-inner {
+        font-size: 0.75rem;
+        gap: 4px;
     }
 }
 
