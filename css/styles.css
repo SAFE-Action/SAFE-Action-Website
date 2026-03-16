@@ -2609,41 +2609,55 @@ a:hover { color: var(--red); }
 }
 @media (max-width: 480px) {
     .footer-top {
-        padding: 32px 0 24px;
+        padding: 24px 0 16px;
     }
     .footer-columns {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 16px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px 8px;
     }
     .footer-col-brand {
         grid-column: 1 / -1;
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
     }
     .footer-col-brand .footer-brand {
         justify-content: center;
+        font-size: 1.1rem;
     }
-    .footer-col-brand .footer-tagline,
-    .footer-col-brand .footer-opensource {
+    .footer-col-brand .footer-tagline {
         text-align: center;
-    }
-    .footer-col h4 {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         margin-bottom: 8px;
     }
+    .footer-col-brand .footer-opensource {
+        text-align: center;
+        font-size: 0.72rem;
+    }
+    .footer-col h4 {
+        font-size: 0.7rem;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+    }
+    .footer-col-links {
+        gap: 2px;
+    }
     .footer-col-links a {
-        font-size: 0.82rem;
-        padding: 3px 0;
+        font-size: 0.75rem;
+        padding: 2px 0;
+    }
+    .footer-col-links li:has(.footer-donate-btn) {
+        margin-top: 4px;
     }
     .footer-donate-btn {
-        padding: 8px 18px;
-        font-size: 0.78rem;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        margin-top: 4px;
     }
     .footer-bottom {
-        padding: 12px 0;
+        padding: 10px 0;
     }
     .footer-bottom-inner {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         gap: 4px;
     }
 }
@@ -2753,8 +2767,8 @@ a:hover { color: var(--red); }
     }
 
     .header-inner {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        padding: 10px 0;
     }
 
     .bill-grid {
