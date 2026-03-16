@@ -13,6 +13,18 @@
     {
       "source": "/feed",
       "destination": "/feed.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/api/donations/webhook",
+      "destination": "/api/donations/webhook.js"
+    },
+    {
+      "source": "/api/donations/latest",
+      "destination": "/api/donations/latest.js"
     }
   ]
 }

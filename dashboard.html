@@ -182,5 +182,62 @@
     </script>
 
     <script src="js/dashboard.js"></script>
+
+    <!-- ═══ STRIPE DONATION OVERLAY ═══ -->
+    <div class="pledge-overlay" id="donation-overlay" style="display:none;">
+        <div class="pledge-card" style="border-color:rgba(178,34,52,0.6);">
+            <div class="pledge-badge" style="background:rgba(178,34,52,0.2);border-color:rgba(178,34,52,0.5);color:#B22234;">💳 DONATION RECEIVED</div>
+            <div class="pledge-name" id="donation-name"></div>
+            <div class="pledge-title" id="donation-amount" style="color:#C9A84C;font-size:1.8rem;"></div>
+            <div class="pledge-message" id="donation-msg" style="font-style:italic;font-size:1rem;color:rgba(255,255,255,0.65);"></div>
+            <div class="pledge-url">🇺🇸 Thank you for defending science &amp; democracy!</div>
+            <div style="margin-top:18px;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;width:80%;margin-left:auto;margin-right:auto;">
+                <div id="donation-bar" style="height:100%;background:#B22234;border-radius:2px;width:100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var DISPLAY_MS = 20000;
+        var _timer = null;
+        var _lastId = null;
+
+        function showDonationOverlay(d) {
+            document.getElementById('donation-name').textContent   = d.name || 'Anonymous';
+            document.getElementById('donation-amount').textContent = d.amountCents ? '$' + (d.amountCents/100).toLocaleString('en-US',{minimumFractionDigits:0}) : '';
+            var msgEl = document.getElementById('donation-msg');
+            msgEl.textContent = d.message ? '"' + d.message + '"' : '';
+
+            var bar = document.getElementById('donation-bar');
+            bar.style.transition = 'none';
+            bar.style.width = '100%';
+            void bar.offsetHeight;
+            bar.style.transition = 'width ' + (DISPLAY_MS/1000) + 's linear';
+            bar.style.width = '0%';
+
+            var ov = document.getElementById('donation-overlay');
+            ov.style.display = 'flex';
+
+            clearTimeout(_timer);
+            _timer = setTimeout(function(){ ov.style.display = 'none'; }, DISPLAY_MS);
+        }
+
+        // Poll every 5s for new donations
+        setInterval(function(){
+            fetch('/api/donations/latest')
+                .then(function(r){ return r.ok ? r.json() : null; })
+                .then(function(d){
+                    if (d && d.id && d.id !== _lastId) {
+                        _lastId = d.id;
+                        showDonationOverlay(d);
+                    }
+                }).catch(function(){});
+        }, 5000);
+
+        // Test from console: showDonationOverlay({ name:"Jane Smith", amountCents:2500, message:"Science matters!" })
+        window.showDonationOverlay = showDonationOverlay;
+    })();
+    </script>
 </body>
 </html>
