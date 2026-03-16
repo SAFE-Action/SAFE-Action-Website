@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=63">
+    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -299,7 +299,7 @@
     <script src="js/config.js"></script>
     <script src="js/sheets.js"></script>
     <script src="js/legislation-api.js"></script>
-    <script src="js/main.js?v=72"></script>
+    <script src="js/main.js?v=73"></script>
     <script src="js/pwa.js"></script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
