@@ -1,186 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFE Action Live Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="icon" href="images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAFE-Action — Donor Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #B22234; --blue: #3C3B6E; --white: #fff;
+      --gold: #C9A84C; --gold-light: #E8D48B;
+      --bg: #0a0c1a; --surface: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh; padding: 32px 24px 60px;
+    }
+
+    /* Header */
+    .header {
+      display: flex; align-items: center; gap: 16px;
+      border-bottom: 2px solid var(--border); padding-bottom: 24px; margin-bottom: 32px;
+    }
+    .logo { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 900; }
+    .logo .safe { color: var(--red); } .logo .action { color: #fff; }
+    .live-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(178,34,52,0.2); border: 2px solid rgba(178,34,52,0.5);
+      border-radius: 100px; padding: 4px 14px;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 2px; color: var(--red);
+      text-transform: uppercase;
+    }
+    .live-dot { width: 7px; height: 7px; background: var(--red); border-radius: 50%; animation: blink 1.2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* Stats row */
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px; margin-bottom: 32px;
+    }
+    .stat {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 16px; text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--gold); }
+    .stat-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+    /* Donor feed */
+    .section-title {
+      font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 900;
+      color: var(--gold); text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .donor-feed { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .donor-item {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px;
+      animation: fadeUp 0.4s ease-out;
+    }
+    .donor-item.new { border-left: 4px solid var(--red); background: rgba(178,34,52,0.08); }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .donor-platform { font-size: 1.4rem; flex-shrink: 0; }
+    .donor-name { font-weight: 800; font-size: 0.95rem; }
+    .donor-amount { margin-left: auto; font-weight: 900; font-size: 1.1rem; color: var(--gold); }
+    .donor-msg { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 2px; font-style: italic; }
+    .donor-time { font-size: 0.6rem; color: rgba(255,255,255,0.3); margin-top: 2px; }
+
+    /* Stripe Alert Overlay */
+    #donation-alert {
+      position: fixed; inset: 0; z-index: 9999;
+      background: radial-gradient(ellipse at center, rgba(178,34,52,0.35) 0%, rgba(0,0,0,0.92) 60%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      pointer-events: none; opacity: 0; transition: opacity 0.5s;
+      font-family: 'Open Sans', sans-serif;
+    }
+    #donation-alert.show { opacity: 1; }
+    .alert-wrap { text-align: center; padding: 40px; }
+    .alert-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(178,34,52,0.2); border: 2px solid rgba(178,34,52,0.6);
+      border-radius: 100px; padding: 8px 24px; margin-bottom: 24px;
+      font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--red);
+    }
+    .alert-name {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; color: #fff;
+      line-height: 1; margin-bottom: 10px;
+      text-shadow: 0 0 40px rgba(178,34,52,0.8), 0 0 80px rgba(178,34,52,0.4);
+      animation: namePulse 2s ease-in-out infinite;
+    }
+    @keyframes namePulse {
+      0%,100%{text-shadow:0 0 40px rgba(178,34,52,0.6)} 50%{text-shadow:0 0 80px #B22234, 0 0 160px rgba(178,34,52,0.5)}
+    }
+    .alert-amount { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--gold); margin-bottom: 20px; }
+    .alert-message { font-size: 1.2rem; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 28px; max-width: 500px; }
+    .alert-thanks { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+    .alert-progress-track { width: min(400px, 80vw); height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .alert-progress-bar { height: 100%; background: var(--red); border-radius: 2px; animation: barDrain 20s linear forwards; }
+    @keyframes barDrain { from{width:100%} to{width:0%} }
+
+    /* Empty state */
+    .empty { text-align: center; padding: 40px; color: rgba(255,255,255,0.3); font-size: 0.85rem; }
+  </style>
 </head>
-<body class="dashboard-body">
+<body>
 
-    <!-- ═══ TOP BAR ═══ -->
-    <header class="dashboard-top">
-        <div class="top-left">
-            <span class="live-dot"></span>
-            <span class="top-brand">scienceandfreedom.com</span>
-            <span class="top-label">LIVE TRACKER</span>
-        </div>
-        <div class="top-right">
-            <div class="counter-block">
-                <span class="counter-icon">&#9993;</span>
-                <span class="counter-value" id="counter-emails">0</span>
-                <span class="counter-label">EMAILS</span>
-            </div>
-            <div class="counter-divider"></div>
-            <div class="counter-block">
-                <span class="counter-icon counter-icon-call">&#128222;</span>
-                <span class="counter-value counter-value-call" id="counter-calls">0</span>
-                <span class="counter-label">CALLS</span>
-            </div>
-            <div class="counter-divider"></div>
-            <div class="counter-block counter-block-total">
-                <span class="counter-value counter-value-total" id="counter-total">0</span>
-                <span class="counter-label">TODAY</span>
-            </div>
-        </div>
-    </header>
+  <div class="header">
+    <div class="logo"><span class="safe">SAFE</span><span class="action">-Action</span></div>
+    <div class="live-pill"><div class="live-dot"></div>LIVE DONOR FEED</div>
+  </div>
 
-    <!-- ═══ CENTER ═══ -->
-    <main class="dashboard-center">
-
-        <!-- MAP -->
-        <div class="dashboard-map-wrap">
-            <svg id="us-map" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-                <!-- States rendered by D3 + TopoJSON -->
-                <!-- Dots and ripples will be appended here dynamically -->
-            </svg>
-        </div>
-
-        <!-- ACTIVITY FEED -->
-        <div class="dashboard-feed">
-            <div class="feed-header">
-                <span class="feed-header-dot"></span>
-                ACTIVITY FEED
-            </div>
-            <div class="feed-list" id="activity-feed">
-                <!-- Feed items inserted dynamically -->
-                <div class="feed-empty" id="feed-empty">
-                    <div class="feed-empty-icon">&#128225;</div>
-                    <div>Waiting for actions...</div>
-                    <div class="feed-empty-sub">Visit <strong>scienceandfreedom.com</strong> to take action</div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- ═══ BOTTOM BAR ═══ -->
-    <footer class="dashboard-bottom">
-        <div class="progress-section">
-            <div class="progress-header">
-                <span class="progress-title">DAILY GOAL</span>
-                <span class="progress-count" id="progress-label">0 / 25</span>
-            </div>
-            <div class="progress-bar-wrap">
-                <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
-            </div>
-        </div>
-        <div class="bottom-ticker">
-            <div class="ticker-track">
-                <span class="ticker-item">Visit <strong>scienceandfreedom.com</strong> to take action</span>
-                <span class="ticker-sep">&#9670;</span>
-                <span class="ticker-item">Every email and call counts</span>
-                <span class="ticker-sep">&#9670;</span>
-                <span class="ticker-item">Science &amp; Freedom for Everyone</span>
-                <span class="ticker-sep">&#9670;</span>
-                <!-- Duplicate for seamless loop -->
-                <span class="ticker-item">Visit <strong>scienceandfreedom.com</strong> to take action</span>
-                <span class="ticker-sep">&#9670;</span>
-                <span class="ticker-item">Every email and call counts</span>
-                <span class="ticker-sep">&#9670;</span>
-                <span class="ticker-item">Science &amp; Freedom for Everyone</span>
-                <span class="ticker-sep">&#9670;</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ═══ PLEDGE TAKEOVER OVERLAY ═══ -->
-    <div class="pledge-overlay" id="pledge-overlay">
-        <div class="pledge-card">
-            <div class="pledge-badge">&#127942; SAFE ACTION PLEDGE</div>
-            <div class="pledge-name" id="pledge-name">Official Name</div>
-            <div class="pledge-title" id="pledge-title">Title &middot; Party &middot; State</div>
-            <div class="pledge-message">JUST TOOK THE SAFE ACTION PLEDGE!</div>
-            <div class="pledge-url">scienceandfreedom.com/pledge</div>
-        </div>
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val" id="stat-total">$0</div>
+      <div class="stat-label">Total Raised</div>
     </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-count">0</div>
+      <div class="stat-label">Donors</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-today">$0</div>
+      <div class="stat-label">Today</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-goal">$10,000</div>
+      <div class="stat-label">Monthly Goal</div>
+    </div>
+  </div>
 
-    <!-- ═══ MUTE BUTTON ═══ -->
-    <button class="mute-btn" id="mute-btn" title="Mute">&#128266;</button>
+  <!-- Donor Feed -->
+  <div class="section-title">🇺🇸 Recent Donors</div>
+  <div class="donor-feed" id="donor-feed">
+    <div class="empty">Waiting for donations...</div>
+  </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <!-- Stripe Alert Overlay -->
+  <div id="donation-alert">
+    <div class="alert-wrap">
+      <div class="alert-badge">💳 Donation Received</div>
+      <div class="alert-name" id="alert-name">—</div>
+      <div class="alert-amount" id="alert-amount"></div>
+      <div class="alert-message" id="alert-msg"></div>
+      <div class="alert-thanks">🇺🇸 Thank you for defending science and democracy!</div>
+      <div class="alert-progress-track">
+        <div class="alert-progress-bar" id="alert-bar"></div>
+      </div>
+    </div>
+  </div>
 
-    <!-- D3 + TopoJSON for high-res US map -->
-    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-    <script>
-    // Render real US state boundaries into the SVG before dashboard.js runs
-    (function() {
-        var FIPS_TO_STATE = {
-            '01':'AL','02':'AK','04':'AZ','05':'AR','06':'CA','08':'CO','09':'CT',
-            '10':'DE','11':'DC','12':'FL','13':'GA','15':'HI','16':'ID','17':'IL',
-            '18':'IN','19':'IA','20':'KS','21':'KY','22':'LA','23':'ME','24':'MD',
-            '25':'MA','26':'MI','27':'MN','28':'MS','29':'MO','30':'MT','31':'NE',
-            '32':'NV','33':'NH','34':'NJ','35':'NM','36':'NY','37':'NC','38':'ND',
-            '39':'OH','40':'OK','41':'OR','42':'PA','44':'RI','45':'SC','46':'SD',
-            '47':'TN','48':'TX','49':'UT','50':'VT','51':'VA','53':'WA','54':'WV',
-            '55':'WI','56':'WY'
-        };
+  <script>
+    const DONATION_DISPLAY_MS = 20000;
 
-        fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json')
-            .then(function(r) { return r.json(); })
-            .then(function(us) {
-                var svg = d3.select('#us-map');
-                var states = topojson.feature(us, us.objects.states);
-                var projection = d3.geoAlbersUsa().scale(1200).translate([480, 300]);
-                var path = d3.geoPath().projection(projection);
+    let totalCents = 0, donorCount = 0, todayCents = 0;
+    const donors = [];
+    let alertTimer = null;
 
-                // Store centroids for dot placement
-                window._stateCoords = {};
+    function fmt(cents) {
+      return '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0 });
+    }
 
-                svg.selectAll('.state')
-                    .data(states.features)
-                    .enter()
-                    .insert('path', ':first-child')
-                    .attr('class', 'state')
-                    .attr('id', function(d) { return FIPS_TO_STATE[d.id] || ''; })
-                    .attr('data-name', function(d) { return d.properties.name; })
-                    .attr('d', path);
+    function updateStats() {
+      document.getElementById('stat-total').textContent = fmt(totalCents);
+      document.getElementById('stat-count').textContent = donorCount.toLocaleString();
+      document.getElementById('stat-today').textContent = fmt(todayCents);
+    }
 
-                // Compute centroids for STATE_COORDS override
-                states.features.forEach(function(d) {
-                    var abbr = FIPS_TO_STATE[d.id];
-                    if (abbr) {
-                        var c = path.centroid(d);
-                        if (c && !isNaN(c[0])) {
-                            window._stateCoords[abbr] = { x: Math.round(c[0]), y: Math.round(c[1]) };
-                        }
-                    }
-                });
+    function addDonorToFeed(d) {
+      const feed = document.getElementById('donor-feed');
+      const empty = feed.querySelector('.empty');
+      if (empty) empty.remove();
 
-                // Add state borders
-                svg.insert('path', ':first-child')
-                    .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-                    .attr('class', 'state-borders')
-                    .attr('d', path);
+      const el = document.createElement('div');
+      el.className = 'donor-item new';
+      el.innerHTML = `
+        <div class="donor-platform">💳</div>
+        <div>
+          <div class="donor-name">${d.name}</div>
+          ${d.message ? `<div class="donor-msg">"${d.message}"</div>` : ''}
+          <div class="donor-time">Just now</div>
+        </div>
+        <div class="donor-amount">${fmt(d.amountCents)}</div>
+      `;
+      feed.insertBefore(el, feed.firstChild);
 
-                // Signal that map is ready
-                window._mapReady = true;
-                document.dispatchEvent(new Event('map-ready'));
-            })
-            .catch(function(err) {
-                console.warn('D3 map failed to load, falling back to basic layout', err);
-                window._mapReady = true;
-                document.dispatchEvent(new Event('map-ready'));
+      // Age out "new" styling after 10 seconds
+      setTimeout(() => el.classList.remove('new'), 10000);
+
+      // Keep feed to last 20 donors
+      while (feed.children.length > 20) feed.lastChild.remove();
+    }
+
+    function showDonationAlert(d) {
+      const overlay = document.getElementById('donation-alert');
+      document.getElementById('alert-name').textContent = d.name;
+      document.getElementById('alert-amount').textContent = fmt(d.amountCents);
+      document.getElementById('alert-msg').textContent = d.message || '';
+
+      // Reset + restart bar animation
+      const bar = document.getElementById('alert-bar');
+      bar.style.animation = 'none';
+      void bar.offsetHeight;
+      bar.style.animation = `barDrain ${DONATION_DISPLAY_MS / 1000}s linear forwards`;
+
+      overlay.classList.add('show');
+      clearTimeout(alertTimer);
+      alertTimer = setTimeout(() => overlay.classList.remove('show'), DONATION_DISPLAY_MS);
+    }
+
+    // Called by webhook receiver or browser console
+    window.onDonation = function(d) {
+      // d = { name, amountCents, message }
+      donors.unshift(d);
+      totalCents += d.amountCents;
+      todayCents += d.amountCents;
+      donorCount++;
+      updateStats();
+      addDonorToFeed(d);
+      showDonationAlert(d);
+    };
+
+    // Test from browser console: onDonation({ name: "Jane Smith", amountCents: 2500, message: "Science matters!" })
+
+    // Poll webhook endpoint for new donations (if server exists)
+    let lastDonationId = null;
+    function pollDonations() {
+      fetch('/api/donations/latest')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (data && data.id && data.id !== lastDonationId) {
+            lastDonationId = data.id;
+            window.onDonation({
+              name: data.name || 'Anonymous',
+              amountCents: data.amountCents || 0,
+              message: data.message || ''
             });
-    })();
-    </script>
-
-    <script src="js/dashboard.js"></script>
+          }
+        })
+        .catch(() => {}); // Silently fail if no server
+    }
+    setInterval(pollDonations, 5000);
+  </script>
 </body>
 </html>
