@@ -228,7 +228,7 @@
 
     // Test from browser console: onDonation({ name: "Jane Smith", amountCents: 2500, message: "Science matters!" })
 
-    // Poll webhook endpoint for new donations (if server exists)
+    // Poll for latest donation
     let lastDonationId = null;
     function pollDonations() {
       fetch('/api/donations/latest')
@@ -243,9 +243,24 @@
             });
           }
         })
-        .catch(() => {}); // Silently fail if no server
+        .catch(() => {});
     }
     setInterval(pollDonations, 5000);
+
+    // Poll for running totals
+    function pollTotals() {
+      fetch('/api/donations/latest?totals=1')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data) return;
+          document.getElementById('stat-total').textContent = fmt(data.total || 0);
+          document.getElementById('stat-count').textContent = (data.count || 0).toLocaleString();
+          document.getElementById('stat-today').textContent = fmt(data.today || 0);
+        })
+        .catch(() => {});
+    }
+    pollTotals();
+    setInterval(pollTotals, 30000);
   </script>
 </body>
 </html>
