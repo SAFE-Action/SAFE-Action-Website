@@ -485,22 +485,36 @@ body.dashboard-body {
   animation: progress-pulse 2s ease-in-out infinite;
 }
 
-/* --- GIANT BOTTOM TICKER --- */
+/* --- GIANT BOTTOM TICKER (scrolling marquee) --- */
 .bottom-ticker {
+  width: 100%;
+  overflow: hidden;
+  padding: 1vh 0;
+  position: relative;
+}
+
+.ticker-track {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 3vw;
-  width: 100%;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+  width: max-content;
   /* MASSIVE text that fills the bottom of the screen */
   font-size: 6.5vw;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--text-secondary);
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 1vh 0;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.bottom-ticker:hover .ticker-track {
+  animation-play-state: paused;
 }
 
 .ticker-sep {
@@ -668,7 +682,7 @@ body.dashboard-body {
   .progress-section { flex: 1; }
   .progress-title { font-size: 1.5vw; }
   .progress-count { font-size: 2vw; }
-  .bottom-ticker { font-size: 2.5vw; }
+  .ticker-track { font-size: 2.5vw; }
 }
 
 /* ============================================================
@@ -695,7 +709,7 @@ body.dashboard-body {
   .dashboard-bottom { padding: 10px 16px; }
   .progress-title { font-size: 4vw; }
   .progress-count { font-size: 5vw; }
-  .bottom-ticker { font-size: 5.5vw; gap: 2vw; }
+  .ticker-track { font-size: 5.5vw; gap: 2vw; }
 
   .pledge-card { padding: 24px; margin: 16px; }
 }
