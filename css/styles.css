@@ -2593,9 +2593,9 @@ a:hover { color: var(--red); }
 .footer-col-brand .footer-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 2.4rem;
     font-weight: 900;
     color: var(--white);
     margin-bottom: 12px;
@@ -2745,7 +2745,7 @@ a:hover { color: var(--red); }
     }
     .footer-col-brand .footer-brand {
         justify-content: center;
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
     .footer-col-brand .footer-tagline {
         text-align: center;
