@@ -242,10 +242,18 @@ body.dashboard-body {
 .dashboard-map-wrap .state.has-activity { fill: #252555; }
 .dashboard-map-wrap .state.hot { fill: #303070; }
 
+.dashboard-map-wrap .county-borders {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 0.3;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
 .dashboard-map-wrap .state-borders {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.18);
-  stroke-width: 0.8;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 1;
   stroke-linejoin: round;
   pointer-events: none;
 }

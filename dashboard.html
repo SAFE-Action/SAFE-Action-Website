@@ -119,7 +119,7 @@
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
     <script>
-    // Render real US state boundaries into the SVG before dashboard.js runs
+    // Render high-res US map with county-level detail into the SVG
     (function() {
         var FIPS_TO_STATE = {
             '01':'AL','02':'AK','04':'AZ','05':'AR','06':'CA','08':'CO','09':'CT',
@@ -132,7 +132,8 @@
             '55':'WI','56':'WY'
         };
 
-        fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json')
+        // counties-10m includes both counties AND states for maximum detail
+        fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
             .then(function(r) { return r.json(); })
             .then(function(us) {
                 var svg = d3.select('#us-map');
@@ -143,6 +144,7 @@
                 // Store centroids for dot placement
                 window._stateCoords = {};
 
+                // Render state fills (clickable/hoverable)
                 svg.selectAll('.state')
                     .data(states.features)
                     .enter()
@@ -163,8 +165,14 @@
                     }
                 });
 
-                // Add state borders
+                // County borders — subtle texture layer for high-res detail
                 svg.insert('path', ':first-child')
+                    .datum(topojson.mesh(us, us.objects.counties, function(a, b) { return a !== b; }))
+                    .attr('class', 'county-borders')
+                    .attr('d', path);
+
+                // State borders — bolder, on top of counties
+                svg.insert('path', '.state')
                     .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
                     .attr('class', 'state-borders')
                     .attr('d', path);
