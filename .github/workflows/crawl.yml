@@ -15,6 +15,9 @@ on:
           - full
           - news-only
 
+permissions:
+  contents: write
+
 jobs:
   crawl:
     runs-on: ubuntu-latest
@@ -32,9 +35,6 @@ jobs:
         run: |
           cd crawler
           pip install -e .
-
-      - name: Install Playwright browsers (for crawl4ai)
-        run: crawl4ai-setup
 
       - name: Determine crawl mode
         id: mode
