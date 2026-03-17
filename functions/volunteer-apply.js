@@ -1,9 +1,43 @@
 const admin = require('firebase-admin');
 const { sendEmail } = require('./email-service');
 
+// ── Server-side HTML escaping ──────────────────────
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// ── Rate limiting ──────────────────────────────────
+const APPLY_RATE_MAX = 5;
+const APPLY_RATE_WINDOW_MS = 3600000; // 1 hour
+const applyRateMap = new Map();
+
+function isApplyRateLimited(ip) {
+    var now = Date.now();
+    var entry = applyRateMap.get(ip);
+    if (!entry || now - entry.windowStart > APPLY_RATE_WINDOW_MS) {
+        applyRateMap.set(ip, { windowStart: now, count: 1 });
+        return false;
+    }
+    entry.count++;
+    return entry.count > APPLY_RATE_MAX;
+}
+
 exports.volunteerApply = async (req, res) => {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    // Rate limiting by IP
+    var clientIp = req.headers['x-forwarded-for'] || req.ip || 'unknown';
+    if (typeof clientIp === 'string') clientIp = clientIp.split(',')[0].trim();
+    if (isApplyRateLimited(clientIp)) {
+        return res.status(429).json({ error: 'Too many requests. Please try again later.' });
     }
 
     const { name, email, skills, interests, availability } = req.body;
@@ -45,7 +79,7 @@ exports.volunteerApply = async (req, res) => {
             updatedAt: admin.firestore.FieldValue.serverTimestamp()
         });
 
-        // Send notification to officer
+        // Send notification to officer (all user input HTML-escaped)
         try {
             const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
             await sendEmail({
@@ -53,11 +87,11 @@ exports.volunteerApply = async (req, res) => {
                 subject: `New Volunteer Application: ${name.trim()}`,
                 htmlBody: `
                     <h2>New Volunteer Application</h2>
-                    <p><strong>Name:</strong> ${name.trim()}</p>
-                    <p><strong>Email:</strong> ${email.trim()}</p>
-                    <p><strong>Skills:</strong> ${skills.join(', ')}</p>
-                    <p><strong>Interests:</strong> ${(interests || []).join(', ')}</p>
-                    <p><strong>Availability:</strong> ${availability}</p>
+                    <p><strong>Name:</strong> ${escapeHtml(name.trim())}</p>
+                    <p><strong>Email:</strong> ${escapeHtml(email.trim())}</p>
+                    <p><strong>Skills:</strong> ${escapeHtml(skills.join(', '))}</p>
+                    <p><strong>Interests:</strong> ${escapeHtml((interests || []).join(', '))}</p>
+                    <p><strong>Availability:</strong> ${escapeHtml(availability)}</p>
                     <hr>
                     <p><a href="${siteUrl}/admin">Review in Admin Panel</a></p>
                 `

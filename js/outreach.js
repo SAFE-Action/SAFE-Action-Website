@@ -264,7 +264,14 @@ ${yourCity}`;
         // Show a note about emailing all
         const note = document.createElement('div');
         note.className = 'email-all-note';
-        note.innerHTML = `<strong>${emailCandidates.length} candidates</strong> will receive this email. Email addresses: <br><code>${emailCandidates.map(c => c.email).join(', ')}</code>`;
+        var noteStrong = document.createElement('strong');
+        noteStrong.textContent = emailCandidates.length + ' candidates';
+        var noteCode = document.createElement('code');
+        noteCode.textContent = emailCandidates.map(c => c.email).join(', ');
+        note.appendChild(noteStrong);
+        note.appendChild(document.createTextNode(' will receive this email. Email addresses: '));
+        note.appendChild(document.createElement('br'));
+        note.appendChild(noteCode);
 
         const existing = templateSection.querySelector('.email-all-note');
         if (existing) existing.remove();

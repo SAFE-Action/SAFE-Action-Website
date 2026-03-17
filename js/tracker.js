@@ -239,7 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const levelClass = bill.level === 'Federal' ? 'federal' : (bill.level === 'Local' ? 'local' : '');
             const isDead = SAFE_CONFIG.DEAD_STATUSES.includes(bill.status);
             const statusDotClass = isDead ? 'dead' : (bill.impact === 'High' ? 'urgent' : 'active');
-            const summaryExcerpt = bill.summary ? (bill.summary.length > 150 ? bill.summary.substring(0, 150) + '...' : bill.summary) : '';
+            const formattedSummary = bill.summary ? formatBillTitle(bill.summary) : '';
+            const summaryExcerpt = formattedSummary ? (formattedSummary.length > 150 ? formattedSummary.substring(0, 150) + '...' : formattedSummary) : '';
             const stateName = (selectedState === 'ALL' && bill.state !== 'US') ? (SAFE_CONFIG.STATES[bill.state] || bill.state) : '';
             const billTypeLabel = bill.billType === 'pro' ? 'PRO-SCIENCE' : (bill.billType === 'monitor' ? 'MONITORING' : 'ANTI-SCIENCE');
             const billTypeClass = bill.billType === 'pro' ? 'badge-pro' : (bill.billType === 'monitor' ? 'badge-monitor' : 'badge-anti');
@@ -260,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="badge badge-impact ${impactClass}">${escapeHtml(bill.impact)}</span>
                             </div>
                         </div>
-                        <div class="bill-card-title">${escapeHtml(bill.title)}</div>
+                        <div class="bill-card-title">${escapeHtml(formatBillTitle(bill.title))}</div>
                         ${bill.category ? `<span class="bill-category-tag">${escapeHtml(bill.category)}</span>` : ''}
                         <div class="bill-card-summary">${escapeHtml(summaryExcerpt)}</div>
                         <div class="bill-card-meta">
@@ -274,10 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="bill-card-footer">
                             <span class="bill-card-date">${bill.lastActionDate ? 'Last action: ' + escapeHtml(bill.lastActionDate) : ''}</span>
                             <div class="bill-card-share-row">
-                                <button class="bill-share-btn" onclick="event.preventDefault();event.stopPropagation();shareBill('${escapeHtml(bill.billId)}','${escapeHtml(bill.billNumber)}','${escapeHtml(bill.title.replace(/'/g, ''))}','twitter')" title="Share on X">
+                                <button class="bill-share-btn" data-share-platform="twitter" data-bill-id="${escapeHtml(bill.billId)}" data-bill-number="${escapeHtml(bill.billNumber)}" data-bill-title="${escapeHtml(formatBillTitle(bill.title))}" title="Share on X">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                 </button>
-                                <button class="bill-share-btn" onclick="event.preventDefault();event.stopPropagation();shareBill('${escapeHtml(bill.billId)}','${escapeHtml(bill.billNumber)}','${escapeHtml(bill.title.replace(/'/g, ''))}','facebook')" title="Share on Facebook">
+                                <button class="bill-share-btn" data-share-platform="facebook" data-bill-id="${escapeHtml(bill.billId)}" data-bill-number="${escapeHtml(bill.billNumber)}" data-bill-title="${escapeHtml(formatBillTitle(bill.title))}" title="Share on Facebook">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                                 </button>
                                 <span class="card-arrow">&rarr;</span>
@@ -287,6 +288,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }).join('');
+
+        // Delegated share button handler (avoids inline onclick with interpolated data)
+        billGrid.querySelectorAll('.bill-share-btn[data-share-platform]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var d = btn.dataset;
+                shareBill(d.billId, d.billNumber, d.billTitle, d.sharePlatform);
+            });
+        });
 
         // Attach checkbox listeners
         billGrid.querySelectorAll('.bill-checkbox').forEach(cb => {
@@ -462,6 +473,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
+    }
+
+    /**
+     * Convert raw legislative titles (ALL CAPS, semicolons) to readable format.
+     * "EDUCATION: SCHOOLS; GRANTS; TEACHER BONUS" → "Education: Schools, Grants, Teacher Bonus"
+     */
+    function formatBillTitle(raw) {
+        if (!raw) return 'Untitled';
+        var s = raw;
+        // Always clean up semicolons → commas (legislative shorthand)
+        s = s.replace(/;\s*/g, ', ');
+        // If all-caps, convert to title case
+        if (raw === raw.toUpperCase()) {
+            s = s.toLowerCase()
+                .replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+        }
+        // Fix common acronyms that should stay uppercase
+        s = s.replace(/\bMrna\b/g, 'mRNA')
+             .replace(/\bHiv\b/g, 'HIV')
+             .replace(/\bAids\b/g, 'AIDS')
+             .replace(/\bCovid\b/gi, 'COVID')
+             .replace(/\bFda\b/g, 'FDA')
+             .replace(/\bCdc\b/g, 'CDC')
+             .replace(/\bNih\b/g, 'NIH')
+             .replace(/\bDna\b/g, 'DNA')
+             .replace(/\bRna\b/g, 'RNA')
+             .replace(/\bHhs\b/g, 'HHS')
+             .replace(/\bEpa\b/g, 'EPA')
+             .replace(/\bUsda\b/g, 'USDA')
+             .replace(/\bDhs\b/g, 'DHS')
+             .replace(/\bK-12\b/gi, 'K-12')
+             .replace(/\bHpv\b/g, 'HPV')
+             .replace(/\bMmr\b/g, 'MMR');
+        return s;
     }
 
     // --- Multi-Bill Selection ---

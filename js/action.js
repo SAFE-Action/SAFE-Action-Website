@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         setupEmailSignup();
 
         // Update page title
-        document.title = `${bill.billNumber}: ${bill.title} - SAFE Action`;
+        document.title = `${bill.billNumber}: ${formatBillTitle(bill.title)} - SAFE Action`;
 
         loadingEl.style.display = 'none';
         contentEl.style.display = '';
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         // Heading
-        document.getElementById('bill-heading').textContent = `${b.billNumber}: ${b.title}`;
+        document.getElementById('bill-heading').textContent = `${b.billNumber}: ${formatBillTitle(b.title)}`;
 
         // Info grid
         document.getElementById('bill-number').textContent = b.billNumber;
@@ -462,6 +462,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             meta.repName = selectedRep.name || '';
             meta.repTitle = selectedRep.district || '';
         }
+        meta._t = Date.now();
         fetch('/api/actions/track', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -594,6 +595,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
+    }
+
+    function formatBillTitle(raw) {
+        if (!raw) return 'Untitled';
+        var s = raw;
+        s = s.replace(/;\s*/g, ', ');
+        if (raw === raw.toUpperCase()) {
+            s = s.toLowerCase()
+                .replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+        }
+        s = s.replace(/\bMrna\b/g, 'mRNA')
+             .replace(/\bHiv\b/g, 'HIV').replace(/\bAids\b/g, 'AIDS')
+             .replace(/\bCovid\b/gi, 'COVID').replace(/\bFda\b/g, 'FDA')
+             .replace(/\bCdc\b/g, 'CDC').replace(/\bNih\b/g, 'NIH')
+             .replace(/\bDna\b/g, 'DNA').replace(/\bRna\b/g, 'RNA')
+             .replace(/\bHhs\b/g, 'HHS').replace(/\bEpa\b/g, 'EPA')
+             .replace(/\bUsda\b/g, 'USDA').replace(/\bDhs\b/g, 'DHS')
+             .replace(/\bK-12\b/gi, 'K-12').replace(/\bHpv\b/g, 'HPV')
+             .replace(/\bMmr\b/g, 'MMR');
+        return s;
     }
 
     function debounce(fn, delay) {

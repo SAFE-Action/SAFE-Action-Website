@@ -378,7 +378,7 @@ function safeMain() {
         fetch('/api/actions/track', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ type: type })
+            body: JSON.stringify({ type: type, _t: Date.now() })
         }).catch(function() { /* silent fail — localStorage already updated */ });
 
         return result;

@@ -35,7 +35,7 @@ const MyRepsHub = {
             }
 
             // Persist address and parsed divisions
-            localStorage.setItem(this.STORAGE_KEY, JSON.stringify({
+            sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify({
                 address: address,
                 timestamp: Date.now(),
                 state: parsed.state,
@@ -53,7 +53,7 @@ const MyRepsHub = {
 
     getSavedAddress() {
         try {
-            const stored = JSON.parse(localStorage.getItem(this.STORAGE_KEY));
+            const stored = JSON.parse(sessionStorage.getItem(this.STORAGE_KEY));
             if (stored && stored.address) {
                 // Cache for 24 hours
                 if (Date.now() - stored.timestamp < 24 * 60 * 60 * 1000) {
@@ -65,7 +65,7 @@ const MyRepsHub = {
     },
 
     clearSavedAddress() {
-        localStorage.removeItem(this.STORAGE_KEY);
+        sessionStorage.removeItem(this.STORAGE_KEY);
     },
 
     _parseDivisionsResponse(data) {

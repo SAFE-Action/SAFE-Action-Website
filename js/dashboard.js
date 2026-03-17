@@ -4,15 +4,10 @@
  * Connects to Firebase Firestore for live updates.
  */
 
-// Firebase initialization
-var firebaseConfig = {
-    apiKey: 'AIzaSyDQul9vsl7oEj43VSlzLi_S4SXrm3liZWc',
-    authDomain: 'safe-action-website.firebaseapp.com',
-    projectId: 'safe-action-website',
-    storageBucket: 'safe-action-website.firebasestorage.app',
-    messagingSenderId: '1035666846416',
-    appId: '1:1035666846416:web:1c0bac14e6569b4f41a4d5'
-};
+// Firebase initialization — uses shared config from config.js (SAFE_CONFIG.FIREBASE_CONFIG)
+var firebaseConfig = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG)
+    ? SAFE_CONFIG.FIREBASE_CONFIG
+    : { apiKey: '', projectId: 'safe-action-website' };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 

@@ -33,7 +33,7 @@ const SAFE_CONFIG = {
     GOOGLE_CIVIC_API_KEY: 'AIzaSyBapcQaTbdLhAZVc5p9KUckaw5zk_hLtzs',
 
     // Google Maps JavaScript API key (for Places Autocomplete on address input)
-    GOOGLE_MAPS_API_KEY: 'AIzaSyCESkag17Z_jM_ROlla20LAhtcunYHwymI',
+    GOOGLE_MAPS_API_KEY: 'AIzaSyB2keV-yEl6Ra-Qf1zxZso4r00GEc5dAUI',
 
     // All 50 states + DC + Federal
     STATES: {

@@ -9,12 +9,20 @@ const { volunteerSignNda } = require("./volunteer-sign-nda");
 const { trackAction } = require("./track-action");
 const { createCheckout } = require("./create-checkout");
 
-exports.districts = onRequest({ cors: true }, districts);
-exports.volunteerApply = onRequest({ cors: true }, volunteerApply);
-exports.adminVolunteers = onRequest({ cors: true }, adminVolunteers);
-exports.volunteerSignNda = onRequest({ cors: true }, volunteerSignNda);
-exports.trackAction = onRequest({ cors: true }, trackAction);
+// Restrict CORS to production domains
+var allowedOrigins = [
+    "https://scienceandfreedom.com",
+    "https://www.scienceandfreedom.com",
+    "https://safe-action-website.web.app",
+    "https://safe-action-website.firebaseapp.com",
+];
+
+exports.districts = onRequest({ cors: allowedOrigins }, districts);
+exports.volunteerApply = onRequest({ cors: allowedOrigins }, volunteerApply);
+exports.adminVolunteers = onRequest({ cors: allowedOrigins }, adminVolunteers);
+exports.volunteerSignNda = onRequest({ cors: allowedOrigins }, volunteerSignNda);
+exports.trackAction = onRequest({ cors: allowedOrigins }, trackAction);
 exports.createCheckout = onRequest({
-    cors: true,
+    cors: allowedOrigins,
     secrets: ["STRIPE_SECRET_KEY"]
 }, createCheckout);
