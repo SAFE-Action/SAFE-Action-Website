@@ -830,7 +830,7 @@ a:hover { color: var(--red); }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 12vw, 7.5rem);
+    font-size: clamp(2.8rem, 5.5vw, 4rem);
     font-weight: 400;
     color: var(--off-white);
     margin-bottom: 10px;
