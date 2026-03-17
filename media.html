@@ -162,6 +162,171 @@
             background: var(--blue);
             color: white;
         }
+
+        /* Methodology Section */
+        .methodology-section {
+            background: var(--off-white) !important;
+        }
+        .methodology-section h2 {
+            color: #122B52 !important;
+        }
+        .methodology-section .section-sub {
+            color: #555 !important;
+        }
+        .methodology-steps {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .methodology-step {
+            display: flex;
+            gap: 1.5em;
+            margin-bottom: 2.5em;
+            position: relative;
+        }
+        .methodology-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 50px;
+            bottom: -2.5em;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.2));
+        }
+        .methodology-step-number {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            background: var(--blue);
+            color: white;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+        .methodology-step-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #122B52;
+            margin-bottom: 0.5em;
+            margin-top: 0.15em;
+        }
+        .methodology-step-content p {
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 0.8em;
+            font-size: 0.95rem;
+        }
+        .methodology-step-content ul {
+            margin: 0.5em 0 1em 1.2em;
+            color: #444;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        .methodology-step-content li {
+            margin-bottom: 0.3em;
+        }
+        .methodology-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0.8em 0 1.2em;
+        }
+        .methodology-topic {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #122B52;
+        }
+        .methodology-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 1em 0 1.2em;
+        }
+        .methodology-compare-col {
+            padding: 1em 1.2em;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .methodology-compare-col h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5em;
+        }
+        .methodology-compare-col p {
+            font-size: 0.88rem !important;
+            margin-bottom: 0 !important;
+        }
+        .methodology-anti {
+            background: #FEF2F2;
+            border: 1px solid #FECACA;
+        }
+        .methodology-anti h4 { color: #991B1B; }
+        .methodology-anti p { color: #7F1D1D !important; }
+        .methodology-pro {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+        }
+        .methodology-pro h4 { color: #166534; }
+        .methodology-pro p { color: #14532D !important; }
+        .methodology-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em;
+            margin: 1em 0;
+        }
+        .methodology-rule {
+            display: flex;
+            gap: 0.8em;
+            align-items: flex-start;
+            background: white;
+            padding: 1em;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .methodology-rule-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .methodology-rule strong {
+            display: block;
+            color: #122B52;
+            margin-bottom: 2px;
+            font-size: 0.92rem;
+        }
+        .methodology-rule span {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .methodology-step-content a {
+            color: var(--red);
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .methodology-comparison {
+                grid-template-columns: 1fr;
+            }
+            .methodology-step {
+                gap: 1em;
+            }
+            .methodology-step::after {
+                left: 18px !important;
+            }
+            .methodology-step-number {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -350,6 +515,190 @@
                 <code>tracker.html?state=TX&type=anti&status=active#browse-bills</code> &mdash; Active anti-science bills in Texas<br>
                 <code>tracker.html?category=vaccine-exemption&priority=High#browse-bills</code> &mdash; High-priority vaccine exemption bills<br>
                 <code>tracker.html?q=fluoride#browse-bills</code> &mdash; All bills mentioning fluoride
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="media-section methodology-section" id="methodology">
+        <div class="container">
+            <h2>Our Methodology</h2>
+            <p class="section-sub">Transparency matters. Here's exactly how we find, classify, and verify every bill in our database.</p>
+
+            <div class="methodology-steps">
+
+                <!-- Step 1 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">1</div>
+                    <div class="methodology-step-content">
+                        <h3>Finding Bills</h3>
+                        <p>Every day, our automated system pulls newly introduced and updated legislation from three official sources:</p>
+                        <ul>
+                            <li><strong>LegiScan</strong> &mdash; Covers all 50 state legislatures with real-time bill tracking</li>
+                            <li><strong>GovInfo</strong> &mdash; The U.S. Government Publishing Office's official database for federal bills</li>
+                            <li><strong>OpenStates</strong> &mdash; An open-source backup that ensures we don't miss anything</li>
+                        </ul>
+                        <p>We currently track <strong>10,000+ bills</strong> across all 50 states and Congress. The system checks for new bills and status changes automatically every day.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">2</div>
+                    <div class="methodology-step-content">
+                        <h3>First Pass: Keyword Analysis</h3>
+                        <p>Each bill's title, summary, and subject tags are scanned against a carefully curated set of topic keywords. A bill must first match at least one <strong>core topic</strong> we track:</p>
+                        <div class="methodology-topics">
+                            <span class="methodology-topic">Vaccines &amp; Immunizations</span>
+                            <span class="methodology-topic">Raw Milk Deregulation</span>
+                            <span class="methodology-topic">Fluoride &amp; Water Safety</span>
+                            <span class="methodology-topic">mRNA Reclassification</span>
+                            <span class="methodology-topic">Geoengineering</span>
+                            <span class="methodology-topic">Public Health Authority</span>
+                        </div>
+                        <p>Bills that don't mention any of these topics are classified as <strong>"Monitor"</strong> and kept in the database but not flagged.</p>
+                        <p>For relevant bills, the system counts how many <strong>anti-science indicators</strong> vs. <strong>pro-science indicators</strong> appear in the text. For example:</p>
+                        <div class="methodology-comparison">
+                            <div class="methodology-compare-col methodology-anti">
+                                <h4>Anti-Science Indicators</h4>
+                                <p>"religious exemption," "philosophical exemption," "parental rights" (in vaccine context), "medical freedom," "informed consent" (in vaccine context), "ban mandates," "gene therapy" (referring to mRNA), "raw milk sales," "remove fluoride"</p>
+                            </div>
+                            <div class="methodology-compare-col methodology-pro">
+                                <h4>Pro-Science Indicators</h4>
+                                <p>"strengthen immunization," "limit exemptions," "expand vaccine access," "fund public health," "evidence-based," "disease surveillance," "immunization registry," "pandemic preparedness"</p>
+                            </div>
+                        </div>
+                        <p>If pro-science indicators outweigh anti-science ones, the bill is initially classified as <strong>"Pro-Science."</strong> If anti-science indicators are present, it's classified as <strong>"Anti-Science."</strong> If neither side is strong enough, it stays as <strong>"Monitor."</strong></p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">3</div>
+                    <div class="methodology-step-content">
+                        <h3>Second Pass: AI Verification</h3>
+                        <p>Keywords alone aren't enough. A bill titled "Eliminating Personal Conviction Exemption from Immunizations" contains the word "exemption" &mdash; but it's actually <em>removing</em> exemptions, which is pro-science. Simple keyword matching would get this wrong.</p>
+                        <p>That's why every bill classified as anti-science or pro-science goes through a <strong>second, independent review</strong> using a large language model (AI). This AI reviewer:</p>
+                        <ul>
+                            <li><strong>Reads the full context</strong> of each bill's title, summary, and category</li>
+                            <li><strong>Makes its own independent classification</strong> without knowing what the keyword system decided</li>
+                            <li><strong>Assigns a confidence score</strong> from 0% to 100% indicating how certain it is</li>
+                            <li><strong>Cites specific evidence</strong> &mdash; the exact phrases that drove its decision</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">4</div>
+                    <div class="methodology-step-content">
+                        <h3>Resolving Disagreements</h3>
+                        <p>When the keyword system and the AI reviewer disagree, or when confidence is low, we apply strict rules:</p>
+                        <div class="methodology-rules">
+                            <div class="methodology-rule">
+                                <span class="methodology-rule-icon">&#9989;</span>
+                                <div>
+                                    <strong>Both agree + high confidence:</strong>
+                                    <span>Classification is confirmed. This is the majority of bills.</span>
+                                </div>
+                            </div>
+                            <div class="methodology-rule">
+                                <span class="methodology-rule-icon">&#9888;&#65039;</span>
+                                <div>
+                                    <strong>Low confidence (below 70%):</strong>
+                                    <span>Bill is <strong>downgraded to "Monitor"</strong> regardless of what either system said. We'd rather miss a bill than mislabel one.</span>
+                                </div>
+                            </div>
+                            <div class="methodology-rule">
+                                <span class="methodology-rule-icon">&#128260;</span>
+                                <div>
+                                    <strong>They disagree + AI is highly confident:</strong>
+                                    <span>The AI's classification overrides the keyword result, because it understands context that keywords cannot.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Every disagreement is logged with the evidence from both systems. We regularly review these logs to improve both the keyword lists and the AI prompts.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">5</div>
+                    <div class="methodology-step-content">
+                        <h3>Category Assignment</h3>
+                        <p>Beyond anti/pro classification, each bill is placed into a specific <strong>topic category</strong> based on its content:</p>
+                        <div class="methodology-topics">
+                            <span class="methodology-topic">Vaccine Exemptions</span>
+                            <span class="methodology-topic">Vaccine Mandates</span>
+                            <span class="methodology-topic">Medical Freedom</span>
+                            <span class="methodology-topic">Informed Consent</span>
+                            <span class="methodology-topic">Vaccine Injury</span>
+                            <span class="methodology-topic">mRNA Reclassification</span>
+                            <span class="methodology-topic">Raw Milk</span>
+                            <span class="methodology-topic">Fluoride</span>
+                            <span class="methodology-topic">Geoengineering</span>
+                            <span class="methodology-topic">Public Health</span>
+                        </div>
+                        <p>This lets journalists and researchers quickly find bills relevant to their specific story or area of coverage.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="methodology-step">
+                    <div class="methodology-step-number">6</div>
+                    <div class="methodology-step-content">
+                        <h3>Ongoing Updates</h3>
+                        <p>Our system runs <strong>automatically every day</strong>. When a bill's status changes &mdash; moves to a new committee, gets amended, passes a chamber, or is signed into law &mdash; the tracker updates within 24 hours. New bills are picked up as soon as they're filed.</p>
+                        <p>All of our code is <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">open source on GitHub</a> under the GPLv3 license. Anyone can inspect, audit, or improve our classification algorithms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Sources -->
+            <div class="methodology-sources" style="margin-top: 3em;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: #122B52; text-align: center; margin-bottom: 1.5em;">Data Sources &amp; Materials</h3>
+                <p style="text-align: center; color: #555; max-width: 640px; margin: 0 auto 2em; font-size: 0.95rem;">Every number on this site comes from an official, verifiable source. Here's where it all originates.</p>
+
+                <div class="quick-links-grid">
+                    <div class="quick-link-card">
+                        <h3>Legislation Data</h3>
+                        <p><strong><a href="https://legiscan.com" target="_blank" rel="noopener noreferrer">LegiScan API</a></strong> &mdash; Primary source for all 50 state legislatures. Provides bill text, status updates, sponsors, committee assignments, roll call votes, and subject tags. Updated daily. 30,000 requests/month.</p>
+                        <p><strong><a href="https://www.govinfo.gov" target="_blank" rel="noopener noreferrer">GovInfo (GPO)</a></strong> &mdash; Official U.S. Government Publishing Office. Source for all federal bills (House &amp; Senate). Free, no rate limits.</p>
+                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates API</a></strong> &mdash; Open-source backup for state legislation. Ensures coverage if LegiScan misses a bill or has delayed updates.</p>
+                    </div>
+                    <div class="quick-link-card">
+                        <h3>Legislator &amp; Contact Data</h3>
+                        <p><strong><a href="https://developers.google.com/civic-information" target="_blank" rel="noopener noreferrer">Google Civic Information API</a></strong> &mdash; When you enter your address, this official Google service identifies your exact federal, state, and local representatives based on your voting districts.</p>
+                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates People API</a></strong> &mdash; Provides state legislator contact details including office emails, phone numbers, and committee memberships.</p>
+                        <p>Email addresses and phone numbers come directly from official government websites and legislative databases.</p>
+                    </div>
+                    <div class="quick-link-card">
+                        <h3>AI Classification</h3>
+                        <p><strong><a href="https://groq.com" target="_blank" rel="noopener noreferrer">Groq (Llama 3.3 70B)</a></strong> &mdash; The AI model used for secondary bill verification. An open-weight large language model running on Groq's inference platform. We use low temperature (0.1) for maximum consistency across runs.</p>
+                        <p>The AI never invents information &mdash; it only evaluates the bill data already collected from official sources above.</p>
+                    </div>
+                    <div class="quick-link-card">
+                        <h3>Action Counts</h3>
+                        <p><strong>Emails &amp; calls tracked:</strong> When you use our "Email Your Rep" or "Call" tools, the action is counted via our <a href="https://firebase.google.com" target="_blank" rel="noopener noreferrer">Firebase</a> backend. We count the action type (email or call) and nothing else &mdash; no personal data, no message content, no IP addresses.</p>
+                        <p><strong>Pledge data:</strong> Public officials who take the SAFE Action pledge are verified through our candidate quiz submission process and reviewed before publication.</p>
+                    </div>
+                    <div class="quick-link-card">
+                        <h3>Hosting &amp; Infrastructure</h3>
+                        <p><strong>GitHub Pages</strong> &mdash; The website itself is a static site hosted for free on GitHub. No server-side user tracking.</p>
+                        <p><strong>Firebase (Google Cloud)</strong> &mdash; Cloud functions handle action counting, volunteer applications, and donation processing. Firestore database stores bill data and aggregate counters.</p>
+                        <p><strong>GitHub Actions</strong> &mdash; Automated daily crawler runs at 6 AM UTC, pulling fresh data from all legislation APIs.</p>
+                    </div>
+                    <div class="quick-link-card">
+                        <h3>Open Source</h3>
+                        <p>Our entire codebase &mdash; including every keyword list, every AI prompt, every classification algorithm, and this website &mdash; is publicly available under the <strong>GPLv3 license</strong>.</p>
+                        <p><a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">View source code on GitHub &rarr;</a></p>
+                        <p>Anyone can audit our methodology, file issues, or submit improvements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 2.5em;">
+                <strong>A note on accuracy:</strong> No automated system is perfect. Our dual-layer approach (keywords + AI verification) with a conservative confidence threshold means we prioritize <strong>precision over recall</strong> &mdash; we'd rather leave a borderline bill as "Monitor" than risk mislabeling it. If you believe a bill has been misclassified, please <a href="https://github.com/SAFE-Action/SAFE-Action-Website/issues/new" target="_blank" rel="noopener noreferrer">open an issue on GitHub</a> and we'll review it.
             </div>
         </div>
     </section>
