@@ -150,7 +150,7 @@ a:hover { color: var(--red); }
 .action-word::after {
     content: '';
     position: absolute;
-    left: 0; bottom: 0;
+    left: 0; bottom: -4px;
     width: 100%;
     height: 3px;
     background: var(--red);
@@ -554,13 +554,13 @@ a:hover { color: var(--red); }
 
 /* --- Pledge Showcase --- */
 .pledge-showcase {
-    padding: 5rem 0;
+    padding: 2.5rem 0;
     background: var(--light-bg);
 }
 
 .pledge-showcase-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .pledge-showcase-header h2 {
@@ -808,7 +808,7 @@ a:hover { color: var(--red); }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(3.5rem, 10vw, 7.5rem);
+    font-size: clamp(2.8rem, 12vw, 7.5rem);
     font-weight: 400;
     color: var(--off-white);
     margin-bottom: 10px;
@@ -816,7 +816,7 @@ a:hover { color: var(--red); }
     letter-spacing: 0.03em;
     text-transform: uppercase;
 }
-.hero-title .action-word::after { height: 6px; bottom: 4px; }
+.hero-title .action-word::after { height: 6px; bottom: -8px; }
 
 .hero-subtitle {
     font-size: clamp(1rem, 2vw, 1.15rem);
@@ -827,16 +827,13 @@ a:hover { color: var(--red); }
     font-weight: 400;
 }
 
-.hero-divider {
+/* Clean gold edge between hero and ticker */
+.hero-edge {
     position: absolute;
-    bottom: -1px;
+    bottom: 0;
     left: 0; right: 0;
-}
-
-.hero-divider svg {
-    display: block;
-    width: 100%;
-    height: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 /* Quiz Hero (smaller) */
@@ -2934,7 +2931,7 @@ a:hover { color: var(--red); }
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
 
     .tracker-stats {
@@ -3251,7 +3248,7 @@ a:hover { color: var(--red); }
 .impact-section {
     position: relative;
     z-index: 1;
-    padding: 44px 0;
+    padding: 32px 0;
     background: linear-gradient(180deg, var(--cream) 0%, var(--off-white) 100%);
 }
 
@@ -3576,7 +3573,7 @@ a:hover { color: var(--red); }
    Movement Momentum Banner
    ============================================ */
 .momentum-banner {
-    padding: 60px 0;
+    padding: 32px 0;
     background: var(--cream);
 }
 
