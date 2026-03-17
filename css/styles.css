@@ -644,10 +644,11 @@ a:hover { color: var(--red); }
 }
 
 .pledge-card-mini .name {
-    font-family: var(--font-heading);
-    font-weight: 700;
+    font-family: var(--font-body);
+    font-weight: 800;
     font-size: 0.95rem;
     color: var(--dark);
+    text-transform: none;
 }
 
 .pledge-card-mini .party-badge {
@@ -1234,11 +1235,12 @@ a:hover { color: var(--red); }
 }
 
 .candidate-detail-name {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 900;
+    font-weight: 800;
     color: var(--text-dark);
     margin-bottom: 8px;
+    text-transform: none;
 }
 
 .candidate-meta-row {
@@ -1338,11 +1340,12 @@ a:hover { color: var(--red); }
 }
 
 .response-question {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 10px;
+    text-transform: none;
 }
 
 .response-answer {
