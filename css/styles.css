@@ -32,7 +32,7 @@
     --radius-md: 10px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    --font-heading: 'Bebas Neue', 'Arial Black', sans-serif;
+    --font-heading: 'Barlow', 'Arial Black', sans-serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: 0.25s ease;
 }
@@ -732,12 +732,12 @@ a:hover { color: var(--red); }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
     color: var(--white);
     margin-bottom: 10px;
     text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-    letter-spacing: 0.04em;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
 }
 
@@ -1762,6 +1762,26 @@ a:hover { color: var(--red); }
 .bill-card.stance-oppose::before { background: var(--red); }
 .bill-card.stance-support::before { background: #10B981; }
 .bill-card.stance-monitor::before { background: var(--gold); }
+
+/* Defeated bills — green highlight */
+.bill-card.bill-defeated {
+    border-color: #10B981;
+    background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%);
+}
+.bill-card.bill-defeated::before { background: #10B981; }
+.bill-card.bill-defeated::after {
+    content: 'DEFEATED';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
+    background: #10B981;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
 
 .bill-card:hover {
     transform: translateY(-4px);

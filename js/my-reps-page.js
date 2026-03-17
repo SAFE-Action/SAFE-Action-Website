@@ -2157,6 +2157,7 @@ var BillBrowser = {
         if (bill.billType === 'anti') card.classList.add('stance-oppose');
         else if (bill.billType === 'pro') card.classList.add('stance-support');
         else card.classList.add('stance-monitor');
+        if (bill.stoppedWithAction) card.classList.add('bill-defeated');
 
         // Header
         var header = document.createElement('div');
@@ -2170,7 +2171,7 @@ var BillBrowser = {
         var stateBadge = document.createElement('span');
         stateBadge.className = 'bill-card-state';
         stateBadge.textContent = bill.state || '';
-        stateBadge.style.cssText = 'background:#3C3B6E;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
+        stateBadge.style.cssText = 'background:#1B3A6B;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
         header.appendChild(stateBadge);
 
         // Type badge — only label STEM-related bills (anti/pro science)
