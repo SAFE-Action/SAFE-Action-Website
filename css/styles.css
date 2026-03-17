@@ -318,7 +318,9 @@ a:hover { color: var(--red); }
 }
 
 .nav2-dropdown a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 20px;
     color: var(--text);
     font-size: 0.9rem;
@@ -326,10 +328,26 @@ a:hover { color: var(--red); }
     transition: all var(--transition);
 }
 
+.nav2-dropdown a::before {
+    content: '';
+    width: 6px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 1px;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: all var(--transition);
+}
+
 .nav2-dropdown a:hover {
     background: rgba(15,23,42,0.06);
     color: var(--blue);
     padding-left: 24px;
+}
+
+.nav2-dropdown a:hover::before {
+    width: 10px;
+    opacity: 1;
 }
 
 .nav2-dropdown hr {
