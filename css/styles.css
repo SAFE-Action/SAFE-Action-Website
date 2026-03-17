@@ -145,19 +145,9 @@ a:hover { color: var(--red); }
 /* ACTION word thread — every instance of ACTION pops in red */
 .action-word {
     color: var(--red);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.22em;
-}
-.action-word::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0.07em;
-    background: var(--red);
-    border-radius: 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.1em;
 }
 
 /* Star divider */
