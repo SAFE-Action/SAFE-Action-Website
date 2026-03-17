@@ -1,5 +1,5 @@
 // SAFE Action Service Worker
-const CACHE_NAME = 'safe-action-v93';
+const CACHE_NAME = 'safe-action-v94';
 const ASSETS = [
     '/',
     '/index.html',
@@ -13,7 +13,14 @@ const ASSETS = [
     '/feed.html',
     '/volunteer.html',
     '/nda.html',
+    '/css/fonts.css',
     '/css/styles.css',
+    '/fonts/bebas-neue-400.ttf',
+    '/fonts/libre-franklin-400.ttf',
+    '/fonts/libre-franklin-500.ttf',
+    '/fonts/libre-franklin-600.ttf',
+    '/fonts/libre-franklin-700.ttf',
+    '/fonts/libre-franklin-800.ttf',
     '/js/config.js',
     '/js/sheets.js',
     '/js/quiz.js',
