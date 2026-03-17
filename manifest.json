@@ -4,8 +4,8 @@
     "description": "Take action on science and health legislation. Contact your representatives and defend public health.",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#3C3B6E",
-    "theme_color": "#3C3B6E",
+    "background_color": "#1A2744",
+    "theme_color": "#1A2744",
     "orientation": "any",
     "icons": [
         {
@@ -29,8 +29,8 @@
         },
         {
             "name": "Media & Press",
-            "url": "/press.html",
-            "description": "Legislative news for journalists and advocates"
+            "url": "/media.html",
+            "description": "Resources for media and content creators"
         }
     ]
 }

@@ -613,6 +613,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 var doneP = document.createElement('p');
                 doneP.textContent = 'You reached out to ' + callableReps.length + ' representative' + (callableReps.length > 1 ? 's' : '') + '. Thank you for taking action!';
                 doneCard.appendChild(doneP);
+                // PWA install prompt for engaged users
+                if (typeof createPostActionInstallBtn === 'function') {
+                    var pwaBtn = createPostActionInstallBtn();
+                    if (pwaBtn) doneCard.appendChild(pwaBtn);
+                }
                 var closeBtn = document.createElement('button');
                 closeBtn.className = 'btn btn-primary';
                 closeBtn.textContent = 'Close';
@@ -819,6 +824,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     progressHeader.innerHTML = '<strong>All Done!</strong><p>You contacted all ' + total + ' representatives. Thank you for taking action!</p>';
                     repInfo.style.display = 'none';
                     btnArea.textContent = '';
+                    // PWA install prompt for engaged users
+                    if (typeof createPostActionInstallBtn === 'function') {
+                        var pwaBtn = createPostActionInstallBtn();
+                        if (pwaBtn) btnArea.appendChild(pwaBtn);
+                    }
                     var doneBtn = document.createElement('button');
                     doneBtn.className = 'btn btn-primary';
                     doneBtn.textContent = 'Finished';
@@ -1083,6 +1093,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 progressHeader.innerHTML = '<strong>All Done!</strong><p>You contacted all ' + total + ' candidates. Thank you for going the extra mile!</p>';
                 repInfo.style.display = 'none';
                 btnArea.textContent = '';
+                // PWA install prompt for engaged users
+                if (typeof createPostActionInstallBtn === 'function') {
+                    var pwaBtn = createPostActionInstallBtn();
+                    if (pwaBtn) btnArea.appendChild(pwaBtn);
+                }
                 var doneBtn = document.createElement('button');
                 doneBtn.className = 'btn btn-primary';
                 doneBtn.textContent = 'Finished';

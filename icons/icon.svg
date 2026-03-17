@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="80" fill="#3C3B6E"/>
-  <text x="256" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="160" font-weight="bold" fill="#C9A84C">&#9733;</text>
-  <text x="256" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="900" fill="#FFFFFF">SAFE</text>
-  <text x="256" y="400" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="700" fill="rgba(255,255,255,0.7)">ACTION</text>
+  <!-- Background: Campaign Rally navy -->
+  <rect width="512" height="512" rx="80" fill="#1A2744"/>
+  <!-- Gold star -->
+  <text x="256" y="210" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="180" fill="#C9A84C">&#9733;</text>
+  <!-- SAFE text -->
+  <text x="256" y="340" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="100" font-weight="400" letter-spacing="8" fill="#FFF5E6">SAFE</text>
+  <!-- ACTION text with red underline -->
+  <text x="256" y="420" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="68" font-weight="400" letter-spacing="6" fill="#D32F2F">ACTION</text>
+  <!-- Red underline bar -->
+  <rect x="130" y="432" width="252" height="6" rx="3" fill="#D32F2F"/>
+  <!-- Subtle gold accent line at bottom -->
+  <rect x="80" y="465" width="352" height="2" rx="1" fill="#C9A84C" opacity="0.4"/>
 </svg>
