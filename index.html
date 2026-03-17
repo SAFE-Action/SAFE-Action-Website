@@ -336,43 +336,32 @@ document.getElementById('hero-address-form').addEventListener('submit', function
     var apiKey = SAFE_CONFIG.GOOGLE_MAPS_API_KEY || SAFE_CONFIG.GOOGLE_CIVIC_API_KEY;
     if (!apiKey) return;
 
-    // Validate the key works before loading the full Maps SDK
-    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=test&key=' + apiKey)
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            if (data.status === 'REQUEST_DENIED') {
-                console.warn('Maps API not fully activated — skipping Places Autocomplete');
-                return;
-            }
-            var script = document.createElement('script');
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=__initHeroPlaces';
-            script.onerror = function() { console.warn('Google Places API not available'); };
-            window.__initHeroPlaces = function() {
-                try {
-                    var ac = new google.maps.places.Autocomplete(heroInput, {
-                        types: ['address'],
-                        componentRestrictions: { country: 'us' },
-                        fields: ['formatted_address']
-                    });
-                    ac.addListener('place_changed', function() {
-                        var place = ac.getPlace();
-                        if (place && place.formatted_address) {
-                            heroInput.value = place.formatted_address;
-                            setTimeout(function() {
-                                document.getElementById('hero-address-form').dispatchEvent(new Event('submit'));
-                            }, 100);
-                        }
-                    });
-                    heroInput.setAttribute('placeholder', 'Start typing your address...');
-                } catch (e) {
-                    console.warn('Hero Places Autocomplete init failed:', e);
+    // Load Maps JS SDK directly (referer-restricted keys can't use REST geocoding validation)
+    var script = document.createElement('script');
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=__initHeroPlaces';
+    script.onerror = function() { console.warn('Google Places API not available'); };
+    window.__initHeroPlaces = function() {
+        try {
+            var ac = new google.maps.places.Autocomplete(heroInput, {
+                types: ['address'],
+                componentRestrictions: { country: 'us' },
+                fields: ['formatted_address']
+            });
+            ac.addListener('place_changed', function() {
+                var place = ac.getPlace();
+                if (place && place.formatted_address) {
+                    heroInput.value = place.formatted_address;
+                    setTimeout(function() {
+                        document.getElementById('hero-address-form').dispatchEvent(new Event('submit'));
+                    }, 100);
                 }
-            };
-            document.head.appendChild(script);
-        })
-        .catch(function() {
-            console.warn('Could not validate Maps API key — skipping autocomplete');
-        });
+            });
+            heroInput.setAttribute('placeholder', 'Start typing your address...');
+        } catch (e) {
+            console.warn('Hero Places Autocomplete init failed:', e);
+        }
+    };
+    document.head.appendChild(script);
 })();
 
 // Load recent pledges from Firestore

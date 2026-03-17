@@ -193,21 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var apiKey = SAFE_CONFIG.GOOGLE_MAPS_API_KEY || SAFE_CONFIG.GOOGLE_CIVIC_API_KEY;
         if (!apiKey) return;
 
-        // First, test the key with a lightweight geocode request.
-        // If it fails, don't load the Maps JS SDK at all (avoids error dialogs).
-        fetch('https://maps.googleapis.com/maps/api/geocode/json?address=test&key=' + apiKey)
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.error_message && data.error_message.includes('not activated')) {
-                    console.warn('Maps API not fully activated — skipping Places Autocomplete');
-                    return;
-                }
-                loadPlacesScript(apiKey);
-            })
-            .catch(function() {
-                // Network error — skip autocomplete silently
-                console.warn('Could not validate Maps API key — skipping autocomplete');
-            });
+        // Load Places SDK directly (referer-restricted keys can't use REST geocoding validation)
+        loadPlacesScript(apiKey);
     }
 
     function loadPlacesScript(apiKey) {
