@@ -13,8 +13,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const billId = params.get('bill');
     const state = params.get('state');
 
-    // Set back link
-    backLink.href = state ? `outreach.html?state=${encodeURIComponent(state)}` : 'outreach.html';
+    // Set back link — return to tracker with previous filter settings
+    const savedReturn = sessionStorage.getItem('safe_tracker_return');
+    if (savedReturn) {
+        backLink.href = savedReturn;
+    } else if (document.referrer && document.referrer.includes('tracker.html')) {
+        backLink.href = document.referrer;
+    } else {
+        backLink.href = state ? `tracker.html?state=${encodeURIComponent(state)}` : 'tracker.html';
+    }
 
     if (!billId) { showNotFound(); return; }
 

@@ -2153,6 +2153,9 @@ var BillBrowser = {
     buildCard: function(bill) {
         var card = document.createElement('a');
         card.href = 'action.html?bill=' + encodeURIComponent(bill.billId || '');
+        card.addEventListener('click', function() {
+            try { sessionStorage.setItem('safe_tracker_return', window.location.pathname + window.location.search); } catch(e) {}
+        });
         card.className = 'bill-card';
         if (bill.billType === 'anti') card.classList.add('stance-oppose');
         else if (bill.billType === 'pro') card.classList.add('stance-support');
