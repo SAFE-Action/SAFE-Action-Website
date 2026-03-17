@@ -2813,7 +2813,7 @@ a:hover { color: var(--red); }
     }
     .footer-col-brand .footer-brand {
         justify-content: center;
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
     .footer-col-brand .footer-tagline {
         text-align: center;
