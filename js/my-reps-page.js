@@ -2221,7 +2221,7 @@ var BillBrowser = {
         var stateBadge = document.createElement('span');
         stateBadge.className = 'bill-card-state';
         stateBadge.textContent = bill.state || '';
-        stateBadge.style.cssText = 'background:#1B3A6B;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
+        stateBadge.style.cssText = 'background:#1A2744;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
         header.appendChild(stateBadge);
 
         // Type badge — only label STEM-related bills (anti/pro science)
