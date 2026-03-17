@@ -84,6 +84,6 @@ exports.districts = async (req, res) => {
     });
   } catch (e) {
     console.error('Census geocoder error:', e);
-    return res.status(500).json({ error: 'Census lookup failed', details: e.message });
+    return res.status(500).json({ error: 'Census lookup failed' });
   }
 };

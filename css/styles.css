@@ -1,39 +1,39 @@
 /* ============================================
-   SAFE Action - Patriotic Theme
-   Red, White & Blue USA Design
+   SAFE Action - Campaign Rally Theme
+   Navy / Cream split-tone with rally red accents
    ============================================ */
 
 /* --- CSS Variables --- */
 :root {
-    --red: #DC2626;
-    --red-dark: #B91C1C;
-    --red-light: #EF4444;
-    --blue: #1B3A6B;
-    --blue-dark: #122B52;
-    --blue-light: #2B5797;
-    --blue-mid: #1E3A5F;
+    --red: #D32F2F;
+    --red-dark: #b71c1c;
+    --red-light: #E53935;
+    --blue: #1A2744;
+    --blue-dark: #111C30;
+    --blue-light: #243454;
+    --blue-mid: #1E2F4A;
     --white: #FFFFFF;
-    --off-white: #F8FAFC;
-    --cream: #F1F5F9;
-    --gold: #94A3B8;
-    --gold-light: #CBD5E1;
-    --silver: #94A3B8;
-    --silver-light: #CBD5E1;
-    --text-dark: #1B3A6B;
-    --text-mid: #334155;
-    --text-light: #64748B;
-    --border: #CBD5E1;
-    --border-light: #E2E8F0;
+    --off-white: #FFF5E6;
+    --cream: #FFF5E6;
+    --gold: #C9A84C;
+    --gold-light: #D4B85C;
+    --silver: #C9A84C;
+    --silver-light: #D4B85C;
+    --text-dark: #1A2744;
+    --text-mid: #2C3E5A;
+    --text-light: #5A6B82;
+    --border: #D1C4A9;
+    --border-light: #E8DCC6;
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 12px rgba(15,23,42,0.1);
-    --shadow-lg: 0 8px 30px rgba(15,23,42,0.12);
-    --shadow-xl: 0 12px 40px rgba(15,23,42,0.18);
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --font-heading: 'Barlow', 'Arial Black', sans-serif;
-    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-md: 0 4px 12px rgba(26,39,68,0.1);
+    --shadow-lg: 0 8px 30px rgba(26,39,68,0.12);
+    --shadow-xl: 0 12px 40px rgba(26,39,68,0.18);
+    --radius-sm: 4px;
+    --radius-md: 4px;
+    --radius-lg: 4px;
+    --radius-xl: 4px;
+    --font-heading: 'Bebas Neue', 'Arial Black', sans-serif;
+    --font-body: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
     --transition: 0.25s ease;
 }
 
@@ -138,8 +138,65 @@ a:hover { color: var(--red); }
 
 .logo-icon {
     font-size: 1.8rem;
-    color: var(--white);
-    filter: drop-shadow(0 0 6px rgba(220,38,38,0.5));
+    color: var(--gold);
+    filter: none;
+}
+
+/* ACTION word thread — every instance of ACTION pops in red */
+.action-word {
+    color: var(--red);
+    position: relative;
+}
+.action-word::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    border-radius: 2px;
+}
+
+/* Star divider */
+.star-divider {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.5em;
+    padding: 16px 0;
+    font-family: var(--font-heading);
+}
+
+/* Sticker badges */
+.sticker {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding: 4px 12px;
+    border: 2px solid;
+    border-radius: 4px;
+    transform: rotate(-2deg);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+    white-space: nowrap;
+}
+.sticker-red { background: var(--red); color: var(--off-white); border-color: var(--off-white); }
+.sticker-gold { background: var(--gold); color: var(--blue); border-color: var(--blue); }
+.sticker-navy { background: var(--blue); color: var(--off-white); border-color: var(--off-white); }
+
+/* Section alternating backgrounds */
+.section-navy { background: var(--blue); color: var(--off-white); }
+.section-cream { background: var(--cream); color: var(--blue); }
+
+/* Scroll reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(.34,1.56,.64,1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .main-nav {
@@ -284,8 +341,8 @@ a:hover { color: var(--red); }
 
 .logo-link .logo-icon {
     font-size: 1.8rem;
-    color: var(--white);
-    filter: drop-shadow(0 0 6px rgba(220,38,38,0.5));
+    color: var(--gold);
+    filter: none;
 }
 
 /* Scrolled header adjustments for mega-nav */
@@ -427,40 +484,55 @@ a:hover { color: var(--red); }
 .hero-address-form {
     display: flex;
     flex-direction: row;
-    max-width: 600px;
-    margin: 2rem auto 0;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: visible;
+    box-shadow: none;
+    gap: 0;
 }
 
 .hero-address-form input {
     flex: 1;
     padding: 16px 20px;
-    font-size: 1.1rem;
-    border: none;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    border: 3px solid var(--off-white);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    background: rgba(255,245,230,0.1);
+    color: var(--off-white);
     outline: none;
+    transition: background 0.2s;
+}
+
+.hero-address-form input:focus {
+    background: rgba(255,245,230,0.18);
 }
 
 .hero-address-form input::placeholder {
-    color: #94a3b8;
+    color: rgba(255,245,230,0.4);
 }
 
 .hero-address-form button {
     padding: 16px 28px;
     background: var(--red);
-    color: var(--white);
+    color: var(--off-white);
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 400;
     text-transform: uppercase;
-    border: none;
+    letter-spacing: 0.1em;
+    border: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
-    transition: background var(--transition);
+    white-space: nowrap;
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), background 0.2s;
 }
 
 .hero-address-form button:hover {
-    background: #B91C1C;
+    background: var(--red-dark);
+    transform: scale(1.06);
 }
 
 .hero-learn-link {
@@ -686,21 +758,25 @@ a:hover { color: var(--red); }
 /* --- Hero --- */
 .hero {
     position: relative;
-    background: linear-gradient(160deg, #122B52 0%, #1B3A6B 40%, #1E3A5F 100%);
-    padding: 56px 0 70px;
+    background: var(--blue);
+    padding: 80px 0 70px;
     text-align: center;
     overflow: hidden;
 }
 
+/* Subtle diagonal stripe texture */
 .hero::before {
     content: '';
     position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(ellipse at 25% 50%, rgba(220,38,38,0.12) 0%, transparent 55%),
-                radial-gradient(ellipse at 75% 40%, rgba(30,58,95,0.3) 0%, transparent 55%),
-                radial-gradient(circle at 50% 50%, rgba(148,163,184,0.05) 0%, transparent 40%);
-    animation: heroGlow 8s ease-in-out infinite alternate;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 40px,
+        rgba(255,245,230,0.02) 40px,
+        rgba(255,245,230,0.02) 42px
+    );
+    pointer-events: none;
 }
 
 @keyframes heroGlow {
@@ -732,21 +808,23 @@ a:hover { color: var(--red); }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    color: var(--white);
+    font-size: clamp(3.5rem, 10vw, 7.5rem);
+    font-weight: 400;
+    color: var(--off-white);
     margin-bottom: 10px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-    letter-spacing: -0.01em;
+    text-shadow: none;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
 }
+.hero-title .action-word::after { height: 6px; bottom: 4px; }
 
 .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: rgba(255,255,255,0.8);
-    max-width: 640px;
-    margin: 0 auto 24px;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,245,230,0.7);
+    max-width: 560px;
+    margin: 0 auto 32px;
     line-height: 1.7;
+    font-weight: 400;
 }
 
 .hero-divider {
@@ -764,7 +842,7 @@ a:hover { color: var(--red); }
 /* Quiz Hero (smaller) */
 .quiz-hero {
     position: relative;
-    background: linear-gradient(160deg, #122B52 0%, #1B3A6B 100%);
+    background: var(--blue);
     padding: 36px 0 28px;
     text-align: center;
 }
@@ -1809,7 +1887,7 @@ a:hover { color: var(--red); }
 }
 
 .bill-card-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--text-dark);
@@ -3498,18 +3576,19 @@ a:hover { color: var(--red); }
    Movement Momentum Banner
    ============================================ */
 .momentum-banner {
-    padding: 0;
-    background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%);
+    padding: 60px 0;
+    background: var(--cream);
 }
 
 .momentum-card {
-    background: linear-gradient(135deg, #122B52 0%, #1B3A6B 50%, #1E3A5F 100%);
-    border-radius: 16px;
-    padding: 28px 32px 24px;
-    color: #fff;
-    max-width: 680px;
+    background: var(--off-white);
+    border: 3px solid var(--blue);
+    border-radius: 4px;
+    padding: 32px 32px 28px;
+    color: var(--blue);
+    max-width: 700px;
     margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(26, 39, 68, 0.3);
+    box-shadow: none;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -3519,8 +3598,8 @@ a:hover { color: var(--red); }
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--white) 50%, var(--blue-light) 100%);
+    height: 4px;
+    background: var(--red);
 }
 
 .momentum-header {
@@ -3545,7 +3624,7 @@ a:hover { color: var(--red); }
 .momentum-headline {
     font-size: 1rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.7);
+    color: var(--text-light);
     margin-bottom: 20px;
     letter-spacing: 0.01em;
 }
@@ -3567,7 +3646,7 @@ a:hover { color: var(--red); }
 .momentum-number {
     font-size: 2.4rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--red);
     line-height: 1.1;
     font-variant-numeric: tabular-nums;
     transition: color 0.3s, transform 0.3s;
@@ -3590,7 +3669,7 @@ a:hover { color: var(--red); }
     gap: 8px;
     margin-bottom: 16px;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
 }
 
 /* Breakdown line (emails · calls) */
@@ -3601,16 +3680,16 @@ a:hover { color: var(--red); }
     gap: 10px;
     margin-bottom: 12px;
     font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
+    color: var(--text-light);
 }
 
 .momentum-breakdown-item strong {
-    color: rgba(255,255,255,0.85);
+    color: var(--blue);
     font-size: 1rem;
 }
 
 .momentum-breakdown-dot {
-    color: rgba(255,255,255,0.25);
+    color: var(--border);
 }
 
 /* Today hero line */
@@ -3626,12 +3705,12 @@ a:hover { color: var(--red); }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     margin-top: 2px;
 }
 
 .momentum-today-label strong {
-    color: var(--gold);
+    color: var(--red);
 }
 
 /* Progress bar */
@@ -3645,31 +3724,34 @@ a:hover { color: var(--red); }
     justify-content: space-between;
     align-items: baseline;
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-light);
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 1rem;
 }
 
 .momentum-progress-count {
-    color: rgba(255,255,255,0.75);
+    color: var(--blue);
     font-weight: 700;
 }
 
 .momentum-progress-bar {
-    height: 10px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 6px;
+    height: 28px;
+    background: var(--blue);
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
+    border: 3px solid var(--blue);
 }
 
 .momentum-progress-fill {
     height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--red-light) 100%);
-    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+    background: var(--red);
+    transition: width 1.5s cubic-bezier(.34,1.56,.64,1);
     min-width: 0;
     position: relative;
 }
@@ -3692,7 +3774,7 @@ a:hover { color: var(--red); }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-light);
     margin-top: 4px;
 }
 
@@ -3704,7 +3786,7 @@ a:hover { color: var(--red); }
     gap: 10px;
     margin-bottom: 10px;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
 }
 
 .momentum-you-badge {
@@ -3734,18 +3816,18 @@ a:hover { color: var(--red); }
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
 }
 
 .daily-goal-stat strong {
-    color: rgba(255,255,255,0.75);
+    color: var(--blue);
 }
 
 /* Message */
 .momentum-message {
     font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-mid);
     margin-bottom: 16px;
     line-height: 1.4;
 }
@@ -3754,7 +3836,7 @@ a:hover { color: var(--red); }
 .momentum-zero-cta {
     font-size: 1.3rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.9);
+    color: var(--blue);
     text-align: center;
     padding: 16px 0;
     letter-spacing: 0.02em;
@@ -4431,10 +4513,10 @@ a:hover { color: var(--red); }
 .pledge-ticker-section {
     display: flex;
     align-items: stretch;
-    background: var(--blue);
+    background: var(--red);
     overflow: hidden;
-    border-top: 3px solid var(--red);
-    border-bottom: 3px solid var(--red);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
 }
 
 .pledge-ticker-label {
@@ -7102,7 +7184,7 @@ input.warning {
     padding: 10px 14px;
     margin-bottom: 10px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #92400E;
     width: 100%;
 }
 

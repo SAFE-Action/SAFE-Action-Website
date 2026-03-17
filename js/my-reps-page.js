@@ -1889,6 +1889,7 @@ Thank you for taking my call.`;
         } catch (e) {}
 
         // Report to national counter Cloud Function with metadata
+        meta._t = Date.now();
         fetch('/api/actions/track', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1900,6 +1901,37 @@ Thank you for taking my call.`;
 // ============================================
 // Bill Browser (Browse Bills Tab)
 // ============================================
+/**
+ * Convert raw legislative titles (ALL CAPS, semicolons) to readable format.
+ * "EDUCATION: SCHOOLS; GRANTS; TEACHER BONUS" → "Education: Schools, Grants, Teacher Bonus"
+ */
+function formatBillTitle(raw) {
+    if (!raw) return 'Untitled';
+    var s = raw;
+    s = s.replace(/;\s*/g, ', ');
+    if (raw === raw.toUpperCase()) {
+        s = s.toLowerCase()
+            .replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+    }
+    s = s.replace(/\bMrna\b/g, 'mRNA')
+         .replace(/\bHiv\b/g, 'HIV')
+         .replace(/\bAids\b/g, 'AIDS')
+         .replace(/\bCovid\b/gi, 'COVID')
+         .replace(/\bFda\b/g, 'FDA')
+         .replace(/\bCdc\b/g, 'CDC')
+         .replace(/\bNih\b/g, 'NIH')
+         .replace(/\bDna\b/g, 'DNA')
+         .replace(/\bRna\b/g, 'RNA')
+         .replace(/\bHhs\b/g, 'HHS')
+         .replace(/\bEpa\b/g, 'EPA')
+         .replace(/\bUsda\b/g, 'USDA')
+         .replace(/\bDhs\b/g, 'DHS')
+         .replace(/\bK-12\b/gi, 'K-12')
+         .replace(/\bHpv\b/g, 'HPV')
+         .replace(/\bMmr\b/g, 'MMR');
+    return s;
+}
+
 var BillBrowser = {
     _initialized: false,
     _allBills: [],
@@ -2195,7 +2227,7 @@ var BillBrowser = {
         // Title
         var title = document.createElement('h3');
         title.className = 'bill-card-title';
-        title.textContent = bill.title || 'Untitled';
+        title.textContent = formatBillTitle(bill.title);
         card.appendChild(title);
 
         // Category tag
@@ -2223,7 +2255,7 @@ var BillBrowser = {
         if (bill.summary) {
             var summary = document.createElement('p');
             summary.className = 'bill-card-summary';
-            var text = bill.summary;
+            var text = formatBillTitle(bill.summary);
             if (text.length > 120) text = text.substring(0, 120) + '...';
             summary.textContent = text;
             card.appendChild(summary);

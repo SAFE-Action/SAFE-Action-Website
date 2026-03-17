@@ -1,13 +1,48 @@
 const admin = require("firebase-admin");
 
+// ── Rate limiting ──────────────────────────────────
+// In-memory store (resets on cold start, which is acceptable)
+const RATE_LIMIT_MAX = 30;          // max 30 actions per window
+const RATE_LIMIT_WINDOW_MS = 3600000; // 1 hour
+const rateLimitMap = new Map();
+
+function isRateLimited(ip) {
+  var now = Date.now();
+  var entry = rateLimitMap.get(ip);
+  if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.set(ip, { windowStart: now, count: 1 });
+    return false;
+  }
+  entry.count++;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// ── Anti-bot: timestamp token must be within 60s of server time ──
+function isValidToken(token) {
+  if (!token || typeof token !== "number") return false;
+  return Math.abs(Date.now() - token) < 60000;
+}
+
 async function trackAction(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { type, city, state, repName, repTitle, billId, billTitle } = req.body;
+  // Rate limiting by IP
+  var clientIp = req.headers["x-forwarded-for"] || req.ip || "unknown";
+  if (typeof clientIp === "string") clientIp = clientIp.split(",")[0].trim();
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: "Too many requests. Please try again later." });
+  }
+
+  const { type, city, state, repName, repTitle, billId, billTitle, _t } = req.body;
   if (!type || !["email", "call"].includes(type)) {
     return res.status(400).json({ error: "Invalid action type. Must be 'email' or 'call'." });
+  }
+
+  // Anti-bot token check
+  if (!isValidToken(_t)) {
+    return res.status(400).json({ error: "Invalid request" });
   }
 
   const db = admin.firestore();

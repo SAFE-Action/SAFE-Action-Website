@@ -15,10 +15,8 @@ service cloud.firestore {
       allow read: if request.auth != null &&
         exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
 
-      // NDA page: allow unauthenticated read if querying by ndaToken
-      // (Cloud Functions handle the actual NDA signing securely)
-      allow read: if resource.data.ndaToken != null &&
-        request.auth == null;
+      // NDA lookup handled server-side by Cloud Functions (admin SDK).
+      // No unauthenticated client-side reads needed.
 
       // No client-side writes - all writes go through Cloud Functions
       allow write: if false;

@@ -79,9 +79,10 @@ async function createCheckout(req, res) {
     }
 
     try {
+        var siteUrl = (process.env.SITE_URL || "https://scienceandfreedom.com").replace(/\/+$/, "");
         var params = {
-            "success_url": "https://safe-action-website.web.app/donate?success=true",
-            "cancel_url": "https://safe-action-website.web.app/donate?canceled=true",
+            "success_url": siteUrl + "/donate?success=true",
+            "cancel_url": siteUrl + "/donate?canceled=true",
             "metadata[source]": "safe-action-donate-page",
             "metadata[frequency]": frequency
         };

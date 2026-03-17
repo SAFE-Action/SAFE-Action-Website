@@ -13,6 +13,7 @@ from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, r
 from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
+from .analysis.bill_verification import verify_all_bills
 from .utils.cache import (
     should_recrawl, update_cache_timestamp,
     save_cached_data, load_cached_data,
@@ -117,6 +118,13 @@ async def run_full_crawl(news_only: bool = False):
     if not news_only and all_bills and LEGISCAN_API_KEY and bill_source != "cache":
         print("[2c/5] Refreshing tracked bill statuses via LegiScan...")
         all_bills = await legiscan_refresh_bills(all_bills)
+
+    # ── Step 2d: LLM verification of bill classifications ──
+    if not news_only and all_bills and GROQ_API_KEY:
+        print("[2d/5] Running LLM secondary verification on bill classifications...")
+        all_bills = await verify_all_bills(all_bills)
+        if all_bills:
+            save_cached_data("bills", all_bills)
 
     # ── Step 3: News crawl ────────────────────────────
     print("[3/5] Fetching news from Google News RSS...")
