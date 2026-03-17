@@ -413,10 +413,33 @@ function safeMain() {
 
             var lastValues = {};
 
+            // Zero-state elements
+            var zeroCta = document.getElementById('momentum-zero-cta');
+            var breakdownEl = document.getElementById('momentum-breakdown');
+            var todayLineEl = document.getElementById('momentum-today-line');
+
+            // Initially hide counters if zero, show motivating zero-state
+            function updateZeroState(total) {
+                if (zeroCta) {
+                    if (total > 0) {
+                        zeroCta.style.display = 'none';
+                        if (breakdownEl) breakdownEl.style.display = '';
+                        if (todayLineEl) todayLineEl.style.display = '';
+                    } else {
+                        zeroCta.style.display = '';
+                        if (breakdownEl) breakdownEl.style.display = 'none';
+                        if (todayLineEl) todayLineEl.style.display = 'none';
+                    }
+                }
+            }
+            // Start in zero state
+            updateZeroState(0);
+
             // Real-time listener
             db.collection('actionStats').doc('counters').onSnapshot(function(doc) {
                 if (!doc.exists) {
                     if (headlineEl) headlineEl.textContent = 'Be the first to defend science today';
+                    updateZeroState(0);
                     return;
                 }
 
@@ -427,6 +450,9 @@ function safeMain() {
                 var todayTotal = (data['daily_' + dk + '_total'] || 0);
                 var weekTotal = (data['weekly_' + wk + '_total'] || 0);
                 var allTimeTotal = (data['allTime_total'] || 0);
+
+                // Toggle zero-state vs counters
+                updateZeroState(todayTotal);
 
                 // Animate tick effect when number changes
                 function updateStat(el, key, val) {
