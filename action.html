@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take Action - SAFE Action</title>
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0F172A">
+    <meta name="theme-color" content="#1B3A6B">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=73">
@@ -118,6 +118,10 @@
                             <span class="bill-info-value" id="bill-number"></span>
                         </div>
                         <div class="bill-info-item">
+                            <span class="bill-info-label">Jurisdiction</span>
+                            <span class="bill-info-value" id="bill-jurisdiction"></span>
+                        </div>
+                        <div class="bill-info-item">
                             <span class="bill-info-label">Status</span>
                             <span class="bill-info-value" id="bill-status"></span>
                         </div>
@@ -129,9 +133,17 @@
                             <span class="bill-info-label">Committee</span>
                             <span class="bill-info-value" id="bill-committee"></span>
                         </div>
+                        <div class="bill-info-item" id="bill-sponsor-row">
+                            <span class="bill-info-label">Sponsor</span>
+                            <span class="bill-info-value" id="bill-sponsor"></span>
+                        </div>
                         <div class="bill-info-item">
                             <span class="bill-info-label">Category</span>
                             <span class="bill-info-value" id="bill-category"></span>
+                        </div>
+                        <div class="bill-info-item" id="bill-subjects-row">
+                            <span class="bill-info-label">Subjects</span>
+                            <span class="bill-info-value" id="bill-subjects"></span>
                         </div>
                         <div class="bill-info-item">
                             <span class="bill-info-label">Last Action</span>

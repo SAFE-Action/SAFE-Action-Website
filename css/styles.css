@@ -4639,34 +4639,38 @@ a:hover { color: var(--red); }
    ============================================ */
 .tracker-impact-bar {
     background: var(--blue);
-    padding: 16px 0;
-    border-bottom: 3px solid var(--gold);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
 }
 
 .tracker-impact-grid {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 .tracker-impact-item {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: baseline;
+    gap: 6px;
 }
 
 .tracker-impact-number {
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: var(--gold);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
 }
 
 .tracker-impact-label {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.85rem;
-    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 .tracker-impact-item.victory-item .tracker-impact-number {

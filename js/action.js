@@ -64,12 +64,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     function populateBillDetails(b) {
         // Header badges
         const stanceBadge = document.getElementById('bill-stance-badge');
-        stanceBadge.textContent = `SAFE: ${b.stance}`;
-        stanceBadge.className = `badge badge-stance ${(b.stance || '').toLowerCase()}`;
+        const stanceMap = { anti: 'Oppose', pro: 'Support', monitor: 'Monitor' };
+        const stanceLabel = stanceMap[(b.stance || b.billType || '').toLowerCase()] || b.stance || '';
+        stanceBadge.textContent = `SAFE: ${stanceLabel}`;
+        stanceBadge.className = `badge badge-stance ${(b.stance || b.billType || '').toLowerCase()}`;
 
         const levelBadge = document.getElementById('bill-level-badge');
-        levelBadge.textContent = b.level;
-        levelBadge.className = `badge badge-level ${b.level === 'Federal' ? 'federal' : ''}`;
+        if (b.level === 'Federal') {
+            levelBadge.textContent = 'Federal';
+            levelBadge.className = 'badge badge-level federal';
+        } else {
+            levelBadge.textContent = b.state || 'State';
+            levelBadge.className = 'badge badge-level';
+        }
 
         const impactBadge = document.getElementById('bill-impact-badge');
         impactBadge.textContent = `${b.impact} Priority`;
@@ -87,6 +94,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Info grid
         document.getElementById('bill-number').textContent = b.billNumber;
+        // Jurisdiction: show full state name or "Federal (U.S. Congress)"
+        const jurisdictionEl = document.getElementById('bill-jurisdiction');
+        if (jurisdictionEl) {
+            if (b.level === 'Federal') {
+                jurisdictionEl.textContent = 'Federal (U.S. Congress)';
+            } else {
+                const fullState = (SAFE_CONFIG.STATES && SAFE_CONFIG.STATES[b.state]) || b.state || 'Unknown';
+                jurisdictionEl.textContent = fullState + ' (State)';
+            }
+        }
         document.getElementById('bill-status').textContent = b.status;
         document.getElementById('bill-chamber').textContent = b.chamber || 'N/A';
 
@@ -96,6 +113,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('bill-committee-row').style.display = 'none';
         }
 
+        // Sponsor
+        const sponsorEl = document.getElementById('bill-sponsor');
+        const sponsorRow = document.getElementById('bill-sponsor-row');
+        if (sponsorEl) {
+            let sponsorText = '';
+            if (Array.isArray(b.sponsors) && b.sponsors.length > 0) {
+                sponsorText = b.sponsors.map(s => typeof s === 'string' ? s : s.name || '').filter(Boolean).join(', ');
+            }
+            if (!sponsorText && b.sponsor && b.sponsor !== 'N/A') {
+                sponsorText = typeof b.sponsor === 'string' ? b.sponsor : '';
+            }
+            if (sponsorText) {
+                sponsorEl.textContent = sponsorText;
+            } else if (sponsorRow) {
+                sponsorRow.style.display = 'none';
+            }
+        }
+
         document.getElementById('bill-last-action').textContent = b.lastAction || 'No action recorded';
         document.getElementById('bill-last-date').textContent = b.lastActionDate || 'N/A';
         document.getElementById('bill-summary').textContent = b.summary;
@@ -103,7 +138,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Category
         const categoryEl = document.getElementById('bill-category');
         if (categoryEl && b.category) {
-            categoryEl.textContent = b.category;
+            const catDisplay = (b.category || '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            categoryEl.textContent = catDisplay;
+        }
+
+        // Subjects
+        const subjectsEl = document.getElementById('bill-subjects');
+        const subjectsRow = document.getElementById('bill-subjects-row');
+        if (subjectsEl && Array.isArray(b.subjects) && b.subjects.length > 0) {
+            subjectsEl.textContent = b.subjects.join(', ');
+        } else if (subjectsRow) {
+            subjectsRow.style.display = 'none';
         }
 
         // Full text link
