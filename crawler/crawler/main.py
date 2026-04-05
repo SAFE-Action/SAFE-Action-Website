@@ -164,20 +164,28 @@ async def run_full_crawl(news_only: bool = False):
     analysis = _build_analysis_summary(all_legislators, now)
 
     output_files = {
-        "legislators.json": {
-            "generated_at": now,
-            "legislators": [_serialize_legislator(l) for l in all_legislators],
-        },
         "news.json": {
             "generated_at": now,
             "articles": news_articles,
         },
-        "analysis.json": analysis,
-        "pivotal.json": {
+    }
+
+    # Only write legislator/analysis/pivotal data if we actually have legislators
+    # (news-only mode on CI has no cache, so all_legislators would be empty)
+    if all_legislators:
+        output_files["legislators.json"] = {
+            "generated_at": now,
+            "legislators": [_serialize_legislator(l) for l in all_legislators],
+        }
+        output_files["analysis.json"] = analysis
+        output_files["pivotal.json"] = {
             "generated_at": now,
             "targets": pivotal,
-        },
-    }
+        }
+    elif not news_only:
+        print("WARNING: No legislators found during full crawl — skipping legislators.json write")
+    else:
+        print("INFO: News-only mode — preserving existing legislators.json")
 
     # Include bill data if available
     if all_bills:
