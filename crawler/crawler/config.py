@@ -18,6 +18,12 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "claude-sonnet-4-20250514")
 REASONING_MODEL = os.getenv("REASONING_MODEL", "claude-sonnet-4-20250514")
 
+# Debug: log if API key is present (not the key itself)
+if ANTHROPIC_API_KEY:
+    print(f"ANTHROPIC_API_KEY loaded ({len(ANTHROPIC_API_KEY)} chars, starts with {ANTHROPIC_API_KEY[:7]}...)")
+else:
+    print("WARNING: ANTHROPIC_API_KEY is empty")
+
 # ── Open States API ──────────────────────────────────
 OPENSTATES_API_KEY = os.getenv("OPENSTATES_API_KEY", "")
 OPENSTATES_BASE_URL = "https://v3.openstates.org"
@@ -68,7 +74,7 @@ NEWS_CACHE_HOURS = 12
 ANALYSIS_CACHE_HOURS = 72      # 3 days
 
 # ── Analysis Settings ─────────────────────────────────
-MAX_LEGISLATORS_PER_BATCH = 20
+MAX_LEGISLATORS_PER_BATCH = 50
 
 PERSUADABILITY_CATEGORIES = {
     "champion":     (9, 10),

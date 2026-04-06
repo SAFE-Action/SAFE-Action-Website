@@ -55,9 +55,11 @@ For each bill, return:
 Return ONLY valid JSON — an array of objects."""
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=5, max=60))
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=3, max=30),
+       retry=lambda retry_state: not isinstance(retry_state.outcome.exception(), anthropic.AuthenticationError))
 async def _call_llm(user_prompt: str) -> str:
-    """Call Claude via Anthropic API with retry logic."""
+    """Call Claude via Anthropic API with retry logic.
+    Does NOT retry on AuthenticationError (bad API key)."""
     response = client.messages.create(
         model=EXTRACTION_MODEL,
         max_tokens=4096,
