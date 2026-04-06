@@ -1,13 +1,13 @@
-"""Persuadability scoring using free LLM via Groq."""
+"""Persuadability scoring using Claude via Anthropic API."""
 
 import asyncio
 import json
 from datetime import datetime, timezone
-from openai import OpenAI
+import anthropic
 from tenacity import retry, stop_after_attempt, wait_exponential
-from ..config import GROQ_API_KEY, GROQ_BASE_URL, REASONING_MODEL, MAX_LEGISLATORS_PER_BATCH
+from ..config import ANTHROPIC_API_KEY, REASONING_MODEL, MAX_LEGISLATORS_PER_BATCH
 
-client = OpenAI(api_key=GROQ_API_KEY, base_url=GROQ_BASE_URL)
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 SCORING_SYSTEM_PROMPT = """You are an expert political analyst assessing legislators' persuadability on science and public health policy -- specifically regarding vaccine safety, informed consent, and evidence-based medicine.
 
@@ -28,24 +28,23 @@ Key factors to weigh:
 
 Return ONLY valid JSON -- an array of objects."""
 
-# Rate limit delay between batches (seconds).  Groq free tier is
-# ~12,000 TPM for llama-3.3-70b-versatile.  Each batch uses ~8,000
-# tokens (input + output), so we need ~45-50s between requests.
-INTER_BATCH_DELAY = 50
+# Rate limit delay between batches (seconds).
+# Claude API has generous limits; 5s is plenty.
+INTER_BATCH_DELAY = 5
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=15, max=120))
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=5, max=60))
 async def _call_llm(user_prompt: str) -> str:
-    """Call reasoning LLM via Groq with retry logic."""
-    response = client.chat.completions.create(
+    """Call Claude via Anthropic API with retry logic."""
+    response = client.messages.create(
         model=REASONING_MODEL,
         max_tokens=4096,
+        system=SCORING_SYSTEM_PROMPT,
         messages=[
-            {"role": "system", "content": SCORING_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
     )
-    return response.choices[0].message.content
+    return response.content[0].text
 
 
 async def score_legislators_batch(

@@ -1,7 +1,7 @@
 """LLM-based secondary verification for bill classification.
 
 The keyword heuristic in legiscan.py is the first pass. This module provides
-a second-opinion check using an LLM (Groq), implementing the
+a second-opinion check using Claude (Anthropic API), implementing the
 confidence-threshold approach recommended by our ML advisor:
 
 1. Score each bill with a confidence probability (0.0–1.0).
@@ -14,11 +14,11 @@ confidence-threshold approach recommended by our ML advisor:
 import asyncio
 import json
 from datetime import datetime, timezone
-from openai import OpenAI
+import anthropic
 from tenacity import retry, stop_after_attempt, wait_exponential
-from ..config import GROQ_API_KEY, GROQ_BASE_URL, EXTRACTION_MODEL
+from ..config import ANTHROPIC_API_KEY, EXTRACTION_MODEL
 
-client = OpenAI(api_key=GROQ_API_KEY, base_url=GROQ_BASE_URL)
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # ── Tuneable thresholds ──────────────────────────────────────────────────
 # Bills below this confidence are downgraded to "monitor".
@@ -29,8 +29,8 @@ CONFIDENCE_THRESHOLD = 0.70
 # Maximum bills per LLM batch (token budget management)
 BILLS_PER_BATCH = 10
 
-# Delay between batches (Groq free tier: ~12k TPM)
-INTER_BATCH_DELAY = 50  # seconds
+# Delay between batches (seconds) — Claude API has generous rate limits
+INTER_BATCH_DELAY = 5
 
 VERIFICATION_SYSTEM_PROMPT = """You are an expert policy analyst specialising in science, public health, and vaccine legislation in the United States. Your task is to verify whether a bill has been correctly classified.
 
@@ -55,19 +55,19 @@ For each bill, return:
 Return ONLY valid JSON — an array of objects."""
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=15, max=120))
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=5, max=60))
 async def _call_llm(user_prompt: str) -> str:
-    """Call LLM via Groq with retry logic."""
-    response = client.chat.completions.create(
+    """Call Claude via Anthropic API with retry logic."""
+    response = client.messages.create(
         model=EXTRACTION_MODEL,
         max_tokens=4096,
         temperature=0.1,  # low temp for consistent classification
+        system=VERIFICATION_SYSTEM_PROMPT,
         messages=[
-            {"role": "system", "content": VERIFICATION_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
     )
-    return response.choices[0].message.content
+    return response.content[0].text
 
 
 async def verify_bill_batch(bills: list[dict]) -> list[dict]:
@@ -157,8 +157,8 @@ async def verify_all_bills(bills: list[dict]) -> list[dict]:
 
     Also prints a disagreement report for manual inspection.
     """
-    if not GROQ_API_KEY:
-        print("  Skipping bill verification (no GROQ_API_KEY)")
+    if not ANTHROPIC_API_KEY:
+        print("  Skipping bill verification (no ANTHROPIC_API_KEY)")
         return bills
 
     # Only verify bills that were classified as anti or pro (not monitor)
@@ -167,7 +167,7 @@ async def verify_all_bills(bills: list[dict]) -> list[dict]:
         print("  No anti/pro bills to verify")
         return bills
 
-    print(f"  Verifying {len(classified)} classified bills with LLM secondary check...")
+    print(f"  Verifying {len(classified)} classified bills with Claude secondary check...")
 
     all_results = []
     total_batches = (len(classified) + BILLS_PER_BATCH - 1) // BILLS_PER_BATCH
@@ -191,7 +191,6 @@ async def verify_all_bills(bills: list[dict]) -> list[dict]:
     # Apply results to bills
     disagreements = []
     downgrades = []
-    upgrades = []
 
     for bill in bills:
         bill_id = bill.get("billId", "")

@@ -27,21 +27,20 @@ load_dotenv(Path(__file__).parent / ".env")
 
 # Now set up imports — we need to use the verification module directly
 # rather than via relative imports
-from openai import OpenAI
+import anthropic
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_BASE_URL = "https://api.groq.com/openai/v1"
-EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "llama-3.3-70b-versatile")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "claude-sonnet-4-20250514")
 
 BILLS_JSON = Path(__file__).parent.parent / "data" / "bills.json"
 OUTPUT_REPORT = Path(__file__).parent.parent / "data" / "verification_dryrun_report.json"
 
 CONFIDENCE_THRESHOLD = 0.70
 BILLS_PER_BATCH = 10
-INTER_BATCH_DELAY = 50  # seconds (Groq free tier rate limit)
+INTER_BATCH_DELAY = 5  # seconds
 
-client = OpenAI(api_key=GROQ_API_KEY, base_url=GROQ_BASE_URL)
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 VERIFICATION_SYSTEM_PROMPT = """You are an expert policy analyst specialising in science, public health, and vaccine legislation in the United States. Your task is to verify whether a bill has been correctly classified.
 
@@ -66,18 +65,18 @@ For each bill, return:
 Return ONLY valid JSON — an array of objects."""
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=15, max=120))
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=3, min=5, max=60))
 def call_llm(user_prompt: str) -> str:
-    response = client.chat.completions.create(
+    response = client.messages.create(
         model=EXTRACTION_MODEL,
         max_tokens=4096,
         temperature=0.1,
+        system=VERIFICATION_SYSTEM_PROMPT,
         messages=[
-            {"role": "system", "content": VERIFICATION_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
     )
-    return response.choices[0].message.content
+    return response.content[0].text
 
 
 def verify_batch(bills: list[dict]) -> list[dict]:

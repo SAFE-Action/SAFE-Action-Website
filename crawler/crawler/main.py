@@ -4,7 +4,7 @@ import asyncio
 import sys
 from datetime import datetime, timezone
 
-from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, GROQ_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
+from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, ANTHROPIC_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
 from .sources.congress import crawl_congress_members
 from .sources.state_legislatures import crawl_all_state_legislators
 from .sources.govinfo import fetch_federal_bills
@@ -29,9 +29,8 @@ async def run_full_crawl(news_only: bool = False):
     now = datetime.now(timezone.utc).isoformat()
     all_legislators = []
 
-    if not GROQ_API_KEY:
-        print("WARNING: GROQ_API_KEY not set. Scoring/analysis will be skipped.")
-        print("  Get a free key at https://console.groq.com")
+    if not ANTHROPIC_API_KEY:
+        print("WARNING: ANTHROPIC_API_KEY not set. Scoring/analysis will be skipped.")
 
     # ── Step 1: Federal legislators ───────────────────
     if not news_only:
@@ -120,7 +119,7 @@ async def run_full_crawl(news_only: bool = False):
         all_bills = await legiscan_refresh_bills(all_bills)
 
     # ── Step 2d: LLM verification of bill classifications ──
-    if not news_only and all_bills and GROQ_API_KEY:
+    if not news_only and all_bills and ANTHROPIC_API_KEY:
         print("[2d/5] Running LLM secondary verification on bill classifications...")
         all_bills = await verify_all_bills(all_bills)
         if all_bills:
@@ -134,7 +133,7 @@ async def run_full_crawl(news_only: bool = False):
     update_cache_timestamp("news")
 
     # ── Step 4: Claude analysis ───────────────────────
-    if not news_only and GROQ_API_KEY and should_recrawl("analysis"):
+    if not news_only and ANTHROPIC_API_KEY and should_recrawl("analysis"):
         print(f"[4/5] Running persuadability analysis on {len(all_legislators)} legislators...")
         scores = await score_legislators_batch(all_legislators, news_articles)
 
@@ -155,7 +154,7 @@ async def run_full_crawl(news_only: bool = False):
 
         update_cache_timestamp("analysis")
     else:
-        reason = "no GROQ_API_KEY" if not GROQ_API_KEY else "cache fresh or news-only"
+        reason = "no ANTHROPIC_API_KEY" if not ANTHROPIC_API_KEY else "cache fresh or news-only"  # noqa: E501
         print(f"[4/5] Skipping analysis ({reason})")
 
     # ── Step 5: Identify pivotal targets & write output ──
