@@ -74,11 +74,20 @@ const MyRepsHub = {
         let state = '';
         const districts = [];
 
+        // Primary: use Google's normalizedInput.state — most reliable
+        if (normalizedInput.state) {
+            state = normalizedInput.state.toUpperCase();
+        }
+
         for (const [ocdId, info] of Object.entries(divisions)) {
-            // Extract state from OCD ID: ocd-division/country:us/state:tx
-            const stateMatch = ocdId.match(/(?:state|district):(\w{2})(?:\/|$)/i);
-            if (stateMatch && !state) {
-                state = stateMatch[1].toUpperCase();
+            // Fallback state extraction from OCD ID: ocd-division/country:us/state:wi
+            // Only match "state:" (not "district:") to avoid DC's district:dc
+            // matching against other OCD IDs
+            if (!state) {
+                const stateMatch = ocdId.match(/\/state:(\w{2})(?:\/|$)/i);
+                if (stateMatch) {
+                    state = stateMatch[1].toUpperCase();
+                }
             }
 
             // Extract congressional district: ocd-division/country:us/state:tx/cd:10
@@ -113,9 +122,12 @@ const MyRepsHub = {
             }
         }
 
-        // Fallback: try normalizedInput for state
-        if (!state && normalizedInput.state) {
-            state = normalizedInput.state.toUpperCase();
+        // DC special case: ocd-division/country:us/district:dc
+        if (!state) {
+            for (const ocdId of Object.keys(divisions)) {
+                const dcMatch = ocdId.match(/\/district:dc(?:\/|$)/i);
+                if (dcMatch) { state = 'DC'; break; }
+            }
         }
 
         return { state, districts };
