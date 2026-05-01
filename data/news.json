@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T08:02:31.682560+00:00",
+  "generated_at": "2026-05-01T08:11:40.719653+00:00",
   "articles": [
     {
       "article_id": "df241e9205f0977438431d26471e2c55",
@@ -2479,6 +2479,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "b0566900a9427b269e11f0dda9d4c36e",
+      "title": "GOP Legislators in Missouri Oppose Vaccine Efforts as State Becomes COVID Hotspot - ProPublica",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbmE0WjdiQnBVWGRPb1hySjZJVGI5T1NmWE5qaTZUWHRscDJ1cVNIeTM5dEFxdFRZSXZya012TFQ0Zm1XRXo4eGVlMVRJQ0VYTHRKQzRSbWxtUGlNMENZSUVaOTE2a1JSbmNNQVZ6YmdMS25PYlhCWnhqTkZ1bVR5OWRPYWNCRmppRzJvR19NN1ZGd3pPRWQ1cnR6ZktuRC1lUG1RTktuaVZpR0FmeVE?oc=5",
+      "source": "ProPublica",
+      "date": "Wed, 21 Jul 2021 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNbmE0WjdiQnBVWGRPb1hySjZJVGI5T1NmWE5qaTZUWHRscDJ1cVNIeTM5dEFxdFRZSXZya012TFQ0Zm1XRXo4eGVlMVRJQ0VYTHRKQzRSbWxtUGlNMENZSUVaOTE2a1JSbmNNQVZ6YmdMS25PYlhCWnhqTkZ1bVR5OWRPYWNCRmppRzJvR19NN1ZGd3pPRWQ1cnR6ZktuRC1lUG1RTktuaVZpR0FmeVE?oc=5\" target=\"_blank\">GOP Legislators in Missouri Oppose Vaccine Efforts as State Becomes COVID Hotspot</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ProPublica</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "4afe2d81dc4e207bb265a083aac94a07",
       "title": "Iowa Republicans’ bill to criminalize vaccine providers advances amid funnel week chaos - Iowa Starting Line",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPc0Nyaks2Qy1YTnp3WmRiTkJ2UFpmejc1LWVteGhvMUFKMnlmajhWN1lzMjJhaDJ4bzBEZ1U4bW1MbjNjOWFrQUFyR2dvcDhkVHFtLTZHdGVQY0tUZmxGU0QtN3JCbm82eGZ4RUwwaXVweG5CR3dydXE3c2N4WktTWUxfZFJsV1FWaFE?oc=5",
@@ -2489,20 +2503,6 @@
       "topics": [
         "vaccine",
         "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "b0566900a9427b269e11f0dda9d4c36e",
-      "title": "GOP Legislators in Missouri Oppose Vaccine Efforts as State Becomes COVID Hotspot - ProPublica",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbmE0WjdiQnBVWGRPb1hySjZJVGI5T1NmWE5qaTZUWHRscDJ1cVNIeTM5dEFxdFRZSXZya012TFQ0Zm1XRXo4eGVlMVRJQ0VYTHRKQzRSbWxtUGlNMENZSUVaOTE2a1JSbmNNQVZ6YmdMS25PYlhCWnhqTkZ1bVR5OWRPYWNCRmppRzJvR19NN1ZGd3pPRWQ1cnR6ZktuRC1lUG1RTktuaVZpR0FmeVE?oc=5",
-      "source": "ProPublica",
-      "date": "Wed, 21 Jul 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNbmE0WjdiQnBVWGRPb1hySjZJVGI5T1NmWE5qaTZUWHRscDJ1cVNIeTM5dEFxdFRZSXZya012TFQ0Zm1XRXo4eGVlMVRJQ0VYTHRKQzRSbWxtUGlNMENZSUVaOTE2a1JSbmNNQVZ6YmdMS25PYlhCWnhqTkZ1bVR5OWRPYWNCRmppRzJvR19NN1ZGd3pPRWQ1cnR6ZktuRC1lUG1RTktuaVZpR0FmeVE?oc=5\" target=\"_blank\">GOP Legislators in Missouri Oppose Vaccine Efforts as State Becomes COVID Hotspot</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ProPublica</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2731,6 +2731,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "94721ce80676b4308763ccebc31f0429",
+      "title": "New Washington Law Limits Exemptions For Measles Vaccine - Oregon Public Broadcasting - OPB",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZUNBOTdkdVBwVFNSRGo5ZHdDQnU0b1g0Z0I1ZnU4VFhzeUJER29KZ0RXRWFPZ0gyUWlFdV85clBSckkwc25Wbi1rWTFoYWFiaW9jTEVCaFlXZ2xZOWR2WUswNVJIWDdvVG1sZFRSQUwwaHhhM0RXNjI4QmdORHFadjRBWDlFYWhH?oc=5",
+      "source": "Oregon Public Broadcasting - OPB",
+      "date": "Fri, 10 May 2019 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZUNBOTdkdVBwVFNSRGo5ZHdDQnU0b1g0Z0I1ZnU4VFhzeUJER29KZ0RXRWFPZ0gyUWlFdV85clBSckkwc25Wbi1rWTFoYWFiaW9jTEVCaFlXZ2xZOWR2WUswNVJIWDdvVG1sZFRSQUwwaHhhM0RXNjI4QmdORHFadjRBWDlFYWhH?oc=5\" target=\"_blank\">New Washington Law Limits Exemptions For Measles Vaccine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Oregon Public Broadcasting - OPB</font>",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "exemption",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "a8c26f8027eb34f20c5f0cdeb2b511c7",
       "title": "Vaccine Bills Make a Comeback Amid Measles Outbreak - Governing",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2ZXX0lneENQOE9EWkQ4ajgwX0hBdnYtN3M3emUwNTlBb1NRLWZnTHRaU3J2VmNiZGVoZjA1SlZ2QTlRRzU5UEpqR1hDbllYaVllSldjeVk0cTMyRVNPVUo1UFR3WXhPM29hdHJ4Y05qNjU4MEl6empRdUVtUG81LU4wSEhZTUtJdVZGZXBaQ0EtU1JJTmc?oc=5",
@@ -2786,18 +2802,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "a43214cfcfb4bdf911f338770cc0809d",
-      "title": "Scientific Misconceptions and Myths Perpetuated in the 2017 Texas Legislative Session - Baker Institute",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yc2xkRm10cU43ZHdLbnJqdG16bXdnS3MxU0pqQmlnYlRKQ0tRcWUyaDl2cnA3blo5WTBxUXJ3aE12UHdDYWxVeUQ5RDQxLXNUMUVIZURPa01RODREY2c4eG9NUXg?oc=5",
-      "source": "Baker Institute",
-      "date": "Tue, 23 Oct 2018 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yc2xkRm10cU43ZHdLbnJqdG16bXdnS3MxU0pqQmlnYlRKQ0tRcWUyaDl2cnA3blo5WTBxUXJ3aE12UHdDYWxVeUQ5RDQxLXNUMUVIZURPa01RODREY2c4eG9NUXg?oc=5\" target=\"_blank\">Scientific Misconceptions and Myths Perpetuated in the 2017 Texas Legislative Session</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Baker Institute</font>",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "e2fb4af8ffedee09ee176c8963d4423f",
       "title": "Here comes another COVID vaccine debate as California lawmakers brace for more protests - Sacramento Bee",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQRDZmNGg0ZW15a3ljR2hrcXZGOUdERzJLblg0cmxLQTFUTE05U1YzLWdveVNUdmZQSHhQX0REWlhFblQ0cEpCdmdtQm80ZzZNTXpkb3YxMC1KOFRXeFlTWDU5RjNFZHJkdWhKR0FtTDdNWnl0OUY4NzlTS2ZHbXRicTJRRHhNUzlyeXhN0gGLAUFVX3lxTFB3QndEVk1xd2RRYkNza09WNWZYTDBWZEVDd2dScXRPcElTZlUtc1A2Mm9jT3FVRW5VTmVqUWdaaXlmN09vY2tFVFNYRXBSUzQta0k4akhUdGlUbzItVDRtNTZRWms0R3hkWWNZd0x2ejJmSGVfVzNPTzZyLUZ0ekhCTldha0tETnJKSVE?oc=5",
@@ -2813,17 +2817,41 @@
       "legislator_ids": []
     },
     {
-      "article_id": "2355739b09f5d03080edb529f87e1e7f",
-      "title": "House GOP takes aim at vaccine mandates from schools, employers, hospitals - Ohio Capital Journal",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNX2dxMkotX0RpcVFLQ1dYTU9jZlpxRzhlWWg4RUhzLW52N3gyZlVKMzVmUzN0RjNJT1I4VTN3ZGRjcU9QTy11WnA0N1J2dnhRQzhyZnZKMEdPWko4Nm5aWHpaRlRuZVNCNU5LYXdMSU9KVGw5bl9IRmhNUGhzTVprdXMydEl4R09HR3F3WkFkZXgwVzVGUjM2d1RiUWxZa2ZCSGU1d2J2d3A1aTZJNTlrQnlXVl9Idw?oc=5",
-      "source": "Ohio Capital Journal",
-      "date": "Wed, 19 May 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNX2dxMkotX0RpcVFLQ1dYTU9jZlpxRzhlWWg4RUhzLW52N3gyZlVKMzVmUzN0RjNJT1I4VTN3ZGRjcU9QTy11WnA0N1J2dnhRQzhyZnZKMEdPWko4Nm5aWHpaRlRuZVNCNU5LYXdMSU9KVGw5bl9IRmhNUGhzTVprdXMydEl4R09HR3F3WkFkZXgwVzVGUjM2d1RiUWxZa2ZCSGU1d2J2d3A1aTZJNTlrQnlXVl9Idw?oc=5\" target=\"_blank\">House GOP takes aim at vaccine mandates from schools, employers, hospitals</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ohio Capital Journal</font>",
+      "article_id": "a43214cfcfb4bdf911f338770cc0809d",
+      "title": "Scientific Misconceptions and Myths Perpetuated in the 2017 Texas Legislative Session - Baker Institute",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yc2xkRm10cU43ZHdLbnJqdG16bXdnS3MxU0pqQmlnYlRKQ0tRcWUyaDl2cnA3blo5WTBxUXJ3aE12UHdDYWxVeUQ5RDQxLXNUMUVIZURPa01RODREY2c4eG9NUXg?oc=5",
+      "source": "Baker Institute",
+      "date": "Tue, 23 Oct 2018 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yc2xkRm10cU43ZHdLbnJqdG16bXdnS3MxU0pqQmlnYlRKQ0tRcWUyaDl2cnA3blo5WTBxUXJ3aE12UHdDYWxVeUQ5RDQxLXNUMUVIZURPa01RODREY2c4eG9NUXg?oc=5\" target=\"_blank\">Scientific Misconceptions and Myths Perpetuated in the 2017 Texas Legislative Session</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Baker Institute</font>",
+      "sentiment": "neutral",
+      "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "3c8668f0b017fff4a2a0bfbba1db2ed2",
+      "title": "Utah Republicans push to let patients supply their own blood as vaccine concerns linger - KSL.com",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNVFaMjEtb3VaUmxSbkpNSUJFWm5mQW5VVE9nSmtNS0dEMmlGUUFqaWhRWkVDYjFXdk9vSFZXbkFKY1dvNk5YaG40SUJiejB3elJiT1Z1OHZWSVVVM3gxaEY4UjhtcTNDYVJ1aGNZTFgyanlNQXRvZ2NkQXp3U3NkbFV2SUNtdHJabEtDQW5jZ0FfbjEzZGh1eG1PbkNMMWtCMmRuZmhkX1ZpOUZPZ0hEQVRFZnF1Z0diQTA4dGJKWEotTnVPbjk5ODdCXzh3bS01X1dFZg?oc=5",
+      "source": "KSL.com",
+      "date": "Thu, 20 Feb 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNVFaMjEtb3VaUmxSbkpNSUJFWm5mQW5VVE9nSmtNS0dEMmlGUUFqaWhRWkVDYjFXdk9vSFZXbkFKY1dvNk5YaG40SUJiejB3elJiT1Z1OHZWSVVVM3gxaEY4UjhtcTNDYVJ1aGNZTFgyanlNQXRvZ2NkQXp3U3NkbFV2SUNtdHJabEtDQW5jZ0FfbjEzZGh1eG1PbkNMMWtCMmRuZmhkX1ZpOUZPZ0hEQVRFZnF1Z0diQTA4dGJKWEotTnVPbjk5ODdCXzh3bS01X1dFZg?oc=5\" target=\"_blank\">Utah Republicans push to let patients supply their own blood as vaccine concerns linger</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KSL.com</font>",
       "sentiment": "neutral",
       "topics": [
-        "vaccine",
-        "mandate",
-        "education"
+        "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "d688354b1acd22d9b8d1cef41a64c275",
+      "title": "The Vaccine Debate: Science on One Side, Emotion on the Other - Governing",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUVNhOEJ3N2hFaDhKZkZHZ2RpY29qbjk4TlRnWkQ2RmRNMHRacnpadlA2LW1GcnRNQ0taQnVJczZYRzJ4UVdHYkVRUnhVUnVraU5ockNRNHFFaFp2cm1TRmNLOUt6amdESGxfMGxJYVgzMnN2SXQyVUxWbnk3UU90SlZJSTJ2LU1ub0pCYVl1WjJwTmVLakw2ZnB3?oc=5",
+      "source": "Governing",
+      "date": "Mon, 02 Mar 2020 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNUVNhOEJ3N2hFaDhKZkZHZ2RpY29qbjk4TlRnWkQ2RmRNMHRacnpadlA2LW1GcnRNQ0taQnVJczZYRzJ4UVdHYkVRUnhVUnVraU5ockNRNHFFaFp2cm1TRmNLOUt6amdESGxfMGxJYVgzMnN2SXQyVUxWbnk3UU90SlZJSTJ2LU1ub0pCYVl1WjJwTmVLakw2ZnB3?oc=5\" target=\"_blank\">The Vaccine Debate: Science on One Side, Emotion on the Other</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Governing</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2897,36 +2925,6 @@
       "sentiment": "negative",
       "topics": [
         "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "811b3cc8d9065c1e852c941a0be9e9d7",
-      "title": "California limits vaccine medical exemptions as protests disrupt Legislature - San Francisco Chronicle",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOM0RoN0t5Mmt2ZV8tbGw2amhRRUxXQ25CWWp1Wlo3OUVOSFlYWjE3eU1feTJKbWZsdmdzNUNnblBiOXJzNTdzNV9aTjM5Zzd6M0Y5WlRQNkdFOTE5ZEZ0MEJuNUJRRkVBNHdaWkM3bzVScEpYU2R4T2NLTDFvRHctMVF4eVJoTDRxem9FbEM0X0RwVEltbGI2S0Z4Qnd0OV9NbnB2SXlFR1I?oc=5",
-      "source": "San Francisco Chronicle",
-      "date": "Mon, 09 Sep 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOM0RoN0t5Mmt2ZV8tbGw2amhRRUxXQ25CWWp1Wlo3OUVOSFlYWjE3eU1feTJKbWZsdmdzNUNnblBiOXJzNTdzNV9aTjM5Zzd6M0Y5WlRQNkdFOTE5ZEZ0MEJuNUJRRkVBNHdaWkM3bzVScEpYU2R4T2NLTDFvRHctMVF4eVJoTDRxem9FbEM0X0RwVEltbGI2S0Z4Qnd0OV9NbnB2SXlFR1I?oc=5\" target=\"_blank\">California limits vaccine medical exemptions as protests disrupt Legislature</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">San Francisco Chronicle</font>",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "e6b7e65a4b7a5582b3814efbc800b4f4",
-      "title": "No, California Does Not Have A Personal Belief Exemption For COVID-19 Vaccines For Kids - capradio.org",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQTEl4cU1qOGxHbXZzZ1JlZG5BN2M4eUhEUVBURnZaeVFFR1BCQmNzZHhzQzFUbVFqNkgzeHZhR1Y3Rkt1U3ZMV1psZDBwT3NtbVA2UUhiQ3l1bDc3cEpDdW03dkxDRkRMd0JUUHN3YlBuWURLYjZmeGNNaUpBUDlOTDR2TW5FSUNoa3cyMGowOW03S2NJRWhTMTJsVEZsT3FzY1JRNExEQV9JOGphOEI4aTBNMFVyRXFuT3VxVlE3SXVRd1pmWWdTbE1HTUE?oc=5",
-      "source": "capradio.org",
-      "date": "Sat, 24 Jul 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQTEl4cU1qOGxHbXZzZ1JlZG5BN2M4eUhEUVBURnZaeVFFR1BCQmNzZHhzQzFUbVFqNkgzeHZhR1Y3Rkt1U3ZMV1psZDBwT3NtbVA2UUhiQ3l1bDc3cEpDdW03dkxDRkRMd0JUUHN3YlBuWURLYjZmeGNNaUpBUDlOTDR2TW5FSUNoa3cyMGowOW03S2NJRWhTMTJsVEZsT3FzY1JRNExEQV9JOGphOEI4aTBNMFVyRXFuT3VxVlE3SXVRd1pmWWdTbE1HTUE?oc=5\" target=\"_blank\">No, California Does Not Have A Personal Belief Exemption For COVID-19 Vaccines For Kids</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">capradio.org</font>",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -4425,15 +4423,16 @@
       "legislator_ids": []
     },
     {
-      "article_id": "5942f7eac1a9325d018fbd81768f0a30",
-      "title": "CT vaccine bill approved as controversial lawsuit plays out in court over religious freedom - CT Insider",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdHBjb0NkNUt6SDZxMVkteTdCaWlWMTF5VDBQQ3lQWFN3aFl1YUVwLTVpazMwSU5QdzRuOWhZTmNaby1kMGJQYUdJNWpJWk5CTE1jM3czTDh4NTVxWGxsZmxtMTNtc1pXYVRLME5ocl9OUVRMVXpUTzd6UkthTmxac0s2WF9VYmJ1alA5VDEyMGZCYmFzellHLTFwQlR6b0ZVZllSYVd2VlBGeEE1RlE?oc=5",
-      "source": "CT Insider",
-      "date": "Fri, 24 Apr 2026 10:25:23 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPdHBjb0NkNUt6SDZxMVkteTdCaWlWMTF5VDBQQ3lQWFN3aFl1YUVwLTVpazMwSU5QdzRuOWhZTmNaby1kMGJQYUdJNWpJWk5CTE1jM3czTDh4NTVxWGxsZmxtMTNtc1pXYVRLME5ocl9OUVRMVXpUTzd6UkthTmxac0s2WF9VYmJ1alA5VDEyMGZCYmFzellHLTFwQlR6b0ZVZllSYVd2VlBGeEE1RlE?oc=5\" target=\"_blank\">CT vaccine bill approved as controversial lawsuit plays out in court over religious freedom</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
-      "sentiment": "neutral",
+      "article_id": "a03a60ffb900e88ead9fea8f0c1569b8",
+      "title": "Florida 'Medical Freedom' Bill Seeks New Vaccine Exemption - State Affairs",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5aVUNNclllMHVVbzNYVEZsd19jenBHWXB1cm5mWnNQbEF5dnZwem5TQUhoNFJ5MzVvb2wxVDdqTFJxVlk0YkxFNlc4XzRpdk5DT2tFVFFwRnBTMmtKbEhjUmhHLVRKSnBuWi1zY3VuWTJJcmlrc3R1UXpIWjVLdw?oc=5",
+      "source": "State Affairs",
+      "date": "Mon, 20 Apr 2026 19:42:36 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE5aVUNNclllMHVVbzNYVEZsd19jenBHWXB1cm5mWnNQbEF5dnZwem5TQUhoNFJ5MzVvb2wxVDdqTFJxVlk0YkxFNlc4XzRpdk5DT2tFVFFwRnBTMmtKbEhjUmhHLVRKSnBuWi1zY3VuWTJJcmlrc3R1UXpIWjVLdw?oc=5\" target=\"_blank\">Florida 'Medical Freedom' Bill Seeks New Vaccine Exemption</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">State Affairs</font>",
+      "sentiment": "negative",
       "topics": [
         "vaccine",
+        "exemption",
         "legislation"
       ],
       "mentioned_names": [],
@@ -4462,22 +4461,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxQM2FKVFcwcTNkakhpekJ5LWR0Vmw3UjJTMXZRVmkyZDdtb1cySjlnZlFXeXEyakZVcVpXNUpjQ042M2hPSzJieko3NnpMR3pvb1dBLUxpUnZEcG1DQ0lQTGl3SE5ZSE1mRmtZSkI4Zzc2VlZuYTgzbUd0RHlxNnlyMmV2T1dGN1VrMnRpX3NrTVRncTVYTTJBY2dhZWI1RzZBQmI2ZERnd1hNOFZhcHVuX2NsWV83VlliQmlrR2xnM0pub1VsNVhSbmIzLUV6UUYtM19DM203MHdVZVljR1g4VA?oc=5\" target=\"_blank\">Special Session delayed, expanded to include congressional redistricting, AI protections, medical freedom</a>&nbsp;&nbsp;<fon",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "89f33833bf7d29a5374fbb3c009f5f84",
-      "title": "Florida 'Medical Freedom' Bill Seeks New Vaccine Exemption - State Affairs",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWt2bTJCbmpJcjFZdkNtM2RtRzJ6bDYzOHdvYXI5WllUV054aF9CVkw3YUgtb19pX2RrRDI5NmhaTy1LUDVKbDZEUGd0RFJSSGdwbGtmRFR2NDVpWlplSE5CeF9Mb1gxMUVwVjZ4ZmxidHY4eEJiMlNBclNPTGUtZ1JlajVOb00?oc=5",
-      "source": "State Affairs",
-      "date": "Mon, 20 Apr 2026 19:42:35 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxNNWt2bTJCbmpJcjFZdkNtM2RtRzJ6bDYzOHdvYXI5WllUV054aF9CVkw3YUgtb19pX2RrRDI5NmhaTy1LUDVKbDZEUGd0RFJSSGdwbGtmRFR2NDVpWlplSE5CeF9Mb1gxMUVwVjZ4ZmxidHY4eEJiMlNBclNPTGUtZ1JlajVOb00?oc=5\" target=\"_blank\">Florida 'Medical Freedom' Bill Seeks New Vaccine Exemption</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">State Affairs</font>",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption",
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -4783,21 +4766,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "f1e5e4ca138fbaa677626e557bf94b3e",
-      "title": "House Bill 808 — Medical mandates (+5) - Idaho Freedom",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SMnNfaXVnR1lHMEtnTHNxYVV5YXc0V05sZEZwZlVLa3J1dHJTSzZWWDRDVUtZOVZlNXdlQVhvTXphQlZjMjEwbHZkSnB5REcwQ3AtRmtXZHJBUGpmV2cxR3l0UnRPYWZZ?oc=5",
-      "source": "Idaho Freedom",
-      "date": "Wed, 04 Mar 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SMnNfaXVnR1lHMEtnTHNxYVV5YXc0V05sZEZwZlVLa3J1dHJTSzZWWDRDVUtZOVZlNXdlQVhvTXphQlZjMjEwbHZkSnB5REcwQ3AtRmtXZHJBUGpmV2cxR3l0UnRPYWZZ?oc=5\" target=\"_blank\">House Bill 808 — Medical mandates (+5)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Freedom</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "mandate",
         "legislation"
       ],
       "mentioned_names": [],
@@ -5111,21 +5079,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "c866d1860b9bf9b6f34253f81cc937a0",
-      "title": "Kentucky’s Blood Bill Promises Autonomy—But Delivers Mandates - Bluegrass Institute",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE80cHo1NVk0c3lOM3ByWDdodEJsbGxYbW9PX2VId21zbkVrc2VjcjFSRVRURkV4LVZZVUxNNGY5Q3pjU2kwb0lnLUhrZ2ExaVNVc3g5MkxfSlRXZzFQWklQb1h5QQ?oc=5",
-      "source": "Bluegrass Institute",
-      "date": "Thu, 19 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE80cHo1NVk0c3lOM3ByWDdodEJsbGxYbW9PX2VId21zbkVrc2VjcjFSRVRURkV4LVZZVUxNNGY5Q3pjU2kwb0lnLUhrZ2ExaVNVc3g5MkxfSlRXZzFQWklQb1h5QQ?oc=5\" target=\"_blank\">Kentucky’s Blood Bill Promises Autonomy—But Delivers Mandates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Bluegrass Institute</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "b45ba76c19ab383c57ea1d5d6d66a0ef",
       "title": "Idaho bill to alter vaccine rules gains support, raises concerns among nurses - Idaho News 6",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZE1DYW8xSTBRMlo3U0RGRjY1clpQV01VbXFXX2FuUGx5VG9mZ1JhMzFMbURvdXc4ZF80SkJnSWZYQzE1dVdsazJzQWdKN0I4MjZoSnNWeV9RV1pGODN2d1dyR3dHN1JmZUlNQlotUDF5MC15UUllU2h0TnJEY2VaWkhaaUE0bGtVNlR0YjRkb3N0T1Y3Z2xZaDdUd21STW9ZQnVqd2NRM0JTel9Kcm9ESzhaZExpb29fOGtyVUIyS3BuVmZPVko5TmtfWkxzdUlldWc?oc=5",
@@ -5141,14 +5094,16 @@
       "legislator_ids": []
     },
     {
-      "article_id": "5d6c7b5957c1d15916a4ce93e346054b",
-      "title": "Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA - Cowboy State Daily",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5",
-      "source": "Cowboy State Daily",
-      "date": "Wed, 28 Jan 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5\" target=\"_blank\">Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Cowboy State Daily</font>",
+      "article_id": "cbe00a5671f4d7ff69ce43aaa4716bc4",
+      "title": "Lawmakers debate ending all childhood vaccination requirements in NH - WMUR",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNYy1IR2R2a3psbVdKWWtab1RpTXYyRFhkSWFwLUJZajN1Q0l2bGRKUkNlbERhY1Uyc3BhdV9KN3dHN2kxbUQxT0gyTXFHX0dxQmxYVE9MMlpacEtuQ2hpdDdVMXJWQ0p5RU9qY1NLNDlRSTJrU0RlaVRTT2U2c3J5b0o5Z1RheHgxeFpoOA?oc=5",
+      "source": "WMUR",
+      "date": "Wed, 04 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxNYy1IR2R2a3psbVdKWWtab1RpTXYyRFhkSWFwLUJZajN1Q0l2bGRKUkNlbERhY1Uyc3BhdV9KN3dHN2kxbUQxT0gyTXFHX0dxQmxYVE9MMlpacEtuQ2hpdDdVMXJWQ0p5RU9qY1NLNDlRSTJrU0RlaVRTT2U2c3J5b0o5Z1RheHgxeFpoOA?oc=5\" target=\"_blank\">Lawmakers debate ending all childhood vaccination requirements in NH</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WMUR</font>",
       "sentiment": "neutral",
       "topics": [
+        "vaccine",
+        "mandate",
         "legislation"
       ],
       "mentioned_names": [],
@@ -5440,6 +5395,52 @@
       "legislator_ids": []
     },
     {
+      "article_id": "7ff8ea57a86e25c37705522483c2839e",
+      "title": "Boise day care requires vaccines. Does revived Idaho ‘medical freedom’ bill affect that? - Idaho Statesman",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTVZxbG9VOTRmeU51d2xVUDZGUnQ3NU5PZlpiNERtSWk0cXlfaHc4N1FGTEExLWdIZ1BiQ0FFTDZHb1FObE9vUWNvVFJUMF9GUkFoMUVUcDNsWVZhU3NLaHhNemdmeXFONHNKVXpVZ3VMWUtZRTdyMnk4eVhHdmFzODNuOW1heEFyVlNFTGNwX2RWVnZ1RnBB0gGXAUFVX3lxTE9pc1dKTmFWSHhWNzcxTjl0OTV3TzlsU2VDTnRLQkdyaTBrcTg4dkRycmRra0g3TzFacVNKdnZtekxMRXpjdkFBLVpJbU1kQmY0VnllQUEtUGZ4WjcyYzB2Y3A1RE9ITDUtTGF6b1YxZ2hEWWg4M2poWGd6TGxqd01VdU9NSTdDUE1nS1BMWTZmTnJkWjRXRUE?oc=5",
+      "source": "Idaho Statesman",
+      "date": "Fri, 04 Apr 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNTVZxbG9VOTRmeU51d2xVUDZGUnQ3NU5PZlpiNERtSWk0cXlfaHc4N1FGTEExLWdIZ1BiQ0FFTDZHb1FObE9vUWNvVFJUMF9GUkFoMUVUcDNsWVZhU3NLaHhNemdmeXFONHNKVXpVZ3VMWUtZRTdyMnk4eVhHdmFzODNuOW1heEFyVlNFTGNwX2RWVnZ1RnBB0gGXAUFVX3lxTE9pc1dKTmFWSHhWNzcxTjl0OTV3TzlsU2VDTnRLQkdyaTBrcTg4dkRycmRra0g3TzFacVNKdnZtekxMRXpjdkFBLVpJbU1kQmY0VnllQUEtUGZ4WjcyYzB2Y3A1RE9ITDUtTGF6b1YxZ2hEWWg4M2poWGd6TGxqd01VdU9NSTdDUE1nS1BMWTZmTnJkWjRXRUE?oc=5\" target=\"_blank\">Boise day care r",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "b34ae170c1e4106354f96ff9e89acf4c",
+      "title": "Idaho banned vaccine mandates. Activists want to make it a model for the country - Idaho Statesman",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbUdKNm91VlZCTThGNnpKb3BGWS1vQnZ0czRwcEd6cTdjTnU5akk2ZUZPbE5GTGZXOTBIcWdOcm1FT2oxb2cwMWtFMXRmaHl5UWo0c1luS3FQWE1Yek1STG9HTjZ1U2xYRUdHcTRrVG80YjA3dF9NbVkwZGRFNGZqaE9GTUxKODRSQUVHT1R6S0wxc0l1YnFr0gGXAUFVX3lxTE9Bd3NNRGlkcDVaYjJJdFFlS2VqU0xYWnpZZUpLZ2RQVmplVkpzM0prSkxrcExoQmxLb1R6U3U0dmxvb2x1NG1OazZzUkRCdXZyWE5nMlh3SjlyVllFbk1Ja3FfNjZVYmNkazFrdDVkT1ZFM3NpemF5TW1sWXNkWkVndy1DY0lNUWNPLW9OWjdoRE4zMzlCOHM?oc=5",
+      "source": "Idaho Statesman",
+      "date": "Tue, 04 Nov 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQbUdKNm91VlZCTThGNnpKb3BGWS1vQnZ0czRwcEd6cTdjTnU5akk2ZUZPbE5GTGZXOTBIcWdOcm1FT2oxb2cwMWtFMXRmaHl5UWo0c1luS3FQWE1Yek1STG9HTjZ1U2xYRUdHcTRrVG80YjA3dF9NbVkwZGRFNGZqaE9GTUxKODRSQUVHT1R6S0wxc0l1YnFr0gGXAUFVX3lxTE9Bd3NNRGlkcDVaYjJJdFFlS2VqU0xYWnpZZUpLZ2RQVmplVkpzM0prSkxrcExoQmxLb1R6U3U0dmxvb2x1NG1OazZzUkRCdXZyWE5nMlh3SjlyVllFbk1Ja3FfNjZVYmNkazFrdDVkT1ZFM3NpemF5TW1sWXNkWkVndy1DY0lNUWNPLW9OWjdoRE4zMzlCOHM?oc=5\" target=\"_blank\">Idaho banned vac",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "c44feb093aebb7ddd495c714b594c018",
+      "title": "Statehouse roundup, 2.5.25: 'Medical freedom' bill, with extensive school language, heads to Senate floor - Idaho Education News",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOE9qT3YxSEx6SGJ6dmJfU3laYThnRmRwWjh3QTF2SE40THc3eFYtMGJkTjRpSEdkRXZjYTRjNXR1SEFEOU9ubUlJLTNlYVJ6T3JfNlJMODlUU3ZRaldrYkxSQW1TNkJ2Q0UzaWRUWGxoQWY2V0p0UFBmRnRfZlExZld5NWZUS1duRjY2S3g2YjFZb1JEd012ZGNLcTByQ3lZVE5DOFppMTZMQnBQVjY5R1F5NWJuZHZRRkJLa21lTWpNUlAxanhMWlAzVkZBWWZZV05R?oc=5",
+      "source": "Idaho Education News",
+      "date": "Wed, 05 Feb 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPOE9qT3YxSEx6SGJ6dmJfU3laYThnRmRwWjh3QTF2SE40THc3eFYtMGJkTjRpSEdkRXZjYTRjNXR1SEFEOU9ubUlJLTNlYVJ6T3JfNlJMODlUU3ZRaldrYkxSQW1TNkJ2Q0UzaWRUWGxoQWY2V0p0UFBmRnRfZlExZld5NWZUS1duRjY2S3g2YjFZb1JEd012ZGNLcTByQ3lZVE5DOFppMTZMQnBQVjY5R1F5NWJuZHZRRkJLa21lTWpNUlAxanhMWlAzVkZBWWZZV05R?oc=5\" target=\"_blank\">Statehouse roundup, 2.5.25: 'Medical freedom' bill, with extensive school language, heads to Senate floor</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">",
+      "sentiment": "neutral",
+      "topics": [
+        "education",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "3acabdff0fe9208435ff836fa5841181",
       "title": "Climate change education legislation in Virginia enacted - National Center for Science Education",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBEZS12RzFSUl9ibjNXNVc2bzFzWFJ4VDk3bm41cEFDamZ4bVpzbUxKUzZHRGFONmZ2UDdDWHB2MEFDdWdpRW9NOGItWDhlQzNlYl93WHhweTVJdWdwOGt1LWMyejJJbEJfbVBXRHZ6dm1oaXlJc3ZSQUx3?oc=5",
@@ -5543,12 +5544,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "910079e98485f9703067d8e50dce7cf5",
-      "title": "Climate change education legislation in Virginia advances further - National Center for Science Education",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcW8ybE11Yk4yeGdMTFI5Mm9MNURZXzFZTGQ1T1JxTU91SmpSSF9DV3ZTdWhpaHQtVEpfaHdObS11V0E3eFNSTXhzMWdzc2RxdzZrUXVWbGExb01VUHhZbTZCaUt2UUVES2lWXzF5VTdOYjdNLTFMaHpfRlRSdVIta21vM0c5UQ?oc=5",
+      "article_id": "fd42d05ebc10ed79d9415d37a8a54cd4",
+      "title": "Climate change education legislation in Virginia advances - National Center for Science Education",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE50aDc5SWg3N0FWMEE0N3p2cjl1anZyZktzU09QeWI3MXNhSUFEY3NtSVlldmpOQXNEMV9EX3h6TjFvT1RveUp6VUFVYWE1YTNUcmcxUW9paEE2ZW1UNkgzN3NwUW45NUNIM0dsTU8yOGNoVHlKMzViVFZhalQ0dw?oc=5",
       "source": "National Center for Science Education",
-      "date": "Wed, 04 Mar 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxPcW8ybE11Yk4yeGdMTFI5Mm9MNURZXzFZTGQ1T1JxTU91SmpSSF9DV3ZTdWhpaHQtVEpfaHdObS11V0E3eFNSTXhzMWdzc2RxdzZrUXVWbGExb01VUHhZbTZCaUt2UUVES2lWXzF5VTdOYjdNLTFMaHpfRlRSdVIta21vM0c5UQ?oc=5\" target=\"_blank\">Climate change education legislation in Virginia advances further</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">National Center for Science Education</font>",
+      "date": "Wed, 11 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE50aDc5SWg3N0FWMEE0N3p2cjl1anZyZktzU09QeWI3MXNhSUFEY3NtSVlldmpOQXNEMV9EX3h6TjFvT1RveUp6VUFVYWE1YTNUcmcxUW9paEE2ZW1UNkgzN3NwUW45NUNIM0dsTU8yOGNoVHlKMzViVFZhalQ0dw?oc=5\" target=\"_blank\">Climate change education legislation in Virginia advances</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">National Center for Science Education</font>",
       "sentiment": "neutral",
       "topics": [
         "education",
@@ -5917,6 +5918,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "cc0da0d8408ceebd833c7d178fc1972b",
+      "title": "US Legislation Reintroduced to Reauthorize NOAA Chesapeake Bay Office - environment coastal & offshore",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQX2E5WkNvZzBHOE9IWWlOWHFBMDNrRW5yckpvOWlXR0d4QXdKLWUwY1RUUWNETnRGMk5XaHhWTlFUVFpwYVIyb3RTcjQ2LTlINzlSaDZnSEJDbHNscTNnUUY5UUJlUER5a0V0ZW9ZeTZMMW5iUVgza3FmZy04emRrWFg1VWpaVkVDbDBkT0tTNTIyZnI2bkd5bnZMWC0wS0pJV2lOYXpLOTludw?oc=5",
+      "source": "environment coastal & offshore",
+      "date": "Mon, 29 Dec 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQX2E5WkNvZzBHOE9IWWlOWHFBMDNrRW5yckpvOWlXR0d4QXdKLWUwY1RUUWNETnRGMk5XaHhWTlFUVFpwYVIyb3RTcjQ2LTlINzlSaDZnSEJDbHNscTNnUUY5UUJlUER5a0V0ZW9ZeTZMMW5iUVgza3FmZy04emRrWFg1VWpaVkVDbDBkT0tTNTIyZnI2bkd5bnZMWC0wS0pJV2lOYXpLOTludw?oc=5\" target=\"_blank\">US Legislation Reintroduced to Reauthorize NOAA Chesapeake Bay Office</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">environment coastal & offshore</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "eff8b73f18999669e1030f95f828b15c",
       "title": "Mandatory teaching of creationism: Oklahoma senator files state bill mandating teaching of ‘evolution science’ - Genetic Literacy Project",
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPampOT3ROcnZGVFkyZGgzZzFJeFdKSDFDTmFSOUdFY3VZeGhHTGdjUnpCRXpYUHVjVlZDcU91b2h1SXpPVzdLS0JvczZpaU9jR3VLbUpTYzY1eGkxcDgwZGJZMXhLSUxPU2VERldGTEFmUm9UV2hreGpOQ1pXUnlsRGE3XzY0Y25lSHNIMF9uaXFTSWhLa0doV3ZGaU12ZG42S3NHd28xTWQyU3VpTWNqakNHQkxLdk5IVzh1Yks2MDZWOUtGVEVwMmdBcEd0Ni1ZWnJuWUdSSjB4Y3NvdWdOWVpKcnFNRzhLSGc?oc=5",
@@ -6034,20 +6049,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "411fee2f9ac03690273a4082f2f0927e",
-      "title": "Rep. Melanie Miller and Proponents Testify on Baby Olivia Act - Ohio House of Representatives (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPclg5emNZWVhzSTN4SUlNODlpTkNLQlVra0tzak9zRkJMRVlzSVo5Qmp6VUlxbnV0dzViT0RKNjFGOWhicW10TFBTclR3MU5zYnp6N3BtaTE1SU5TOERVWGc0ZWlyRzN1NHlfUlcyMGN6VTJHcDNCbkVQR3BQbmxYeWd5dENPUi16cTZQbk5KMzZlajdwUUxIQmhfSmZiLUd5SE05U293dnBIR3J4THc?oc=5",
-      "source": "Ohio House of Representatives (.gov)",
-      "date": "Thu, 30 Oct 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPclg5emNZWVhzSTN4SUlNODlpTkNLQlVra0tzak9zRkJMRVlzSVo5Qmp6VUlxbnV0dzViT0RKNjFGOWhicW10TFBTclR3MU5zYnp6N3BtaTE1SU5TOERVWGc0ZWlyRzN1NHlfUlcyMGN6VTJHcDNCbkVQR3BQbmxYeWd5dENPUi16cTZQbk5KMzZlajdwUUxIQmhfSmZiLUd5SE05U293dnBIR3J4THc?oc=5\" target=\"_blank\">Rep. Melanie Miller and Proponents Testify on Baby Olivia Act</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ohio House of Representatives (.gov)</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "28a3b253fddf164d5ecff9c7e3d1927a",
       "title": "Houlahan’s Bipartisan STEM Education Bill Passes House - U.S. Representative Chrissy Houlahan (.gov)",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB6TUtsdTdtaHVldWhQZDFGR2NpYXo5RHR4NmpOb2tfYjZjQlBoNVphakFyY0lkWUZkczFFZW91MnBnMGk3YXVDM1pmSEVVWWluMHR2d1lQWnVYSGozNXhyRThGaUdfWGl1dGl3LWRJMy1EQi02Snc?oc=5",
@@ -6057,6 +6058,20 @@
       "sentiment": "positive",
       "topics": [
         "education",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "411fee2f9ac03690273a4082f2f0927e",
+      "title": "Rep. Melanie Miller and Proponents Testify on Baby Olivia Act - Ohio House of Representatives (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPclg5emNZWVhzSTN4SUlNODlpTkNLQlVra0tzak9zRkJMRVlzSVo5Qmp6VUlxbnV0dzViT0RKNjFGOWhicW10TFBTclR3MU5zYnp6N3BtaTE1SU5TOERVWGc0ZWlyRzN1NHlfUlcyMGN6VTJHcDNCbkVQR3BQbmxYeWd5dENPUi16cTZQbk5KMzZlajdwUUxIQmhfSmZiLUd5SE05U293dnBIR3J4THc?oc=5",
+      "source": "Ohio House of Representatives (.gov)",
+      "date": "Thu, 30 Oct 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPclg5emNZWVhzSTN4SUlNODlpTkNLQlVra0tzak9zRkJMRVlzSVo5Qmp6VUlxbnV0dzViT0RKNjFGOWhicW10TFBTclR3MU5zYnp6N3BtaTE1SU5TOERVWGc0ZWlyRzN1NHlfUlcyMGN6VTJHcDNCbkVQR3BQbmxYeWd5dENPUi16cTZQbk5KMzZlajdwUUxIQmhfSmZiLUd5SE05U293dnBIR3J4THc?oc=5\" target=\"_blank\">Rep. Melanie Miller and Proponents Testify on Baby Olivia Act</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ohio House of Representatives (.gov)</font>",
+      "sentiment": "neutral",
+      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -6209,21 +6224,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "093d6c210baca54aac7b677845ea6511",
-      "title": "Twenty-Years of Anti-Climate Change and Anti-Evolution Education Legislation in the United States - Wiley Online Library",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWJNWnJwRkVYU19ZYnFCSG40UTZ1blNXMUpMdmlYNTJSU01uVzVSMFFHS2g2MTN1ZzRFUU1DXzJza0hQeGNMVFlhU2UtRE40cVR0YXpSQjBXZW40TDlKX05HaVRYM1Vab20tUmlIMU1YWlVHa05JajNnM0xyaWtkam9WQ1FPeTN4dC01S3BkN2hRcTZsYVVuaHRQME9ZUUph?oc=5",
-      "source": "Wiley Online Library",
-      "date": "Thu, 19 Sep 2024 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWJNWnJwRkVYU19ZYnFCSG40UTZ1blNXMUpMdmlYNTJSU01uVzVSMFFHS2g2MTN1ZzRFUU1DXzJza0hQeGNMVFlhU2UtRE40cVR0YXpSQjBXZW40TDlKX05HaVRYM1Vab20tUmlIMU1YWlVHa05JajNnM0xyaWtkam9WQ1FPeTN4dC01S3BkN2hRcTZsYVVuaHRQME9ZUUph?oc=5\" target=\"_blank\">Twenty-Years of Anti-Climate Change and Anti-Evolution Education Legislation in the United States</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Wiley Online Library</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "education",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "f8d2d682c8807e38b485d12d987abf57",
       "title": "Montana students, teachers blast bill that would limit science education to ‘scientific fact’ - Daily Montanan",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWVBMV0duYjhxV2dtTUJGTzVhWGlsS3FrdlVWZ011TVN3bXRoQkdGM0EyaUlNNnNRYjVidktQWWhnSzl6em1qaFBoTXRyb1d3azVOUEpmdExsQWQ4UjdoYi1oVHJjN0J0b2Z5YU5vcXJrMDNnM2lmbEtua0F3THRMeGdPcTZIbTBuR01lN1FSZmF4TF9VaHY1LVREQkRleTlFbXVfSHEwOG5ESU5Md1FxR29nZDZ5TWdGbFBtek5OWTBFbnN6R3Aw?oc=5",
@@ -6248,6 +6248,21 @@
       "sentiment": "neutral",
       "topics": [
         "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "093d6c210baca54aac7b677845ea6511",
+      "title": "Twenty-Years of Anti-Climate Change and Anti-Evolution Education Legislation in the United States - Wiley Online Library",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWJNWnJwRkVYU19ZYnFCSG40UTZ1blNXMUpMdmlYNTJSU01uVzVSMFFHS2g2MTN1ZzRFUU1DXzJza0hQeGNMVFlhU2UtRE40cVR0YXpSQjBXZW40TDlKX05HaVRYM1Vab20tUmlIMU1YWlVHa05JajNnM0xyaWtkam9WQ1FPeTN4dC01S3BkN2hRcTZsYVVuaHRQME9ZUUph?oc=5",
+      "source": "Wiley Online Library",
+      "date": "Thu, 19 Sep 2024 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWJNWnJwRkVYU19ZYnFCSG40UTZ1blNXMUpMdmlYNTJSU01uVzVSMFFHS2g2MTN1ZzRFUU1DXzJza0hQeGNMVFlhU2UtRE40cVR0YXpSQjBXZW40TDlKX05HaVRYM1Vab20tUmlIMU1YWlVHa05JajNnM0xyaWtkam9WQ1FPeTN4dC01S3BkN2hRcTZsYVVuaHRQME9ZUUph?oc=5\" target=\"_blank\">Twenty-Years of Anti-Climate Change and Anti-Evolution Education Legislation in the United States</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Wiley Online Library</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "education",
         "legislation"
       ],
       "mentioned_names": [],
@@ -6429,12 +6444,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "00669bd0162fe3c660b84417cf8922a6",
-      "title": "Louisiana’s Computer Science Education Advancement Act requires computer science education - The Tulane Hullabaloo",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUI3YmlZVkl1cnZtbWNWdVFubUVUUG56OHF2M3NGY1lsZ043RGNyQkFadHZRSUthZWJUVWNtNmR6TDRtbmQ1V3pBUTlNUmlLSG53OHcxMGp3cVYwbm1tdGRvT1hhRUxoWFNUbGVkSGR6TTBSMG42TjBaMGtJUElKZGw3Ylp4d09hdk9pOWd6MFdDakdwUVVYS3UwV2hZSzdWeVFMdFN0a2FiWk5mUHVKeVU3LTIyU3BCNjRQbHA2MlU5Q0YtbkxuNHp3?oc=5",
-      "source": "The Tulane Hullabaloo",
-      "date": "Wed, 15 Jan 2025 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUI3YmlZVkl1cnZtbWNWdVFubUVUUG56OHF2M3NGY1lsZ043RGNyQkFadHZRSUthZWJUVWNtNmR6TDRtbmQ1V3pBUTlNUmlLSG53OHcxMGp3cVYwbm1tdGRvT1hhRUxoWFNUbGVkSGR6TTBSMG42TjBaMGtJUElKZGw3Ylp4d09hdk9pOWd6MFdDakdwUVVYS3UwV2hZSzdWeVFMdFN0a2FiWk5mUHVKeVU3LTIyU3BCNjRQbHA2MlU5Q0YtbkxuNHp3?oc=5\" target=\"_blank\">Louisiana’s Computer Science Education Advancement Act requires computer science education</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Tulane Hullabaloo</font",
+      "article_id": "c843f162317e0ffa9e3407a7d5583305",
+      "title": "Which States Have Passed ‘Science of Reading’ Laws? What’s in Them? - Education Week",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWlNGcVYyMzdwQUlVSERzUExpVlZQYUNJb1BEOTdEV3ZpdlFuNFRrbGhGVmxubEZRZjdDeGdSMHVNUExlUkxLWXhXejlIU1NPcFVkcWNYU3pZN2w0TW5EZTNlTlNNRFdLME5CdEZ6eDFVMGlHN3Z4VDMzWlNTSTRwSW5OcE5lWDdCZkRtS3RNLXcxeTJtYjVHVUVJNWxmMWNGQkl4RXBYcGhCcmVob2c1Mg?oc=5",
+      "source": "Education Week",
+      "date": "Wed, 20 Jul 2022 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNWlNGcVYyMzdwQUlVSERzUExpVlZQYUNJb1BEOTdEV3ZpdlFuNFRrbGhGVmxubEZRZjdDeGdSMHVNUExlUkxLWXhXejlIU1NPcFVkcWNYU3pZN2w0TW5EZTNlTlNNRFdLME5CdEZ6eDFVMGlHN3Z4VDMzWlNTSTRwSW5OcE5lWDdCZkRtS3RNLXcxeTJtYjVHVUVJNWxmMWNGQkl4RXBYcGhCcmVob2c1Mg?oc=5\" target=\"_blank\">Which States Have Passed ‘Science of Reading’ Laws? What’s in Them?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Education Week</font>",
       "sentiment": "neutral",
       "topics": [
         "education",
@@ -6444,12 +6459,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "c843f162317e0ffa9e3407a7d5583305",
-      "title": "Which States Have Passed ‘Science of Reading’ Laws? What’s in Them? - Education Week",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWlNGcVYyMzdwQUlVSERzUExpVlZQYUNJb1BEOTdEV3ZpdlFuNFRrbGhGVmxubEZRZjdDeGdSMHVNUExlUkxLWXhXejlIU1NPcFVkcWNYU3pZN2w0TW5EZTNlTlNNRFdLME5CdEZ6eDFVMGlHN3Z4VDMzWlNTSTRwSW5OcE5lWDdCZkRtS3RNLXcxeTJtYjVHVUVJNWxmMWNGQkl4RXBYcGhCcmVob2c1Mg?oc=5",
-      "source": "Education Week",
-      "date": "Wed, 20 Jul 2022 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNWlNGcVYyMzdwQUlVSERzUExpVlZQYUNJb1BEOTdEV3ZpdlFuNFRrbGhGVmxubEZRZjdDeGdSMHVNUExlUkxLWXhXejlIU1NPcFVkcWNYU3pZN2w0TW5EZTNlTlNNRFdLME5CdEZ6eDFVMGlHN3Z4VDMzWlNTSTRwSW5OcE5lWDdCZkRtS3RNLXcxeTJtYjVHVUVJNWxmMWNGQkl4RXBYcGhCcmVob2c1Mg?oc=5\" target=\"_blank\">Which States Have Passed ‘Science of Reading’ Laws? What’s in Them?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Education Week</font>",
+      "article_id": "00669bd0162fe3c660b84417cf8922a6",
+      "title": "Louisiana’s Computer Science Education Advancement Act requires computer science education - The Tulane Hullabaloo",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUI3YmlZVkl1cnZtbWNWdVFubUVUUG56OHF2M3NGY1lsZ043RGNyQkFadHZRSUthZWJUVWNtNmR6TDRtbmQ1V3pBUTlNUmlLSG53OHcxMGp3cVYwbm1tdGRvT1hhRUxoWFNUbGVkSGR6TTBSMG42TjBaMGtJUElKZGw3Ylp4d09hdk9pOWd6MFdDakdwUVVYS3UwV2hZSzdWeVFMdFN0a2FiWk5mUHVKeVU3LTIyU3BCNjRQbHA2MlU5Q0YtbkxuNHp3?oc=5",
+      "source": "The Tulane Hullabaloo",
+      "date": "Wed, 15 Jan 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUI3YmlZVkl1cnZtbWNWdVFubUVUUG56OHF2M3NGY1lsZ043RGNyQkFadHZRSUthZWJUVWNtNmR6TDRtbmQ1V3pBUTlNUmlLSG53OHcxMGp3cVYwbm1tdGRvT1hhRUxoWFNUbGVkSGR6TTBSMG42TjBaMGtJUElKZGw3Ylp4d09hdk9pOWd6MFdDakdwUVVYS3UwV2hZSzdWeVFMdFN0a2FiWk5mUHVKeVU3LTIyU3BCNjRQbHA2MlU5Q0YtbkxuNHp3?oc=5\" target=\"_blank\">Louisiana’s Computer Science Education Advancement Act requires computer science education</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Tulane Hullabaloo</font",
       "sentiment": "neutral",
       "topics": [
         "education",
@@ -6694,20 +6709,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "f9cc2420092466869cd112aa9ccb6edb",
-      "title": "Politicians step up attacks on the teaching of scientific theories in U.S. schools - The Fulcrum",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWFEzV0F5Ui1vaFZiUmtaVFVWT3NYbzBnQmdKamxwQjVKaDQwR20weUd2SGZKOENiVlpteFRkY2YzVnBTVmxlWWNZWGY5WUtfSzlNMTdJQTNHY29tVWRNbzYzS1JWa1F3QUpZcVdscE1OaEt4end1ck5DSVNacE91WA?oc=5",
-      "source": "The Fulcrum",
-      "date": "Tue, 03 Sep 2024 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNWFEzV0F5Ui1vaFZiUmtaVFVWT3NYbzBnQmdKamxwQjVKaDQwR20weUd2SGZKOENiVlpteFRkY2YzVnBTVmxlWWNZWGY5WUtfSzlNMTdJQTNHY29tVWRNbzYzS1JWa1F3QUpZcVdscE1OaEt4end1ck5DSVNacE91WA?oc=5\" target=\"_blank\">Politicians step up attacks on the teaching of scientific theories in U.S. schools</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Fulcrum</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "education"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "8f3e0a753423d064ff587c72614cbd05",
       "title": "Bill would ban the teaching of scientific theories in Montana schools - Montana Public Radio",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQzZkd0xJWUF0dHJ3eHJ5RW5FLXVjYVh1X2tBRXpaTUVnLVR4U2d2YU40UTJxQ3ZHT3pBQmVSUU43eGYxcGFPV0lYdkJJTkdxUV9zSHpWZXNqNDNHbDRGOUwxelJjQmc3QkY0RTBfazVCOHhGenQ0VmNreUpra1FxMnk5Tkl2bjROaXhseDhkZERiUjQ3MTE1QWpsR0hSeEZDSjZuTklqLVVtekJBVVd3dlFtQmo?oc=5",
@@ -6723,30 +6724,15 @@
       "legislator_ids": []
     },
     {
-      "article_id": "066c97aa4135c07f6c0dbcbc4c5d1075",
-      "title": "Ohio to Require Computer Science in High School - govtech.com",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdzNEY3FYczd4SGs1OEg2NlI1Mm5SUXgxNVNsQ1p6T3hUMVN1cE16Y0F1VEdLakRjVnpiSFd1VkdZdEVLQmN0bTAxbGsxcGw0SGplLUpnTlpqWGRBRVNFSXBlRGdLMnFueGs4STk2ZnN5RUdGbEVNaGtsUjVXOXpQNlFxWmxYdGhwazAtVVc1UQ?oc=5",
-      "source": "govtech.com",
-      "date": "Fri, 28 Feb 2025 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQdzNEY3FYczd4SGs1OEg2NlI1Mm5SUXgxNVNsQ1p6T3hUMVN1cE16Y0F1VEdLakRjVnpiSFd1VkdZdEVLQmN0bTAxbGsxcGw0SGplLUpnTlpqWGRBRVNFSXBlRGdLMnFueGs4STk2ZnN5RUdGbEVNaGtsUjVXOXpQNlFxWmxYdGhwazAtVVc1UQ?oc=5\" target=\"_blank\">Ohio to Require Computer Science in High School</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">govtech.com</font>",
+      "article_id": "f9cc2420092466869cd112aa9ccb6edb",
+      "title": "Politicians step up attacks on the teaching of scientific theories in U.S. schools - The Fulcrum",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWFEzV0F5Ui1vaFZiUmtaVFVWT3NYbzBnQmdKamxwQjVKaDQwR20weUd2SGZKOENiVlpteFRkY2YzVnBTVmxlWWNZWGY5WUtfSzlNMTdJQTNHY29tVWRNbzYzS1JWa1F3QUpZcVdscE1OaEt4end1ck5DSVNacE91WA?oc=5",
+      "source": "The Fulcrum",
+      "date": "Tue, 03 Sep 2024 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNWFEzV0F5Ui1vaFZiUmtaVFVWT3NYbzBnQmdKamxwQjVKaDQwR20weUd2SGZKOENiVlpteFRkY2YzVnBTVmxlWWNZWGY5WUtfSzlNMTdJQTNHY29tVWRNbzYzS1JWa1F3QUpZcVdscE1OaEt4end1ck5DSVNacE91WA?oc=5\" target=\"_blank\">Politicians step up attacks on the teaching of scientific theories in U.S. schools</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Fulcrum</font>",
       "sentiment": "neutral",
       "topics": [
         "education"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "1a455dda0288f33e3c7fcbd64bdf6464",
-      "title": "UPDATE: Bill requiring schools to offer computer science dies in committee - EdSource",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWnlyaTNqWFEzck5LekNfYnpsVzViZGtVQWtZWFQtQ1d6Ri1GTUdYTlRZbXdtWmU2WWp1ZlNVQnBBVU1PU1l0Mmk5UFRVRWpPelQ0RVN3VDV5MnlDUnA3RlRwaUVHdHcwdDN4NE44QTVEYkNJU19QeE9weGxSZ25sMDdqc0Z5SmJCaXpuT0tmOVVLYkZOSU5VM0N6SQ?oc=5",
-      "source": "EdSource",
-      "date": "Fri, 16 Aug 2024 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQWnlyaTNqWFEzck5LekNfYnpsVzViZGtVQWtZWFQtQ1d6Ri1GTUdYTlRZbXdtWmU2WWp1ZlNVQnBBVU1PU1l0Mmk5UFRVRWpPelQ0RVN3VDV5MnlDUnA3RlRwaUVHdHcwdDN4NE44QTVEYkNJU19QeE9weGxSZ25sMDdqc0Z5SmJCaXpuT0tmOVVLYkZOSU5VM0N6SQ?oc=5\" target=\"_blank\">UPDATE: Bill requiring schools to offer computer science dies in committee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">EdSource</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "education",
-        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -6905,6 +6891,22 @@
       "sentiment": "neutral",
       "topics": [
         "education"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "1453b91b862514b32bf4dd04144b9033",
+      "title": "UPDATE: New legislation could make computer science a high school graduation requirement - EdSource",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNSFBDS1BNOURibUJZbEJ6a0E0SE5mYkxSb2FhTlNkeGd3QUtRLW8xNWxOcmF3UmxLRFBnOXJ4VEdwaTBJbzNHRnZOMXdlQW9qM1JlVWZDcHl1ZjhfM2czY2ZwNXBMekVjNXZhYVFPT3FvbXpOVE5rSWVhR1RxY0xvb1JqNDdiWEY5bm4zZ2l4ZnFtSHV1dlhsZEFNYmJCN0loajZ4WmI2QlJ2ckROVnc?oc=5",
+      "source": "EdSource",
+      "date": "Tue, 06 Feb 2024 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNSFBDS1BNOURibUJZbEJ6a0E0SE5mYkxSb2FhTlNkeGd3QUtRLW8xNWxOcmF3UmxLRFBnOXJ4VEdwaTBJbzNHRnZOMXdlQW9qM1JlVWZDcHl1ZjhfM2czY2ZwNXBMekVjNXZhYVFPT3FvbXpOVE5rSWVhR1RxY0xvb1JqNDdiWEY5bm4zZ2l4ZnFtSHV1dlhsZEFNYmJCN0loajZ4WmI2QlJ2ckROVnc?oc=5\" target=\"_blank\">UPDATE: New legislation could make computer science a high school graduation requirement</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">EdSource</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "mandate",
+        "education",
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -7090,6 +7092,21 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "f1e5e4ca138fbaa677626e557bf94b3e",
+      "title": "House Bill 808 — Medical mandates (+5) - Idaho Freedom",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SMnNfaXVnR1lHMEtnTHNxYVV5YXc0V05sZEZwZlVLa3J1dHJTSzZWWDRDVUtZOVZlNXdlQVhvTXphQlZjMjEwbHZkSnB5REcwQ3AtRmtXZHJBUGpmV2cxR3l0UnRPYWZZ?oc=5",
+      "source": "Idaho Freedom",
+      "date": "Wed, 04 Mar 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SMnNfaXVnR1lHMEtnTHNxYVV5YXc0V05sZEZwZlVLa3J1dHJTSzZWWDRDVUtZOVZlNXdlQVhvTXphQlZjMjEwbHZkSnB5REcwQ3AtRmtXZHJBUGpmV2cxR3l0UnRPYWZZ?oc=5\" target=\"_blank\">House Bill 808 — Medical mandates (+5)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Freedom</font>",
+      "sentiment": "neutral",
+      "topics": [
         "mandate",
         "legislation"
       ],
@@ -8317,22 +8334,6 @@
         "vaccine",
         "mandate",
         "exemption",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "8ad5cce24252e2ff85f1d50906ca7be6",
-      "title": "Lawmakers call on Biden to make COVID vaccines mandatory for the military - Navy Times",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNc1dEOWd2RXJDdzlVbXdYV2ZybkdVeER0VXNudUlUd011dlNlS095WXlDVnAyOU1BVUx0UmVLMUNhTExmN3UzV18ybGJRV3NTWUpSdFpZNUNSVlc4Tm9NY09zeWpNX3I1LW4zampHMGZaX1RsWUJZd3BVNXZhSlgzcTBoNkJwRDZFdU9xdEItWjlvWERmNnVHWWNZRVJpLXdxQnlIdXJtNEd3TlZLTERHbWVfWXUydlBaVEQycDkxVU5mWWtN?oc=5",
-      "source": "Navy Times",
-      "date": "Wed, 24 Mar 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNc1dEOWd2RXJDdzlVbXdYV2ZybkdVeER0VXNudUlUd011dlNlS095WXlDVnAyOU1BVUx0UmVLMUNhTExmN3UzV18ybGJRV3NTWUpSdFpZNUNSVlc4Tm9NY09zeWpNX3I1LW4zampHMGZaX1RsWUJZd3BVNXZhSlgzcTBoNkJwRDZFdU9xdEItWjlvWERmNnVHWWNZRVJpLXdxQnlIdXJtNEd3TlZLTERHbWVfWXUydlBaVEQycDkxVU5mWWtN?oc=5\" target=\"_blank\">Lawmakers call on Biden to make COVID vaccines mandatory for the military</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Navy Times</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
         "legislation"
       ],
       "mentioned_names": [],
