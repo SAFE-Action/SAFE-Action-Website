@@ -1,0 +1,52 @@
+name: Firetest Volunteer Onboarding
+
+on:
+  workflow_dispatch:
+    inputs:
+      volunteer_id:
+        description: Firestore volunteer document ID to approve and sign
+        required: true
+        type: string
+      admin_email:
+        description: Admin email seeded in Firestore
+        required: true
+        default: greg@scienceandfreedom.com
+        type: string
+      sign_nda:
+        description: Sign the generated NDA token after approval
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  firetest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: firebase-adminsdk-fbsvc@safe-action-website.iam.gserviceaccount.com
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install script dependencies
+        run: npm --prefix scripts ci
+
+      - name: Run volunteer onboarding firetest
+        env:
+          VOLUNTEER_ID: ${{ inputs.volunteer_id }}
+          ADMIN_EMAIL: ${{ inputs.admin_email }}
+          SIGN_NDA: ${{ inputs.sign_nda }}
+        run: node scripts/firetest-volunteer.js
