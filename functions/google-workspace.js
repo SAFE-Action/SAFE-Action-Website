@@ -14,6 +14,14 @@ async function getAuthClient(scopes) {
     return auth.getClient();
 }
 
+function requireEnv(name) {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(`${name} is not configured`);
+    }
+    return value;
+}
+
 /**
  * Create a Google Drive folder for the volunteer, shared with their email
  */
@@ -26,7 +34,7 @@ async function createDriveFolder({ volunteerName, volunteerEmail }) {
         requestBody: {
             name: `Volunteer - ${volunteerName}`,
             mimeType: 'application/vnd.google-apps.folder',
-            parents: [process.env.GOOGLE_DRIVE_PARENT_FOLDER_ID]
+            parents: [requireEnv('GOOGLE_DRIVE_PARENT_FOLDER_ID')]
         },
         fields: 'id, webViewLink'
     });
@@ -77,7 +85,7 @@ async function addToCalendarEvent({ email }) {
     const authClient = await getAuthClient(['https://www.googleapis.com/auth/calendar']);
     const calendar = google.calendar({ version: 'v3', auth: authClient });
 
-    const eventId = process.env.GOOGLE_CALENDAR_EVENT_ID;
+    const eventId = requireEnv('GOOGLE_CALENDAR_EVENT_ID');
 
     // Get current event to read existing attendees
     const event = await calendar.events.get({
@@ -105,7 +113,7 @@ async function addToChatSpace({ email }) {
     const authClient = await getAuthClient(['https://www.googleapis.com/auth/chat.memberships']);
     const chat = google.chat({ version: 'v1', auth: authClient });
 
-    const spaceName = process.env.GOOGLE_CHAT_SPACE;
+    const spaceName = requireEnv('GOOGLE_CHAT_SPACE');
 
     const membership = await chat.spaces.members.create({
         parent: spaceName,

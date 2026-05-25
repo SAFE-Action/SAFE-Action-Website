@@ -63,10 +63,11 @@ exports.volunteerSignNda = async (req, res) => {
         const pdfBuffer = await generateNdaPdf(volunteer.name, name, now, ip);
 
         // Upload to Drive if folder exists
-        if (volunteer.driveFolder) {
+        const driveFolder = getDriveFolderUrl(volunteer);
+        if (driveFolder) {
             try {
                 // Extract folder ID from URL
-                const folderMatch = volunteer.driveFolder.match(/folders\/([^?/]+)/);
+                const folderMatch = driveFolder.match(/folders\/([^?/]+)/);
                 const folderId = folderMatch ? folderMatch[1] : null;
 
                 if (folderId) {
@@ -162,4 +163,12 @@ function generateNdaPdf(volunteerName, signedName, signDate, ip) {
 
         doc.end();
     });
+}
+
+function getDriveFolderUrl(volunteer) {
+    if (volunteer.driveFolder) return volunteer.driveFolder;
+    const steps = volunteer.onboardingSteps || {};
+    if (steps.driveFolder && steps.driveFolder.driveFolder) return steps.driveFolder.driveFolder;
+    if (steps.createDriveFolder && steps.createDriveFolder.driveFolder) return steps.createDriveFolder.driveFolder;
+    return '';
 }

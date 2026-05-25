@@ -40,4 +40,3 @@ jobs:
 
       - name: Deploy Cloud Functions
         run: firebase deploy --only functions --project safe-action-website
-        continue-on-error: true

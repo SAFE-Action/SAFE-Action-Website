@@ -608,10 +608,16 @@
             var stepsDiv = document.createElement('div');
             stepsDiv.className = 'volunteer-onboarding-steps';
             Object.keys(v.onboardingSteps).forEach(function(step) {
-                var done = v.onboardingSteps[step];
+                var stepData = v.onboardingSteps[step];
+                var done = isOnboardingStepDone(stepData);
+                var error = getOnboardingStepError(stepData);
                 var stepEl = document.createElement('div');
                 stepEl.className = 'onboarding-step' + (done ? ' done' : '');
                 stepEl.textContent = (done ? '\u2713 ' : '\u2610 ') + step.replace(/([A-Z])/g, ' $1').trim();
+                if (error) {
+                    stepEl.title = error;
+                    stepEl.textContent += ' - failed';
+                }
                 stepsDiv.appendChild(stepEl);
             });
             el.appendChild(stepsDiv);
@@ -654,6 +660,18 @@
             field.appendChild(span);
         }
         parent.appendChild(field);
+    }
+
+    function isOnboardingStepDone(stepData) {
+        if (stepData && typeof stepData === 'object') return stepData.success === true;
+        return stepData === true;
+    }
+
+    function getOnboardingStepError(stepData) {
+        if (stepData && typeof stepData === 'object' && stepData.success === false) {
+            return stepData.error || 'Step failed';
+        }
+        return '';
     }
 
     function showVolunteerRejectForm(id, parentEl) {

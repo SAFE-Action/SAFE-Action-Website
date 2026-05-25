@@ -79,17 +79,19 @@ async function handleApprove(req, res, adminEmail) {
     // Step a: Create Drive folder
     try {
         const result = await createDriveFolder({ volunteerName, volunteerEmail });
-        onboardingSteps.createDriveFolder = { success: true, driveFolder: result.folderUrl };
+        onboardingSteps.driveFolder = { success: true, driveFolder: result.folderUrl };
         // Save driveFolder URL to volunteer doc
         await volRef.update({
-            'onboardingSteps.createDriveFolder': { success: true, driveFolder: result.folderUrl }
+            driveFolder: result.folderUrl,
+            driveFolderId: result.folderId,
+            'onboardingSteps.driveFolder': { success: true, driveFolder: result.folderUrl }
         });
     } catch (e) {
         console.error('Onboarding step createDriveFolder failed:', e.message);
-        onboardingSteps.createDriveFolder = { success: false, error: e.message };
-        errors.push({ step: 'createDriveFolder', error: e.message });
+        onboardingSteps.driveFolder = { success: false, error: e.message };
+        errors.push({ step: 'driveFolder', error: e.message });
         await volRef.update({
-            'onboardingSteps.createDriveFolder': { success: false, error: e.message }
+            'onboardingSteps.driveFolder': { success: false, error: e.message }
         });
     }
 
@@ -101,48 +103,48 @@ async function handleApprove(req, res, adminEmail) {
             skills: volunteer.skills || [],
             interests: volunteer.interests || []
         });
-        onboardingSteps.createContact = { success: true, contactId: result.contactId };
+        onboardingSteps.googleContact = { success: true, contactId: result.contactId };
         await volRef.update({
-            'onboardingSteps.createContact': { success: true, contactId: result.contactId }
+            'onboardingSteps.googleContact': { success: true, contactId: result.contactId }
         });
     } catch (e) {
         console.error('Onboarding step createContact failed:', e.message);
-        onboardingSteps.createContact = { success: false, error: e.message };
-        errors.push({ step: 'createContact', error: e.message });
+        onboardingSteps.googleContact = { success: false, error: e.message };
+        errors.push({ step: 'googleContact', error: e.message });
         await volRef.update({
-            'onboardingSteps.createContact': { success: false, error: e.message }
+            'onboardingSteps.googleContact': { success: false, error: e.message }
         });
     }
 
     // Step c: Add to calendar event
     try {
         const result = await addToCalendarEvent({ email: volunteerEmail });
-        onboardingSteps.addToCalendarEvent = { success: true };
+        onboardingSteps.calendarInvite = { success: true };
         await volRef.update({
-            'onboardingSteps.addToCalendarEvent': { success: true }
+            'onboardingSteps.calendarInvite': { success: true }
         });
     } catch (e) {
         console.error('Onboarding step addToCalendarEvent failed:', e.message);
-        onboardingSteps.addToCalendarEvent = { success: false, error: e.message };
-        errors.push({ step: 'addToCalendarEvent', error: e.message });
+        onboardingSteps.calendarInvite = { success: false, error: e.message };
+        errors.push({ step: 'calendarInvite', error: e.message });
         await volRef.update({
-            'onboardingSteps.addToCalendarEvent': { success: false, error: e.message }
+            'onboardingSteps.calendarInvite': { success: false, error: e.message }
         });
     }
 
     // Step d: Add to chat space
     try {
         const result = await addToChatSpace({ email: volunteerEmail });
-        onboardingSteps.addToChatSpace = { success: true };
+        onboardingSteps.chatInvite = { success: true };
         await volRef.update({
-            'onboardingSteps.addToChatSpace': { success: true }
+            'onboardingSteps.chatInvite': { success: true }
         });
     } catch (e) {
         console.error('Onboarding step addToChatSpace failed:', e.message);
-        onboardingSteps.addToChatSpace = { success: false, error: e.message };
-        errors.push({ step: 'addToChatSpace', error: e.message });
+        onboardingSteps.chatInvite = { success: false, error: e.message };
+        errors.push({ step: 'chatInvite', error: e.message });
         await volRef.update({
-            'onboardingSteps.addToChatSpace': { success: false, error: e.message }
+            'onboardingSteps.chatInvite': { success: false, error: e.message }
         });
     }
 
@@ -166,16 +168,16 @@ async function handleApprove(req, res, adminEmail) {
             subject: 'Welcome to SAFE Action!',
             htmlBody
         });
-        onboardingSteps.sendWelcomeEmail = { success: true };
+        onboardingSteps.welcomeEmail = { success: true };
         await volRef.update({
-            'onboardingSteps.sendWelcomeEmail': { success: true }
+            'onboardingSteps.welcomeEmail': { success: true }
         });
     } catch (e) {
         console.error('Onboarding step sendWelcomeEmail failed:', e.message);
-        onboardingSteps.sendWelcomeEmail = { success: false, error: e.message };
-        errors.push({ step: 'sendWelcomeEmail', error: e.message });
+        onboardingSteps.welcomeEmail = { success: false, error: e.message };
+        errors.push({ step: 'welcomeEmail', error: e.message });
         await volRef.update({
-            'onboardingSteps.sendWelcomeEmail': { success: false, error: e.message }
+            'onboardingSteps.welcomeEmail': { success: false, error: e.message }
         });
     }
 
