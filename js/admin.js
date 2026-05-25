@@ -708,7 +708,11 @@
             });
             var data = await resp.json();
             if (!resp.ok) throw new Error(data.error || 'Failed to approve');
-            toast('Volunteer approved! Onboarding started.');
+            if (data.partial || (data.errors && data.errors.length)) {
+                toast('Volunteer approved, but onboarding had ' + (data.errors || []).length + ' failed step(s). Open the volunteer record for details.', true);
+            } else {
+                toast('Volunteer approved and onboarding completed.');
+            }
         } catch (e) {
             toast('Error: ' + e.message, true);
         }

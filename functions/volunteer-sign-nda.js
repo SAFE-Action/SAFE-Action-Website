@@ -73,7 +73,7 @@ exports.volunteerSignNda = async (req, res) => {
                 if (folderId) {
                     const authInstance = new GoogleAuth({
                         scopes: ['https://www.googleapis.com/auth/drive'],
-                        clientOptions: { subject: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com' }
+                        clientOptions: { subject: process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com' }
                     });
                     const authClient = await authInstance.getClient();
                     const drive = google.drive({ version: 'v3', auth: authClient });

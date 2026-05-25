@@ -28,6 +28,8 @@ desktop.ini
 firebase-debug.log
 functions/node_modules/
 functions/.env
+functions/.env.*
+!functions/.env.example
 scripts/service-account-key.json
 
 # Claude local settings

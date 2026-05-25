@@ -38,5 +38,27 @@ jobs:
       - name: Install Cloud Functions dependencies
         run: cd functions && npm ci
 
+      - name: Write Cloud Functions environment
+        env:
+          GOOGLE_CHAT_SPACE: ${{ secrets.GOOGLE_CHAT_SPACE || vars.GOOGLE_CHAT_SPACE }}
+          GOOGLE_CALENDAR_EVENT_ID: ${{ secrets.GOOGLE_CALENDAR_EVENT_ID || vars.GOOGLE_CALENDAR_EVENT_ID }}
+          GOOGLE_DRIVE_PARENT_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_PARENT_FOLDER_ID || vars.GOOGLE_DRIVE_PARENT_FOLDER_ID }}
+          OFFICER_EMAIL: ${{ secrets.OFFICER_EMAIL || vars.OFFICER_EMAIL || 'greg@scienceandfreedom.com' }}
+          SITE_URL: https://scienceandfreedom.com
+        run: |
+          : "${GOOGLE_DRIVE_PARENT_FOLDER_ID:?Missing GOOGLE_DRIVE_PARENT_FOLDER_ID repository secret or variable}"
+          : "${OFFICER_EMAIL:?Missing OFFICER_EMAIL repository secret or variable}"
+          {
+            printf 'GOOGLE_DRIVE_PARENT_FOLDER_ID=%s\n' "$GOOGLE_DRIVE_PARENT_FOLDER_ID"
+            printf 'OFFICER_EMAIL=%s\n' "$OFFICER_EMAIL"
+            printf 'SITE_URL=%s\n' "$SITE_URL"
+            if [ -n "$GOOGLE_CHAT_SPACE" ]; then
+              printf 'GOOGLE_CHAT_SPACE=%s\n' "$GOOGLE_CHAT_SPACE"
+            fi
+            if [ -n "$GOOGLE_CALENDAR_EVENT_ID" ]; then
+              printf 'GOOGLE_CALENDAR_EVENT_ID=%s\n' "$GOOGLE_CALENDAR_EVENT_ID"
+            fi
+          } > functions/.env.safe-action-website
+
       - name: Deploy Cloud Functions
         run: firebase deploy --only functions --project safe-action-website

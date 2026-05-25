@@ -1,0 +1,33 @@
+name: Repair Firebase IAM
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: firebase-adminsdk-fbsvc@safe-action-website.iam.gserviceaccount.com
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Grant deployer access to runtime service account
+        run: |
+          gcloud iam service-accounts add-iam-policy-binding \
+            safe-action-website@appspot.gserviceaccount.com \
+            --project=safe-action-website \
+            --member=serviceAccount:firebase-adminsdk-fbsvc@safe-action-website.iam.gserviceaccount.com \
+            --role=roles/iam.serviceAccountUser

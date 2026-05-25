@@ -83,7 +83,7 @@ exports.volunteerApply = async (req, res) => {
         try {
             const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
             await sendEmail({
-                to: process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com',
+                to: process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com',
                 subject: `New Volunteer Application: ${name.trim()}`,
                 htmlBody: `
                     <h2>New Volunteer Application</h2>

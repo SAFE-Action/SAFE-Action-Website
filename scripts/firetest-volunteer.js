@@ -7,6 +7,7 @@ const SITE_URL = 'https://scienceandfreedom.com';
 const volunteerId = process.env.VOLUNTEER_ID;
 const adminEmail = process.env.ADMIN_EMAIL || 'greg@scienceandfreedom.com';
 const shouldSignNda = process.env.SIGN_NDA === 'true';
+const requireOnboardingSuccess = process.env.REQUIRE_ONBOARDING_SUCCESS !== 'false';
 
 if (!volunteerId) {
     throw new Error('VOLUNTEER_ID is required');
@@ -56,7 +57,34 @@ function summarizeSteps(steps) {
     return out;
 }
 
+function getFailedSteps(steps) {
+    return Object.entries(steps || {}).reduce((failed, [step, value]) => {
+        if (value && typeof value === 'object') {
+            if (value.success !== true) {
+                failed.push({
+                    step,
+                    error: value.error || 'Step did not report success'
+                });
+            }
+        } else if (value !== true) {
+            failed.push({ step, error: 'Step did not report success' });
+        }
+        return failed;
+    }, []);
+}
+
+function uniqueFailures(failures) {
+    const seen = new Set();
+    return failures.filter((failure) => {
+        const key = `${failure.step}:${failure.error}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 async function main() {
+    const failures = [];
     const db = admin.firestore();
     const volRef = db.collection('volunteers').doc(volunteerId);
     const beforeDoc = await volRef.get();
@@ -110,6 +138,11 @@ async function main() {
         throw new Error('Approval endpoint failed');
     }
 
+    if (requireOnboardingSuccess) {
+        failures.push(...(approve.data.errors || []));
+        failures.push(...getFailedSteps(afterApproval.onboardingSteps));
+    }
+
     if (shouldSignNda) {
         if (!afterApproval.ndaToken) {
             throw new Error('No NDA token generated; cannot sign NDA');
@@ -155,6 +188,14 @@ async function main() {
         ndaTokenPresent: Boolean(finalData.ndaToken),
         onboardingSteps: summarizeSteps(finalData.onboardingSteps)
     }));
+
+    if (requireOnboardingSuccess) {
+        failures.push(...getFailedSteps(finalData.onboardingSteps));
+        const unique = uniqueFailures(failures);
+        if (unique.length > 0) {
+            throw new Error(`Onboarding failed ${unique.length} step(s): ${JSON.stringify(unique)}`);
+        }
+    }
 }
 
 main().catch((err) => {

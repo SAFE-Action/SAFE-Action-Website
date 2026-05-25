@@ -1,7 +1,13 @@
 const admin = require('firebase-admin');
 const crypto = require('crypto');
 const { sendEmail } = require('./email-service');
-const { createDriveFolder, createContact, addToCalendarEvent, addToChatSpace } = require('./google-workspace');
+const {
+    createDriveFolder,
+    createContact,
+    addToCalendarEvent,
+    addToChatSpace,
+    validateWorkspaceConfig
+} = require('./google-workspace');
 
 exports.adminVolunteers = async (req, res) => {
     if (req.method !== 'POST') {
@@ -56,6 +62,15 @@ async function handleApprove(req, res, adminEmail) {
     const volunteer = volDoc.data();
     if (volunteer.status !== 'pending') {
         return res.status(400).json({ error: `Volunteer status is "${volunteer.status}", expected "pending"` });
+    }
+
+    const missingConfig = validateWorkspaceConfig();
+    if (missingConfig.length > 0) {
+        return res.status(500).json({
+            success: false,
+            error: 'Volunteer onboarding is not configured',
+            missingConfig
+        });
     }
 
     // Generate NDA token
@@ -151,14 +166,24 @@ async function handleApprove(req, res, adminEmail) {
     // Step e: Send welcome email with NDA link
     try {
         const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
+        const driveStep = onboardingSteps.driveFolder && onboardingSteps.driveFolder.success
+            ? `<li><strong>Check your Google Drive:</strong> <a href="${onboardingSteps.driveFolder.driveFolder}">Your shared folder is ready</a></li>`
+            : '<li><strong>Google Drive:</strong> We will follow up with your shared folder.</li>';
+        const chatStep = onboardingSteps.chatInvite && onboardingSteps.chatInvite.success
+            ? '<li><strong>Join the team chat:</strong> You have been added to our Google Chat space</li>'
+            : '<li><strong>Team chat:</strong> We will follow up with your chat invitation.</li>';
+        const calendarStep = onboardingSteps.calendarInvite && onboardingSteps.calendarInvite.success
+            ? '<li><strong>Weekly meeting:</strong> You have been added to our recurring calendar event</li>'
+            : '<li><strong>Weekly meeting:</strong> We will follow up with the calendar invitation.</li>';
+
         const htmlBody = `<h2>Welcome to SAFE Action, ${volunteerName}!</h2>
 <p>Your volunteer application has been approved. We're excited to have you on the team!</p>
 <h3>Next Steps:</h3>
 <ol>
     <li><strong>Sign the NDA:</strong> <a href="${siteUrl}/volunteer/nda?token=${ndaToken}">Click here to sign</a></li>
-    <li><strong>Check your Google Drive:</strong> A shared folder has been created for you</li>
-    <li><strong>Join the team chat:</strong> You've been added to our Google Chat space</li>
-    <li><strong>Weekly meeting:</strong> You've been added to our recurring calendar event</li>
+    ${driveStep}
+    ${chatStep}
+    ${calendarStep}
 </ol>
 <p>Questions? Reply to this email or reach out in the team chat.</p>
 <p>— The SAFE Action Team</p>`;
@@ -181,7 +206,13 @@ async function handleApprove(req, res, adminEmail) {
         });
     }
 
-    return res.status(200).json({ success: true, onboardingSteps, errors });
+    return res.status(200).json({
+        success: errors.length === 0,
+        approved: true,
+        partial: errors.length > 0,
+        onboardingSteps,
+        errors
+    });
 }
 
 async function handleReject(req, res, adminEmail) {

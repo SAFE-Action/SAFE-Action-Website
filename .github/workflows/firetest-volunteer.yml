@@ -49,4 +49,5 @@ jobs:
           VOLUNTEER_ID: ${{ inputs.volunteer_id }}
           ADMIN_EMAIL: ${{ inputs.admin_email }}
           SIGN_NDA: ${{ inputs.sign_nda }}
+          REQUIRE_ONBOARDING_SUCCESS: "true"
         run: node scripts/firetest-volunteer.js

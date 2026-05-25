@@ -6,7 +6,7 @@ const { GoogleAuth } = require('google-auth-library');
  * with domain-wide delegation to impersonate a Workspace user
  */
 async function getAuthClient(scopes) {
-    const subject = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
+    const subject = process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com';
     const auth = new GoogleAuth({
         scopes,
         clientOptions: { subject }
@@ -15,11 +15,22 @@ async function getAuthClient(scopes) {
 }
 
 function requireEnv(name) {
-    const value = process.env[name];
-    if (!value) {
+    const value = (process.env[name] || '').trim();
+    if (!value || value === '.') {
         throw new Error(`${name} is not configured`);
     }
     return value;
+}
+
+function validateWorkspaceConfig() {
+    return [
+        'GOOGLE_DRIVE_PARENT_FOLDER_ID',
+        'GOOGLE_CALENDAR_EVENT_ID',
+        'GOOGLE_CHAT_SPACE'
+    ].filter((name) => {
+        const value = (process.env[name] || '').trim();
+        return !value || value === '.';
+    });
 }
 
 /**
@@ -128,4 +139,10 @@ async function addToChatSpace({ email }) {
     return { membershipId: membership.data.name };
 }
 
-module.exports = { createDriveFolder, createContact, addToCalendarEvent, addToChatSpace };
+module.exports = {
+    createDriveFolder,
+    createContact,
+    addToCalendarEvent,
+    addToChatSpace,
+    validateWorkspaceConfig
+};

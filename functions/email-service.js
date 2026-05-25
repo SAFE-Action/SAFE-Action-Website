@@ -6,7 +6,7 @@ const { GoogleAuth } = require('google-auth-library');
  * with domain-wide delegation to impersonate the officer email
  */
 async function getGmailClient() {
-    const subject = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
+    const subject = process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com';
     const auth = new GoogleAuth({
         scopes: ['https://www.googleapis.com/auth/gmail.send'],
         clientOptions: { subject }
@@ -20,7 +20,7 @@ async function getGmailClient() {
  */
 async function sendEmail({ to, subject, htmlBody }) {
     const gmail = await getGmailClient();
-    const from = process.env.OFFICER_EMAIL || 'officer@scienceandfreedom.com';
+    const from = process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com';
     const raw = Buffer.from(
         `From: SAFE Action <${from}>\r\n` +
         `To: ${to}\r\n` +
