@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T03:15:08.072309+00:00",
-  "total_legislators": 7900,
+  "generated_at": "2026-05-26T09:57:00.017726+00:00",
+  "total_legislators": 7904,
   "by_category": {
     "champion": 0,
     "likely-win": 0,
     "fence-sitter": 0,
     "unlikely": 0,
     "opposed": 0,
-    "unscored": 7900
+    "unscored": 7904
   },
   "top_outreach_targets": [],
   "state_summaries": {
@@ -54,7 +54,7 @@
       "opposed": 0
     },
     "TX": {
-      "total": 220,
+      "total": 219,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -96,7 +96,7 @@
       "opposed": 0
     },
     "VA": {
-      "total": 152,
+      "total": 153,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -132,7 +132,7 @@
       "opposed": 0
     },
     "FL": {
-      "total": 186,
+      "total": 188,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -156,13 +156,13 @@
       "opposed": 0
     },
     "AR": {
-      "total": 141,
+      "total": 140,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "CA": {
-      "total": 173,
+      "total": 172,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -180,7 +180,7 @@
       "opposed": 0
     },
     "LA": {
-      "total": 149,
+      "total": 152,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -192,7 +192,7 @@
       "opposed": 0
     },
     "OK": {
-      "total": 153,
+      "total": 154,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -204,7 +204,7 @@
       "opposed": 0
     },
     "AZ": {
-      "total": 101,
+      "total": 100,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -234,7 +234,7 @@
       "opposed": 0
     },
     "ND": {
-      "total": 144,
+      "total": 143,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -258,13 +258,13 @@
       "opposed": 0
     },
     "PA": {
-      "total": 267,
+      "total": 270,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
     },
     "UT": {
-      "total": 110,
+      "total": 108,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -288,7 +288,7 @@
       "opposed": 0
     },
     "NJ": {
-      "total": 133,
+      "total": 134,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
