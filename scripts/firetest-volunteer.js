@@ -8,6 +8,13 @@ const volunteerId = process.env.VOLUNTEER_ID;
 const adminEmail = process.env.ADMIN_EMAIL || 'greg@scienceandfreedom.com';
 const shouldSignNda = process.env.SIGN_NDA === 'true';
 const requireOnboardingSuccess = process.env.REQUIRE_ONBOARDING_SUCCESS !== 'false';
+const stepAliases = {
+    driveFolder: ['driveFolder', 'createDriveFolder'],
+    googleContact: ['googleContact', 'createContact'],
+    calendarInvite: ['calendarInvite', 'addToCalendarEvent'],
+    chatInvite: ['chatInvite', 'addToChatSpace'],
+    welcomeEmail: ['welcomeEmail', 'sendWelcomeEmail']
+};
 
 if (!volunteerId) {
     throw new Error('VOLUNTEER_ID is required');
@@ -58,7 +65,31 @@ function summarizeSteps(steps) {
 }
 
 function getFailedSteps(steps) {
-    return Object.entries(steps || {}).reduce((failed, [step, value]) => {
+    const failed = [];
+    const seen = new Set();
+
+    Object.entries(stepAliases).forEach(([canonicalStep, aliases]) => {
+        aliases.forEach((step) => seen.add(step));
+        const values = aliases
+            .map((step) => ({ step, value: steps && steps[step] }))
+            .filter((entry) => typeof entry.value !== 'undefined');
+
+        if (values.length === 0) return;
+        const hasSuccess = values.some(({ value }) => {
+            if (value && typeof value === 'object') return value.success === true;
+            return value === true;
+        });
+        if (hasSuccess) return;
+
+        const failure = values.find(({ value }) => value && typeof value === 'object' && value.success === false);
+        failed.push({
+            step: canonicalStep,
+            error: failure ? (failure.value.error || 'Step did not report success') : 'Step did not report success'
+        });
+    });
+
+    Object.entries(steps || {}).forEach(([step, value]) => {
+        if (seen.has(step)) return;
         if (value && typeof value === 'object') {
             if (value.success !== true) {
                 failed.push({
@@ -69,8 +100,9 @@ function getFailedSteps(steps) {
         } else if (value !== true) {
             failed.push({ step, error: 'Step did not report success' });
         }
-        return failed;
-    }, []);
+    });
+
+    return failed;
 }
 
 function uniqueFailures(failures) {
