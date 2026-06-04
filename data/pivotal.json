@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T10:59:26.109143+00:00",
+  "generated_at": "2026-06-04T09:56:17.348374+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -52851,7 +52851,7 @@
     },
     {
       "legislator_id": "ME-State-House-Fredericks-143",
-      "name": "Ann Marie Fredericks",
+      "name": "Ann Fredericks",
       "state": "ME",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -53859,7 +53859,7 @@
     },
     {
       "legislator_id": "ME-State-House-Dodge-39",
-      "name": "Janice Dodge",
+      "name": "Jan Dodge",
       "state": "ME",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
@@ -63256,6 +63256,24 @@
     {
       "legislator_id": "MI-State-House-Rheingans-47",
       "name": "Carrie Rheingans",
+      "state": "MI",
+      "party": "Democratic",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "MI-State-Senate-Greene-35",
+      "name": "Chedrick Greene",
       "state": "MI",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
@@ -80912,6 +80930,24 @@
       }
     },
     {
+      "legislator_id": "NH-State-House-Butler-Strafford-12",
+      "name": "Billie Butler",
+      "state": "NH",
+      "party": "Democratic",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
       "legislator_id": "NH-State-House-Lynn-Rockingham-17",
       "name": "Bob Lynn",
       "state": "NH",
@@ -81527,11 +81563,11 @@
       "legislator_id": "NH-State-House-Girard-Sullivan-6",
       "name": "Dale Girard",
       "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
       "persuadability_category": "unknown",
       "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
@@ -82504,6 +82540,24 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "NH-State-House-Daniels-Hillsborough-43",
+      "name": "Gary Daniels",
+      "state": "NH",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
@@ -84880,6 +84934,24 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "NH-State-House-Tremblay-Coos-5",
+      "name": "Marc Tremblay",
+      "state": "NH",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
@@ -96575,7 +96647,7 @@
       "legislator_id": "NC-State-House-Cunningham-106",
       "name": "Carla Cunningham",
       "state": "NC",
-      "party": "Democratic",
+      "party": "Independent",
       "reason": "Fence-sitter — persuadable",
       "persuadability_category": "unknown",
       "outreach_priority": 3,
@@ -98249,7 +98321,7 @@
       "legislator_id": "NC-State-House-Majeed-99",
       "name": "Nasif Majeed",
       "state": "NC",
-      "party": "Democratic",
+      "party": "Independent",
       "reason": "Fence-sitter — persuadable",
       "persuadability_category": "unknown",
       "outreach_priority": 3,
@@ -98686,24 +98758,6 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NC-State-Senate-Everitt-18",
-      "name": "Terence Everitt",
-      "state": "NC",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
@@ -125894,6 +125948,24 @@
       }
     },
     {
+      "legislator_id": "UT-State-House-Pace-60",
+      "name": "Grant Pace",
+      "state": "UT",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
       "legislator_id": "UT-State-Senate-Balderree-22",
       "name": "Heidi Balderree",
       "state": "UT",
@@ -125932,6 +126004,24 @@
     {
       "legislator_id": "UT-State-Senate-Adams-7",
       "name": "Stuart Adams",
+      "state": "UT",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "UT-State-House-Larson-64",
+      "name": "Jackie Larson",
       "state": "UT",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -126022,24 +126112,6 @@
     {
       "legislator_id": "UT-State-House-Thompson-3",
       "name": "Jason Thompson",
-      "state": "UT",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "UT-State-House-Burton-64",
-      "name": "Jeff Burton",
       "state": "UT",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -126760,6 +126832,24 @@
     {
       "legislator_id": "UT-State-House-Shipp-71",
       "name": "Rex Shipp",
+      "state": "UT",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "UT-State-House-Bishop-6",
+      "name": "Rob Bishop",
       "state": "UT",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
