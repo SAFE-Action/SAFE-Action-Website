@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-04T09:56:17.348374+00:00",
-  "total_legislators": 7909,
+  "generated_at": "2026-06-05T09:50:56.476881+00:00",
+  "total_legislators": 7910,
   "by_category": {
     "champion": 0,
     "likely-win": 0,
     "fence-sitter": 0,
     "unlikely": 0,
     "opposed": 0,
-    "unscored": 7909
+    "unscored": 7910
   },
   "top_outreach_targets": [],
   "state_summaries": {
@@ -54,7 +54,7 @@
       "opposed": 0
     },
     "TX": {
-      "total": 219,
+      "total": 220,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -186,7 +186,7 @@
       "opposed": 0
     },
     "MO": {
-      "total": 202,
+      "total": 201,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -204,7 +204,7 @@
       "opposed": 0
     },
     "AZ": {
-      "total": 100,
+      "total": 101,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
