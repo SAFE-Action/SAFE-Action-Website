@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T09:50:56.476881+00:00",
+  "generated_at": "2026-06-06T08:33:43.063647+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -26930,24 +26930,6 @@
       }
     },
     {
-      "legislator_id": "FL-State-House-Persons-Mulicka-78",
-      "name": "Jenna Persons-Mulicka",
-      "state": "FL",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "FL-State-Senate-Bradley-6",
       "name": "Jennifer Bradley",
       "state": "FL",
@@ -51825,7 +51807,7 @@
     },
     {
       "legislator_id": "LA-State-House-Muscarello-86",
-      "name": "Nicholas Muscarello",
+      "name": "Nicky Muscarello",
       "state": "LA",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -59367,7 +59349,7 @@
     },
     {
       "legislator_id": "MD-State-Senate-Folden-4",
-      "name": "William Folden",
+      "name": "Bill Folden",
       "state": "MD",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -85628,24 +85610,6 @@
       }
     },
     {
-      "legislator_id": "NH-State-House-Murphy-Coos-6",
-      "name": "Mike Murphy",
-      "state": "NH",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "NH-State-House-Ouellet-Coos-3",
       "name": "Mike Ouellet",
       "state": "NH",
@@ -87106,24 +87070,6 @@
     {
       "legislator_id": "NH-State-House-Newman-Hillsborough-4",
       "name": "Sue Newman",
-      "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NH-State-House-Budathoki-Hillsborough-40",
-      "name": "Suraj Budathoki",
       "state": "NH",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
@@ -97346,6 +97292,24 @@
       }
     },
     {
+      "legislator_id": "NC-State-Senate-Fatmi-18",
+      "name": "Haseeb Fatmi",
+      "state": "NC",
+      "party": "Democratic",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
       "legislator_id": "NC-State-House-Rhyne-97",
       "name": "Heather Rhyne",
       "state": "NC",
@@ -99095,6 +99059,24 @@
       "legislator_id": "NC-State-House-Hawkins-31",
       "name": "Zack Hawkins",
       "state": "NC",
+      "party": "Democratic",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "ND-State-House-Goldwyn-11",
+      "name": "Adam Goldwyn",
+      "state": "ND",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
       "persuadability_category": "unknown",
@@ -100948,24 +100930,6 @@
     {
       "legislator_id": "ND-State-Senate-Powers-46",
       "name": "Michelle Powers",
-      "state": "ND",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "ND-State-House-Beltz-20",
-      "name": "Mike Beltz",
       "state": "ND",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -109732,6 +109696,24 @@
     {
       "legislator_id": "PA-State-Senate-Yaw-23",
       "name": "Gene Yaw",
+      "state": "PA",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "PA-State-House-Margetas-196",
+      "name": "George Margetas",
       "state": "PA",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
@@ -132220,24 +132202,6 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "VA-State-House-Maldonado-20",
-      "name": "Michelle Maldonado",
-      "state": "VA",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
