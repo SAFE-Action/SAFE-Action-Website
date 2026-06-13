@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T10:25:01.433058+00:00",
+  "generated_at": "2026-06-13T09:16:54.640472+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -9640,6 +9640,24 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "CA-House-Gallagher-1",
+      "name": "James Gallagher",
+      "state": "CA",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
