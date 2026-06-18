@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T10:56:19.787727+00:00",
+  "generated_at": "2026-06-18T10:20:32.823268+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -116555,11 +116555,11 @@
       "legislator_id": "SC-State-House-Atkinson-57",
       "name": "Lucas Atkinson",
       "state": "SC",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
       "persuadability_category": "unknown",
       "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
