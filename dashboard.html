@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
 </head>
 <body class="dashboard-body">
 
@@ -165,13 +165,13 @@
                     }
                 });
 
-                // County borders — subtle texture layer for high-res detail
+                // County borders - subtle texture layer for high-res detail
                 svg.insert('path', ':first-child')
                     .datum(topojson.mesh(us, us.objects.counties, function(a, b) { return a !== b; }))
                     .attr('class', 'county-borders')
                     .attr('d', path);
 
-                // State borders — bolder, on top of counties
+                // State borders - bolder, on top of counties
                 svg.insert('path', '.state')
                     .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
                     .attr('class', 'state-borders')
