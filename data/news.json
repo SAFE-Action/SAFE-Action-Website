@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T13:36:28.423202+00:00",
+  "generated_at": "2026-07-11T19:10:26.434144+00:00",
   "articles": [
     {
       "article_id": "e582bc8cb37537737f71622d021fb2ca",
@@ -135,9 +135,9 @@
     },
     {
       "article_id": "a2331703b9702719b4985ad17c74d64a",
-      "title": "CT House Democrats approve vaccine bill - nbcconnecticut.com",
+      "title": "CT House Democrats approve vaccine bill - NBC Connecticut",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWEJCRUQ2ZEw3N0g4TWNoNHV2ZDh6N29DNlhNVndRd3dXdndhdWtlMTZfRGdoX1l5LW40QnVmcTRoc3lsUzVKZC12aFNzQkYxcy1mQlRPeEV1Nm1wTkpCN1RkSTNlUExpNUNneFRtS0gwbWdZR0tOUDlDZHpyczFTSVZIY0ZsR2UxY0I2b1k5dErSAZgBQVVfeXFMT0FDOGg2MXpYWGp0UjQ3TFdvVGJzdE5DRC1GUjZBZmhHVURwdmZta0F3S3doZW1VOUFmS0pZSWcxc0FtVlZ6Sl9jXzBSQXllWjNFNXpwaHExVVlfR3lJN05XSlVoTS16UVhRR0xxVHM2QmR4REZHLTBBSGNpRTM2X1JDRW5NQXJNMmhTWFJXbjF4cmo5Y0IyUHE?oc=5",
-      "source": "nbcconnecticut.com",
+      "source": "NBC Connecticut",
       "date": "Tue, 21 Apr 2026 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQWEJCRUQ2ZEw3N0g4TWNoNHV2ZDh6N29DNlhNVndRd3dXdndhdWtlMTZfRGdoX1l5LW40QnVmcTRoc3lsUzVKZC12aFNzQkYxcy1mQlRPeEV1Nm1wTkpCN1RkSTNlUExpNUNneFRtS0gwbWdZR0tOUDlDZHpyczFTSVZIY0ZsR2UxY0I2b1k5dErSAZgBQVVfeXFMT0FDOGg2MXpYWGp0UjQ3TFdvVGJzdE5DRC1GUjZBZmhHVURwdmZta0F3S3doZW1VOUFmS0pZSWcxc0FtVlZ6Sl9jXzBSQXllWjNFNXpwaHExVVlfR3lJN05XSlVoTS16UVhRR0xxVHM2QmR4REZHLTBBSGNpRTM2X1JDRW5NQXJNMmhTWFJXbjF4cmo5Y0IyUHE?oc=5\" target=\"_blank\">CT House Democrats appro",
       "sentiment": "neutral",
@@ -464,10 +464,25 @@
       "legislator_ids": []
     },
     {
+      "article_id": "76850be65a446b5071121e7662e6f6fa",
+      "title": "Hochul, N.Y. legislative leaders introduce bills aimed to protect vaccine access - Spectrum News",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPX1JiblFBSXNhYm9rYzFfZzZlQVhvNkllMWY1YnEzX2QxWEJZRmhwNlBrRFVCYVZKTFM1NmVienN4Wm00Yl80eGFxSm1icFNDamFGY1hBSk5wMTBUWVh2U1FKTWI2bmxrMTVUYjFDWl9TRHdNS1ZnZkREa2FlTXlQUnJsakFIMVFwVHNwMDdKZV9jaThpZWh5UHhCRGlMdk1feE1VQTZLM1pXTWxQdzdUYVh2N2FqYmt5MkVGeEJEaG16UnlOV0g0Rm15QXZia0tlbkpiOXkwSU5tUmxRQlE?oc=5",
+      "source": "Spectrum News",
+      "date": "Fri, 27 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPX1JiblFBSXNhYm9rYzFfZzZlQVhvNkllMWY1YnEzX2QxWEJZRmhwNlBrRFVCYVZKTFM1NmVienN4Wm00Yl80eGFxSm1icFNDamFGY1hBSk5wMTBUWVh2U1FKTWI2bmxrMTVUYjFDWl9TRHdNS1ZnZkREa2FlTXlQUnJsakFIMVFwVHNwMDdKZV9jaThpZWh5UHhCRGlMdk1feE1VQTZLM1pXTWxQdzdUYVh2N2FqYmt5MkVGeEJEaG16UnlOV0g0Rm15QXZia0tlbkpiOXkwSU5tUmxRQlE?oc=5\" target=\"_blank\">Hochul, N.Y. legislative leaders introduce bills aimed to protect vaccine access</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Spectrum N",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "c094a35cb79b7342303ae165c7753013",
-      "title": "Connecticut Senate passes bill preserving state's vaccine standards - nbcconnecticut.com",
+      "title": "Connecticut Senate passes bill preserving state's vaccine standards - NBC Connecticut",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQeXJxRjVNVjFOa3BVWkJNbjVYX0F3ZzhtVlB4UTR2WmF4WWRteGhwTlNNLXBIVEtwRHZMUkpqWU5LYnQxRHdkaUxEeGJWYkdxdzB1dEtkUFJER0R5SUdsbkRCWWNTMGMtWTVZcGtJN2xoMzJUWVVyVzFyOElyS3Jvc29fT0VVYm5yVTFJSnFEdjdic3NoaEphSURCZE9iUm9yaVZ4S3V2U1c3VGh5ZEZsT25UOTJreDI50gHAAUFVX3lxTE1VeWhBbVNna3BUaWZ3eXpTMV9NMHZwQ3JkandpUzZOcW1GRzJPSWpiMXRCeERsWmJ3RVo3Q1RHcDNaRU1YcE1rZzFlSGtYd1pER2xFSFlLZE5sMWZfaG5mNnBwNWRuM1FabEpJTFVzSlVMeFJ3VTJYRFRVb2FHdTJRODJ5RTFlRXlnb0xWdUZGQ2FVM2ZPdURRNnF4UkE4aC03alRWTWpSblNIQmhzNWhoajhtMUNMU1FtbUtUdHBSVw?oc=5",
-      "source": "nbcconnecticut.com",
+      "source": "NBC Connecticut",
       "date": "Thu, 23 Apr 2026 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQeXJxRjVNVjFOa3BVWkJNbjVYX0F3ZzhtVlB4UTR2WmF4WWRteGhwTlNNLXBIVEtwRHZMUkpqWU5LYnQxRHdkaUxEeGJWYkdxdzB1dEtkUFJER0R5SUdsbkRCWWNTMGMtWTVZcGtJN2xoMzJUWVVyVzFyOElyS3Jvc29fT0VVYm5yVTFJSnFEdjdic3NoaEphSURCZE9iUm9yaVZ4S3V2U1c3VGh5ZEZsT25UOTJreDI50gHAAUFVX3lxTE1VeWhBbVNna3BUaWZ3eXpTMV9NMHZwQ3JkandpUzZOcW1GRzJPSWpiMXRCeERsWmJ3RVo3Q1RHcDNaRU1YcE1rZzFlSGtYd1pER2xFSFlLZE5sMWZfaG5mNnBwNWRuM1FabEpJTFVzSlVMeFJ3VTJYRFRVb2FHdTJRODJ5RTFlRXlnb0xWdUZGQ2FVM2",
       "sentiment": "positive",
@@ -600,21 +615,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "76850be65a446b5071121e7662e6f6fa",
-      "title": "Hochul, N.Y. legislative leaders introduce bills aimed to protect vaccine access - Spectrum News",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPX1JiblFBSXNhYm9rYzFfZzZlQVhvNkllMWY1YnEzX2QxWEJZRmhwNlBrRFVCYVZKTFM1NmVienN4Wm00Yl80eGFxSm1icFNDamFGY1hBSk5wMTBUWVh2U1FKTWI2bmxrMTVUYjFDWl9TRHdNS1ZnZkREa2FlTXlQUnJsakFIMVFwVHNwMDdKZV9jaThpZWh5UHhCRGlMdk1feE1VQTZLM1pXTWxQdzdUYVh2N2FqYmt5MkVGeEJEaG16UnlOV0g0Rm15QXZia0tlbkpiOXkwSU5tUmxRQlE?oc=5",
-      "source": "Spectrum News",
-      "date": "Fri, 27 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPX1JiblFBSXNhYm9rYzFfZzZlQVhvNkllMWY1YnEzX2QxWEJZRmhwNlBrRFVCYVZKTFM1NmVienN4Wm00Yl80eGFxSm1icFNDamFGY1hBSk5wMTBUWVh2U1FKTWI2bmxrMTVUYjFDWl9TRHdNS1ZnZkREa2FlTXlQUnJsakFIMVFwVHNwMDdKZV9jaThpZWh5UHhCRGlMdk1feE1VQTZLM1pXTWxQdzdUYVh2N2FqYmt5MkVGeEJEaG16UnlOV0g0Rm15QXZia0tlbkpiOXkwSU5tUmxRQlE?oc=5\" target=\"_blank\">Hochul, N.Y. legislative leaders introduce bills aimed to protect vaccine access</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Spectrum N",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "d13534d69446efb16c97eab5acf1c49d",
       "title": "Florida Republicans Refuse to Take Up DeSantis Bill Loosening Vaccine Mandates - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQaVc0M2dXV2JpUEZjTDQtbHkyeU5xdnNpMDZvOXVTcGFXUU12RG9uOURIejREY01YRDA3b21BUU1tQ1lWYXhWbUdmYm5YSGRYNUZ6V0tNZnhDSFFXOUtDUmphTmpaem1ZZ0JEQlM1Mkc0MDg5SEd6T0RCVHA2MzJMdTBfTllEX21zM3Jpcmpn?oc=5",
@@ -622,22 +622,6 @@
       "date": "Tue, 28 Apr 2026 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxQaVc0M2dXV2JpUEZjTDQtbHkyeU5xdnNpMDZvOXVTcGFXUU12RG9uOURIejREY01YRDA3b21BUU1tQ1lWYXhWbUdmYm5YSGRYNUZ6V0tNZnhDSFFXOUtDUmphTmpaem1ZZ0JEQlM1Mkc0MDg5SEd6T0RCVHA2MzJMdTBfTllEX21zM3Jpcmpn?oc=5\" target=\"_blank\">Florida Republicans Refuse to Take Up DeSantis Bill Loosening Vaccine Mandates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The New York Times</font>",
       "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "dc49cf91c7f89a196674af8da7a6ee0f",
-      "title": "Idaho committee rejects bill to repeal childhood vaccine requirements - Idaho Capital Sun",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa0hnSnVCTTVSZjRIUFVtNS15Si14NklhYnpQMXBaRXRWaHlTWjliQ3VMLVB6a1ZvUnhXWUpGM2d0SjJJY2doQy1nRko0RllZTWY1Tjk0eXc3MmdSVFJzaUJsM0gxMG9XYWlBNnRKM3pyOHZNbnNTbnlOMHZjZUhfbGh3LXFhZndFZlRWcjVUdDhmcHVyemd6c1BNZWV3czRPTnpMeTVjcHA?oc=5",
-      "source": "Idaho Capital Sun",
-      "date": "Fri, 13 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa0hnSnVCTTVSZjRIUFVtNS15Si14NklhYnpQMXBaRXRWaHlTWjliQ3VMLVB6a1ZvUnhXWUpGM2d0SjJJY2doQy1nRko0RllZTWY1Tjk0eXc3MmdSVFJzaUJsM0gxMG9XYWlBNnRKM3pyOHZNbnNTbnlOMHZjZUhfbGh3LXFhZndFZlRWcjVUdDhmcHVyemd6c1BNZWV3czRPTnpMeTVjcHA?oc=5\" target=\"_blank\">Idaho committee rejects bill to repeal childhood vaccine requirements</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Capital Sun</font>",
-      "sentiment": "negative",
       "topics": [
         "vaccine",
         "mandate",
@@ -661,6 +645,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "dc49cf91c7f89a196674af8da7a6ee0f",
+      "title": "Idaho committee rejects bill to repeal childhood vaccine requirements - Idaho Capital Sun",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa0hnSnVCTTVSZjRIUFVtNS15Si14NklhYnpQMXBaRXRWaHlTWjliQ3VMLVB6a1ZvUnhXWUpGM2d0SjJJY2doQy1nRko0RllZTWY1Tjk0eXc3MmdSVFJzaUJsM0gxMG9XYWlBNnRKM3pyOHZNbnNTbnlOMHZjZUhfbGh3LXFhZndFZlRWcjVUdDhmcHVyemd6c1BNZWV3czRPTnpMeTVjcHA?oc=5",
+      "source": "Idaho Capital Sun",
+      "date": "Fri, 13 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa0hnSnVCTTVSZjRIUFVtNS15Si14NklhYnpQMXBaRXRWaHlTWjliQ3VMLVB6a1ZvUnhXWUpGM2d0SjJJY2doQy1nRko0RllZTWY1Tjk0eXc3MmdSVFJzaUJsM0gxMG9XYWlBNnRKM3pyOHZNbnNTbnlOMHZjZUhfbGh3LXFhZndFZlRWcjVUdDhmcHVyemd6c1BNZWV3czRPTnpMeTVjcHA?oc=5\" target=\"_blank\">Idaho committee rejects bill to repeal childhood vaccine requirements</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Capital Sun</font>",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "554ee41b721f616f5344a5eaa9eae2f5",
       "title": "Vaccine skeptics renew efforts to rescind New Hampshire’s vaccine requirements in 2026 - New Hampshire Bulletin",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVTBEcjRaZWdnalJDZkZiVmFyY3RkaTZ4eTlEVnFQSklBV0ZPLW90anQ3OTE4ZWVRTllKOG1Zb3p5TTRBZnh6czdpTU5xZUI5STlZNmlmZy02d0xjYWZRWnpFdG9ESnJ0QTlqZ1hVd1FTOVRvR1phb29VcjdIcUVDMC1HMmU2d0hqZllIbmJmckdNOHBpS0ZMLVYzRzA4UkljdjR2NEFVR3lOSmo1bmxoU1M5MmsyVFBqdjN2OFhQOG5PMDhJYjZYWGVR?oc=5",
@@ -671,21 +671,6 @@
       "topics": [
         "vaccine",
         "mandate"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "e7b2f07e0b9f5b7f030184013e81fbcb",
-      "title": "Justices Kirkpatrick, Flanigan will be part of Supreme Court discussions on WV school vaccine case - West Virginia Watch",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU2FTaE9HR3lMbWRMZXo0Sy1LVXZETGdLc2pOR3VnSHJCVDktRE5yMFJzUjZHQ0pSTC0zbnZhNmZJTTdRVHVfaXRvNkJtbGg4UXVreUxMdzRLY3UwMTg2VUZSX2lpNzRSNEItTlp3UHFCZE4yamtyeWZyRWsyeTZGcVN3TkhkSXVQUjRiMnlkVER0aFJOZ0dZcGpTUmZkcVROT3R2SkJfNldhNGpJbmRfcDJiajduWVpDdUh2UkRZXzlBdlFJVEtkYnZjc29GaVZMYTl4VE9R?oc=5",
-      "source": "West Virginia Watch",
-      "date": "Fri, 12 Jun 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU2FTaE9HR3lMbWRMZXo0Sy1LVXZETGdLc2pOR3VnSHJCVDktRE5yMFJzUjZHQ0pSTC0zbnZhNmZJTTdRVHVfaXRvNkJtbGg4UXVreUxMdzRLY3UwMTg2VUZSX2lpNzRSNEItTlp3UHFCZE4yamtyeWZyRWsyeTZGcVN3TkhkSXVQUjRiMnlkVER0aFJOZ0dZcGpTUmZkcVROT3R2SkJfNldhNGpJbmRfcDJiajduWVpDdUh2UkRZXzlBdlFJVEtkYnZjc29GaVZMYTl4VE9R?oc=5\" target=\"_blank\">Justices Kirkpatrick, Flanigan will be part of Supreme Court discussions on WV school vaccine case</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Wes",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "education"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -715,6 +700,21 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxNN3pIaFVrak4tcTloRVFDQk1Ec2V3WEZjMEZOMGJLbTN4RDh4S0lHeW9TMlo3dFJSd3FQbDRfWW9OMkJCS1pwMXQ4SUMzWUxfeUI0QUUyVzFiUlpHTW9Sam9Hbng2VWprWDU4djVFWGpDRXRqNkxLSGt4VzlJWm5icG5JNGR6Z0pDM0xpMW9YSGQ0TUJRX3J4RG9fWDBBM3d4YUE5RXJhVTZVM291dUpwdjh2MFZKLXZ5ZXNORGtEUkttZHd2My12ajRRQXV2enRMdXM2dkdpckVpeTdJ?oc=5\" target=\"_blank\">Governor Moore Kicks Off 2026 Legislative Session with Ambitious Agenda to Invest in Education, Enhance Public Safety, and Create M",
       "sentiment": "neutral",
       "topics": [
+        "education"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "e7b2f07e0b9f5b7f030184013e81fbcb",
+      "title": "Justices Kirkpatrick, Flanigan will be part of Supreme Court discussions on WV school vaccine case - West Virginia Watch",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU2FTaE9HR3lMbWRMZXo0Sy1LVXZETGdLc2pOR3VnSHJCVDktRE5yMFJzUjZHQ0pSTC0zbnZhNmZJTTdRVHVfaXRvNkJtbGg4UXVreUxMdzRLY3UwMTg2VUZSX2lpNzRSNEItTlp3UHFCZE4yamtyeWZyRWsyeTZGcVN3TkhkSXVQUjRiMnlkVER0aFJOZ0dZcGpTUmZkcVROT3R2SkJfNldhNGpJbmRfcDJiajduWVpDdUh2UkRZXzlBdlFJVEtkYnZjc29GaVZMYTl4VE9R?oc=5",
+      "source": "West Virginia Watch",
+      "date": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQU2FTaE9HR3lMbWRMZXo0Sy1LVXZETGdLc2pOR3VnSHJCVDktRE5yMFJzUjZHQ0pSTC0zbnZhNmZJTTdRVHVfaXRvNkJtbGg4UXVreUxMdzRLY3UwMTg2VUZSX2lpNzRSNEItTlp3UHFCZE4yamtyeWZyRWsyeTZGcVN3TkhkSXVQUjRiMnlkVER0aFJOZ0dZcGpTUmZkcVROT3R2SkJfNldhNGpJbmRfcDJiajduWVpDdUh2UkRZXzlBdlFJVEtkYnZjc29GaVZMYTl4VE9R?oc=5\" target=\"_blank\">Justices Kirkpatrick, Flanigan will be part of Supreme Court discussions on WV school vaccine case</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Wes",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
         "education"
       ],
       "mentioned_names": [],
@@ -781,6 +781,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "cd6433649f2d7cca9ce441fb44d86567",
+      "title": "Vaccine bill reinforcing religious exemption ban advances in legislature - WFSB",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeGRrcXdRRHVFYUlXWnJKWjU0LTJBU1k3ZEpnVFlHZUhIZ3RSdUVyUHRBclBPU3JkT0FOY2Nhc2hkOGdtOVFBMjYwZUhoU0Z1OFZWRnVQaHBXd2xreXMwT2gtVlBNNDF3ZGx5d1V2RS1EeGttblNXRm4xMW9tU1d6WUplLXlMYzVOc2hLc1JDcV9kcUhQYzhSNWZJdUJWN2M1S2cxYtIBuAFBVV95cUxPbWtJUmZncDJwOGZoUXFCeldnSG1sYllnTDkwejlEcHcwN1JUYzVZYWJ4eU1UNjhiZ0dnLTFsM0tnYndRcnRKUlJha3Q0M2pwdnp3ZmVpWHdaWjZYeGZlclU4ZDRLNXo0dDc0aTI4cmxxZTN3eGtWeXZmX0R0YVRwZW15bDNPeS05T0N2N2pNQVZ2VU9waWR0RTVVSmctdHdpVGdhdnlXTmdUelg5ZVBLX2VybjdkR3RZ?oc=5",
+      "source": "WFSB",
+      "date": "Thu, 23 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOeGRrcXdRRHVFYUlXWnJKWjU0LTJBU1k3ZEpnVFlHZUhIZ3RSdUVyUHRBclBPU3JkT0FOY2Nhc2hkOGdtOVFBMjYwZUhoU0Z1OFZWRnVQaHBXd2xreXMwT2gtVlBNNDF3ZGx5d1V2RS1EeGttblNXRm4xMW9tU1d6WUplLXlMYzVOc2hLc1JDcV9kcUhQYzhSNWZJdUJWN2M1S2cxYtIBuAFBVV95cUxPbWtJUmZncDJwOGZoUXFCeldnSG1sYllnTDkwejlEcHcwN1JUYzVZYWJ4eU1UNjhiZ0dnLTFsM0tnYndRcnRKUlJha3Q0M2pwdnp3ZmVpWHdaWjZYeGZlclU4ZDRLNXo0dDc0aTI4cmxxZTN3eGtWeXZmX0R0YVRwZW15bDNPeS05T0N2N2pNQVZ2VU9waWR0RTVVSmctdHdpVGdhdnlXTm",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "exemption",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "d72484ca1b73ab2a16e189ed407e121b",
       "title": "DeSantis’ resolve to pass his vaccine policies strengthens as measles cases continue to rise - Florida Phoenix",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNcjQtNzRrLVctekI2U0gzclpjXzEyUnZuYzhEUF9iWjZ0WERJMkt3Ukkyb25fUno2d291YndadHdhVGVnZzhWa203My1YckdZTVNZZUl2NDZock9XX282MFhSbW1DbzFBMEtxRVlkaTBDVGVrSzNPWUU3emJXSTkxY2tIRzMzQXdGTk5NRk5VbXhNZU55T3VERmZxTGRZWDJKSWhvSWotTkNId1lnVy1iVVA0bnBDSkdMYUY1b3VLUUV3TnliaUdGQzZ3?oc=5",
@@ -805,6 +821,20 @@
       "topics": [
         "vaccine",
         "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "4d22bcc515fc942020a03d283cefc8cd",
+      "title": "The State of US Vaccine Policy — Mar 5, 2026 - CIDRAP",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQRjZHU3JoNTZFWEk2bEhEWEtvU0VqZ0JEMHlGUVdpZGZvem1ibWVqUW1XUW96blFZWVlxS1hrMXhsbkpzVU5RMlRucTduVFFDemtMMkJXTW83T2JCaXpWTDViYy1UVnBOYU5hbThiZENsOEhZcWJ4cXgyS2pjRkdpRjFLSERoWjQ?oc=5",
+      "source": "CIDRAP",
+      "date": "Thu, 05 Mar 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQRjZHU3JoNTZFWEk2bEhEWEtvU0VqZ0JEMHlGUVdpZGZvem1ibWVqUW1XUW96blFZWVlxS1hrMXhsbkpzVU5RMlRucTduVFFDemtMMkJXTW83T2JCaXpWTDViYy1UVnBOYU5hbThiZENsOEhZcWJ4cXgyS2pjRkdpRjFLSERoWjQ?oc=5\" target=\"_blank\">The State of US Vaccine Policy — Mar 5, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CIDRAP</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -840,15 +870,16 @@
       "legislator_ids": []
     },
     {
-      "article_id": "4d22bcc515fc942020a03d283cefc8cd",
-      "title": "The State of US Vaccine Policy — Mar 5, 2026 - CIDRAP",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQRjZHU3JoNTZFWEk2bEhEWEtvU0VqZ0JEMHlGUVdpZGZvem1ibWVqUW1XUW96blFZWVlxS1hrMXhsbkpzVU5RMlRucTduVFFDemtMMkJXTW83T2JCaXpWTDViYy1UVnBOYU5hbThiZENsOEhZcWJ4cXgyS2pjRkdpRjFLSERoWjQ?oc=5",
-      "source": "CIDRAP",
-      "date": "Thu, 05 Mar 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQRjZHU3JoNTZFWEk2bEhEWEtvU0VqZ0JEMHlGUVdpZGZvem1ibWVqUW1XUW96blFZWVlxS1hrMXhsbkpzVU5RMlRucTduVFFDemtMMkJXTW83T2JCaXpWTDViYy1UVnBOYU5hbThiZENsOEhZcWJ4cXgyS2pjRkdpRjFLSERoWjQ?oc=5\" target=\"_blank\">The State of US Vaccine Policy — Mar 5, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CIDRAP</font>",
+      "article_id": "5ebbb77f3c2f89fcde1dde1680e41aab",
+      "title": "As measles spreads in South Carolina, RFK Jr’s allies work to gut vaccine laws - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVFNsZ3lWODFvY2hQMjdvX0tIYU1qNkxOdU9KVGF6SmIwaE1ZWGZlUFptNWE0NHBUYVFjb2lSV1RtYUhDSGxCQUxCMGdNVkhJQkRCTXExNGFwWmw0MXdiZnNlRDhxYlhnYi1PMHJ3S0xxQzZRY2RZX1hUMzZwdUZ0WXl6eG13TkhyOEp2SWZFZ3lSdGxM?oc=5",
+      "source": "The Guardian",
+      "date": "Mon, 02 Mar 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxPVFNsZ3lWODFvY2hQMjdvX0tIYU1qNkxOdU9KVGF6SmIwaE1ZWGZlUFptNWE0NHBUYVFjb2lSV1RtYUhDSGxCQUxCMGdNVkhJQkRCTXExNGFwWmw0MXdiZnNlRDhxYlhnYi1PMHJ3S0xxQzZRY2RZX1hUMzZwdUZ0WXl6eG13TkhyOEp2SWZFZ3lSdGxM?oc=5\" target=\"_blank\">As measles spreads in South Carolina, RFK Jr’s allies work to gut vaccine laws</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian</font>",
       "sentiment": "neutral",
       "topics": [
-        "vaccine"
+        "vaccine",
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -891,37 +922,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE1mdTJXdzJCaDZaQVpTaE9LeXVPanFEMlhsajNFMTBMUlBNWXduTGptR3dLQWNTZzBDUHZneXNDN2owc25raUNrc1B2dXowaXZoT1NzX1Bnb0dHWk5aY2NFWGsyOFR1eTBNNVZKR2x3?oc=5\" target=\"_blank\">Statehouse Dispatch: March 2, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ACLU of South Carolina</font>",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "5ebbb77f3c2f89fcde1dde1680e41aab",
-      "title": "As measles spreads in South Carolina, RFK Jr’s allies work to gut vaccine laws - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVFNsZ3lWODFvY2hQMjdvX0tIYU1qNkxOdU9KVGF6SmIwaE1ZWGZlUFptNWE0NHBUYVFjb2lSV1RtYUhDSGxCQUxCMGdNVkhJQkRCTXExNGFwWmw0MXdiZnNlRDhxYlhnYi1PMHJ3S0xxQzZRY2RZX1hUMzZwdUZ0WXl6eG13TkhyOEp2SWZFZ3lSdGxM?oc=5",
-      "source": "The Guardian",
-      "date": "Mon, 02 Mar 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxPVFNsZ3lWODFvY2hQMjdvX0tIYU1qNkxOdU9KVGF6SmIwaE1ZWGZlUFptNWE0NHBUYVFjb2lSV1RtYUhDSGxCQUxCMGdNVkhJQkRCTXExNGFwWmw0MXdiZnNlRDhxYlhnYi1PMHJ3S0xxQzZRY2RZX1hUMzZwdUZ0WXl6eG13TkhyOEp2SWZFZ3lSdGxM?oc=5\" target=\"_blank\">As measles spreads in South Carolina, RFK Jr’s allies work to gut vaccine laws</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "cd6433649f2d7cca9ce441fb44d86567",
-      "title": "Vaccine bill reinforcing religious exemption ban advances in legislature - WFSB",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeGRrcXdRRHVFYUlXWnJKWjU0LTJBU1k3ZEpnVFlHZUhIZ3RSdUVyUHRBclBPU3JkT0FOY2Nhc2hkOGdtOVFBMjYwZUhoU0Z1OFZWRnVQaHBXd2xreXMwT2gtVlBNNDF3ZGx5d1V2RS1EeGttblNXRm4xMW9tU1d6WUplLXlMYzVOc2hLc1JDcV9kcUhQYzhSNWZJdUJWN2M1S2cxYtIBuAFBVV95cUxPbWtJUmZncDJwOGZoUXFCeldnSG1sYllnTDkwejlEcHcwN1JUYzVZYWJ4eU1UNjhiZ0dnLTFsM0tnYndRcnRKUlJha3Q0M2pwdnp3ZmVpWHdaWjZYeGZlclU4ZDRLNXo0dDc0aTI4cmxxZTN3eGtWeXZmX0R0YVRwZW15bDNPeS05T0N2N2pNQVZ2VU9waWR0RTVVSmctdHdpVGdhdnlXTmdUelg5ZVBLX2VybjdkR3RZ?oc=5",
-      "source": "WFSB",
-      "date": "Thu, 23 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOeGRrcXdRRHVFYUlXWnJKWjU0LTJBU1k3ZEpnVFlHZUhIZ3RSdUVyUHRBclBPU3JkT0FOY2Nhc2hkOGdtOVFBMjYwZUhoU0Z1OFZWRnVQaHBXd2xreXMwT2gtVlBNNDF3ZGx5d1V2RS1EeGttblNXRm4xMW9tU1d6WUplLXlMYzVOc2hLc1JDcV9kcUhQYzhSNWZJdUJWN2M1S2cxYtIBuAFBVV95cUxPbWtJUmZncDJwOGZoUXFCeldnSG1sYllnTDkwejlEcHcwN1JUYzVZYWJ4eU1UNjhiZ0dnLTFsM0tnYndRcnRKUlJha3Q0M2pwdnp3ZmVpWHdaWjZYeGZlclU4ZDRLNXo0dDc0aTI4cmxxZTN3eGtWeXZmX0R0YVRwZW15bDNPeS05T0N2N2pNQVZ2VU9waWR0RTVVSmctdHdpVGdhdnlXTm",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption",
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -1122,20 +1122,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "3e648736c26250be4f66ae0fc1274f69",
-      "title": "Today’s News: Trump Halts Housing Bill, Sets Sights on Voting Laws - U.S. News & World Report",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxObmNCTmdUZzRSM0hQaXNjV2ZoWU0yMUdyNGFPenZJaTRVQlZMeGRSbjh6Mks5dzFwLUFtVXpFSjZ6S1BTSkUyc0VvWWtaZkx4S181RG1uQmRYOW52YTc4Y2ctWndxSEhIWUc2UU1DQklIRk84VDhQTzYxdDhZR3laclg1SG9VVVkwNF96UG9YYTJONHRKUV84VzQwQ18zanlCSVBTNTVEUVBmNVRlU2VXLWMzeXBWdUJZZXZCUkNxTmxqSjNpeFpCRExhVQ?oc=5",
-      "source": "U.S. News & World Report",
-      "date": "Thu, 25 Jun 2026 13:17:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxObmNCTmdUZzRSM0hQaXNjV2ZoWU0yMUdyNGFPenZJaTRVQlZMeGRSbjh6Mks5dzFwLUFtVXpFSjZ6S1BTSkUyc0VvWWtaZkx4S181RG1uQmRYOW52YTc4Y2ctWndxSEhIWUc2UU1DQklIRk84VDhQTzYxdDhZR3laclg1SG9VVVkwNF96UG9YYTJONHRKUV84VzQwQ18zanlCSVBTNTVEUVBmNVRlU2VXLWMzeXBWdUJZZXZCUkNxTmxqSjNpeFpCRExhVQ?oc=5\" target=\"_blank\">Today’s News: Trump Halts Housing Bill, Sets Sights on Voting Laws</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">U.S. News & World Report</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "b189fd41034fd269339be411a95a520f",
       "title": "New Hampshire lawmakers push to end vaccine mandates - Valley News",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBjdm50eXdUTmc5YVlmRmF2bmZjVmdDN1pBckg4MGdDZGJiQ1VSdDl2YVZ6Y0pxcmZGNm9tMzFkVkhwRTZfSkNac29IelVOcUlsVjU1MVVNajc5bVJaUEpYX0VFSC1SZzhTcWtyUGFYVkMxeWVBYnRV?oc=5",
@@ -1146,6 +1132,20 @@
       "topics": [
         "vaccine",
         "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "3e648736c26250be4f66ae0fc1274f69",
+      "title": "Today’s News: Trump Halts Housing Bill, Sets Sights on Voting Laws - U.S. News & World Report",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxObmNCTmdUZzRSM0hQaXNjV2ZoWU0yMUdyNGFPenZJaTRVQlZMeGRSbjh6Mks5dzFwLUFtVXpFSjZ6S1BTSkUyc0VvWWtaZkx4S181RG1uQmRYOW52YTc4Y2ctWndxSEhIWUc2UU1DQklIRk84VDhQTzYxdDhZR3laclg1SG9VVVkwNF96UG9YYTJONHRKUV84VzQwQ18zanlCSVBTNTVEUVBmNVRlU2VXLWMzeXBWdUJZZXZCUkNxTmxqSjNpeFpCRExhVQ?oc=5",
+      "source": "U.S. News & World Report",
+      "date": "Thu, 25 Jun 2026 13:17:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxObmNCTmdUZzRSM0hQaXNjV2ZoWU0yMUdyNGFPenZJaTRVQlZMeGRSbjh6Mks5dzFwLUFtVXpFSjZ6S1BTSkUyc0VvWWtaZkx4S181RG1uQmRYOW52YTc4Y2ctWndxSEhIWUc2UU1DQklIRk84VDhQTzYxdDhZR3laclg1SG9VVVkwNF96UG9YYTJONHRKUV84VzQwQ18zanlCSVBTNTVEUVBmNVRlU2VXLWMzeXBWdUJZZXZCUkNxTmxqSjNpeFpCRExhVQ?oc=5\" target=\"_blank\">Today’s News: Trump Halts Housing Bill, Sets Sights on Voting Laws</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">U.S. News & World Report</font>",
+      "sentiment": "neutral",
+      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -1226,18 +1226,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "3cb8c527836e0671595ef648e6475614",
-      "title": "Holland & Knight Health Dose: April 28, 2026 - Holland & Knight",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXJTa3BBZV9SUmJWNndpaFZqbVRkNDBuWnd6UzAyOUM2NzRhY1FPLVJEaW5DUkFJdXc0OFR6R1JOeE15ZkRfZElGSHFmSWk1Vy1mNG9IeERKOER6WTNMdl9Wa2tHZHVjMXB4Y3U4aFNjUHpHa3otQ2lQRzd6d0tRYTZNcEN4ZE9CUFAtcHdCM18tcnhtUnhmMm5HMA?oc=5",
-      "source": "Holland & Knight",
-      "date": "Tue, 28 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXJTa3BBZV9SUmJWNndpaFZqbVRkNDBuWnd6UzAyOUM2NzRhY1FPLVJEaW5DUkFJdXc0OFR6R1JOeE15ZkRfZElGSHFmSWk1Vy1mNG9IeERKOER6WTNMdl9Wa2tHZHVjMXB4Y3U4aFNjUHpHa3otQ2lQRzd6d0tRYTZNcEN4ZE9CUFAtcHdCM18tcnhtUnhmMm5HMA?oc=5\" target=\"_blank\">Holland & Knight Health Dose: April 28, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Holland & Knight</font>",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "1ba8241a3bd92b5b2ec502ab21196ef7",
       "title": "Florida Senate committee backs bill with expanded vaccine exemptions - WUSF",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNjR5RUp2QU9rcUdJMEVGVVJBcTEzR25vSFV3WHl0bXQySHRwSm1rWjN0VUNSSFZYdHlPVnJ5Z1AxcGc3ZFpoY25HTmpFMG56bXNCeGcwUWVEY0Z0Y3VJZlhuMU1TSnJORHl1dWtnTXdad1cxMDYzclEteURqSTFXSTlJMzdWYjI4U2owaVpNdndQNVdQdC1rRW45UXVkamxJS3RnUVZNWTBIaWlsMnA4RGNZLUtMdw?oc=5",
@@ -1254,6 +1242,18 @@
       "legislator_ids": []
     },
     {
+      "article_id": "3cb8c527836e0671595ef648e6475614",
+      "title": "Holland & Knight Health Dose: April 28, 2026 - Holland & Knight",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXJTa3BBZV9SUmJWNndpaFZqbVRkNDBuWnd6UzAyOUM2NzRhY1FPLVJEaW5DUkFJdXc0OFR6R1JOeE15ZkRfZElGSHFmSWk1Vy1mNG9IeERKOER6WTNMdl9Wa2tHZHVjMXB4Y3U4aFNjUHpHa3otQ2lQRzd6d0tRYTZNcEN4ZE9CUFAtcHdCM18tcnhtUnhmMm5HMA?oc=5",
+      "source": "Holland & Knight",
+      "date": "Tue, 28 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXJTa3BBZV9SUmJWNndpaFZqbVRkNDBuWnd6UzAyOUM2NzRhY1FPLVJEaW5DUkFJdXc0OFR6R1JOeE15ZkRfZElGSHFmSWk1Vy1mNG9IeERKOER6WTNMdl9Wa2tHZHVjMXB4Y3U4aFNjUHpHa3otQ2lQRzd6d0tRYTZNcEN4ZE9CUFAtcHdCM18tcnhtUnhmMm5HMA?oc=5\" target=\"_blank\">Holland & Knight Health Dose: April 28, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Holland & Knight</font>",
+      "sentiment": "neutral",
+      "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "fa20e3b65aaeb4851468835bccfbc920",
       "title": "New bill would allow Alaska to use vaccine advice of medical experts outside of federal government - Alaska Beacon",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQX0lqejhzcHBXNHFVVGhwQ21BRHhKUkxiZUpycGNRWUNVOUdnWkgtdHlEWklUMDVMejBrczFrLWF2ajg3VUwtWk5YWkNpRWNWamVsTmRRMnFGYjhfckhIUDFXNkIzSEdaQTNSMFBzUHhOY2hKU3BNczJhT1JqdHZUeW9OaUJWM0plamNzeWJNV0lwNmNzWE5PNzNETXFBWkd2N1lPZWQySW1fY1hRcGtybXhycWRvSV9yajlyS19KMmk0UXpSYXdPcDZGa3gwOFdh?oc=5",
@@ -1263,6 +1263,22 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "31254ff005d0a8d3235c41304a423155",
+      "title": "DeSantis revives vaccination exemption bill for consideration during special session - WUSF",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWkdWcExYSEpmRUZhN3RSdmtQVTZUbEhmQy1TcndVUUVkUF9vZ1luY3FiR0daLUVoWG8wMU5qYkYwRW5KRUg1bUJGNVRtT1FYbWRpV3dob1JtWGtuZTNMNlkzVEVPcWVUMHFKYVYwN3pjQkRPUG4xeWQwSWlYS0dvVDJtV0VxdEpaRldXQ0puVVAySHotYkpkaEhRN0ozeVZxQk1fMi1pdTlkQldpbzlwYWtIWk5xZEU?oc=5",
+      "source": "WUSF",
+      "date": "Fri, 17 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPWkdWcExYSEpmRUZhN3RSdmtQVTZUbEhmQy1TcndVUUVkUF9vZ1luY3FiR0daLUVoWG8wMU5qYkYwRW5KRUg1bUJGNVRtT1FYbWRpV3dob1JtWGtuZTNMNlkzVEVPcWVUMHFKYVYwN3pjQkRPUG4xeWQwSWlYS0dvVDJtV0VxdEpaRldXQ0puVVAySHotYkpkaEhRN0ozeVZxQk1fMi1pdTlkQldpbzlwYWtIWk5xZEU?oc=5\" target=\"_blank\">DeSantis revives vaccination exemption bill for consideration during special session</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WUSF</font>",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "exemption",
         "legislation"
       ],
       "mentioned_names": [],
@@ -1292,22 +1308,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNbFdlazl0dzBYdFFrM1lWQTNfWW5EX3Z1MWY3bEVvU1g2aWxocThGVEZld21LZWlidUFrN194bGRzWjNTUkhNQmltRjkxc1ctdmV5NmRKU214U0hKUFotclJRd0xucFhYSFNYVnlwUEI4M1d0elFsWjBNVjlZQXI3dFRMX0lrVjRrbGxnR0Jra1cxZzNjSTlRRGRnRQ?oc=5\" target=\"_blank\">Gov. Ferguson signs preventive services bill into law</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">| Office of the Insurance Commissioner (.gov)</font>",
       "sentiment": "neutral",
       "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "31254ff005d0a8d3235c41304a423155",
-      "title": "DeSantis revives vaccination exemption bill for consideration during special session - WUSF",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWkdWcExYSEpmRUZhN3RSdmtQVTZUbEhmQy1TcndVUUVkUF9vZ1luY3FiR0daLUVoWG8wMU5qYkYwRW5KRUg1bUJGNVRtT1FYbWRpV3dob1JtWGtuZTNMNlkzVEVPcWVUMHFKYVYwN3pjQkRPUG4xeWQwSWlYS0dvVDJtV0VxdEpaRldXQ0puVVAySHotYkpkaEhRN0ozeVZxQk1fMi1pdTlkQldpbzlwYWtIWk5xZEU?oc=5",
-      "source": "WUSF",
-      "date": "Fri, 17 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPWkdWcExYSEpmRUZhN3RSdmtQVTZUbEhmQy1TcndVUUVkUF9vZ1luY3FiR0daLUVoWG8wMU5qYkYwRW5KRUg1bUJGNVRtT1FYbWRpV3dob1JtWGtuZTNMNlkzVEVPcWVUMHFKYVYwN3pjQkRPUG4xeWQwSWlYS0dvVDJtV0VxdEpaRldXQ0puVVAySHotYkpkaEhRN0ozeVZxQk1fMi1pdTlkQldpbzlwYWtIWk5xZEU?oc=5\" target=\"_blank\">DeSantis revives vaccination exemption bill for consideration during special session</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WUSF</font>",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption",
         "legislation"
       ],
       "mentioned_names": [],
@@ -1359,20 +1359,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "a796695061f623ec44165d46772ae24f",
-      "title": "DeSantis administration’s vax bill gets another nod from a Senate committee - Florida Phoenix",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNFAxSmduLTBqdmEwaFdub281ZnBLR21hSGQtMXp6RXFzdGFMcmV2TE1DNEVtbkthTlg2djNHZ1lSTEtpY19FQ2R0cy1VenJicXI0YVhzWUM5MDhFamQzdnEyOVpzUW9NeU1temRwRy1YNXZtekgyM254RVRoQlRvdnYyVE1UTFpEZjZSMVJXSU11UnJhTE5RYUlzdzJaNHFaTDNHWmFGTEFfOEszR3Y5dE5idw?oc=5",
-      "source": "Florida Phoenix",
-      "date": "Tue, 24 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPNFAxSmduLTBqdmEwaFdub281ZnBLR21hSGQtMXp6RXFzdGFMcmV2TE1DNEVtbkthTlg2djNHZ1lSTEtpY19FQ2R0cy1VenJicXI0YVhzWUM5MDhFamQzdnEyOVpzUW9NeU1temRwRy1YNXZtekgyM254RVRoQlRvdnYyVE1UTFpEZjZSMVJXSU11UnJhTE5RYUlzdzJaNHFaTDNHWmFGTEFfOEszR3Y5dE5idw?oc=5\" target=\"_blank\">DeSantis administration’s vax bill gets another nod from a Senate committee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Florida Phoenix</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "927f682a4f88f874038678f5925827d9",
       "title": "States, health organizations reject new CDC vaccine guidance - CIDRAP",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNEtNRWNvTWlHeno4ZVJ4M1hleFJvNy1NZjZZMFF4TWljTEdiR21reUZKb2lmRDB1eVJxYzRYSzFEM3RPQkhncHFUclM3RG9XeTh2Y3cyUUlvRnBpdWNndzQzaG5qSVdRcEdKdUZnVkJoeHNuSDY3TF9FOHRCRkR5UEpabW9kSlF6c1o3S2VKUDN3eExWbXFRSXdSMXZybVhVYlE?oc=5",
@@ -1383,6 +1369,20 @@
       "topics": [
         "vaccine",
         "public health"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "a796695061f623ec44165d46772ae24f",
+      "title": "DeSantis administration’s vax bill gets another nod from a Senate committee - Florida Phoenix",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNFAxSmduLTBqdmEwaFdub281ZnBLR21hSGQtMXp6RXFzdGFMcmV2TE1DNEVtbkthTlg2djNHZ1lSTEtpY19FQ2R0cy1VenJicXI0YVhzWUM5MDhFamQzdnEyOVpzUW9NeU1temRwRy1YNXZtekgyM254RVRoQlRvdnYyVE1UTFpEZjZSMVJXSU11UnJhTE5RYUlzdzJaNHFaTDNHWmFGTEFfOEszR3Y5dE5idw?oc=5",
+      "source": "Florida Phoenix",
+      "date": "Tue, 24 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPNFAxSmduLTBqdmEwaFdub281ZnBLR21hSGQtMXp6RXFzdGFMcmV2TE1DNEVtbkthTlg2djNHZ1lSTEtpY19FQ2R0cy1VenJicXI0YVhzWUM5MDhFamQzdnEyOVpzUW9NeU1temRwRy1YNXZtekgyM254RVRoQlRvdnYyVE1UTFpEZjZSMVJXSU11UnJhTE5RYUlzdzJaNHFaTDNHWmFGTEFfOEszR3Y5dE5idw?oc=5\" target=\"_blank\">DeSantis administration’s vax bill gets another nod from a Senate committee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Florida Phoenix</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -1402,16 +1402,15 @@
       "legislator_ids": []
     },
     {
-      "article_id": "cc8073df0e9bce00ae113fa04ebdab4a",
-      "title": "Florida bill would expand vaccine exemptions for K-12 students - News4JAX",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTDgxelBMZUd4TmVBaGZ6NXQ1ZkF5MU02Q19KVTVaUTY3QjhadnZXRkNybHpzczZ5b0tqRk1XMHhWZkgwc0pVakUzZjRFTks5ZTR5TFdXV2JrN1ZaallOaWFyLTg4TUNpdU9oWFdRbnhxWGJhWHBaVl9nWmcwTl9TdzNtR3BZQlppbVBOY1pKdEJIQ2VFeHR4NVE0cFJsOF9oSWswRDdmcGxWd19jcG4w?oc=5",
-      "source": "News4JAX",
-      "date": "Sat, 18 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNTDgxelBMZUd4TmVBaGZ6NXQ1ZkF5MU02Q19KVTVaUTY3QjhadnZXRkNybHpzczZ5b0tqRk1XMHhWZkgwc0pVakUzZjRFTks5ZTR5TFdXV2JrN1ZaallOaWFyLTg4TUNpdU9oWFdRbnhxWGJhWHBaVl9nWmcwTl9TdzNtR3BZQlppbVBOY1pKdEJIQ2VFeHR4NVE0cFJsOF9oSWswRDdmcGxWd19jcG4w?oc=5\" target=\"_blank\">Florida bill would expand vaccine exemptions for K-12 students</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">News4JAX</font>",
-      "sentiment": "negative",
+      "article_id": "3c27b05a2a4dca690c7a8f064a0c3def",
+      "title": "House approves bill to make hepatitis B vaccine no longer required in New Hampshire - New Hampshire Bulletin",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQy1qRVRfckNHS3JJNkwwZHRWNC1mX2tCVlFRUExWa3VSMFlHY2Q2R1ppX3ZlZVFybjhhMjIzNDc3RjBGZFFBaHRsMGFkQUthcXRQZWRZQ1NjNnR3cGJaeDFMMDRmekMtLTlSMWxzWDhlaFE5RkJtWTBLTU5hcXNKTzZSd0RfTXBBMW9uWGZiWk8zcWplZlpBV0l6Q2tFeHhTSnlhMXpwNGVDcDdhbUE3WnNxeHFHZFYxMEtYM2dCLTRTNzQwYUdV?oc=5",
+      "source": "New Hampshire Bulletin",
+      "date": "Thu, 12 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOQy1qRVRfckNHS3JJNkwwZHRWNC1mX2tCVlFRUExWa3VSMFlHY2Q2R1ppX3ZlZVFybjhhMjIzNDc3RjBGZFFBaHRsMGFkQUthcXRQZWRZQ1NjNnR3cGJaeDFMMDRmekMtLTlSMWxzWDhlaFE5RkJtWTBLTU5hcXNKTzZSd0RfTXBBMW9uWGZiWk8zcWplZlpBV0l6Q2tFeHhTSnlhMXpwNGVDcDdhbUE3WnNxeHFHZFYxMEtYM2dCLTRTNzQwYUdV?oc=5\" target=\"_blank\">House approves bill to make hepatitis B vaccine no longer required in New Hampshire</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">New Hampshire Bulletin</font>",
+      "sentiment": "positive",
       "topics": [
         "vaccine",
-        "exemption",
         "legislation"
       ],
       "mentioned_names": [],
@@ -1433,15 +1432,16 @@
       "legislator_ids": []
     },
     {
-      "article_id": "3c27b05a2a4dca690c7a8f064a0c3def",
-      "title": "House approves bill to make hepatitis B vaccine no longer required in New Hampshire - New Hampshire Bulletin",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQy1qRVRfckNHS3JJNkwwZHRWNC1mX2tCVlFRUExWa3VSMFlHY2Q2R1ppX3ZlZVFybjhhMjIzNDc3RjBGZFFBaHRsMGFkQUthcXRQZWRZQ1NjNnR3cGJaeDFMMDRmekMtLTlSMWxzWDhlaFE5RkJtWTBLTU5hcXNKTzZSd0RfTXBBMW9uWGZiWk8zcWplZlpBV0l6Q2tFeHhTSnlhMXpwNGVDcDdhbUE3WnNxeHFHZFYxMEtYM2dCLTRTNzQwYUdV?oc=5",
-      "source": "New Hampshire Bulletin",
-      "date": "Thu, 12 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOQy1qRVRfckNHS3JJNkwwZHRWNC1mX2tCVlFRUExWa3VSMFlHY2Q2R1ppX3ZlZVFybjhhMjIzNDc3RjBGZFFBaHRsMGFkQUthcXRQZWRZQ1NjNnR3cGJaeDFMMDRmekMtLTlSMWxzWDhlaFE5RkJtWTBLTU5hcXNKTzZSd0RfTXBBMW9uWGZiWk8zcWplZlpBV0l6Q2tFeHhTSnlhMXpwNGVDcDdhbUE3WnNxeHFHZFYxMEtYM2dCLTRTNzQwYUdV?oc=5\" target=\"_blank\">House approves bill to make hepatitis B vaccine no longer required in New Hampshire</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">New Hampshire Bulletin</font>",
-      "sentiment": "positive",
+      "article_id": "cc8073df0e9bce00ae113fa04ebdab4a",
+      "title": "Florida bill would expand vaccine exemptions for K-12 students - News4JAX",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTDgxelBMZUd4TmVBaGZ6NXQ1ZkF5MU02Q19KVTVaUTY3QjhadnZXRkNybHpzczZ5b0tqRk1XMHhWZkgwc0pVakUzZjRFTks5ZTR5TFdXV2JrN1ZaallOaWFyLTg4TUNpdU9oWFdRbnhxWGJhWHBaVl9nWmcwTl9TdzNtR3BZQlppbVBOY1pKdEJIQ2VFeHR4NVE0cFJsOF9oSWswRDdmcGxWd19jcG4w?oc=5",
+      "source": "News4JAX",
+      "date": "Sat, 18 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNTDgxelBMZUd4TmVBaGZ6NXQ1ZkF5MU02Q19KVTVaUTY3QjhadnZXRkNybHpzczZ5b0tqRk1XMHhWZkgwc0pVakUzZjRFTks5ZTR5TFdXV2JrN1ZaallOaWFyLTg4TUNpdU9oWFdRbnhxWGJhWHBaVl9nWmcwTl9TdzNtR3BZQlppbVBOY1pKdEJIQ2VFeHR4NVE0cFJsOF9oSWswRDdmcGxWd19jcG4w?oc=5\" target=\"_blank\">Florida bill would expand vaccine exemptions for K-12 students</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">News4JAX</font>",
+      "sentiment": "negative",
       "topics": [
         "vaccine",
+        "exemption",
         "legislation"
       ],
       "mentioned_names": [],
@@ -1546,22 +1546,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxOcUhBWFhFREFrUC1CaVFkU1ZySzNkdFlhYlpOLVpLQ2N5c3dzWFNpVVhkbW52Ujl3TmphMkJsMUVFZUpTM2RSNXl0dE1raC1qbDBvVXZBS1M3amhlV3F3SllxOUZEbHVZM0lrUFdOWVpyQkpxM2hobzA4eUpOOTFaZFh2azRrVF92RXExdE4xai1xNmNHa0E4Z3NsekxyMXhJM29aelNYZzQxYTVkX1VmbDRBSmlQbFp3dV9QUWpHNlN4bmxmdXR1VWhKZEgzWlFsckYwUQ?oc=5\" target=\"_blank\">RFK Jr. Has Met His Match in This California Congressional Hopeful</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Mother Jones</font>",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "62f987289e7248f8bd88ceacc5d1c6ec",
-      "title": "US states reject anti-vaccine bills as public health groups fight MAHA - Billings Gazette",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1RTbHJ1alE0cDFDTDFnZkM5bzZfSEJUdjFEeVdocjc1UGNRZXk3Tl9vd3hicDd2X0U2MmV4WXZiZ0p1a0FaZFpab2dNY3JCc3BTYnQ1RFAtU0h5bVFoUlBnN204ZllEdzFyMGRqOFhScXY3RU02bEtwRVNueUJoaDBKa2h4czhaRU9OYlN3dTRVLTBFdTZZWGhpdUhxcU15czkwM2FaLXFueHM4NGJPeUxGa1ltdw?oc=5",
-      "source": "Billings Gazette",
-      "date": "Sat, 23 May 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1RTbHJ1alE0cDFDTDFnZkM5bzZfSEJUdjFEeVdocjc1UGNRZXk3Tl9vd3hicDd2X0U2MmV4WXZiZ0p1a0FaZFpab2dNY3JCc3BTYnQ1RFAtU0h5bVFoUlBnN204ZllEdzFyMGRqOFhScXY3RU02bEtwRVNueUJoaDBKa2h4czhaRU9OYlN3dTRVLTBFdTZZWGhpdUhxcU15czkwM2FaLXFueHM4NGJPeUxGa1ltdw?oc=5\" target=\"_blank\">US states reject anti-vaccine bills as public health groups fight MAHA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Billings Gazette</font>",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "public health",
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -1864,12 +1848,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "6de5e86b5a6a296cea869efe04d2da46",
-      "title": "Anti-vaccine efforts in Texas Legislature — successful or not — set dangerous tone, says expert - Rice University",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE5jdHhSMGkyYzVTNG5pRVFxcmRnWXUzdlRSZFljZXJuMFFoYjFlbllWLXFGbW9jUENrN2NJanBOdzZoUmMxNFR3bzFCYWMxVnRUdlZjQ2xFbl9rSXFoVmlDaG1sdXdWY0FzRkVHUVJoRm5vejU2TzJHRkJsaHlaeGtfTVYxNzhRR2lnVTFBLTZaQkM3a2RRaVJrNl9PNGJ1eTdzdGxwNlpRY2tKYXZGTXptdkVNalRkNnJF?oc=5",
-      "source": "Rice University",
-      "date": "Tue, 04 Oct 2022 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE5jdHhSMGkyYzVTNG5pRVFxcmRnWXUzdlRSZFljZXJuMFFoYjFlbllWLXFGbW9jUENrN2NJanBOdzZoUmMxNFR3bzFCYWMxVnRUdlZjQ2xFbl9rSXFoVmlDaG1sdXdWY0FzRkVHUVJoRm5vejU2TzJHRkJsaHlaeGtfTVYxNzhRR2lnVTFBLTZaQkM3a2RRaVJrNl9PNGJ1eTdzdGxwNlpRY2tKYXZGTXptdkVNalRkNnJF?oc=5\" target=\"_blank\">Anti-vaccine efforts in Texas Legislature — successful or not — set dangerous tone, says expert</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Rice University</font>",
+      "article_id": "a60fe0c04885625344469ccc28289ee4",
+      "title": "When will Arizona Republicans wake up to the threat of anti-vaccine misinformation? - Arizona Capitol Times",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWWw3bnVaRXhKUGdUUTd4T0RwR05jR2UwS3VsS0FERzRfSmR0X0c0RTY0ODljQ3pPZEpIUU4wbGFoSzZVQlgxYV9oNGlYbkM1cWFVRlNxc2NmWFJtU2J0UnZoNlVWMncxdG9XVlNMaTRrcklidVg1OUdCWlZGandTY09aOGNCb2dhbmpONXZMcTZlblFYOGFsZVBZSmlER2lxbWk1R0NVdFVPMThGY0llczhJaVNadk9wWFZsNHQzNEVuMEZE?oc=5",
+      "source": "Arizona Capitol Times",
+      "date": "Mon, 26 May 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOWWw3bnVaRXhKUGdUUTd4T0RwR05jR2UwS3VsS0FERzRfSmR0X0c0RTY0ODljQ3pPZEpIUU4wbGFoSzZVQlgxYV9oNGlYbkM1cWFVRlNxc2NmWFJtU2J0UnZoNlVWMncxdG9XVlNMaTRrcklidVg1OUdCWlZGandTY09aOGNCb2dhbmpONXZMcTZlblFYOGFsZVBZSmlER2lxbWk1R0NVdFVPMThGY0llczhJaVNadk9wWFZsNHQzNEVuMEZE?oc=5\" target=\"_blank\">When will Arizona Republicans wake up to the threat of anti-vaccine misinformation?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Arizona Capitol Times</font>",
       "sentiment": "negative",
       "topics": [
         "vaccine"
@@ -1878,12 +1862,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "a60fe0c04885625344469ccc28289ee4",
-      "title": "When will Arizona Republicans wake up to the threat of anti-vaccine misinformation? - Arizona Capitol Times",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWWw3bnVaRXhKUGdUUTd4T0RwR05jR2UwS3VsS0FERzRfSmR0X0c0RTY0ODljQ3pPZEpIUU4wbGFoSzZVQlgxYV9oNGlYbkM1cWFVRlNxc2NmWFJtU2J0UnZoNlVWMncxdG9XVlNMaTRrcklidVg1OUdCWlZGandTY09aOGNCb2dhbmpONXZMcTZlblFYOGFsZVBZSmlER2lxbWk1R0NVdFVPMThGY0llczhJaVNadk9wWFZsNHQzNEVuMEZE?oc=5",
-      "source": "Arizona Capitol Times",
-      "date": "Mon, 26 May 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOWWw3bnVaRXhKUGdUUTd4T0RwR05jR2UwS3VsS0FERzRfSmR0X0c0RTY0ODljQ3pPZEpIUU4wbGFoSzZVQlgxYV9oNGlYbkM1cWFVRlNxc2NmWFJtU2J0UnZoNlVWMncxdG9XVlNMaTRrcklidVg1OUdCWlZGandTY09aOGNCb2dhbmpONXZMcTZlblFYOGFsZVBZSmlER2lxbWk1R0NVdFVPMThGY0llczhJaVNadk9wWFZsNHQzNEVuMEZE?oc=5\" target=\"_blank\">When will Arizona Republicans wake up to the threat of anti-vaccine misinformation?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Arizona Capitol Times</font>",
+      "article_id": "6de5e86b5a6a296cea869efe04d2da46",
+      "title": "Anti-vaccine efforts in Texas Legislature — successful or not — set dangerous tone, says expert - Rice University",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE5jdHhSMGkyYzVTNG5pRVFxcmRnWXUzdlRSZFljZXJuMFFoYjFlbllWLXFGbW9jUENrN2NJanBOdzZoUmMxNFR3bzFCYWMxVnRUdlZjQ2xFbl9rSXFoVmlDaG1sdXdWY0FzRkVHUVJoRm5vejU2TzJHRkJsaHlaeGtfTVYxNzhRR2lnVTFBLTZaQkM3a2RRaVJrNl9PNGJ1eTdzdGxwNlpRY2tKYXZGTXptdkVNalRkNnJF?oc=5",
+      "source": "Rice University",
+      "date": "Tue, 04 Oct 2022 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWE5jdHhSMGkyYzVTNG5pRVFxcmRnWXUzdlRSZFljZXJuMFFoYjFlbllWLXFGbW9jUENrN2NJanBOdzZoUmMxNFR3bzFCYWMxVnRUdlZjQ2xFbl9rSXFoVmlDaG1sdXdWY0FzRkVHUVJoRm5vejU2TzJHRkJsaHlaeGtfTVYxNzhRR2lnVTFBLTZaQkM3a2RRaVJrNl9PNGJ1eTdzdGxwNlpRY2tKYXZGTXptdkVNalRkNnJF?oc=5\" target=\"_blank\">Anti-vaccine efforts in Texas Legislature — successful or not — set dangerous tone, says expert</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Rice University</font>",
       "sentiment": "negative",
       "topics": [
         "vaccine"
@@ -1965,6 +1949,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "b6d0ac063dbbb81c7488ee5b1b415b80",
+      "title": "States Echo RFK Jr. Agenda in Push for Ban on Vaccine Mandates - Bloomberg Law News",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMmptNlRuYjBjRXNCMWNXYkpaaE5BQmVZSGJ3SndiSUdaTHBkWHN6RndqR2pkc2hMelRod2RnU1lGNGRVeEpIZ2NkS3lzeVRMMWM3X0V2MWVLa3VYbDRyV3VYeDg5N3hEOGR4UG1lMlRrS2llOExDSmxNNHF6RXNpN0c0Yndfb1h3OWphV3pzUTU1N1o0aDlJenBxVkFNWm82bGYwMFQxMTdIclp4QjhWdTZIdVp1QQ?oc=5",
+      "source": "Bloomberg Law News",
+      "date": "Mon, 14 Apr 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPMmptNlRuYjBjRXNCMWNXYkpaaE5BQmVZSGJ3SndiSUdaTHBkWHN6RndqR2pkc2hMelRod2RnU1lGNGRVeEpIZ2NkS3lzeVRMMWM3X0V2MWVLa3VYbDRyV3VYeDg5N3hEOGR4UG1lMlRrS2llOExDSmxNNHF6RXNpN0c0Yndfb1h3OWphV3pzUTU1N1o0aDlJenBxVkFNWm82bGYwMFQxMTdIclp4QjhWdTZIdVp1QQ?oc=5\" target=\"_blank\">States Echo RFK Jr. Agenda in Push for Ban on Vaccine Mandates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Bloomberg Law News</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "17966f1a74e777b013c8a0c4475bb75e",
       "title": "Activists want anti-vaccine amendment in Ohio Constitution - Ohio Capital Journal",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVkdPbGhSakZTTk5IZmljVkF4SDlhTUd0Y1NpRE94WkRGcnRyc3FjT0p6TGdCUV9wTTRhNHpWMVQ2TkVRRnNWTXdQQzBMb0lwUGNIWTVnUEt3dzZDX1A5eVQwazlVZmJhbjB6TFBRQkF0TlZOZU00Q0pXWGxqLURFUDZ1cUdkclRMYUtpZGo5SzN4bUdGaGt5QV9qcmhUVFd5Rlln?oc=5",
@@ -1995,12 +1995,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "b6d0ac063dbbb81c7488ee5b1b415b80",
-      "title": "States Echo RFK Jr. Agenda in Push for Ban on Vaccine Mandates - Bloomberg Law News",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMmptNlRuYjBjRXNCMWNXYkpaaE5BQmVZSGJ3SndiSUdaTHBkWHN6RndqR2pkc2hMelRod2RnU1lGNGRVeEpIZ2NkS3lzeVRMMWM3X0V2MWVLa3VYbDRyV3VYeDg5N3hEOGR4UG1lMlRrS2llOExDSmxNNHF6RXNpN0c0Yndfb1h3OWphV3pzUTU1N1o0aDlJenBxVkFNWm82bGYwMFQxMTdIclp4QjhWdTZIdVp1QQ?oc=5",
-      "source": "Bloomberg Law News",
-      "date": "Mon, 14 Apr 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPMmptNlRuYjBjRXNCMWNXYkpaaE5BQmVZSGJ3SndiSUdaTHBkWHN6RndqR2pkc2hMelRod2RnU1lGNGRVeEpIZ2NkS3lzeVRMMWM3X0V2MWVLa3VYbDRyV3VYeDg5N3hEOGR4UG1lMlRrS2llOExDSmxNNHF6RXNpN0c0Yndfb1h3OWphV3pzUTU1N1o0aDlJenBxVkFNWm82bGYwMFQxMTdIclp4QjhWdTZIdVp1QQ?oc=5\" target=\"_blank\">States Echo RFK Jr. Agenda in Push for Ban on Vaccine Mandates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Bloomberg Law News</font>",
+      "article_id": "0a8f690a2054a919420af1644f125f89",
+      "title": "Several bills filed to weaken vaccine mandates as more Texas families opt out of immunizations - The Texas Tribune",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOT2tkMy0xa0paUUJSS1JVd2RQOVpNemkyNjZvLVRDX0hhOU8wUnhTRDdBc0I2QXFwSl9qd0NOR2FSdlVneHJCSUpvS1M2akkxY21LUzcwRjgtc3E2Y1g1NGN4VW0yT3dRd3JqMmJPM3pHbmJNOGwyOFRxbFhrZFBkOUFwVVpoVkk?oc=5",
+      "source": "The Texas Tribune",
+      "date": "Mon, 27 Jan 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxOT2tkMy0xa0paUUJSS1JVd2RQOVpNemkyNjZvLVRDX0hhOU8wUnhTRDdBc0I2QXFwSl9qd0NOR2FSdlVneHJCSUpvS1M2akkxY21LUzcwRjgtc3E2Y1g1NGN4VW0yT3dRd3JqMmJPM3pHbmJNOGwyOFRxbFhrZFBkOUFwVVpoVkk?oc=5\" target=\"_blank\">Several bills filed to weaken vaccine mandates as more Texas families opt out of immunizations</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Texas Tribune</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -2020,22 +2020,6 @@
       "sentiment": "negative",
       "topics": [
         "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "0a8f690a2054a919420af1644f125f89",
-      "title": "Several bills filed to weaken vaccine mandates as more Texas families opt out of immunizations - The Texas Tribune",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOT2tkMy0xa0paUUJSS1JVd2RQOVpNemkyNjZvLVRDX0hhOU8wUnhTRDdBc0I2QXFwSl9qd0NOR2FSdlVneHJCSUpvS1M2akkxY21LUzcwRjgtc3E2Y1g1NGN4VW0yT3dRd3JqMmJPM3pHbmJNOGwyOFRxbFhrZFBkOUFwVVpoVkk?oc=5",
-      "source": "The Texas Tribune",
-      "date": "Mon, 27 Jan 2025 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxOT2tkMy0xa0paUUJSS1JVd2RQOVpNemkyNjZvLVRDX0hhOU8wUnhTRDdBc0I2QXFwSl9qd0NOR2FSdlVneHJCSUpvS1M2akkxY21LUzcwRjgtc3E2Y1g1NGN4VW0yT3dRd3JqMmJPM3pHbmJNOGwyOFRxbFhrZFBkOUFwVVpoVkk?oc=5\" target=\"_blank\">Several bills filed to weaken vaccine mandates as more Texas families opt out of immunizations</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Texas Tribune</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
-        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2069,6 +2053,21 @@
       "legislator_ids": []
     },
     {
+      "article_id": "e775532bb31b8db0b5b538c44f7fda5d",
+      "title": "Texas lawmakers again take aim at vaccines with petty, dangerous bills - San Antonio Express-News",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2t3U0xXamNvbEVjRVdFampjbUhkOTJFdnBnc3RpdTl0cHVGNC1OTElGWVV3bFVpdXNhV3ZrQVZPaVJwV2UzTF94UzdzTU9lRU1mNVBPUDVJMmpNN2pJRDEtR3ctZmlDc1RKYWF5LUs1bUF3QWVQZUt0LU9kMFh1b0JhRDUwWElfSzdtcVdSZUthckF3bDduWjduOA?oc=5",
+      "source": "San Antonio Express-News",
+      "date": "Sun, 02 Feb 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2t3U0xXamNvbEVjRVdFampjbUhkOTJFdnBnc3RpdTl0cHVGNC1OTElGWVV3bFVpdXNhV3ZrQVZPaVJwV2UzTF94UzdzTU9lRU1mNVBPUDVJMmpNN2pJRDEtR3ctZmlDc1RKYWF5LUs1bUF3QWVQZUt0LU9kMFh1b0JhRDUwWElfSzdtcVdSZUthckF3bDduWjduOA?oc=5\" target=\"_blank\">Texas lawmakers again take aim at vaccines with petty, dangerous bills</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">San Antonio Express-News</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "99120eb40d5d53ac9f75c3a27b965603",
       "title": "COVID-19 vaccine mandate ban bill headed to full Texas Senate - KVUE",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNTNDZjdxRVVKdm9STTFlZVB6VWVpM2FPVWl6MFRQUUhwNElWVHVRQ1habzlXUl9vRXUxYzlFYzRnRDdGaE9xdHlVUDhycnY5b05SZW9wMGJUc0tFZWN4clhMY2RVenpjc1ZBN2RTU1AzeGFPd1Z6LWMwcXJ4MFcxTWVkeFNhN0RsZF9hMk1PZ0pqVTNUVDYzb3VyeTl4cF9GT09EMml0bW4yYzhhNWU4N2dkNE9MckxxM2VMd2drdnZxUm9YT1lDa3hNSjRKYkEtNkJWdlZ4Wlc?oc=5",
@@ -2079,21 +2078,6 @@
       "topics": [
         "vaccine",
         "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "e775532bb31b8db0b5b538c44f7fda5d",
-      "title": "Texas lawmakers again take aim at vaccines with petty, dangerous bills - San Antonio Express-News",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2t3U0xXamNvbEVjRVdFampjbUhkOTJFdnBnc3RpdTl0cHVGNC1OTElGWVV3bFVpdXNhV3ZrQVZPaVJwV2UzTF94UzdzTU9lRU1mNVBPUDVJMmpNN2pJRDEtR3ctZmlDc1RKYWF5LUs1bUF3QWVQZUt0LU9kMFh1b0JhRDUwWElfSzdtcVdSZUthckF3bDduWjduOA?oc=5",
-      "source": "San Antonio Express-News",
-      "date": "Sun, 02 Feb 2025 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQa2t3U0xXamNvbEVjRVdFampjbUhkOTJFdnBnc3RpdTl0cHVGNC1OTElGWVV3bFVpdXNhV3ZrQVZPaVJwV2UzTF94UzdzTU9lRU1mNVBPUDVJMmpNN2pJRDEtR3ctZmlDc1RKYWF5LUs1bUF3QWVQZUt0LU9kMFh1b0JhRDUwWElfSzdtcVdSZUthckF3bDduWjduOA?oc=5\" target=\"_blank\">Texas lawmakers again take aim at vaccines with petty, dangerous bills</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">San Antonio Express-News</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
         "legislation"
       ],
       "mentioned_names": [],
@@ -2114,6 +2098,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "5cb58e6d354f5607ccda17f4934f91e2",
+      "title": "Kansas Action for Children sounds alarm on anti-vax, food security and child care bills - Kansas Reflector",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNa2NYOU1aREViY2FOZkJuMS1VbnVsNWJyNUlfTmdYcWJfS0J6Q2ZuRmpnMlN2ZDdJVGVwSndNRVFNN0cxSmdvOVpaN2NCRVBLUXhCWUItMkJMb0QwN25UMGtRY2E0ckhmLWt4RlNaMTF2Tk1KWG15TWNpYk9FNUJsMHEwMkpRSjFsSTB1VFdYd2hzNGhCYjdCd3J0cF9HWHczY0EyYkpKQ0xvVlJwN0xoMDRWdkcyWXlWdlpQZUVHeVlOODVV?oc=5",
+      "source": "Kansas Reflector",
+      "date": "Mon, 15 May 2023 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNa2NYOU1aREViY2FOZkJuMS1VbnVsNWJyNUlfTmdYcWJfS0J6Q2ZuRmpnMlN2ZDdJVGVwSndNRVFNN0cxSmdvOVpaN2NCRVBLUXhCWUItMkJMb0QwN25UMGtRY2E0ckhmLWt4RlNaMTF2Tk1KWG15TWNpYk9FNUJsMHEwMkpRSjFsSTB1VFdYd2hzNGhCYjdCd3J0cF9HWHczY0EyYkpKQ0xvVlJwN0xoMDRWdkcyWXlWdlpQZUVHeVlOODVV?oc=5\" target=\"_blank\">Kansas Action for Children sounds alarm on anti-vax, food security and child care bills</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Kansas Reflector</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "f660daa663e8bd1fda8668a8152a6050",
       "title": "‘He Stood His Ground’: State Senator Will Leave Office as Champion of Tough Vaccine Laws - California Healthline",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRnZWdkhiQTNoZFZxX3p5NE5EOFpWeXNVdXBHbmE4QXNTaEFrQkY0WU1fbnA2aWFnenZtZDlfNUFINHFwblZXbE00a0lXWjU0VUxSUDZwM19wSE9fTmo1SWFxczhhZlBBM19fNFlwaklFbDNqclpxSVd6WFplSllYSURiVTRSRkwyU2l3dHhuWUN5cVF5Vk1fZzBEVVVqNTQxRkE?oc=5",
@@ -2123,20 +2121,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "5cb58e6d354f5607ccda17f4934f91e2",
-      "title": "Kansas Action for Children sounds alarm on anti-vax, food security and child care bills - Kansas Reflector",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNa2NYOU1aREViY2FOZkJuMS1VbnVsNWJyNUlfTmdYcWJfS0J6Q2ZuRmpnMlN2ZDdJVGVwSndNRVFNN0cxSmdvOVpaN2NCRVBLUXhCWUItMkJMb0QwN25UMGtRY2E0ckhmLWt4RlNaMTF2Tk1KWG15TWNpYk9FNUJsMHEwMkpRSjFsSTB1VFdYd2hzNGhCYjdCd3J0cF9HWHczY0EyYkpKQ0xvVlJwN0xoMDRWdkcyWXlWdlpQZUVHeVlOODVV?oc=5",
-      "source": "Kansas Reflector",
-      "date": "Mon, 15 May 2023 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNa2NYOU1aREViY2FOZkJuMS1VbnVsNWJyNUlfTmdYcWJfS0J6Q2ZuRmpnMlN2ZDdJVGVwSndNRVFNN0cxSmdvOVpaN2NCRVBLUXhCWUItMkJMb0QwN25UMGtRY2E0ckhmLWt4RlNaMTF2Tk1KWG15TWNpYk9FNUJsMHEwMkpRSjFsSTB1VFdYd2hzNGhCYjdCd3J0cF9HWHczY0EyYkpKQ0xvVlJwN0xoMDRWdkcyWXlWdlpQZUVHeVlOODVV?oc=5\" target=\"_blank\">Kansas Action for Children sounds alarm on anti-vax, food security and child care bills</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Kansas Reflector</font>",
-      "sentiment": "neutral",
-      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -2198,6 +2182,18 @@
       "legislator_ids": []
     },
     {
+      "article_id": "f530a4df5f935b479395c2761d9ffb33",
+      "title": "Opinion | Doctors in Elected Office Are Turning Their Backs on Science - MedPage Today",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9kQzZVTnU0am1qNHJvUzNLV3IyTWtXVU16cGx4YzB2cExQbDc2RnRnMkdPMEdMR041cDRHeFJ6Z1kxQVBwNlAzb2VsQkZETElXdGpLZWxuaWhlRWljZEhDRDVKbjU4eDkySkxz?oc=5",
+      "source": "MedPage Today",
+      "date": "Sat, 19 Jul 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE9kQzZVTnU0am1qNHJvUzNLV3IyTWtXVU16cGx4YzB2cExQbDc2RnRnMkdPMEdMR041cDRHeFJ6Z1kxQVBwNlAzb2VsQkZETElXdGpLZWxuaWhlRWljZEhDRDVKbjU4eDkySkxz?oc=5\" target=\"_blank\">Opinion | Doctors in Elected Office Are Turning Their Backs on Science</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MedPage Today</font>",
+      "sentiment": "neutral",
+      "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "8d6e5443bd43def18e5a20f665421774",
       "title": "Are vaccine mandates banned in Florida now? What happened in the Legislative Special Session - Tallahassee Democrat",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOeHVIT000Z0xHdFZKMk1jNm83bUZ4TEhxdERyNFV4bVhDUjczc3VjMGI5QVJNbXFCal9LNXlCcTBIVnJqeVNNdDNqMmNObTgtMHQ5ODhNT19YZmkyLTJ5aG9McjRpeVQ2NHpfcml1dlp2OElOVzg3Xy1XaGUtRHowRlBDdUdXNkNRNXNDRjR5T2xhZ2t3YlZDTmpKOTc4S05CTnFuMVBtcGlUSXRaNjZ6Wmc1SE42TEJMdVdncGd0VWRsYmJEQ3NtakdCTU9odjZuYnRvazZEZmEtdw?oc=5",
@@ -2213,14 +2209,18 @@
       "legislator_ids": []
     },
     {
-      "article_id": "f530a4df5f935b479395c2761d9ffb33",
-      "title": "Opinion | Doctors in Elected Office Are Turning Their Backs on Science - MedPage Today",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9kQzZVTnU0am1qNHJvUzNLV3IyTWtXVU16cGx4YzB2cExQbDc2RnRnMkdPMEdMR041cDRHeFJ6Z1kxQVBwNlAzb2VsQkZETElXdGpLZWxuaWhlRWljZEhDRDVKbjU4eDkySkxz?oc=5",
-      "source": "MedPage Today",
-      "date": "Sat, 19 Jul 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE9kQzZVTnU0am1qNHJvUzNLV3IyTWtXVU16cGx4YzB2cExQbDc2RnRnMkdPMEdMR041cDRHeFJ6Z1kxQVBwNlAzb2VsQkZETElXdGpLZWxuaWhlRWljZEhDRDVKbjU4eDkySkxz?oc=5\" target=\"_blank\">Opinion | Doctors in Elected Office Are Turning Their Backs on Science</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MedPage Today</font>",
+      "article_id": "30c48866d91dabfcab24ef1386d2edee",
+      "title": "SC bill banning vaccine mandates advances in Senate - South Carolina Daily Gazette",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOXY0a1ZFNk54al8xak5sazJxcXdEOEVyRlU3THRteENxQndlUjJvTWQ2MnByMWNmdzRiTV9rOFhVN0ZMLUI2aFBMV1I1OHhjTEtoYW16eUYwVG9YWXZ2bFRaaDJObWxEYWhoMmpMd082S3R2b21wYmJvSG9TRXI0bFgxME5UczYzZFE5LWlIN2tZeWUz?oc=5",
+      "source": "South Carolina Daily Gazette",
+      "date": "Wed, 05 Mar 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNOXY0a1ZFNk54al8xak5sazJxcXdEOEVyRlU3THRteENxQndlUjJvTWQ2MnByMWNmdzRiTV9rOFhVN0ZMLUI2aFBMV1I1OHhjTEtoYW16eUYwVG9YWXZ2bFRaaDJObWxEYWhoMmpMd082S3R2b21wYmJvSG9TRXI0bFgxME5UczYzZFE5LWlIN2tZeWUz?oc=5\" target=\"_blank\">SC bill banning vaccine mandates advances in Senate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">South Carolina Daily Gazette</font>",
       "sentiment": "neutral",
-      "topics": [],
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -2234,22 +2234,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "30c48866d91dabfcab24ef1386d2edee",
-      "title": "SC bill banning vaccine mandates advances in Senate - South Carolina Daily Gazette",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOXY0a1ZFNk54al8xak5sazJxcXdEOEVyRlU3THRteENxQndlUjJvTWQ2MnByMWNmdzRiTV9rOFhVN0ZMLUI2aFBMV1I1OHhjTEtoYW16eUYwVG9YWXZ2bFRaaDJObWxEYWhoMmpMd082S3R2b21wYmJvSG9TRXI0bFgxME5UczYzZFE5LWlIN2tZeWUz?oc=5",
-      "source": "South Carolina Daily Gazette",
-      "date": "Wed, 05 Mar 2025 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNOXY0a1ZFNk54al8xak5sazJxcXdEOEVyRlU3THRteENxQndlUjJvTWQ2MnByMWNmdzRiTV9rOFhVN0ZMLUI2aFBMV1I1OHhjTEtoYW16eUYwVG9YWXZ2bFRaaDJObWxEYWhoMmpMd082S3R2b21wYmJvSG9TRXI0bFgxME5UczYzZFE5LWlIN2tZeWUz?oc=5\" target=\"_blank\">SC bill banning vaccine mandates advances in Senate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">South Carolina Daily Gazette</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
         "legislation"
       ],
       "mentioned_names": [],
@@ -2523,21 +2507,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "c0efd19c7e26d4e88bb077ea61b5f7bf",
-      "title": "Jessica Biel joins Robert F. Kennedy Jr. to lobby against vaccination bill in California - The Hill",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOFJSVll3QkFpQmZneW1nZlBjVjU1enRaMktpV3dLNGdrOVY0VVdPeUVhRnZrR3lOLXEzQTlFVQ?oc=5",
-      "source": "The Hill",
-      "date": "Thu, 13 Jun 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOF",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "c7c71f2828ac26692a3199dc54b9f23b",
       "title": "Conspiracy-filled House hearing held on vaccine mandate ban - Michigan Advance",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYTRqUTdxV3hXTDU4eEVkTDN1Vld2alBYeWRVOUg0QmRJU2w2cy1lMVl5bGh2ejYzbG1od1FvS3FBWkRlUUZZYkNPMjd0V0dGYXpBVDliR2Q1MmY3dWtKUDQyYm5nTWpjMUVfd240TFQ5bGs4czRNbXZJYkxRYU9keUdvSWZJeDlKNUhobC1vQ0Y0YjhhdmsxZW1xOGpSWGd1?oc=5",
@@ -2548,6 +2517,21 @@
       "topics": [
         "vaccine",
         "mandate"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "c0efd19c7e26d4e88bb077ea61b5f7bf",
+      "title": "Jessica Biel joins Robert F. Kennedy Jr. to lobby against vaccination bill in California - The Hill",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOFJSVll3QkFpQmZneW1nZlBjVjU1enRaMktpV3dLNGdrOVY0VVdPeUVhRnZrR3lOLXEzQTlFVQ?oc=5",
+      "source": "The Hill",
+      "date": "Thu, 13 Jun 2019 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOF",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2567,6 +2551,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "a8f1f2ad73171015ff21a4f268ad789b",
+      "title": "New Hampshire's GOP are taking a stand—against the polio vaccine - Mother Jones",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWkFiTklMV21hU2lKMmpNaE16M280cTBXZmZDczEtVlRSOE9yVndYNHlMTzVnOG51M3BnV0d0ZGFRalloVTlINFA4OXVmTGNGNl9TVU5kb2lpS2pLcnQzNDRkOF92T1VCRGhjLWhBQUtYUkZOZW82SWRRWjhqOG5SUEVJdHlOQm9KdVpRdi10alJfaDI4em4ySGtaUGNqMGI0ZHJ5ZTdZdEhOX1NRTkVz?oc=5",
+      "source": "Mother Jones",
+      "date": "Sat, 20 Apr 2024 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWkFiTklMV21hU2lKMmpNaE16M280cTBXZmZDczEtVlRSOE9yVndYNHlMTzVnOG51M3BnV0d0ZGFRalloVTlINFA4OXVmTGNGNl9TVU5kb2lpS2pLcnQzNDRkOF92T1VCRGhjLWhBQUtYUkZOZW82SWRRWjhqOG5SUEVJdHlOQm9KdVpRdi10alJfaDI4em4ySGtaUGNqMGI0ZHJ5ZTdZdEhOX1NRTkVz?oc=5\" target=\"_blank\">New Hampshire's GOP are taking a stand—against the polio vaccine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Mother Jones</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "d6e596fe3671fa237db4de53b3e8ea65",
       "title": "Iowa state Senate rejects anti-vaccine bills - The Hill",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVVVVUFdGaERBaUw2NjlzRzRZZUZDRVREQk9ZQXc1Z0FaUTh6djFfb2NnREliWWhOMk5tal9haDlFZ043Nm9KQnhzbnM1cHpncmUxRUZTLURLcnpvcXJhTnY1Yk5ydVVjSFk5NnRsNzNoV0ZZaHE4dURDNk9vYjJCUFZYWTBoc2V0OEF5cGVEaDFnSUgwNnprZU5jV0ZkOTBuZmI2btIBqgFBVV95cUxOVFBKRFhha2lwSDk5X1lSWENkUXVFMFFmSXByY21KbTNmTHgwemU3X281Y21BUEtRTUgtTW43V3Joa2xyQXpMdHZMSFgyZDhVcUw2QlpnNm5yWjFYZENiNmRWNE1qVFpJN1daVzBHSjFZYmJqNDNINlRKaTNNQ0xCakozQ1JmQlpDSlBVYkQ0aTNjM2c0XzdGZHlCd3dXMmgzdGx4c2k5Ulh2dw?oc=5",
@@ -2577,20 +2575,6 @@
       "topics": [
         "vaccine",
         "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "a8f1f2ad73171015ff21a4f268ad789b",
-      "title": "New Hampshire's GOP are taking a stand—against the polio vaccine - Mother Jones",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWkFiTklMV21hU2lKMmpNaE16M280cTBXZmZDczEtVlRSOE9yVndYNHlMTzVnOG51M3BnV0d0ZGFRalloVTlINFA4OXVmTGNGNl9TVU5kb2lpS2pLcnQzNDRkOF92T1VCRGhjLWhBQUtYUkZOZW82SWRRWjhqOG5SUEVJdHlOQm9KdVpRdi10alJfaDI4em4ySGtaUGNqMGI0ZHJ5ZTdZdEhOX1NRTkVz?oc=5",
-      "source": "Mother Jones",
-      "date": "Sat, 20 Apr 2024 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWkFiTklMV21hU2lKMmpNaE16M280cTBXZmZDczEtVlRSOE9yVndYNHlMTzVnOG51M3BnV0d0ZGFRalloVTlINFA4OXVmTGNGNl9TVU5kb2lpS2pLcnQzNDRkOF92T1VCRGhjLWhBQUtYUkZOZW82SWRRWjhqOG5SUEVJdHlOQm9KdVpRdi10alJfaDI4em4ySGtaUGNqMGI0ZHJ5ZTdZdEhOX1NRTkVz?oc=5\" target=\"_blank\">New Hampshire's GOP are taking a stand—against the polio vaccine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Mother Jones</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2620,21 +2604,6 @@
       "topics": [
         "vaccine",
         "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "cb9e1de7320d06943a29755aa4b7540c",
-      "title": "Jessica Biel Lobbies California Lawmakers Against State Vaccine Legislation - The Hollywood Reporter",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcXpsendlV2RSSFloU21RTnlCMGY3UHFvVkl0aVQwNDYyNTloM0hyQWR4RjJ6TTZlTmF0QWFZdm5yVjRlMnFXYkpIbDZ5Q3dkTmlHZjJBRmVXc1k1SUFETGUzeUU5SjYxRUgtclptdmZDdTRxaDVWUFM0c2VJOEhaRE05Tks1T1BLa1g0ZmU2NEYyZ2x2UWR6Wms5bi01dWNhbXhVV0M1b0RiRE9Jbk5yNjhqRkJBb1h1RnhjS09wTnRaS3o2TXQ4?oc=5",
-      "source": "The Hollywood Reporter",
-      "date": "Tue, 11 Jun 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQcXpsendlV2RSSFloU21RTnlCMGY3UHFvVkl0aVQwNDYyNTloM0hyQWR4RjJ6TTZlTmF0QWFZdm5yVjRlMnFXYkpIbDZ5Q3dkTmlHZjJBRmVXc1k1SUFETGUzeUU5SjYxRUgtclptdmZDdTRxaDVWUFM0c2VJOEhaRE05Tks1T1BLa1g0ZmU2NEYyZ2x2UWR6Wms5bi01dWNhbXhVV0M1b0RiRE9Jbk5yNjhqRkJBb1h1RnhjS09wTnRaS3o2TXQ4?oc=5\" target=\"_blank\">Jessica Biel Lobbies California Lawmakers Against State Vaccine Legislation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Hollywood Reporter</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
         "legislation"
       ],
       "mentioned_names": [],
@@ -2682,20 +2651,6 @@
       "topics": [
         "vaccine",
         "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "082b60d4be6de777ee2906c6676e499c",
-      "title": "Jessica Biel's Vaccine Lobbying Draws Ire From California Legislators - The Hollywood Reporter",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM1Y2VkdrRGVmNVRkQ2pPemM5SW1DMHduWDJoY0VQSE04XzBRaGd4VGFPRmRkTEl0QWJ1algwZ0tZTlI0ZEstdkkwckR5NFl4dHVhdnJ0WDh5Q21TQndyUVJLaFlOMGh5dnNOTngtTk8zdEV0SmtyLVdkRWVsT0dSQUE5TjVNTl80aFpWRzI1aHRua083OTMxNWVOWkt2eUVkWG9OUjUtYnVqbS1tOTY3WC1zTkpwZ2VHNHB5MzBHS2FDUQ?oc=5",
-      "source": "The Hollywood Reporter",
-      "date": "Thu, 13 Jun 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNM1Y2VkdrRGVmNVRkQ2pPemM5SW1DMHduWDJoY0VQSE04XzBRaGd4VGFPRmRkTEl0QWJ1algwZ0tZTlI0ZEstdkkwckR5NFl4dHVhdnJ0WDh5Q21TQndyUVJLaFlOMGh5dnNOTngtTk8zdEV0SmtyLVdkRWVsT0dSQUE5TjVNTl80aFpWRzI1aHRua083OTMxNWVOWkt2eUVkWG9OUjUtYnVqbS1tOTY3WC1zTkpwZ2VHNHB5MzBHS2FDUQ?oc=5\" target=\"_blank\">Jessica Biel's Vaccine Lobbying Draws Ire From California Legislators</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Hollywood Reporter</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2806,20 +2761,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "9cab469e8fc367cf5514bb33b628d8cb",
-      "title": "Trump CDC nominee Schwartz set for July 15 US Senate confirmation hearing - The Mighty 790 KFGO",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWVZ3WDl0Y2dwQWV6Mk5UQWlqb1lLWFR3d1IyazJGeWVyNFhUb016bEJHTlVwMU5HempUbGQ0akwwd2h3QzUzSDhIcnp5Q2dPc2N5SThma3VraGx4R19VeXRhX0VnOXVMNEZPQnJNeEo0NFh1ODZWa2FydHU4TXd3TURYUG5WOTk2cUs0S28yMXlXUXhfYkNvM0gzWmU4ZUJUaE9YVw?oc=5",
-      "source": "The Mighty 790 KFGO",
-      "date": "Wed, 08 Jul 2026 19:39:29 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOWVZ3WDl0Y2dwQWV6Mk5UQWlqb1lLWFR3d1IyazJGeWVyNFhUb016bEJHTlVwMU5HempUbGQ0akwwd2h3QzUzSDhIcnp5Q2dPc2N5SThma3VraGx4R19VeXRhX0VnOXVMNEZPQnJNeEo0NFh1ODZWa2FydHU4TXd3TURYUG5WOTk2cUs0S28yMXlXUXhfYkNvM0gzWmU4ZUJUaE9YVw?oc=5\" target=\"_blank\">Trump CDC nominee Schwartz set for July 15 US Senate confirmation hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Mighty 790 KFGO</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "public health"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "7b343d4de729decbc5a0d82eb29d13d4",
       "title": "Republicans Cry Foul Over Public Hearing Time Limit As Committees Debate Vaccine, Homeschooling Bills - CT News Junkie",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPQlc3UVZielRfYkZKSVBRTGd5S0tsVnRJUldZSzJUOUsxeFZOblM5M28yb1hsS3VnS3FOT21uVzMxaXg2VElhelBWWWtnc3FveGI0bEVjVlJjZFpEYk1kSmRCLUR0NWFBb0s0UVRBSHJWWFFFZk1JR29pQnNjQzI5OFQwSGc4TlUyOWN4aFlRcnRIZXN0eHZ1Z2JfR3BMeTRnYzFiUUJmWmdxU0U5U04xVndKclZodDRlQlJrTjBDMTNWRkZiTzVJNmwtQmRZc05WaTlV?oc=5",
@@ -2836,6 +2777,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "20c190e361816cfa896487e210093dfc",
+      "title": "Trump CDC nominee Schwartz set for July 15 US Senate confirmation hearing - KELO-AM",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNQjJEZml6VzRxMkFNY0tWbXBIUV9PakJoNlowYmw4RjNNR2M4XzVpR2NQRFlNRExnNE0xa3RPV1FBX2FzYlZHUkhuSlRDZ3diZEp6SmdlcE83VWw5VGx5ZW43NE1DRmVPeEFqdnAtTG8zNEVva2EtbmNVWkdZOWJ1Q240Zk9tdFplXzNqa2hZMHpaU25lbjhPRVFGTXd4Y1FvSjk0MQ?oc=5",
+      "source": "KELO-AM",
+      "date": "Wed, 08 Jul 2026 19:16:03 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNQjJEZml6VzRxMkFNY0tWbXBIUV9PakJoNlowYmw4RjNNR2M4XzVpR2NQRFlNRExnNE0xa3RPV1FBX2FzYlZHUkhuSlRDZ3diZEp6SmdlcE83VWw5VGx5ZW43NE1DRmVPeEFqdnAtTG8zNEVva2EtbmNVWkdZOWJ1Q240Zk9tdFplXzNqa2hZMHpaU25lbjhPRVFGTXd4Y1FvSjk0MQ?oc=5\" target=\"_blank\">Trump CDC nominee Schwartz set for July 15 US Senate confirmation hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KELO-AM</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "public health"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "f57a59d113019796f37da6a205143100",
       "title": "Senate Investigates Biden Officials on Vaccine Safety - Legis1",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1SdEdEVjNoWEVnQXhVOWRFLWFrS3FRb2l2Zjl1OVhfSm1EZ1BaUnJ4RzRiclZhcVp1UHAwbV95dklVc2VtMmF4ZXZ1dFdDRWZZLXd4Nm4yMjhTc3Z6NkFldFZlcVBtUEVfYlpUVnV1elhCNVl5VFVvaUNoWQ?oc=5",
@@ -2845,20 +2800,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "61ce34aea25f40689b23da09810700a8",
-      "title": "RFK Jr. defends his health agenda and Trump's proposed budget cuts in hearing - NPR",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZ1ZVTlNZWnphQlJ1dlAzaTE5Y0Rsbmk3am5tdGZzeEhhMTNuY1hMc0h2am1id2FScG1hY2U3LWF6Uy04QTdWeVRuZkZhTjlvYzNSMUJjbksxUmlwbWM0S3hsRS1OMTlaUEFqOFl4S3J6U2VVajJ6ck96ZzdtOXNoM2drM19ybU9ZUkE?oc=5",
-      "source": "NPR",
-      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxNZ1ZVTlNZWnphQlJ1dlAzaTE5Y0Rsbmk3am5tdGZzeEhhMTNuY1hMc0h2am1id2FScG1hY2U3LWF6Uy04QTdWeVRuZkZhTjlvYzNSMUJjbksxUmlwbWM0S3hsRS1OMTlaUEFqOFl4S3J6U2VVajJ6ck96ZzdtOXNoM2drM19ybU9ZUkE?oc=5\" target=\"_blank\">RFK Jr. defends his health agenda and Trump's proposed budget cuts in hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NPR</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "funding"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -2898,6 +2839,20 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPbDFqOFNQZUh5dGxFdEYwSnVnRzFxQjRIb25LNzhkVjhGelpTMGNlLWhheW9ZejBQelJKX2F5T25tcERmZEZpZ2Vrc3ZhVlZrT3JTaVJqdl9ES21RZGloaDVXY3l2VmR1UVByR0RjVnV0cDJjSkFvYkFwdVd5eGMwMUJHdXktZFFPb296aDZvbWJIdm15eVBrYVJHSTlSSm03T3AxNFBlaVVWYXZiYmRDaXgxQ1RMQQ?oc=5\" target=\"_blank\">4 takeaways from Health Secretary RFK Jr.'s gauntlet of congressional hearings</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PBS</font>",
       "sentiment": "neutral",
       "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "61ce34aea25f40689b23da09810700a8",
+      "title": "RFK Jr. defends his health agenda and Trump's proposed budget cuts in hearing - NPR",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZ1ZVTlNZWnphQlJ1dlAzaTE5Y0Rsbmk3am5tdGZzeEhhMTNuY1hMc0h2am1id2FScG1hY2U3LWF6Uy04QTdWeVRuZkZhTjlvYzNSMUJjbksxUmlwbWM0S3hsRS1OMTlaUEFqOFl4S3J6U2VVajJ6ck96ZzdtOXNoM2drM19ybU9ZUkE?oc=5",
+      "source": "NPR",
+      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxNZ1ZVTlNZWnphQlJ1dlAzaTE5Y0Rsbmk3am5tdGZzeEhhMTNuY1hMc0h2am1id2FScG1hY2U3LWF6Uy04QTdWeVRuZkZhTjlvYzNSMUJjbksxUmlwbWM0S3hsRS1OMTlaUEFqOFl4S3J6U2VVajJ6ck96ZzdtOXNoM2drM19ybU9ZUkE?oc=5\" target=\"_blank\">RFK Jr. defends his health agenda and Trump's proposed budget cuts in hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NPR</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "funding"
+      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -3038,12 +2993,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "768d22466422facfb16ebffcaed0cedf",
-      "title": "More US Vaccine Contestation Ahead Amid Court Action and Senate Hearing for Trump’s Surgeon General Nominee - Health Policy Watch",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wdXhiRWI4cWU1Y0h4dzdmWWl0bnU2Zzd1eHJRYkdzeEdWUzB6aDJBbVRtcHFiR21Hdm9fZDIxU0pqRFBQVUhoOFZvR3JDX3FNbXNzdS04eUxTczdGVzJOaHlGRUdOdTR4OTNpVXVn?oc=5",
-      "source": "Health Policy Watch",
-      "date": "Mon, 23 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE0wdXhiRWI4cWU1Y0h4dzdmWWl0bnU2Zzd1eHJRYkdzeEdWUzB6aDJBbVRtcHFiR21Hdm9fZDIxU0pqRFBQVUhoOFZvR3JDX3FNbXNzdS04eUxTczdGVzJOaHlGRUdOdTR4OTNpVXVn?oc=5\" target=\"_blank\">More US Vaccine Contestation Ahead Amid Court Action and Senate Hearing for Trump’s Surgeon General Nominee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Health Policy Watch</font>",
+      "article_id": "68cefe225d297123c5d4dfe4af6fe641",
+      "title": "Critics question timing of key CT committee shake-up amid vaccine legislation fight - CT Insider",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRFhEZnpGd21LaFBVdVFUbG9UU0lERHpOUmE2ZGJUUm9wMHNPczJDSlNFV3RZWWpka2x4RV9PT3JqRnlHMWNCSDlqRjItS1gzLWhqVjJidEQxXzZjVW56WG9zRDVIR1RxS2VxWHpUa1U3WE16NlVvYW11dkdwSkJSdEZ6NkhjY1NqQzhMLXN4endkSU9FOWc0SmJFZGJSTEtYdHI5LV9UbUprMmM?oc=5",
+      "source": "CT Insider",
+      "date": "Thu, 19 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRFhEZnpGd21LaFBVdVFUbG9UU0lERHpOUmE2ZGJUUm9wMHNPczJDSlNFV3RZWWpka2x4RV9PT3JqRnlHMWNCSDlqRjItS1gzLWhqVjJidEQxXzZjVW56WG9zRDVIR1RxS2VxWHpUa1U3WE16NlVvYW11dkdwSkJSdEZ6NkhjY1NqQzhMLXN4endkSU9FOWc0SmJFZGJSTEtYdHI5LV9UbUprMmM?oc=5\" target=\"_blank\">Critics question timing of key CT committee shake-up amid vaccine legislation fight</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -3053,12 +3008,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "68cefe225d297123c5d4dfe4af6fe641",
-      "title": "Critics question timing of key CT committee shake-up amid vaccine legislation fight - CT Insider",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRFhEZnpGd21LaFBVdVFUbG9UU0lERHpOUmE2ZGJUUm9wMHNPczJDSlNFV3RZWWpka2x4RV9PT3JqRnlHMWNCSDlqRjItS1gzLWhqVjJidEQxXzZjVW56WG9zRDVIR1RxS2VxWHpUa1U3WE16NlVvYW11dkdwSkJSdEZ6NkhjY1NqQzhMLXN4endkSU9FOWc0SmJFZGJSTEtYdHI5LV9UbUprMmM?oc=5",
-      "source": "CT Insider",
-      "date": "Thu, 19 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRFhEZnpGd21LaFBVdVFUbG9UU0lERHpOUmE2ZGJUUm9wMHNPczJDSlNFV3RZWWpka2x4RV9PT3JqRnlHMWNCSDlqRjItS1gzLWhqVjJidEQxXzZjVW56WG9zRDVIR1RxS2VxWHpUa1U3WE16NlVvYW11dkdwSkJSdEZ6NkhjY1NqQzhMLXN4endkSU9FOWc0SmJFZGJSTEtYdHI5LV9UbUprMmM?oc=5\" target=\"_blank\">Critics question timing of key CT committee shake-up amid vaccine legislation fight</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
+      "article_id": "768d22466422facfb16ebffcaed0cedf",
+      "title": "More US Vaccine Contestation Ahead Amid Court Action and Senate Hearing for Trump’s Surgeon General Nominee - Health Policy Watch",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wdXhiRWI4cWU1Y0h4dzdmWWl0bnU2Zzd1eHJRYkdzeEdWUzB6aDJBbVRtcHFiR21Hdm9fZDIxU0pqRFBQVUhoOFZvR3JDX3FNbXNzdS04eUxTczdGVzJOaHlGRUdOdTR4OTNpVXVn?oc=5",
+      "source": "Health Policy Watch",
+      "date": "Mon, 23 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE0wdXhiRWI4cWU1Y0h4dzdmWWl0bnU2Zzd1eHJRYkdzeEdWUzB6aDJBbVRtcHFiR21Hdm9fZDIxU0pqRFBQVUhoOFZvR3JDX3FNbXNzdS04eUxTczdGVzJOaHlGRUdOdTR4OTNpVXVn?oc=5\" target=\"_blank\">More US Vaccine Contestation Ahead Amid Court Action and Senate Hearing for Trump’s Surgeon General Nominee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Health Policy Watch</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -3096,18 +3051,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "581b98f8904b5344d135c972795b5e5a",
-      "title": "Casey Means faces Senate health committee in con­fir­mation hearing to be U.S. surgeon general - Spectrum News",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOalB5aW16MTJNbExtMm9YRmlFVmx6SGJyanNvNnBKNG5LNlVJbUg3T2pDQ2MyV2lnYThYRnRWVHRfck9wdDVZQ3JRck5TeWNjbUJneFZmM2ZTeTdsRGxFaU53d3ZqQ3hmb1dxbEhVWC1yd0VpRTJRbnVfandrVlJrRk9vSl8weklPNFJYTzNDemVhTDRfNXptdjg3YkpTNnNOUFBEMC12RlhyTjdjNWdsTXBrVi0?oc=5",
-      "source": "Spectrum News",
-      "date": "Wed, 25 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOalB5aW16MTJNbExtMm9YRmlFVmx6SGJyanNvNnBKNG5LNlVJbUg3T2pDQ2MyV2lnYThYRnRWVHRfck9wdDVZQ3JRck5TeWNjbUJneFZmM2ZTeTdsRGxFaU53d3ZqQ3hmb1dxbEhVWC1yd0VpRTJRbnVfandrVlJrRk9vSl8weklPNFJYTzNDemVhTDRfNXptdjg3YkpTNnNOUFBEMC12RlhyTjdjNWdsTXBrVi0?oc=5\" target=\"_blank\">Casey Means faces Senate health committee in con­fir­mation hearing to be U.S. surgeon general</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Spectrum News</font>",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "a4bbd8a3acbf539cdc39631c63ba6991",
       "title": "Congress Presses RFK Jr On Whether New CDC Chief Can Act Independently On Vaccines - Health Policy Watch",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZjRrQjd0UVdpRG1jYnk1T0hyRWw2Z2VOVWRGZjBaX2Zwd1U1V2dDNTZGUjlHN1NCOGhsWWlibG1YajFsQ3g1X1VQeHpiRXFlUzdiN3k3T0hIM3A5Uk1zM2VHeVBGMzlYWGtTZVpuUVdQdXNBY1pXQ0VZLVJXdjMtY2JjMmlNRmtpMWV1b0FBc3U2Wkda?oc=5",
@@ -3124,16 +3067,14 @@
       "legislator_ids": []
     },
     {
-      "article_id": "97b9355c3a4a7531432b0f64d4bec1e5",
-      "title": "Connecticut hails halt of federal child vaccine cuts: 'An important step in protecting children' - CT Insider",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUG9iQXhOcnVaNG9kY3l4T2d5WW5weE9sdFQzczZrV0FacDdFQ3RSTEx1ZWV4cE5BcndlTnJ2VldLYmtEa0ZBaDhNZ3gzb1JWMG1INGJnai16OUlxRnh3RTQ5dG1kQ3ZzUnhKbGx1bWpwNjF1YWE5UHRSVGhzb3doRnRhaGlrSUcxM1JibkdjbGh5VjJuZnl0ZFdrLUVUekhYZjRIcTBsUU4xdw?oc=5",
-      "source": "CT Insider",
-      "date": "Wed, 18 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUG9iQXhOcnVaNG9kY3l4T2d5WW5weE9sdFQzczZrV0FacDdFQ3RSTEx1ZWV4cE5BcndlTnJ2VldLYmtEa0ZBaDhNZ3gzb1JWMG1INGJnai16OUlxRnh3RTQ5dG1kQ3ZzUnhKbGx1bWpwNjF1YWE5UHRSVGhzb3doRnRhaGlrSUcxM1JibkdjbGh5VjJuZnl0ZFdrLUVUekhYZjRIcTBsUU4xdw?oc=5\" target=\"_blank\">Connecticut hails halt of federal child vaccine cuts: 'An important step in protecting children'</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
+      "article_id": "581b98f8904b5344d135c972795b5e5a",
+      "title": "Casey Means faces Senate health committee in con­fir­mation hearing to be U.S. surgeon general - Spectrum News",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOalB5aW16MTJNbExtMm9YRmlFVmx6SGJyanNvNnBKNG5LNlVJbUg3T2pDQ2MyV2lnYThYRnRWVHRfck9wdDVZQ3JRck5TeWNjbUJneFZmM2ZTeTdsRGxFaU53d3ZqQ3hmb1dxbEhVWC1yd0VpRTJRbnVfandrVlJrRk9vSl8weklPNFJYTzNDemVhTDRfNXptdjg3YkpTNnNOUFBEMC12RlhyTjdjNWdsTXBrVi0?oc=5",
+      "source": "Spectrum News",
+      "date": "Wed, 25 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOalB5aW16MTJNbExtMm9YRmlFVmx6SGJyanNvNnBKNG5LNlVJbUg3T2pDQ2MyV2lnYThYRnRWVHRfck9wdDVZQ3JRck5TeWNjbUJneFZmM2ZTeTdsRGxFaU53d3ZqQ3hmb1dxbEhVWC1yd0VpRTJRbnVfandrVlJrRk9vSl8weklPNFJYTzNDemVhTDRfNXptdjg3YkpTNnNOUFBEMC12RlhyTjdjNWdsTXBrVi0?oc=5\" target=\"_blank\">Casey Means faces Senate health committee in con­fir­mation hearing to be U.S. surgeon general</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Spectrum News</font>",
       "sentiment": "neutral",
-      "topics": [
-        "vaccine"
-      ],
+      "topics": [],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -3160,6 +3101,20 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPX3BKc19DeGlWSk5rb0g4Z3dYTzN1QkMzU2lPREVZSm05V2dqaW1GY2dTTVFUdXlRWkZRVHhzYjVLcnNIbWk4bDg2cnExMVZaNF9EazltNGwxR2ZFOHd6UFVUZmtJY1d6Q1NlNWpURk1uY0hxTHlES1VERGg2X3lHT0xfV1RZX3JDMkY5YkFQYWFqMi1BNm9CVDVLUQ?oc=5\" target=\"_blank\">Publicly, Kennedy embraces a more moderate MAHA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">STAT</font>",
       "sentiment": "neutral",
       "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "97b9355c3a4a7531432b0f64d4bec1e5",
+      "title": "Connecticut hails halt of federal child vaccine cuts: 'An important step in protecting children' - CT Insider",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUG9iQXhOcnVaNG9kY3l4T2d5WW5weE9sdFQzczZrV0FacDdFQ3RSTEx1ZWV4cE5BcndlTnJ2VldLYmtEa0ZBaDhNZ3gzb1JWMG1INGJnai16OUlxRnh3RTQ5dG1kQ3ZzUnhKbGx1bWpwNjF1YWE5UHRSVGhzb3doRnRhaGlrSUcxM1JibkdjbGh5VjJuZnl0ZFdrLUVUekhYZjRIcTBsUU4xdw?oc=5",
+      "source": "CT Insider",
+      "date": "Wed, 18 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUG9iQXhOcnVaNG9kY3l4T2d5WW5weE9sdFQzczZrV0FacDdFQ3RSTEx1ZWV4cE5BcndlTnJ2VldLYmtEa0ZBaDhNZ3gzb1JWMG1INGJnai16OUlxRnh3RTQ5dG1kQ3ZzUnhKbGx1bWpwNjF1YWE5UHRSVGhzb3doRnRhaGlrSUcxM1JibkdjbGh5VjJuZnl0ZFdrLUVUekhYZjRIcTBsUU4xdw?oc=5\" target=\"_blank\">Connecticut hails halt of federal child vaccine cuts: 'An important step in protecting children'</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
+      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -3246,20 +3201,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "f3983f9310545bc3e635d6bd1322e01e",
-      "title": "Trump’s surgeon general pick dodges vaccine questions at Senate hearing - The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTV84T1ltcmE1NEJBUVM5ak9xWG1SUmJ0YUtjbmFSYmwxU04xdElQYkVDdUJLX0cyX0lxS3ZFZTdPaDBZanNSSURmZjN0LUhlUm1VLWlkdVJQRXpsd2FHcDlhaldHbUt0b0RXRzllMnM3ZkVUYi1HMmVlNHZzUHlKN3pJM1F6NVlyMTU0?oc=5",
-      "source": "The Guardian",
-      "date": "Wed, 25 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTV84T1ltcmE1NEJBUVM5ak9xWG1SUmJ0YUtjbmFSYmwxU04xdElQYkVDdUJLX0cyX0lxS3ZFZTdPaDBZanNSSURmZjN0LUhlUm1VLWlkdVJQRXpsd2FHcDlhaldHbUt0b0RXRzllMnM3ZkVUYi1HMmVlNHZzUHlKN3pJM1F6NVlyMTU0?oc=5\" target=\"_blank\">Trump’s surgeon general pick dodges vaccine questions at Senate hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "91b771e77f9342623e2dc8205503ac43",
       "title": "Bernie Sanders demands Bill Cassidy hold a hearing to debunk RFK Jr.'s vaccine claims - NBC News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNd216UmtWdlVpd0Vka1lNeWFSSlZpeFkteGp0MlQwMFgyOEdwQ1VFU2tSRXA4QjAzRWJQelhyT3JyUkN5UVhSdjNMVU9BMXF3T0JaVERwOEEyNEZETkktbGRxVzdRVE5Ga1d2OFViVWxTLUlIV3ZyNEc5MjBXT0F0U3FjcldxVW9JMmF6bzFvSFRIcEpzMUc2eXZ1c01UMm1uQlN5Q2RHNld6WU90VW1KeFdpRmxqNU1rSGxoM3h0OFg?oc=5",
@@ -3270,6 +3211,20 @@
       "topics": [
         "vaccine",
         "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "f3983f9310545bc3e635d6bd1322e01e",
+      "title": "Trump’s surgeon general pick dodges vaccine questions at Senate hearing - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTV84T1ltcmE1NEJBUVM5ak9xWG1SUmJ0YUtjbmFSYmwxU04xdElQYkVDdUJLX0cyX0lxS3ZFZTdPaDBZanNSSURmZjN0LUhlUm1VLWlkdVJQRXpsd2FHcDlhaldHbUt0b0RXRzllMnM3ZkVUYi1HMmVlNHZzUHlKN3pJM1F6NVlyMTU0?oc=5",
+      "source": "The Guardian",
+      "date": "Wed, 25 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTV84T1ltcmE1NEJBUVM5ak9xWG1SUmJ0YUtjbmFSYmwxU04xdElQYkVDdUJLX0cyX0lxS3ZFZTdPaDBZanNSSURmZjN0LUhlUm1VLWlkdVJQRXpsd2FHcDlhaldHbUt0b0RXRzllMnM3ZkVUYi1HMmVlNHZzUHlKN3pJM1F6NVlyMTU0?oc=5\" target=\"_blank\">Trump’s surgeon general pick dodges vaccine questions at Senate hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -3584,18 +3539,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "d54512fc24c9744e5b8df700952cc6bf",
-      "title": "RFK Jr. Made Promises in Order To Become Health Secretary. He’s Broken Many of Them. - KFF Health News",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVl5YVlDX3o5d1Z4MndkRWNiMmJUYUtTSUk0a3pvbDlNQTg1TlNxd01idWRQQU1HUFhlalNjeWlCV0lxUklfUTZteHloTmVQWjNnZ1lDbzgwMTl6S1UwWF9QZm54NEg0R05GX0g0VjNIZlMtMGlieS1hNF9IWjFnMWlvc0RsdWZDNl8weFkwMVhFem1WSVRUMTg5dHBUX0VfcHN4b3dfSFRTZw?oc=5",
-      "source": "KFF Health News",
-      "date": "Fri, 13 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVl5YVlDX3o5d1Z4MndkRWNiMmJUYUtTSUk0a3pvbDlNQTg1TlNxd01idWRQQU1HUFhlalNjeWlCV0lxUklfUTZteHloTmVQWjNnZ1lDbzgwMTl6S1UwWF9QZm54NEg0R05GX0g0VjNIZlMtMGlieS1hNF9IWjFnMWlvc0RsdWZDNl8weFkwMVhFem1WSVRUMTg5dHBUX0VfcHN4b3dfSFRTZw?oc=5\" target=\"_blank\">RFK Jr. Made Promises in Order To Become Health Secretary. He’s Broken Many of Them.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KFF Health News</font>",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "c6ce613d522465a8d9f967307f22e542",
       "title": "US vaccine panel retreats from mRNA Covid review ahead of midterms | Trump administration - The Guardian",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQ1NiNnpGdnFkYUxyekt6UjVJUnlpNFBmZkJvOWxaY2xIaWdtWVNFb25WeThWNy1jaTR0VklLNFpKbGpTNXpvQVA3UkRnYUZwSDNsSHE1R3RqeUlETmpsNXdlUDFUZVhlTjZKVmJlRWY2VGZOSDhOMU83dVZjVXA1RHhzRzczYVE?oc=5",
@@ -3606,6 +3549,18 @@
       "topics": [
         "vaccine"
       ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "d54512fc24c9744e5b8df700952cc6bf",
+      "title": "RFK Jr. Made Promises in Order To Become Health Secretary. He’s Broken Many of Them. - KFF Health News",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVl5YVlDX3o5d1Z4MndkRWNiMmJUYUtTSUk0a3pvbDlNQTg1TlNxd01idWRQQU1HUFhlalNjeWlCV0lxUklfUTZteHloTmVQWjNnZ1lDbzgwMTl6S1UwWF9QZm54NEg0R05GX0g0VjNIZlMtMGlieS1hNF9IWjFnMWlvc0RsdWZDNl8weFkwMVhFem1WSVRUMTg5dHBUX0VfcHN4b3dfSFRTZw?oc=5",
+      "source": "KFF Health News",
+      "date": "Fri, 13 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVl5YVlDX3o5d1Z4MndkRWNiMmJUYUtTSUk0a3pvbDlNQTg1TlNxd01idWRQQU1HUFhlalNjeWlCV0lxUklfUTZteHloTmVQWjNnZ1lDbzgwMTl6S1UwWF9QZm54NEg0R05GX0g0VjNIZlMtMGlieS1hNF9IWjFnMWlvc0RsdWZDNl8weFkwMVhFem1WSVRUMTg5dHBUX0VfcHN4b3dfSFRTZw?oc=5\" target=\"_blank\">RFK Jr. Made Promises in Order To Become Health Secretary. He’s Broken Many of Them.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KFF Health News</font>",
+      "sentiment": "neutral",
+      "topics": [],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -3801,27 +3756,13 @@
     },
     {
       "article_id": "0ffe8c725c7f98d46f5d966b9e68db52",
-      "title": "Takeaways from surgeon general nominee Casey Means’ Senate confirmation hearing - WYFF News 4",
+      "title": "Takeaways from surgeon general nominee Casey Means’ Senate confirmation hearing - WYFF",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPSWoyQ3FaZjBUZUNkWDZVamJYZkhjZlEyaXpOU2dNcE1pNXJoMWdHSkIxNUFIal91TU5yY2hMUDNQTUlxWktyZnRNRzNlaktkSFhhTy1yMm5TaEg5TjA1b1VXcHRRS09La0luNHdOa2RHT2RSd25qV1JxVHlXRm9tZVgyOTlDZHdnNHVORg?oc=5",
-      "source": "WYFF News 4",
+      "source": "WYFF",
       "date": "Wed, 25 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxPSWoyQ3FaZjBUZUNkWDZVamJYZkhjZlEyaXpOU2dNcE1pNXJoMWdHSkIxNUFIal91TU5yY2hMUDNQTUlxWktyZnRNRzNlaktkSFhhTy1yMm5TaEg5TjA1b1VXcHRRS09La0luNHdOa2RHT2RSd25qV1JxVHlXRm9tZVgyOTlDZHdnNHVORg?oc=5\" target=\"_blank\">Takeaways from surgeon general nominee Casey Means’ Senate confirmation hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WYFF News 4</font>",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxPSWoyQ3FaZjBUZUNkWDZVamJYZkhjZlEyaXpOU2dNcE1pNXJoMWdHSkIxNUFIal91TU5yY2hMUDNQTUlxWktyZnRNRzNlaktkSFhhTy1yMm5TaEg5TjA1b1VXcHRRS09La0luNHdOa2RHT2RSd25qV1JxVHlXRm9tZVgyOTlDZHdnNHVORg?oc=5\" target=\"_blank\">Takeaways from surgeon general nominee Casey Means’ Senate confirmation hearing</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WYFF</font>",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "63d7608b2244e199677ba7ade88bf9cd",
-      "title": "Five months after Sen. Bill Cassidy asked RFK Jr. to testify, it still hasn't happened - NBC News",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdXNZTWdZTUEyWEtyQ2FpdUZFeVdoemJTbDBsNjVHNlBkNGVUVlZkX3ZKOW9NN05KeGhvVXRkSS1VQ0FJb0FJUUFOaFg4ZXNCNkR4ekN3WEhuWXRTejdCeEFzRmhRZXFXeTZTQ1V6ZGxCMEJDUVBPOFRuWDRVM0ZzaVlNblQ0VWM0MFFSRVBKc2FvcllkUUN2c3lfeFlaRTFId2NCN3pOaWUxb0FZajlJRzExeHZ0ejJfTDdyQ3BTZlk?oc=5",
-      "source": "NBC News",
-      "date": "Tue, 17 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdXNZTWdZTUEyWEtyQ2FpdUZFeVdoemJTbDBsNjVHNlBkNGVUVlZkX3ZKOW9NN05KeGhvVXRkSS1VQ0FJb0FJUUFOaFg4ZXNCNkR4ekN3WEhuWXRTejdCeEFzRmhRZXFXeTZTQ1V6ZGxCMEJDUVBPOFRuWDRVM0ZzaVlNblQ0VWM0MFFSRVBKc2FvcllkUUN2c3lfeFlaRTFId2NCN3pOaWUxb0FZajlJRzExeHZ0ejJfTDdyQ3BTZlk?oc=5\" target=\"_blank\">Five months after Sen. Bill Cassidy asked RFK Jr. to testify, it still hasn't happened</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NBC News</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -3855,6 +3796,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "7edce3f9cb52ab389b60972ec239755c",
+      "title": "WATCH: Ousted CDC head Monarez warns senators that RFK Jr. is endangering public health - PBS",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFRXNHNId3p0ZmtzeHUxM0pmTHRVWWlyOXFrNlNSaE9fNjVDR01OMW5iSkhTVDRGdXdtWXJCOTRmd3dOZmQwc2RnSFVDd0hUTmxDNk9GTE90QnlFOUhMd2U2UEFJazVyaU9ENUxYdkJWcVM4U1hidE5RRlN5cEVBZ1AxMUh3X0FqV24xV0NENnQzbk9RMG5ldW5MbzBXZjdWSnkzYmx5ZUUwNmVBdEp1YUx30gG3AUFVX3lxTE9veGdnTXZfQUU3REZWYnpDZkxyTlMwQ1dQeWRoSkE4QkxqNTRzOGJucmViMVZJanZEMVlKNXgxZVE3ZXdzUV9ZaWhic1ktX0NZNEhZb3VYeWxncU01VzB0aWc3Z0Y2TDI2R01DblBvcktBd0RvQkpFdFlGb0thVV9ZaEQ5Qll5RThESWZwU3F4UmlteEhFbXAwMnRILWFhSW9kaldoeXVGY3V1Und2UVlvV0R5RGppOA?oc=5",
+      "source": "PBS",
+      "date": "Wed, 17 Sep 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFRXNHNId3p0ZmtzeHUxM0pmTHRVWWlyOXFrNlNSaE9fNjVDR01OMW5iSkhTVDRGdXdtWXJCOTRmd3dOZmQwc2RnSFVDd0hUTmxDNk9GTE90QnlFOUhMd2U2UEFJazVyaU9ENUxYdkJWcVM4U1hidE5RRlN5cEVBZ1AxMUh3X0FqV24xV0NENnQzbk9RMG5ldW5MbzBXZjdWSnkzYmx5ZUUwNmVBdEp1YUx30gG3AUFVX3lxTE9veGdnTXZfQUU3REZWYnpDZkxyTlMwQ1dQeWRoSkE4QkxqNTRzOGJucmViMVZJanZEMVlKNXgxZVE3ZXdzUV9ZaWhic1ktX0NZNEhZb3VYeWxncU01VzB0aWc3Z0Y2TDI2R01DblBvcktBd0RvQkpFdFlGb0thVV9ZaEQ5Qll5RThESWZwU3F4UmlteEhFbXAwMn",
+      "sentiment": "neutral",
+      "topics": [
+        "public health"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "69f389133ea846fe3f0115d2f1491c00",
       "title": "Pediatricians, public health leaders sue to nix new vaccine schedule as RFK Jr. appoints 2 OB/GYNs to ACIP - Medical Economics",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPQ085eC1kdmh4Ulgtd1dGU05TRm1MVWE2N0YzdGI1ZjV1X1JQWnBOU2g0OURpekpjcWFPWk04bUxJRGZmdkhuUXc1RGg1ZTJGTzNpNFZmNUdyOFJqM2FsazVWWDN6SGp0X2xSN0NmMnl1dzR1bWFITGJDd1lwcXlMdVVzMHpYblZUdUJ4cXpRTTl2ckNXOV9hYWlyTkZocXF2TVZrRUNPNS1YdUFoM2g1dlVXYUtYOHNIT3pRdFJVM2JiTkp3ZkVqenRGbTRQcGkzOUlxMDFjLUFaZw?oc=5",
@@ -3864,20 +3819,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "public health"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "7edce3f9cb52ab389b60972ec239755c",
-      "title": "WATCH: Ousted CDC head Monarez warns senators that RFK Jr. is endangering public health - PBS",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFRXNHNId3p0ZmtzeHUxM0pmTHRVWWlyOXFrNlNSaE9fNjVDR01OMW5iSkhTVDRGdXdtWXJCOTRmd3dOZmQwc2RnSFVDd0hUTmxDNk9GTE90QnlFOUhMd2U2UEFJazVyaU9ENUxYdkJWcVM4U1hidE5RRlN5cEVBZ1AxMUh3X0FqV24xV0NENnQzbk9RMG5ldW5MbzBXZjdWSnkzYmx5ZUUwNmVBdEp1YUx30gG3AUFVX3lxTE9veGdnTXZfQUU3REZWYnpDZkxyTlMwQ1dQeWRoSkE4QkxqNTRzOGJucmViMVZJanZEMVlKNXgxZVE3ZXdzUV9ZaWhic1ktX0NZNEhZb3VYeWxncU01VzB0aWc3Z0Y2TDI2R01DblBvcktBd0RvQkpFdFlGb0thVV9ZaEQ5Qll5RThESWZwU3F4UmlteEhFbXAwMnRILWFhSW9kaldoeXVGY3V1Und2UVlvV0R5RGppOA?oc=5",
-      "source": "PBS",
-      "date": "Wed, 17 Sep 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFRXNHNId3p0ZmtzeHUxM0pmTHRVWWlyOXFrNlNSaE9fNjVDR01OMW5iSkhTVDRGdXdtWXJCOTRmd3dOZmQwc2RnSFVDd0hUTmxDNk9GTE90QnlFOUhMd2U2UEFJazVyaU9ENUxYdkJWcVM4U1hidE5RRlN5cEVBZ1AxMUh3X0FqV24xV0NENnQzbk9RMG5ldW5MbzBXZjdWSnkzYmx5ZUUwNmVBdEp1YUx30gG3AUFVX3lxTE9veGdnTXZfQUU3REZWYnpDZkxyTlMwQ1dQeWRoSkE4QkxqNTRzOGJucmViMVZJanZEMVlKNXgxZVE3ZXdzUV9ZaWhic1ktX0NZNEhZb3VYeWxncU01VzB0aWc3Z0Y2TDI2R01DblBvcktBd0RvQkpFdFlGb0thVV9ZaEQ5Qll5RThESWZwU3F4UmlteEhFbXAwMn",
-      "sentiment": "neutral",
-      "topics": [
         "public health"
       ],
       "mentioned_names": [],
@@ -3982,20 +3923,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "aeb026ea95230fb3f83552943535a1f7",
-      "title": "Senators from both parties grilled RFK Jr. on vaccines and more - NPR",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMGNBS0ZDUWgyT3BiV0RhMjFZWmNHNzJQYS1ZYXFLY0Vhdnp4VzJuN2ZmZFdVT0tZUi05cUY5cGNBLVNXVGM4YUNPUVgyNXA5eE9Ub3R6ZUoyYTRidUVBQjFudXFoZzVYa2tXaVo0Qzd6ZVlwSXhPcy0xSzJ3VGpsRDdpTXZXeDk5Vk0wQW15YUpiVFZrVk1lc24zM2ZtczN3WDJ2c0FWVkRRYkZHNVdR?oc=5",
-      "source": "NPR",
-      "date": "Thu, 04 Sep 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPMGNBS0ZDUWgyT3BiV0RhMjFZWmNHNzJQYS1ZYXFLY0Vhdnp4VzJuN2ZmZFdVT0tZUi05cUY5cGNBLVNXVGM4YUNPUVgyNXA5eE9Ub3R6ZUoyYTRidUVBQjFudXFoZzVYa2tXaVo0Qzd6ZVlwSXhPcy0xSzJ3VGpsRDdpTXZXeDk5Vk0wQW15YUpiVFZrVk1lc24zM2ZtczN3WDJ2c0FWVkRRYkZHNVdR?oc=5\" target=\"_blank\">Senators from both parties grilled RFK Jr. on vaccines and more</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NPR</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "c12aa6c6eedba00354e4ea098374243f",
       "title": "Trump says RFK Jr. 'means very well' after his Senate testimony on vaccine policy - ABC News - Breaking News, Latest News and Videos",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdllSQjVpN3QyQl9GOUtFSGM1emszUlNfdW1vVWp6ZTBWR1RfUk8xOXBCeEphSDkteUtKcGk3Wmtucy1EdGNVbjB5Q1NENkQ5YnA4dFNOU3Zldkd3T0VJWTZ6bTNTM3pqcDFlT2VSSm5jcnFqb21aZXVZTkt2dWZ4YnQxUzhUUDRISXVfTUFzT0JtNjlqLTNGVEZIREjSAaIBQVVfeXFMT2dvWkpkbDlyYnZYLS1UX0YwNDliODVxOUdrU25oU0FsY0RhRmVpSE8xOWduRFNGdS1tVGFRdEQ4bzQxVUN2S1d6a0FncU52WjRPYS16TWhjLUdoSEY0RExzSzhCQnJoSVZrOHcwS1hrUUNTUlU2MVV6R3RyWG5qY2RyQVZIX0gtY1JjR2FpSlAzWjZnLUdxUzdQNXRKalc5NjBR?oc=5",
@@ -4026,6 +3953,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "aeb026ea95230fb3f83552943535a1f7",
+      "title": "Senators from both parties grilled RFK Jr. on vaccines and more - NPR",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMGNBS0ZDUWgyT3BiV0RhMjFZWmNHNzJQYS1ZYXFLY0Vhdnp4VzJuN2ZmZFdVT0tZUi05cUY5cGNBLVNXVGM4YUNPUVgyNXA5eE9Ub3R6ZUoyYTRidUVBQjFudXFoZzVYa2tXaVo0Qzd6ZVlwSXhPcy0xSzJ3VGpsRDdpTXZXeDk5Vk0wQW15YUpiVFZrVk1lc24zM2ZtczN3WDJ2c0FWVkRRYkZHNVdR?oc=5",
+      "source": "NPR",
+      "date": "Thu, 04 Sep 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPMGNBS0ZDUWgyT3BiV0RhMjFZWmNHNzJQYS1ZYXFLY0Vhdnp4VzJuN2ZmZFdVT0tZUi05cUY5cGNBLVNXVGM4YUNPUVgyNXA5eE9Ub3R6ZUoyYTRidUVBQjFudXFoZzVYa2tXaVo0Qzd6ZVlwSXhPcy0xSzJ3VGpsRDdpTXZXeDk5Vk0wQW15YUpiVFZrVk1lc24zM2ZtczN3WDJ2c0FWVkRRYkZHNVdR?oc=5\" target=\"_blank\">Senators from both parties grilled RFK Jr. on vaccines and more</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">NPR</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "22411ca318a2821cd2b06f92fe219cad",
       "title": "WATCH: Ousted CDC Director Monarez's opening statement in Senate hearing on RFK Jr., kids' health - PBS",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQ3lNNHlGampqYnRESDNickV1WmFvWGFPcmpHVUpKRVh6S1NXRWtqNmFFeFVqa2tWT09xLXdkczRISE5yNHdDazhEdHdXX29hLU44SlVaM3NreTE5OERHTVpaMU91ZFpuQnp3a3p4dzhqbHUtUmdFMkczYWtEX2k5WERBQXlhTTY2Mmh0bFhmQnNpbXNSajJyRFdCOE53c3lxZGFCMU1VZFFYNVF3UWpWRzNsTldrSnh4NS1jMG9pNjdCRG5Ic0dlWjdR0gHPAUFVX3lxTE9SbzVtSTZqajVVbFFiSjg3bVdtVlhpYUpPQ0ZPQnl3QTAyYnZvYmZLczdNRlh3TFlaSXpzRVNWZ3o1STRDNVFreURpMWlrb0MtaE9jRjMzQVBGckFic25pSTV3Uk9FMTBIdGFGcHpYdDBXd05vU3BkVlRjYmNOQUdFN1p3RVUyYlcxNVM4Uzh0ZzQydTR2ZWpUVy1rZzFnOTRPVDFaZVF4SlVXajUta2Nsa3VGQW9WTEJpY0NoQW03aEdpcWFWN1RhcGxkWUNVRQ?oc=5",
@@ -4050,6 +3991,20 @@
       "topics": [
         "vaccine",
         "public health"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "044ec8618e019726e9fc912b623b33de",
+      "title": "Connecticut Vaccine Access Panel Disrupted By Hostile Crowd - CT News Junkie",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNT1NwZ1pfTDRaY1cyWVJBLVQ0bHlMRVJuYy11YWlBWjRqT2c5c2t2ak1ocHhXNnRUd2hKWE4wREVYSldNY01YeThwV0xsNGZxaUlNOC1xdzYzeV9LNmtvVFhWSXZrSVVPYjJTUnZBa01wa3FnaEdLdm9TaEdXY01VOVpJX040bDBQY1FIX1lBU1FjM2pqSzB2SDAzVmc?oc=5",
+      "source": "CT News Junkie",
+      "date": "Wed, 24 Sep 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNT1NwZ1pfTDRaY1cyWVJBLVQ0bHlMRVJuYy11YWlBWjRqT2c5c2t2ak1ocHhXNnRUd2hKWE4wREVYSldNY01YeThwV0xsNGZxaUlNOC1xdzYzeV9LNmtvVFhWSXZrSVVPYjJTUnZBa01wa3FnaEdLdm9TaEdXY01VOVpJX040bDBQY1FIX1lBU1FjM2pqSzB2SDAzVmc?oc=5\" target=\"_blank\">Connecticut Vaccine Access Panel Disrupted By Hostile Crowd</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT News Junkie</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -4115,20 +4070,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNVhMZFhDQ0FKSWo5OTI5YVF2RGNBdTl5ZWV4bXgyNWtmQVkzaWpzSUZjd2lmRmRwVG8wNmRmcnNmRHRISFhPS0lPUzJxN2xNanAzbVh0UjJBbWx2eWZGWkdGUXFQcTl5WUxXb1lwQjZXdVVxWnJQcElBeXRKcVc4dUM2MS1QeTVtSlZSSXA2aFdmd0Y5T3JRWWJMM0JpLWluUUM3NnY0T2h1Z2paakRkaTRwVG42TDI3?oc=5\" target=\"_blank\">Health freedom at the forefront of individual rights vs. government debate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Arizona Capitol Times</font>",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "587e9ea45f324f9d483ab9d6aa9f8243",
-      "title": "DeSantis criticizes House for not passing ‘medical freedom’ bill - Orlando Sentinel",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeGozTVdXb3JjSkp1RGNCd01STkoxYlNqLV9hRGxwWG9DTG1FMmt3cXFqaUJNOGF4WC0wOWNOeHVlOWNnYTd6MTdTSUs1R3JFUXNLN2N1TlRkTWJyMkhjeFA1VDAwTGJIeFNZMzhmczhGSnBNUFdqaHBzZldFd3FxZWpsc19PMURaaTRCc3oxUXRSOTFfbEFGcndkN2ExeldKMFNNYkJ5d2p1Zw?oc=5",
-      "source": "Orlando Sentinel",
-      "date": "Fri, 13 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeGozTVdXb3JjSkp1RGNCd01STkoxYlNqLV9hRGxwWG9DTG1FMmt3cXFqaUJNOGF4WC0wOWNOeHVlOWNnYTd6MTdTSUs1R3JFUXNLN2N1TlRkTWJyMkhjeFA1VDAwTGJIeFNZMzhmczhGSnBNUFdqaHBzZldFd3FxZWpsc19PMURaaTRCc3oxUXRSOTFfbEFGcndkN2ExeldKMFNNYkJ5d2p1Zw?oc=5\" target=\"_blank\">DeSantis criticizes House for not passing ‘medical freedom’ bill</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Orlando Sentinel</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -4353,6 +4294,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "d2bfadff2e5a86a2ba96d4bad3ce4d82",
+      "title": "DeSantis criticizes House for not passing ‘medical freedom’ bill - Sun Sentinel",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNmlNbE01ZVNURmVRaXZlaEZaaF9UcjA0Vm8wbk43LTdMV185VlViOTRFSU55czN1MGcwQTdJeDJwcW1oUXM5UWNoUmV4V3R6RVV3cnZrcndiMWFYSWkwNUYxc1J2X2hOZnRGRzhmdVVaaHlqTUVLQjN0dm4wRHJpWGd1OFZ4dWM2by1rRUczVTRMb3hDNFhWdHJPdm1sZUpJdjE5eVdR?oc=5",
+      "source": "Sun Sentinel",
+      "date": "Fri, 13 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNNmlNbE01ZVNURmVRaXZlaEZaaF9UcjA0Vm8wbk43LTdMV185VlViOTRFSU55czN1MGcwQTdJeDJwcW1oUXM5UWNoUmV4V3R6RVV3cnZrcndiMWFYSWkwNUYxc1J2X2hOZnRGRzhmdVVaaHlqTUVLQjN0dm4wRHJpWGd1OFZ4dWM2by1rRUczVTRMb3hDNFhWdHJPdm1sZUpJdjE5eVdR?oc=5\" target=\"_blank\">DeSantis criticizes House for not passing ‘medical freedom’ bill</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sun Sentinel</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "c2a804796c781dbe7ff410fd07f99794",
       "title": "Florida Senate passes bill to widen K-12 vaccine exemptions, bill now in House limbo - WPEC",
       "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxPeUgtaWtQLUcxdjgyRWlmRl9ld2J0UmViTy1SVllJWXpUYkU1d3Rsc1habTktMWNaQS1HeGNXWUxUeXluTnUtbGFIdXFHa3JWRW9qYVRjeVozMnBJa28tWU9kVGZkNThoM1hUZlRJeUN0M3hfeTdiVFRNSHdNakFOY3JvVzBYVl9BWUtLaE43NmR5eDVsb0pnVzkydk1XaFJxOFdwSUgzR0dKNmU2RXhtaVNVRktvclJRaXRxNG15UllWMlBHLWdZX0RYM1RIdjdFaHJxMGd1OGMyNHJBTWxxc0N2UWg5eXpxc1RLREZ3amJNNEhZSTQ5NERHV3FIQWkxYTVvOVlublhLLW0wY2ZUU3ZSSkMxZVRXekNfcEpaaDk2ZnBmSUNITHhtSm1wZWZqbFpoNkozeTlJZ2UxSkM1SW92NA?oc=5",
@@ -4406,18 +4361,6 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "4659261cb62065ed14cb1e14945fd644",
-      "title": "DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda - WCTV",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5",
-      "source": "WCTV",
-      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5\" target=\"_blank\">DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WCTV</font>",
-      "sentiment": "neutral",
-      "topics": [],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -4478,17 +4421,14 @@
       "legislator_ids": []
     },
     {
-      "article_id": "b7f3599a46bdc0eb7d05f9a8684e6e06",
-      "title": "What to know about DeSantis’ push this week to change Florida’s vaccine mandates - Miami Herald",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5zcjFxVUdveUx0c3d1NHdrX3VOb0hTZVdfdVR6bDE0LVpYNjE2b2lwVVFzYTJCRlZwX2ZxRVY0bjlpWHg1M1gzV01RbHk0UlZhWDJiMFNUMnlIZllTTW5MWXdqbzF4bnpySDVlOHVLUG1NUGR3LWFNdWZFMWl0M2RkRGZGZ3hXUUJpV2FYSkZJNXfSAZMBQVVfeXFMTm50cnQ2TllDV0hiQlJqUFZyUEg3WExtUUV6ajR0X2piWFRyNFdOOWJHVDhOV1lfdnNHVkJJcGhTZ0YwWlhEMnQwM2pEMWh0SW9tcmpDQTdyYWJwMHRPcG5iRV90clZtWmFwYzdsaC1jY1VzUmx5SldMVzVrQ2tHSzVNTXZiVGVhTU1UdUNmMGtKcWQw?oc=5",
-      "source": "Miami Herald",
-      "date": "Mon, 27 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5zcjFxVUdveUx0c3d1NHdrX3VOb0hTZVdfdVR6bDE0LVpYNjE2b2lwVVFzYTJCRlZwX2ZxRVY0bjlpWHg1M1gzV01RbHk0UlZhWDJiMFNUMnlIZllTTW5MWXdqbzF4bnpySDVlOHVLUG1NUGR3LWFNdWZFMWl0M2RkRGZGZ3hXUUJpV2FYSkZJNXfSAZMBQVVfeXFMTm50cnQ2TllDV0hiQlJqUFZyUEg3WExtUUV6ajR0X2piWFRyNFdOOWJHVDhOV1lfdnNHVkJJcGhTZ0YwWlhEMnQwM2pEMWh0SW9tcmpDQTdyYWJwMHRPcG5iRV90clZtWmFwYzdsaC1jY1VzUmx5SldMVzVrQ2tHSzVNTXZiVGVhTU1UdUNmMGtKcWQw?oc=5\" target=\"_blank\">What to know about DeSantis",
+      "article_id": "4659261cb62065ed14cb1e14945fd644",
+      "title": "DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda - WCTV",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5",
+      "source": "WCTV",
+      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5\" target=\"_blank\">DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WCTV</font>",
       "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate"
-      ],
+      "topics": [],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -4503,6 +4443,21 @@
       "topics": [
         "vaccine",
         "public health",
+        "mandate"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "b7f3599a46bdc0eb7d05f9a8684e6e06",
+      "title": "What to know about DeSantis’ push this week to change Florida’s vaccine mandates - Miami Herald",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5zcjFxVUdveUx0c3d1NHdrX3VOb0hTZVdfdVR6bDE0LVpYNjE2b2lwVVFzYTJCRlZwX2ZxRVY0bjlpWHg1M1gzV01RbHk0UlZhWDJiMFNUMnlIZllTTW5MWXdqbzF4bnpySDVlOHVLUG1NUGR3LWFNdWZFMWl0M2RkRGZGZ3hXUUJpV2FYSkZJNXfSAZMBQVVfeXFMTm50cnQ2TllDV0hiQlJqUFZyUEg3WExtUUV6ajR0X2piWFRyNFdOOWJHVDhOV1lfdnNHVkJJcGhTZ0YwWlhEMnQwM2pEMWh0SW9tcmpDQTdyYWJwMHRPcG5iRV90clZtWmFwYzdsaC1jY1VzUmx5SldMVzVrQ2tHSzVNTXZiVGVhTU1UdUNmMGtKcWQw?oc=5",
+      "source": "Miami Herald",
+      "date": "Mon, 27 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5zcjFxVUdveUx0c3d1NHdrX3VOb0hTZVdfdVR6bDE0LVpYNjE2b2lwVVFzYTJCRlZwX2ZxRVY0bjlpWHg1M1gzV01RbHk0UlZhWDJiMFNUMnlIZllTTW5MWXdqbzF4bnpySDVlOHVLUG1NUGR3LWFNdWZFMWl0M2RkRGZGZ3hXUUJpV2FYSkZJNXfSAZMBQVVfeXFMTm50cnQ2TllDV0hiQlJqUFZyUEg3WExtUUV6ajR0X2piWFRyNFdOOWJHVDhOV1lfdnNHVkJJcGhTZ0YwWlhEMnQwM2pEMWh0SW9tcmpDQTdyYWJwMHRPcG5iRV90clZtWmFwYzdsaC1jY1VzUmx5SldMVzVrQ2tHSzVNTXZiVGVhTU1UdUNmMGtKcWQw?oc=5\" target=\"_blank\">What to know about DeSantis",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
         "mandate"
       ],
       "mentioned_names": [],
@@ -4872,6 +4827,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "32256a45caeab089681a8175f03f8be8",
+      "title": "Iowa bill banning vaccine mandates advances toward governor's desk - KCCI",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaGozZjcxZEVNVHRqSk9CcFdOWGVUOEZoX1Zyb2xMOWdrN1NXUndac0VCby1SQkFjeTVvZ05VcC1TTUZ0RVJvcjR2ZHZUcVRTMlVaclJ6SmptQ1U4NU9xSENvdWhjZ2FDbUNGa0VtQmVLeGFXZzR3RmRwSzU1NGZrRlVoNS1PX3FFYVlORHhjSTg4SG5BQlFBckRsamRJZjN0U08tZ01R?oc=5",
+      "source": "KCCI",
+      "date": "Thu, 12 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOaGozZjcxZEVNVHRqSk9CcFdOWGVUOEZoX1Zyb2xMOWdrN1NXUndac0VCby1SQkFjeTVvZ05VcC1TTUZ0RVJvcjR2ZHZUcVRTMlVaclJ6SmptQ1U4NU9xSENvdWhjZ2FDbUNGa0VtQmVLeGFXZzR3RmRwSzU1NGZrRlVoNS1PX3FFYVlORHhjSTg4SG5BQlFBckRsamRJZjN0U08tZ01R?oc=5\" target=\"_blank\">Iowa bill banning vaccine mandates advances toward governor's desk</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KCCI</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "72e521f9814b23a309292b17b8a4a363",
       "title": "DeSantis slams House leadership for not taking up medical freedom, AI bills in special session - Florida’s Voice",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWl4eGdjSElvLVlHRTRvdmZ5ZHJEXzBrMlNpbThsOHVzRXFnTV83cWxsdUN0WFRnNlItVDBHTS1ybUt4SjczVDJadmtWamRfM21acW1rcXloQndfZ0Y1MmJMbEk4OVZUUzd3YWZsUnhLOXh3VVV1UWZTazcyazItTGFRTlVMb3VWN0dLR3NrejJGeTdCNXp1eEYzZ1M5MVBWRHExZzJkcEdXdmZTTUxTX0RQR2lmeVBLMkE?oc=5",
@@ -4894,22 +4865,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTFBKSk5HV202MUFfbW1NeXdqZHBOVHNTV2VJLTA5VTdpQWx3RUZnSXIyblVOM3BlSllyRDZ4dG9tTlpBQjF3SGNOaXItOGJBckNwaWk2V1VVcWRsMzJjT1duc1lYalJkOVMyNGFzZnpLZFpiaG90MDBr0gF8QVVfeXFMT29BRDJHOS10ZXZ4VDktSi1zWUZKWlVRNl8xUGVkTmFYU0dqak11QXBGT0xZbkY0dTBfWHRPLURidzNhQjQ1dUkzWko2YnpmcHhSNTVva0Jpc3ViUXczR3kzbDBocE1oM3hrbGtBSUwzOWJxZHZSLUtpR3A0WQ?oc=5\" target=\"_blank\">Florida Senate passes ‘Medical Freedom Act’</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Capitolist</",
       "sentiment": "positive",
       "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "32256a45caeab089681a8175f03f8be8",
-      "title": "Iowa bill banning vaccine mandates advances toward governor's desk - KCCI",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaGozZjcxZEVNVHRqSk9CcFdOWGVUOEZoX1Zyb2xMOWdrN1NXUndac0VCby1SQkFjeTVvZ05VcC1TTUZ0RVJvcjR2ZHZUcVRTMlVaclJ6SmptQ1U4NU9xSENvdWhjZ2FDbUNGa0VtQmVLeGFXZzR3RmRwSzU1NGZrRlVoNS1PX3FFYVlORHhjSTg4SG5BQlFBckRsamRJZjN0U08tZ01R?oc=5",
-      "source": "KCCI",
-      "date": "Thu, 12 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOaGozZjcxZEVNVHRqSk9CcFdOWGVUOEZoX1Zyb2xMOWdrN1NXUndac0VCby1SQkFjeTVvZ05VcC1TTUZ0RVJvcjR2ZHZUcVRTMlVaclJ6SmptQ1U4NU9xSENvdWhjZ2FDbUNGa0VtQmVLeGFXZzR3RmRwSzU1NGZrRlVoNS1PX3FFYVlORHhjSTg4SG5BQlFBckRsamRJZjN0U08tZ01R?oc=5\" target=\"_blank\">Iowa bill banning vaccine mandates advances toward governor's desk</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KCCI</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
         "legislation"
       ],
       "mentioned_names": [],
@@ -4979,20 +4934,6 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4AFBVV95cUxNaTFRSG1ZTFduTC1keGNGX25ZR1NucWhIYnk5SDBpN0EwTzB4QUg4NkJ6N1lOOXREYUtGaWxNVjlNUWxSbGFZeUlTUlc5NTI4NnN3LTdHMy1CQ1JCQ0xzbUhiMXpJODl2eVlabFRzU2FVR3ZMeDdtMU9aUWd6SUZGQkh6YnJscG9EeVJJWGJNZkdrYmVzeTJIU3RyT1U5ZlFHaEpZRU9TLVdsTm9lbHh6eHVocWZ4OUNFWnFEUVc5dVZWd1FiMU5DZWJmRGNYcVQ2TXZ6alZaSzc1TFhORHFaOQ?oc=5\" target=\"_blank\">Florida House adjourns minutes into special session, set to take up redistricting maps but not AI or medical freedom agenda</",
       "sentiment": "neutral",
       "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "1ecd9fe525fc2d3fb05e691ece85ac1b",
-      "title": "Kristin Landers: Medical freedom may become law in Alabama - 1819 News",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPR0FXazBhcTRpRkRaVWpDdjU3UUJMUkcwOU4yTnhCTlFERENUWVB2M1JjNW90aUl0Q1A0aVRnMkdsUk5DWTZ5UlBGdUg4bzdPRkY1Y2Z1MHVlVWM1OVBxUDJRbVB0TER1bWpHSU9ra2pXaklKOWt1REF1QTRRM0JicUc3YTdHZFI4cTM0R3BHdTZoZw?oc=5",
-      "source": "1819 News",
-      "date": "Thu, 22 Jan 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPR0FXazBhcTRpRkRaVWpDdjU3UUJMUkcwOU4yTnhCTlFERENUWVB2M1JjNW90aUl0Q1A0aVRnMkdsUk5DWTZ5UlBGdUg4bzdPRkY1Y2Z1MHVlVWM1OVBxUDJRbVB0TER1bWpHSU9ra2pXaklKOWt1REF1QTRRM0JicUc3YTdHZFI4cTM0R3BHdTZoZw?oc=5\" target=\"_blank\">Kristin Landers: Medical freedom may become law in Alabama</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">1819 News</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -5138,20 +5079,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "5d6c7b5957c1d15916a4ce93e346054b",
-      "title": "Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA - Cowboy State Daily",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5",
-      "source": "Cowboy State Daily",
-      "date": "Wed, 28 Jan 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5\" target=\"_blank\">Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Cowboy State Daily</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "921bba3e37396f9fad7472864e0b2adc",
       "title": "Florida Vaccine Informed Consent Bill Is Killed in Special Session - National Vaccine Information Center (NVIC)",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSEZCb3JUREFpcXBEQ25MZHl3dkhIbVV4YngyYklmbHpLTmlfQnUyc0tLV3NBN083eWhQUEhzT3lIemtrbXVLVTRlMUJXQVpCWnd1QVA3MzVpU1l0dnNJZlpacGhCR0dncVhvUWRfNlNjbTV6SVZjeFVway1WS2J4XzluMDlHM01kdm1kTGg3a3l3ZjBwQzdGUFJiYjlvOXZKUFh1LWlBVkpLUlE?oc=5",
@@ -5161,6 +5088,20 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "5d6c7b5957c1d15916a4ce93e346054b",
+      "title": "Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA - Cowboy State Daily",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5",
+      "source": "Cowboy State Daily",
+      "date": "Wed, 28 Jan 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPTmhfWXFzemRqNXExb1UtNmhOMjZ4Y1MycDlxSl9UWG9UTEpHUTZ2aUJfZ2tKQ3djWkx0SlRYeVFzT21vNjFzaEhHQTRhVWFsejhQbDZwQXdPUW56d2gxbzVMZEkwWnpjcFB2dC1CY1VNMHd3clpObzRNTElqN1gxX0pZbDFxeXo3NXNzV3pSOVViTHRUS0h0TF9jRkVEdXBKZ1lwOA?oc=5\" target=\"_blank\">Wyoming Lawmaker Pushes ‘Stem Cell Freedom Act,’ Challenging FDA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Cowboy State Daily</font>",
+      "sentiment": "neutral",
+      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -5247,20 +5188,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "6e5d97e96f888e5388893ca48f53f37d",
-      "title": "After Gov. Little vetoes Idaho ‘medical freedom’ bill, Legislature pursues tweaks - Idaho Capital Sun",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPazVoOWRRM01UVlJzd3drcS0tcUhvMzRJa2ZCMEJYaTl6SDdMLWo5UkR1ODdlT0ZvVFRiazRHMEJVbDRIREpnZFo5T19lUWJxRVFPdlZHVzBiMDRpQWlmdEpnQkQwS0dBM0o0WWdiV1pkOWwzZjE2aExuZV9ueE5JV1NNc2RtSFpyRTVQT2hrQ0ZQY1V1bXNzZXNrdURubGw2T0k1QWxFbDFzZFNBdjVUQkFrOWtfTTY0?oc=5",
-      "source": "Idaho Capital Sun",
-      "date": "Tue, 01 Apr 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPazVoOWRRM01UVlJzd3drcS0tcUhvMzRJa2ZCMEJYaTl6SDdMLWo5UkR1ODdlT0ZvVFRiazRHMEJVbDRIREpnZFo5T19lUWJxRVFPdlZHVzBiMDRpQWlmdEpnQkQwS0dBM0o0WWdiV1pkOWwzZjE2aExuZV9ueE5JV1NNc2RtSFpyRTVQT2hrQ0ZQY1V1bXNzZXNrdURubGw2T0k1QWxFbDFzZFNBdjVUQkFrOWtfTTY0?oc=5\" target=\"_blank\">After Gov. Little vetoes Idaho ‘medical freedom’ bill, Legislature pursues tweaks</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Capital Sun</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "7ff8ea57a86e25c37705522483c2839e",
       "title": "Boise day care requires vaccines. Does revived Idaho ‘medical freedom’ bill affect that? - Idaho Statesman",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTVZxbG9VOTRmeU51d2xVUDZGUnQ3NU5PZlpiNERtSWk0cXlfaHc4N1FGTEExLWdIZ1BiQ0FFTDZHb1FObE9vUWNvVFJUMF9GUkFoMUVUcDNsWVZhU3NLaHhNemdmeXFONHNKVXpVZ3VMWUtZRTdyMnk4eVhHdmFzODNuOW1heEFyVlNFTGNwX2RWVnZ1RnBB0gGXAUFVX3lxTE9pc1dKTmFWSHhWNzcxTjl0OTV3TzlsU2VDTnRLQkdyaTBrcTg4dkRycmRra0g3TzFacVNKdnZtekxMRXpjdkFBLVpJbU1kQmY0VnllQUEtUGZ4WjcyYzB2Y3A1RE9ITDUtTGF6b1YxZ2hEWWg4M2poWGd6TGxqd01VdU9NSTdDUE1nS1BMWTZmTnJkWjRXRUE?oc=5",
@@ -5317,6 +5244,34 @@
         "education",
         "legislation"
       ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "e1dab5c7af2765e192be77be4c1b6d08",
+      "title": "Does Idaho’s ‘medical freedom’ law ban vaccine mandates? - NewsNation",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdURUbDhhX21iT3F5Q1YtN2gtdzdyT0ZZQlZtajB0bTRyV1pYaGNDUVgtamZiT213LVBkRHdtRU9XMXMwUERvZDNvcHlYYnp1aGVOam1tZWtCM2J1Z1FESzJjV3VXb2FEY3huRElXcV9XWlpSNXltdkZBNTcwUUhKQjl6WklMOWE0Vnd4UUJZcENfQdIBlwFBVV95cUxPSng5WWV2Qm4wLTFVSDdFR0JvOU1WV1psekhMdll1YTBHellYbVcwcHRGSWNnT25QcGRFT01oWmt4R212VmZDd1Y0a1gwbko2TXRrNmRVZGE5U200MUxHaHduSTh4cXZDdjhPUGJGTFVlUFh6ZF9KcnlXVXoxVWc5bEV3aWxYbTJzWkItT1REblAzb0J3Mjlz?oc=5",
+      "source": "NewsNation",
+      "date": "Thu, 04 Sep 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxQdURUbDhhX21iT3F5Q1YtN2gtdzdyT0ZZQlZtajB0bTRyV1pYaGNDUVgtamZiT213LVBkRHdtRU9XMXMwUERvZDNvcHlYYnp1aGVOam1tZWtCM2J1Z1FESzJjV3VXb2FEY3huRElXcV9XWlpSNXltdkZBNTcwUUhKQjl6WklMOWE0Vnd4UUJZcENfQdIBlwFBVV95cUxPSng5WWV2Qm4wLTFVSDdFR0JvOU1WV1psekhMdll1YTBHellYbVcwcHRGSWNnT25QcGRFT01oWmt4R212VmZDd1Y0a1gwbko2TXRrNmRVZGE5U200MUxHaHduSTh4cXZDdjhPUGJGTFVlUFh6ZF9KcnlXVXoxVWc5bEV3aWxYbTJzWkItT1REblAzb0J3Mjlz?oc=5\" target=\"_blank\">Does Idaho’s ‘medical f",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "ae8e35327f80903624ced49ca0ffcabe",
+      "title": "Numerous Organizations Condemn Legislators’ Attacks on Healthcare Freedom and Raise Alarm about Statehouse’s Anti-Democracy Legislative Process - ACLU of Kansas",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQdm5FMFlReWhTR3ZQbHJXQlljVVlzR3dpNTRjb2U1WEpJTHJPejY2WlJVLWh3ZzZlLWVpX0pTOFZsdklzWkw0djY3dEhPMEpmQXBfR2UzWlNqXzQ4M0xPU3ZKRTZGbW52aWJNSmhFZC10M004MEh1NHBUekprZjhudnp4b1NpdmRNSFgtdmdiYlM0OEdtaVhuYU1QUHVTNHhodWdBemdNcmw2U0VpbHhCNlJVU1A4dTB4WndSaUZkdkdEYnpjZ0xF?oc=5",
+      "source": "ACLU of Kansas",
+      "date": "Tue, 27 Feb 2024 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQdm5FMFlReWhTR3ZQbHJXQlljVVlzR3dpNTRjb2U1WEpJTHJPejY2WlJVLWh3ZzZlLWVpX0pTOFZsdklzWkw0djY3dEhPMEpmQXBfR2UzWlNqXzQ4M0xPU3ZKRTZGbW52aWJNSmhFZC10M004MEh1NHBUekprZjhudnp4b1NpdmRNSFgtdmdiYlM0OEdtaVhuYU1QUHVTNHhodWdBemdNcmw2U0VpbHhCNlJVU1A4dTB4WndSaUZkdkdEYnpjZ0xF?oc=5\" target=\"_blank\">Numerous Organizations Condemn Legislators’ Attacks on Healthcare Freedom and Raise Alarm about Statehouse’s Anti-Democracy Legislative Process</a>&nbsp;&nbsp;",
+      "sentiment": "neutral",
+      "topics": [],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -5871,6 +5826,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "0ba3f494859d44ea5d404b6406aa4e5a",
+      "title": "Rep. Melanie Miller and Proponents Testify on Baby Olivia Act - Ohio House of Representatives (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX3V1TUJESzEyR05tUzNuN3BfNy01aktNc3pWYlhrZlhaRnBfQkpDTzFKa2ZNaUVjNlVLdnVWV012aXpoN05oSzZNVGpIVUVYT0VoOEw2dklIbS1zZm1GMlZzd0MzWEFRbUJYM0llMFppYzhmM21WZjNtbUlsQ2hkNGhxRE5VY2xfazV2emF1S1Rfbzl5Y05ONDRlaTctTnZObjlXZVZvZnU1TFJLTFExY2pZZWxseDdXNmRJTDlR?oc=5",
+      "source": "Ohio House of Representatives (.gov)",
+      "date": "Thu, 30 Oct 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOX3V1TUJESzEyR05tUzNuN3BfNy01aktNc3pWYlhrZlhaRnBfQkpDTzFKa2ZNaUVjNlVLdnVWV012aXpoN05oSzZNVGpIVUVYT0VoOEw2dklIbS1zZm1GMlZzd0MzWEFRbUJYM0llMFppYzhmM21WZjNtbUlsQ2hkNGhxRE5VY2xfazV2emF1S1Rfbzl5Y05ONDRlaTctTnZObjlXZVZvZnU1TFJLTFExY2pZZWxseDdXNmRJTDlR?oc=5\" target=\"_blank\">Rep. Melanie Miller and Proponents Testify on Baby Olivia Act</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ohio House of Representatives (.gov)</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "4f114914ce1d46f32f447eef644e6c4e",
       "title": "WATCH: Trump signs a law returning whole milk to school lunches - PBS",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSk9qeVlOOUllWEc5cG5CQVh4NHpyOENSX19ISHUxMVVJV3Raa1R5Qko3SlRUNFlmQ0twcVo2RVhEaHNsd2Q2M2NwMU9YMzlKc3pzVG14Nzdtclhvek04aTE5ZXNaZzRoVzlJbU9zU3hWTWFHa01UcXNRY2FUejVRWDY0VHluWWVEcWZJTWdmSUpZeXNUN0ZV?oc=5",
@@ -5880,20 +5849,6 @@
       "sentiment": "neutral",
       "topics": [
         "education",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "0ba3f494859d44ea5d404b6406aa4e5a",
-      "title": "Rep. Melanie Miller and Proponents Testify on Baby Olivia Act - Ohio House of Representatives (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX3V1TUJESzEyR05tUzNuN3BfNy01aktNc3pWYlhrZlhaRnBfQkpDTzFKa2ZNaUVjNlVLdnVWV012aXpoN05oSzZNVGpIVUVYT0VoOEw2dklIbS1zZm1GMlZzd0MzWEFRbUJYM0llMFppYzhmM21WZjNtbUlsQ2hkNGhxRE5VY2xfazV2emF1S1Rfbzl5Y05ONDRlaTctTnZObjlXZVZvZnU1TFJLTFExY2pZZWxseDdXNmRJTDlR?oc=5",
-      "source": "Ohio House of Representatives (.gov)",
-      "date": "Thu, 30 Oct 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOX3V1TUJESzEyR05tUzNuN3BfNy01aktNc3pWYlhrZlhaRnBfQkpDTzFKa2ZNaUVjNlVLdnVWV012aXpoN05oSzZNVGpIVUVYT0VoOEw2dklIbS1zZm1GMlZzd0MzWEFRbUJYM0llMFppYzhmM21WZjNtbUlsQ2hkNGhxRE5VY2xfazV2emF1S1Rfbzl5Y05ONDRlaTctTnZObjlXZVZvZnU1TFJLTFExY2pZZWxseDdXNmRJTDlR?oc=5\" target=\"_blank\">Rep. Melanie Miller and Proponents Testify on Baby Olivia Act</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ohio House of Representatives (.gov)</font>",
-      "sentiment": "neutral",
-      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -6253,20 +6208,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "39721023727245f211a1f3924a6f0276",
-      "title": "Inside Idaho’s Long Legislative Battle Over Climate Change Education - PBS",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNHh1bHJCcVV2YmRueGhJSXY4NUJJTzZ1Q05QYnJaaFo2aTRHb2RLUERFcTJhLXRyaTJVY0xlOWx1bS0xMEdCYUhjVWtSLXB6UXVqWUZhVkZtS19CYTJqbmpib1hld0dEbXNWXzctQWpKcDN3OWFqNTh2TUJhMW4yWUFqNUFPdF9MZGprQm9CazBuZmpDSTRSaVBQS05zb3d0UUpib29KejlEcjdod1pBbA?oc=5",
-      "source": "PBS",
-      "date": "Fri, 20 Dec 2019 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNHh1bHJCcVV2YmRueGhJSXY4NUJJTzZ1Q05QYnJaaFo2aTRHb2RLUERFcTJhLXRyaTJVY0xlOWx1bS0xMEdCYUhjVWtSLXB6UXVqWUZhVkZtS19CYTJqbmpib1hld0dEbXNWXzctQWpKcDN3OWFqNTh2TUJhMW4yWUFqNUFPdF9MZGprQm9CazBuZmpDSTRSaVBQS05zb3d0UUpib29KejlEcjdod1pBbA?oc=5\" target=\"_blank\">Inside Idaho’s Long Legislative Battle Over Climate Change Education</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PBS</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "education"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "a079994c2c61905ce675bbc724ecb53b",
       "title": "English learner advocates in California oppose ‘science of reading’ bill - EdSource",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZEQxekZQWVVKYU1rWFQ4aEl1amVhWlpNX0wxc2ZycTlEaHQ2TUtRZlhvMmFmMUNwMXFZOEhrTGtUMTh1NVptYlhHZndfS2hRSFNiR09ndFcxSGFQYzdQUEZ1N0hwSFdHckZkc1hFdFBqdms0T3JOckZIWHpLSlVZSW1pcDJINmloYW8tMHJ1cGhlQU3SAZsBQVVfeXFMUGFoWUxUX25Wc0NaZlM2cU1TdVRTc2pjaDhEUnJabTN0UzNOb0t0YnNOYlZzSTBnbDNDU1RDNWV5SEptbW1SX3ZlVjZPOXQtOXVaSmh6U1VKXzcxSTFTSVhqc3V3eV9JOTczNWFoalRZdHlwNUZlWmtxWExHVkJkUEc4Ny1tM1Y4Sl9EYzVNakpGNzctNDNwNjVMWEk?oc=5",
@@ -6281,16 +6222,15 @@
       "legislator_ids": []
     },
     {
-      "article_id": "4ed910b03da45ec898c8095a93da0b72",
-      "title": "Legislation to support climate change education enacted in California - National Center for Science Education",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQc0xTQWZueHoza2h4SmVFZVZleXZtQ2tuS1QwaXhMSU9fOERYdW84MG45RkhtUWNDakpJWWhSRWxWVlFCSTloRkhQclhrYWl4SGRKaHhMR0VZeW5Eek1KX2hEQlJYamVCVDlxbnJuc1Nsc2xqS2QzY1FmVGlHanBpOHdRZDVBdzg?oc=5",
-      "source": "National Center for Science Education",
-      "date": "Fri, 13 Oct 2023 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQc0xTQWZueHoza2h4SmVFZVZleXZtQ2tuS1QwaXhMSU9fOERYdW84MG45RkhtUWNDakpJWWhSRWxWVlFCSTloRkhQclhrYWl4SGRKaHhMR0VZeW5Eek1KX2hEQlJYamVCVDlxbnJuc1Nsc2xqS2QzY1FmVGlHanBpOHdRZDVBdzg?oc=5\" target=\"_blank\">Legislation to support climate change education enacted in California</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">National Center for Science Education</font>",
+      "article_id": "39721023727245f211a1f3924a6f0276",
+      "title": "Inside Idaho’s Long Legislative Battle Over Climate Change Education - PBS",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNHh1bHJCcVV2YmRueGhJSXY4NUJJTzZ1Q05QYnJaaFo2aTRHb2RLUERFcTJhLXRyaTJVY0xlOWx1bS0xMEdCYUhjVWtSLXB6UXVqWUZhVkZtS19CYTJqbmpib1hld0dEbXNWXzctQWpKcDN3OWFqNTh2TUJhMW4yWUFqNUFPdF9MZGprQm9CazBuZmpDSTRSaVBQS05zb3d0UUpib29KejlEcjdod1pBbA?oc=5",
+      "source": "PBS",
+      "date": "Fri, 20 Dec 2019 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNNHh1bHJCcVV2YmRueGhJSXY4NUJJTzZ1Q05QYnJaaFo2aTRHb2RLUERFcTJhLXRyaTJVY0xlOWx1bS0xMEdCYUhjVWtSLXB6UXVqWUZhVkZtS19CYTJqbmpib1hld0dEbXNWXzctQWpKcDN3OWFqNTh2TUJhMW4yWUFqNUFPdF9MZGprQm9CazBuZmpDSTRSaVBQS05zb3d0UUpib29KejlEcjdod1pBbA?oc=5\" target=\"_blank\">Inside Idaho’s Long Legislative Battle Over Climate Change Education</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PBS</font>",
       "sentiment": "neutral",
       "topics": [
-        "education",
-        "legislation"
+        "education"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -6319,6 +6259,21 @@
       "sentiment": "neutral",
       "topics": [
         "mandate",
+        "education",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "4ed910b03da45ec898c8095a93da0b72",
+      "title": "Legislation to support climate change education enacted in California - National Center for Science Education",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQc0xTQWZueHoza2h4SmVFZVZleXZtQ2tuS1QwaXhMSU9fOERYdW84MG45RkhtUWNDakpJWWhSRWxWVlFCSTloRkhQclhrYWl4SGRKaHhMR0VZeW5Eek1KX2hEQlJYamVCVDlxbnJuc1Nsc2xqS2QzY1FmVGlHanBpOHdRZDVBdzg?oc=5",
+      "source": "National Center for Science Education",
+      "date": "Fri, 13 Oct 2023 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQc0xTQWZueHoza2h4SmVFZVZleXZtQ2tuS1QwaXhMSU9fOERYdW84MG45RkhtUWNDakpJWWhSRWxWVlFCSTloRkhQclhrYWl4SGRKaHhMR0VZeW5Eek1KX2hEQlJYamVCVDlxbnJuc1Nsc2xqS2QzY1FmVGlHanBpOHdRZDVBdzg?oc=5\" target=\"_blank\">Legislation to support climate change education enacted in California</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">National Center for Science Education</font>",
+      "sentiment": "neutral",
+      "topics": [
         "education",
         "legislation"
       ],
@@ -6399,20 +6354,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "fec3dbe1905d7a8e9680e4d399462019",
-      "title": "What does this science of reading bill really mean, and how did we get here? - EdNC",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORFVpMDZfY0lLQTBoMTQxZ0VYd0kwbVdTVldjYmxqMGhNSVNtQ3ZaM01QbkEzbzUwWkpGb0p1MEVsNXpybUNaU1J5NTduV0dnNmNkWWVvNHVsT0JtblBGeXBIN2dMUHBsc3JTZ09YaUJGWmRJLU9DMzFTWmduVnZQN1lfc3VEdlpqREc1TVdEZ2QyWnVCckFvcHB3dWpMc1dsMXItRHF6cHVUZnRiS0hObg?oc=5",
-      "source": "EdNC",
-      "date": "Tue, 06 Apr 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxORFVpMDZfY0lLQTBoMTQxZ0VYd0kwbVdTVldjYmxqMGhNSVNtQ3ZaM01QbkEzbzUwWkpGb0p1MEVsNXpybUNaU1J5NTduV0dnNmNkWWVvNHVsT0JtblBGeXBIN2dMUHBsc3JTZ09YaUJGWmRJLU9DMzFTWmduVnZQN1lfc3VEdlpqREc1TVdEZ2QyWnVCckFvcHB3dWpMc1dsMXItRHF6cHVUZnRiS0hObg?oc=5\" target=\"_blank\">What does this science of reading bill really mean, and how did we get here?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">EdNC</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "a92918876184008905b2db1d196bd21d",
       "title": "West Virginia's former \"intelligent design\" bill becomes law - National Center for Science Education",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBMN010VEVyUExNSVVrMnE0NEQ5OGE4ME1jZGNZemlmMzNyRzFJSHBHTjM3dm1pb3lLS0J2XzNPeFBKVU1XYS1QRUNhUmdkY09zNlp0UTBEX2hEb1pGWFBvdmwyRUNNSjVtOE9Rd2k3dmlDa2hmRnBETUVhZkl1bWs?oc=5",
@@ -6422,6 +6363,20 @@
       "sentiment": "neutral",
       "topics": [
         "education",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "fec3dbe1905d7a8e9680e4d399462019",
+      "title": "What does this science of reading bill really mean, and how did we get here? - EdNC",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORFVpMDZfY0lLQTBoMTQxZ0VYd0kwbVdTVldjYmxqMGhNSVNtQ3ZaM01QbkEzbzUwWkpGb0p1MEVsNXpybUNaU1J5NTduV0dnNmNkWWVvNHVsT0JtblBGeXBIN2dMUHBsc3JTZ09YaUJGWmRJLU9DMzFTWmduVnZQN1lfc3VEdlpqREc1TVdEZ2QyWnVCckFvcHB3dWpMc1dsMXItRHF6cHVUZnRiS0hObg?oc=5",
+      "source": "EdNC",
+      "date": "Tue, 06 Apr 2021 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxORFVpMDZfY0lLQTBoMTQxZ0VYd0kwbVdTVldjYmxqMGhNSVNtQ3ZaM01QbkEzbzUwWkpGb0p1MEVsNXpybUNaU1J5NTduV0dnNmNkWWVvNHVsT0JtblBGeXBIN2dMUHBsc3JTZ09YaUJGWmRJLU9DMzFTWmduVnZQN1lfc3VEdlpqREc1TVdEZ2QyWnVCckFvcHB3dWpMc1dsMXItRHF6cHVUZnRiS0hObg?oc=5\" target=\"_blank\">What does this science of reading bill really mean, and how did we get here?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">EdNC</font>",
+      "sentiment": "neutral",
+      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -6547,6 +6502,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "e4a6fdc1356932c6336332014f8c3b20",
+      "title": "To stay ahead, Massachusetts needs science of reading legislation - CommonWealth Beacon",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHVwV0JfUjlGNzJQZGdrZUdud3RVeG43ZjVFWTdBMV9OeTFHSnFmYjRGZkxPdXlfNUxXRXhlbjlPazlWWmlPN21rd284cDA1ZGdpb2hxbjhqR3labTZ6SFZjMlB6eU40bTdjNWY0eDhPLWR0VVJrc1J3UUNwZWc5VllheE9PRmoxYU9aVnBEb09rUXJTZjVfb0ttY19WcjFKV3czNHY1OA?oc=5",
+      "source": "CommonWealth Beacon",
+      "date": "Wed, 05 Jun 2024 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHVwV0JfUjlGNzJQZGdrZUdud3RVeG43ZjVFWTdBMV9OeTFHSnFmYjRGZkxPdXlfNUxXRXhlbjlPazlWWmlPN21rd284cDA1ZGdpb2hxbjhqR3labTZ6SFZjMlB6eU40bTdjNWY0eDhPLWR0VVJrc1J3UUNwZWc5VllheE9PRmoxYU9aVnBEb09rUXJTZjVfb0ttY19WcjFKV3czNHY1OA?oc=5\" target=\"_blank\">To stay ahead, Massachusetts needs science of reading legislation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CommonWealth Beacon</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "3d456163a92803ce667e4a9cb8674047",
       "title": "Ohio legislation attacks climate change in higher education - National Center for Science Education",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBoRkcwRWRlY2w2MV9ROTZTSjZfV0VwYVJxeGlrS2NwUUgyNHExRWNlSk84NFFuSFUxUDFoaDJ0NFZGN3d6UjlrbmVYLUNuNmV6aDJLOV91OGRyS2MxNWZXQWV4cnA5NHZPcGJHVTFLVjMwZmxOa0dEQTBKbnhxQQ?oc=5",
@@ -6556,20 +6525,6 @@
       "sentiment": "neutral",
       "topics": [
         "education",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "e4a6fdc1356932c6336332014f8c3b20",
-      "title": "To stay ahead, Massachusetts needs science of reading legislation - CommonWealth Beacon",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHVwV0JfUjlGNzJQZGdrZUdud3RVeG43ZjVFWTdBMV9OeTFHSnFmYjRGZkxPdXlfNUxXRXhlbjlPazlWWmlPN21rd284cDA1ZGdpb2hxbjhqR3labTZ6SFZjMlB6eU40bTdjNWY0eDhPLWR0VVJrc1J3UUNwZWc5VllheE9PRmoxYU9aVnBEb09rUXJTZjVfb0ttY19WcjFKV3czNHY1OA?oc=5",
-      "source": "CommonWealth Beacon",
-      "date": "Wed, 05 Jun 2024 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHVwV0JfUjlGNzJQZGdrZUdud3RVeG43ZjVFWTdBMV9OeTFHSnFmYjRGZkxPdXlfNUxXRXhlbjlPazlWWmlPN21rd284cDA1ZGdpb2hxbjhqR3labTZ6SFZjMlB6eU40bTdjNWY0eDhPLWR0VVJrc1J3UUNwZWc5VllheE9PRmoxYU9aVnBEb09rUXJTZjVfb0ttY19WcjFKV3czNHY1OA?oc=5\" target=\"_blank\">To stay ahead, Massachusetts needs science of reading legislation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CommonWealth Beacon</font>",
-      "sentiment": "neutral",
-      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -6660,21 +6615,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "8e3a9a672a2487aa3a3e39c26c582ed3",
-      "title": "Antiscience legislation in South Dakota out of commission - National Center for Science Education",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1jdUN6TGE2WW14QldNUXRkX01YZTNtcVJxb291S0Jfak1Ca3RScjdZSHNjeS1LV1pnZmdLWVVWdW96TFJfSHVnakV2NUxtZTJoY1RGTDA2eFFtMjhlTGlTX2tSLWN0MTFtUjZiYmpCQWhwN05YTmdj?oc=5",
-      "source": "National Center for Science Education",
-      "date": "Fri, 31 Jan 2020 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE1jdUN6TGE2WW14QldNUXRkX01YZTNtcVJxb291S0Jfak1Ca3RScjdZSHNjeS1LV1pnZmdLWVVWdW96TFJfSHVnakV2NUxtZTJoY1RGTDA2eFFtMjhlTGlTX2tSLWN0MTFtUjZiYmpCQWhwN05YTmdj?oc=5\" target=\"_blank\">Antiscience legislation in South Dakota out of commission</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">National Center for Science Education</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "education",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "4113cbbe74c29306279b0da7387c61a0",
       "title": "Looking Back with Epperson, Fifty Years Later - National Center for Science Education",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5pTDh5RUJCU0N5bFNkOGpFYXpGU2d1QndUbjJSRzlnUUFSUnUwb3lndUExc3VRZWxOTVVybENHX2QxZmhWdnVabUNJUENqUzI2b3JxX1RROGRIVzZZMGxpYUFpbGI0TzQ?oc=5",
@@ -6698,21 +6638,6 @@
       "sentiment": "neutral",
       "topics": [
         "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "189eb25b5fe9e198f1ae4293b2640f26",
-      "title": "Appropriations Committee Releases Fiscal Year 2020 Commerce-Justice-Science Funding Bill - House.gov",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNHN0c3RKY2RRR2ZJR1lGZEJ2em14RjFDNWJTTTA3eG00emtsMW90TkhEbmhTNmU2MjBIdS1pU19SLWlSb00yc3RVLW5tdFBha05KWk5iVWxRRGF6NmtuWXRPS3RETTh6NDFlNGltOHRkTEtqT3VQMTlvdDM0YkV1R3pHUkxUSk5QNEpTWnVCS2ZZSU1KcTl1SjZlbWJ6X2JnbFFCTV9PLTk1STBMa3lzRmJJUHI5My10OEFzaVh0UkR2UFR5Tjl3UUdTaHp5VFdKNHNF?oc=5",
-      "source": "House.gov",
-      "date": "Thu, 16 May 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNHN0c3RKY2RRR2ZJR1lGZEJ2em14RjFDNWJTTTA3eG00emtsMW90TkhEbmhTNmU2MjBIdS1pU19SLWlSb00yc3RVLW5tdFBha05KWk5iVWxRRGF6NmtuWXRPS3RETTh6NDFlNGltOHRkTEtqT3VQMTlvdDM0YkV1R3pHUkxUSk5QNEpTWnVCS2ZZSU1KcTl1SjZlbWJ6X2JnbFFCTV9PLTk1STBMa3lzRmJJUHI5My10OEFzaVh0UkR2UFR5Tjl3UUdTaHp5VFdKNHNF?oc=5\" target=\"_blank\">Appropriations Committee Releases Fiscal Year 2020 Commerce-Justice-Science Funding Bill</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">House.gov</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation",
-        "funding"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -6782,6 +6707,36 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPX0IwSFR4Qlp6b2VhWm1ROVpmZ0xjajZLMXNuUFlKT1kxUmwycmd0MGhFZFdjcHZDNHhQVUNTbHhuQWJUaFMtRl9sUzhfZnB3b29Oa0xpRmZaNjJWY3R1cS1RZEtiVk1UVGlrVlV4QXRDRUFsVmVRdG9qaVUxa1JZSlJxUWpJeG1VWXBxRFVoS09NRXliSHRDTE14RUthNnVzeWkxaDZFN19RRGtWT3R4WTMwQnc2WkdfZGh0Xzh2TmpURVRCMHFNUmJ2LXpWZ3hqV083dkJ0d18talZhcVFZUUVzNFpXUGxLejhZOExKd1B1a3c?oc=5\" target=\"_blank\">Senate OKs bill to provide incentive pay for Alabama's grade 6-12 math and science teachers</a>&nbsp",
       "sentiment": "neutral",
       "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "e09bdcd6eabd1d9f2b8492a1dd22ca86",
+      "title": "Why Bill Nye Transformed His Approach on Science Education - The Hollywood Reporter",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSzRLRy1oYTdyU18tRHNuWUJSSUUyNEstQmZXNUJWUmc0bndiQk1vdWtPT3Nlc1hBRjFnMFRUU0hWWlpna3lGUThHV1ZVc1NHWEhnUEx6SnRfVW9LOUxIWU5IdHRiaWZ2LUVrN0lIekJxcVZ6YmVpR0N4eTVXWHpQUXBNdkYxaGpMenA4azRxUHlaeW1YSXBfdXRsUWhIV25ZYVRraVhqQXpRU1B3VkdDTFRiTHBYSEk?oc=5",
+      "source": "The Hollywood Reporter",
+      "date": "Wed, 08 Nov 2017 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNSzRLRy1oYTdyU18tRHNuWUJSSUUyNEstQmZXNUJWUmc0bndiQk1vdWtPT3Nlc1hBRjFnMFRUU0hWWlpna3lGUThHV1ZVc1NHWEhnUEx6SnRfVW9LOUxIWU5IdHRiaWZ2LUVrN0lIekJxcVZ6YmVpR0N4eTVXWHpQUXBNdkYxaGpMenA4azRxUHlaeW1YSXBfdXRsUWhIV25ZYVRraVhqQXpRU1B3VkdDTFRiTHBYSEk?oc=5\" target=\"_blank\">Why Bill Nye Transformed His Approach on Science Education</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Hollywood Reporter</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "education",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "1485f694835e79cea6dd6d4066b9e1aa",
+      "title": "President Obama signs law that designates computer science as part of a 'well-rounded education' - GeekWire",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSEpFbVd4endYdlVVRV9YSklkU2toWjBVc1JVRjRNdGM2dnRIZTE4UWlmSUhYaWxDekY1SUFleVdqQkM3NlFUcjR2alpXRTZzNHMyUFhnV2Z6UVBybWhRZHJURkVUYmhHM0NEYlZtVmgwcElJelIwZkc4TDZkR1NtVlFsRG5VSjZIRlFNd1hLVWZrVjBaNDBsZzlQbXZvd2o4M1NNdTFkMEU0TVJVRzBYRjd5dWdFUlNtQnR2VVk4VWVLYkFwSWoxazRB?oc=5",
+      "source": "GeekWire",
+      "date": "Thu, 10 Dec 2015 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPSEpFbVd4endYdlVVRV9YSklkU2toWjBVc1JVRjRNdGM2dnRIZTE4UWlmSUhYaWxDekY1SUFleVdqQkM3NlFUcjR2alpXRTZzNHMyUFhnV2Z6UVBybWhRZHJURkVUYmhHM0NEYlZtVmgwcElJelIwZkc4TDZkR1NtVlFsRG5VSjZIRlFNd1hLVWZrVjBaNDBsZzlQbXZvd2o4M1NNdTFkMEU0TVJVRzBYRjd5dWdFUlNtQnR2VVk4VWVLYkFwSWoxazRB?oc=5\" target=\"_blank\">President Obama signs law that designates computer science as part of a 'well-rounded education'</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">GeekWire</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "education",
         "legislation"
       ],
       "mentioned_names": [],
@@ -6868,9 +6823,9 @@
     },
     {
       "article_id": "f30883c1412c6631a1a5ca0572eb276c",
-      "title": "Hundreds of people flood public hearing on Connecticut vaccine bills - nbcconnecticut.com",
+      "title": "Hundreds of people flood public hearing on Connecticut vaccine bills - NBC Connecticut",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRWFrTG0xaHJIY3NQMkdQekVpazd5cWxRTi10ZnlJN0VCV0ZNaW5NVXNNb2VZdVUtR2ZnR3diZHhtMnl1bktTdDZLX1FXRjIwMEsxYTlVSTZJcDFucTdXQ3BjSXdzZVdlaTFjWFdQSHFxejVtLWhlaXY5YjktV2Jrdk5jYnBRUTIwa00yMVNTZUltTk9KWEdrRGhkWllweVpFQnh4QjctajFyLWgtdUljRTVYY3k2N3pEMTZB0gHDAUFVX3lxTE11TUFtSHNGSGNOOGhQSlRPdXRCQ2ZMRVNlTzBrNFZEQUlNV3JZcDBFNFZGQVFjeWRPNXVjYWotNlV4Z24tc1ppaGlfdmpid2F4TF9jQ1ZROUo0NEk3bC01R2loVENReldHcG85dXgzMlVxUHV0Ymx2MDFPNTZpbzNmeWFuZzRhWUhxcEg3QXc2UmFRMzViMndlTE5YM2JjSF8zVkZ4NFl6eWJEOWhVbmIycURUemxtUnh1RTNLWlJkc2syRQ?oc=5",
-      "source": "nbcconnecticut.com",
+      "source": "NBC Connecticut",
       "date": "Wed, 11 Mar 2026 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRWFrTG0xaHJIY3NQMkdQekVpazd5cWxRTi10ZnlJN0VCV0ZNaW5NVXNNb2VZdVUtR2ZnR3diZHhtMnl1bktTdDZLX1FXRjIwMEsxYTlVSTZJcDFucTdXQ3BjSXdzZVdlaTFjWFdQSHFxejVtLWhlaXY5YjktV2Jrdk5jYnBRUTIwa00yMVNTZUltTk9KWEdrRGhkWllweVpFQnh4QjctajFyLWgtdUljRTVYY3k2N3pEMTZB0gHDAUFVX3lxTE11TUFtSHNGSGNOOGhQSlRPdXRCQ2ZMRVNlTzBrNFZEQUlNV3JZcDBFNFZGQVFjeWRPNXVjYWotNlV4Z24tc1ppaGlfdmpid2F4TF9jQ1ZROUo0NEk3bC01R2loVENReldHcG85dXgzMlVxUHV0Ymx2MDFPNTZpbzNmeWFuZzRhWUhxcEg3QXc2Um",
       "sentiment": "neutral",
@@ -6930,9 +6885,9 @@
     },
     {
       "article_id": "d467b727dc79ad5f96a191d8e0baa39b",
-      "title": "Connecticut legislative committees approve bills on homeschooling, vaccines - nbcconnecticut.com",
+      "title": "Connecticut legislative committees approve bills on homeschooling, vaccines - NBC Connecticut",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPalNERVpfRjVSNDZKWlF2Z0ViM0xZUy0yNmFpSmM4dDJ3YXlMX1BKQnhlVWQzUHRFNnQ0aXdSRUJLaXRoSkZGMTkzQ1FMMVVveHRiWFVyNU9tX0tGU1E0TFMtQ0R5RFJwWnZKSGp0bXFLcjVxRXBvQUZiYkJfaDNCZ2FFaGFYUlpHUEhjMExRSEVMT2d0OFBQZHA5aU41cGN1T29HU1ZxUElTOGNnT1JqNHh4NmxZbGFKVGxCYWViVkt0NmfSAcsBQVVfeXFMTlUxSkhsbXQxZENEMEJ6RGxXNW1yajNZMEdvMU5DVDcyVGtGaUxBeFQ4MGFLdjFsRzMwcnlUZnNHNk0tQmtZZVpqVHItU1NVZ0pZVVFrODY3dzJLaUFYeF84UGdwa1V2RGZmR1dPYVYwR3Z5Zm1xby1OVkhqWVBNSGFzVU1sV1NEbGNncm85bHRvaWR2NnBwbEE3Wmp6RUZUWGxnR2dXTjNXZWRvNDJOQ183YkREallBWWw0VmdqWV9TV28xOGlqdlN5cHM?oc=5",
-      "source": "nbcconnecticut.com",
+      "source": "NBC Connecticut",
       "date": "Wed, 18 Mar 2026 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPalNERVpfRjVSNDZKWlF2Z0ViM0xZUy0yNmFpSmM4dDJ3YXlMX1BKQnhlVWQzUHRFNnQ0aXdSRUJLaXRoSkZGMTkzQ1FMMVVveHRiWFVyNU9tX0tGU1E0TFMtQ0R5RFJwWnZKSGp0bXFLcjVxRXBvQUZiYkJfaDNCZ2FFaGFYUlpHUEhjMExRSEVMT2d0OFBQZHA5aU41cGN1T29HU1ZxUElTOGNnT1JqNHh4NmxZbGFKVGxCYWViVkt0NmfSAcsBQVVfeXFMTlUxSkhsbXQxZENEMEJ6RGxXNW1yajNZMEdvMU5DVDcyVGtGaUxBeFQ4MGFLdjFsRzMwcnlUZnNHNk0tQmtZZVpqVHItU1NVZ0pZVVFrODY3dzJLaUFYeF84UGdwa1V2RGZmR1dPYVYwR3Z5Zm1xby1OVkhqWVBNSGFzVU1sV1NEbG",
       "sentiment": "neutral",
@@ -6962,11 +6917,11 @@
     },
     {
       "article_id": "26565fe9925671b7e3619bad42eff216",
-      "title": "SC lawmakers considering pieces of measles vaccine legislation - WYFF News 4",
+      "title": "SC lawmakers considering pieces of measles vaccine legislation - WYFF",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1DSVJpcm5ta1NMamo1MFRkdmI3STI0OWJhQXFicVVfMHRxMkxwQmwwbWJRWW1zczh2cHIyMlVlU0VOb01DV1R2eVJaVV9CbWVGR0xMSEtfbENIaEhGdU9uVnFfVTkxY3FEeE5KZEFiSkQ2b3lBREQ0SFgzQVFScFU?oc=5",
-      "source": "WYFF News 4",
+      "source": "WYFF",
       "date": "Wed, 04 Mar 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1DSVJpcm5ta1NMamo1MFRkdmI3STI0OWJhQXFicVVfMHRxMkxwQmwwbWJRWW1zczh2cHIyMlVlU0VOb01DV1R2eVJaVV9CbWVGR0xMSEtfbENIaEhGdU9uVnFfVTkxY3FEeE5KZEFiSkQ2b3lBREQ0SFgzQVFScFU?oc=5\" target=\"_blank\">SC lawmakers considering pieces of measles vaccine legislation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WYFF News 4</font>",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1DSVJpcm5ta1NMamo1MFRkdmI3STI0OWJhQXFicVVfMHRxMkxwQmwwbWJRWW1zczh2cHIyMlVlU0VOb01DV1R2eVJaVV9CbWVGR0xMSEtfbENIaEhGdU9uVnFfVTkxY3FEeE5KZEFiSkQ2b3lBREQ0SFgzQVFScFU?oc=5\" target=\"_blank\">SC lawmakers considering pieces of measles vaccine legislation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WYFF</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -7170,22 +7125,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "70e764a87cb8b8178d03f02c04578fb7",
-      "title": "New Texas bill makes it easier to request vaccine exemptions - ABC News - Breaking News, Latest News and Videos",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYnVmQ0g0MlAxalp0OElmY08zazRsQjNYbDJKejA3cmxDTHI1NzlMZzFNN2VNZmQ5Z1poUGFOTEpTREZKRzc2N2lTd0VDVFotYWIwb0o4SVVwczJuUTFQcmJQdzl0QzhuYV9ETmJhbmFKd0g2aUNSVUMxYW9wbFNZNmNOdVVKaHJDZm9CdHp1VnRfLWJhUEpUUUZNQmPSAaIBQVVfeXFMTWVtRzQyNFRSQkFWblhfLWJHN0FXZEs0d0huUWsyRzhLbDZrSjJyZ2xicldtcDhUYm1KZjYzY1Y3dndoWVRVUDRKSlhiUmRXeG1MWjRwUWJZZU80NURtdDlRcWw2Q0o5NjlGX3RCVVdDTGx6OVZ1TDJFbXpETFA1eTFTRUp0aG54MXlHSkpIWFo4dXZxVUd4dmUzMmJUV1B4ZXhn?oc=5",
-      "source": "ABC News - Breaking News, Latest News and Videos",
-      "date": "Sat, 14 Feb 2026 04:30:27 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOYnVmQ0g0MlAxalp0OElmY08zazRsQjNYbDJKejA3cmxDTHI1NzlMZzFNN2VNZmQ5Z1poUGFOTEpTREZKRzc2N2lTd0VDVFotYWIwb0o4SVVwczJuUTFQcmJQdzl0QzhuYV9ETmJhbmFKd0g2aUNSVUMxYW9wbFNZNmNOdVVKaHJDZm9CdHp1VnRfLWJhUEpUUUZNQmPSAaIBQVVfeXFMTWVtRzQyNFRSQkFWblhfLWJHN0FXZEs0d0huUWsyRzhLbDZrSjJyZ2xicldtcDhUYm1KZjYzY1Y3dndoWVRVUDRKSlhiUmRXeG1MWjRwUWJZZU80NURtdDlRcWw2Q0o5NjlGX3RCVVdDTGx6OVZ1TDJFbXpETFA1eTFTRUp0aG54MXlHSkpIWFo4dXZxVUd4dmUzMmJUV1B4ZXhn?oc=5\" target=\"_bl",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
-        "exemption",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "e72e1e4af413c7f8a2f109c36c2d5c0b",
       "title": "Arizona bill would let voters decide if government can mandate vaccines - AZ Family",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaUFoYXZ3b21QTUVEeUNHSjI2VDlaMHBSejloZThJeV84NGFfdnN4TS1oNU1MWV9hN3FMRW9lU1JjRVdPS1RwZnpyTmFSazFYQXZfMjVLbGFsWkQxQlptUllidmNwd2VtSEZEckU1akZKLTZDczNHb2ctN2c1MGIybzF6Q2lCTjc1S25pek15d18tQWs2a3dicGJRQjBSQWU2LXFYbUtVdWIycFliZGtReTRSbTQ?oc=5",
@@ -7233,6 +7172,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "70e764a87cb8b8178d03f02c04578fb7",
+      "title": "New Texas bill makes it easier to request vaccine exemptions - ABC News - Breaking News, Latest News and Videos",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYnVmQ0g0MlAxalp0OElmY08zazRsQjNYbDJKejA3cmxDTHI1NzlMZzFNN2VNZmQ5Z1poUGFOTEpTREZKRzc2N2lTd0VDVFotYWIwb0o4SVVwczJuUTFQcmJQdzl0QzhuYV9ETmJhbmFKd0g2aUNSVUMxYW9wbFNZNmNOdVVKaHJDZm9CdHp1VnRfLWJhUEpUUUZNQmPSAaIBQVVfeXFMTWVtRzQyNFRSQkFWblhfLWJHN0FXZEs0d0huUWsyRzhLbDZrSjJyZ2xicldtcDhUYm1KZjYzY1Y3dndoWVRVUDRKSlhiUmRXeG1MWjRwUWJZZU80NURtdDlRcWw2Q0o5NjlGX3RCVVdDTGx6OVZ1TDJFbXpETFA1eTFTRUp0aG54MXlHSkpIWFo4dXZxVUd4dmUzMmJUV1B4ZXhn?oc=5",
+      "source": "ABC News - Breaking News, Latest News and Videos",
+      "date": "Sat, 14 Feb 2026 04:30:27 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOYnVmQ0g0MlAxalp0OElmY08zazRsQjNYbDJKejA3cmxDTHI1NzlMZzFNN2VNZmQ5Z1poUGFOTEpTREZKRzc2N2lTd0VDVFotYWIwb0o4SVVwczJuUTFQcmJQdzl0QzhuYV9ETmJhbmFKd0g2aUNSVUMxYW9wbFNZNmNOdVVKaHJDZm9CdHp1VnRfLWJhUEpUUUZNQmPSAaIBQVVfeXFMTWVtRzQyNFRSQkFWblhfLWJHN0FXZEs0d0huUWsyRzhLbDZrSjJyZ2xicldtcDhUYm1KZjYzY1Y3dndoWVRVUDRKSlhiUmRXeG1MWjRwUWJZZU80NURtdDlRcWw2Q0o5NjlGX3RCVVdDTGx6OVZ1TDJFbXpETFA1eTFTRUp0aG54MXlHSkpIWFo4dXZxVUd4dmUzMmJUV1B4ZXhn?oc=5\" target=\"_bl",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "exemption",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "936dc848d756d228a369eef9cf5bde87",
       "title": "Kennedy Allies Target States to Overturn Vaccine Mandates for Schoolchildren - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5saWM1RmoybWxrdldHVmlxUnY1alo2WkNPTmpUc0lqWWZPdGhfaWhqZ2ZlZmxmaU5MeFZIVXRQNzFjeW9RbmpHUEdQZjRLOXRic3hfc3RjcTFaZ3A1bzBDVEZSbWI2YU1qeWw0LWtXRHJiU0JWTFpQZzVCWE1PUkE?oc=5",
@@ -7249,6 +7204,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "9700ccb935469e1abe8bda5353a343d2",
+      "title": "After thousands opposed controversial CT bills, will they pass anyway? What leaders are saying - Hartford Courant",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGZnOFphQXNWMm1KY3R2WnhLR2FwdjFFRXlQMVVjdTFuV3pNdlJOVVpNR1JZR0hKNERJUGZ4eV9MelBsOGdjTzFNRzFjVkpjTGZvSGEwRmszdXZ1bGx1REpNSm1PM1M2ZXIyY0RJZlRDLVQ2U0l3dnVQaC05TXUzOWl0MzE2ZVZrb05DSWdjZmZEZGJjVXl2V3hhbXQ4ekw0NS1ic255NVhmRFJhZWpQd2lnSWR3WkF3bkdPby1OVVowOG1Dcmc?oc=5",
+      "source": "Hartford Courant",
+      "date": "Sun, 15 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGZnOFphQXNWMm1KY3R2WnhLR2FwdjFFRXlQMVVjdTFuV3pNdlJOVVpNR1JZR0hKNERJUGZ4eV9MelBsOGdjTzFNRzFjVkpjTGZvSGEwRmszdXZ1bGx1REpNSm1PM1M2ZXIyY0RJZlRDLVQ2U0l3dnVQaC05TXUzOWl0MzE2ZVZrb05DSWdjZmZEZGJjVXl2V3hhbXQ4ekw0NS1ic255NVhmRFJhZWpQd2lnSWR3WkF3bkdPby1OVVowOG1Dcmc?oc=5\" target=\"_blank\">After thousands opposed controversial CT bills, will they pass anyway? What leaders are saying</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "ab15f287cb4752a1f980bf799c2e7d0c",
       "title": "South Carolina senator proposes mandatory measles vaccines for students - Live 5 News",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcExLOUpVeGVENXFkdjBlVXJDcmlwOGNaQU5yVFVadm96dUNPR3ZfSlNWQ3NfSDlySUlYaml3T0tkcEI1Zm1EWTNYczRXZ09HSjY3cWlZb2JnM05wcnlIWTdDUDQtWEZNM0dTQ1JFWlVqVU1fa3FtZHdHaWtwdG9HM2FpVUpoaVMtdGVxVmJacU9VZ0JaMnJFeW5tdzFGZWRaT0lXNHd2QUrSAbwBQVVfeXFMT2R6VlRHZmxNd0pkNktHY2c0TGR5Z1F1YmV4N3hKeVNzenNDbm92UWRUb2hueWdwSVp4X0VJNVNpd0NLOE13Q2xZQWtQR2xqMHF5N1gtMlE2c0J0dGh6WDNYTHVPLWQyMHhhYUZIRjJ3Ny1nUUVUV2tLNDQ0djY0T3NfVWhIRk0tMnJGOGdGUVNrUEdYd3FJak1jbXd6NXhkUkc4aGppb3ZEaFhNMW85M0tXZUJnVDVHenpLQ2g?oc=5",
@@ -7259,20 +7228,6 @@
       "topics": [
         "vaccine",
         "mandate"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "9700ccb935469e1abe8bda5353a343d2",
-      "title": "After thousands opposed controversial CT bills, will they pass anyway? What leaders are saying - Hartford Courant",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGZnOFphQXNWMm1KY3R2WnhLR2FwdjFFRXlQMVVjdTFuV3pNdlJOVVpNR1JZR0hKNERJUGZ4eV9MelBsOGdjTzFNRzFjVkpjTGZvSGEwRmszdXZ1bGx1REpNSm1PM1M2ZXIyY0RJZlRDLVQ2U0l3dnVQaC05TXUzOWl0MzE2ZVZrb05DSWdjZmZEZGJjVXl2V3hhbXQ4ekw0NS1ic255NVhmRFJhZWpQd2lnSWR3WkF3bkdPby1OVVowOG1Dcmc?oc=5",
-      "source": "Hartford Courant",
-      "date": "Sun, 15 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQeGZnOFphQXNWMm1KY3R2WnhLR2FwdjFFRXlQMVVjdTFuV3pNdlJOVVpNR1JZR0hKNERJUGZ4eV9MelBsOGdjTzFNRzFjVkpjTGZvSGEwRmszdXZ1bGx1REpNSm1PM1M2ZXIyY0RJZlRDLVQ2U0l3dnVQaC05TXUzOWl0MzE2ZVZrb05DSWdjZmZEZGJjVXl2V3hhbXQ4ekw0NS1ic255NVhmRFJhZWpQd2lnSWR3WkF3bkdPby1OVVowOG1Dcmc?oc=5\" target=\"_blank\">After thousands opposed controversial CT bills, will they pass anyway? What leaders are saying</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -7376,22 +7331,6 @@
       "source": "WHAV",
       "date": "Fri, 20 Feb 2026 08:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQN19BOFZaWUtGcGMwV1pDbHFkUXJfSV9QcXFTT0w1SGhZOF9XUHduaV9zTi10YWExOG9xcm95U2V6b01JMTBsbGJjVkRpODZ0aWtyeXYzSFY2RjZIVEVXRzdaczBmN2JKMjdtLWN5UHFhWnZNMlQ2bXZWRzV6OElKMA?oc=5\" target=\"_blank\">NH House Kills Bill To Repeal Vaccine Mandates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WHAV</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "164c581c8b8d136822d42d1fefe11b2d",
-      "title": "Democrat bill would outlaw conscientious objections to MMR vaccine mandate - Alpha News MN",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQT0lfRjBXLXZaU2VKbEFFblNfTFYtaGZ5NEtYNV9uWS1XVUZaMm9TNnBvNkFEeklYNjUyVk00aFp2RlRRV2JQU1hmTUtJUDkyS1VRTWpLZmpmeHk2RWxNMjM2VFR5UmNTS0pmbG9Za2ZVcHNDbHdJQ2Y2ZkdqUmdBd1Z3OXl0aFJRaXpmV1JFRFV0RkJFTl9UOGhaNV9ndw?oc=5",
-      "source": "Alpha News MN",
-      "date": "Tue, 24 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQT0lfRjBXLXZaU2VKbEFFblNfTFYtaGZ5NEtYNV9uWS1XVUZaMm9TNnBvNkFEeklYNjUyVk00aFp2RlRRV2JQU1hmTUtJUDkyS1VRTWpLZmpmeHk2RWxNMjM2VFR5UmNTS0pmbG9Za2ZVcHNDbHdJQ2Y2ZkdqUmdBd1Z3OXl0aFJRaXpmV1JFRFV0RkJFTl9UOGhaNV9ndw?oc=5\" target=\"_blank\">Democrat bill would outlaw conscientious objections to MMR vaccine mandate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Alpha News MN</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -7539,6 +7478,23 @@
       "legislator_ids": []
     },
     {
+      "article_id": "756a4afa91ae7f89b3492ebdbf7996c3",
+      "title": "NI Public Health Bill including mandatory vaccinations scrapped - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iOU1pb2N6c0NNbS0yTXBfdERGSEE0MUYwUm9IM0loT2d5c1Zhekd3R0xZZ1B2T2w3QjJCM3ZqeTM2bUlQR1c0WnRrTmlPN2llUVdoOXlqX2Izdw?oc=5",
+      "source": "BBC",
+      "date": "Mon, 03 Nov 2025 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE9iOU1pb2N6c0NNbS0yTXBfdERGSEE0MUYwUm9IM0loT2d5c1Zhekd3R0xZZ1B2T2w3QjJCM3ZqeTM2bUlQR1c0WnRrTmlPN2llUVdoOXlqX2Izdw?oc=5\" target=\"_blank\">NI Public Health Bill including mandatory vaccinations scrapped</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">BBC</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "public health",
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "f4daf34f220b6a4bdefcaf516696965b",
       "title": "Courts may deliver the anti-vaccine movement’s biggest win - The Washington Post",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTkV2YjJsQ2dkRi1XbW5PSXpUZmpmNno0MlpjR2dpWUdBZTdjeFh1LU5TcFZZZVMzLWttaXBZZGN1MkplREE0anhrblE1ekRHc0hhVGFPa0dLY3MwMDhCcy1LWjBYczJxUjRnWHl0Z0NWRnlnaWh0ZzV0M25rM295bHlhWEN0dXhQYVUxLVlEYld3dEVTTEpGeXpKcHlTb2V1Y1JZZDFNLXZuNTBlcFFDVQ?oc=5",
@@ -7653,6 +7609,21 @@
       "legislator_ids": []
     },
     {
+      "article_id": "83f42da7ca7e642ee8141fab754325cc",
+      "title": "New Tennessee law requires parental consent for all vaccinations - WBIR",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWW9TQ1pUbEpvVDY5QjJkdzJGT2xSTFdtTm01SENPeTlGVFZVNzFHdXNOOFk0ZWk5MS14WEpFeUliX201UUlJX1NjNldsclo4WlR3X0xZenBxNDVfbHZ3LW5KaXBTUjlhTm1VUUNoTlMyYUkyMlUwczQ0dTdIcU1TZDhRUUlEUS1qaXJETXpJbGxyaGs1TzlpeEg0YXRLRUV3enFCTUNCUFZRbXlvQ29sVE5qOEpQMU1EOTdYcg?oc=5",
+      "source": "WBIR",
+      "date": "Wed, 26 Jul 2023 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPWW9TQ1pUbEpvVDY5QjJkdzJGT2xSTFdtTm01SENPeTlGVFZVNzFHdXNOOFk0ZWk5MS14WEpFeUliX201UUlJX1NjNldsclo4WlR3X0xZenBxNDVfbHZ3LW5KaXBTUjlhTm1VUUNoTlMyYUkyMlUwczQ0dTdIcU1TZDhRUUlEUS1qaXJETXpJbGxyaGs1TzlpeEg0YXRLRUV3enFCTUNCUFZRbXlvQ29sVE5qOEpQMU1EOTdYcg?oc=5\" target=\"_blank\">New Tennessee law requires parental consent for all vaccinations</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WBIR</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "6cf291935914a47aa099d295ed2a678f",
       "title": "Do US teens have the right to be vaccinated against their parents’ will? It depends on where they live - The Conversation",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPV090N25rck9CMEFZZkJPeElnU2VYdHA4Y0dMdDlSX3c3V1RtaGMxd1ZrZUJnT3h0bENYZGs3XzFUc1FjMWhfZUEtU1Nya3o4Tlk2eU9VYXNuMHRRVWFkaXB4RkZ0WDVDdk5UWWJ6VVZaeHlhX29pdXhZc1NYdHhLTmsycUdNRWd1YVdrelByR3RMVlVmRTFWWm9OckVxbmlEMnh5ZWx2X25icnVBWlE3VmhhUXpReWU3NlJhSzVpZG5EM29HS2d5RU9Pbm4zLWpa?oc=5",
@@ -7708,21 +7679,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "83f42da7ca7e642ee8141fab754325cc",
-      "title": "New Tennessee law requires parental consent for all vaccinations - WBIR",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWW9TQ1pUbEpvVDY5QjJkdzJGT2xSTFdtTm01SENPeTlGVFZVNzFHdXNOOFk0ZWk5MS14WEpFeUliX201UUlJX1NjNldsclo4WlR3X0xZenBxNDVfbHZ3LW5KaXBTUjlhTm1VUUNoTlMyYUkyMlUwczQ0dTdIcU1TZDhRUUlEUS1qaXJETXpJbGxyaGs1TzlpeEg0YXRLRUV3enFCTUNCUFZRbXlvQ29sVE5qOEpQMU1EOTdYcg?oc=5",
-      "source": "WBIR",
-      "date": "Wed, 26 Jul 2023 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPWW9TQ1pUbEpvVDY5QjJkdzJGT2xSTFdtTm01SENPeTlGVFZVNzFHdXNOOFk0ZWk5MS14WEpFeUliX201UUlJX1NjNldsclo4WlR3X0xZenBxNDVfbHZ3LW5KaXBTUjlhTm1VUUNoTlMyYUkyMlUwczQ0dTdIcU1TZDhRUUlEUS1qaXJETXpJbGxyaGs1TzlpeEg0YXRLRUV3enFCTUNCUFZRbXlvQ29sVE5qOEpQMU1EOTdYcg?oc=5\" target=\"_blank\">New Tennessee law requires parental consent for all vaccinations</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WBIR</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "d38898e1c9da6a59c4685cab7c6bfda7",
       "title": "RFK Jr. targets one of the strongest state school vaccine mandate laws - The Washington Post",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOYVc0T0JENmRvSWJqWFVSNVA5bFZ4V2lTRFVJSlh1Y3VPZHc1SGg0b1BBLVpOX3RXZnhvRUktMXJwdlN2Nkp6a1FVdU5vdy1uSEhfWHhndU41MldleUtURkpNTlh0OE8wSXY1b2haLURGQzJwaExGakdPVmtUdjJQTmROT1BmYmsyMWI4M0R6Zw?oc=5",
@@ -7769,12 +7725,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "41f7323e8be9eef47fc772cff3aa047b",
-      "title": "Vaccination over Parental Objection — Should Adolescents Be Allowed to Consent to Receiving Vaccines? - The New England Journal of Medicine",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8zbXlsOV9QNXh0MnpvTGpYaUMyUEt0SUE3OWEyZUNSTlJYOWxWN2UtN1oyU05lS2pLTUR0ZldHeWJvV2ViaTFUVlpYa3pTTnhhXzNRUmhVbHd1NWh6bVM0?oc=5",
-      "source": "The New England Journal of Medicine",
-      "date": "Wed, 05 Jun 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE8zbXlsOV9QNXh0MnpvTGpYaUMyUEt0SUE3OWEyZUNSTlJYOWxWN2UtN1oyU05lS2pLTUR0ZldHeWJvV2ViaTFUVlpYa3pTTnhhXzNRUmhVbHd1NWh6bVM0?oc=5\" target=\"_blank\">Vaccination over Parental Objection — Should Adolescents Be Allowed to Consent to Receiving Vaccines?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The New England Journal of Medicine</font>",
+      "article_id": "585e065c8d9e05ea9e001d280c6379a7",
+      "title": "Why a suburban teen went to Philly to get his COVID-19 vaccine - WHYY",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQU1YzVHZiZGx5TnpjYlViUUdTNkJlcHJiM1MwdHhjc19JUE5uY2pLb0ppeDNkQzNlQ05UeUlKVmZwTTVyMGlfQjFZS3FqdDJYb2UtSnM4R1lhSFFWSmUtdV9pNURGRDFmT01uOGFRamt1N3VLSkNUaERLYmphbnhqMG9vVFNocElIekpfYjdZLVlmdm8?oc=5",
+      "source": "WHYY",
+      "date": "Tue, 18 Jan 2022 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQU1YzVHZiZGx5TnpjYlViUUdTNkJlcHJiM1MwdHhjc19JUE5uY2pLb0ppeDNkQzNlQ05UeUlKVmZwTTVyMGlfQjFZS3FqdDJYb2UtSnM4R1lhSFFWSmUtdV9pNURGRDFmT01uOGFRamt1N3VLSkNUaERLYmphbnhqMG9vVFNocElIekpfYjdZLVlmdm8?oc=5\" target=\"_blank\">Why a suburban teen went to Philly to get his COVID-19 vaccine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WHYY</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine"
@@ -7793,6 +7749,20 @@
       "topics": [
         "vaccine",
         "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "41f7323e8be9eef47fc772cff3aa047b",
+      "title": "Vaccination over Parental Objection — Should Adolescents Be Allowed to Consent to Receiving Vaccines? - The New England Journal of Medicine",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE8zbXlsOV9QNXh0MnpvTGpYaUMyUEt0SUE3OWEyZUNSTlJYOWxWN2UtN1oyU05lS2pLTUR0ZldHeWJvV2ViaTFUVlpYa3pTTnhhXzNRUmhVbHd1NWh6bVM0?oc=5",
+      "source": "The New England Journal of Medicine",
+      "date": "Wed, 05 Jun 2019 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE8zbXlsOV9QNXh0MnpvTGpYaUMyUEt0SUE3OWEyZUNSTlJYOWxWN2UtN1oyU05lS2pLTUR0ZldHeWJvV2ViaTFUVlpYa3pTTnhhXzNRUmhVbHd1NWh6bVM0?oc=5\" target=\"_blank\">Vaccination over Parental Objection — Should Adolescents Be Allowed to Consent to Receiving Vaccines?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The New England Journal of Medicine</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -7834,20 +7804,6 @@
       "topics": [
         "vaccine",
         "education"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "585e065c8d9e05ea9e001d280c6379a7",
-      "title": "Why a suburban teen went to Philly to get his COVID-19 vaccine - WHYY",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQU1YzVHZiZGx5TnpjYlViUUdTNkJlcHJiM1MwdHhjc19JUE5uY2pLb0ppeDNkQzNlQ05UeUlKVmZwTTVyMGlfQjFZS3FqdDJYb2UtSnM4R1lhSFFWSmUtdV9pNURGRDFmT01uOGFRamt1N3VLSkNUaERLYmphbnhqMG9vVFNocElIekpfYjdZLVlmdm8?oc=5",
-      "source": "WHYY",
-      "date": "Tue, 18 Jan 2022 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxQU1YzVHZiZGx5TnpjYlViUUdTNkJlcHJiM1MwdHhjc19JUE5uY2pLb0ppeDNkQzNlQ05UeUlKVmZwTTVyMGlfQjFZS3FqdDJYb2UtSnM4R1lhSFFWSmUtdV9pNURGRDFmT01uOGFRamt1N3VLSkNUaERLYmphbnhqMG9vVFNocElIekpfYjdZLVlmdm8?oc=5\" target=\"_blank\">Why a suburban teen went to Philly to get his COVID-19 vaccine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WHYY</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -8013,6 +7969,21 @@
       "legislator_ids": []
     },
     {
+      "article_id": "3b5fe799f7877831bf446758bda0788b",
+      "title": "Lawyer who represented RFK Jr., anti-vaccine group represents plaintiffs in WV vaccine lawsuit - West Virginia Watch",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZVUzb1JfeXVENF9ZYkFXYUw2b3F5VFlFVlJreEd4VzdSZGJfWmdONkJYMlVabU1JSkRnRW9hVzBrSHNBbjd0d3JTazlFSEdFUk5Fck44bm9ObnQtRWgyZFhjQnNKYWpOTkROeWYxd1ZLZENHOGEwT2o3QXFsYWZhOXlBQl84LV8zSW53blVNSGlKVEJuVFZmbEUwMFVGUVlGdEhjQ3hLU1BqeFRVbnZpcGlLRUJGTjJmaUJZdHRTeFAtTlEzZEFkTDlOSENra1E?oc=5",
+      "source": "West Virginia Watch",
+      "date": "Thu, 25 Sep 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOZVUzb1JfeXVENF9ZYkFXYUw2b3F5VFlFVlJreEd4VzdSZGJfWmdONkJYMlVabU1JSkRnRW9hVzBrSHNBbjd0d3JTazlFSEdFUk5Fck44bm9ObnQtRWgyZFhjQnNKYWpOTkROeWYxd1ZLZENHOGEwT2o3QXFsYWZhOXlBQl84LV8zSW53blVNSGlKVEJuVFZmbEUwMFVGUVlGdEhjQ3hLU1BqeFRVbnZpcGlLRUJGTjJmaUJZdHRTeFAtTlEzZEFkTDlOSENra1E?oc=5\" target=\"_blank\">Lawyer who represented RFK Jr., anti-vaccine group represents plaintiffs in WV vaccine lawsuit</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">West Virginia Wa",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "bf4b05b176a5d33aa741a1a73ac23e61",
       "title": "California enacts mandatory vaccination law for students - BBC",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8tdGZ0a2h2N2F5ajY4ZmNoMnFUQUVEZlViZWFiYWVMOHNpNWhudlB3bVhzaGJMb3laX2V1M1ZreHBsekNsQ0MxNXI5VjNGYnVySGNoNHBJa3V1ZTIwVnc?oc=5",
@@ -8023,21 +7994,6 @@
       "topics": [
         "vaccine",
         "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "3b5fe799f7877831bf446758bda0788b",
-      "title": "Lawyer who represented RFK Jr., anti-vaccine group represents plaintiffs in WV vaccine lawsuit - West Virginia Watch",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZVUzb1JfeXVENF9ZYkFXYUw2b3F5VFlFVlJreEd4VzdSZGJfWmdONkJYMlVabU1JSkRnRW9hVzBrSHNBbjd0d3JTazlFSEdFUk5Fck44bm9ObnQtRWgyZFhjQnNKYWpOTkROeWYxd1ZLZENHOGEwT2o3QXFsYWZhOXlBQl84LV8zSW53blVNSGlKVEJuVFZmbEUwMFVGUVlGdEhjQ3hLU1BqeFRVbnZpcGlLRUJGTjJmaUJZdHRTeFAtTlEzZEFkTDlOSENra1E?oc=5",
-      "source": "West Virginia Watch",
-      "date": "Thu, 25 Sep 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxOZVUzb1JfeXVENF9ZYkFXYUw2b3F5VFlFVlJreEd4VzdSZGJfWmdONkJYMlVabU1JSkRnRW9hVzBrSHNBbjd0d3JTazlFSEdFUk5Fck44bm9ObnQtRWgyZFhjQnNKYWpOTkROeWYxd1ZLZENHOGEwT2o3QXFsYWZhOXlBQl84LV8zSW53blVNSGlKVEJuVFZmbEUwMFVGUVlGdEhjQ3hLU1BqeFRVbnZpcGlLRUJGTjJmaUJZdHRTeFAtTlEzZEFkTDlOSENra1E?oc=5\" target=\"_blank\">Lawyer who represented RFK Jr., anti-vaccine group represents plaintiffs in WV vaccine lawsuit</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">West Virginia Wa",
-      "sentiment": "negative",
-      "topics": [
-        "vaccine",
         "legislation"
       ],
       "mentioned_names": [],
