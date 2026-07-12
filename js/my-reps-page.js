@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             repGrid.appendChild(card);
         });
 
-        // Collapse the rep list by default — hero CTA is the star
+        // Collapse the rep list by default - hero CTA is the star
         buildRepListToggle(reps);
 
         if (repSection) repSection.style.display = '';
@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var repMeta = document.createElement('p');
             repMeta.className = 'call-card-meta';
             var partyLabel = rep.party === 'R' ? 'Republican' : rep.party === 'D' ? 'Democrat' : rep.partyFull || rep.party;
-            repMeta.textContent = partyLabel + ' — ' + rep.office;
+            repMeta.textContent = partyLabel + ' - ' + rep.office;
             repInfo.appendChild(repMeta);
             repHeader.appendChild(repInfo);
             card.appendChild(repHeader);
@@ -769,7 +769,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reps.forEach(function(rep) {
                     if (rep.candidates && rep.candidates.length > 0) {
                         rep.candidates.forEach(function(cand) {
-                            // Only include candidates with email — skip paper filers with no contact
+                            // Only include candidates with email - skip paper filers with no contact
                             if (cand.name && cand.name !== rep.name && cand.email && !seenNames[cand.name]) {
                                 seenNames[cand.name] = true;
                                 allCandidates.push({
@@ -840,7 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
             repInfo.appendChild(repName);
             var repDetail = document.createElement('div');
             repDetail.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:2px;';
-            repDetail.textContent = partyLabel + ' — ' + rep.office;
+            repDetail.textContent = partyLabel + ' - ' + rep.office;
             repInfo.appendChild(repDetail);
             if (rep.email) {
                 var repEmail = document.createElement('div');
@@ -1107,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             repInfo.appendChild(candName);
             var candDetail = document.createElement('div');
             candDetail.style.cssText = 'font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:2px;';
-            candDetail.textContent = partyLabel + ' — ' + cand.office;
+            candDetail.textContent = partyLabel + ' - ' + cand.office;
             repInfo.appendChild(candDetail);
 
             btnArea.textContent = '';
@@ -1346,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const num = document.createElement('strong');
                 num.textContent = ' ' + b.billNumber;
                 item.appendChild(num);
-                const titleText = document.createTextNode(' — ' + (b.title.length > 80 ? b.title.substring(0, 80) + '...' : b.title));
+                const titleText = document.createTextNode(' - ' + (b.title.length > 80 ? b.title.substring(0, 80) + '...' : b.title));
                 item.appendChild(titleText);
                 const statusSpan = document.createElement('span');
                 statusSpan.className = 'rep-bill-status';
@@ -1520,7 +1520,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detail.appendChild(contactDiv);
         }
 
-        // Email template — with personalization inputs
+        // Email template - with personalization inputs
         const templateDiv = document.createElement('div');
         templateDiv.className = 'rep-hub-template';
         const templateTitle = document.createElement('h4');
@@ -1680,7 +1680,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var _legacyPledgeSubjects = [
         'Will you take the SAFE Action pledge on science and public health?',
         'A constituent request: take the SAFE Action pledge',
-        'Please stand with science — take the SAFE Action pledge',
+        'Please stand with science - take the SAFE Action pledge',
     ];
     var _legacyOpposeSubjects = [
         'Please OPPOSE {bill} - {title}',
@@ -1955,7 +1955,7 @@ var BillBrowser = {
         if (stateSelect && typeof SAFE_CONFIG !== 'undefined') {
             var states = SAFE_CONFIG.STATES;
             Object.keys(states).forEach(function(code) {
-                if (code === 'US') return; // Skip federal — bills are state-level
+                if (code === 'US') return; // Skip federal - bills are state-level
                 var opt = document.createElement('option');
                 opt.value = code;
                 opt.textContent = states[code];
@@ -1966,7 +1966,7 @@ var BillBrowser = {
         // Restore filters from URL params (for bookmarkable links)
         this._restoreFiltersFromURL();
 
-        // Add filter listeners — sync to URL on change, reset pagination
+        // Add filter listeners - sync to URL on change, reset pagination
         var self = this;
         ['bb-state', 'bb-stance', 'bb-status', 'bb-impact', 'bb-category'].forEach(function(id) {
             var el = document.getElementById(id);
@@ -2083,7 +2083,7 @@ var BillBrowser = {
                 self.loadBills(false);
             });
         } else {
-            // Static fallback — load all bills, filter client-side
+            // Static fallback - load all bills, filter client-side
             LegislationAPI.getLegislation(null).then(function(bills) {
                 self._loading = false;
                 if (loading) loading.style.display = 'none';
@@ -2211,7 +2211,7 @@ var BillBrowser = {
         stateBadge.style.cssText = 'background:#1A2744;color:#fff;padding:0.15em 0.5em;border-radius:4px;font-size:0.75rem;font-weight:600;';
         header.appendChild(stateBadge);
 
-        // Type badge — only label STEM-related bills (anti/pro science)
+        // Type badge - only label STEM-related bills (anti/pro science)
         if (bill.billType === 'anti' || bill.billType === 'pro') {
             var typeBadge = document.createElement('span');
             if (bill.billType === 'anti') {

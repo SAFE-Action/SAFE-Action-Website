@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initImpact() {
-        // Demo numbers — in production, pull from Firebase
+        // Demo numbers - in production, pull from Firebase
         const contacted = getOutreachCount('contacted');
         const pledged = getOutreachCount('pledged');
         setEl('outreach-impact-contacted', contacted);

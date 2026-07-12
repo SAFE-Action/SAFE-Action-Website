@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const billId = params.get('bill');
     const state = params.get('state');
 
-    // Set back link — return to tracker with previous filter settings
+    // Set back link - return to tracker with previous filter settings
     const savedReturn = sessionStorage.getItem('safe_tracker_return');
     if (savedReturn) {
         backLink.href = savedReturn;

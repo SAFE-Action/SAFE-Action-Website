@@ -4,7 +4,7 @@
  * Connects to Firebase Firestore for live updates.
  */
 
-// Firebase initialization — uses shared config from config.js (SAFE_CONFIG.FIREBASE_CONFIG)
+// Firebase initialization - uses shared config from config.js (SAFE_CONFIG.FIREBASE_CONFIG)
 var firebaseConfig = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG)
     ? SAFE_CONFIG.FIREBASE_CONFIG
     : { apiKey: '', projectId: 'safe-action-website' };
@@ -84,7 +84,7 @@ if (window._stateCoords) {
 }
 
 // ---------------------
-// Map Rendering — Stacking Dots
+// Map Rendering - Stacking Dots
 // ---------------------
 
 // Track per-state action counts and types

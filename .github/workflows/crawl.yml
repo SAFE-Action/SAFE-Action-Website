@@ -22,7 +22,10 @@ permissions:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Full crawls (all 50 states + federal bills + analysis) can exceed 60 min
+    # on slow-API days and were being killed at the timeout, leaving bill data
+    # unrefreshed. 120 gives headroom while still bounding a runaway.
+    timeout-minutes: 120
 
     steps:
       - uses: actions/checkout@v4

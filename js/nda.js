@@ -2,7 +2,7 @@
     var volunteerId = null;
     var volunteerData = null;
 
-    // NDA text (duplicated client-side for display — server has authoritative copy)
+    // NDA text (duplicated client-side for display - server has authoritative copy)
     var ndaSections = [
         {
             heading: '1. Definition of Confidential Information',

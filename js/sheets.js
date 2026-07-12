@@ -121,7 +121,7 @@ const SheetsAPI = {
                 city: 'San Diego',
                 state: 'CA',
                 photoUrl: '',
-                vaccineSupport: 'Yes \u2014 I strongly support evidence-based vaccine policies and public health measures.',
+                vaccineSupport: 'Yes - I strongly support evidence-based vaccine policies and public health measures.',
                 question1: 'I believe vaccines are one of the most important public health tools we have. As a legislator, I have consistently voted to strengthen school immunization requirements and oppose exemption-expansion bills. Science must guide our health policy, not fear or misinformation.',
                 question2: 'If re-elected, I will work to ensure every family has access to accurate vaccine information from trusted medical sources. I plan to introduce legislation requiring transparent reporting of vaccination rates by school district so parents can make informed decisions based on real data.',
                 question3: 'I am a former public health nurse and have seen firsthand the devastating effects of preventable diseases. I got into public service specifically to protect community health. I welcome questions from voters about my record on these issues.'
@@ -140,7 +140,7 @@ const SheetsAPI = {
                 city: 'Houston',
                 state: 'TX',
                 photoUrl: '',
-                vaccineSupport: 'Yes \u2014 I support childhood vaccination programs and evidence-based public health policy.',
+                vaccineSupport: 'Yes - I support childhood vaccination programs and evidence-based public health policy.',
                 question1: 'As a father of three, I understand the importance of keeping our children healthy. I support the existing childhood vaccination schedule recommended by the CDC and AAP. While I respect individual liberty, I believe the scientific evidence overwhelmingly supports vaccination as safe and effective.',
                 question2: 'I would work to increase funding for county health departments to provide free and low-cost vaccines to underserved communities. Access to preventive healthcare should not depend on your zip code. I also support strengthening our disease surveillance systems.',
                 question3: 'I have a background in emergency management and understand how quickly preventable disease outbreaks can overwhelm our healthcare system. I believe we can protect both individual freedom and community health through smart, science-based policy.'
@@ -159,7 +159,7 @@ const SheetsAPI = {
                 city: 'New York',
                 state: 'NY',
                 photoUrl: '',
-                vaccineSupport: 'Yes \u2014 I support strong public health infrastructure including vaccination programs.',
+                vaccineSupport: 'Yes - I support strong public health infrastructure including vaccination programs.',
                 question1: 'Public health is the foundation of a thriving city. I have championed our municipal vaccination clinics and fought against misinformation campaigns targeting immigrant communities. Every resident deserves access to life-saving vaccines regardless of income or immigration status.',
                 question2: 'I am working to expand mobile vaccination units in underserved neighborhoods and partnering with community health workers who speak residents\u0027 languages. I also support comprehensive science education in our public schools to build health literacy from an early age.',
                 question3: 'Before joining the City Council, I worked as an epidemiologist at the NYC Department of Health. I bring real scientific expertise to policy decisions and I am committed to making sure our city\u0027s health policies are grounded in evidence, not politics.'
@@ -178,8 +178,8 @@ const SheetsAPI = {
                 city: 'Fort Lauderdale',
                 state: 'FL',
                 photoUrl: '',
-                vaccineSupport: 'Yes \u2014 I support community water fluoridation and evidence-based public health measures.',
-                question1: 'I believe local government has a responsibility to protect community health through proven public health measures. I have voted to maintain our county\u0027s water fluoridation program despite pressure from anti-fluoride activists. The science on fluoridation is settled \u2014 it\u0027s safe and it prevents tooth decay, especially in children who can\u0027t afford dental care.',
+                vaccineSupport: 'Yes - I support community water fluoridation and evidence-based public health measures.',
+                question1: 'I believe local government has a responsibility to protect community health through proven public health measures. I have voted to maintain our county\u0027s water fluoridation program despite pressure from anti-fluoride activists. The science on fluoridation is settled - it\u0027s safe and it prevents tooth decay, especially in children who can\u0027t afford dental care.',
                 question2: 'I plan to establish a county Science Advisory Board made up of local physicians, researchers, and public health professionals to review all health-related policy proposals before they come to a vote. Policy should be informed by experts, not lobbyists.',
                 question3: 'I am a retired pediatrician with 30 years of clinical experience. I have seen too many children suffer from preventable conditions. I believe public officials have a duty to stand up for science even when it\u0027s politically inconvenient.'
             },
@@ -197,7 +197,7 @@ const SheetsAPI = {
                 city: 'Phoenix',
                 state: 'AZ',
                 photoUrl: '',
-                vaccineSupport: 'Yes \u2014 I support school immunization requirements to protect all students.',
+                vaccineSupport: 'Yes - I support school immunization requirements to protect all students.',
                 question1: 'As a School Board President and mother of four, student health and safety is my top priority. I firmly support our district\u0027s immunization requirements for school enrollment. These requirements protect not just individual students but also children who cannot be vaccinated due to legitimate medical conditions.',
                 question2: 'I am working to integrate more health science and critical thinking into our K-12 curriculum so students can evaluate health claims for themselves. I also support partnerships with local pediatricians to host school-based vaccination clinics for families who face transportation or cost barriers.',
                 question3: 'I hold a Master\u0027s in Public Health from ASU and have volunteered with the Arizona Department of Health Services for over a decade. I ran for School Board because I believe every child deserves to learn in a safe, healthy environment supported by the best available science.'

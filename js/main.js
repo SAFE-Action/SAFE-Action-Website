@@ -98,7 +98,7 @@ function safeMain() {
                 updateCounterDisplay('db-emails', totalEmails);
                 updateCounterDisplay('db-seats', totalSeats);
 
-                // Bills — total count from LegislationAPI
+                // Bills - total count from LegislationAPI
                 LegislationAPI.getLegislation(null).then(function(bills) {
                     updateCounterDisplay('db-bills', bills.length);
                     var el = document.getElementById('db-bills');
@@ -230,7 +230,7 @@ function safeMain() {
         var weekTotal = weekly.total || 0;
         var yesterdayTotal = yesterday.total || 0;
 
-        // Bar never reaches 100% — always show room for more
+        // Bar never reaches 100% - always show room for more
         // Use a moving target that's always ahead of current progress
         var barTarget = Math.max(todayTotal + 5, 10);
         var pct = Math.min(Math.round((todayTotal / barTarget) * 100), 85);
@@ -292,7 +292,7 @@ function safeMain() {
             addStat('=', 'matching yesterday');
         }
 
-        // Motivational message — always encouraging, never "done"
+        // Motivational message - always encouraging, never "done"
         var msg;
         if (todayTotal === 0) {
             var startMsgs = [
@@ -303,7 +303,7 @@ function safeMain() {
             msg = startMsgs[Math.floor(Math.random() * startMsgs.length)];
         } else if (todayTotal < 5) {
             var earlyMsgs = [
-                'Great start! Keep going \u2014 every email builds momentum.',
+                'Great start! Keep going - every email builds momentum.',
                 'You\'re making a difference! A few more emails amplifies your impact.',
                 'Legislators pay attention to volume. Keep the pressure on!',
             ];
@@ -320,7 +320,7 @@ function safeMain() {
                 'Incredible impact! You\'re in the top tier of citizen advocates today.',
                 'Your representatives are definitely hearing from you. Keep pushing!',
                 'This kind of engagement changes votes. You\'re making history.',
-                todayTotal + ' actions today \u2014 that\'s real political power. Don\'t stop!',
+                todayTotal + ' actions today - that\'s real political power. Don\'t stop!',
             ];
             msg = highMsgs[Math.floor(Math.random() * highMsgs.length)];
         }
@@ -379,7 +379,7 @@ function safeMain() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ type: type, _t: Date.now() })
-        }).catch(function() { /* silent fail — localStorage already updated */ });
+        }).catch(function() { /* silent fail - localStorage already updated */ });
 
         return result;
     };
@@ -417,22 +417,29 @@ function safeMain() {
             var zeroCta = document.getElementById('momentum-zero-cta');
             var breakdownEl = document.getElementById('momentum-breakdown');
             var todayLineEl = document.getElementById('momentum-today-line');
+            var progressWrap = document.getElementById('momentum-progress');
+            var zeroStat = document.getElementById('momentum-zero-stat');
 
-            // Initially hide counters if zero, show motivating zero-state
-            function updateZeroState(total) {
-                if (zeroCta) {
-                    if (total > 0) {
-                        zeroCta.style.display = 'none';
-                        if (breakdownEl) breakdownEl.style.display = '';
-                        if (todayLineEl) todayLineEl.style.display = '';
+            // When today's count is 0 we never render a bare "0". We hide the
+            // numeric lines and show a motivating zero-state instead, backed by
+            // the all-time total so the movement still reads as real momentum.
+            function updateZeroState(total, allTime) {
+                var isZero = !(total > 0);
+                if (zeroCta) zeroCta.style.display = isZero ? '' : 'none';
+                if (breakdownEl) breakdownEl.style.display = isZero ? 'none' : '';
+                if (todayLineEl) todayLineEl.style.display = isZero ? 'none' : '';
+                if (progressWrap) progressWrap.style.display = isZero ? 'none' : '';
+                if (isZero && zeroStat) {
+                    if (allTime > 0) {
+                        zeroStat.textContent = 'Join the ' + allTime.toLocaleString() +
+                            ' actions already taken to defend science.';
+                        zeroStat.style.display = '';
                     } else {
-                        zeroCta.style.display = '';
-                        if (breakdownEl) breakdownEl.style.display = 'none';
-                        if (todayLineEl) todayLineEl.style.display = 'none';
+                        zeroStat.style.display = 'none';
                     }
                 }
             }
-            // Start in zero state
+            // Start in zero state (all-time filled once the snapshot arrives)
             updateZeroState(0);
 
             // Real-time listener
@@ -452,7 +459,7 @@ function safeMain() {
                 var allTimeTotal = (data['allTime_total'] || 0);
 
                 // Toggle zero-state vs counters
-                updateZeroState(todayTotal);
+                updateZeroState(todayTotal, allTimeTotal);
 
                 // Animate tick effect when number changes
                 function updateStat(el, key, val) {
@@ -473,7 +480,7 @@ function safeMain() {
                 if (emailsEl) updateStat(emailsEl, 'emails', todayEmails);
                 if (callsEl) updateStat(callsEl, 'calls', todayCalls);
 
-                // Daily goal progress bar — target grows as people hit it
+                // Daily goal progress bar - target grows as people hit it
                 var progressFill = document.getElementById('momentum-progress-fill');
                 var progressLabel = document.getElementById('momentum-progress-label');
                 if (progressFill && progressLabel) {
@@ -501,9 +508,9 @@ function safeMain() {
                     if (todayTotal >= 50) {
                         headlineEl.textContent = 'Americans are defending science right now';
                     } else if (todayTotal >= 10) {
-                        headlineEl.textContent = 'Momentum is building \u2014 join the movement';
+                        headlineEl.textContent = 'Momentum is building - join the movement';
                     } else if (todayTotal >= 1) {
-                        headlineEl.textContent = 'People are taking action today \u2014 join them';
+                        headlineEl.textContent = 'People are taking action today - join them';
                     } else if (allTimeTotal > 0) {
                         headlineEl.textContent = 'A growing movement for science';
                     }

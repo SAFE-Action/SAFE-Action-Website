@@ -74,7 +74,7 @@ const MyRepsHub = {
         let state = '';
         const districts = [];
 
-        // Primary: use Google's normalizedInput.state — most reliable
+        // Primary: use Google's normalizedInput.state - most reliable
         if (normalizedInput.state) {
             state = normalizedInput.state.toUpperCase();
         }
