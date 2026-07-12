@@ -95,7 +95,7 @@ exports.volunteerSignNda = async (req, res) => {
                 }
             } catch (driveErr) {
                 console.error('Drive upload failed:', driveErr);
-                // Continue — signing still succeeds even if Drive upload fails
+                // Continue - signing still succeeds even if Drive upload fails
             }
         }
 

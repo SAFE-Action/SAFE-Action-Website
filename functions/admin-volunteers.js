@@ -186,7 +186,7 @@ async function handleApprove(req, res, adminEmail) {
     ${calendarStep}
 </ol>
 <p>Questions? Reply to this email or reach out in the team chat.</p>
-<p>— The SAFE Action Team</p>`;
+<p>- The SAFE Action Team</p>`;
 
         await sendEmail({
             to: volunteerEmail,

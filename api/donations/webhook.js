@@ -1,4 +1,4 @@
-// POST /api/donations/webhook — Stripe only
+// POST /api/donations/webhook - Stripe only
 import crypto from 'crypto';
 
 const KV_URL   = process.env.KV_REST_API_URL;
@@ -27,8 +27,15 @@ export default async function handler(req, res) {
 
   const sig    = req.headers['stripe-signature'];
   const secret = process.env.SAFE_STRIPE_WEBHOOK_SECRET;
-  if (sig && secret && !verifyStripe(rawBody, sig, secret))
-    return res.status(401).json({ error: 'Bad signature' });
+  // Fail closed: a signing secret MUST be configured and every request MUST
+  // carry a signature that verifies. Previously a missing secret or missing
+  // signature silently skipped verification, so a forged payload could record
+  // fake donations. Reject in all of those cases.
+  if (!secret) return res.status(500).json({ error: 'Webhook signing secret not configured' });
+  if (!sig) return res.status(401).json({ error: 'Missing signature' });
+  let sigOk = false;
+  try { sigOk = verifyStripe(rawBody, sig, secret); } catch { sigOk = false; }
+  if (!sigOk) return res.status(401).json({ error: 'Bad signature' });
 
   let body;
   try { body = JSON.parse(rawBody); } catch { return res.status(400).end(); }

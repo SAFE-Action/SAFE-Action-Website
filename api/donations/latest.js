@@ -1,4 +1,4 @@
-// GET /api/donations/latest — polled by dashboard.html every 5s
+// GET /api/donations/latest - polled by dashboard.html every 5s
 const KV_URL   = process.env.KV_REST_API_URL;
 const KV_TOKEN = process.env.KV_REST_API_TOKEN;
 
