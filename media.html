@@ -513,9 +513,9 @@
                 <strong>How it works:</strong> When you apply filters on the Browse Bills page, the URL updates automatically. Copy the URL from your browser bar to save your exact filter setup. Share it with colleagues, embed it in articles, or bookmark it for future reference.
                 <br><br>
                 <strong>Example URLs:</strong><br>
-                <code>tracker.html?state=TX&type=anti&status=active#browse-bills</code> &mdash; Active anti-science bills in Texas<br>
-                <code>tracker.html?category=vaccine-exemption&priority=High#browse-bills</code> &mdash; High-priority vaccine exemption bills<br>
-                <code>tracker.html?q=fluoride#browse-bills</code> &mdash; All bills mentioning fluoride
+                <code>tracker.html?state=TX&type=anti&status=active#browse-bills</code> - Active anti-science bills in Texas<br>
+                <code>tracker.html?category=vaccine-exemption&priority=High#browse-bills</code> - High-priority vaccine exemption bills<br>
+                <code>tracker.html?q=fluoride#browse-bills</code> - All bills mentioning fluoride
             </div>
         </div>
     </section>
@@ -535,9 +535,9 @@
                         <h3>Finding Bills</h3>
                         <p>Every day, our automated system pulls newly introduced and updated legislation from three official sources:</p>
                         <ul>
-                            <li><strong>LegiScan</strong> &mdash; Covers all 50 state legislatures with real-time bill tracking</li>
-                            <li><strong>GovInfo</strong> &mdash; The U.S. Government Publishing Office's official database for federal bills</li>
-                            <li><strong>OpenStates</strong> &mdash; An open-source backup that ensures we don't miss anything</li>
+                            <li><strong>LegiScan</strong> - Covers all 50 state legislatures with real-time bill tracking</li>
+                            <li><strong>GovInfo</strong> - The U.S. Government Publishing Office's official database for federal bills</li>
+                            <li><strong>OpenStates</strong> - An open-source backup that ensures we don't miss anything</li>
                         </ul>
                         <p>We currently track <strong>10,000+ bills</strong> across all 50 states and Congress. The system checks for new bills and status changes automatically every day.</p>
                     </div>
@@ -578,13 +578,13 @@
                     <div class="methodology-step-number">3</div>
                     <div class="methodology-step-content">
                         <h3>Second Pass: AI Verification</h3>
-                        <p>Keywords alone aren't enough. A bill titled "Eliminating Personal Conviction Exemption from Immunizations" contains the word "exemption" &mdash; but it's actually <em>removing</em> exemptions, which is pro-science. Simple keyword matching would get this wrong.</p>
+                        <p>Keywords alone aren't enough. A bill titled "Eliminating Personal Conviction Exemption from Immunizations" contains the word "exemption" - but it's actually <em>removing</em> exemptions, which is pro-science. Simple keyword matching would get this wrong.</p>
                         <p>That's why every bill classified as anti-science or pro-science goes through a <strong>second, independent review</strong> using a large language model (AI). This AI reviewer:</p>
                         <ul>
                             <li><strong>Reads the full context</strong> of each bill's title, summary, and category</li>
                             <li><strong>Makes its own independent classification</strong> without knowing what the keyword system decided</li>
                             <li><strong>Assigns a confidence score</strong> from 0% to 100% indicating how certain it is</li>
-                            <li><strong>Cites specific evidence</strong> &mdash; the exact phrases that drove its decision</li>
+                            <li><strong>Cites specific evidence</strong> - the exact phrases that drove its decision</li>
                         </ul>
                     </div>
                 </div>
@@ -649,7 +649,7 @@
                     <div class="methodology-step-number">6</div>
                     <div class="methodology-step-content">
                         <h3>Ongoing Updates</h3>
-                        <p>Our system runs <strong>automatically every day</strong>. When a bill's status changes &mdash; moves to a new committee, gets amended, passes a chamber, or is signed into law &mdash; the tracker updates within 24 hours. New bills are picked up as soon as they're filed.</p>
+                        <p>Our system runs <strong>automatically every day</strong>. When a bill's status changes - moves to a new committee, gets amended, passes a chamber, or is signed into law - the tracker updates within 24 hours. New bills are picked up as soon as they're filed.</p>
                         <p>All of our code is <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">open source on GitHub</a> under the GPLv3 license. Anyone can inspect, audit, or improve our classification algorithms.</p>
                     </div>
                 </div>
@@ -663,35 +663,35 @@
                 <div class="quick-links-grid">
                     <div class="quick-link-card">
                         <h3>Legislation Data</h3>
-                        <p><strong><a href="https://legiscan.com" target="_blank" rel="noopener noreferrer">LegiScan API</a></strong> &mdash; Primary source for all 50 state legislatures. Provides bill text, status updates, sponsors, committee assignments, roll call votes, and subject tags. Updated daily. 30,000 requests/month.</p>
-                        <p><strong><a href="https://www.govinfo.gov" target="_blank" rel="noopener noreferrer">GovInfo (GPO)</a></strong> &mdash; Official U.S. Government Publishing Office. Source for all federal bills (House &amp; Senate). Free, no rate limits.</p>
-                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates API</a></strong> &mdash; Open-source backup for state legislation. Ensures coverage if LegiScan misses a bill or has delayed updates.</p>
+                        <p><strong><a href="https://legiscan.com" target="_blank" rel="noopener noreferrer">LegiScan API</a></strong> - Primary source for all 50 state legislatures. Provides bill text, status updates, sponsors, committee assignments, roll call votes, and subject tags. Updated daily. 30,000 requests/month.</p>
+                        <p><strong><a href="https://www.govinfo.gov" target="_blank" rel="noopener noreferrer">GovInfo (GPO)</a></strong> - Official U.S. Government Publishing Office. Source for all federal bills (House &amp; Senate). Free, no rate limits.</p>
+                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates API</a></strong> - Open-source backup for state legislation. Ensures coverage if LegiScan misses a bill or has delayed updates.</p>
                     </div>
                     <div class="quick-link-card">
                         <h3>Legislator &amp; Contact Data</h3>
-                        <p><strong><a href="https://developers.google.com/civic-information" target="_blank" rel="noopener noreferrer">Google Civic Information API</a></strong> &mdash; When you enter your address, this official Google service identifies your exact federal, state, and local representatives based on your voting districts.</p>
-                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates People API</a></strong> &mdash; Provides state legislator contact details including office emails, phone numbers, and committee memberships.</p>
+                        <p><strong><a href="https://developers.google.com/civic-information" target="_blank" rel="noopener noreferrer">Google Civic Information API</a></strong> - When you enter your address, this official Google service identifies your exact federal, state, and local representatives based on your voting districts.</p>
+                        <p><strong><a href="https://openstates.org" target="_blank" rel="noopener noreferrer">OpenStates People API</a></strong> - Provides state legislator contact details including office emails, phone numbers, and committee memberships.</p>
                         <p>Email addresses and phone numbers come directly from official government websites and legislative databases.</p>
                     </div>
                     <div class="quick-link-card">
                         <h3>AI Classification</h3>
-                        <p><strong><a href="https://groq.com" target="_blank" rel="noopener noreferrer">Groq (Llama 3.3 70B)</a></strong> &mdash; The AI model used for secondary bill verification. An open-weight large language model running on Groq's inference platform. We use low temperature (0.1) for maximum consistency across runs.</p>
-                        <p>The AI never invents information &mdash; it only evaluates the bill data already collected from official sources above.</p>
+                        <p><strong><a href="https://groq.com" target="_blank" rel="noopener noreferrer">Groq (Llama 3.3 70B)</a></strong> - The AI model used for secondary bill verification. An open-weight large language model running on Groq's inference platform. We use low temperature (0.1) for maximum consistency across runs.</p>
+                        <p>The AI never invents information - it only evaluates the bill data already collected from official sources above.</p>
                     </div>
                     <div class="quick-link-card">
                         <h3>Action Counts</h3>
-                        <p><strong>Emails &amp; calls tracked:</strong> When you use our "Email Your Rep" or "Call" tools, the action is counted via our <a href="https://firebase.google.com" target="_blank" rel="noopener noreferrer">Firebase</a> backend. We count the action type (email or call) and nothing else &mdash; no personal data, no message content, no IP addresses.</p>
+                        <p><strong>Emails &amp; calls tracked:</strong> When you use our "Email Your Rep" or "Call" tools, the action is counted via our <a href="https://firebase.google.com" target="_blank" rel="noopener noreferrer">Firebase</a> backend. We count the action type (email or call) and nothing else - no personal data, no message content, no IP addresses.</p>
                         <p><strong>Pledge data:</strong> Public officials who take the SAFE Action pledge are verified through our candidate quiz submission process and reviewed before publication.</p>
                     </div>
                     <div class="quick-link-card">
                         <h3>Hosting &amp; Infrastructure</h3>
-                        <p><strong>GitHub Pages</strong> &mdash; The website itself is a static site hosted for free on GitHub. No server-side user tracking.</p>
-                        <p><strong>Firebase (Google Cloud)</strong> &mdash; Cloud functions handle action counting, volunteer applications, and donation processing. Firestore database stores bill data and aggregate counters.</p>
-                        <p><strong>GitHub Actions</strong> &mdash; Automated daily crawler runs at 6 AM UTC, pulling fresh data from all legislation APIs.</p>
+                        <p><strong>GitHub Pages</strong> - The website itself is a static site hosted for free on GitHub. No server-side user tracking.</p>
+                        <p><strong>Firebase (Google Cloud)</strong> - Cloud functions handle action counting, volunteer applications, and donation processing. Firestore database stores bill data and aggregate counters.</p>
+                        <p><strong>GitHub Actions</strong> - Automated daily crawler runs at 6 AM UTC, pulling fresh data from all legislation APIs.</p>
                     </div>
                     <div class="quick-link-card">
                         <h3>Open Source</h3>
-                        <p>Our entire codebase &mdash; including every keyword list, every AI prompt, every classification algorithm, and this website &mdash; is publicly available under the <strong>GPLv3 license</strong>.</p>
+                        <p>Our entire codebase - including every keyword list, every AI prompt, every classification algorithm, and this website - is publicly available under the <strong>GPLv3 license</strong>.</p>
                         <p><a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">View source code on GitHub &rarr;</a></p>
                         <p>Anyone can audit our methodology, file issues, or submit improvements.</p>
                     </div>
@@ -699,7 +699,7 @@
             </div>
 
             <div class="tip-box" style="margin-top: 2.5em;">
-                <strong>A note on accuracy:</strong> No automated system is perfect. Our dual-layer approach (keywords + AI verification) with a conservative confidence threshold means we prioritize <strong>precision over recall</strong> &mdash; we'd rather leave a borderline bill as "Monitor" than risk mislabeling it. If you believe a bill has been misclassified, please <a href="https://github.com/SAFE-Action/SAFE-Action-Website/issues/new" target="_blank" rel="noopener noreferrer">open an issue on GitHub</a> and we'll review it.
+                <strong>A note on accuracy:</strong> No automated system is perfect. Our dual-layer approach (keywords + AI verification) with a conservative confidence threshold means we prioritize <strong>precision over recall</strong> - we'd rather leave a borderline bill as "Monitor" than risk mislabeling it. If you believe a bill has been misclassified, please <a href="https://github.com/SAFE-Action/SAFE-Action-Website/issues/new" target="_blank" rel="noopener noreferrer">open an issue on GitHub</a> and we'll review it.
             </div>
         </div>
     </section>
@@ -715,7 +715,7 @@
                             <span>SAFE <span class="action-word">ACTION</span></span>
                         </div>
                         <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source &mdash; view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
                     </div>
                     <div class="footer-col">
                         <h4>Take Action</h4>
