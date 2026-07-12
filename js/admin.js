@@ -232,7 +232,7 @@
                 sp.className = 'admin-sponsor';
                 var txt = typeof s === 'string' ? s : (s.name || '');
                 if (s.party) txt += ' (' + s.party + ')';
-                if (s.role) txt += ' \u2014 ' + s.role;
+                if (s.role) txt += ' - ' + s.role;
                 sp.textContent = txt;
                 sec2.appendChild(sp);
             });

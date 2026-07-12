@@ -146,7 +146,7 @@ const LegislationAPI = {
             }
         }
 
-        // Static fallback — load all bills, filter client-side, simulate pagination
+        // Static fallback - load all bills, filter client-side, simulate pagination
         var allBills = await this._getStaticLegislation(null);
         var filtered = this._clientFilter(allBills, filters);
 

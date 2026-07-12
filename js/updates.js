@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="feed-item-meta">
                         <span class="feed-item-category">${escapeHtml(item.category)}</span>
                         <span class="feed-item-level">${escapeHtml(item.level)}</span>
-                        ${isVictory ? `<span class="feed-item-victory-badge">&#127942; Bill Stopped &mdash; ${item.actionsTaken} citizen actions</span>` : ''}
+                        ${isVictory ? `<span class="feed-item-victory-badge">&#127942; Bill Stopped - ${item.actionsTaken} citizen actions</span>` : ''}
                     </div>
                     <div class="feed-item-actions">
                         <a href="action.html?id=${encodeURIComponent(item.billId)}" class="feed-action-link">View Details &rarr;</a>

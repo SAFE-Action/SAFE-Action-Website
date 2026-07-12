@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAFE Action - Science and Freedom for Everyone</title>
+    <meta name="description" content="Find your elected representatives and make your voice heard on science and public health legislation. Track pledges, bills, and your impact with SAFE Action.">
+    <meta property="og:title" content="SAFE Action - Defend Science, Take Action">
+    <meta property="og:description" content="Find your representatives and make your voice heard on science and public health legislation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scienceandfreedom.com/index.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SAFE Action - Defend Science, Take Action">
+    <meta name="twitter:description" content="Find your representatives and make your voice heard on science and public health legislation.">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1A2744">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,20 +143,21 @@
                 <div class="momentum-headline" id="momentum-headline">
                     A growing movement for science
                 </div>
-                <div class="momentum-breakdown" id="momentum-breakdown">
+                <div class="momentum-breakdown" id="momentum-breakdown" style="display:none;">
                     <span class="momentum-breakdown-item"><strong id="national-emails">0</strong> emails</span>
                     <span class="momentum-breakdown-dot">&middot;</span>
                     <span class="momentum-breakdown-item"><strong id="national-calls">0</strong> calls</span>
                 </div>
-                <div class="momentum-today-line" id="momentum-today-line">
+                <div class="momentum-today-line" id="momentum-today-line" style="display:none;">
                     <span class="momentum-number momentum-number-big" id="national-today-total">0</span>
                     <span class="momentum-today-label">political actions <strong>TODAY!</strong></span>
                 </div>
-                <!-- Zero-state CTA shown when no actions yet today -->
+                <!-- Zero-state (default): shown until real-time counts arrive, and whenever today's count is 0. Never renders a bare "0". -->
                 <div class="momentum-zero-cta" id="momentum-zero-cta">
-                    Be the first to take action today!
+                    <span class="momentum-zero-lead">Be the one to start today's momentum.</span>
+                    <span class="momentum-zero-stat" id="momentum-zero-stat" style="display:none;"></span>
                 </div>
-                <div class="momentum-progress-wrap" id="momentum-progress">
+                <div class="momentum-progress-wrap" id="momentum-progress" style="display:none;">
                     <div class="momentum-progress-header">
                         <span>Daily Goal</span>
                         <span class="momentum-progress-count" id="momentum-progress-label">0 / 25</span>

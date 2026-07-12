@@ -3915,13 +3915,26 @@ a:hover { color: var(--red); }
 
 /* Zero-state motivational message */
 .momentum-zero-cta {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
     text-align: center;
     padding: 16px 0;
     letter-spacing: 0.02em;
+}
+
+.momentum-zero-lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--blue);
     animation: zeroPulse 2.5s ease-in-out infinite;
+}
+
+.momentum-zero-stat {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
 }
 
 @keyframes zeroPulse {
