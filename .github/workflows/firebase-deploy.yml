@@ -60,5 +60,15 @@ jobs:
             fi
           } > functions/.env.safe-action-website
 
+      # Soft-fail: the CI service account still lacks the "Service Account User"
+      # (iam.serviceAccounts.ActAs) role on
+      # safe-action-website@appspot.gserviceaccount.com, so functions deploys
+      # cannot succeed and were failing every push (spamming failure emails).
+      # Hosting already deployed above, so we let this step fail without failing
+      # the whole run. REMOVE continue-on-error once the IAM role is granted so
+      # real functions-deploy failures become visible again.
       - name: Deploy Cloud Functions
-        run: firebase deploy --only functions --project safe-action-website
+        continue-on-error: true
+        run: |
+          firebase deploy --only functions --project safe-action-website \
+            || echo "::warning::Cloud Functions deploy failed (known IAM blocker: grant the CI service account the Service Account User role). Hosting deploy above succeeded."
