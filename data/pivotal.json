@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T08:16:59.921782+00:00",
+  "generated_at": "2026-07-13T09:26:51.276137+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -71,24 +71,6 @@
         "background_type": null,
         "is_ranking_member": false,
         "committee_relevance": "Senate Committee on Foreign Relations - Africa and Global Health Policy"
-      }
-    },
-    {
-      "legislator_id": "SC-Senate-Graham",
-      "name": "Lindsey Graham",
-      "state": "SC",
-      "party": "Republican",
-      "reason": "Health committee chair (Senate Committee on Appropriations - Transportation, Housing and Urban Development, and Related Agencies) + Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 1,
-      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health.",
-      "flags": {
-        "is_committee_chair": true,
-        "is_health_committee": true,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": "Senate Committee on Appropriations - Transportation, Housing and Urban Development, and Related Agencies"
       }
     },
     {

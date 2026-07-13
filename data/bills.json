@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T08:16:59.921782+00:00",
+  "generated_at": "2026-07-13T09:26:51.276137+00:00",
   "source": "govinfo+legiscan",
   "total": 8179,
   "bills": [
@@ -1272,155 +1272,6 @@
       "url": ""
     },
     {
-      "billId": "US-119-HR87",
-      "billNumber": "HR 87",
-      "title": "Protecting Our Children from the CDC Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Health",
-      "summary": "Protecting Our Children from the CDC Act",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-01-03",
-      "stance": "monitor",
-      "committee": "Energy and Commerce Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Biggs, Andy [R-AZ-5]",
-          "party": "R",
-          "state": "AZ"
-        }
-      ],
-      "subjects": [
-        "Cardiovascular and respiratory health",
-        "Child health",
-        "Government information and archives",
-        "Health information and medical records",
-        "Immunology and vaccination",
-        "Infectious and parasitic diseases",
-        "Internet, web applications, social media"
-      ],
-      "url": ""
-    },
-    {
-      "billId": "US-119-HR1432",
-      "billNumber": "HR 1432",
-      "title": "LIABLE Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Health",
-      "summary": "LIABLE Act",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-02-18",
-      "stance": "monitor",
-      "committee": "Judiciary Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Roy, Chip [R-TX-21]",
-          "party": "R",
-          "state": "TX"
-        }
-      ],
-      "subjects": [
-        "Cardiovascular and respiratory health",
-        "Civil actions and liability",
-        "Immunology and vaccination",
-        "Infectious and parasitic diseases",
-        "Manufacturing"
-      ],
-      "url": ""
-    },
-    {
-      "billId": "US-119-HR4837",
-      "billNumber": "HR 4837",
-      "title": "Written Informed Consent Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "anti",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Armed Forces and National Security",
-      "summary": "Written Informed Consent Act",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-08-01",
-      "stance": "anti",
-      "committee": "Veterans' Affairs Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
-          "party": "R",
-          "state": "FL"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4837"
-    },
-    {
-      "billId": "US-119-HR1131",
-      "billNumber": "HR 1131",
-      "title": "Family Farm and Small Business Exemption Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Education",
-      "summary": "Family Farm and Small Business Exemption Act",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-02-07",
-      "stance": "monitor",
-      "committee": "Education and Workforce Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Mann, Tracey [R-KS-1]",
-          "party": "R",
-          "state": "KS"
-        }
-      ],
-      "subjects": [
-        "Government lending and loan guarantees",
-        "Rural conditions and development",
-        "Small business",
-        "Student aid and college costs"
-      ],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1131"
-    },
-    {
-      "billId": "US-119-HR2183",
-      "billNumber": "HR 2183",
-      "title": "CFPB Dual Mandate and Economic Analysis Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Finance and Financial Sector",
-      "summary": "CFPB Dual Mandate and Economic Analysis Act",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-03-18",
-      "stance": "monitor",
-      "committee": "Financial Services Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Emmer, Tom [R-MN-6]",
-          "party": "R",
-          "state": "MN"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2183"
-    },
-    {
       "billId": "US-119-HR6938",
       "billNumber": "HR 6938",
       "title": "Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026",
@@ -2064,6 +1915,155 @@
         "World history"
       ],
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/6938"
+    },
+    {
+      "billId": "US-119-HR87",
+      "billNumber": "HR 87",
+      "title": "Protecting Our Children from the CDC Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Health",
+      "summary": "Protecting Our Children from the CDC Act",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-01-03",
+      "stance": "monitor",
+      "committee": "Energy and Commerce Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Biggs, Andy [R-AZ-5]",
+          "party": "R",
+          "state": "AZ"
+        }
+      ],
+      "subjects": [
+        "Cardiovascular and respiratory health",
+        "Child health",
+        "Government information and archives",
+        "Health information and medical records",
+        "Immunology and vaccination",
+        "Infectious and parasitic diseases",
+        "Internet, web applications, social media"
+      ],
+      "url": ""
+    },
+    {
+      "billId": "US-119-HR1432",
+      "billNumber": "HR 1432",
+      "title": "LIABLE Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Health",
+      "summary": "LIABLE Act",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-02-18",
+      "stance": "monitor",
+      "committee": "Judiciary Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Roy, Chip [R-TX-21]",
+          "party": "R",
+          "state": "TX"
+        }
+      ],
+      "subjects": [
+        "Cardiovascular and respiratory health",
+        "Civil actions and liability",
+        "Immunology and vaccination",
+        "Infectious and parasitic diseases",
+        "Manufacturing"
+      ],
+      "url": ""
+    },
+    {
+      "billId": "US-119-HR4837",
+      "billNumber": "HR 4837",
+      "title": "Written Informed Consent Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "anti",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Armed Forces and National Security",
+      "summary": "Written Informed Consent Act",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-08-01",
+      "stance": "anti",
+      "committee": "Veterans' Affairs Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
+          "party": "R",
+          "state": "FL"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4837"
+    },
+    {
+      "billId": "US-119-HR1131",
+      "billNumber": "HR 1131",
+      "title": "Family Farm and Small Business Exemption Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Education",
+      "summary": "Family Farm and Small Business Exemption Act",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-02-07",
+      "stance": "monitor",
+      "committee": "Education and Workforce Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Mann, Tracey [R-KS-1]",
+          "party": "R",
+          "state": "KS"
+        }
+      ],
+      "subjects": [
+        "Government lending and loan guarantees",
+        "Rural conditions and development",
+        "Small business",
+        "Student aid and college costs"
+      ],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1131"
+    },
+    {
+      "billId": "US-119-HR2183",
+      "billNumber": "HR 2183",
+      "title": "CFPB Dual Mandate and Economic Analysis Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Finance and Financial Sector",
+      "summary": "CFPB Dual Mandate and Economic Analysis Act",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-03-18",
+      "stance": "monitor",
+      "committee": "Financial Services Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Emmer, Tom [R-MN-6]",
+          "party": "R",
+          "state": "MN"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2183"
     },
     {
       "billId": "US-119-HR1111",
@@ -6360,41 +6360,6 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/469"
     },
     {
-      "billId": "US-119-S620",
-      "billNumber": "S 620",
-      "title": "Veterinary Services to Improve Public Health in Rural Communities Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "Passed Senate",
-      "isActive": "Yes",
-      "impact": "High",
-      "category": "Native Americans",
-      "summary": "Veterinary Services to Improve Public Health in Rural Communities Act",
-      "lastAction": "Introduced in Senate",
-      "lastActionDate": "2025-02-18",
-      "stance": "monitor",
-      "committee": "Indian Affairs Committee",
-      "sponsors": [
-        {
-          "name": "Sen. Murkowski, Lisa [R-AK]",
-          "party": "R",
-          "state": "AK"
-        }
-      ],
-      "subjects": [
-        "Animal and plant health",
-        "Arctic and polar regions",
-        "Congressional oversight",
-        "Health promotion and preventive care",
-        "Immunology and vaccination",
-        "Indian social and development programs",
-        "Infectious and parasitic diseases",
-        "Veterinary medicine and animal diseases"
-      ],
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/620"
-    },
-    {
       "billId": "US-119-S2587",
       "billNumber": "S 2587",
       "title": "Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2026",
@@ -6577,6 +6542,41 @@
         "Youth employment and child labor"
       ],
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2587"
+    },
+    {
+      "billId": "US-119-S620",
+      "billNumber": "S 620",
+      "title": "Veterinary Services to Improve Public Health in Rural Communities Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "Passed Senate",
+      "isActive": "Yes",
+      "impact": "High",
+      "category": "Native Americans",
+      "summary": "Veterinary Services to Improve Public Health in Rural Communities Act",
+      "lastAction": "Introduced in Senate",
+      "lastActionDate": "2025-02-18",
+      "stance": "monitor",
+      "committee": "Indian Affairs Committee",
+      "sponsors": [
+        {
+          "name": "Sen. Murkowski, Lisa [R-AK]",
+          "party": "R",
+          "state": "AK"
+        }
+      ],
+      "subjects": [
+        "Animal and plant health",
+        "Arctic and polar regions",
+        "Congressional oversight",
+        "Health promotion and preventive care",
+        "Immunology and vaccination",
+        "Indian social and development programs",
+        "Infectious and parasitic diseases",
+        "Veterinary medicine and animal diseases"
+      ],
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/620"
     },
     {
       "billId": "US-119-S3853",
@@ -163728,27 +163728,6 @@
       "legiscan_bill_id": 2139371
     },
     {
-      "billId": "PA-SB1054",
-      "state": "PA",
-      "billNumber": "SB1054",
-      "title": "In school health services, providing for use and maintenance of opioid antagonists.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "In school health services, providing for use and maintenance of opioid antagonists.",
-      "sponsor": "",
-      "lastAction": "Referred to Education",
-      "lastActionDate": "2025-10-17",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/SB1054/2025",
-      "legiscan_bill_id": 2046731
-    },
-    {
       "billId": "PA-HB2210",
       "state": "PA",
       "billNumber": "HB2210",
@@ -163768,6 +163747,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/PA/bill/HB2210/2025",
       "legiscan_bill_id": 2111899
+    },
+    {
+      "billId": "PA-SB1054",
+      "state": "PA",
+      "billNumber": "SB1054",
+      "title": "In school health services, providing for use and maintenance of opioid antagonists.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "In school health services, providing for use and maintenance of opioid antagonists.",
+      "sponsor": "",
+      "lastAction": "Referred to Education",
+      "lastActionDate": "2025-10-17",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/PA/bill/SB1054/2025",
+      "legiscan_bill_id": 2046731
     },
     {
       "billId": "PA-HB1492",
@@ -165097,8 +165097,8 @@
       "state": "PA",
       "billNumber": "SB146",
       "title": "In emergency COVID-19 response, providing for extension of use of certain funds; in Child Care Staff Recruitment and Retention Program, further providing for Child Care Staff Recruitment and Retention Program; in cigarette sales and licensing, further providing for definitions and providing for allowable mode of operations for licensed cigarette stamping agents; in joint underwriting association, further providing for fund transfers; providing for food processing residuals; in financially distressed municipalities, further providing for financial recovery; in oil and gas wells, further providing for Oil and Gas Lease Fund and providing for deep wells and Utica Shale permits and for well plugging; providing for manufacturing and investment tax credit, for Innovate in PA 2.0 Tax Credit and for design build best value; in human services, further providing for medical assistance payments for institutional care, for resident care and related costs and for LIFE Program and providing for transition to chip-enabled access cards, for Medical Assistance Reentry Program, for Children's Trust Fund and for medical assistance pharmacy services; in additional keystone opportunity expansion zones, providing for additional zone for shipbuilding and for additional zones; providing for residential revitalization keystone opportunity zones and for violent incident clearance and technological investigative methods; in special funds, further providing for funding and for Pennsylvania Convention Center; in additional special funds and restricted accounts, providing for Veterans' Trust Fund Board and further providing for establishment of special fund and account, for use of fund and for distributions from Pennsylvania Race Horse Development Fund; in additional special funds and restricted accounts, further providing for deposits and providing for Professional Licensure Augmentation Account; in general budget implementation, further providing for Executive Offices, for Department of Agriculture, for Department of Corrections, for Department of Labor and Industry and for Department of Transportation, providing for Pennsylvania Emergency Management Agency and further providing for Commonwealth Financing Authority, for Federal and Commonwealth use of forest land, for Multimodal Transportation Fund, for School Safety and Security Fund, for State Gaming Fund, for State Employees' Retirement System Restricted Account and for Public School Employees' Retirement System Restricted Account; in retirement, providing for 2026 special ad hoc municipal police and firefighter postretirement adjustment, for supplemental annuities for public school employees commencing 2026, for supplemental annuities for State employees commencing 2026 and for payment of supplemental annuity and special ad hoc postretirement adjustment; in electricity load forecast accountability, providing for energy and water reporting and for advanced transmission technologies; in 2025-2026 budget implementation, further providing for Department of Agriculture, for Department of Human Services and for Pennsylvania Higher Education Assistance Agency; providing for 2026-2027 budget implementation and for 2026-2027 restrictions on appropriations for funds and accounts; in fiscal supplements to statutory programs, providing for amusement tax clarification, for situs for local sales tax for cities of the first class, for situs for local sales tax for counties of the second class, for net income and for housing; abrogating a regulation; making repeals; providing for suspension of pension actuarial notes; and making editorial changes.",
-      "status": "In Committee",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -165106,8 +165106,8 @@
       "impact": "Medium",
       "summary": "In emergency COVID-19 response, providing for extension of use of certain funds; in Child Care Staff Recruitment and Retention Program, further providing for Child Care Staff Recruitment and Retention Program; in cigarette sales and licensing, further providing for definitions and providing for allowable mode of operations for licensed cigarette stamping agents; in joint underwriting association, further providing for fund transfers; providing for food processing residuals; in financially distressed municipalities, further providing for financial recovery; in oil and gas wells, further providing for Oil and Gas Lease Fund and providing for deep wells and Utica Shale permits and for well plugging; providing for manufacturing and investment tax credit, for Innovate in PA 2.0 Tax Credit and for design build best value; in human services, further providing for medical assistance payments for institutional care, for resident care and related costs and for LIFE Program and providing for transition to chip-enabled access cards, for Medical Assistance Reentry Program, for Children's Trust Fund and for medical assistance pharmacy services; in additional keystone opportunity expansion zones, providing for additional zone for shipbuilding and for additional zones; providing for residential revitalization keystone opportunity zones and for violent incident clearance and technological investigative methods; in special funds, further providing for funding and for Pennsylvania Convention Center; in additional special funds and restricted accounts, providing for Veterans' Trust Fund Board and further providing for establishment of special fund and account, for use of fund and for distributions from Pennsylvania Race Horse Development Fund; in additional special funds and restricted accounts, further providing for deposits and providing for Professional Licensure Augmentation Account; in general budget implementation, further providing for Executive Offices, for Department of Agriculture, for Department of Corrections, for Department of Labor and Industry and for Department of Transportation, providing for Pennsylvania Emergency Management Agency and further providing for Commonwealth Financing Authority, for Federal and Commonwealth use of forest land, for Multimodal Transportation Fund, for School Safety and Security Fund, for State Gaming Fund, for State Employees' Retirement System Restricted Account and for Public School Employees' Retirement System Restricted Account; in retirement, providing for 2026 special ad hoc municipal police and firefighter postretirement adjustment, for supplemental annuities for public school employees commencing 2026, for supplemental annuities for State employees commencing 2026 and for payment of supplemental annuity and special ad hoc postretirement adjustment; in electricity load forecast accountability, providing for energy and water reporting and for advanced transmission technologies; in 2025-2026 budget implementation, further providing for Department of Agriculture, for Department of Human Services and for Pennsylvania Higher Education Assistance Agency; providing for 2026-2027 budget implementation and for 2026-2027 restrictions on appropriations for funds and accounts; in fiscal supplements to statutory programs, providing for amusement tax clarification, for situs for local sales tax for cities of the first class, for situs for local sales tax for counties of the second class, for net income and for housing; abrogating a regulation; making repeals; providing for suspension of pension actuarial notes; and making editorial changes.",
       "sponsor": "",
-      "lastAction": "Amended in House Committee on Appropriations",
-      "lastActionDate": "2026-07-11",
+      "lastAction": "Signed in House",
+      "lastActionDate": "2026-07-12",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/PA/bill/SB146/2025",
@@ -166588,8 +166588,8 @@
       "state": "PA",
       "billNumber": "HB2400",
       "title": "To provide appropriations from the General Fund for the expenses of the Executive, Legislative and Judicial Departments of the Commonwealth, the public debt and the public schools for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide appropriations from special funds and accounts to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide for the appropriation of Federal funds to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; and to provide for the additional appropriation of Federal and State funds to the Executive, Legislative and Judicial Departments for the fiscal year July 1, 2025, to June 30, 2026, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2025.",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -166597,8 +166597,8 @@
       "impact": "Medium",
       "summary": "To provide appropriations from the General Fund for the expenses of the Executive, Legislative and Judicial Departments of the Commonwealth, the public debt and the public schools for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide appropriations from special funds and accounts to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide for the appropriation of Federal funds to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; and to provide for the additional appropriation of Federal and State funds to the Executive, Legislative and Judicial Departments for the fiscal year July 1, 2025, to June 30, 2026, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2025.",
       "sponsor": "",
-      "lastAction": "Re-reported as amended",
-      "lastActionDate": "2026-07-11",
+      "lastAction": "Signed in Senate",
+      "lastActionDate": "2026-07-12",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/PA/bill/HB2400/2025",
@@ -167697,10 +167697,10 @@
       "legiscan_bill_id": 2032081
     },
     {
-      "billId": "PA-SB322",
+      "billId": "PA-HB668",
       "state": "PA",
-      "billNumber": "SB322",
-      "title": "Providing for approval from the Department of Health and the Office of Attorney General before certain transactions involving health care entities within this Commonwealth.",
+      "billNumber": "HB668",
+      "title": "Authorizing the Commonwealth of Pennsylvania to join the Counseling Compact; and providing for the form of the compact.",
       "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
@@ -167708,14 +167708,14 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "Providing for approval from the Department of Health and the Office of Attorney General before certain transactions involving health care entities within this Commonwealth.",
+      "summary": "Authorizing the Commonwealth of Pennsylvania to join the Counseling Compact; and providing for the form of the compact.",
       "sponsor": "",
-      "lastAction": "Referred to Institutional Sustainability & Innovation",
-      "lastActionDate": "2025-05-22",
+      "lastAction": "Laid on the table (Pursuant to Senate Rule 9)",
+      "lastActionDate": "2026-05-05",
       "actionCount": 0,
       "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/SB322/2025",
-      "legiscan_bill_id": 2033139
+      "sourceUrl": "https://legiscan.com/PA/bill/HB668/2025",
+      "legiscan_bill_id": 1975239
     },
     {
       "billId": "PA-SB466",
