@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-13T09:26:51.276137+00:00",
+  "generated_at": "2026-07-14T08:04:39.774922+00:00",
   "source": "govinfo+legiscan",
-  "total": 8179,
+  "total": 8181,
   "bills": [
     {
       "billId": "US-119-HR121",
@@ -2066,6 +2066,612 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/2183"
     },
     {
+      "billId": "US-119-HR7148",
+      "billNumber": "HR 7148",
+      "title": "National Security, Department of State, and Related Programs Appropriations Act, 2026",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "Passed Senate",
+      "isActive": "Yes",
+      "impact": "High",
+      "category": "Economics and Public Finance",
+      "summary": "National Security, Department of State, and Related Programs Appropriations Act, 2026",
+      "lastAction": "Roll call votes on amendments in House",
+      "lastActionDate": "2026-01-22",
+      "stance": "monitor",
+      "committee": "Ways and Means Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Cole, Tom [R-OK-4]",
+          "party": "R",
+          "state": "OK"
+        },
+        {
+          "name": "Sen. Welch, Peter [D-VT]",
+          "party": "D",
+          "state": "VT"
+        },
+        {
+          "name": "Sen. Duckworth, Tammy [D-IL]",
+          "party": "D",
+          "state": "IL"
+        },
+        {
+          "name": "Sen. Welch, Peter [D-VT]",
+          "party": "D",
+          "state": "VT"
+        },
+        {
+          "name": "Sen. Cassidy, Bill [R-LA]",
+          "party": "R",
+          "state": "LA"
+        },
+        {
+          "name": "Sen. Warnock, Raphael G. [D-GA]",
+          "party": "D",
+          "state": "GA"
+        },
+        {
+          "name": "Sen. Sanders, Bernard [I-VT]",
+          "party": "I",
+          "state": "VT"
+        },
+        {
+          "name": "Sen. Luján, Ben Ray [D-NM]",
+          "party": "D",
+          "state": "NM"
+        },
+        {
+          "name": "Sen. Warnock, Raphael G. [D-GA]",
+          "party": "D",
+          "state": "GA"
+        },
+        {
+          "name": "Sen. Merkley, Jeff [D-OR]",
+          "party": "D",
+          "state": "OR"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Sanders, Bernard [I-VT]",
+          "party": "I",
+          "state": "VT"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Shaheen, Jeanne [D-NH]",
+          "party": "D",
+          "state": "NH"
+        },
+        {
+          "name": "Sen. Collins, Susan M. [R-ME]",
+          "party": "R",
+          "state": "ME"
+        },
+        {
+          "name": "Sen. Paul, Rand [R-KY]",
+          "party": "R",
+          "state": "KY"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "state": "CO"
+        },
+        {
+          "name": "Sen. Scott, Rick [R-FL]",
+          "party": "R",
+          "state": "FL"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Murphy, Christopher [D-CT]",
+          "party": "D",
+          "state": "CT"
+        },
+        {
+          "name": "Sen. Cruz, Ted [R-TX]",
+          "party": "R",
+          "state": "TX"
+        },
+        {
+          "name": "Sen. Budd, Ted [R-NC]",
+          "party": "R",
+          "state": "NC"
+        },
+        {
+          "name": "Sen. Budd, Ted [R-NC]",
+          "party": "R",
+          "state": "NC"
+        },
+        {
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
+          "state": "NV"
+        },
+        {
+          "name": "Sen. Cruz, Ted [R-TX]",
+          "party": "R",
+          "state": "TX"
+        },
+        {
+          "name": "Sen. Duckworth, Tammy [D-IL]",
+          "party": "D",
+          "state": "IL"
+        },
+        {
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
+          "state": "NV"
+        },
+        {
+          "name": "Sen. Cruz, Ted [R-TX]",
+          "party": "R",
+          "state": "TX"
+        },
+        {
+          "name": "Sen. Cruz, Ted [R-TX]",
+          "party": "R",
+          "state": "TX"
+        },
+        {
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
+          "state": "NV"
+        },
+        {
+          "name": "Sen. Moody, Ashley [R-FL]",
+          "party": "R",
+          "state": "FL"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
+          "state": "NV"
+        },
+        {
+          "name": "Sen. Schiff, Adam B. [D-CA]",
+          "party": "D",
+          "state": "CA"
+        },
+        {
+          "name": "Sen. Rosen, Jacky [D-NV]",
+          "party": "D",
+          "state": "NV"
+        },
+        {
+          "name": "Sen. Cruz, Ted [R-TX]",
+          "party": "R",
+          "state": "TX"
+        },
+        {
+          "name": "Sen. Schmitt, Eric [R-MO]",
+          "party": "R",
+          "state": "MO"
+        },
+        {
+          "name": "Sen. Kennedy, John [R-LA]",
+          "party": "R",
+          "state": "LA"
+        },
+        {
+          "name": "Sen. Kennedy, John [R-LA]",
+          "party": "R",
+          "state": "LA"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        },
+        {
+          "name": "",
+          "party": "",
+          "state": ""
+        },
+        {
+          "name": "",
+          "party": "",
+          "state": ""
+        },
+        {
+          "name": "Rep. Norman, Ralph [R-SC-5]",
+          "party": "R",
+          "state": "SC"
+        },
+        {
+          "name": "Rep. Massie, Thomas [R-KY-4]",
+          "party": "R",
+          "state": "KY"
+        }
+      ],
+      "subjects": [
+        "Abortion",
+        "Access Board",
+        "Accounting and auditing",
+        "Administrative Conference of the U.S.",
+        "Administrative law and regulatory procedures",
+        "Administrative remedies",
+        "Adoption and foster care",
+        "Adult education and literacy",
+        "Advanced technology and technological innovations",
+        "Advisory bodies",
+        "Afghanistan",
+        "Africa",
+        "African Development Foundation",
+        "Aging",
+        "Agricultural conservation and pollution",
+        "Agricultural research",
+        "Agricultural trade",
+        "Alabama",
+        "Alaska Natives and Hawaiians",
+        "Allergies",
+        "Alliances",
+        "American Samoa",
+        "Appalachian Regional Commission",
+        "Appropriations",
+        "Arab-Israeli relations",
+        "Arms control and nonproliferation",
+        "Asia",
+        "Assault and harassment offenses",
+        "Australia",
+        "Aviation and airports",
+        "Bahrain",
+        "Birth defects",
+        "Blood and blood diseases",
+        "Border security and unlawful immigration",
+        "Broadcasting, cable, digital technologies",
+        "Budget process",
+        "Building construction",
+        "Burma",
+        "Buy American requirements",
+        "California",
+        "Canada",
+        "Cancer",
+        "Cardiovascular and respiratory health",
+        "Caribbean area",
+        "Centers for Disease Control and Prevention (CDC)",
+        "Central African Republic",
+        "Central Intelligence Agency (CIA)",
+        "Chemical and biological weapons",
+        "Child care and development",
+        "Child health",
+        "Child safety and welfare",
+        "China",
+        "Citizenship and naturalization",
+        "Civics education",
+        "Civil actions and liability",
+        "Coal",
+        "Coast guard",
+        "Collective security",
+        "Colombia",
+        "Commodities markets",
+        "Commodity Futures Trading Commission",
+        "Community Development Financial Institutions Fund",
+        "Community life and organization",
+        "Competitiveness, trade promotion, trade deficits",
+        "Computer security and identity theft",
+        "Computers and information technology",
+        "Conflicts and wars",
+        "Congo",
+        "Congressional oversight",
+        "Congressional-executive branch relations",
+        "Connecticut",
+        "Consumer Product Safety Commission",
+        "Consumer affairs",
+        "Contracts and agency",
+        "Corporation for National and Community Service",
+        "Correctional facilities and imprisonment",
+        "Criminal procedure and sentencing",
+        "Cuba",
+        "Cultural exchanges and relations",
+        "Currency",
+        "Customs enforcement",
+        "Dams and canals",
+        "Data collection, sharing, protection",
+        "Defense spending",
+        "Delaware",
+        "Delta Regional Authority",
+        "Denali Commission",
+        "Dental care",
+        "Department of Defense",
+        "Department of Education",
+        "Department of Health and Human Services",
+        "Department of Homeland Security",
+        "Department of Housing and Urban Development",
+        "Department of Labor",
+        "Department of State",
+        "Department of Transportation",
+        "Department of the Treasury",
+        "Detention of persons",
+        "Digestive and metabolic diseases",
+        "Diplomacy, foreign officials, Americans abroad",
+        "Director of National Intelligence",
+        "Disability and health-based discrimination",
+        "Disability and paralysis",
+        "Disability assistance",
+        "Disaster relief and insurance",
+        "District of Columbia",
+        "Domestic violence and child abuse",
+        "Drug safety, medical device, and laboratory regulation",
+        "Drug trafficking and controlled substances",
+        "Drug, alcohol, tobacco use",
+        "Economic development",
+        "Education of the disadvantaged",
+        "Education programs funding",
+        "Educational facilities and institutions",
+        "Egypt",
+        "El Salvador",
+        "Election Assistance Commission",
+        "Elections, voting, political campaign regulation",
+        "Elementary and secondary education",
+        "Emergency communications systems",
+        "Emergency planning and evacuation",
+        "Employee benefits and pensions",
+        "Employee hiring",
+        "Employment and training programs",
+        "Employment discrimination and employee rights",
+        "Energy assistance for the poor and aged",
+        "Environmental health",
+        "Estonia",
+        "Ethiopia",
+        "Europe",
+        "Executive Office of the President",
+        "Executive agency funding and structure",
+        "Export-Import Bank of the United States",
+        "Family planning and birth control",
+        "Family relationships",
+        "Family services",
+        "Federal Communications Commission (FCC)",
+        "Federal Deposit Insurance Corporation (FDIC)",
+        "Federal Election Commission (FEC)",
+        "Federal Emergency Management Agency (FEMA)",
+        "Federal Labor Relations Authority",
+        "Federal Mediation and Conciliation Service",
+        "Federal Mine Safety and Health Review Commission",
+        "Federal Trade Commission (FTC)",
+        "Federal appellate courts",
+        "Federal district courts",
+        "Federal-Indian relations",
+        "Firearms and explosives",
+        "Fires",
+        "First Amendment rights",
+        "First responders and emergency personnel",
+        "Floods and storm protection",
+        "Florida",
+        "Food and Drug Administration (FDA)",
+        "Food supply, safety, and labeling",
+        "Foreign aid and international relief",
+        "Foreign and international banking",
+        "Foreign labor",
+        "Foreign language and bilingual programs",
+        "Foreign loans and debt",
+        "Fraud offenses and financial crimes",
+        "Gaza Strip",
+        "General Services Administration",
+        "Genetics",
+        "Geography and mapping",
+        "Georgia",
+        "Georgia (Republic)",
+        "Government National Mortgage Association (Ginnie Mae)",
+        "Government employee pay, benefits, personnel management",
+        "Government ethics and transparency, public corruption",
+        "Government information and archives",
+        "Government lending and loan guarantees",
+        "Government studies and investigations",
+        "Government trust funds",
+        "Grain",
+        "Great Lakes",
+        "Guam",
+        "Guatemala",
+        "HIV/AIDS",
+        "Haiti",
+        "Hawaii",
+        "Hazardous wastes and toxic substances",
+        "Health care costs and insurance",
+        "Health care coverage and access",
+        "Health care quality",
+        "Health facilities and institutions",
+        "Health information and medical records",
+        "Health personnel",
+        "Health programs administration and funding",
+        "Health promotion and preventive care",
+        "Health technology, devices, supplies",
+        "Hearing, speech, and vision care",
+        "Hereditary and development disorders",
+        "Higher education",
+        "Historic sites and heritage areas",
+        "Historical and cultural resources",
+        "Home and outpatient care",
+        "Homeland security",
+        "Homelessness and emergency shelter",
+        "Honduras",
+        "Hong Kong",
+        "Hospital care",
+        "Housing and community development funding",
+        "Housing discrimination",
+        "Housing finance and home ownership",
+        "Housing for the elderly and disabled",
+        "Housing industry and standards",
+        "Human rights",
+        "Human trafficking",
+        "Idaho",
+        "Immunology and vaccination",
+        "Indian social and development programs",
+        "Infectious and parasitic diseases",
+        "Infrastructure development",
+        "Intellectual property",
+        "Intelligence activities, surveillance, classified information",
+        "Inter-American Foundation",
+        "Interagency Council on Homelessness",
+        "Intergovernmental relations",
+        "Internal Revenue Service (IRS)",
+        "International exchange and broadcasting",
+        "International law and treaties",
+        "International monetary system and foreign exchange",
+        "International organizations and cooperation",
+        "Internet, web applications, social media",
+        "Iran",
+        "Iraq",
+        "Israel",
+        "Jordan",
+        "Judges",
+        "Kansas",
+        "Kazakhstan",
+        "Kentucky",
+        "Labor standards",
+        "Labor-management relations",
+        "Lakes and rivers",
+        "Laos",
+        "Latin America",
+        "Latvia",
+        "Law enforcement administration and funding",
+        "Lawyers and legal services",
+        "Lebanon",
+        "Legal fees and court costs",
+        "Libraries and archives",
+        "Lighting, heating, cooling",
+        "Lithuania",
+        "Long-term, rehabilitative, and terminal care",
+        "Low- and moderate-income housing",
+        "Maine"
+      ],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7148"
+    },
+    {
       "billId": "US-119-HR1111",
       "billNumber": "HR 1111",
       "title": "Department of Peacebuilding Act of 2025",
@@ -3735,612 +4341,6 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/1671"
     },
     {
-      "billId": "US-119-HR7148",
-      "billNumber": "HR 7148",
-      "title": "National Security, Department of State, and Related Programs Appropriations Act, 2026",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "Passed Senate",
-      "isActive": "Yes",
-      "impact": "High",
-      "category": "Economics and Public Finance",
-      "summary": "National Security, Department of State, and Related Programs Appropriations Act, 2026",
-      "lastAction": "Roll call votes on amendments in House",
-      "lastActionDate": "2026-01-22",
-      "stance": "monitor",
-      "committee": "Ways and Means Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Cole, Tom [R-OK-4]",
-          "party": "R",
-          "state": "OK"
-        },
-        {
-          "name": "Sen. Welch, Peter [D-VT]",
-          "party": "D",
-          "state": "VT"
-        },
-        {
-          "name": "Sen. Duckworth, Tammy [D-IL]",
-          "party": "D",
-          "state": "IL"
-        },
-        {
-          "name": "Sen. Welch, Peter [D-VT]",
-          "party": "D",
-          "state": "VT"
-        },
-        {
-          "name": "Sen. Cassidy, Bill [R-LA]",
-          "party": "R",
-          "state": "LA"
-        },
-        {
-          "name": "Sen. Warnock, Raphael G. [D-GA]",
-          "party": "D",
-          "state": "GA"
-        },
-        {
-          "name": "Sen. Sanders, Bernard [I-VT]",
-          "party": "I",
-          "state": "VT"
-        },
-        {
-          "name": "Sen. Luján, Ben Ray [D-NM]",
-          "party": "D",
-          "state": "NM"
-        },
-        {
-          "name": "Sen. Warnock, Raphael G. [D-GA]",
-          "party": "D",
-          "state": "GA"
-        },
-        {
-          "name": "Sen. Merkley, Jeff [D-OR]",
-          "party": "D",
-          "state": "OR"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Sanders, Bernard [I-VT]",
-          "party": "I",
-          "state": "VT"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Blumenthal, Richard [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Blumenthal, Richard [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Blumenthal, Richard [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Shaheen, Jeanne [D-NH]",
-          "party": "D",
-          "state": "NH"
-        },
-        {
-          "name": "Sen. Collins, Susan M. [R-ME]",
-          "party": "R",
-          "state": "ME"
-        },
-        {
-          "name": "Sen. Paul, Rand [R-KY]",
-          "party": "R",
-          "state": "KY"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Bennet, Michael F. [D-CO]",
-          "party": "D",
-          "state": "CO"
-        },
-        {
-          "name": "Sen. Scott, Rick [R-FL]",
-          "party": "R",
-          "state": "FL"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Murphy, Christopher [D-CT]",
-          "party": "D",
-          "state": "CT"
-        },
-        {
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "state": "TX"
-        },
-        {
-          "name": "Sen. Budd, Ted [R-NC]",
-          "party": "R",
-          "state": "NC"
-        },
-        {
-          "name": "Sen. Budd, Ted [R-NC]",
-          "party": "R",
-          "state": "NC"
-        },
-        {
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
-          "party": "D",
-          "state": "NV"
-        },
-        {
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "state": "TX"
-        },
-        {
-          "name": "Sen. Duckworth, Tammy [D-IL]",
-          "party": "D",
-          "state": "IL"
-        },
-        {
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
-          "party": "D",
-          "state": "NV"
-        },
-        {
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "state": "TX"
-        },
-        {
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "state": "TX"
-        },
-        {
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
-          "party": "D",
-          "state": "NV"
-        },
-        {
-          "name": "Sen. Moody, Ashley [R-FL]",
-          "party": "R",
-          "state": "FL"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
-          "party": "D",
-          "state": "NV"
-        },
-        {
-          "name": "Sen. Schiff, Adam B. [D-CA]",
-          "party": "D",
-          "state": "CA"
-        },
-        {
-          "name": "Sen. Rosen, Jacky [D-NV]",
-          "party": "D",
-          "state": "NV"
-        },
-        {
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "state": "TX"
-        },
-        {
-          "name": "Sen. Schmitt, Eric [R-MO]",
-          "party": "R",
-          "state": "MO"
-        },
-        {
-          "name": "Sen. Kennedy, John [R-LA]",
-          "party": "R",
-          "state": "LA"
-        },
-        {
-          "name": "Sen. Kennedy, John [R-LA]",
-          "party": "R",
-          "state": "LA"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "Sen. Lee, Mike [R-UT]",
-          "party": "R",
-          "state": "UT"
-        },
-        {
-          "name": "",
-          "party": "",
-          "state": ""
-        },
-        {
-          "name": "",
-          "party": "",
-          "state": ""
-        },
-        {
-          "name": "Rep. Norman, Ralph [R-SC-5]",
-          "party": "R",
-          "state": "SC"
-        },
-        {
-          "name": "Rep. Massie, Thomas [R-KY-4]",
-          "party": "R",
-          "state": "KY"
-        }
-      ],
-      "subjects": [
-        "Abortion",
-        "Access Board",
-        "Accounting and auditing",
-        "Administrative Conference of the U.S.",
-        "Administrative law and regulatory procedures",
-        "Administrative remedies",
-        "Adoption and foster care",
-        "Adult education and literacy",
-        "Advanced technology and technological innovations",
-        "Advisory bodies",
-        "Afghanistan",
-        "Africa",
-        "African Development Foundation",
-        "Aging",
-        "Agricultural conservation and pollution",
-        "Agricultural research",
-        "Agricultural trade",
-        "Alabama",
-        "Alaska Natives and Hawaiians",
-        "Allergies",
-        "Alliances",
-        "American Samoa",
-        "Appalachian Regional Commission",
-        "Appropriations",
-        "Arab-Israeli relations",
-        "Arms control and nonproliferation",
-        "Asia",
-        "Assault and harassment offenses",
-        "Australia",
-        "Aviation and airports",
-        "Bahrain",
-        "Birth defects",
-        "Blood and blood diseases",
-        "Border security and unlawful immigration",
-        "Broadcasting, cable, digital technologies",
-        "Budget process",
-        "Building construction",
-        "Burma",
-        "Buy American requirements",
-        "California",
-        "Canada",
-        "Cancer",
-        "Cardiovascular and respiratory health",
-        "Caribbean area",
-        "Centers for Disease Control and Prevention (CDC)",
-        "Central African Republic",
-        "Central Intelligence Agency (CIA)",
-        "Chemical and biological weapons",
-        "Child care and development",
-        "Child health",
-        "Child safety and welfare",
-        "China",
-        "Citizenship and naturalization",
-        "Civics education",
-        "Civil actions and liability",
-        "Coal",
-        "Coast guard",
-        "Collective security",
-        "Colombia",
-        "Commodities markets",
-        "Commodity Futures Trading Commission",
-        "Community Development Financial Institutions Fund",
-        "Community life and organization",
-        "Competitiveness, trade promotion, trade deficits",
-        "Computer security and identity theft",
-        "Computers and information technology",
-        "Conflicts and wars",
-        "Congo",
-        "Congressional oversight",
-        "Congressional-executive branch relations",
-        "Connecticut",
-        "Consumer Product Safety Commission",
-        "Consumer affairs",
-        "Contracts and agency",
-        "Corporation for National and Community Service",
-        "Correctional facilities and imprisonment",
-        "Criminal procedure and sentencing",
-        "Cuba",
-        "Cultural exchanges and relations",
-        "Currency",
-        "Customs enforcement",
-        "Dams and canals",
-        "Data collection, sharing, protection",
-        "Defense spending",
-        "Delaware",
-        "Delta Regional Authority",
-        "Denali Commission",
-        "Dental care",
-        "Department of Defense",
-        "Department of Education",
-        "Department of Health and Human Services",
-        "Department of Homeland Security",
-        "Department of Housing and Urban Development",
-        "Department of Labor",
-        "Department of State",
-        "Department of Transportation",
-        "Department of the Treasury",
-        "Detention of persons",
-        "Digestive and metabolic diseases",
-        "Diplomacy, foreign officials, Americans abroad",
-        "Director of National Intelligence",
-        "Disability and health-based discrimination",
-        "Disability and paralysis",
-        "Disability assistance",
-        "Disaster relief and insurance",
-        "District of Columbia",
-        "Domestic violence and child abuse",
-        "Drug safety, medical device, and laboratory regulation",
-        "Drug trafficking and controlled substances",
-        "Drug, alcohol, tobacco use",
-        "Economic development",
-        "Education of the disadvantaged",
-        "Education programs funding",
-        "Educational facilities and institutions",
-        "Egypt",
-        "El Salvador",
-        "Election Assistance Commission",
-        "Elections, voting, political campaign regulation",
-        "Elementary and secondary education",
-        "Emergency communications systems",
-        "Emergency planning and evacuation",
-        "Employee benefits and pensions",
-        "Employee hiring",
-        "Employment and training programs",
-        "Employment discrimination and employee rights",
-        "Energy assistance for the poor and aged",
-        "Environmental health",
-        "Estonia",
-        "Ethiopia",
-        "Europe",
-        "Executive Office of the President",
-        "Executive agency funding and structure",
-        "Export-Import Bank of the United States",
-        "Family planning and birth control",
-        "Family relationships",
-        "Family services",
-        "Federal Communications Commission (FCC)",
-        "Federal Deposit Insurance Corporation (FDIC)",
-        "Federal Election Commission (FEC)",
-        "Federal Emergency Management Agency (FEMA)",
-        "Federal Labor Relations Authority",
-        "Federal Mediation and Conciliation Service",
-        "Federal Mine Safety and Health Review Commission",
-        "Federal Trade Commission (FTC)",
-        "Federal appellate courts",
-        "Federal district courts",
-        "Federal-Indian relations",
-        "Firearms and explosives",
-        "Fires",
-        "First Amendment rights",
-        "First responders and emergency personnel",
-        "Floods and storm protection",
-        "Florida",
-        "Food and Drug Administration (FDA)",
-        "Food supply, safety, and labeling",
-        "Foreign aid and international relief",
-        "Foreign and international banking",
-        "Foreign labor",
-        "Foreign language and bilingual programs",
-        "Foreign loans and debt",
-        "Fraud offenses and financial crimes",
-        "Gaza Strip",
-        "General Services Administration",
-        "Genetics",
-        "Geography and mapping",
-        "Georgia",
-        "Georgia (Republic)",
-        "Government National Mortgage Association (Ginnie Mae)",
-        "Government employee pay, benefits, personnel management",
-        "Government ethics and transparency, public corruption",
-        "Government information and archives",
-        "Government lending and loan guarantees",
-        "Government studies and investigations",
-        "Government trust funds",
-        "Grain",
-        "Great Lakes",
-        "Guam",
-        "Guatemala",
-        "HIV/AIDS",
-        "Haiti",
-        "Hawaii",
-        "Hazardous wastes and toxic substances",
-        "Health care costs and insurance",
-        "Health care coverage and access",
-        "Health care quality",
-        "Health facilities and institutions",
-        "Health information and medical records",
-        "Health personnel",
-        "Health programs administration and funding",
-        "Health promotion and preventive care",
-        "Health technology, devices, supplies",
-        "Hearing, speech, and vision care",
-        "Hereditary and development disorders",
-        "Higher education",
-        "Historic sites and heritage areas",
-        "Historical and cultural resources",
-        "Home and outpatient care",
-        "Homeland security",
-        "Homelessness and emergency shelter",
-        "Honduras",
-        "Hong Kong",
-        "Hospital care",
-        "Housing and community development funding",
-        "Housing discrimination",
-        "Housing finance and home ownership",
-        "Housing for the elderly and disabled",
-        "Housing industry and standards",
-        "Human rights",
-        "Human trafficking",
-        "Idaho",
-        "Immunology and vaccination",
-        "Indian social and development programs",
-        "Infectious and parasitic diseases",
-        "Infrastructure development",
-        "Intellectual property",
-        "Intelligence activities, surveillance, classified information",
-        "Inter-American Foundation",
-        "Interagency Council on Homelessness",
-        "Intergovernmental relations",
-        "Internal Revenue Service (IRS)",
-        "International exchange and broadcasting",
-        "International law and treaties",
-        "International monetary system and foreign exchange",
-        "International organizations and cooperation",
-        "Internet, web applications, social media",
-        "Iran",
-        "Iraq",
-        "Israel",
-        "Jordan",
-        "Judges",
-        "Kansas",
-        "Kazakhstan",
-        "Kentucky",
-        "Labor standards",
-        "Labor-management relations",
-        "Lakes and rivers",
-        "Laos",
-        "Latin America",
-        "Latvia",
-        "Law enforcement administration and funding",
-        "Lawyers and legal services",
-        "Lebanon",
-        "Legal fees and court costs",
-        "Libraries and archives",
-        "Lighting, heating, cooling",
-        "Lithuania",
-        "Long-term, rehabilitative, and terminal care",
-        "Low- and moderate-income housing",
-        "Maine"
-      ],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7148"
-    },
-    {
       "billId": "US-119-HR8153",
       "billNumber": "HR 8153",
       "title": "Maternal Vaccinations Act",
@@ -5238,6 +5238,32 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/5960"
     },
     {
+      "billId": "US-119-HR7946",
+      "billNumber": "HR 7946",
+      "title": "Jury Duty Exemption for Breastfeeding Act of 2026",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Law",
+      "summary": "Jury Duty Exemption for Breastfeeding Act of 2026",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2026-03-16",
+      "stance": "monitor",
+      "committee": "Oversight and Government Reform Committee",
+      "sponsors": [
+        {
+          "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+          "party": "D",
+          "state": "DC"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7946"
+    },
+    {
       "billId": "US-119-HR7006",
       "billNumber": "HR 7006",
       "title": "Consolidated Appropriations Act, 2026",
@@ -5510,32 +5536,6 @@
         "Zimbabwe"
       ],
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7006"
-    },
-    {
-      "billId": "US-119-HR7946",
-      "billNumber": "HR 7946",
-      "title": "Jury Duty Exemption for Breastfeeding Act of 2026",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Law",
-      "summary": "Jury Duty Exemption for Breastfeeding Act of 2026",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2026-03-16",
-      "stance": "monitor",
-      "committee": "Oversight and Government Reform Committee",
-      "sponsors": [
-        {
-          "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
-          "party": "D",
-          "state": "DC"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7946"
     },
     {
       "billId": "US-119-HR7465",
@@ -20046,6 +20046,27 @@
       "legiscan_bill_id": 2147210
     },
     {
+      "billId": "CA-SB163",
+      "state": "CA",
+      "billNumber": "SB163",
+      "title": "Developmental services.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Developmental services.",
+      "sponsor": "",
+      "lastAction": "Enrolled and presented to the Governor at 3 p.m.",
+      "lastActionDate": "2026-07-01",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB163/2025",
+      "legiscan_bill_id": 1939261
+    },
+    {
       "billId": "CA-SB143",
       "state": "CA",
       "billNumber": "SB143",
@@ -20128,27 +20149,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1161/2025",
       "legiscan_bill_id": 1978696
-    },
-    {
-      "billId": "CA-SB163",
-      "state": "CA",
-      "billNumber": "SB163",
-      "title": "Developmental services.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Developmental services.",
-      "sponsor": "",
-      "lastAction": "Enrolled and presented to the Governor at 3 p.m.",
-      "lastActionDate": "2026-07-01",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB163/2025",
-      "legiscan_bill_id": 1939261
     },
     {
       "billId": "CA-AB163",
@@ -20718,27 +20718,6 @@
       "legiscan_bill_id": 2065695
     },
     {
-      "billId": "CA-AB1200",
-      "state": "CA",
-      "billNumber": "AB1200",
-      "title": "Emergency services: disaster preparedness.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Emergency services: disaster preparedness.",
-      "sponsor": "",
-      "lastAction": "Consideration of Governor's veto stricken from file.",
-      "lastActionDate": "2026-01-22",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
-      "legiscan_bill_id": 1980097
-    },
-    {
       "billId": "CA-AB650",
       "state": "CA",
       "billNumber": "AB650",
@@ -20758,6 +20737,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB650/2025",
       "legiscan_bill_id": 1970438
+    },
+    {
+      "billId": "CA-AB1200",
+      "state": "CA",
+      "billNumber": "AB1200",
+      "title": "Emergency services: disaster preparedness.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Emergency services: disaster preparedness.",
+      "sponsor": "",
+      "lastAction": "Consideration of Governor's veto stricken from file.",
+      "lastActionDate": "2026-01-22",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
+      "legiscan_bill_id": 1980097
     },
     {
       "billId": "CA-AB306",
@@ -20781,27 +20781,6 @@
       "legiscan_bill_id": 1939183
     },
     {
-      "billId": "CA-SB435",
-      "state": "CA",
-      "billNumber": "SB435",
-      "title": "California Consumer Privacy Act of 2018: personal information: exemptions.",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "vaccine-exemption",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "California Consumer Privacy Act of 2018: personal information: exemptions.",
-      "sponsor": "",
-      "lastAction": "From committee: Do pass and re-refer to Com. on APPR. (Ayes 9. Noes 6.) (June 23). Re-referred to Com. on APPR.",
-      "lastActionDate": "2026-06-24",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB435/2025",
-      "legiscan_bill_id": 1974545
-    },
-    {
       "billId": "CA-AB1294",
       "state": "CA",
       "billNumber": "AB1294",
@@ -20821,6 +20800,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1294/2025",
       "legiscan_bill_id": 1980191
+    },
+    {
+      "billId": "CA-SB435",
+      "state": "CA",
+      "billNumber": "SB435",
+      "title": "California Consumer Privacy Act of 2018: personal information: exemptions.",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "vaccine-exemption",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "California Consumer Privacy Act of 2018: personal information: exemptions.",
+      "sponsor": "",
+      "lastAction": "From committee: Do pass and re-refer to Com. on APPR. (Ayes 9. Noes 6.) (June 23). Re-referred to Com. on APPR.",
+      "lastActionDate": "2026-06-24",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB435/2025",
+      "legiscan_bill_id": 1974545
     },
     {
       "billId": "CA-AB468",
@@ -20844,27 +20844,6 @@
       "legiscan_bill_id": 1961077
     },
     {
-      "billId": "CA-AB645",
-      "state": "CA",
-      "billNumber": "AB645",
-      "title": "Emergency medical services: dispatcher training.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Emergency medical services: dispatcher training.",
-      "sponsor": "",
-      "lastAction": "Chaptered by Secretary of State - Chapter 273, Statutes of 2025.",
-      "lastActionDate": "2025-10-03",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB645/2025",
-      "legiscan_bill_id": 1970433
-    },
-    {
       "billId": "CA-SB36",
       "state": "CA",
       "billNumber": "SB36",
@@ -20884,6 +20863,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB36/2025",
       "legiscan_bill_id": 1894446
+    },
+    {
+      "billId": "CA-AB645",
+      "state": "CA",
+      "billNumber": "AB645",
+      "title": "Emergency medical services: dispatcher training.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Emergency medical services: dispatcher training.",
+      "sponsor": "",
+      "lastAction": "Chaptered by Secretary of State - Chapter 273, Statutes of 2025.",
+      "lastActionDate": "2025-10-03",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB645/2025",
+      "legiscan_bill_id": 1970433
     },
     {
       "billId": "CA-SB660",
@@ -20991,27 +20991,6 @@
       "legiscan_bill_id": 1980081
     },
     {
-      "billId": "CA-AB1639",
-      "state": "CA",
-      "billNumber": "AB1639",
-      "title": "California Drowning Prevention and Rescue Act.",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "California Drowning Prevention and Rescue Act.",
-      "sponsor": "",
-      "lastAction": "In committee: Set, first hearing. Hearing canceled at the request of author.",
-      "lastActionDate": "2026-04-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1639/2025",
-      "legiscan_bill_id": 2094104
-    },
-    {
       "billId": "CA-SB16",
       "state": "CA",
       "billNumber": "SB16",
@@ -21031,6 +21010,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB16/2025",
       "legiscan_bill_id": 1893428
+    },
+    {
+      "billId": "CA-AB1639",
+      "state": "CA",
+      "billNumber": "AB1639",
+      "title": "California Drowning Prevention and Rescue Act.",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "California Drowning Prevention and Rescue Act.",
+      "sponsor": "",
+      "lastAction": "In committee: Set, first hearing. Hearing canceled at the request of author.",
+      "lastActionDate": "2026-04-13",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1639/2025",
+      "legiscan_bill_id": 2094104
     },
     {
       "billId": "CA-AB1621",
@@ -21117,27 +21117,6 @@
       "legiscan_bill_id": 1961047
     },
     {
-      "billId": "CA-SB1347",
-      "state": "CA",
-      "billNumber": "SB1347",
-      "title": "Pupil health: emergency stock albuterol inhalers.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Pupil health: emergency stock albuterol inhalers.",
-      "sponsor": "",
-      "lastAction": "Re-referred to Com. on B. & P. pursuant to Assembly Rule 77.2.",
-      "lastActionDate": "2026-07-02",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB1347/2025",
-      "legiscan_bill_id": 2121931
-    },
-    {
       "billId": "CA-AB2499",
       "state": "CA",
       "billNumber": "AB2499",
@@ -21157,6 +21136,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2499/2025",
       "legiscan_bill_id": 2121576
+    },
+    {
+      "billId": "CA-SB1347",
+      "state": "CA",
+      "billNumber": "SB1347",
+      "title": "Pupil health: emergency stock albuterol inhalers.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Pupil health: emergency stock albuterol inhalers.",
+      "sponsor": "",
+      "lastAction": "Re-referred to Com. on B. & P. pursuant to Assembly Rule 77.2.",
+      "lastActionDate": "2026-07-02",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB1347/2025",
+      "legiscan_bill_id": 2121931
     },
     {
       "billId": "CA-SCR26",
@@ -21852,27 +21852,6 @@
       "legiscan_bill_id": 2120778
     },
     {
-      "billId": "CA-ACR156",
-      "state": "CA",
-      "billNumber": "ACR156",
-      "title": "National Day of Play.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "National Day of Play.",
-      "sponsor": "",
-      "lastAction": "Chaptered by Secretary of State - Res. Chapter 48, Statutes of 2026.",
-      "lastActionDate": "2026-04-21",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/ACR156/2025",
-      "legiscan_bill_id": 2128676
-    },
-    {
       "billId": "CA-AB1005",
       "state": "CA",
       "billNumber": "AB1005",
@@ -21892,6 +21871,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1005/2025",
       "legiscan_bill_id": 1978540
+    },
+    {
+      "billId": "CA-ACR156",
+      "state": "CA",
+      "billNumber": "ACR156",
+      "title": "National Day of Play.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "National Day of Play.",
+      "sponsor": "",
+      "lastAction": "Chaptered by Secretary of State - Res. Chapter 48, Statutes of 2026.",
+      "lastActionDate": "2026-04-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/ACR156/2025",
+      "legiscan_bill_id": 2128676
     },
     {
       "billId": "CA-SB1280",
@@ -23173,6 +23173,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2194/2025",
       "legiscan_bill_id": 2120668
+    },
+    {
+      "billId": "CA-SB135",
+      "state": "CA",
+      "billNumber": "SB135",
+      "title": "Higher education budget trailer bill.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Higher education budget trailer bill.",
+      "sponsor": "",
+      "lastAction": "Enrolled and presented to the Governor at 3 p.m.",
+      "lastActionDate": "2026-07-01",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB135/2025",
+      "legiscan_bill_id": 1939232
     },
     {
       "billId": "CA-SB402",
@@ -30454,7 +30475,7 @@
       "impact": "Medium",
       "summary": "A Bond And Capital Improvements Act Of The State Of Delaware And Certain Of Its Authorities For The Fiscal Year Ending June 30, 2027; Authorizing The Issuance Of General Obligation Bonds Of The State; Appropriating Funds From The Transportation Trust Fund; Authorizing The Issuance Of Revenue Bonds Of The Delaware Transportation Authority; Appropriating Special Funds Of The Delaware Transportation Authority; Appropriating General Funds Of The State; Reprogramming Certain Funds Of The State; Specifying Certain Procedures, Conditions And Limitations For The Expenditure Of Such Funds; And Amending Certain Statutory Provisions.",
       "sponsor": "",
-      "lastAction": "Signed by Governor",
+      "lastAction": "Signed by Governor with Line Item Veto",
       "lastActionDate": "2026-07-06",
       "actionCount": 0,
       "stoppedWithAction": false,
@@ -54226,8 +54247,8 @@
       "impact": "Medium",
       "summary": "AUTISM SPECTRUM-DIAGNOSIS",
       "sponsor": "",
-      "lastAction": "Sent to the Governor",
-      "lastActionDate": "2026-06-25",
+      "lastAction": "Public Act . . . . . . . . . 104-0561",
+      "lastActionDate": "2026-07-10",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/IL/bill/HB5225/2025",
@@ -54520,8 +54541,8 @@
       "impact": "Medium",
       "summary": "HEALTH CARE FACILITY PLANNING",
       "sponsor": "",
-      "lastAction": "Sent to the Governor",
-      "lastActionDate": "2026-06-26",
+      "lastAction": "Public Act . . . . . . . . . 104-0557",
+      "lastActionDate": "2026-07-10",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/IL/bill/HB4757/2025",
@@ -83970,27 +83991,6 @@
       "legiscan_bill_id": 1997444
     },
     {
-      "billId": "MA-H5213",
-      "state": "MA",
-      "billNumber": "H5213",
-      "title": "Study Order",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Study Order",
-      "sponsor": "",
-      "lastAction": "Discharged to the committee on House Rules",
-      "lastActionDate": "2026-03-12",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H5213/2025",
-      "legiscan_bill_id": 2133154
-    },
-    {
       "billId": "MA-H321",
       "state": "MA",
       "billNumber": "H321",
@@ -84010,6 +84010,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/H321/2025",
       "legiscan_bill_id": 2002763
+    },
+    {
+      "billId": "MA-H5213",
+      "state": "MA",
+      "billNumber": "H5213",
+      "title": "Study Order",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Study Order",
+      "sponsor": "",
+      "lastAction": "Discharged to the committee on House Rules",
+      "lastActionDate": "2026-03-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H5213/2025",
+      "legiscan_bill_id": 2133154
     },
     {
       "billId": "MA-S2655",
@@ -84768,6 +84789,27 @@
       "legiscan_bill_id": 2138350
     },
     {
+      "billId": "MA-H1940",
+      "state": "MA",
+      "billNumber": "H1940",
+      "title": "To adopt the uniform family law arbitration act",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "To adopt the uniform family law arbitration act",
+      "sponsor": "",
+      "lastAction": "Accompanied a study order, see H5281 (under House Rule 27)",
+      "lastActionDate": "2026-03-26",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H1940/2025",
+      "legiscan_bill_id": 2003880
+    },
+    {
       "billId": "MA-H2147",
       "state": "MA",
       "billNumber": "H2147",
@@ -84829,27 +84871,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/S3083/2025",
       "legiscan_bill_id": 2148611
-    },
-    {
-      "billId": "MA-H1940",
-      "state": "MA",
-      "billNumber": "H1940",
-      "title": "To adopt the uniform family law arbitration act",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "To adopt the uniform family law arbitration act",
-      "sponsor": "",
-      "lastAction": "Accompanied a study order, see H5281 (under House Rule 27)",
-      "lastActionDate": "2026-03-26",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H1940/2025",
-      "legiscan_bill_id": 2003880
     },
     {
       "billId": "MA-H1752",
@@ -86154,27 +86175,6 @@
       "legiscan_bill_id": 2028426
     },
     {
-      "billId": "MA-H4120",
-      "state": "MA",
-      "billNumber": "H4120",
-      "title": "To declare emergency medical services an essential service",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "To declare emergency medical services an essential service",
-      "sponsor": "",
-      "lastAction": "Accompanied a study order, see H5234",
-      "lastActionDate": "2026-03-16",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H4120/2025",
-      "legiscan_bill_id": 2030429
-    },
-    {
       "billId": "MA-S1322",
       "state": "MA",
       "billNumber": "S1322",
@@ -86194,6 +86194,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/S1322/2025",
       "legiscan_bill_id": 1997160
+    },
+    {
+      "billId": "MA-H4120",
+      "state": "MA",
+      "billNumber": "H4120",
+      "title": "To declare emergency medical services an essential service",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "To declare emergency medical services an essential service",
+      "sponsor": "",
+      "lastAction": "Accompanied a study order, see H5234",
+      "lastActionDate": "2026-03-16",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H4120/2025",
+      "legiscan_bill_id": 2030429
     },
     {
       "billId": "MA-H2156",
@@ -87687,6 +87708,27 @@
       "legiscan_bill_id": 2038620
     },
     {
+      "billId": "MA-H5576",
+      "state": "MA",
+      "billNumber": "H5576",
+      "title": "Relative to economic development in the commonwealth",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Relative to economic development in the commonwealth",
+      "sponsor": "",
+      "lastAction": "Read; and referred to the committee on Senate Ways and Means",
+      "lastActionDate": "2026-07-13",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H5576/2025",
+      "legiscan_bill_id": 2155731
+    },
+    {
       "billId": "MA-S301",
       "state": "MA",
       "billNumber": "S301",
@@ -88422,27 +88464,6 @@
       "legiscan_bill_id": 2000764
     },
     {
-      "billId": "MA-H708",
-      "state": "MA",
-      "billNumber": "H708",
-      "title": "Requiring a mental health wellness examination for all school children",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Requiring a mental health wellness examination for all school children",
-      "sponsor": "",
-      "lastAction": "Hearing scheduled for 07/21/2025 from 11:00 AM-05:00 PM in Gardner Auditorium",
-      "lastActionDate": "2025-07-10",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H708/2025",
-      "legiscan_bill_id": 2002384
-    },
-    {
       "billId": "MA-H2499",
       "state": "MA",
       "billNumber": "H2499",
@@ -88462,6 +88483,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/H2499/2025",
       "legiscan_bill_id": 2001460
+    },
+    {
+      "billId": "MA-H708",
+      "state": "MA",
+      "billNumber": "H708",
+      "title": "Requiring a mental health wellness examination for all school children",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Requiring a mental health wellness examination for all school children",
+      "sponsor": "",
+      "lastAction": "Hearing scheduled for 07/21/2025 from 11:00 AM-05:00 PM in Gardner Auditorium",
+      "lastActionDate": "2025-07-10",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H708/2025",
+      "legiscan_bill_id": 2002384
     },
     {
       "billId": "MA-H3484",
@@ -88548,27 +88590,6 @@
       "legiscan_bill_id": 2003213
     },
     {
-      "billId": "MA-S788",
-      "state": "MA",
-      "billNumber": "S788",
-      "title": "To improve sickle cell care",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "To improve sickle cell care",
-      "sponsor": "",
-      "lastAction": "Bill reported favorably by committee and referred to the committee on Senate Ways and Means",
-      "lastActionDate": "2025-11-17",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/S788/2025",
-      "legiscan_bill_id": 1999269
-    },
-    {
       "billId": "MA-S3170",
       "state": "MA",
       "billNumber": "S3170",
@@ -88588,6 +88609,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/S3170/2025",
       "legiscan_bill_id": 2155597
+    },
+    {
+      "billId": "MA-S788",
+      "state": "MA",
+      "billNumber": "S788",
+      "title": "To improve sickle cell care",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "To improve sickle cell care",
+      "sponsor": "",
+      "lastAction": "Bill reported favorably by committee and referred to the committee on Senate Ways and Means",
+      "lastActionDate": "2025-11-17",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/S788/2025",
+      "legiscan_bill_id": 1999269
     },
     {
       "billId": "MA-H1346",
@@ -95334,7 +95376,7 @@
       "billId": "MI-HB5630",
       "state": "MI",
       "billNumber": "HB5630",
-      "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.).",
+      "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends; adds & repeals (See bill).",
       "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
@@ -95342,7 +95384,7 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.).",
+      "summary": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends; adds & repeals (See bill).",
       "sponsor": "",
       "lastAction": "Bill Ordered Enrolled",
       "lastActionDate": "2026-07-03",
@@ -150418,8 +150460,8 @@
       "state": "OH",
       "billNumber": "HB455",
       "title": "Regards the operation of public schools and the DEW",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -150427,8 +150469,8 @@
       "impact": "Medium",
       "summary": "Regards the operation of public schools and the DEW",
       "sponsor": "",
-      "lastAction": "Sent To The Governor",
-      "lastActionDate": "2026-07-01",
+      "lastAction": "Signed By The Governor",
+      "lastActionDate": "2026-07-10",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB455/2025",
@@ -151842,27 +151884,6 @@
       "legiscan_bill_id": 2057377
     },
     {
-      "billId": "OH-HB420",
-      "state": "OH",
-      "billNumber": "HB420",
-      "title": "Enact Taxpayers Freedom Trilogy-Act I:Discontinuing the Continuum",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Enact Taxpayers Freedom Trilogy-Act I:Discontinuing the Continuum",
-      "sponsor": "",
-      "lastAction": "Referred to committee: Ways and Means",
-      "lastActionDate": "2025-09-15",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/OH/bill/HB420/2025",
-      "legiscan_bill_id": 2042644
-    },
-    {
       "billId": "OH-SB59",
       "state": "OH",
       "billNumber": "SB59",
@@ -151882,6 +151903,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/SB59/2025",
       "legiscan_bill_id": 1945584
+    },
+    {
+      "billId": "OH-HB420",
+      "state": "OH",
+      "billNumber": "HB420",
+      "title": "Enact Taxpayers Freedom Trilogy-Act I:Discontinuing the Continuum",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Enact Taxpayers Freedom Trilogy-Act I:Discontinuing the Continuum",
+      "sponsor": "",
+      "lastAction": "Referred to committee: Ways and Means",
+      "lastActionDate": "2025-09-15",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/OH/bill/HB420/2025",
+      "legiscan_bill_id": 2042644
     },
     {
       "billId": "OH-HB935",
@@ -165097,8 +165139,8 @@
       "state": "PA",
       "billNumber": "SB146",
       "title": "In emergency COVID-19 response, providing for extension of use of certain funds; in Child Care Staff Recruitment and Retention Program, further providing for Child Care Staff Recruitment and Retention Program; in cigarette sales and licensing, further providing for definitions and providing for allowable mode of operations for licensed cigarette stamping agents; in joint underwriting association, further providing for fund transfers; providing for food processing residuals; in financially distressed municipalities, further providing for financial recovery; in oil and gas wells, further providing for Oil and Gas Lease Fund and providing for deep wells and Utica Shale permits and for well plugging; providing for manufacturing and investment tax credit, for Innovate in PA 2.0 Tax Credit and for design build best value; in human services, further providing for medical assistance payments for institutional care, for resident care and related costs and for LIFE Program and providing for transition to chip-enabled access cards, for Medical Assistance Reentry Program, for Children's Trust Fund and for medical assistance pharmacy services; in additional keystone opportunity expansion zones, providing for additional zone for shipbuilding and for additional zones; providing for residential revitalization keystone opportunity zones and for violent incident clearance and technological investigative methods; in special funds, further providing for funding and for Pennsylvania Convention Center; in additional special funds and restricted accounts, providing for Veterans' Trust Fund Board and further providing for establishment of special fund and account, for use of fund and for distributions from Pennsylvania Race Horse Development Fund; in additional special funds and restricted accounts, further providing for deposits and providing for Professional Licensure Augmentation Account; in general budget implementation, further providing for Executive Offices, for Department of Agriculture, for Department of Corrections, for Department of Labor and Industry and for Department of Transportation, providing for Pennsylvania Emergency Management Agency and further providing for Commonwealth Financing Authority, for Federal and Commonwealth use of forest land, for Multimodal Transportation Fund, for School Safety and Security Fund, for State Gaming Fund, for State Employees' Retirement System Restricted Account and for Public School Employees' Retirement System Restricted Account; in retirement, providing for 2026 special ad hoc municipal police and firefighter postretirement adjustment, for supplemental annuities for public school employees commencing 2026, for supplemental annuities for State employees commencing 2026 and for payment of supplemental annuity and special ad hoc postretirement adjustment; in electricity load forecast accountability, providing for energy and water reporting and for advanced transmission technologies; in 2025-2026 budget implementation, further providing for Department of Agriculture, for Department of Human Services and for Pennsylvania Higher Education Assistance Agency; providing for 2026-2027 budget implementation and for 2026-2027 restrictions on appropriations for funds and accounts; in fiscal supplements to statutory programs, providing for amusement tax clarification, for situs for local sales tax for cities of the first class, for situs for local sales tax for counties of the second class, for net income and for housing; abrogating a regulation; making repeals; providing for suspension of pension actuarial notes; and making editorial changes.",
-      "status": "Signed into Law",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -165106,7 +165148,7 @@
       "impact": "Medium",
       "summary": "In emergency COVID-19 response, providing for extension of use of certain funds; in Child Care Staff Recruitment and Retention Program, further providing for Child Care Staff Recruitment and Retention Program; in cigarette sales and licensing, further providing for definitions and providing for allowable mode of operations for licensed cigarette stamping agents; in joint underwriting association, further providing for fund transfers; providing for food processing residuals; in financially distressed municipalities, further providing for financial recovery; in oil and gas wells, further providing for Oil and Gas Lease Fund and providing for deep wells and Utica Shale permits and for well plugging; providing for manufacturing and investment tax credit, for Innovate in PA 2.0 Tax Credit and for design build best value; in human services, further providing for medical assistance payments for institutional care, for resident care and related costs and for LIFE Program and providing for transition to chip-enabled access cards, for Medical Assistance Reentry Program, for Children's Trust Fund and for medical assistance pharmacy services; in additional keystone opportunity expansion zones, providing for additional zone for shipbuilding and for additional zones; providing for residential revitalization keystone opportunity zones and for violent incident clearance and technological investigative methods; in special funds, further providing for funding and for Pennsylvania Convention Center; in additional special funds and restricted accounts, providing for Veterans' Trust Fund Board and further providing for establishment of special fund and account, for use of fund and for distributions from Pennsylvania Race Horse Development Fund; in additional special funds and restricted accounts, further providing for deposits and providing for Professional Licensure Augmentation Account; in general budget implementation, further providing for Executive Offices, for Department of Agriculture, for Department of Corrections, for Department of Labor and Industry and for Department of Transportation, providing for Pennsylvania Emergency Management Agency and further providing for Commonwealth Financing Authority, for Federal and Commonwealth use of forest land, for Multimodal Transportation Fund, for School Safety and Security Fund, for State Gaming Fund, for State Employees' Retirement System Restricted Account and for Public School Employees' Retirement System Restricted Account; in retirement, providing for 2026 special ad hoc municipal police and firefighter postretirement adjustment, for supplemental annuities for public school employees commencing 2026, for supplemental annuities for State employees commencing 2026 and for payment of supplemental annuity and special ad hoc postretirement adjustment; in electricity load forecast accountability, providing for energy and water reporting and for advanced transmission technologies; in 2025-2026 budget implementation, further providing for Department of Agriculture, for Department of Human Services and for Pennsylvania Higher Education Assistance Agency; providing for 2026-2027 budget implementation and for 2026-2027 restrictions on appropriations for funds and accounts; in fiscal supplements to statutory programs, providing for amusement tax clarification, for situs for local sales tax for cities of the first class, for situs for local sales tax for counties of the second class, for net income and for housing; abrogating a regulation; making repeals; providing for suspension of pension actuarial notes; and making editorial changes.",
       "sponsor": "",
-      "lastAction": "Signed in House",
+      "lastAction": "Act No. 21 of 2026",
       "lastActionDate": "2026-07-12",
       "actionCount": 0,
       "stoppedWithAction": false,
@@ -166588,8 +166630,8 @@
       "state": "PA",
       "billNumber": "HB2400",
       "title": "To provide appropriations from the General Fund for the expenses of the Executive, Legislative and Judicial Departments of the Commonwealth, the public debt and the public schools for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide appropriations from special funds and accounts to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide for the appropriation of Federal funds to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; and to provide for the additional appropriation of Federal and State funds to the Executive, Legislative and Judicial Departments for the fiscal year July 1, 2025, to June 30, 2026, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2025.",
-      "status": "Signed into Law",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -166597,7 +166639,7 @@
       "impact": "Medium",
       "summary": "To provide appropriations from the General Fund for the expenses of the Executive, Legislative and Judicial Departments of the Commonwealth, the public debt and the public schools for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide appropriations from special funds and accounts to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; to provide for the appropriation of Federal funds to the Executive and Judicial Departments for the fiscal year July 1, 2026, to June 30, 2027, and for the payment of bills remaining unpaid at the close of the fiscal year ending June 30, 2026; and to provide for the additional appropriation of Federal and State funds to the Executive, Legislative and Judicial Departments for the fiscal year July 1, 2025, to June 30, 2026, and for the payment of bills incurred and remaining unpaid at the close of the fiscal year ending June 30, 2025.",
       "sponsor": "",
-      "lastAction": "Signed in Senate",
+      "lastAction": "Act No. 1A of 2026",
       "lastActionDate": "2026-07-12",
       "actionCount": 0,
       "stoppedWithAction": false,
@@ -167697,10 +167739,10 @@
       "legiscan_bill_id": 2032081
     },
     {
-      "billId": "PA-HB668",
+      "billId": "PA-SB322",
       "state": "PA",
-      "billNumber": "HB668",
-      "title": "Authorizing the Commonwealth of Pennsylvania to join the Counseling Compact; and providing for the form of the compact.",
+      "billNumber": "SB322",
+      "title": "Providing for approval from the Department of Health and the Office of Attorney General before certain transactions involving health care entities within this Commonwealth.",
       "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
@@ -167708,14 +167750,14 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "Authorizing the Commonwealth of Pennsylvania to join the Counseling Compact; and providing for the form of the compact.",
+      "summary": "Providing for approval from the Department of Health and the Office of Attorney General before certain transactions involving health care entities within this Commonwealth.",
       "sponsor": "",
-      "lastAction": "Laid on the table (Pursuant to Senate Rule 9)",
-      "lastActionDate": "2026-05-05",
+      "lastAction": "Referred to Institutional Sustainability & Innovation",
+      "lastActionDate": "2025-05-22",
       "actionCount": 0,
       "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/HB668/2025",
-      "legiscan_bill_id": 1975239
+      "sourceUrl": "https://legiscan.com/PA/bill/SB322/2025",
+      "legiscan_bill_id": 2033139
     },
     {
       "billId": "PA-SB466",
