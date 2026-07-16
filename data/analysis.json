@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-15T08:09:38.546934+00:00",
-  "total_legislators": 7908,
+  "generated_at": "2026-07-16T08:13:06.611439+00:00",
+  "total_legislators": 7909,
   "by_category": {
     "champion": 0,
     "likely-win": 0,
     "fence-sitter": 0,
     "unlikely": 0,
     "opposed": 0,
-    "unscored": 7908
+    "unscored": 7909
   },
   "top_outreach_targets": [],
   "state_summaries": {
@@ -186,7 +186,7 @@
       "opposed": 0
     },
     "SC": {
-      "total": 178,
+      "total": 179,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0

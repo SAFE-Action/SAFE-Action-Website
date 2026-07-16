@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T08:09:38.546934+00:00",
+  "generated_at": "2026-07-16T08:13:06.611439+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -1709,6 +1709,24 @@
         "background_type": null,
         "is_ranking_member": false,
         "committee_relevance": "House Committee on Appropriations - Homeland Security"
+      }
+    },
+    {
+      "legislator_id": "CA-House-Kiley-3",
+      "name": "Kevin Kiley",
+      "state": "CA",
+      "party": "Independent",
+      "reason": "Health committee chair (House Committee on Education and Workforce - Early Childhood, Elementary, and Secondary Education) + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 1,
+      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health.",
+      "flags": {
+        "is_committee_chair": true,
+        "is_health_committee": true,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": "House Committee on Education and Workforce - Early Childhood, Elementary, and Secondary Education"
       }
     },
     {
@@ -4461,7 +4479,7 @@
         "is_health_committee": true,
         "has_science_background": false,
         "background_type": null,
-        "is_ranking_member": true,
+        "is_ranking_member": false,
         "committee_relevance": "House Committee on Education and Workforce - Health, Employment, Labor, and Pensions"
       }
     },
@@ -4664,6 +4682,24 @@
       }
     },
     {
+      "legislator_id": "IN-House-Shreve-6",
+      "name": "Jefferson Shreve",
+      "state": "IN",
+      "party": "Republican",
+      "reason": "Health committee member (House Committee on Appropriations - Homeland Security) + Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 2,
+      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": true,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": "House Committee on Appropriations - Homeland Security"
+      }
+    },
+    {
       "legislator_id": "IN-House-Messmer-8",
       "name": "Mark B. Messmer",
       "state": "IN",
@@ -4787,6 +4823,24 @@
         "background_type": null,
         "is_ranking_member": false,
         "committee_relevance": "House Committee on Energy and Commerce - Communications and Technology"
+      }
+    },
+    {
+      "legislator_id": "NH-House-Goodlander-2",
+      "name": "Maggie Goodlander",
+      "state": "NH",
+      "party": "Democrat",
+      "reason": "Health committee member (House Committee on Veterans' Affairs - Health) + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 2,
+      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": true,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": "House Committee on Veterans' Affairs - Health"
       }
     },
     {
@@ -7850,24 +7904,6 @@
       }
     },
     {
-      "legislator_id": "CA-House-Kiley-3",
-      "name": "Kevin Kiley",
-      "state": "CA",
-      "party": "Independent",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "CA-House-Kamlager-Dove-37",
       "name": "Sydney Kamlager-Dove",
       "state": "CA",
@@ -8651,7 +8687,7 @@
       "outreach_priority": 3,
       "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
-        "is_committee_chair": false,
+        "is_committee_chair": true,
         "is_health_committee": false,
         "has_science_background": false,
         "background_type": null,
@@ -9038,24 +9074,6 @@
       }
     },
     {
-      "legislator_id": "IN-House-Shreve-6",
-      "name": "Jefferson Shreve",
-      "state": "IN",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "KS-House-Schmidt-2",
       "name": "Derek Schmidt",
       "state": "KS",
@@ -9246,24 +9264,6 @@
       "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
       "flags": {
         "is_committee_chair": true,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NH-House-Goodlander-2",
-      "name": "Maggie Goodlander",
-      "state": "NH",
-      "party": "Democrat",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
         "is_health_committee": false,
         "has_science_background": false,
         "background_type": null,
@@ -9635,6 +9635,24 @@
       "legislator_id": "CA-House-Gallagher-1",
       "name": "James Gallagher",
       "state": "CA",
+      "party": "Republican",
+      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "SC-Senate-Graham",
+      "name": "Darline Graham",
+      "state": "SC",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
       "persuadability_category": "unknown",
