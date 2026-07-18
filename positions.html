@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer - SAFE Action</title>
+    <title>Open Positions - SAFE Action</title>
+    <meta name="description" content="Volunteer positions at SAFE Action. We're looking for a Social Media Manager to help defend science-based public health policy.">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1A2744">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +34,6 @@
                         <div class="nav2-dropdown">
                             <a href="directory.html">Pledge Directory</a>
                             <a href="quiz.html">Candidate Quiz</a>
-                            
                         </div>
                     </div>
                     <div class="nav2-item">
@@ -90,43 +90,85 @@
     <!-- Hero Section -->
     <section class="volunteer-hero">
         <div class="container">
-            <h1>Join the SAFE Action Team</h1>
-            <p>Volunteer your skills to help defend science-based public health policy. Whether you code, design, write, or organize, there's a place for you in the fight for scientific freedom.</p>
+            <h1>Open Positions</h1>
+            <p>SAFE Action is volunteer-powered. These are the roles we need filled right now. Remote, flexible, and directly on the front line of defending science-based public health policy.</p>
         </div>
     </section>
 
-    <!-- Application Form -->
+    <!-- Position: Social Media Manager -->
     <section class="volunteer-form-section">
         <div class="container">
-            <form class="volunteer-form" id="volunteer-form">
+            <h2>Social Media Manager (Volunteer)</h2>
+            <p><strong>Remote &middot; Flexible hours &middot; Reports to the President</strong></p>
+            <p>We are looking for someone to own SAFE Action's social media presence. Not assist with it. Own it. You'll build our channels from the ground up at the moment the organization is launching, with full creative involvement and a direct line to leadership.</p>
+
+            <h3>What you'll do</h3>
+            <ul>
+                <li>Run our accounts across TikTok, Instagram, YouTube, X, and the platforms you make the case for</li>
+                <li>Publish and cross-post our video content (we have a video editor; you handle distribution, captions, timing, and hooks)</li>
+                <li>Grow an audience for science-based public health advocacy and drive volunteers to our campaigns</li>
+                <li>Engage the community: replies, DMs, comment strategy</li>
+                <li>Report simple growth metrics monthly and adjust strategy with the team</li>
+            </ul>
+
+            <h3>You might be a fit if</h3>
+            <ul>
+                <li>You live on at least one short-form platform and understand what makes content travel</li>
+                <li>You can write a hook in twelve words or fewer</li>
+                <li>You care about science, public health, and pushing back on misinformation</li>
+                <li>You can commit a few hours a week, consistently</li>
+            </ul>
+            <p>No formal social media job experience required. If you've grown an account of your own, that counts. Students and early-career folks welcome.</p>
+
+            <h3>Apply</h3>
+            <form class="volunteer-form" id="position-form">
                 <div id="volunteer-error" class="volunteer-error"></div>
+                <input type="hidden" name="position" value="Social Media Manager">
 
                 <div class="form-group">
-                    <label for="volunteer-name">Full Name <span style="color:var(--red)">*</span></label>
-                    <input type="text" id="volunteer-name" name="name" required placeholder="Your full name">
+                    <label for="applicant-name">Full Name <span style="color:var(--red)">*</span></label>
+                    <input type="text" id="applicant-name" name="name" required placeholder="Your full name">
                 </div>
 
                 <div class="form-group">
-                    <label for="volunteer-email">Email <span style="color:var(--red)">*</span></label>
-                    <input type="email" id="volunteer-email" name="email" required placeholder="you@example.com">
+                    <label for="applicant-email">Email <span style="color:var(--red)">*</span></label>
+                    <input type="email" id="applicant-email" name="email" required placeholder="you@example.com">
                 </div>
 
                 <div class="form-group">
-                    <p class="form-group-label">Skills <span style="color:var(--red)">*</span></p>
+                    <p class="form-group-label">Relevant Skills <span style="color:var(--red)">*</span></p>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
-                        <label><input type="checkbox" name="skills" value="Backend Development"> Backend Development</label>
-                        <label><input type="checkbox" name="skills" value="Design"> Design</label>
-                        <label><input type="checkbox" name="skills" value="Product"> Product</label>
-                        <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
-                        <label><input type="checkbox" name="skills" value="Operations"> Operations</label>
+                        <label><input type="checkbox" name="skills" value="Content Creation"> Content Creation</label>
+                        <label><input type="checkbox" name="skills" value="Copywriting"> Copywriting</label>
+                        <label><input type="checkbox" name="skills" value="Video Editing"> Video Editing</label>
+                        <label><input type="checkbox" name="skills" value="Community Management"> Community Management</label>
+                        <label><input type="checkbox" name="skills" value="Analytics"> Analytics</label>
+                        <label><input type="checkbox" name="skills" value="Graphic Design"> Graphic Design</label>
                         <label><input type="checkbox" name="skills" value="Other"> Other</label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="volunteer-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
-                    <select id="volunteer-availability" name="availability" required>
+                    <p class="form-group-label">Platforms you know best</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="TikTok"> TikTok</label>
+                        <label><input type="checkbox" name="interests" value="Instagram"> Instagram</label>
+                        <label><input type="checkbox" name="interests" value="YouTube"> YouTube</label>
+                        <label><input type="checkbox" name="interests" value="X / Twitter"> X / Twitter</label>
+                        <label><input type="checkbox" name="interests" value="Bluesky"> Bluesky</label>
+                        <label><input type="checkbox" name="interests" value="Facebook"> Facebook</label>
+                        <label><input type="checkbox" name="interests" value="LinkedIn"> LinkedIn</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-portfolio">Link to an account or content you've made</label>
+                    <input type="text" id="applicant-portfolio" name="portfolio" placeholder="A profile, channel, or post you're proud of (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
+                    <select id="applicant-availability" name="availability" required>
                         <option value="">Select availability...</option>
                         <option value="5">5 hours/month</option>
                         <option value="10">10 hours/month</option>
@@ -135,24 +177,15 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <p class="form-group-label">Interests</p>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="interests" value="Developing Web Apps"> Developing Web Apps</label>
-                        <label><input type="checkbox" name="interests" value="Developing New Tools"> Developing New Tools</label>
-                        <label><input type="checkbox" name="interests" value="Curating Pipeline"> Curating Pipeline</label>
-                        <label><input type="checkbox" name="interests" value="Research"> Research</label>
-                        <label><input type="checkbox" name="interests" value="Community Building"> Community Building</label>
-                    </div>
-                </div>
-
-                <button type="submit" id="volunteer-submit" class="volunteer-submit">Submit Application</button>
+                <button type="submit" id="position-submit" class="volunteer-submit">Submit Application</button>
             </form>
 
             <div id="volunteer-success" class="volunteer-success" style="display:none;">
                 <h2>Application Submitted!</h2>
                 <p>We'll review your application and get back to you soon.</p>
             </div>
+
+            <p style="margin-top:32px;">Don't see your role? We always need generalist volunteers: <a href="volunteer.html">apply here</a>.</p>
         </div>
     </section>
 
@@ -210,12 +243,8 @@
     </footer>
 
     <script src="js/config.js"></script>
-    <script src="js/volunteer.js"></script>
+    <script src="js/positions.js"></script>
     <script src="js/pwa.js"></script>
-<script>
-function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
-function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
-</script>
-<script src="js/header.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

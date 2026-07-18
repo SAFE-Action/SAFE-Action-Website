@@ -40,7 +40,7 @@ exports.volunteerApply = async (req, res) => {
         return res.status(429).json({ error: 'Too many requests. Please try again later.' });
     }
 
-    const { name, email, skills, interests, availability } = req.body;
+    const { name, email, skills, interests, availability, position, portfolio } = req.body;
 
     // Validate required fields
     if (!name || !email || !skills || !skills.length || !availability) {
@@ -65,6 +65,8 @@ exports.volunteerApply = async (req, res) => {
             skills,
             interests: interests || [],
             availability,
+            position: (typeof position === 'string' && position.trim()) ? position.trim().slice(0, 100) : null,
+            portfolio: (typeof portfolio === 'string' && portfolio.trim()) ? portfolio.trim().slice(0, 500) : null,
             status: 'pending',
             appliedAt: admin.firestore.FieldValue.serverTimestamp(),
             onboardingSteps: {
@@ -84,9 +86,13 @@ exports.volunteerApply = async (req, res) => {
             const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
             await sendEmail({
                 to: process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com',
-                subject: `New Volunteer Application: ${name.trim()}`,
+                subject: (typeof position === 'string' && position.trim())
+                    ? `New Application (${position.trim().slice(0, 100)}): ${name.trim()}`
+                    : `New Volunteer Application: ${name.trim()}`,
                 htmlBody: `
                     <h2>New Volunteer Application</h2>
+                    ${(typeof position === 'string' && position.trim()) ? `<p><strong>Position:</strong> ${escapeHtml(position.trim().slice(0, 100))}</p>` : ''}
+                    ${(typeof portfolio === 'string' && portfolio.trim()) ? `<p><strong>Portfolio:</strong> ${escapeHtml(portfolio.trim().slice(0, 500))}</p>` : ''}
                     <p><strong>Name:</strong> ${escapeHtml(name.trim())}</p>
                     <p><strong>Email:</strong> ${escapeHtml(email.trim())}</p>
                     <p><strong>Skills:</strong> ${escapeHtml(skills.join(', '))}</p>
