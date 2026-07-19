@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T07:49:26.570735+00:00",
+  "generated_at": "2026-07-19T08:17:58.543954+00:00",
   "source": "govinfo+legiscan",
   "total": 8189,
   "bills": [
@@ -1061,32 +1061,6 @@
       ],
       "subjects": [],
       "url": ""
-    },
-    {
-      "billId": "US-119-HR6655",
-      "billNumber": "HR 6655",
-      "title": "CFTC Charitable Organization Exemption Act of 2025",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Finance and Financial Sector",
-      "summary": "CFTC Charitable Organization Exemption Act of 2025",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2025-12-11",
-      "stance": "monitor",
-      "committee": "Agriculture Committee",
-      "sponsors": [
-        {
-          "name": "Rep. McClain Delaney, April [D-MD-6]",
-          "party": "D",
-          "state": "MD"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6655"
     },
     {
       "billId": "US-119-HR5371",
@@ -4935,6 +4909,32 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7465"
     },
     {
+      "billId": "US-119-HR9672",
+      "billNumber": "HR 9672",
+      "title": "Vaccine Injury Compensation Modernization Act of 2026",
+      "state": "US",
+      "level": "Federal",
+      "billType": "anti",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "General",
+      "summary": "Vaccine Injury Compensation Modernization Act of 2026",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2026-07-14",
+      "stance": "anti",
+      "committee": "Ways and Means Committee",
+      "sponsors": [
+        {
+          "name": "Rep. Doggett, Lloyd [D-TX-37]",
+          "party": "D",
+          "state": "TX"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/9672"
+    },
+    {
       "billId": "US-119-HR8024",
       "billNumber": "HR 8024",
       "title": "Maternal Vaccinations Act",
@@ -5261,6 +5261,32 @@
         "World health"
       ],
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/8595"
+    },
+    {
+      "billId": "US-119-HR6655",
+      "billNumber": "HR 6655",
+      "title": "CFTC Charitable Organization Exemption Act of 2025",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Finance and Financial Sector",
+      "summary": "CFTC Charitable Organization Exemption Act of 2025",
+      "lastAction": "Introduced in House",
+      "lastActionDate": "2025-12-11",
+      "stance": "monitor",
+      "committee": "Agriculture Committee",
+      "sponsors": [
+        {
+          "name": "Rep. McClain Delaney, April [D-MD-6]",
+          "party": "D",
+          "state": "MD"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6655"
     },
     {
       "billId": "US-119-HR511",
@@ -5899,32 +5925,6 @@
         "Maine"
       ],
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7148"
-    },
-    {
-      "billId": "US-119-HR9672",
-      "billNumber": "HR 9672",
-      "title": "To amend the Public Health Service Act to make updates to the Vaccine Injury Compensation Program, and for other purposes.",
-      "state": "US",
-      "level": "Federal",
-      "billType": "anti",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "General",
-      "summary": "To amend the Public Health Service Act to make updates to the Vaccine Injury Compensation Program, and for other purposes.",
-      "lastAction": "Introduced in House",
-      "lastActionDate": "2026-07-14",
-      "stance": "anti",
-      "committee": "Ways and Means Committee",
-      "sponsors": [
-        {
-          "name": "Rep. Doggett, Lloyd [D-TX-37]",
-          "party": "D",
-          "state": "TX"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/9672"
     },
     {
       "billId": "US-119-S1284",
@@ -153826,8 +153826,8 @@
       "state": "OH",
       "billNumber": "HB292",
       "title": "Establish the Ohio Defense Commission",
-      "status": "Signed into Law",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
@@ -153835,8 +153835,8 @@
       "impact": "Medium",
       "summary": "Establish the Ohio Defense Commission",
       "sponsor": "",
-      "lastAction": "Signed By The Governor",
-      "lastActionDate": "2026-07-07",
+      "lastAction": "Effective Appropriations effective July 7, 2026",
+      "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB292/2025",
