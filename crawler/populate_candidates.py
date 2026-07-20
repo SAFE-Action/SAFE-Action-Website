@@ -9,6 +9,7 @@ Usage: python crawler/populate_candidates.py
 
 import asyncio
 import json
+import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -60,7 +61,7 @@ async def rate_limited_get(client, url, **kwargs):
 # https://api.congress.gov/v3/member
 
 CONGRESS_API = "https://api.congress.gov/v3"
-CONGRESS_API_KEY = "6f7LARVfphwm0brj3Z9HkorUXhzfE3fafSrM00eI"
+CONGRESS_API_KEY = os.environ["CONGRESS_API_KEY"]  # set env/secret; rotate the old committed key
 
 
 async def fetch_all_congress_members(client):
@@ -193,7 +194,7 @@ def match_congress_to_seats(members, seats):
 # Get candidates who have filed for 2026
 
 FEC_API = "https://api.open.fec.gov/v1"
-FEC_API_KEY = "UVND2QWrvna2qkOqHj2jCbzIbRUfKGp5fKeVSMZt"
+FEC_API_KEY = os.environ["FEC_API_KEY"]  # set env/secret; rotate the old committed key
 
 
 async def fetch_fec_candidates(client, state=None, office="H"):
