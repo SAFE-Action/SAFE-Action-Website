@@ -47,8 +47,9 @@ Built and shipped in order; each is deployed on its own. Candidate automation ru
 **Design.**
 1. **Compliance chrome** (shared across all pages, via the existing footer/sync pattern):
    - "Paid for by SAFE Action" disclaimer in the footer.
-   - EIN + "SAFE Action is a 501(c)(4) social welfare organization. Contributions are **not** tax-deductible." (Confirm exact EIN/language with Greg/counsel before shipping.)
+   - EIN **41-4491870** (501(c)(4), IRS application pending) + "SAFE Action is organized as a 501(c)(4) social welfare organization. Contributions are **not** tax-deductible as charitable contributions." (DECIDED 2026-07-17. Given pending status, use "organized as"; counsel can adjust final wording later.)
 2. **Remove the donate path.** The c4 must not take deductible-framed gifts. Remove the Donate button/links (`about.html#donate`, footer) and the `createCheckout` Stripe function from the deploy, **or** redirect "Donate/Support" to the c3 (saferi.org). Recommendation: **redirect to the c3** so the intent (support the mission) still lands somewhere legitimate. Final call: Greg.
+   - **DECIDED 2026-07-17: redirect** "Donate/Support" to the c3 (saferi.org).
 3. **Retire the heavy volunteer/NDA/Workspace flow.** `volunteer-apply`, `admin-volunteers`, `volunteer-sign-nda`, `google-workspace`, `nda-template` implement formal-board onboarding (NDA + Drive/Calendar/Chat). That is c3/Research-Institute machinery. Decommission it from this site (keep the code archived / hand to the saferi.org column). This clears the way for the light Coordinator program (Piece 3).
 4. **Copy pass** for c4 voice/consistency (org name usage, no em-dashes, no banned phrases).
 
@@ -73,7 +74,7 @@ Built and shipped in order; each is deployed on its own. Candidate automation ru
 
 **Success:** double-opt-in works end to end; unsubscribe works; a test campaign sends from the domain and lands in inbox; admin can see/export the list.
 
-**Open decision (recommend during spec review):** Resend vs SES. Default Resend.
+**DECIDED 2026-07-17:** Resend for delivery.
 
 ---
 
