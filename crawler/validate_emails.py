@@ -56,6 +56,9 @@ JUNK_DOMAINS = {
 
 # FEC compliance/treasurer firms — these are committee contacts, not candidate emails
 FEC_COMPLIANCE_DOMAINS = {
+    'pdscompliance.com',
+    'i77strategies.com',
+    'risingblueconsulting.com',
     'pcmsllc.com',
     'hdlfec.com',
     'hdafec.com',
@@ -185,6 +188,12 @@ def validate_email(email, name, source):
     if domain.endswith('.gov'):
         return True, 'gov_email'
 
+    # 5b. Committee finance-role local parts (treasurer@, fec@, compliance@, ...)
+    #     reach the committee/treasurer, not the candidate — even on the
+    #     campaign's own domain where the name-match check would otherwise pass.
+    if local in ('treasurer', 'fec', 'compliance', 'accounting', 'filings', 'finance', 'fecreports'):
+        return False, 'committee_role'
+
     # 6. FEC compliance firm domains — remove unless name matches
     if domain in FEC_COMPLIANCE_DOMAINS:
         return False, 'compliance_firm'
@@ -220,6 +229,58 @@ def validate_email(email, name, source):
     return True, 'valid'
 
 
+def clean_website(url):
+    """Collapse duplicated URL schemes (https://https:// -> https://)."""
+    if not url or not isinstance(url, str):
+        return url
+    u = url.strip()
+    m = re.match(r'^((?:https?://)+)(.*)$', u, re.I)
+    if m:
+        scheme = 'https://' if 'https' in m.group(1).lower() else 'http://'
+        u = scheme + m.group(2)
+    return u
+
+
+_HONORIFICS = {'mr', 'mrs', 'ms', 'dr', 'hon', 'honorable', 'the'}
+_SUFFIX_CANON = {'jr': 'Jr', 'sr': 'Sr', 'ii': 'II', 'iii': 'III', 'iv': 'IV', 'v': 'V'}
+
+
+def clean_name(name):
+    """Tidy FEC name artifacts: reformat 'LAST, FIRST', drop honorifics
+    (Mr./Mrs./Dr.), normalize suffix casing/placement (Iii -> III at end)."""
+    if not name or not isinstance(name, str):
+        return name
+    n = name.strip()
+    if ',' in n:
+        parts = [p.strip() for p in n.split(',') if p.strip()]
+        if len(parts) >= 2:
+            n = ' '.join(parts[1:]) + ' ' + parts[0]
+    kept, suffix = [], None
+    for tok in n.split():
+        tl = tok.lower().strip('.')
+        if tl in _HONORIFICS:
+            continue
+        if tl in _SUFFIX_CANON:
+            suffix = _SUFFIX_CANON[tl]
+            continue
+        kept.append(tok)
+    kept = [w[:1].upper() + w[1:].lower() if w.isalpha() else w for w in kept]
+    out = ' '.join(kept)
+    if suffix:
+        out = f"{out} {suffix}"
+    return re.sub(r'\s+', ' ', out).strip()
+
+
+def _tidy_person(person):
+    """Clean website + name artifacts on a person record in place."""
+    if not isinstance(person, dict):
+        return
+    if person.get('website'):
+        person['website'] = clean_website(person['website'])
+    if person.get('name'):
+        person['name'] = clean_name(person['name'])
+
+
 def main():
     print("Loading seats.json...")
     with open(SEATS_FILE, 'r', encoding='utf-8') as f:
@@ -232,6 +293,7 @@ def main():
     for seat in seats_data['seats']:
         for person_list_key in ['candidates', 'incumbents']:
             for person in seat.get(person_list_key, []):
+                _tidy_person(person)
                 email = person.get('email', '')
                 if not email:
                     continue
@@ -255,6 +317,8 @@ def main():
 
         # Also check singular incumbent
         inc = seat.get('incumbent')
+        if inc:
+            _tidy_person(inc)
         if inc and not seat.get('incumbents') and inc.get('email'):
             name = inc.get('name', '')
             source = inc.get('source', 'unknown')
