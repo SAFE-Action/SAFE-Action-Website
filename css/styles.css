@@ -8237,3 +8237,14 @@ input.warning {
     margin-top: 2px;
     accent-color: var(--blue);
 }
+
+/* c4 compliance disclaimer in the footer */
+.footer-disclaimer {
+    max-width: 720px;
+    margin: 10px auto 0;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--text-light, #9aa4b2);
+    opacity: 0.75;
+    text-align: center;
+}
