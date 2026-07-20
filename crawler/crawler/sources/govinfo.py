@@ -125,8 +125,12 @@ def _classify_stance(title, policy_area, subjects):
         "vaccine", "vaccination", "immunization",
         "raw milk", "unpasteurized",
         "fluoride", "fluoridation",
-        "mrna", "informed consent",
+        "mrna",
     ]
+    # NOTE: "informed consent" is deliberately NOT a gate topic — on its own it
+    # matches unrelated bills (e.g. "Ultrasound Informed Consent Act", "Nuclear
+    # Waste Informed Consent Act"). It stays in anti_kw below, so it only tips a
+    # bill anti-science once real vaccine/fluoride/etc. context has gated it in.
     is_core = any(kw in combined for kw in core_topics)
 
     if not is_core:
