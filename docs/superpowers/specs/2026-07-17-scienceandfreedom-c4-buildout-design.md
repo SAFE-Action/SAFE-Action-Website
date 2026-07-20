@@ -29,14 +29,20 @@ Built and shipped in order; each is deployed on its own. Candidate automation ru
 
 **Problem.** `data/seats.json` (candidates/seats; powers Pledge Directory, Candidate Quiz, elections) is 4+ months stale. An 11-script pipeline exists (`scrape_ballotpedia → build_seats → populate_candidates/incumbents → enrich_candidates/openstates/google_search/from_legislators → merge_enrichment → fix_district_mismatches → validate_emails`) but was **never orchestrated or scheduled**, so it silently stopped.
 
-**Design.**
-1. **Runner** — one ordered orchestrator (`crawler/run_candidate_pipeline.py`) that runs the phases in the correct sequence with logging, per-phase failure handling, and a `--dry-run`. Documents the order that is currently tribal knowledge.
-2. **Cheap LLM.** The enrichment step already reads `EXTRACTION_MODEL`; default it to **Haiku** (`claude-haiku-4-5`) for CI, so unattended runs are cheap. (Local runs on the Mac Mini can use Ollama for free; CI uses Haiku.)
-3. **Schedule.** New GitHub Actions workflow `candidate-crawl.yml`, cron **weekly** (candidate data moves slower than bills), `timeout-minutes: 120`, commits refreshed `seats.json` `[skip ci]` and deploys `--only hosting` (mirrors the bills crawler that works today).
-4. **Secrets fix.** Congress + FEC API keys are **hardcoded in a public repo** (`populate_candidates.py`, `enrich_candidates.py`). Move to env/GitHub secrets and rotate them. `ANTHROPIC_API_KEY` stays env-only (already is).
-5. **First run** produces a current `seats.json`; commit + deploy.
+**Reality (from pipeline map, 2026-07-17):** 11 scripts, NO LLM in any of them (pure API + scraping; the earlier "point enrichment at Haiku" assumption was wrong — that model config belongs to the bills crawler). Order: `build_seats → populate_candidates → enrich_candidates → scrape_ballotpedia → populate_incumbents → enrich_from_legislators → enrich_openstates → enrich_google_search → merge_enrichment → fix_district_mismatches → validate_emails`. Three scripts hard-require `data/legislators.json` (produced by the bills crawler, not this set). `scrape_ballotpedia.py` (5k–10k pages @3s) and `enrich_google_search.py` (DuckDuckGo scrape) are hours-to-days and fragile. Several scripts swallow errors and exit 0 with near-zero data.
 
-**Success:** `candidate-crawl.yml` runs green on schedule and on manual dispatch; `seats.json` `generated_at` is current; no keys in source.
+**Design — tiered (a naive "run all 11 weekly in CI" is NOT viable):**
+1. **Runner** `crawler/run_candidate_pipeline.py` with modes:
+   - `--tier1` (CI-safe): `populate_candidates` (Congress/FEC) → `populate_incumbents` + `enrich_from_legislators` + `enrich_openstates` → `merge_enrichment` → `validate_emails`. Fast, deterministic, API-only. Runs on the fresh `legislators.json`.
+   - `--full` (local, hours): tier1 + `scrape_ballotpedia` + `enrich_google_search` (with `--state`/`--limit` caps). For deep discovery refreshes on the Mac Mini.
+   - `--rebuild`: prepend `build_seats` (destructive; only on structural change). `fix_district_mismatches` is an opt-in gap-fill flag, not default.
+   Structured logging, per-phase failure handling, `--dry-run`.
+2. **Silent-failure guardrail.** After the run, assert `seats.json` populated-candidate/incumbent counts are within a sane delta of the prior version; **fail loudly** (nonzero exit) if data collapsed. Don't trust exit codes alone.
+3. **Schedule.** `candidate-crawl.yml`, cron **weekly**, `timeout-minutes: 60`, runs `--tier1` AFTER ensuring `legislators.json` is fresh (chain off / reuse the bills crawl output), commits `seats.json` `[skip ci]`, deploys `--only hosting`. Mirrors the working bills crawler + IAM setup.
+4. **Tier-2 scraping is manual/occasional** (documented command), not in the cron.
+5. **Secrets fix.** Congress + FEC keys are HARDCODED in a public repo (`populate_candidates.py:63,196`, `enrich_candidates.py:32`). Move to env, add as GitHub secrets, **rotate**. `OPENSTATES_API_KEY` already env (hard-exits if missing) → add as secret.
+
+**Success:** `candidate-crawl.yml --tier1` runs green weekly + on dispatch, refreshes `seats.json` with a passing count-guardrail; no keys in source; Tier-2 deep-refresh documented as a local command.
 
 ---
 

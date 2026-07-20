@@ -22,6 +22,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import httpx
+import os
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 CACHE_FILE = DATA_DIR / "candidate_enrichment_cache.json"
@@ -29,7 +30,7 @@ RATE_LIMIT = 0.4  # seconds between FEC API requests
 SCRAPE_RATE = 1.0  # seconds between website scrapes (be polite)
 
 FEC_API = "https://api.open.fec.gov/v1"
-FEC_API_KEY = "UVND2QWrvna2qkOqHj2jCbzIbRUfKGp5fKeVSMZt"
+FEC_API_KEY = os.environ["FEC_API_KEY"]  # set env/secret; rotate the old committed key
 
 last_request = 0
 last_scrape = 0
