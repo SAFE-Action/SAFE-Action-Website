@@ -42,23 +42,32 @@ DATA_DIR = os.path.abspath(os.path.join(HERE, "..", "data"))
 SEATS = os.path.join(DATA_DIR, "seats.json")
 LEGISLATORS = os.path.join(DATA_DIR, "legislators.json")
 
-# (label, script, extra_args) executed in order.
+# (label, script, extra_args). Tier-1: always run, CI-safe, fast. API + local
+# files only, NO heavy scraping and NO dependency on the Ballotpedia cache.
+# enrich_candidates uses --fec-only: its default mode scrapes campaign sites +
+# Ballotpedia for thousands of candidates (~5 HOURS); --fec-only is just the
+# fast FEC-committee API pass (treasurer emails/websites).
 TIER1 = [
     ("federal candidates (Congress/FEC)", "populate_candidates.py", []),
-    ("enrich federal candidates (FEC)", "enrich_candidates.py", []),
+    ("federal candidate emails (FEC only)", "enrich_candidates.py", ["--fec-only"]),
     ("state incumbents (legislators.json)", "populate_incumbents.py", []),
-    ("backfill from legislators (local)", "enrich_from_legislators.py", []),
-    ("enrich via OpenStates API", "enrich_openstates.py", []),
-    ("merge enrichment into seats", "merge_enrichment.py", []),
-    ("validate/clean emails", "validate_emails.py", []),
 ]
-# Heavy scrapers, inserted before the merge step for --full.
-TIER2_SCRAPERS = [
-    ("scrape Ballotpedia (SLOW)", "scrape_ballotpedia.py", []),
-    ("enrich via web search (SLOW)", "enrich_google_search.py", []),
+# --full only. The heavy scrapers plus the steps that consume their output
+# cache (data/ballotpedia_candidates_cache.json). Hours-long and fragile; run
+# locally on the Mac Mini. Order matters: scrape_ballotpedia produces the cache
+# the rest read, and merge_enrichment applies it to seats.json last.
+FULL_ONLY = [
+    ("scrape Ballotpedia (SLOW, hours)", "scrape_ballotpedia.py", []),
+    ("backfill cache from legislators", "enrich_from_legislators.py", []),
+    ("enrich cache via OpenStates API", "enrich_openstates.py", []),
+    ("enrich cache via web search (SLOW)", "enrich_google_search.py", []),
+    ("merge cache enrichment into seats", "merge_enrichment.py", []),
 ]
+VALIDATE = ("validate/clean emails", "validate_emails.py", [])
 
-REQUIRED_ENV = ["CONGRESS_API_KEY", "FEC_API_KEY", "OPENSTATES_API_KEY"]
+# OPENSTATES_API_KEY is optional (OpenStates went paid under Plural); its
+# enrichment step is skipped when the key is absent.
+REQUIRED_ENV = ["CONGRESS_API_KEY", "FEC_API_KEY"]
 
 
 def seats_population():
@@ -124,23 +133,21 @@ def main():
     plan = []
     if args.rebuild:
         plan.append(("REBUILD seat skeleton (DESTRUCTIVE)", "build_seats.py", []))
-    scrapers = []
+    plan += TIER1
     if args.full:
-        for label, script, _ in TIER2_SCRAPERS:
-            a = []
-            if args.state:
+        for label, script, base in FULL_ONLY:
+            if script == "enrich_openstates.py" and not os.environ.get("OPENSTATES_API_KEY"):
+                print("NOTE: OPENSTATES_API_KEY not set — skipping OpenStates enrichment.")
+                continue
+            a = list(base)
+            if args.state and script in ("scrape_ballotpedia.py", "enrich_openstates.py", "enrich_google_search.py"):
                 a += ["--state", args.state]
             if args.bp_limit and script == "enrich_google_search.py":
                 a += ["--limit", str(args.bp_limit)]
-            scrapers.append((label, script, a))
-    # Assemble: tier1 up to the merge, then scrapers, then merge+validate.
-    pre_merge = TIER1[:-2]      # through enrich_openstates
-    merge_step = TIER1[-2]      # merge_enrichment
-    validate_step = TIER1[-1]   # validate_emails
-    plan += pre_merge + scrapers + [merge_step]
+            plan.append((label, script, a))
     if args.fix_districts:
         plan.append(("fix district mismatches (heuristic)", "fix_district_mismatches.py", []))
-    plan.append(validate_step)
+    plan.append(VALIDATE)
 
     before = seats_population()
     print(f"seats.json population before: {before}")
