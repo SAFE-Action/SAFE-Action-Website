@@ -343,6 +343,16 @@ const LegislationAPI = {
             if (!resp.ok) return [];
             var data = await resp.json();
             var bills = data.bills || [];
+            // Surface data freshness anywhere the page provides a slot for it.
+            if (data.generated_at) {
+                var stampEl = document.getElementById('data-updated-stamp');
+                if (stampEl) {
+                    var dt = new Date(data.generated_at);
+                    stampEl.textContent = 'Bill data updated ' + dt.toLocaleDateString(undefined,
+                        { month: 'long', day: 'numeric', year: 'numeric' }) + ' at ' +
+                        dt.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+                }
+            }
             if (!state || state === 'ALL') return bills;
             return bills.filter(function(b) { return b.state === state; });
         } catch (e) {
