@@ -85,7 +85,11 @@ const SAFE_CONFIG = {
 
     FIREBASE_CONFIG: {
         apiKey: 'AIzaSyDQul9vsl7oEj43VSlzLi_S4SXrm3liZWc',
-        authDomain: 'safe-action-website.firebaseapp.com',
+        // Same-origin auth helper (served at scienceandfreedom.com/__/auth/) so
+        // the Google sign-in popup is first-party. The old third-party
+        // firebaseapp.com handoff gets killed by Chrome's third-party-cookie
+        // blocking / privacy extensions, surfacing as auth/internal-error.
+        authDomain: 'scienceandfreedom.com',
         projectId: 'safe-action-website',
         storageBucket: 'safe-action-website.firebasestorage.app',
         messagingSenderId: '1035666846416',
