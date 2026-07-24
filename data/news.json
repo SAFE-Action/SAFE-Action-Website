@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T19:35:21.145821+00:00",
+  "generated_at": "2026-07-24T19:58:20.458065+00:00",
   "articles": [
     {
       "article_id": "d970b68d894df08e0289b27b68d22dcf",
@@ -44,7 +44,9 @@
         "vaccine",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Lloyd Doggett"
+      ],
       "legislator_ids": []
     },
     {
@@ -146,7 +148,9 @@
         "vaccine",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Lloyd Smucker"
+      ],
       "legislator_ids": []
     },
     {
@@ -372,20 +376,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "2b60ef3caba18378d6bbfa9b4b58dd6a",
-      "title": "The State of US Vaccine Policy — Apr 28, 2026 - CIDRAP",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMGJvUjVVaTZrY3dHbUhwbmZJa3ZUZkdNdTllRVRfZmgtZk9nRkt0dW5QQV9fTGZzc3dXZmM1aU9xUlhUdXY4cXVWNFc2RUlkMFYyOElpM1Y0YVRXVlp3YlJvR2d5QWFQUlE4SWFKUlNmSEhPbmV0ZmZad0hidE45SjRCR1BPOHdp?oc=5",
-      "source": "CIDRAP",
-      "date": "Tue, 28 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMGJvUjVVaTZrY3dHbUhwbmZJa3ZUZkdNdTllRVRfZmgtZk9nRkt0dW5QQV9fTGZzc3dXZmM1aU9xUlhUdXY4cXVWNFc2RUlkMFYyOElpM1Y0YVRXVlp3YlJvR2d5QWFQUlE4SWFKUlNmSEhPbmV0ZmZad0hidE45SjRCR1BPOHdp?oc=5\" target=\"_blank\">The State of US Vaccine Policy — Apr 28, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CIDRAP</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "3447308b0d067bb5adc7e4fce7703055",
       "title": "Connecticut House votes to advance vaccine legislation - WTNH.com",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNM0ZiT3pwbmRZcl9VYlpILThrQnpoM2ZPVGxCSWpUOExhV3hOa3BwSnBYR1Fab3plNjVEUlh2aUFiWnRPVjVuLTZYTk9LeG96aXZlZkpXY1hRN2o5ZFR5cm1QNXZVeGx1dHVWYlhtVmtkVHM3Z0NIOFR2OTJGZ3JGSmlwMUUyTUpSOGNLdV9GVXhBYUdiMEFVRS1FNWRMcHNaTEdScNIBqgFBVV95cUxNOFlkeUlIa3RBci16VEMwalVlcVM2OGxSdGU1QXk3eEV6UWNmdVRvZzk3VFFnT0k0QzRkWmFvZ1hvcjVhbjk4WkV2N2M3R1BldU5EWm1jWkI2WlpYb3VuRGdEWHF2SUhGbHRDRC1YaVVvMHNKazhXZGx5VlgwSnZyaG5tT0VaNVRqbl9YZ3ZaX0V3TkloSFlSUWh6dUllY2JPMUdwc0M3TFAzUQ?oc=5",
@@ -396,6 +386,20 @@
       "topics": [
         "vaccine",
         "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "2b60ef3caba18378d6bbfa9b4b58dd6a",
+      "title": "The State of US Vaccine Policy — Apr 28, 2026 - CIDRAP",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMGJvUjVVaTZrY3dHbUhwbmZJa3ZUZkdNdTllRVRfZmgtZk9nRkt0dW5QQV9fTGZzc3dXZmM1aU9xUlhUdXY4cXVWNFc2RUlkMFYyOElpM1Y0YVRXVlp3YlJvR2d5QWFQUlE4SWFKUlNmSEhPbmV0ZmZad0hidE45SjRCR1BPOHdp?oc=5",
+      "source": "CIDRAP",
+      "date": "Tue, 28 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMGJvUjVVaTZrY3dHbUhwbmZJa3ZUZkdNdTllRVRfZmgtZk9nRkt0dW5QQV9fTGZzc3dXZmM1aU9xUlhUdXY4cXVWNFc2RUlkMFYyOElpM1Y0YVRXVlp3YlJvR2d5QWFQUlE4SWFKUlNmSEhPbmV0ZmZad0hidE45SjRCR1BPOHdp?oc=5\" target=\"_blank\">The State of US Vaccine Policy — Apr 28, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CIDRAP</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -944,16 +948,16 @@
       "legislator_ids": []
     },
     {
-      "article_id": "44912d1b4c4c604c7f79fbe4756b9450",
-      "title": "ICE, vaccines, homeschooling and more: What CT's legislature passed in 2026 - CT Insider",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOanVOZkozLWx4TmdSX1Vzd2dQdTFFOW1yZUVjalM3YjhtUnNRTFRPcWJ5cTROVmxwckVsc0NjaG0xaG50WF9QME9peVlLMGotOEFybnN3LS1hQUIycnNzaWFxU0lob0l1YjU5aklPRk1qRHRONEg2WHZVYUJrMVVKWDNyMTV3Zlg1bEE2ckFMX2tOVEoteTJNOUtxLTdGb0ZkSEhz?oc=5",
-      "source": "CT Insider",
-      "date": "Thu, 07 May 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOanVOZkozLWx4TmdSX1Vzd2dQdTFFOW1yZUVjalM3YjhtUnNRTFRPcWJ5cTROVmxwckVsc0NjaG0xaG50WF9QME9peVlLMGotOEFybnN3LS1hQUIycnNzaWFxU0lob0l1YjU5aklPRk1qRHRONEg2WHZVYUJrMVVKWDNyMTV3Zlg1bEE2ckFMX2tOVEoteTJNOUtxLTdGb0ZkSEhz?oc=5\" target=\"_blank\">ICE, vaccines, homeschooling and more: What CT's legislature passed in 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
-      "sentiment": "neutral",
+      "article_id": "1f631188d68a9c486a517e68f47ef454",
+      "title": "House passes vaccine bill in all-day marathon as 98% CT kindergartners vaccinated - Hartford Courant",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcW9EZlhXVTFXVWxTeDhHT1g2S045bWZ2RGZPYXBSREJSazk4a2FPc2dYU1FlVm9EY3h2dFFZM1c5R0dPOGJEYk1hMWpCSHhhczJZZEt3akVBakF6VG5SeFBLc0dPMk5mNzJrMmNuTi1fcUpGVlFtU1VmdU1FVjZfd3dsdTdaOVQ3cjRKMDhtdnZVaWFQUExXTkhUNWZCR1BZR1huY0t1VEVDVDdSOFR1SzJqblZ6U2c?oc=5",
+      "source": "Hartford Courant",
+      "date": "Wed, 22 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPcW9EZlhXVTFXVWxTeDhHT1g2S045bWZ2RGZPYXBSREJSazk4a2FPc2dYU1FlVm9EY3h2dFFZM1c5R0dPOGJEYk1hMWpCSHhhczJZZEt3akVBakF6VG5SeFBLc0dPMk5mNzJrMmNuTi1fcUpGVlFtU1VmdU1FVjZfd3dsdTdaOVQ3cjRKMDhtdnZVaWFQUExXTkhUNWZCR1BZR1huY0t1VEVDVDdSOFR1SzJqblZ6U2c?oc=5\" target=\"_blank\">House passes vaccine bill in all-day marathon as 98% CT kindergartners vaccinated</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
+      "sentiment": "positive",
       "topics": [
         "vaccine",
-        "education"
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -1025,21 +1029,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "1f631188d68a9c486a517e68f47ef454",
-      "title": "House passes vaccine bill in all-day marathon as 98% CT kindergartners vaccinated - Hartford Courant",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcW9EZlhXVTFXVWxTeDhHT1g2S045bWZ2RGZPYXBSREJSazk4a2FPc2dYU1FlVm9EY3h2dFFZM1c5R0dPOGJEYk1hMWpCSHhhczJZZEt3akVBakF6VG5SeFBLc0dPMk5mNzJrMmNuTi1fcUpGVlFtU1VmdU1FVjZfd3dsdTdaOVQ3cjRKMDhtdnZVaWFQUExXTkhUNWZCR1BZR1huY0t1VEVDVDdSOFR1SzJqblZ6U2c?oc=5",
-      "source": "Hartford Courant",
-      "date": "Wed, 22 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPcW9EZlhXVTFXVWxTeDhHT1g2S045bWZ2RGZPYXBSREJSazk4a2FPc2dYU1FlVm9EY3h2dFFZM1c5R0dPOGJEYk1hMWpCSHhhczJZZEt3akVBakF6VG5SeFBLc0dPMk5mNzJrMmNuTi1fcUpGVlFtU1VmdU1FVjZfd3dsdTdaOVQ3cjRKMDhtdnZVaWFQUExXTkhUNWZCR1BZR1huY0t1VEVDVDdSOFR1SzJqblZ6U2c?oc=5\" target=\"_blank\">House passes vaccine bill in all-day marathon as 98% CT kindergartners vaccinated</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
-      "sentiment": "positive",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "5ebbb77f3c2f89fcde1dde1680e41aab",
       "title": "As measles spreads in South Carolina, RFK Jr’s allies work to gut vaccine laws - The Guardian",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVFNsZ3lWODFvY2hQMjdvX0tIYU1qNkxOdU9KVGF6SmIwaE1ZWGZlUFptNWE0NHBUYVFjb2lSV1RtYUhDSGxCQUxCMGdNVkhJQkRCTXExNGFwWmw0MXdiZnNlRDhxYlhnYi1PMHJ3S0xxQzZRY2RZX1hUMzZwdUZ0WXl6eG13TkhyOEp2SWZFZ3lSdGxM?oc=5",
@@ -1080,6 +1069,21 @@
       "topics": [
         "vaccine",
         "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "44912d1b4c4c604c7f79fbe4756b9450",
+      "title": "ICE, vaccines, homeschooling and more: What CT's legislature passed in 2026 - CT Insider",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOanVOZkozLWx4TmdSX1Vzd2dQdTFFOW1yZUVjalM3YjhtUnNRTFRPcWJ5cTROVmxwckVsc0NjaG0xaG50WF9QME9peVlLMGotOEFybnN3LS1hQUIycnNzaWFxU0lob0l1YjU5aklPRk1qRHRONEg2WHZVYUJrMVVKWDNyMTV3Zlg1bEE2ckFMX2tOVEoteTJNOUtxLTdGb0ZkSEhz?oc=5",
+      "source": "CT Insider",
+      "date": "Thu, 07 May 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOanVOZkozLWx4TmdSX1Vzd2dQdTFFOW1yZUVjalM3YjhtUnNRTFRPcWJ5cTROVmxwckVsc0NjaG0xaG50WF9QME9peVlLMGotOEFybnN3LS1hQUIycnNzaWFxU0lob0l1YjU5aklPRk1qRHRONEg2WHZVYUJrMVVKWDNyMTV3Zlg1bEE2ckFMX2tOVEoteTJNOUtxLTdGb0ZkSEhz?oc=5\" target=\"_blank\">ICE, vaccines, homeschooling and more: What CT's legislature passed in 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CT Insider</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "education"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -1564,6 +1568,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "62f987289e7248f8bd88ceacc5d1c6ec",
+      "title": "US states reject anti-vaccine bills as public health groups fight MAHA - Billings Gazette",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1RTbHJ1alE0cDFDTDFnZkM5bzZfSEJUdjFEeVdocjc1UGNRZXk3Tl9vd3hicDd2X0U2MmV4WXZiZ0p1a0FaZFpab2dNY3JCc3BTYnQ1RFAtU0h5bVFoUlBnN204ZllEdzFyMGRqOFhScXY3RU02bEtwRVNueUJoaDBKa2h4czhaRU9OYlN3dTRVLTBFdTZZWGhpdUhxcU15czkwM2FaLXFueHM4NGJPeUxGa1ltdw?oc=5",
+      "source": "Billings Gazette",
+      "date": "Sat, 23 May 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOc1RTbHJ1alE0cDFDTDFnZkM5bzZfSEJUdjFEeVdocjc1UGNRZXk3Tl9vd3hicDd2X0U2MmV4WXZiZ0p1a0FaZFpab2dNY3JCc3BTYnQ1RFAtU0h5bVFoUlBnN204ZllEdzFyMGRqOFhScXY3RU02bEtwRVNueUJoaDBKa2h4czhaRU9OYlN3dTRVLTBFdTZZWGhpdUhxcU15czkwM2FaLXFueHM4NGJPeUxGa1ltdw?oc=5\" target=\"_blank\">US states reject anti-vaccine bills as public health groups fight MAHA</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Billings Gazette</font>",
+      "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "public health",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "87a62765510f0a9068f5c8d231202569",
       "title": "Why Did Bill Cassidy Do It? - The Atlantic",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaHViR2stdlRMNUhDN0dIazdjeVNlZllvODR1XzlFUzRJWnh3U1Jvb1BWVEtfN3JKZU1tMG5tRkNPYjBFRWNDMERpaTRCMlRsVnFFUzBvQTR0VjgyQVoySXAzaFc1MFlzQ1RnMlI1NXRZMWFDR1JQZWtib2RyQzhiSl9fdTkyNTY1Nm5LbzRR?oc=5",
@@ -1574,7 +1594,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Bill Cassidy"
+      ],
       "legislator_ids": []
     },
     {
@@ -2421,12 +2443,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "a8c26f8027eb34f20c5f0cdeb2b511c7",
-      "title": "Vaccine Bills Make a Comeback Amid Measles Outbreak - Governing",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2ZXX0lneENQOE9EWkQ4ajgwX0hBdnYtN3M3emUwNTlBb1NRLWZnTHRaU3J2VmNiZGVoZjA1SlZ2QTlRRzU5UEpqR1hDbllYaVllSldjeVk0cTMyRVNPVUo1UFR3WXhPM29hdHJ4Y05qNjU4MEl6empRdUVtUG81LU4wSEhZTUtJdVZGZXBaQ0EtU1JJTmc?oc=5",
-      "source": "Governing",
-      "date": "Wed, 13 Mar 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2ZXX0lneENQOE9EWkQ4ajgwX0hBdnYtN3M3emUwNTlBb1NRLWZnTHRaU3J2VmNiZGVoZjA1SlZ2QTlRRzU5UEpqR1hDbllYaVllSldjeVk0cTMyRVNPVUo1UFR3WXhPM29hdHJ4Y05qNjU4MEl6empRdUVtUG81LU4wSEhZTUtJdVZGZXBaQ0EtU1JJTmc?oc=5\" target=\"_blank\">Vaccine Bills Make a Comeback Amid Measles Outbreak</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Governing</font>",
+      "article_id": "b792e8dbc616721b9a5c35bb624fcb45",
+      "title": "California bill would limit protests at vaccination sites. Is that constitutional? - Los Angeles Times",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObjFqOFg5bHpCQm0xbmltWlBub1RUNFJGSW9lWmk3Zi1JQXo2NmROX2E5LXVhallHallia0hWRWZyenpFdElLcHFIOGxWelhiU2Z2VzE0SXlqakV3eGZDRUtHOFNzTVdFWENOWkJQM1hiTU52U1dueUhiRmhqVjJSd3l4NF9uRU1YeUVKdEE1WVgtbEZGQk1JYXZEV3BSTEpDRnZMcVZSRFJ5MFNFdUNwdTZOS3V5cEh6US1KamNJYkVybDc5NDFtd3VSX1c?oc=5",
+      "source": "Los Angeles Times",
+      "date": "Fri, 06 Aug 2021 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxObjFqOFg5bHpCQm0xbmltWlBub1RUNFJGSW9lWmk3Zi1JQXo2NmROX2E5LXVhallHallia0hWRWZyenpFdElLcHFIOGxWelhiU2Z2VzE0SXlqakV3eGZDRUtHOFNzTVdFWENOWkJQM1hiTU52U1dueUhiRmhqVjJSd3l4NF9uRU1YeUVKdEE1WVgtbEZGQk1JYXZEV3BSTEpDRnZMcVZSRFJ5MFNFdUNwdTZOS3V5cEh6US1KamNJYkVybDc5NDFtd3VSX1c?oc=5\" target=\"_blank\">California bill would limit protests at vaccination sites. Is that constitutional?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Los Angeles Times</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -2436,12 +2458,12 @@
       "legislator_ids": []
     },
     {
-      "article_id": "b792e8dbc616721b9a5c35bb624fcb45",
-      "title": "California bill would limit protests at vaccination sites. Is that constitutional? - Los Angeles Times",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObjFqOFg5bHpCQm0xbmltWlBub1RUNFJGSW9lWmk3Zi1JQXo2NmROX2E5LXVhallHallia0hWRWZyenpFdElLcHFIOGxWelhiU2Z2VzE0SXlqakV3eGZDRUtHOFNzTVdFWENOWkJQM1hiTU52U1dueUhiRmhqVjJSd3l4NF9uRU1YeUVKdEE1WVgtbEZGQk1JYXZEV3BSTEpDRnZMcVZSRFJ5MFNFdUNwdTZOS3V5cEh6US1KamNJYkVybDc5NDFtd3VSX1c?oc=5",
-      "source": "Los Angeles Times",
-      "date": "Mon, 09 Aug 2021 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxObjFqOFg5bHpCQm0xbmltWlBub1RUNFJGSW9lWmk3Zi1JQXo2NmROX2E5LXVhallHallia0hWRWZyenpFdElLcHFIOGxWelhiU2Z2VzE0SXlqakV3eGZDRUtHOFNzTVdFWENOWkJQM1hiTU52U1dueUhiRmhqVjJSd3l4NF9uRU1YeUVKdEE1WVgtbEZGQk1JYXZEV3BSTEpDRnZMcVZSRFJ5MFNFdUNwdTZOS3V5cEh6US1KamNJYkVybDc5NDFtd3VSX1c?oc=5\" target=\"_blank\">California bill would limit protests at vaccination sites. Is that constitutional?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Los Angeles Times</font>",
+      "article_id": "a8c26f8027eb34f20c5f0cdeb2b511c7",
+      "title": "Vaccine Bills Make a Comeback Amid Measles Outbreak - Governing",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2ZXX0lneENQOE9EWkQ4ajgwX0hBdnYtN3M3emUwNTlBb1NRLWZnTHRaU3J2VmNiZGVoZjA1SlZ2QTlRRzU5UEpqR1hDbllYaVllSldjeVk0cTMyRVNPVUo1UFR3WXhPM29hdHJ4Y05qNjU4MEl6empRdUVtUG81LU4wSEhZTUtJdVZGZXBaQ0EtU1JJTmc?oc=5",
+      "source": "Governing",
+      "date": "Wed, 13 Mar 2019 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxOa2ZXX0lneENQOE9EWkQ4ajgwX0hBdnYtN3M3emUwNTlBb1NRLWZnTHRaU3J2VmNiZGVoZjA1SlZ2QTlRRzU5UEpqR1hDbllYaVllSldjeVk0cTMyRVNPVUo1UFR3WXhPM29hdHJ4Y05qNjU4MEl6empRdUVtUG81LU4wSEhZTUtJdVZGZXBaQ0EtU1JJTmc?oc=5\" target=\"_blank\">Vaccine Bills Make a Comeback Amid Measles Outbreak</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Governing</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine",
@@ -2565,22 +2587,9 @@
       "topics": [
         "vaccine"
       ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "c0efd19c7e26d4e88bb077ea61b5f7bf",
-      "title": "Jessica Biel joins Robert F. Kennedy Jr. to lobby against vaccination bill in California - The Hill",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOFJSVll3QkFpQmZneW1nZlBjVjU1enRaMktpV3dLNGdrOVY0VVdPeUVhRnZrR3lOLXEzQTlFVQ?oc=5",
-      "source": "The Hill",
-      "date": "Thu, 13 Jun 2019 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOF",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
+      "mentioned_names": [
+        "Beth Liston"
       ],
-      "mentioned_names": [],
       "legislator_ids": []
     },
     {
@@ -2678,6 +2687,21 @@
       "date": "Wed, 13 Oct 2021 07:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQSU1nd1pNMnc4TWxVaDhwS3NlRmZqRWdMa0lvMWdza09qSDhCQXVXT0xLZjFrODl4QzVsMjdDYW9CcFA1Q3lNRi1Jay05azJwWDl4VEl3ckplWld3Zk1IZDQ2ZXpUTGZVQl9TSjNBaTBtNkVuRHNKaUJrSEdzVVU2V3duUF9yTGJKSno4eG1jTnpqN2JYeTI2UdIBngFBVV95cUxQMXBMNlhMYmNOQWl5UlJpRlNDX0JLQ3I3Nlhvc2E4dmFkazRFYUg5TUJ3NkphdnlXSUFvZ2FRazVaeXRBLWdKSk5UWU1XODdqY1U4QW05T2tHSVkxaWJnUHJWZEo0Ykw3RHVELWgyYnhkMDk4VDJzYXlYZzFNYy1TdWVUN1luaWlFZC1iVW5ZelMzRjcxRUZjY1l1X2N6QQ?oc=5\" target=\"_blank\">Lates",
       "sentiment": "negative",
+      "topics": [
+        "vaccine",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "c0efd19c7e26d4e88bb077ea61b5f7bf",
+      "title": "Jessica Biel joins Robert F. Kennedy Jr. to lobby against vaccination bill in California - The Hill",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOFJSVll3QkFpQmZneW1nZlBjVjU1enRaMktpV3dLNGdrOVY0VVdPeUVhRnZrR3lOLXEzQTlFVQ?oc=5",
+      "source": "The Hill",
+      "date": "Thu, 13 Jun 2019 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQVEtmRXJhdUZHVEV0LWt1eFpRcU5rUnhHbTJkYUoySG1lSHZtMmVDT0ZRRXgxT2RWTHNaWWtlMHpRUzlLZkp5UUw0S2Ezek9mZ0tYSEh1TGpONFh1dDVWMUxKR0ZKRUZ5YXU1UXltdk5KcW05MUtwWVItekFWRUtENWxWeGMxNHhJekp4VFZ1QlJUUlB2eXZlV29xYXlZeU50Y181ZXVnS0RpTDc3TmJiUzRBZ3J2bkMwZjlkUGtR0gHDAUFVX3lxTE14LTlPQ3ZVaDNSVlZjMFcwQUdVSmRxWll3UnFjYzFXUHU1QkNOREswXzZyUzgwMWZSS0RnT0Y3S0VMWU90X1BrWGpTZjBIVTdqOEVDaTBsbkozZ3ZZU3JpR1c5OFlFd2d6Ni1Mbi15aWxMQXhRUkhnd1hqOTF4S3dsM212eGZ2MkxqaWYzOF",
+      "sentiment": "neutral",
       "topics": [
         "vaccine",
         "legislation"
@@ -2838,7 +2862,7 @@
       "title": "Health nominations stall in Senate committee - Axios",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTWlZVnFXYkIwMm84TnF0YjRBeXRoWnB1RTdhQzMtMnJJV3ZVdU1odExuZ1JNUFRnb1BobVNoRXVnZDBnWGpIZkdxQnhBTlh0MWdMRWg1eE1xbFAyenBSdVdCazBMMzBkblBnRkNKdE82VkN4a2ZNOWVQMFRILWs?oc=5",
       "source": "Axios",
-      "date": "Fri, 24 Jul 2026 09:00:35 GMT",
+      "date": "Fri, 24 Jul 2026 10:00:11 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTWlZVnFXYkIwMm84TnF0YjRBeXRoWnB1RTdhQzMtMnJJV3ZVdU1odExuZ1JNUFRnb1BobVNoRXVnZDBnWGpIZkdxQnhBTlh0MWdMRWg1eE1xbFAyenBSdVdCazBMMzBkblBnRkNKdE82VkN4a2ZNOWVQMFRILWs?oc=5\" target=\"_blank\">Health nominations stall in Senate committee</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Axios</font>",
       "sentiment": "neutral",
       "topics": [],
@@ -2882,7 +2906,9 @@
       "topics": [
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -2911,7 +2937,9 @@
       "topics": [
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -2941,7 +2969,9 @@
         "vaccine",
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -2956,7 +2986,9 @@
         "public health",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -2971,7 +3003,9 @@
         "vaccine",
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -2986,7 +3020,9 @@
         "vaccine",
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -3015,7 +3051,9 @@
         "vaccine",
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -3029,7 +3067,9 @@
       "topics": [
         "public health"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Erica Schwartz"
+      ],
       "legislator_ids": []
     },
     {
@@ -3487,21 +3527,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "7a3daf4934a9c7baffdf6bd0edef0656",
-      "title": "Two CT bills would increases state vaccine authority. Here’s what they would do - Hartford Courant",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQakl0UGF2aGdNaHRJQkphanFlZHQ2N3NGZjJkN1EzUWRDMDlMM0c1MWdVcXpHWnlVS1BaQUktZmRiV2JuTzFOcE9kOVlvcTlodHdCNXI5Y1ZIbDRaMVJpZ3dlQWhMQ0ExVElGb3RiNmxoTkpzRU9hc1V4djdOQ1BRclUxdWZJMkJRSFZHbWE0eC1WcmxBOVQxQVoteXpVQXpMUXIxUWtuTmtQdWVhWFdVMlU5VQ?oc=5",
-      "source": "Hartford Courant",
-      "date": "Tue, 31 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQakl0UGF2aGdNaHRJQkphanFlZHQ2N3NGZjJkN1EzUWRDMDlMM0c1MWdVcXpHWnlVS1BaQUktZmRiV2JuTzFOcE9kOVlvcTlodHdCNXI5Y1ZIbDRaMVJpZ3dlQWhMQ0ExVElGb3RiNmxoTkpzRU9hc1V4djdOQ1BRclUxdWZJMkJRSFZHbWE0eC1WcmxBOVQxQVoteXpVQXpMUXIxUWtuTmtQdWVhWFdVMlU5VQ?oc=5\" target=\"_blank\">Two CT bills would increases state vaccine authority. Here’s what they would do</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "2e7fef8d06acf323c9528dd7e892435c",
       "title": "Kennedy Shifts Tone on Vaccines in Congressional Hearing - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQllsZlVqQ3BkT3ZjOGpIcWJ5RG8zRUxJNkY4U25vc0xqb3Q5aER5bDZxQ2xTSVFDaHhCd1Y2NzluNlBlNHIyOFFSVXFrVnJfWl9RazEwMlhaUkdiWkZMR2JYSlZOV2wzemRQekhDZkdKMEI5aFhvQ3p5RXlrWXlQYkhaYUFSOEZFeUE?oc=5",
@@ -3525,6 +3550,21 @@
       "sentiment": "negative",
       "topics": [
         "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "7a3daf4934a9c7baffdf6bd0edef0656",
+      "title": "Two CT bills would increases state vaccine authority. Here’s what they would do - Hartford Courant",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQakl0UGF2aGdNaHRJQkphanFlZHQ2N3NGZjJkN1EzUWRDMDlMM0c1MWdVcXpHWnlVS1BaQUktZmRiV2JuTzFOcE9kOVlvcTlodHdCNXI5Y1ZIbDRaMVJpZ3dlQWhMQ0ExVElGb3RiNmxoTkpzRU9hc1V4djdOQ1BRclUxdWZJMkJRSFZHbWE0eC1WcmxBOVQxQVoteXpVQXpMUXIxUWtuTmtQdWVhWFdVMlU5VQ?oc=5",
+      "source": "Hartford Courant",
+      "date": "Tue, 31 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQakl0UGF2aGdNaHRJQkphanFlZHQ2N3NGZjJkN1EzUWRDMDlMM0c1MWdVcXpHWnlVS1BaQUktZmRiV2JuTzFOcE9kOVlvcTlodHdCNXI5Y1ZIbDRaMVJpZ3dlQWhMQ0ExVElGb3RiNmxoTkpzRU9hc1V4djdOQ1BRclUxdWZJMkJRSFZHbWE0eC1WcmxBOVQxQVoteXpVQXpMUXIxUWtuTmtQdWVhWFdVMlU5VQ?oc=5\" target=\"_blank\">Two CT bills would increases state vaccine authority. Here’s what they would do</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Hartford Courant</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "legislation"
       ],
       "mentioned_names": [],
       "legislator_ids": []
@@ -3613,7 +3653,9 @@
         "vaccine",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Bill Cassidy"
+      ],
       "legislator_ids": []
     },
     {
@@ -3844,20 +3886,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "fd1d2b0e2fb74d960bcf301c02f9f390",
-      "title": "Senate Panel Asks Surgeon General Nominee Her Opinions on Vaccines, Conflicts of Interest - The Well News",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZGVvY0xVdHZHLVpXczVjZzAtZ2U1al9HYUtWVFVlM2NqUlpWZXRpRDVZMjdSd1cwTFRweWRFV01hYUlFLWtNc1FJQk1WNEFockVKZXZlWmcyajVFR2Y2SmJST21lcmxzalpMSmp5SS1ndDBQTlFuX0VfckRFdmg0UjktTE95bUhYRm5zV3RqTkhab0NYQkVfYlBmQ0MwNTIwSENRTmJMTFhCUUpIc1g5bHktcURvb2RZZ0xLYWlPdkN0Vjhk?oc=5",
-      "source": "The Well News",
-      "date": "Wed, 25 Feb 2026 23:35:21 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOZGVvY0xVdHZHLVpXczVjZzAtZ2U1al9HYUtWVFVlM2NqUlpWZXRpRDVZMjdSd1cwTFRweWRFV01hYUlFLWtNc1FJQk1WNEFockVKZXZlWmcyajVFR2Y2SmJST21lcmxzalpMSmp5SS1ndDBQTlFuX0VfckRFdmg0UjktTE95bUhYRm5zV3RqTkhab0NYQkVfYlBmQ0MwNTIwSENRTmJMTFhCUUpIc1g5bHktcURvb2RZZ0xLYWlPdkN0Vjhk?oc=5\" target=\"_blank\">Senate Panel Asks Surgeon General Nominee Her Opinions on Vaccines, Conflicts of Interest</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Well News</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "0d5ee72ab10eebcf49345754c2061367",
       "title": "Guns, homeschooling and vaccines draw 2,000 people to Connecticut Capitol - CT Insider",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPc1JlTGFVMGl4X3NwQl9HZmFtRnRPdkktMnBKSGtkcUJmbGFmcmxjbmZOTHRSeEJiS2Y2UENScG51a3J2NnY2RDNVNVRDbmp1MDFRcTEzWXJvZUFoZlVpMjRUVU9OcU12T2lMNzRMYW1tTGpNc0xZdUhXSFZkaEdLNGZUNV9HQjZsMHRPUlI4eTc5amhOOEpYSHlrT0ROd3hod2NwQ1NCallYQQ?oc=5",
@@ -3917,6 +3945,20 @@
       "source": "Los Angeles Times",
       "date": "Wed, 25 Feb 2026 08:00:00 GMT",
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPRU9ZektwWlJVMDY5cGxJSnZjY05EQUd4OW9GbXVSTFlIclhYVzQwRF84SjZkaF9JVDJ1NnhnOWNQaVhsTXdaNm9lNHgxRnJ5TnJwUi1lVzRaMGR5Nl96THJ2TF9NVVQ1REdYT3EySU1iWkU4dnFoTnZaZ3JGbHFEdGcwU0pIMDRyRTE0QUppaHBqU0taTTJWVzNWdkVtYndCdXZ1eEJ3WW9wc3BjbnE0bG9ONlZMQTMzaF9tNEdYZklCcGxlYmlVMDJKcG9HVHJSRl9FczlRZUhnVXkzTmc?oc=5\" target=\"_blank\">Surgeon general nominee faces sharp questions about vaccines, birth control and qualifications</a>&nbsp;&nbsp;<font color=\"#6f6f",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "c6ce613d522465a8d9f967307f22e542",
+      "title": "US vaccine panel retreats from mRNA Covid review ahead of midterms | Trump administration - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQ1NiNnpGdnFkYUxyekt6UjVJUnlpNFBmZkJvOWxaY2xIaWdtWVNFb25WeThWNy1jaTR0VklLNFpKbGpTNXpvQVA3UkRnYUZwSDNsSHE1R3RqeUlETmpsNXdlUDFUZVhlTjZKVmJlRWY2VGZOSDhOMU83dVZjVXA1RHhzRzczYVE?oc=5",
+      "source": "The Guardian",
+      "date": "Wed, 11 Mar 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxOQ1NiNnpGdnFkYUxyekt6UjVJUnlpNFBmZkJvOWxaY2xIaWdtWVNFb25WeThWNy1jaTR0VklLNFpKbGpTNXpvQVA3UkRnYUZwSDNsSHE1R3RqeUlETmpsNXdlUDFUZVhlTjZKVmJlRWY2VGZOSDhOMU83dVZjVXA1RHhzRzczYVE?oc=5\" target=\"_blank\">US vaccine panel retreats from mRNA Covid review ahead of midterms | Trump administration</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Guardian</font>",
       "sentiment": "neutral",
       "topics": [
         "vaccine"
@@ -4230,7 +4272,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Clay Yarborough"
+      ],
       "legislator_ids": []
     },
     {
@@ -4368,6 +4412,18 @@
       "legislator_ids": []
     },
     {
+      "article_id": "4659261cb62065ed14cb1e14945fd644",
+      "title": "DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda - WCTV",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5",
+      "source": "WCTV",
+      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5\" target=\"_blank\">DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WCTV</font>",
+      "sentiment": "neutral",
+      "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "4bc7da05e1348ea0b22d30df3fff7a73",
       "title": "Clay Yarborough’s ‘medical freedom’ bill survives bipartisan scrutiny in Senate Committee - Florida Politics",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd0JiYlB6TUxxQVBQbFhWVVd4WHdsX05PdzdjRlpnN0dHNEpJQzdBTUVicGo3UXJHVFFrNE51S3V5SVp4eHFvNXE3dzdlQ1o3c3hOS2QxdExzNVF0WE5JTjFsd25pNlYteXo1NVR5cWJaZHlJekJSV2VsQTBIV3BoOXdVNU44LUg1cnc?oc=5",
@@ -4378,19 +4434,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "4659261cb62065ed14cb1e14945fd644",
-      "title": "DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda - WCTV",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5",
-      "source": "WCTV",
-      "date": "Thu, 16 Apr 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOUTVmVXRrT2ViQWtBYlJScTRqRTBtTzVpSVpiT0lPQTdSS0plWDNOZkNkZjltNUNDVmtHbHRPQUJTcHV0R2pBaGNmc3otVTR5NmY3UldRX1hFX3Z2TjhiazdDS3dGVHRFU1RIdkFaY0wxTEZMU0JPeUl1MURtQnM5SzhnNEN5OVgwbklHa0YySzJZVzYyaExSc1VJaEV5aDZ0UFN4WjFpdW9VeER0c0l0TU5vdGtWUQ?oc=5\" target=\"_blank\">DeSantis postpones redistricting session, adds AI protections and medical freedom to agenda</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">WCTV</font>",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Clay Yarborough"
+      ],
       "legislator_ids": []
     },
     {
@@ -4586,7 +4632,9 @@
         "vaccine",
         "mandate"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Daniel Perez"
+      ],
       "legislator_ids": []
     },
     {
@@ -4742,7 +4790,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Clay Yarborough"
+      ],
       "legislator_ids": []
     },
     {
@@ -4820,21 +4870,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "e29489066207788a198523b92920ff2c",
-      "title": "House Bill 574 — Medical mandates (+6) - Idaho Freedom",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ISFNZMEh6Z2l6d1dkRnBjR2ZVQjdWWkktWTJnTEVvM3BKVHVNV0U4ZzdyNi0tT1ZCVmJsNFJTSDNvZGNaN0l6TGtBZDBfdDNSQkdpdUJQN2tPLVpXTnlxS0d6MDBuemhn?oc=5",
-      "source": "Idaho Freedom",
-      "date": "Fri, 06 Feb 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ISFNZMEh6Z2l6d1dkRnBjR2ZVQjdWWkktWTJnTEVvM3BKVHVNV0U4ZzdyNi0tT1ZCVmJsNFJTSDNvZGNaN0l6TGtBZDBfdDNSQkdpdUJQN2tPLVpXTnlxS0d6MDBuemhn?oc=5\" target=\"_blank\">House Bill 574 — Medical mandates (+6)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Freedom</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "mandate",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "17c03380da343cd5597398469f29ea3e",
       "title": "House won't consider vaccine exemptions, AI guidelines during special session - WUSF",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSmJqV3ZFSWduWUtNX3FfbWtXd2l2YVk4S0VIWGRHVi1kNDY5VnV6UWhYWkhyLXNLNVN5WmNVTmdyYnA1aVRES0M4SWtZS21ENWxwYXZsWTJsOG9CVTlldE1EVmdfRnNTdnMzZ2R0aUFHc21oWmdRaHRKU3NoeHY1VTZ4ZzZhcmEyeU5EZ3hONVZ3dHlKZVJZSjNiZXBseEhydVRpaERmRlJpVno2SlJxQkt2c1dsblA0V0RSak1zYXV2RnV4Snc?oc=5",
@@ -4850,6 +4885,21 @@
       "legislator_ids": []
     },
     {
+      "article_id": "e29489066207788a198523b92920ff2c",
+      "title": "House Bill 574 — Medical mandates (+6) - Idaho Freedom",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ISFNZMEh6Z2l6d1dkRnBjR2ZVQjdWWkktWTJnTEVvM3BKVHVNV0U4ZzdyNi0tT1ZCVmJsNFJTSDNvZGNaN0l6TGtBZDBfdDNSQkdpdUJQN2tPLVpXTnlxS0d6MDBuemhn?oc=5",
+      "source": "Idaho Freedom",
+      "date": "Fri, 06 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ISFNZMEh6Z2l6d1dkRnBjR2ZVQjdWWkktWTJnTEVvM3BKVHVNV0U4ZzdyNi0tT1ZCVmJsNFJTSDNvZGNaN0l6TGtBZDBfdDNSQkdpdUJQN2tPLVpXTnlxS0d6MDBuemhn?oc=5\" target=\"_blank\">House Bill 574 — Medical mandates (+6)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Freedom</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "mandate",
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "8f8070c6e64560af6a3e47c37601282f",
       "title": "Ohio Supreme Court Hears Arguments in Trans Rights Case - State Court Report",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVUdEaEhVb0dUMVRPZ2R2cEotdUNua05CYWE1My1SdGUxQTIzdk9lOXJiY3ctd0dkNGFOX1hNbDdvazUtVldMYm15VlFRN00xV0o0RU5QT0NNWTE0bzBsTjEwcFFEV3d0ZU9PTDUwdHpnYTVua3ZGd2xmWFdXY0plelBLdTNYWFZ6VEF4eUpSeXBvYkNLeXR5dW5nS0JLMC1sS0FaYzhhUl9MVmc?oc=5",
@@ -4858,6 +4908,20 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVUdEaEhVb0dUMVRPZ2R2cEotdUNua05CYWE1My1SdGUxQTIzdk9lOXJiY3ctd0dkNGFOX1hNbDdvazUtVldMYm15VlFRN00xV0o0RU5QT0NNWTE0bzBsTjEwcFFEV3d0ZU9PTDUwdHpnYTVua3ZGd2xmWFdXY0plelBLdTNYWFZ6VEF4eUpSeXBvYkNLeXR5dW5nS0JLMC1sS0FaYzhhUl9MVmc?oc=5\" target=\"_blank\">Ohio Supreme Court Hears Arguments in Trans Rights Case</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">State Court Report</font>",
       "sentiment": "neutral",
       "topics": [],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
+      "article_id": "72e521f9814b23a309292b17b8a4a363",
+      "title": "DeSantis slams House leadership for not taking up medical freedom, AI bills in special session - Florida’s Voice",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWl4eGdjSElvLVlHRTRvdmZ5ZHJEXzBrMlNpbThsOHVzRXFnTV83cWxsdUN0WFRnNlItVDBHTS1ybUt4SjczVDJadmtWamRfM21acW1rcXloQndfZ0Y1MmJMbEk4OVZUUzd3YWZsUnhLOXh3VVV1UWZTazcyazItTGFRTlVMb3VWN0dLR3NrejJGeTdCNXp1eEYzZ1M5MVBWRHExZzJkcEdXdmZTTUxTX0RQR2lmeVBLMkE?oc=5",
+      "source": "Florida’s Voice",
+      "date": "Thu, 14 May 2026 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWl4eGdjSElvLVlHRTRvdmZ5ZHJEXzBrMlNpbThsOHVzRXFnTV83cWxsdUN0WFRnNlItVDBHTS1ybUt4SjczVDJadmtWamRfM21acW1rcXloQndfZ0Y1MmJMbEk4OVZUUzd3YWZsUnhLOXh3VVV1UWZTazcyazItTGFRTlVMb3VWN0dLR3NrejJGeTdCNXp1eEYzZ1M5MVBWRHExZzJkcEdXdmZTTUxTX0RQR2lmeVBLMkE?oc=5\" target=\"_blank\">DeSantis slams House leadership for not taking up medical freedom, AI bills in special session</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Florida’s Voice</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "legislation"
+      ],
       "mentioned_names": [],
       "legislator_ids": []
     },
@@ -5060,6 +5124,20 @@
       "legislator_ids": []
     },
     {
+      "article_id": "15a88c0e39e8794b9c51e1d0b6977566",
+      "title": "Idaho House passes revised ‘medical freedom’ bill, after tense debate - Idaho Capital Sun",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXN6eVplOGhVNWM5NEZjRlQ4aV94RkNTTHBTbFFvS1RTWjdncTRHWl9naUdmalpONW5kOG5CbmswOHNHYmp1Z05WYkt3R2VFY2sxM0pKWk9CdnpIYkc0dk0tWEZZdkZpVUFWMWhZRXBOTGRfMXpZNUQxTk1ISHJtcHZJUW5QaTlBWF9BQThqelF6enF4cjlOek9lWDB4ZUxtTEw5a2lBRkZFZw?oc=5",
+      "source": "Idaho Capital Sun",
+      "date": "Wed, 02 Apr 2025 07:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXN6eVplOGhVNWM5NEZjRlQ4aV94RkNTTHBTbFFvS1RTWjdncTRHWl9naUdmalpONW5kOG5CbmswOHNHYmp1Z05WYkt3R2VFY2sxM0pKWk9CdnpIYkc0dk0tWEZZdkZpVUFWMWhZRXBOTGRfMXpZNUQxTk1ISHJtcHZJUW5QaTlBWF9BQThqelF6enF4cjlOek9lWDB4ZUxtTEw5a2lBRkZFZw?oc=5\" target=\"_blank\">Idaho House passes revised ‘medical freedom’ bill, after tense debate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Capital Sun</font>",
+      "sentiment": "positive",
+      "topics": [
+        "legislation"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "a5efc20312e2abed4ecdb191c0dea5ae",
       "title": "Florida 'medical freedom' bill addresses vaccination status - Tallahassee Democrat",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUjVIM0F3MGFTaEl2OFhramRad0w5ajc5dHJIRF9meWdnZEFfcXdIXzJJM1FTc2xiUzJqM3ZMNE5DZFRGQU12dWtaRkRfbjVJMEFreHJHRGtuVDY3M0pDdWlrSlNHb3k4a3ltdWV1SEJEVno3TnZQdzZrQ1EwTy01U2pLU2M5emFmMFd0cWpIZjA4Rll4bkVsZmoxV25LMjNLNTRVRTNOLVctdHBRYmgwWWNOVHpaVTU3ZFE4dXktcHdhNU9f?oc=5",
@@ -5069,20 +5147,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "15a88c0e39e8794b9c51e1d0b6977566",
-      "title": "Idaho House passes revised ‘medical freedom’ bill, after tense debate - Idaho Capital Sun",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXN6eVplOGhVNWM5NEZjRlQ4aV94RkNTTHBTbFFvS1RTWjdncTRHWl9naUdmalpONW5kOG5CbmswOHNHYmp1Z05WYkt3R2VFY2sxM0pKWk9CdnpIYkc0dk0tWEZZdkZpVUFWMWhZRXBOTGRfMXpZNUQxTk1ISHJtcHZJUW5QaTlBWF9BQThqelF6enF4cjlOek9lWDB4ZUxtTEw5a2lBRkZFZw?oc=5",
-      "source": "Idaho Capital Sun",
-      "date": "Wed, 02 Apr 2025 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXN6eVplOGhVNWM5NEZjRlQ4aV94RkNTTHBTbFFvS1RTWjdncTRHWl9naUdmalpONW5kOG5CbmswOHNHYmp1Z05WYkt3R2VFY2sxM0pKWk9CdnpIYkc0dk0tWEZZdkZpVUFWMWhZRXBOTGRfMXpZNUQxTk1ISHJtcHZJUW5QaTlBWF9BQThqelF6enF4cjlOek9lWDB4ZUxtTEw5a2lBRkZFZw?oc=5\" target=\"_blank\">Idaho House passes revised ‘medical freedom’ bill, after tense debate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Idaho Capital Sun</font>",
-      "sentiment": "positive",
-      "topics": [
         "legislation"
       ],
       "mentioned_names": [],
@@ -5300,33 +5364,6 @@
       "legislator_ids": []
     },
     {
-      "article_id": "b6f467d06f022e0a3125785bcde9c0d8",
-      "title": "Proposed vaccine legislation has all eyes on Florida - Fernandina Observer",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOU2w0b0dEY3BtVXA0ZEpfeUx2RVVPMXB1T0F1cllaeXZCOFBWYzlzZDYtekFlZzZCcnd0aVp4NUJLUmpuSG1mRXNoVlc3NjhRNUJiR1l4eWhzUVM0alluSkZ6X1VmaUs1UFZ2U3VnSnl6ZmtFbDhWSDZXZ0ZSUFFrWGJsdUpzVUZvWVA1LU9lNnRScVluQlBPV1l1TmxpNlpDQnZF?oc=5",
-      "source": "Fernandina Observer",
-      "date": "Tue, 20 Jan 2026 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOU2w0b0dEY3BtVXA0ZEpfeUx2RVVPMXB1T0F1cllaeXZCOFBWYzlzZDYtekFlZzZCcnd0aVp4NUJLUmpuSG1mRXNoVlc3NjhRNUJiR1l4eWhzUVM0alluSkZ6X1VmaUs1UFZ2U3VnSnl6ZmtFbDhWSDZXZ0ZSUFFrWGJsdUpzVUZvWVA1LU9lNnRScVluQlBPV1l1TmxpNlpDQnZF?oc=5\" target=\"_blank\">Proposed vaccine legislation has all eyes on Florida</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Fernandina Observer</font>",
-      "sentiment": "neutral",
-      "topics": [
-        "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "ae8e35327f80903624ced49ca0ffcabe",
-      "title": "Numerous Organizations Condemn Legislators’ Attacks on Healthcare Freedom and Raise Alarm about Statehouse’s Anti-Democracy Legislative Process - ACLU of Kansas",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQdm5FMFlReWhTR3ZQbHJXQlljVVlzR3dpNTRjb2U1WEpJTHJPejY2WlJVLWh3ZzZlLWVpX0pTOFZsdklzWkw0djY3dEhPMEpmQXBfR2UzWlNqXzQ4M0xPU3ZKRTZGbW52aWJNSmhFZC10M004MEh1NHBUekprZjhudnp4b1NpdmRNSFgtdmdiYlM0OEdtaVhuYU1QUHVTNHhodWdBemdNcmw2U0VpbHhCNlJVU1A4dTB4WndSaUZkdkdEYnpjZ0xF?oc=5",
-      "source": "ACLU of Kansas",
-      "date": "Tue, 27 Feb 2024 08:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQdm5FMFlReWhTR3ZQbHJXQlljVVlzR3dpNTRjb2U1WEpJTHJPejY2WlJVLWh3ZzZlLWVpX0pTOFZsdklzWkw0djY3dEhPMEpmQXBfR2UzWlNqXzQ4M0xPU3ZKRTZGbW52aWJNSmhFZC10M004MEh1NHBUekprZjhudnp4b1NpdmRNSFgtdmdiYlM0OEdtaVhuYU1QUHVTNHhodWdBemdNcmw2U0VpbHhCNlJVU1A4dTB4WndSaUZkdkdEYnpjZ0xF?oc=5\" target=\"_blank\">Numerous Organizations Condemn Legislators’ Attacks on Healthcare Freedom and Raise Alarm about Statehouse’s Anti-Democracy Legislative Process</a>&nbsp;&nbsp;",
-      "sentiment": "neutral",
-      "topics": [],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
       "article_id": "5de3e0fb7f3b25a676435561126d60f2",
       "title": "Gretchen Whitmer makes ‘science of reading’ training mandatory for Michigan teachers - Bridge Michigan",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU3hZZ0pjTmJMSno4N1BMS3c3NDdoS3BtWWlMbElMLXV2RlBwRUhLT2VRcGpDRFZra1ZwbE55UVNjMVM1bHZ3dC1DTEhOd01LbTU3VDdIMlVoUEY4N0dLQ012RkthWTNUTXY2OUkzXzlVRnlQYVVCaGNWVVlkbmt5YkJaaG1ZbXQ5SjFhSXctaFdudlBaQ0pPdk1vX3R1V1FoeGkxVWJBblhaV09hZ2Z0S0FB?oc=5",
@@ -5456,7 +5493,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Melanie Miller"
+      ],
       "legislator_ids": []
     },
     {
@@ -5886,7 +5925,9 @@
       "topics": [
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Melanie Miller"
+      ],
       "legislator_ids": []
     },
     {
@@ -5930,7 +5971,9 @@
         "education",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Chrissy Houlahan"
+      ],
       "legislator_ids": []
     },
     {
@@ -6167,7 +6210,9 @@
         "education",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Jerry Moran"
+      ],
       "legislator_ids": []
     },
     {
@@ -6413,7 +6458,9 @@
         "education",
         "legislation"
       ],
-      "mentioned_names": [],
+      "mentioned_names": [
+        "Jerry Moran"
+      ],
       "legislator_ids": []
     },
     {
@@ -7179,6 +7226,22 @@
       "legislator_ids": []
     },
     {
+      "article_id": "936dc848d756d228a369eef9cf5bde87",
+      "title": "Kennedy Allies Target States to Overturn Vaccine Mandates for Schoolchildren - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5saWM1RmoybWxrdldHVmlxUnY1alo2WkNPTmpUc0lqWWZPdGhfaWhqZ2ZlZmxmaU5MeFZIVXRQNzFjeW9RbmpHUEdQZjRLOXRic3hfc3RjcTFaZ3A1bzBDVEZSbWI2YU1qeWw0LWtXRHJiU0JWTFpQZzVCWE1PUkE?oc=5",
+      "source": "The New York Times",
+      "date": "Sat, 14 Feb 2026 08:00:00 GMT",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5saWM1RmoybWxrdldHVmlxUnY1alo2WkNPTmpUc0lqWWZPdGhfaWhqZ2ZlZmxmaU5MeFZIVXRQNzFjeW9RbmpHUEdQZjRLOXRic3hfc3RjcTFaZ3A1bzBDVEZSbWI2YU1qeWw0LWtXRHJiU0JWTFpQZzVCWE1PUkE?oc=5\" target=\"_blank\">Kennedy Allies Target States to Overturn Vaccine Mandates for Schoolchildren</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The New York Times</font>",
+      "sentiment": "neutral",
+      "topics": [
+        "vaccine",
+        "mandate",
+        "education"
+      ],
+      "mentioned_names": [],
+      "legislator_ids": []
+    },
+    {
       "article_id": "f825f280ad1fd56f7f9140d17afa385e",
       "title": "Iowa lawmakers advance bill to eliminate school vaccine requirements - KWQC",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZWkyTkNrWXhJSGp0Ykp2bnRKX2ZPRXZjTzM5Znk4WWxxMmgzSnEwOUUwSWp6TFc0RkRUR1R4MS1JQ1Rta2NqYWNXeS1CN0dhM3ZqSUllb2ltVld6VnZkSG81OWhGSHg4MVJPVEJLRXplNHhyeHYwM3BFLVpyTEZWV2ljNHNNcnNXSEt5d0FZYjd2c0VVMHhXOHBiY1ZWbjDSAbMBQVVfeXFMUGFnUnI3Y3J2TXkyV2ZUTWw0YXRQSFJYcFRyTVAzcGRyQ2packpVUVlRaGtrdklQWGNQMVB3OTVGUThYUlRuaFIwTEJZcjJxV05NczdJR3dUT1BULThZaHdIcUhvTGppbVhEYTdYU3p5ekRiZ3I5YnJJNDh4aENVZTBOUTlZQnJMWW9oRXN4eDNSYXV5NXRDeHFVaGg4Rk9jYXNwOUR4eE5pSmJGVHo0NlZ1XzQ?oc=5",
@@ -7577,20 +7640,6 @@
       "sentiment": "neutral",
       "topics": [
         "vaccine",
-        "legislation"
-      ],
-      "mentioned_names": [],
-      "legislator_ids": []
-    },
-    {
-      "article_id": "708760f4ec5887be91a41ebeeece6c78",
-      "title": "Ferguson signs new laws on housing, healthcare - KING5.com",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVlYzZVVxNks2N3JoTDZrM25iWXhKLXRwc2RBQlFTNk5lNXFEUkxSdElLa2MwaFdQcDRLLVVHZUI1a3lETWxXZVVtUXpha1VTVUJ1Ul9HZE41SGV0dFNNLXBiemhOSGJlUkhRdFQ5d1c5NzFOam5tLWlrM05kMHN5RXR1MDRzVjNZOFdVTUVOSUZWWDdoVzJpQXJFV3BFdXh3SVBPN0RldXZiOWdKNG1saXc5YUVqQ0huTkJNb0ZfV0FuWGM1STBuRDRNLXVzSDQzU0dsZA?oc=5",
-      "source": "KING5.com",
-      "date": "Mon, 09 Mar 2026 07:00:00 GMT",
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVlYzZVVxNks2N3JoTDZrM25iWXhKLXRwc2RBQlFTNk5lNXFEUkxSdElLa2MwaFdQcDRLLVVHZUI1a3lETWxXZVVtUXpha1VTVUJ1Ul9HZE41SGV0dFNNLXBiemhOSGJlUkhRdFQ5d1c5NzFOam5tLWlrM05kMHN5RXR1MDRzVjNZOFdVTUVOSUZWWDdoVzJpQXJFV3BFdXh3SVBPN0RldXZiOWdKNG1saXc5YUVqQ0huTkJNb0ZfV0FuWGM1STBuRDRNLXVzSDQzU0dsZA?oc=5\" target=\"_blank\">Ferguson signs new laws on housing, healthcare</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KING5.com</font>",
-      "sentiment": "neutral",
-      "topics": [
         "legislation"
       ],
       "mentioned_names": [],

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-24T08:27:11.909730+00:00",
+  "generated_at": "2026-07-24T19:58:20.458065+00:00",
   "source": "govinfo+legiscan",
-  "total": 8190,
+  "total": 8191,
   "bills": [
     {
       "billId": "US-119-HR120",
@@ -6718,32 +6718,6 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4151"
     },
     {
-      "billId": "US-119-S3314",
-      "billNumber": "S 3314",
-      "title": "Written Informed Consent Act",
-      "state": "US",
-      "level": "Federal",
-      "billType": "monitor",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "impact": "Medium",
-      "category": "Armed Forces and National Security",
-      "summary": "Written Informed Consent Act",
-      "lastAction": "Introduced in Senate",
-      "lastActionDate": "2025-12-02",
-      "stance": "monitor",
-      "committee": "Veterans' Affairs Committee",
-      "sponsors": [
-        {
-          "name": "Sen. Sheehy, Tim [R-MT]",
-          "party": "R",
-          "state": "MT"
-        }
-      ],
-      "subjects": [],
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3314"
-    },
-    {
       "billId": "US-119-S4132",
       "billNumber": "S 4132",
       "title": "Maternal Vaccination Act",
@@ -6820,6 +6794,58 @@
       ],
       "subjects": [],
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5003"
+    },
+    {
+      "billId": "US-119-S3314",
+      "billNumber": "S 3314",
+      "title": "Written Informed Consent Act",
+      "state": "US",
+      "level": "Federal",
+      "billType": "monitor",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "Armed Forces and National Security",
+      "summary": "Written Informed Consent Act",
+      "lastAction": "Introduced in Senate",
+      "lastActionDate": "2025-12-02",
+      "stance": "monitor",
+      "committee": "Veterans' Affairs Committee",
+      "sponsors": [
+        {
+          "name": "Sen. Sheehy, Tim [R-MT]",
+          "party": "R",
+          "state": "MT"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3314"
+    },
+    {
+      "billId": "US-119-S5128",
+      "billNumber": "S 5128",
+      "title": "A bill to prohibit the award of Federal education funds to educational institutions and agencies that do not allow for religious exemptions to vaccination requirements, and for other purposes.",
+      "state": "US",
+      "level": "Federal",
+      "billType": "anti",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "impact": "Medium",
+      "category": "General",
+      "summary": "A bill to prohibit the award of Federal education funds to educational institutions and agencies that do not allow for religious exemptions to vaccination requirements, and for other purposes.",
+      "lastAction": "Introduced in Senate",
+      "lastActionDate": "2026-07-23",
+      "stance": "anti",
+      "committee": "Health, Education, Labor, and Pensions Committee",
+      "sponsors": [
+        {
+          "name": "Sen. Lee, Mike [R-UT]",
+          "party": "R",
+          "state": "UT"
+        }
+      ],
+      "subjects": [],
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5128"
     },
     {
       "billId": "AL-SB278",
@@ -87886,7 +87912,7 @@
       "state": "MA",
       "billNumber": "H5576",
       "title": "Relative to economic development in the commonwealth",
-      "status": "Introduced",
+      "status": "Passed One Chamber",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -87895,8 +87921,8 @@
       "impact": "Medium",
       "summary": "Relative to economic development in the commonwealth",
       "sponsor": "",
-      "lastAction": "Placed in the Orders of the Day for Wednesday, July 22, 2026",
-      "lastActionDate": "2026-07-16",
+      "lastAction": "Read third and passed to be engrossed",
+      "lastActionDate": "2026-07-24",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MA/bill/H5576/2025",
@@ -91109,7 +91135,7 @@
       "summary": "Insurance: health benefits; exclusion of federal excepted benefits from a health insurance policy; provide for. Amends sec. 608 of 1956 PA 218 (MCL 500.608). TIE BAR WITH: HB 4207'25",
       "sponsor": "",
       "lastAction": "Assigned Pa 54'26 With Immediate Effect",
-      "lastActionDate": "2026-07-23",
+      "lastActionDate": "2026-07-29",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MI/bill/HB4208/2025",
@@ -91361,7 +91387,7 @@
       "summary": "Health occupations: occupational therapists; occupational therapy licensure compact; enact. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 16188. TIE BAR WITH: HB 4104'25",
       "sponsor": "",
       "lastAction": "Assigned Pa 43'26 With Immediate Effect",
-      "lastActionDate": "2026-07-22",
+      "lastActionDate": "2026-07-29",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MI/bill/HB4103/2025",
@@ -131440,7 +131466,7 @@
       "state": "NJ",
       "billNumber": "A4075",
       "title": "Authorizes DOH to establish partnerships in international public health.",
-      "status": "Passed One Chamber",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -131449,8 +131475,8 @@
       "impact": "Medium",
       "summary": "Authorizes DOH to establish partnerships in international public health.",
       "sponsor": "",
-      "lastAction": "Passed Assembly (Passed Both Houses) (57-22-0)",
-      "lastActionDate": "2026-06-11",
+      "lastAction": "Approved P.L.2026, c.50.",
+      "lastActionDate": "2026-07-22",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/NJ/bill/A4075/2026",
