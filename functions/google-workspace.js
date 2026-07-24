@@ -1,17 +1,11 @@
 const { google } = require('googleapis');
-const { GoogleAuth } = require('google-auth-library');
+const { getDelegatedClient } = require('./delegated-auth');
 
 /**
- * Get an authenticated Google API client using Application Default Credentials
- * with domain-wide delegation to impersonate a Workspace user
+ * Get a Google API client acting as the officer email via domain-wide delegation
  */
 async function getAuthClient(scopes) {
-    const subject = process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com';
-    const auth = new GoogleAuth({
-        scopes,
-        clientOptions: { subject }
-    });
-    return auth.getClient();
+    return getDelegatedClient(scopes);
 }
 
 function requireEnv(name) {

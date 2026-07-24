@@ -1,17 +1,11 @@
 const { google } = require('googleapis');
-const { GoogleAuth } = require('google-auth-library');
+const { getDelegatedClient } = require('./delegated-auth');
 
 /**
- * Get authenticated Gmail client via Application Default Credentials
- * with domain-wide delegation to impersonate the officer email
+ * Get a Gmail client acting as the officer email via domain-wide delegation
  */
 async function getGmailClient() {
-    const subject = process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com';
-    const auth = new GoogleAuth({
-        scopes: ['https://www.googleapis.com/auth/gmail.send'],
-        clientOptions: { subject }
-    });
-    const authClient = await auth.getClient();
+    const authClient = await getDelegatedClient(['https://www.googleapis.com/auth/gmail.send']);
     return google.gmail({ version: 'v1', auth: authClient });
 }
 

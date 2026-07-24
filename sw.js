@@ -1,5 +1,5 @@
 // SAFE Action Service Worker
-const CACHE_NAME = 'safe-action-v98';
+const CACHE_NAME = 'safe-action-v99';
 const ASSETS = [
     '/',
     '/index.html',
@@ -59,11 +59,19 @@ self.addEventListener('activate', event => {
 
 // Fetch: network first, fall back to cache
 self.addEventListener('fetch', event => {
+    // Only handle same-origin GETs. Worker fetches are governed by connect-src,
+    // so intercepting cross-origin scripts (gstatic) gets them CSP-blocked.
+    const url = new URL(event.request.url);
+    if (event.request.method !== 'GET' || url.origin !== self.location.origin) {
+        return;
+    }
     event.respondWith(
         fetch(event.request)
             .then(response => {
-                const clone = response.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                if (response.ok) {
+                    const clone = response.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                }
                 return response;
             })
             .catch(() => caches.match(event.request))

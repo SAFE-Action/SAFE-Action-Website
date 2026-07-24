@@ -9,6 +9,15 @@ if ('serviceWorker' in navigator) {
             .then(reg => console.log('SW registered:', reg.scope))
             .catch(err => console.log('SW registration failed:', err));
     });
+
+    // The stale worker keeps its old CSP until replaced and can block CDN
+    // scripts on the first load after a deploy. Reload once on takeover.
+    let swReloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (swReloaded || !navigator.serviceWorker.controller) return;
+        swReloaded = true;
+        window.location.reload();
+    });
 }
 
 // --- Platform Detection ---
