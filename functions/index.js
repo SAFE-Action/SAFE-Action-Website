@@ -42,6 +42,11 @@ exports.mailingList = onRequest({
 
 // Campaign worker: Firestore-triggered, so it is NOT subject to the Hosting
 // rewrite's 60s HTTP cap. Idempotent via campaigns/{id}/sent markers.
+// TEMPORARILY GATED: first event-driven function in this project; Eventarc
+// needs a one-time IAM grant (eventarc.eventReceiver on the compute SA)
+// that CI cannot self-grant. Set DEPLOY_CAMPAIGN_WORKER=1 (or just remove
+// this gate) once the grant is in. Queued campaigns sit until then.
+if (process.env.DEPLOY_CAMPAIGN_WORKER === "1") {
 exports.mailingListWorker = onDocumentCreated({
     document: "campaigns/{id}",
     serviceAccount: VOLUNTEER_SA,
@@ -50,3 +55,4 @@ exports.mailingListWorker = onDocumentCreated({
 }, async (event) => {
     await runCampaign(event.params.id);
 });
+}
