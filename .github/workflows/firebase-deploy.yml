@@ -61,4 +61,6 @@ jobs:
           } > functions/.env.safe-action-website
 
       - name: Deploy Cloud Functions
-        run: firebase deploy --only functions --project safe-action-website
+        # --force: sets the artifact cleanup policy non-interactively (deploy
+        # otherwise exits 1 with 'could not set up cleanup policy')
+        run: firebase deploy --only functions --project safe-action-website --force
