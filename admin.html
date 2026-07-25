@@ -73,6 +73,7 @@
         <div class="admin-section-switcher">
             <button class="admin-section-btn active" data-section="bills">Bills Queue</button>
             <button class="admin-section-btn" data-section="volunteers">Volunteers</button>
+            <button class="admin-section-btn" data-section="mailing">Mailing List</button>
         </div>
 
         <!-- Bills Section -->
@@ -170,6 +171,35 @@
                     <div id="volunteer-detail-content" style="display:none"></div>
                 </div>
             </div>
+        </div>
+        <!-- Mailing List Section -->
+        <div id="mailing-section" style="display:none">
+            <div class="ml-stats">
+                <div class="ml-stat"><b id="ml-count-active">0</b> Active</div>
+                <div class="ml-stat"><b id="ml-count-pending">0</b> Pending</div>
+                <div class="ml-stat"><b id="ml-count-unsub">0</b> Unsubscribed</div>
+                <div class="ml-stat"><button id="ml-export-btn" class="admin-link-btn">Export CSV</button></div>
+            </div>
+
+            <div class="ml-compose">
+                <h3>Send a Campaign</h3>
+                <p style="font-size:0.85rem;color:#66717f;">Sends to all <strong>active</strong> subscribers. Every email gets the unsubscribe footer automatically. The organization's physical mailing address must be set below before a real send (legally required).</p>
+                <input type="text" id="ml-subject" placeholder="Subject">
+                <textarea id="ml-body" placeholder="Email body (HTML allowed)"></textarea>
+                <input type="text" id="ml-address" placeholder="Organization physical mailing address (required for real sends)">
+                <div class="ml-actions">
+                    <button id="ml-save-address" class="admin-link-btn">Save Address</button>
+                    <button id="ml-test-btn" class="admin-link-btn">Send Test to Me</button>
+                    <button id="ml-send-btn" class="admin-google-btn">Send to All Active</button>
+                </div>
+                <p id="ml-send-status" style="display:none;font-weight:600;"></p>
+            </div>
+
+            <h3 style="margin-top:28px;">Subscribers</h3>
+            <table class="ml-table">
+                <thead><tr><th>Email</th><th>Name</th><th>Status</th><th>Source</th><th>Joined</th></tr></thead>
+                <tbody id="ml-table-body"></tbody>
+            </table>
         </div>
     </div>
 
