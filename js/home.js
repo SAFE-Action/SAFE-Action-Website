@@ -19,6 +19,8 @@
         HI:[1,8], TX:[4,8], FL:[9,8] };
 
     var STATUS_ORDER = ['Pre-filed','Introduced','In Committee','Passed Committee','Floor Vote Scheduled','Passed One Chamber','In Conference','Passed Both Chambers','Sent to Governor'];
+    // govinfo emits chamber-specific federal statuses; rank them as one chamber passed.
+    var STATUS_ALIAS = { 'Passed Senate': 'Passed One Chamber', 'Passed House': 'Passed One Chamber' };
 
     function esc(s) {
         return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -35,11 +37,14 @@
         return d.toLocaleDateString(undefined, { month: 'long', day: 'numeric' }).toUpperCase();
     }
 
-    fetch('data/bills.json').then(function (r) { return r.json(); }).then(function (data) {
+    fetch('data/bills.json').then(function (r) {
+        if (!r.ok) throw new Error('bills.json HTTP ' + r.status);
+        return r.json();
+    }).then(function (data) {
         var bills = data.bills || [];
         var anti = bills.filter(function (b) { return b.billType === 'anti'; });
         var activeAnti = anti.filter(function (b) { return b.isActive === 'Yes'; });
-        var pro = bills.filter(function (b) { return b.billType === 'pro'; });
+        var pro = bills.filter(function (b) { return b.billType === 'pro' && b.isActive === 'Yes'; });
         var signed = bills.filter(function (b) { return b.status === 'Signed into Law'; });
         var states = {};
         bills.forEach(function (b) { if (b.state && b.state !== 'US') states[b.state] = true; });
@@ -49,6 +54,8 @@
         var upd = data.generated_at ? dateLabel(data.generated_at) : '';
         setText('sb-label', 'TRACKING ' + fmt(bills.length) + ' BILLS - UPDATED ' + upd);
         setText('sb-side', stateCount + ' STATES + CONGRESS');
+        setText('lede-states', String(stateCount));
+        setText('hiw-states', String(stateCount));
         setText('chip-updated', 'BILL DATA UPDATED ' + upd);
         setText('watch-updated', 'UPDATED ' + upd);
         setText('lede-bills', fmt(bills.length));
@@ -75,13 +82,19 @@
         if (grid) {
             grid.innerHTML = '';
             Object.keys(POS).forEach(function (st) {
+                // A state absent from the dataset has NO coverage yet; showing it
+                // as "0 threats" would assert something we have not verified.
+                var covered = !!states[st];
                 var n = perState[st] || 0;
                 var a = document.createElement('a');
-                a.className = 'tile ' + bucket(n);
+                a.className = 'tile ' + (covered ? bucket(n) : 'nodata');
                 a.style.gridArea = POS[st][1] + '/' + POS[st][0];
-                a.href = 'tracker.html?state=' + st + '&type=anti#browse-bills';
-                a.title = (STATE_NAMES[st] || st) + ': ' + n + ' active threat' + (n === 1 ? '' : 's');
-                a.innerHTML = '<span class="ab">' + st + '</span>' + (n ? '<span class="ct">' + n + '</span>' : '');
+                a.href = covered ? 'tracker.html?state=' + st + '&type=anti#browse-bills'
+                                 : 'tracker.html#browse-bills';
+                a.title = (STATE_NAMES[st] || st) +
+                    (covered ? ': ' + n + ' active threat' + (n === 1 ? '' : 's') : ': no bill data yet');
+                a.innerHTML = '<span class="ab">' + st + '</span>' +
+                    (covered && n ? '<span class="ct">' + n + '</span>' : '');
                 grid.appendChild(a);
             });
             var aria = Object.keys(perState).filter(function (s) { return s !== 'US'; })
@@ -110,7 +123,7 @@
         var rankOf = {};
         STATUS_ORDER.forEach(function (s, i) { rankOf[s] = i; });
         var wl = activeAnti.slice().sort(function (a, b) {
-            return (rankOf[b.status] || 0) - (rankOf[a.status] || 0) ||
+            return (rankOf[STATUS_ALIAS[b.status] || b.status] || 0) - (rankOf[STATUS_ALIAS[a.status] || a.status] || 0) ||
                 String(b.lastActionDate || '').localeCompare(String(a.lastActionDate || ''));
         }).slice(0, 6);
         var bl = document.getElementById('bills-live');
@@ -126,7 +139,16 @@
                     '<a class="actlink" href="' + href + '">Act on this bill &rarr;</a></div>';
             }).join('');
         }
-    }).catch(function (e) { console.warn('home wiring:', e); });
+    }).catch(function (e) {
+        console.warn('home wiring:', e);
+        ['stat-bills','stat-threats','stat-pro','stat-signed','stat-states'].forEach(function (id) {
+            var el = document.getElementById(id); if (el) el.textContent = 'n/a';
+        });
+        setText('sb-label', 'BILL DATA TEMPORARILY UNAVAILABLE');
+        var w = document.getElementById('bills-live');
+        if (w) w.innerHTML = '<div class="card center"><p class="muted">Bill data is temporarily unavailable. ' +
+            '<a href="tracker.html">Open the tracker</a> or try again shortly.</p></div>';
+    });
 
     // Actions stat: disclosed baseline + live Firestore counter (same honest
     // formula the old impact section used).

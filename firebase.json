@@ -21,7 +21,10 @@
       "data/openstates_cache.json",
       "data/candidate_enrichment_cache.json",
       "data/removed_emails_audit.json",
-      "data/removed_candidates.json"
+      "data/removed_candidates.json",
+      "preview-*.html",
+      "command-center-preview.html",
+      "design-overhauls.html"
     ],
     "cleanUrls": true,
     "trailingSlash": false,
