@@ -2186,7 +2186,8 @@ var BillBrowser = {
 
     buildCard: function(bill) {
         var card = document.createElement('a');
-        card.href = 'action.html?bill=' + encodeURIComponent(bill.billId || '');
+        card.href = 'action.html?bill=' + encodeURIComponent(bill.billId || '') +
+            (bill.state && bill.state !== 'US' ? '&state=' + encodeURIComponent(bill.state) : '');
         card.addEventListener('click', function() {
             try { sessionStorage.setItem('safe_tracker_return', window.location.pathname + window.location.search); } catch(e) {}
         });

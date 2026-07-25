@@ -34,10 +34,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         bill = await LegislationAPI.getBill(billId);
         if (!bill) { showNotFound(); return; }
 
-        // Load reps and templates in parallel
-        const billState = bill.state === 'US' ? state : bill.state;
+        // Load reps and templates in parallel. For federal bills the bill's
+        // own state is "US", so fall back to ?state=, then the visitor's
+        // saved address. NEVER query with no state - that returns
+        // legislators from all 50 states.
+        let billState = bill.state === 'US' ? state : bill.state;
+        if (!billState) {
+            try {
+                const saved = JSON.parse(localStorage.getItem('safe_my_address') || 'null');
+                const m = saved && saved.address && saved.address.match(/,\s*([A-Z]{2})\b/);
+                if (m) billState = m[1];
+            } catch (e) { /* ignore */ }
+        }
         [reps, templates] = await Promise.all([
-            LegislationAPI.getRepresentatives(billState || state),
+            billState ? LegislationAPI.getRepresentatives(billState) : Promise.resolve([]),
             LegislationAPI.getTemplates(bill.stance)
         ]);
 
