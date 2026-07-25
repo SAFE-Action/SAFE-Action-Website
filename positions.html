@@ -6,246 +6,208 @@
     <title>Open Positions - SAFE Action</title>
     <meta name="description" content="Volunteer positions at SAFE Action. We're looking for a Social Media Manager to help defend science-based public health policy.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+      /* Legacy volunteer-form hooks restyled in V6 language (JS toggles inline display) */
+      .volunteer-error{display:none;background:#fbe4dc;color:var(--red);border:1px solid #f0c4b6;
+        border-radius:10px;padding:12px 16px;margin-bottom:16px;font-weight:600;font-size:14.5px;}
+      .volunteer-success{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+        box-shadow:var(--shadow-1);text-align:center;padding:40px 24px;color:#1c6b34;}
+      .volunteer-success h2{font-weight:800;font-size:24px;letter-spacing:-.01em;margin-bottom:10px;}
+      .volunteer-success p{color:var(--ink2);}
+      .checkbox-group{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+      .checkbox-group label{display:flex;align-items:center;gap:8px;font-weight:400;font-size:14.5px;
+        color:var(--ink2);cursor:pointer;}
+      .checkbox-group input[type="checkbox"]{width:18px;height:18px;accent-color:var(--navy);}
+      .form-group-label{font-weight:700;font-size:14px;margin-bottom:8px;}
+      .volunteer-submit{width:100%;padding:13px;background:var(--navy);color:#fff;border:none;
+        border-radius:999px;font-family:var(--sans);font-size:15.5px;font-weight:700;cursor:pointer;
+        box-shadow:var(--shadow-1);transition:transform .15s,box-shadow .15s,background .15s;}
+      .volunteer-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);background:#1d3161;}
+      .volunteer-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:var(--shadow-1);}
+      .rolemeta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px;}
+      .positiongrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start;}
+      @media(max-width:860px){.positiongrid{grid-template-columns:1fr;}}
+    </style>
 </head>
 <body>
-    <!-- Stars background decoration -->
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html" class="active">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Site status">
+  <div class="wrap">
+    <span class="livedot" aria-hidden="true"></span>
+    <span class="label">SAFE ACTION - LIVE SCIENCE LEGISLATION TRACKING</span>
+    <span class="side">41 STATES + CONGRESS</span>
+  </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
-        </div>
+<header class="site">
+  <div class="wrap">
+    <nav class="main" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="SAFE Action home">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span class="word">SAFE <span class="act">ACTION</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="tracker.html">Live Tracker</a>
+        <a href="outreach.html">Take Action</a>
+        <a href="about.html">About</a>
+        <a class="btn primary small" href="join.html">Join the List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="pagehero">
+    <div class="wrap">
+      <h1>Open Positions</h1>
+      <p class="lede">SAFE Action is volunteer-powered. These are the roles we need filled right now. Remote, flexible, and directly on the front line of defending science-based public health policy.</p>
     </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="volunteer-hero">
-        <div class="container">
-            <h1>Open Positions</h1>
-            <p>SAFE Action is volunteer-powered. These are the roles we need filled right now. Remote, flexible, and directly on the front line of defending science-based public health policy.</p>
-        </div>
-    </section>
+  <section style="padding-top:8px;">
+    <div class="wrap">
+      <div class="sechead">
+        <h2>Social Media Manager (Volunteer)</h2>
+        <span class="chip">OPEN ROLE</span>
+      </div>
 
-    <!-- Position: Social Media Manager -->
-    <section class="volunteer-form-section">
-        <div class="container">
-            <h2>Social Media Manager (Volunteer)</h2>
-            <p><strong>Remote &middot; Flexible hours &middot; Reports to the President</strong></p>
+      <div class="positiongrid">
+        <div class="card">
+          <div class="rolemeta">
+            <span class="chip">REMOTE</span>
+            <span class="chip">FLEXIBLE HOURS</span>
+            <span class="chip">REPORTS TO THE PRESIDENT</span>
+          </div>
+          <div class="prose">
             <p>We are looking for someone to own SAFE Action's social media presence. Not assist with it. Own it. You'll build our channels from the ground up at the moment the organization is launching, with full creative involvement and a direct line to leadership.</p>
 
             <h3>What you'll do</h3>
             <ul>
-                <li>Run our accounts across TikTok, Instagram, YouTube, X, and the platforms you make the case for</li>
-                <li>Publish and cross-post our video content (we have a video editor; you handle distribution, captions, timing, and hooks)</li>
-                <li>Grow an audience for science-based public health advocacy and drive volunteers to our campaigns</li>
-                <li>Engage the community: replies, DMs, comment strategy</li>
-                <li>Report simple growth metrics monthly and adjust strategy with the team</li>
+              <li>Run our accounts across TikTok, Instagram, YouTube, X, and the platforms you make the case for</li>
+              <li>Publish and cross-post our video content (we have a video editor; you handle distribution, captions, timing, and hooks)</li>
+              <li>Grow an audience for science-based public health advocacy and drive volunteers to our campaigns</li>
+              <li>Engage the community: replies, DMs, comment strategy</li>
+              <li>Report simple growth metrics monthly and adjust strategy with the team</li>
             </ul>
 
             <h3>You might be a fit if</h3>
             <ul>
-                <li>You live on at least one short-form platform and understand what makes content travel</li>
-                <li>You can write a hook in twelve words or fewer</li>
-                <li>You care about science, public health, and pushing back on misinformation</li>
-                <li>You can commit a few hours a week, consistently</li>
+              <li>You live on at least one short-form platform and understand what makes content travel</li>
+              <li>You can write a hook in twelve words or fewer</li>
+              <li>You care about science, public health, and pushing back on misinformation</li>
+              <li>You can commit a few hours a week, consistently</li>
             </ul>
             <p>No formal social media job experience required. If you've grown an account of your own, that counts. Students and early-career folks welcome.</p>
+          </div>
+        </div>
 
-            <h3>Apply</h3>
-            <form class="volunteer-form" id="position-form">
-                <div id="volunteer-error" class="volunteer-error"></div>
-                <input type="hidden" name="position" value="Social Media Manager">
+        <div class="card">
+          <h3 style="font-weight:800;font-size:18px;margin-bottom:14px;">Apply</h3>
+          <form class="volunteer-form" id="position-form">
+            <div id="volunteer-error" class="volunteer-error"></div>
+            <input type="hidden" name="position" value="Social Media Manager">
 
-                <div class="form-group">
-                    <label for="applicant-name">Full Name <span style="color:var(--red)">*</span></label>
-                    <input type="text" id="applicant-name" name="name" required placeholder="Your full name">
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-email">Email <span style="color:var(--red)">*</span></label>
-                    <input type="email" id="applicant-email" name="email" required placeholder="you@example.com">
-                </div>
-
-                <div class="form-group">
-                    <p class="form-group-label">Relevant Skills <span style="color:var(--red)">*</span></p>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="skills" value="Content Creation"> Content Creation</label>
-                        <label><input type="checkbox" name="skills" value="Copywriting"> Copywriting</label>
-                        <label><input type="checkbox" name="skills" value="Video Editing"> Video Editing</label>
-                        <label><input type="checkbox" name="skills" value="Community Management"> Community Management</label>
-                        <label><input type="checkbox" name="skills" value="Analytics"> Analytics</label>
-                        <label><input type="checkbox" name="skills" value="Graphic Design"> Graphic Design</label>
-                        <label><input type="checkbox" name="skills" value="Other"> Other</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <p class="form-group-label">Platforms you know best</p>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="interests" value="TikTok"> TikTok</label>
-                        <label><input type="checkbox" name="interests" value="Instagram"> Instagram</label>
-                        <label><input type="checkbox" name="interests" value="YouTube"> YouTube</label>
-                        <label><input type="checkbox" name="interests" value="X / Twitter"> X / Twitter</label>
-                        <label><input type="checkbox" name="interests" value="Bluesky"> Bluesky</label>
-                        <label><input type="checkbox" name="interests" value="Facebook"> Facebook</label>
-                        <label><input type="checkbox" name="interests" value="LinkedIn"> LinkedIn</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-portfolio">Link to an account or content you've made</label>
-                    <input type="text" id="applicant-portfolio" name="portfolio" placeholder="A profile, channel, or post you're proud of (optional)">
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
-                    <select id="applicant-availability" name="availability" required>
-                        <option value="">Select availability...</option>
-                        <option value="5">5 hours/month</option>
-                        <option value="10">10 hours/month</option>
-                        <option value="20">20 hours/month</option>
-                        <option value="40+">40+ hours/month</option>
-                    </select>
-                </div>
-
-                <button type="submit" id="position-submit" class="volunteer-submit">Submit Application</button>
-            </form>
-
-            <div id="volunteer-success" class="volunteer-success" style="display:none;">
-                <h2>Application Submitted!</h2>
-                <p>We'll review your application and get back to you soon.</p>
+            <div class="field">
+              <label for="applicant-name">Full Name <span style="color:var(--red)">*</span></label>
+              <input type="text" id="applicant-name" name="name" required placeholder="Your full name">
             </div>
 
-            <p style="margin-top:32px;">Don't see your role? We always need generalist volunteers: <a href="volunteer.html">apply here</a>.</p>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="field">
+              <label for="applicant-email">Email <span style="color:var(--red)">*</span></label>
+              <input type="email" id="applicant-email" name="email" required placeholder="you@example.com">
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script src="js/config.js"></script>
-    <script src="js/positions.js"></script>
-    <script src="js/pwa.js"></script>
-    <script src="js/header.js"></script>
+            <div class="field">
+              <p class="form-group-label">Relevant Skills <span style="color:var(--red)">*</span></p>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="skills" value="Content Creation"> Content Creation</label>
+                <label><input type="checkbox" name="skills" value="Copywriting"> Copywriting</label>
+                <label><input type="checkbox" name="skills" value="Video Editing"> Video Editing</label>
+                <label><input type="checkbox" name="skills" value="Community Management"> Community Management</label>
+                <label><input type="checkbox" name="skills" value="Analytics"> Analytics</label>
+                <label><input type="checkbox" name="skills" value="Graphic Design"> Graphic Design</label>
+                <label><input type="checkbox" name="skills" value="Other"> Other</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <p class="form-group-label">Platforms you know best</p>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="interests" value="TikTok"> TikTok</label>
+                <label><input type="checkbox" name="interests" value="Instagram"> Instagram</label>
+                <label><input type="checkbox" name="interests" value="YouTube"> YouTube</label>
+                <label><input type="checkbox" name="interests" value="X / Twitter"> X / Twitter</label>
+                <label><input type="checkbox" name="interests" value="Bluesky"> Bluesky</label>
+                <label><input type="checkbox" name="interests" value="Facebook"> Facebook</label>
+                <label><input type="checkbox" name="interests" value="LinkedIn"> LinkedIn</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="applicant-portfolio">Link to an account or content you've made</label>
+              <input type="text" id="applicant-portfolio" name="portfolio" placeholder="A profile, channel, or post you're proud of (optional)">
+            </div>
+
+            <div class="field">
+              <label for="applicant-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
+              <select id="applicant-availability" name="availability" required>
+                <option value="">Select availability...</option>
+                <option value="5">5 hours/month</option>
+                <option value="10">10 hours/month</option>
+                <option value="20">20 hours/month</option>
+                <option value="40+">40+ hours/month</option>
+              </select>
+            </div>
+
+            <button type="submit" id="position-submit" class="volunteer-submit">Submit Application</button>
+          </form>
+
+          <div id="volunteer-success" class="volunteer-success" style="display:none;">
+            <h2>Application Submitted!</h2>
+            <p>We'll review your application and get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;color:var(--ink2);">Don't see your role? We always need generalist volunteers: <a href="volunteer.html">apply here</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      <span class="word">SAFE <span class="act">ACTION</span></span>
+    </div>
+    <div class="links">
+      <a href="tracker.html">Live Tracker</a>
+      <a href="outreach.html">Take Action</a>
+      <a href="join.html">Join the List</a>
+      <a href="about.html">About</a>
+      <a href="donate.html">Donate</a>
+      <a href="directory.html">Pledge Directory</a>
+      <a href="media.html">Media Kit</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/positions.js"></script>
+<script src="js/pwa.js"></script>
+<script src="js/header.js"></script>
 </body>
 </html>

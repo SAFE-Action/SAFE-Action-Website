@@ -3,470 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFE Action - Science and Freedom for Everyone</title>
-    <meta name="description" content="Find your elected representatives and make your voice heard on science and public health legislation. Track pledges, bills, and your impact with SAFE Action.">
-    <meta property="og:title" content="SAFE Action - Defend Science, Take Action">
-    <meta property="og:description" content="Find your representatives and make your voice heard on science and public health legislation.">
+    <title>SAFE Action - Live Science Legislation Tracker</title>
+    <meta name="description" content="SAFE Action tracks every bill that touches science across <span id="lede-states">40</span> states and Congress, flags active threats, and hands you the fastest path to act before the vote.">
+    <meta property="og:title" content="SAFE Action - Every bill that touches science, tracked in real time">
+    <meta property="og:description" content="Live legislation tracker: thousands of bills across <span id="lede-states">40</span> states and Congress, threats flagged, action one click away.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scienceandfreedom.com/index.html">
+    <meta property="og:url" content="https://scienceandfreedom.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="SAFE Action - Defend Science, Take Action">
-    <meta name="twitter:description" content="Find your representatives and make your voice heard on science and public health legislation.">
+    <meta name="twitter:title" content="SAFE Action - Live Science Legislation Tracker">
+    <meta name="twitter:description" content="Every bill that touches science, tracked in real time. Threats flagged, action one click away.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="SAFE Action">
+    <meta name="theme-color" content="#101b33">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
 </head>
 <body>
-    <!-- Stars background decoration -->
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<!-- Live status bar -->
+<div class="statusbar" role="status" aria-label="Tracker status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="sb-label">TRACKING SCIENCE LEGISLATION - LIVE</span>
+        <span class="side" id="sb-side">STATES + CONGRESS</span>
+    </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
             </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
+            <div class="navlinks">
+                <a href="tracker.html">Live Tracker</a>
+                <a href="outreach.html">Take Action</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="join.html">Join the List</a>
+            </div>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="wrap">
+            <span class="chip kicker"><span class="livedot" aria-hidden="true"></span>LIVE LEGISLATION TRACKER</span>
+            <h1>Every bill that touches science, <span class="accent">tracked in real time.</span></h1>
+            <p class="lede">SAFE Action reads <span id="lede-bills">thousands of</span> bills across <span id="lede-states">40</span> states and Congress, flags the <span id="lede-threats">active</span> threats to vaccines, public health, and research, and hands you the fastest path to push back before the vote.</p>
+            <div class="ctas">
+                <a class="btn primary" href="tracker.html">Open the Live Tracker</a>
+                <a class="btn ghost" href="outreach.html">Take Action</a>
+                <span class="chip" id="chip-updated">BILL DATA UPDATED DAILY</span>
+            </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <!-- Stars decoration -->
-                <div class="hero-stars-decoration" aria-hidden="true">
-                    <span class="hero-star">&#9733;</span>
-                    <span class="hero-star">&#9733;</span>
-                    <span class="hero-star hero-star-lg">&#9733;</span>
-                    <span class="hero-star">&#9733;</span>
-                    <span class="hero-star">&#9733;</span>
+    <!-- STATS -->
+    <div class="stats">
+        <div class="wrap">
+            <div class="statgrid">
+                <div class="stat">
+                    <div class="num" id="stat-bills">...</div>
+                    <div class="lbl">Bills tracked</div>
+                    <div class="sub">EVERY SESSION, EVERY CHAMBER</div>
                 </div>
-                <div class="hero-flag" aria-hidden="true">
-                    <div class="flag-stripe red"></div>
-                    <div class="flag-stripe white"></div>
-                    <div class="flag-stripe blue"></div>
+                <div class="stat threat">
+                    <div class="num" id="stat-threats">...</div>
+                    <div class="lbl">Active anti-science threats</div>
+                    <div class="sub">FLAGGED AND MONITORED NOW</div>
                 </div>
-                <h1 class="hero-title">Defend Science.<br>Take <span class="action-word">Action.</span></h1>
-                <p class="hero-subtitle">Enter your address to find your representatives and make your voice heard on science legislation.</p>
-                <form class="hero-address-form" id="hero-address-form" onsubmit="return false;">
-                    <input type="text" id="hero-address" placeholder="Enter your street address..." autocomplete="street-address">
-                    <button type="submit">Find My Reps &rarr;</button>
+                <div class="stat gold">
+                    <div class="num" id="stat-pro">...</div>
+                    <div class="lbl">Pro-science bills moving</div>
+                    <div class="sub">WORTH YOUR SUPPORT</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="stat-signed">...</div>
+                    <div class="lbl">Tracked bills signed into law</div>
+                    <div class="sub">OF ALL BILLS WE MONITOR</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="stat-states">...</div>
+                    <div class="lbl">States covered, plus Congress</div>
+                    <div class="sub">STATEHOUSE TO CAPITOL HILL</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="stat-actions">...</div>
+                    <div class="lbl">Actions taken by members</div>
+                    <div class="sub">MESSAGES, CALLS, TESTIMONY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATE THREAT MAP -->
+    <section id="map" aria-labelledby="map-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="map-h">Where the threats are</h2>
+                <span class="chip"><span class="livedot" aria-hidden="true"></span><span id="map-chip">ACTIVE THREATS</span></span>
+            </div>
+            <div class="mapcard">
+                <div>
+                    <div class="cartogrid" id="cartogrid" role="img" aria-label="Tile map of active anti-science bills per state."></div>
+                    <div class="fedrow">
+                        <a class="fedchip" id="fedchip" href="tracker.html?state=US&type=anti#browse-bills" style="text-decoration:none">US CONGRESS</a>
+                    </div>
+                    <div class="legend" aria-label="Legend: active anti-science bills per state">
+                        <span class="li"><span class="sw" style="background:repeating-linear-gradient(45deg,#f2f0ea,#f2f0ea 4px,#e9e6dd 4px,#e9e6dd 8px)"></span>no data</span>
+                        <span class="li"><span class="sw" style="background:var(--b0-bg)"></span>0</span>
+                        <span class="li"><span class="sw" style="background:var(--b1-bg)"></span>1-2</span>
+                        <span class="li"><span class="sw" style="background:var(--b2-bg)"></span>3-6</span>
+                        <span class="li"><span class="sw" style="background:var(--b3-bg)"></span>7-12</span>
+                        <span class="li"><span class="sw" style="background:var(--b4-bg)"></span>13+</span>
+                    </div>
+                </div>
+                <div class="mapside">
+                    <h3>Most targeted right now</h3>
+                    <p class="note" id="rank-note">Active anti-science bills by jurisdiction.</p>
+                    <ol class="rank" id="rank"></ol>
+                    <a class="chip" href="tracker.html?type=anti#browse-bills" style="text-decoration:none">SEE ALL IN THE TRACKER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WATCHLIST -->
+    <section class="watch" aria-labelledby="watch-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="watch-h">Moving now</h2>
+                <span class="chip"><span class="livedot" aria-hidden="true"></span><span id="watch-updated">LIVE</span></span>
+            </div>
+            <div class="bills" id="bills-live"></div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS + JOIN -->
+    <section id="how" aria-labelledby="how-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="how-h">How it works</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <span class="k">STEP 01</span>
+                    <div class="star" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f"/></svg>
+                    </div>
+                    <h3>We read everything</h3>
+                    <p>Our tracker ingests every bill filed in <span id="hiw-states">40</span> states and Congress and flags the ones that touch vaccines, public health, research funding, and science education.</p>
+                </div>
+                <div class="step">
+                    <span class="k">STEP 02</span>
+                    <div class="star" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f"/></svg>
+                    </div>
+                    <h3>You get the alert</h3>
+                    <p>When a flagged bill moves, a committee hearing, a floor vote, a governor's desk, you get a short plain-English brief on what it does and why it matters.</p>
+                </div>
+                <div class="step">
+                    <span class="k">STEP 03</span>
+                    <div class="star" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f"/></svg>
+                    </div>
+                    <h3>Your rep hears from you</h3>
+                    <p>One click opens a prewritten, editable message to the exact lawmakers who will vote on it. Two minutes, counted, and on the record.</p>
+                </div>
+            </div>
+
+            <div class="joinbox" id="join">
+                <div>
+                    <h3>Get the alert that matters for your state.</h3>
+                    <p>One email when a bill worth your attention starts moving. No noise, no spam, unsubscribe anytime.</p>
+                </div>
+                <form class="joinform list-signup-form" data-source="homepage" aria-label="Join the list" novalidate>
+                    <label class="sr-only" for="join-email">Email address</label>
+                    <input type="email" id="join-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button class="btn" type="submit">Join the List</button>
+                    <p class="list-signup-status form-status" style="display:none;flex-basis:100%;"></p>
                 </form>
-                <a href="outreach.html" class="hero-learn-link">Learn how it works &rarr;</a>
-            </div>
-        </div>
-        <div class="hero-edge" aria-hidden="true"></div>
-    </section>
-
-    <!-- Pledge Ticker -->
-    <section class="pledge-ticker-section">
-        <div class="pledge-ticker-label">Latest Pledges</div>
-        <div class="pledge-ticker-track" id="pledge-ticker-track">
-            <div class="pledge-ticker-content">
-                <span class="pledge-ticker-item"><span class="ticker-detail">Fetching latest pledges...</span></span>
             </div>
         </div>
     </section>
 
-    <!-- Movement Momentum Banner -->
-    <section class="momentum-banner" id="daily-goal">
-        <div class="container">
-            <div class="momentum-card">
-                <div class="momentum-header">
-                    <span class="momentum-flame">&#128293;</span>
-                    <span class="momentum-title">Daily Action Tracker</span>
-                </div>
-                <div class="momentum-headline" id="momentum-headline">
-                    A growing movement for science
-                </div>
-                <div class="momentum-breakdown" id="momentum-breakdown" style="display:none;">
-                    <span class="momentum-breakdown-item"><strong id="national-emails">0</strong> emails</span>
-                    <span class="momentum-breakdown-dot">&middot;</span>
-                    <span class="momentum-breakdown-item"><strong id="national-calls">0</strong> calls</span>
-                </div>
-                <div class="momentum-today-line" id="momentum-today-line" style="display:none;">
-                    <span class="momentum-number momentum-number-big" id="national-today-total">0</span>
-                    <span class="momentum-today-label">political actions <strong>TODAY!</strong></span>
-                </div>
-                <!-- Zero-state (default): shown until real-time counts arrive, and whenever today's count is 0. Never renders a bare "0". -->
-                <div class="momentum-zero-cta" id="momentum-zero-cta">
-                    <span class="momentum-zero-lead">Be the one to start today's momentum.</span>
-                    <span class="momentum-zero-stat" id="momentum-zero-stat" style="display:none;"></span>
-                </div>
-                <div class="momentum-progress-wrap" id="momentum-progress" style="display:none;">
-                    <div class="momentum-progress-header">
-                        <span>Daily Goal</span>
-                        <span class="momentum-progress-count" id="momentum-progress-label">0 / 25</span>
-                    </div>
-                    <div class="momentum-progress-bar">
-                        <div class="momentum-progress-fill" id="momentum-progress-fill" style="width:0%"></div>
-                    </div>
-                </div>
-                <div class="momentum-personal" id="momentum-personal">
-                    <span class="momentum-you-badge" id="daily-goal-streak"></span>
-                    <span class="momentum-you-stat" id="daily-goal-stats"></span>
-                </div>
-                <div class="momentum-message" id="daily-goal-message"></div>
-                <a href="outreach.html" class="momentum-cta" id="daily-goal-cta">
-                    Join Them - Send an Email Now &#8594;
-                </a>
-            </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
         </div>
-        <!-- Hidden elements for JS compatibility -->
-        <div style="display:none;">
-            <div id="daily-goal-fill"></div>
-            <div id="daily-goal-pct"></div>
-            <div id="national-alltime-total"></div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Join the List</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="media.html">Media Kit</a>
+            <a href="positions.html">Open Positions</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
-    </section>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
 
-    <!-- Mailing List Signup -->
-    <section class="list-signup-section" id="join">
-        <div class="container">
-            <h2>Get the Alerts That Matter</h2>
-            <p>Science legislation alerts in your state, two-minute actions, and the wins we get together. No spam, one-click unsubscribe.</p>
-            <form class="list-signup-form" data-source="homepage" novalidate>
-                <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" aria-label="Email address">
-                <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-                <button type="submit">Join the List</button>
-                <p class="list-signup-status" style="display:none;flex-basis:100%;"></p>
-            </form>
-        </div>
-    </section>
-
-    <!-- Pledge Showcase -->
-    <section class="pledge-showcase">
-        <div class="container">
-            <div class="pledge-showcase-header">
-                <h2>Leaders Taking the Pledge <span class="pledge-count-badge" id="pledge-total-count" style="display:none;"></span></h2>
-                <p>Public officials and candidates committing to evidence-based policy</p>
-            </div>
-            <div class="pledge-showcase-scroll" id="pledge-showcase-cards">
-                <div class="pledge-empty-state" id="pledge-empty-state">
-                    <div class="pledge-empty-icon">&#9733;</div>
-                    <p class="pledge-empty-headline">No pledges yet - be part of the movement that changes that.</p>
-                    <p class="pledge-empty-body">Contact your representatives and ask them to take the SAFE Action pledge to support evidence-based policy.</p>
-                    <a href="outreach.html" class="pledge-empty-cta">Ask Your Rep to Pledge &rarr;</a>
-                </div>
-            </div>
-            <div class="pledge-showcase-footer">
-                <a href="directory.html">View All Pledges &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Counter Section -->
-    <section class="impact-section">
-        <div class="container">
-            <div class="impact-header">
-                <span class="section-star-accent" aria-hidden="true">&#9733;</span>
-                <h2 class="impact-title">Your Actions Are Working</h2>
-                <span class="section-star-accent" aria-hidden="true">&#9733;</span>
-            </div>
-            <div class="impact-grid">
-                <a href="outreach.html" class="impact-card impact-card-link">
-                    <div class="impact-number" id="impact-actions">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="impact-label">Actions Taken</div>
-                    <div class="impact-desc">Calls, emails, and letters sent to representatives</div>
-                </a>
-                <a href="outreach.html?state=ALL" class="impact-card impact-card-link">
-                    <div class="impact-number" id="impact-bills">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="impact-label">Bills Tracked</div>
-                    <div class="impact-desc">Pro-science and anti-science legislation across all 50 states &rarr;</div>
-                </a>
-                <a href="outreach.html" class="impact-card impact-card-link">
-                    <div class="impact-number" id="impact-emails">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="impact-label">Emails Sent</div>
-                    <div class="impact-desc">Messages delivered to legislators</div>
-                </a>
-                <a href="outreach.html" class="impact-card impact-card-link">
-                    <div class="impact-number" id="impact-calls">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="impact-label">Calls Made</div>
-                    <div class="impact-desc">Phone calls to representatives' offices</div>
-                </a>
-                <a href="outreach.html?state=ALL" class="impact-card impact-card-link impact-card-engaged">
-                    <div class="impact-number" id="impact-engaged">
-                        <span class="counter" data-target="0">0</span><span class="counter-plus">+</span>
-                    </div>
-                    <div class="impact-label">Bills Engaged</div>
-                    <div class="impact-desc">Anti-science bills tracked &amp; challenged across all 50 states</div>
-                </a>
-                <a href="outreach.html" class="impact-card impact-card-link impact-card-states">
-                    <div class="impact-number" id="impact-reps">
-                        <span class="counter" data-target="0">0</span>
-                    </div>
-                    <div class="impact-label">Reps Contacted</div>
-                    <div class="impact-desc">Legislators who have heard directly from their constituents</div>
-                </a>
-            </div>
-            <p class="impact-cta">Every action counts. <a href="outreach.html">Find a bill in your state and take action</a> today.</p>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/sheets.js"></script>
-    <script src="js/legislation-api.js"></script>
-    <script src="js/main.js?v=73"></script>
-    <script src="js/mailing-list.js"></script>
-    <script src="js/pwa.js"></script>
-<script>
-function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
-function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
-</script>
-<script src="js/header.js"></script>
-<script>
-// Hero address form - redirect to outreach page
-var heroInput = document.getElementById('hero-address');
-document.getElementById('hero-address-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var address = heroInput.value.trim();
-    if (address) {
-        window.location.href = 'outreach.html?address=' + encodeURIComponent(address);
-    }
-});
-
-// Google Places Autocomplete for the hero address input
-(function initHeroAutocomplete() {
-    if (!heroInput || typeof SAFE_CONFIG === 'undefined') return;
-    var apiKey = SAFE_CONFIG.GOOGLE_MAPS_API_KEY || SAFE_CONFIG.GOOGLE_CIVIC_API_KEY;
-    if (!apiKey) return;
-
-    // Load Maps JS SDK directly (referer-restricted keys can't use REST geocoding validation)
-    var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=__initHeroPlaces';
-    script.onerror = function() { console.warn('Google Places API not available'); };
-    window.__initHeroPlaces = function() {
-        try {
-            var ac = new google.maps.places.Autocomplete(heroInput, {
-                types: ['address'],
-                componentRestrictions: { country: 'us' },
-                fields: ['formatted_address']
-            });
-            ac.addListener('place_changed', function() {
-                var place = ac.getPlace();
-                if (place && place.formatted_address) {
-                    heroInput.value = place.formatted_address;
-                    setTimeout(function() {
-                        document.getElementById('hero-address-form').dispatchEvent(new Event('submit'));
-                    }, 100);
-                }
-            });
-            heroInput.setAttribute('placeholder', 'Start typing your address...');
-        } catch (e) {
-            console.warn('Hero Places Autocomplete init failed:', e);
-        }
-    };
-    document.head.appendChild(script);
-})();
-
-// Load recent pledges from Firestore
-(function loadPledgeShowcase() {
-    if (typeof firebase === 'undefined' || !firebase.firestore) return;
-    var db = firebase.firestore();
-    db.collection('candidateResponses')
-        .orderBy('timestamp', 'desc')
-        .limit(8)
-        .get()
-        .then(function(snapshot) {
-            var container = document.getElementById('pledge-showcase-cards');
-            var countBadge = document.getElementById('pledge-total-count');
-            var emptyState = document.getElementById('pledge-empty-state');
-            if (snapshot.empty) {
-                // Show the empty-state placeholder (already in HTML)
-                if (emptyState) emptyState.style.display = '';
-                countBadge.style.display = 'none';
-                return;
-            }
-            // Clear empty state and show cards
-            while (container.firstChild) container.removeChild(container.firstChild);
-
-            snapshot.forEach(function(doc) {
-                var d = doc.data();
-                var party = (d.party || '').toLowerCase();
-                var partyClass = party.indexOf('dem') >= 0 ? 'dem' : party.indexOf('rep') >= 0 ? 'rep' : 'ind';
-                var partyLabel = party.indexOf('dem') >= 0 ? 'DEM' : party.indexOf('rep') >= 0 ? 'REP' : 'IND';
-                var name = d.name || 'Unknown';
-                var initials = name.split(' ').map(function(w) { return w[0]; }).join('').toUpperCase().slice(0, 2);
-
-                var card = document.createElement('a');
-                card.href = 'candidate.html?id=' + doc.id;
-                card.className = 'pledge-card-mini';
-
-                var avatarDiv = document.createElement('div');
-                avatarDiv.className = 'avatar';
-                if (d.photoUrl) {
-                    var img = document.createElement('img');
-                    img.src = d.photoUrl;
-                    img.alt = name;
-                    avatarDiv.appendChild(img);
-                } else {
-                    avatarDiv.textContent = initials;
-                }
-                card.appendChild(avatarDiv);
-
-                var nameDiv = document.createElement('div');
-                nameDiv.className = 'name';
-                nameDiv.textContent = name;
-                card.appendChild(nameDiv);
-
-                var badgeSpan = document.createElement('span');
-                badgeSpan.className = 'party-badge ' + partyClass;
-                badgeSpan.textContent = partyLabel;
-                card.appendChild(badgeSpan);
-
-                var officeDiv = document.createElement('div');
-                officeDiv.className = 'office';
-                officeDiv.textContent = (d.position || d.office || '') + (d.state ? ', ' + d.state : '');
-                card.appendChild(officeDiv);
-
-                container.appendChild(card);
-            });
-
-            // Update total count
-            db.collection('candidateResponses').get().then(function(all) {
-                if (all.size > 0) {
-                    countBadge.textContent = all.size + ' pledges';
-                    countBadge.style.display = '';
-                }
-            });
-        })
-        .catch(function(err) {
-            console.warn('Pledge showcase error:', err);
-            // On error, show empty state placeholder instead of loading text
-            var emptyState = document.getElementById('pledge-empty-state');
-            if (emptyState) emptyState.style.display = '';
-        });
-})();
-</script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="js/config.js"></script>
+<script src="js/home.js"></script>
+<script src="js/mailing-list.js"></script>
+<script src="js/pwa.js"></script>
 </body>
 </html>

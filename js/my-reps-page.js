@@ -1955,8 +1955,7 @@ var BillBrowser = {
         if (stateSelect && typeof SAFE_CONFIG !== 'undefined') {
             var states = SAFE_CONFIG.STATES;
             Object.keys(states).forEach(function(code) {
-                if (code === 'US') return; // Skip federal - bills are state-level
-                var opt = document.createElement('option');
+                    var opt = document.createElement('option');
                 opt.value = code;
                 opt.textContent = states[code];
                 stateSelect.appendChild(opt);

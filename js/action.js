@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         setupTemplates(templates, bill, reps);
         setupTabs();
         setupCopyButtons(bill, reps);
-        setupEmailSignup();
 
         // Update page title
         document.title = `${bill.billNumber}: ${formatBillTitle(bill.title)} - SAFE Action`;
@@ -523,24 +522,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => el.classList.remove('show'), 2500);
     }
 
-    function setupEmailSignup() {
-        const form = document.getElementById('email-signup-form');
-        const success = document.getElementById('signup-success');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('signup-email').value.trim();
-            if (!email) return;
-
-            try {
-                await LegislationAPI.submitEmailSignup(email, state || '', 'action');
-                form.style.display = 'none';
-                success.classList.add('show');
-            } catch (error) {
-                console.error('Signup error:', error);
-            }
-        });
-    }
 
     function updateSelectedRepContact() {
         const contactEl = document.getElementById('selected-rep-contact');

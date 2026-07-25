@@ -4,254 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legislation Tracker - SAFE Action</title>
-    <meta name="description" content="The largest pro- and anti-science legislation database ever built. Track bills across all 50 states that impact public health, medical freedom, and scientific integrity.">
+    <meta name="description" content="The largest database of pro- and anti-science legislation in America. Track every bill that impacts public health, medical freedom, and scientific integrity across the states we cover and Congress.">
     <meta property="og:title" content="SAFE Action - Legislation Tracker">
     <meta property="og:description" content="Track every science-related bill in America. Filter by state, category, status, and more.">
     <meta property="og:type" content="website">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#101b33">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=78">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
 </head>
 <body>
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html" class="active">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Tracker status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="data-updated-stamp">LIVE LEGISLATION TRACKER</span>
+        <span class="side">SOURCE: LEGISCAN + GOVINFO + OPENSTATES</span>
+    </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
             </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
+            <div class="navlinks">
+                <a href="tracker.html" aria-current="page">Live Tracker</a>
+                <a href="outreach.html">Take Action</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="join.html">Join the List</a>
+            </div>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+    <div class="pagehero">
+        <div class="wrap">
+            <h1>Legislation Tracker</h1>
+            <p class="lede">The largest database of pro- and anti-science legislation in America. Every bill that touches public health, medical freedom, and scientific integrity, read and classified daily.</p>
         </div>
     </div>
 
-    <!-- Hero -->
-    <section class="quiz-hero">
-        <div class="container">
-            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
-                <span class="hero-star">&#9733;</span>
-                <span class="hero-star hero-star-lg">&#9733;</span>
-                <span class="hero-star">&#9733;</span>
-            </div>
-            <h1 class="hero-title">Legislation Tracker</h1>
-            <p class="hero-subtitle">The largest database of pro- and anti-science legislation in America. Track every bill that impacts public health, medical freedom, and scientific integrity across all 50 states.</p>
-            <p id="data-updated-stamp" style="margin-top:8px; font-size:0.85rem; opacity:0.75;"></p>
-        </div>
-    </section>
-
-    <!-- Bill Browser -->
-    <section class="tracker-section" id="browse-bills">
-        <div class="container">
-
-
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label for="bb-state">State</label>
-                    <select id="bb-state"><option value="">All States</option></select>
-                </div>
-                <div class="filter-group">
-                    <label for="bb-stance">Type</label>
-                    <select id="bb-stance">
-                        <option value="">All Bills</option>
-                        <option value="anti">Anti-Science</option>
-                        <option value="pro">Pro-Science</option>
-                        <option value="monitor">Monitoring</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="bb-status">Status</label>
-                    <select id="bb-status">
-                        <option value="">All Statuses</option>
-                        <option value="active">Active Only</option>
-                        <option value="Introduced">Introduced</option>
-                        <option value="In Committee">In Committee</option>
-                        <option value="Passed Committee">Passed Committee</option>
-                        <option value="Passed One Chamber">Passed One Chamber</option>
-                        <option value="Passed Both Chambers">Passed Both Chambers</option>
-                        <option value="Signed into Law">Signed into Law</option>
-                        <option value="dead">Stopped / Dead</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="bb-impact">Priority</label>
-                    <select id="bb-impact">
-                        <option value="">All</option>
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="bb-category">Category</label>
-                    <select id="bb-category">
-                        <option value="">All Categories</option>
-                        <option value="vaccine-exemption">Vaccine Exemptions</option>
-                        <option value="vaccine-mandate">Vaccine Mandates</option>
-                        <option value="medical-freedom">Medical Freedom</option>
-                        <option value="informed-consent">Informed Consent</option>
-                        <option value="vaccine-discrimination">Vaccine Discrimination</option>
-                        <option value="mRNA-reclassification">mRNA Reclassification</option>
-                        <option value="vaccine-injury">Vaccine Injury</option>
-                        <option value="raw-milk">Raw Milk</option>
-                        <option value="fluoride">Fluoride</option>
-                        <option value="geoengineering">Geoengineering</option>
-                        <option value="public-health">Public Health</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="bb-search">Search</label>
-                    <input type="text" id="bb-search" placeholder="Search bills...">
-                </div>
+    <section id="browse-bills" style="padding-top:8px;">
+        <div class="wrap">
+            <div class="filterbar" role="search" aria-label="Filter bills">
+                <select id="bb-state" aria-label="State"><option value="">All States</option></select>
+                <select id="bb-stance" aria-label="Type">
+                    <option value="">All Bills</option>
+                    <option value="anti">Anti-Science</option>
+                    <option value="pro">Pro-Science</option>
+                    <option value="monitor">Monitoring</option>
+                </select>
+                <select id="bb-status" aria-label="Status">
+                    <option value="">All Statuses</option>
+                    <option value="active">Active Only</option>
+                    <option value="Introduced">Introduced</option>
+                    <option value="In Committee">In Committee</option>
+                    <option value="Passed Committee">Passed Committee</option>
+                    <option value="Passed One Chamber">Passed One Chamber</option>
+                    <option value="Passed Both Chambers">Passed Both Chambers</option>
+                    <option value="Signed into Law">Signed into Law</option>
+                    <option value="dead">Stopped / Dead</option>
+                </select>
+                <select id="bb-impact" aria-label="Priority">
+                    <option value="">All Priorities</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <select id="bb-category" aria-label="Category">
+                    <option value="">All Categories</option>
+                    <option value="vaccine-exemption">Vaccine Exemptions</option>
+                    <option value="vaccine-mandate">Vaccine Mandates</option>
+                    <option value="medical-freedom">Medical Freedom</option>
+                    <option value="informed-consent">Informed Consent</option>
+                    <option value="vaccine-discrimination">Vaccine Discrimination</option>
+                    <option value="mRNA-reclassification">mRNA Reclassification</option>
+                    <option value="vaccine-injury">Vaccine Injury</option>
+                    <option value="raw-milk">Raw Milk</option>
+                    <option value="fluoride">Fluoride</option>
+                    <option value="geoengineering">Geoengineering</option>
+                    <option value="public-health">Public Health</option>
+                </select>
+                <input type="text" id="bb-search" placeholder="Search bills: 'raw milk', 'HB 422', 'exemption'..." aria-label="Search bills">
             </div>
 
-            <div id="bb-count" style="text-align:center;color:#666;margin:1em 0;"></div>
+            <div id="bb-count" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
             <div id="bb-grid" class="bill-grid"></div>
-            <div id="bb-empty" class="empty-state" style="display:none;">
-                <p>No bills match your filters.</p>
+            <div id="bb-empty" class="card center" style="display:none;margin-top:20px;">
+                <p class="muted">No bills match those filters. Clear one and try again.</p>
             </div>
-            <button id="bb-load-more" class="btn btn-outline" style="display:none;margin:2em auto;width:100%;max-width:300px;">Load More Bills</button>
-            <div id="bb-loading" class="loading-spinner" style="display:none;">
-                <div class="spinner"></div>
-                <p>Loading legislation data...</p>
-            </div>
+            <button id="bb-load-more" class="btn ghost" style="display:none;margin:24px auto 0;width:100%;max-width:320px;">Load More Bills</button>
+            <div id="bb-loading" class="center muted" style="display:none;margin-top:24px;">Loading bills...</div>
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Join the List</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="media.html">Media Kit</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
-    </footer>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
 
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-    <script src="js/config.js?v=78"></script>
-    <script>
-    if (typeof firebase !== 'undefined' && typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG) {
-        firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
-    }
-    </script>
-    <script src="js/legislation-api.js?v=78"></script>
-    <script src="js/my-reps-page.js?v=78"></script>
-    <script src="js/pwa.js"></script>
-    <script>
-    // Auto-init bill browser on this standalone page
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() { BillBrowser.init(); });
-    } else {
-        BillBrowser.init();
-    }
-    </script>
-    <script src="js/header.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="js/config.js?v=78"></script>
+<script>
+if (typeof firebase !== 'undefined' && typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG) {
+    firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
+}
+</script>
+<script src="js/legislation-api.js?v=78"></script>
+<script src="js/my-reps-page.js?v=78"></script>
+<script src="js/pwa.js"></script>
+<script>
+// Auto-init bill browser on this standalone page
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { BillBrowser.init(); });
+} else {
+    BillBrowser.init();
+}
+</script>
 </body>
 </html>

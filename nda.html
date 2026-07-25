@@ -13,72 +13,170 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="SAFE Action - Volunteer NDA">
     <meta name="twitter:description" content="Electronically sign your SAFE Action volunteer non-disclosure agreement.">
-    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=73">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#101b33">
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/theme.css?v=1">
+    <style>
+      /* NDA page: recreate legacy state/signing styles in V6 language */
+      .nda-section{padding:24px 0 64px;}
+      .nda-document{background:var(--card);border:1px solid var(--line);
+        border-radius:var(--radius);box-shadow:var(--shadow-1);padding:32px;}
+      .nda-title{font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;margin-bottom:14px;}
+      .nda-intro{color:var(--ink2);font-size:15.5px;margin-bottom:8px;}
+      .nda-section-block h3{font-size:16px;font-weight:800;margin:22px 0 6px;}
+      .nda-section-block p{font-size:14.5px;color:var(--ink2);}
+      .nda-signing{background:var(--card);border:1px solid var(--line);
+        border-radius:var(--radius);box-shadow:var(--shadow-1);padding:28px 32px;margin-top:20px;}
+      .nda-signing h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+      .nda-signing > p{font-size:14.5px;color:var(--ink2);margin-bottom:18px;max-width:72ch;}
+      .form-group{margin-bottom:16px;}
+      .form-group label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;}
+      .form-group input[type="text"]{width:100%;border:1.5px solid var(--line);border-radius:10px;
+        background:#fff;padding:11px 14px;font-size:15px;font-family:var(--sans);color:var(--ink);}
+      .form-group input:focus-visible{outline:3px solid var(--navy);outline-offset:1px;}
+      .nda-checkbox-label{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;
+        color:var(--ink2);margin:14px 0 20px;cursor:pointer;}
+      .nda-checkbox-label input{margin-top:4px;accent-color:var(--navy);}
+      .volunteer-submit{display:inline-block;font-weight:700;font-size:15px;border-radius:999px;
+        padding:11px 24px;border:1.5px solid transparent;background:var(--navy);color:#fff;
+        box-shadow:var(--shadow-1);cursor:pointer;font-family:var(--sans);
+        transition:transform .15s,box-shadow .15s,background .15s;}
+      .volunteer-submit:hover:not([disabled]){transform:translateY(-2px);box-shadow:var(--shadow-2);background:#1d3161;}
+      .volunteer-submit[disabled]{background:#c9cedb;color:#6f7a92;cursor:not-allowed;box-shadow:none;}
+      .volunteer-error{background:#fbe4dc;border:1px solid #e8b3a2;color:#8c3a26;
+        border-radius:10px;padding:14px 18px;font-size:14.5px;margin:12px 0;}
+      .volunteer-error h2{font-size:18px;font-weight:800;margin-bottom:6px;color:#7c2a17;}
+      .volunteer-success{background:#eef6ee;border:1px solid #bcd9bc;color:#1c6b34;
+        border-radius:10px;padding:18px 22px;font-size:15px;}
+      .volunteer-success h2{font-size:19px;font-weight:800;margin-bottom:6px;}
+    </style>
 </head>
 <body>
-    <!-- Simple header (no nav, since this is a one-time signing page) -->
-    <header class="nda-header">
-        <div class="container">
-            <span class="logo-icon">&#9733;</span>
-            <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
+
+<div class="statusbar" role="status" aria-label="Site status">
+  <div class="wrap">
+    <span class="livedot" aria-hidden="true"></span>
+    <span class="label">SAFE ACTION - VOLUNTEER AGREEMENT</span>
+    <span class="side">SECURE ELECTRONIC SIGNING</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <nav class="main" aria-label="Primary">
+      <a class="brand" href="/index.html" aria-label="SAFE Action home">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span class="word">SAFE <span class="act">ACTION</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="/tracker.html">Live Tracker</a>
+        <a href="/outreach.html">Take Action</a>
+        <a href="/about.html">About</a>
+        <a class="btn primary small" href="/join.html">Join the List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+
+    <div class="pagehero">
+        <div class="wrap">
+            <span class="chip">VOLUNTEER NDA</span>
+            <h1 style="margin-top:14px;">Volunteer Non-Disclosure Agreement</h1>
+            <p class="lede">A one-time electronic signature for approved SAFE Action volunteers.</p>
         </div>
-    </header>
+    </div>
 
     <!-- Loading state -->
-    <div id="nda-loading" class="nda-section container">
-        <p>Loading agreement...</p>
+    <div id="nda-loading" class="nda-section">
+        <div class="wrap">
+            <p class="muted">Loading agreement...</p>
+        </div>
     </div>
 
     <!-- Error state (invalid/expired token) -->
-    <div id="nda-error" class="nda-section container" style="display:none">
-        <div class="volunteer-error" style="display:block">
-            <h2>Invalid or Expired Link</h2>
-            <p>This NDA signing link is no longer valid. Please contact SAFE Action for a new link.</p>
+    <div id="nda-error" class="nda-section" style="display:none">
+        <div class="wrap">
+            <div class="volunteer-error" style="display:block">
+                <h2>Invalid or Expired Link</h2>
+                <p>This NDA signing link is no longer valid. Please contact SAFE Action for a new link.</p>
+            </div>
         </div>
     </div>
 
     <!-- Already signed state -->
-    <div id="nda-already-signed" class="nda-section container" style="display:none">
-        <div class="volunteer-success" style="display:block">
-            <h2>NDA Already Signed</h2>
-            <p>You have already signed this agreement. A copy has been saved to your Google Drive folder.</p>
+    <div id="nda-already-signed" class="nda-section" style="display:none">
+        <div class="wrap">
+            <div class="volunteer-success" style="display:block">
+                <h2>NDA Already Signed</h2>
+                <p>You have already signed this agreement. A copy has been saved to your Google Drive folder.</p>
+            </div>
         </div>
     </div>
 
     <!-- NDA content + signing form -->
-    <div id="nda-content" class="nda-section container" style="display:none">
-        <div class="nda-document">
-            <h1 class="nda-title">SAFE Action Volunteer Non-Disclosure Agreement</h1>
-            <p class="nda-intro">This Non-Disclosure Agreement ("Agreement") is entered into by and between <strong>Science and Freedom for Everyone Action Fund</strong> ("SAFE Action") and <strong id="nda-volunteer-name">[Volunteer Name]</strong> ("Volunteer").</p>
-            <div id="nda-sections"></div>
-        </div>
-
-        <div class="nda-signing">
-            <h3>Electronic Signature</h3>
-            <p>By typing your full legal name below and clicking "I Agree & Sign", you are electronically signing this agreement pursuant to the U.S. Electronic Signatures in Global and National Commerce Act (ESIGN Act).</p>
-            <div class="form-group">
-                <label for="nda-sig-name">Full Legal Name</label>
-                <input type="text" id="nda-sig-name" required placeholder="Type your full name">
+    <div id="nda-content" class="nda-section" style="display:none">
+        <div class="wrap">
+            <div class="nda-document">
+                <h1 class="nda-title">SAFE Action Volunteer Non-Disclosure Agreement</h1>
+                <p class="nda-intro">This Non-Disclosure Agreement ("Agreement") is entered into by and between <strong>Science and Freedom for Everyone Action Fund</strong> ("SAFE Action") and <strong id="nda-volunteer-name">[Volunteer Name]</strong> ("Volunteer").</p>
+                <div id="nda-sections"></div>
             </div>
-            <label class="nda-checkbox-label">
-                <input type="checkbox" id="nda-agree"> I have read, understand, and agree to the terms of this Non-Disclosure Agreement
-            </label>
-            <div id="nda-sign-error" class="volunteer-error" style="display:none"></div>
-            <button id="nda-sign-btn" class="volunteer-submit" disabled>I Agree & Sign</button>
+
+            <div class="nda-signing">
+                <h3>Electronic Signature</h3>
+                <p>By typing your full legal name below and clicking "I Agree &amp; Sign", you are electronically signing this agreement pursuant to the U.S. Electronic Signatures in Global and National Commerce Act (ESIGN Act).</p>
+                <div class="form-group">
+                    <label for="nda-sig-name">Full Legal Name</label>
+                    <input type="text" id="nda-sig-name" required placeholder="Type your full name">
+                </div>
+                <label class="nda-checkbox-label">
+                    <input type="checkbox" id="nda-agree"> I have read, understand, and agree to the terms of this Non-Disclosure Agreement
+                </label>
+                <div id="nda-sign-error" class="volunteer-error" style="display:none"></div>
+                <button id="nda-sign-btn" class="volunteer-submit" disabled>I Agree &amp; Sign</button>
+            </div>
         </div>
     </div>
 
     <!-- Success state -->
-    <div id="nda-success" class="nda-section container" style="display:none">
-        <div class="volunteer-success" style="display:block">
-            <h2>NDA Signed Successfully!</h2>
-            <p>Thank you for signing. A PDF copy has been saved to your Google Drive folder.</p>
-            <p><a href="/" class="btn-primary" style="display:inline-block;margin-top:16px;">Go to SAFE Action</a></p>
+    <div id="nda-success" class="nda-section" style="display:none">
+        <div class="wrap">
+            <div class="volunteer-success" style="display:block">
+                <h2>NDA Signed Successfully!</h2>
+                <p>Thank you for signing. A PDF copy has been saved to your Google Drive folder.</p>
+                <p><a href="/" class="btn primary" style="display:inline-block;margin-top:16px;">Go to SAFE Action</a></p>
+            </div>
         </div>
     </div>
 
-    <script src="js/nda.js"></script>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      <span class="word">SAFE <span class="act">ACTION</span></span>
+    </div>
+    <div class="links">
+      <a href="/tracker.html">Live Tracker</a>
+      <a href="/outreach.html">Take Action</a>
+      <a href="/join.html">Join the List</a>
+      <a href="/about.html">About</a>
+      <a href="/donate.html">Donate</a>
+      <a href="/directory.html">Pledge Directory</a>
+      <a href="/media.html">Media Kit</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+    <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+  </div>
+</footer>
+
+<script src="/js/nda.js"></script>
 </body>
 </html>
