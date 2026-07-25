@@ -46,3 +46,6 @@ data/removed_candidates.json
 phase2.log
 _fix_persuadability.py
 design-overhauls.html
+# Local design previews (dev server only, never deploy)
+command-center-preview.html
+preview-*.html
