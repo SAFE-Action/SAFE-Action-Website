@@ -18,15 +18,25 @@ function headerSafe(value) {
 }
 
 /**
- * Send an email via Gmail API
+ * Send an email via Gmail API.
+ * Optional `headers` map adds extra headers (e.g. List-Unsubscribe);
+ * names and values are both sanitized against header injection.
  */
-async function sendEmail({ to, subject, htmlBody }) {
+async function sendEmail({ to, subject, htmlBody, headers }) {
     const gmail = await getGmailClient();
     const from = headerSafe(process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com');
+    let extra = '';
+    if (headers) {
+        for (const [k, v] of Object.entries(headers)) {
+            const name = headerSafe(k).replace(/[^A-Za-z0-9-]/g, '');
+            if (name) extra += `${name}: ${headerSafe(v)}\r\n`;
+        }
+    }
     const raw = Buffer.from(
         `From: SAFE Action <${from}>\r\n` +
         `To: ${headerSafe(to)}\r\n` +
         `Subject: ${headerSafe(subject)}\r\n` +
+        extra +
         `MIME-Version: 1.0\r\n` +
         `Content-Type: text/html; charset=UTF-8\r\n\r\n` +
         htmlBody

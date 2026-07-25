@@ -62,6 +62,23 @@ service cloud.firestore {
         exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
     }
 
+    // Mailing list - admins read (panel/export); ALL writes via Cloud Functions
+    match /subscribers/{docId} {
+      allow read: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+      allow write: if false;
+    }
+    match /campaigns/{docId} {
+      allow read: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+      allow write: if false;
+    }
+    // Mailing settings (physical address) - admins read AND write
+    match /settings/mailing {
+      allow read, write: if request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
     // Default deny
     match /{document=**} {
       allow read, write: if false;

@@ -142,7 +142,7 @@ a:hover { color: var(--red); }
     filter: none;
 }
 
-/* ACTION word thread — every instance of ACTION pops in red */
+/* ACTION word thread - every instance of ACTION pops in red */
 .action-word {
     color: var(--red);
     text-decoration: underline;
@@ -401,7 +401,7 @@ a:hover { color: var(--red); }
     line-height: 1;
 }
 
-/* Mobile nav overlay — Card Stack design */
+/* Mobile nav overlay - Card Stack design */
 .mobile-nav-overlay {
     position: fixed;
     top: 0;
@@ -1922,7 +1922,7 @@ a:hover { color: var(--red); }
 .bill-card.stance-support::before { background: #10B981; }
 .bill-card.stance-monitor::before { background: var(--gold); }
 
-/* Defeated bills — green highlight */
+/* Defeated bills - green highlight */
 .bill-card.bill-defeated {
     border-color: #10B981;
     background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%);
@@ -2638,7 +2638,7 @@ a:hover { color: var(--red); }
 
 /* --- Footer --- */
 /* ============================================
-   Footer — Multi-column layout
+   Footer - Multi-column layout
    ============================================ */
 .site-footer {
     position: relative;
@@ -6183,7 +6183,7 @@ input.warning {
     transform: translateY(-1px);
 }
 
-/* Nav donate button — stands out in header nav */
+/* Nav donate button - stands out in header nav */
 .nav-donate {
     margin-left: 8px;
     padding: 8px 22px !important;
@@ -8248,3 +8248,107 @@ input.warning {
     opacity: 0.75;
     text-align: center;
 }
+
+/* ============ Mailing list signup ============ */
+.join-card {
+    background: var(--white);
+    border-radius: var(--radius-lg, 14px);
+    box-shadow: var(--shadow-md, 0 4px 18px rgba(26,39,68,0.10));
+    border-top: 4px solid var(--red);
+    padding: 36px 32px;
+}
+.join-card label {
+    display: block;
+    font-weight: 600;
+    color: var(--blue);
+    margin: 14px 0 6px;
+    font-size: 0.95rem;
+}
+.join-card input[type="text"],
+.join-card input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--line, #d8d3c7);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    outline: none;
+}
+.join-card input:focus { border-color: var(--blue); }
+.join-card button[type="submit"] { margin-top: 20px; width: 100%; }
+.join-fine-print {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--text-light, #66717f);
+    text-align: center;
+}
+.join-status-banner {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-weight: 600;
+    background: #eef1f6;
+    color: var(--blue);
+    border: 1px solid var(--line, #d8d3c7);
+    text-align: center;
+}
+.join-status-banner.ok { background: #e8f5ec; border-color: #9fd3ae; color: #1c6b34; }
+.join-status-banner.error { background: #fbeaea; border-color: #e3a5a5; color: #9b1b2a; }
+.list-signup-status { margin-top: 12px; font-weight: 600; color: #1c6b34; text-align: center; }
+.list-signup-status.error { color: #9b1b2a; }
+
+/* Homepage signup band */
+.list-signup-section {
+    background: var(--blue);
+    padding: 56px 0;
+    text-align: center;
+    color: #fff;
+}
+.list-signup-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+.list-signup-section p { opacity: 0.85; margin-bottom: 22px; }
+.list-signup-section .list-signup-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 560px;
+    margin: 0 auto;
+}
+.list-signup-section input[type="email"] {
+    flex: 1 1 280px;
+    padding: 13px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+.list-signup-section button {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.list-signup-section button:hover { background: #9b1b2a; }
+.list-signup-section .list-signup-status { color: #ffd97a; }
+.list-signup-section .list-signup-status.error { color: #ffb3b3; }
+
+/* Admin: mailing list */
+.ml-stats { display: flex; gap: 18px; margin: 14px 0 18px; flex-wrap: wrap; }
+.ml-stat { background: var(--white); border-radius: 10px; padding: 12px 20px; box-shadow: var(--shadow-sm, 0 1px 6px rgba(0,0,0,0.08)); }
+.ml-stat b { font-size: 1.3rem; color: var(--blue); display: block; }
+.ml-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--white); }
+.ml-table th, .ml-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line, #e3e0d8); }
+.ml-table th { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.04em; color: var(--text-light, #66717f); }
+.ml-compose textarea { width: 100%; min-height: 180px; font-family: monospace; font-size: 0.9rem; padding: 12px; border: 2px solid var(--line, #d8d3c7); border-radius: 10px; }
+.ml-compose input[type="text"] { width: 100%; padding: 10px 12px; border: 2px solid var(--line, #d8d3c7); border-radius: 10px; margin-bottom: 10px; }
+.ml-compose .ml-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }

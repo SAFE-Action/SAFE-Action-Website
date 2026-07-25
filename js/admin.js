@@ -474,10 +474,125 @@
         });
         document.getElementById('bills-section').style.display = section === 'bills' ? '' : 'none';
         document.getElementById('volunteers-section').style.display = section === 'volunteers' ? '' : 'none';
+        document.getElementById('mailing-section').style.display = section === 'mailing' ? '' : 'none';
 
         if (section === 'volunteers' && !vUnsubscribe) {
             loadVolunteers();
         }
+        if (section === 'mailing' && !mlLoaded) {
+            loadMailingList();
+        }
+    }
+
+    // ---------------- Mailing list ----------------
+    var mlLoaded = false;
+    var mlSubscribers = [];
+
+    function mlStatus(msg, isError) {
+        var el = document.getElementById('ml-send-status');
+        el.style.display = '';
+        el.style.color = isError ? '#c53030' : '#1c6b34';
+        el.textContent = msg;
+    }
+
+    function loadMailingList() {
+        mlLoaded = true;
+        db.collection('subscribers').orderBy('createdAt', 'desc').onSnapshot(function(snap) {
+            mlSubscribers = [];
+            snap.forEach(function(d) { mlSubscribers.push(d.data()); });
+            var counts = { active: 0, pending: 0, unsubscribed: 0 };
+            var rows = '';
+            mlSubscribers.forEach(function(s) {
+                if (counts[s.status] !== undefined) counts[s.status]++;
+                var joined = s.createdAt && s.createdAt.toDate ? s.createdAt.toDate().toLocaleDateString() : '';
+                rows += '<tr><td>' + escHtml(s.email) + '</td><td>' + escHtml(s.name || '') + '</td><td>' +
+                    escHtml(s.status) + '</td><td>' + escHtml(s.source || '') + '</td><td>' + joined + '</td></tr>';
+            });
+            document.getElementById('ml-count-active').textContent = counts.active;
+            document.getElementById('ml-count-pending').textContent = counts.pending;
+            document.getElementById('ml-count-unsub').textContent = counts.unsubscribed;
+            document.getElementById('ml-table-body').innerHTML = rows;
+        }, function(err) { console.error('subscribers listener:', err); });
+
+        db.collection('settings').doc('mailing').get().then(function(doc) {
+            if (doc.exists && doc.data().physicalAddress) {
+                document.getElementById('ml-address').value = doc.data().physicalAddress;
+            }
+        });
+
+        function csvCell(v) {
+            var s = String(v == null ? '' : v);
+            // CWE-1236: Excel/Sheets execute cells starting with = + - @ even
+            // when quoted. Prefix the literal-text marker to neutralize.
+            if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
+            return '"' + s.replace(/"/g, '""') + '"';
+        }
+        document.getElementById('ml-export-btn').addEventListener('click', function() {
+            var lines = ['email,name,status,source'];
+            mlSubscribers.forEach(function(s) {
+                lines.push([s.email, s.name || '', s.status, s.source || ''].map(csvCell).join(','));
+            });
+            var blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'safe-action-subscribers.csv';
+            a.click();
+        });
+
+        document.getElementById('ml-save-address').addEventListener('click', function() {
+            var addr = document.getElementById('ml-address').value.trim();
+            db.collection('settings').doc('mailing').set({ physicalAddress: addr }, { merge: true })
+                .then(function() { mlStatus('Address saved.'); })
+                .catch(function(e) { mlStatus('Save failed: ' + e.message, true); });
+        });
+
+        document.getElementById('ml-test-btn').addEventListener('click', function() { mlSend(true); });
+        document.getElementById('ml-send-btn').addEventListener('click', function() {
+            var n = document.getElementById('ml-count-active').textContent;
+            if (!window.confirm('Send this campaign to all ' + n + ' active subscribers?')) return;
+            mlSend(false);
+        });
+    }
+
+    async function mlSend(isTest) {
+        var subject = document.getElementById('ml-subject').value.trim();
+        var html = document.getElementById('ml-body').value;
+        if (!subject || !html.trim()) { mlStatus('Subject and body are required.', true); return; }
+        mlStatus(isTest ? 'Sending test...' : 'Queuing campaign...');
+        try {
+            var token = await auth.currentUser.getIdToken();
+            var resp = await fetch('/api/list/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify({ subject: subject, html: html, test: isTest })
+            });
+            var data = await resp.json();
+            if (!resp.ok) throw new Error(data.error || 'Send failed');
+            if (isTest) {
+                mlStatus('Test sent to your email.');
+                return;
+            }
+            // Campaign is queued; a background worker sends it. Watch progress live.
+            mlStatus('Campaign queued (' + data.total + ' recipients). Sending in the background...');
+            var watcher = db.collection('campaigns').doc(data.campaignId).onSnapshot(function(doc) {
+                var c = doc.data();
+                if (!c) return;
+                if (c.status === 'done') {
+                    mlStatus('Campaign finished: ' + c.sentCount + ' of ' + c.total + ' sent' + (c.failCount ? ' (' + c.failCount + ' failed)' : '') + '.');
+                    watcher();
+                } else {
+                    mlStatus('Sending: ' + (c.sentCount || 0) + ' of ' + c.total + '...');
+                }
+            });
+        } catch (e) {
+            mlStatus('Error: ' + e.message, true);
+        }
+    }
+
+    function escHtml(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
     }
 
     function switchVTab(tab) {

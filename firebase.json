@@ -27,6 +27,26 @@
     "trailingSlash": false,
     "rewrites": [
       {
+        "source": "/api/list/send",
+        "function": "mailingList"
+      },
+      {
+        "source": "/api/list/unsubscribe",
+        "function": "mailingList"
+      },
+      {
+        "source": "/api/list/confirm",
+        "function": "mailingList"
+      },
+      {
+        "source": "/api/list/subscribe",
+        "function": "mailingList"
+      },
+      {
+        "source": "/join",
+        "destination": "/join.html"
+      },
+      {
         "source": "/candidates/:slug",
         "destination": "/candidate.html"
       },

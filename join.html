@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the List - SAFE Action</title>
+    <meta name="description" content="Get science legislation alerts, actions that matter, and wins from SAFE Action. Join the email list.">
+    <meta property="og:title" content="SAFE Action - Join the Movement">
+    <meta property="og:description" content="Science legislation alerts, actions that matter, and the wins we get together.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scienceandfreedom.com/join">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SAFE Action - Join the Movement">
+    <meta name="twitter:description" content="Science legislation alerts, actions that matter, and the wins we get together.">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1A2744">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=73">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon">&#9733;</span>
+                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
+                </a>
+                <nav class="main-nav">
+                    <a href="outreach.html" class="nav2-link">Take Action</a>
+                    <div class="nav2-item">
+                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="directory.html">Pledge Directory</a>
+                            <a href="quiz.html">Candidate Quiz</a>
+                        </div>
+                    </div>
+                    <div class="nav2-item">
+                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="tracker.html">Legislation Tracker</a>
+                            <a href="media.html">Media Kit</a>
+                            <a href="media.html#methodology">How This Works</a>
+                        </div>
+                    </div>
+                    <div class="nav2-item">
+                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
+                        <div class="nav2-dropdown">
+                            <a href="about.html">Our Mission</a>
+                            <a href="positions.html">Open Positions</a>
+                            <a href="about.html#donate">Donate</a>
+                        </div>
+                    </div>
+                </nav>
+                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo-link">
+                <span class="logo-icon">&#9733;</span>
+                <span>SAFE <span class="action-word">ACTION</span></span>
+            </a>
+            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
+        </div>
+        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">Vaccine Pledges</span>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="quiz.html">Candidate Quiz</a>
+        </div>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">Resources</span>
+            <a href="tracker.html">Legislation Tracker</a>
+            <a href="media.html">Media Kit</a>
+            <a href="media.html#methodology">How This Works</a>
+        </div>
+        <div class="mobile-nav-section">
+            <span class="mobile-nav-section-title">About</span>
+            <a href="about.html">Our Mission</a>
+            <a href="positions.html">Open Positions</a>
+            <a href="about.html#donate">Donate</a>
+        </div>
+    </div>
+
+    <!-- Join Hero -->
+    <section class="quiz-hero">
+        <div class="container">
+            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
+                <span class="hero-star">&#9733;</span>
+                <span class="hero-star hero-star-lg">&#9733;</span>
+                <span class="hero-star">&#9733;</span>
+            </div>
+            <h1 class="hero-title">Join the Movement</h1>
+            <p class="hero-subtitle">One email when it matters: science legislation alerts in your state, actions that take two minutes, and the wins we get together. No spam, unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Status + Form -->
+    <section class="tracker-section">
+        <div class="container" style="max-width:640px;">
+            <div id="join-status-banner" class="join-status-banner" style="display:none;"></div>
+
+            <div class="join-card">
+                <form class="list-signup-form" data-source="join-page" novalidate>
+                    <label for="join-name">Name (optional)</label>
+                    <input type="text" id="join-name" name="name" autocomplete="name" placeholder="Your name">
+                    <label for="join-email">Email</label>
+                    <input type="email" id="join-email" name="email" autocomplete="email" required placeholder="you@example.com">
+                    <!-- honeypot: humans never see this -->
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <button type="submit" class="btn btn-primary btn-lg">Join the List</button>
+                    <p class="list-signup-status" style="display:none;"></p>
+                </form>
+                <p class="join-fine-print">We send occasional updates from SAFE Action. Every email includes a one-click unsubscribe link.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+                    <div class="footer-bottom-right">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <span>Licensed under GPLv3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Surface confirm/unsubscribe/invalid outcomes from the API redirects.
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var banner = document.getElementById('join-status-banner');
+            if (!banner) return;
+            if (params.get('confirmed')) {
+                banner.textContent = "You're confirmed. Welcome to the movement!";
+                banner.classList.add('ok');
+            } else if (params.get('unsubscribed')) {
+                banner.textContent = "You've been unsubscribed. You won't hear from us again unless you rejoin.";
+            } else if (params.get('invalid')) {
+                banner.textContent = 'That link is invalid or has expired. You can sign up again below.';
+                banner.classList.add('error');
+            } else {
+                return;
+            }
+            banner.style.display = '';
+        })();
+    </script>
+    <script src="js/mailing-list.js"></script>
+</body>
+</html>
