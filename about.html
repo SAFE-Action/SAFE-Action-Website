@@ -13,951 +13,321 @@
     <meta name="twitter:title" content="SAFE Action Fund - About">
     <meta name="twitter:description" content="Learn how SAFE Action Fund defends evidence-based public health policy and holds lawmakers accountable.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
     <style>
-        /* About page hero */
-        .about-hero {
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-            padding: 100px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .about-hero::before {
-            content: '\2733 \2733 \2733 \2733 \2733';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.1);
-            letter-spacing: 2rem;
-            pointer-events: none;
-        }
-        .about-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--red);
-        }
-        .about-hero h1 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 3rem;
-            color: var(--white);
-            margin: 0 0 24px;
-            line-height: 1.2;
-        }
-        .about-hero .hero-subtitle {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.88);
-            max-width: 720px;
-            margin: 0 auto;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-        .about-hero .hero-stars {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-            margin-bottom: 28px;
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 1.4rem;
-        }
-        .about-hero .hero-stars .star-lg {
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.22);
-        }
-
-        /* Mission section */
-        .about-mission {
-            background: var(--cream);
-            padding: 80px 0;
-            text-align: center;
-        }
-        .about-mission h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--blue-dark);
-            margin: 0 0 32px;
-        }
-        .about-mission p {
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            color: var(--text-mid);
-            max-width: 780px;
-            margin: 0 auto;
-            line-height: 1.85;
-        }
-        .about-mission .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 32px;
-            border-radius: 2px;
-        }
-
-        /* About SAFE section */
-        .about-detail {
-            background: var(--off-white);
-            padding: 80px 0;
-        }
-        .about-detail h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--blue-dark);
-            margin: 0 0 12px;
-            text-align: center;
-        }
-        .about-detail .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 36px;
-            border-radius: 2px;
-        }
-        .about-detail-content {
-            max-width: 780px;
-            margin: 0 auto;
-        }
-        .about-detail-content p {
-            font-family: var(--font-body);
-            font-size: 1.08rem;
-            color: var(--text-mid);
-            line-height: 1.85;
-            margin: 0 0 24px;
-        }
-        .about-detail-content .about-note {
-            font-size: 0.95rem;
-            color: var(--text-mid);
-            opacity: 0.8;
-            font-style: italic;
-            border-left: 3px solid var(--red);
-            padding-left: 16px;
-            margin-top: 32px;
-        }
-
-        /* What we do cards */
-        .about-cards {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .about-cards h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--blue-dark);
-            text-align: center;
-            margin: 0 0 12px;
-        }
-        .about-cards .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 48px;
-            border-radius: 2px;
-        }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 36px 32px;
-            box-shadow: var(--shadow-md);
-            border-top: 4px solid var(--red);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        .card-icon {
-            font-size: 2.4rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-        .card h3 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--blue-dark);
-            margin: 0 0 12px;
-        }
-        .card p {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            color: var(--text-mid);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* Why this matters */
-        .about-why {
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-        }
-        .about-why h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--white);
-            margin: 0 0 12px;
-        }
-        .about-why .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 36px;
-            border-radius: 2px;
-        }
-        .about-why-content {
-            max-width: 780px;
-            margin: 0 auto;
-        }
-        .about-why-content p {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.85;
-            margin: 0 0 24px;
-        }
-
-        /* Get involved */
-        .about-cta {
-            background: var(--cream);
-            padding: 80px 0;
-            text-align: center;
-        }
-        .about-cta h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--blue-dark);
-            margin: 0 0 12px;
-        }
-        .about-cta .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 32px;
-            border-radius: 2px;
-        }
-        .about-cta > .container > p {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--text-mid);
-            max-width: 720px;
-            margin: 0 auto 32px;
-            line-height: 1.8;
-        }
-        .about-cta ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto 40px;
-            max-width: 400px;
-            text-align: left;
-        }
-        .about-cta ul li {
-            font-family: var(--font-body);
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            padding: 10px 0;
-            padding-left: 28px;
-            position: relative;
-            line-height: 1.6;
-        }
-        .about-cta ul li::before {
-            content: '\2605';
-            position: absolute;
-            left: 0;
-            color: var(--red);
-            font-size: 0.85rem;
-            top: 12px;
-        }
-        .about-cta .btn-action {
-            display: inline-block;
-            background: var(--red);
-            color: var(--white);
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 1.1rem;
-            padding: 16px 48px;
-            border-radius: var(--radius-lg);
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.2s ease;
-            box-shadow: var(--shadow-md);
-        }
-        .about-cta .btn-action:hover {
-            background: var(--red-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Volunteer section */
-        .about-volunteer {
-            background: var(--off-white);
-            padding: 80px 0;
-        }
-        .about-volunteer h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--blue-dark);
-            text-align: center;
-            margin: 0 0 12px;
-        }
-        .about-volunteer .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 32px;
-            border-radius: 2px;
-        }
-        .about-volunteer-intro {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--text-mid);
-            max-width: 720px;
-            margin: 0 auto 36px;
-            text-align: center;
-            line-height: 1.8;
-        }
-        .volunteer-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 36px 32px;
-            box-shadow: var(--shadow-md);
-        }
-        .volunteer-form .form-group {
-            margin-bottom: 24px;
-        }
-        .volunteer-form label,
-        .volunteer-form .form-group-label {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            display: block;
-            margin-bottom: 8px;
-        }
-        .volunteer-form input[type="text"],
-        .volunteer-form input[type="email"],
-        .volunteer-form select {
-            width: 100%;
-            padding: 12px 16px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.2s ease;
-            box-sizing: border-box;
-        }
-        .volunteer-form input:focus,
-        .volunteer-form select:focus {
-            border-color: var(--blue);
-        }
-        .volunteer-form .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .volunteer-form .checkbox-group label {
-            font-weight: 400;
-            font-size: 0.92rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            margin-bottom: 0;
-        }
-        .volunteer-submit {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: var(--blue);
-            color: var(--white);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.2s ease, transform 0.15s ease;
-        }
-        .volunteer-submit:hover {
-            background: var(--blue-dark);
-            transform: translateY(-1px);
-        }
-        .volunteer-error {
-            background: #fef2f2;
-            color: #c53030;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            display: none;
-        }
-        .volunteer-success {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .volunteer-success h2 {
-            color: #2d6a4f;
-            margin-bottom: 12px;
-        }
-        .volunteer-success p {
-            font-family: var(--font-body);
-            color: var(--text-mid);
-            font-size: 1.05rem;
-        }
-
-        /* Donate section */
-        .about-donate {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .about-donate h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: var(--blue-dark);
-            text-align: center;
-            margin: 0 0 12px;
-        }
-        .about-donate .section-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--red);
-            margin: 0 auto 32px;
-            border-radius: 2px;
-        }
-        .about-donate-intro {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--text-mid);
-            max-width: 720px;
-            margin: 0 auto 36px;
-            text-align: center;
-            line-height: 1.8;
-        }
-        .about-donate .donation-box {
-            max-width: 720px;
-            margin: 0 auto;
-            background: var(--off-white);
-            border-radius: var(--radius-lg);
-            padding: 40px 36px;
-            box-shadow: var(--shadow-md);
-        }
-        .about-donate .frequency-toggle {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 32px;
-            background: var(--white);
-            border-radius: 50px;
-            padding: 4px;
-            max-width: 280px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 2px solid var(--blue);
-        }
-        .about-donate .frequency-toggle button {
-            flex: 1;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: transparent;
-            color: var(--blue);
-        }
-        .about-donate .frequency-toggle button.active {
-            background: var(--blue);
-            color: var(--white);
-        }
-        .about-donate .amount-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-        .about-donate .amount-card {
-            background: var(--white);
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            padding: 20px 14px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .about-donate .amount-card:hover {
-            border-color: var(--blue);
-            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.12);
-        }
-        .about-donate .amount-card.selected {
-            border-color: var(--blue);
-            background: rgba(60, 59, 110, 0.06);
-            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.15);
-        }
-        .about-donate .amount-card .amount {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 1.6rem;
-            color: var(--blue);
-            display: block;
-            margin-bottom: 6px;
-        }
-        .about-donate .amount-card .amount-desc {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            color: var(--text-mid);
-            line-height: 1.4;
-        }
-        .about-donate .custom-amount {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .about-donate .custom-amount a {
-            font-family: var(--font-body);
-            font-weight: 600;
-            color: var(--blue);
-            text-decoration: underline;
-            font-size: 0.95rem;
-        }
-        .about-donate .donate-cta-btn {
-            display: block;
-            width: 100%;
-            padding: 18px 32px;
-            background: var(--red);
-            color: var(--white);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.25rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-align: center;
-            transition: background 0.2s ease, transform 0.15s ease;
-        }
-        .about-donate .donate-cta-btn:hover {
-            background: var(--red-dark);
-            transform: translateY(-1px);
-        }
-        .about-donate-disclosure {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            color: var(--text-mid);
-            text-align: center;
-            max-width: 480px;
-            margin: 24px auto 0;
-            opacity: 0.75;
-            line-height: 1.5;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-hero {
-                padding: 72px 0 56px;
-            }
-            .about-hero h1 {
-                font-size: 2rem;
-            }
-            .about-hero .hero-subtitle {
-                font-size: 1.05rem;
-            }
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .about-mission, .about-detail, .about-cards, .about-why, .about-cta, .about-volunteer, .about-donate {
-                padding: 56px 0;
-            }
-            .about-mission h2, .about-detail h2, .about-cards h2, .about-why h2, .about-cta h2, .about-volunteer h2, .about-donate h2 {
-                font-size: 1.7rem;
-            }
-            .volunteer-form {
-                padding: 24px 20px;
-            }
-            .about-donate .donation-box {
-                padding: 28px 20px;
-            }
-            .about-donate .amount-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        /* Scoped V6 support for JS-driven donate + volunteer widgets */
+        :root{--text-mid:var(--ink2);}
+        .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;}
+        @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+        .checkbox-group{display:flex;flex-wrap:wrap;gap:10px 16px;}
+        .checkbox-group label{display:flex;align-items:center;gap:7px;font-weight:400;
+            font-size:14px;color:var(--ink2);cursor:pointer;margin-bottom:0;}
+        .volunteer-error{display:none;background:#fbe4dc;color:#8c3a26;border:1px solid #f3bda9;
+            border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:14px;font-weight:600;}
+        .volunteer-success{text-align:center;padding:40px 20px;}
+        .volunteer-success h2{font-weight:800;font-size:24px;color:#1c6b34;margin-bottom:10px;}
+        .volunteer-success p{color:var(--ink2);font-size:15px;}
+        .frequency-toggle{display:flex;max-width:280px;margin:0 auto 28px;background:var(--bg);
+            border:1.5px solid var(--line);border-radius:999px;padding:4px;}
+        .frequency-toggle button{flex:1;padding:9px 18px;border:none;border-radius:999px;
+            font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;
+            background:transparent;color:var(--navy);transition:background .15s,color .15s;}
+        .frequency-toggle button.active{background:var(--navy);color:#fff;}
+        .amount-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+        @media(max-width:560px){.amount-grid{grid-template-columns:repeat(2,1fr);}}
+        .amount-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
+            padding:18px 14px;text-align:center;cursor:pointer;box-shadow:var(--shadow-1);
+            transition:transform .15s,box-shadow .15s,border-color .15s,background .15s;}
+        .amount-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);border-color:var(--navy);}
+        .amount-card.selected{border-color:var(--navy);background:#eceef3;box-shadow:var(--shadow-2);}
+        .amount-card .amount{font-family:var(--display);font-size:30px;line-height:1;
+            color:var(--navy);display:block;margin-bottom:6px;letter-spacing:.02em;}
+        .amount-card .amount-desc{font-size:12.5px;color:var(--ink2);line-height:1.4;display:block;}
+        .custom-amount{text-align:center;margin-bottom:24px;}
+        .custom-amount a{font-weight:600;color:var(--navy);font-size:14px;}
+        .custom-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;}
+        .custom-row .cur{font-family:var(--display);font-size:26px;color:var(--navy);}
+        .custom-row input[type="number"]{width:160px;border:1.5px solid var(--line);border-radius:10px;
+            background:#fff;padding:11px 14px;font-size:16px;font-weight:600;text-align:center;
+            font-family:var(--sans);color:var(--ink);}
+        .custom-row input:focus-visible{outline:3px solid var(--navy);outline-offset:1px;}
+        .fullbtn{display:block;width:100%;text-align:center;}
+        #donate-status{text-align:center;margin-top:12px;font-size:14px;color:var(--ink2);display:none;}
+        .note{border-left:3px solid var(--red);padding:2px 0 2px 16px;color:var(--muted);
+            font-size:14px;font-style:italic;}
+        .disclosure{font-size:13px;color:var(--muted);text-align:center;max-width:56ch;
+            margin:24px auto 0;line-height:1.5;}
     </style>
 </head>
 <body>
-    <!-- Stars background decoration -->
-    <div class="stars-bg" aria-hidden="true"></div>
-
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html" class="active">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
-        </div>
+    <div class="statusbar" role="status" aria-label="Site status">
+      <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label">SAFE ACTION - LIVE SCIENCE LEGISLATION TRACKING</span>
+        <span class="side">41 STATES + CONGRESS</span>
+      </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="hero-stars" aria-hidden="true">
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span class="star-lg">&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-            </div>
-            <h1>Protecting science in public policy.</h1>
-            <p class="hero-subtitle">When science is ignored, public health suffers. SAFE Action Fund works to ensure that evidence - not misinformation - guides the laws that protect our communities.</p>
-        </div>
-    </section>
+    <header class="site">
+      <div class="wrap">
+        <nav class="main" aria-label="Primary">
+          <a class="brand" href="index.html" aria-label="SAFE Action home">
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
+          </a>
+          <div class="navlinks">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="about.html" aria-current="page">About</a>
+            <a class="btn primary small" href="join.html">Join the List</a>
+          </div>
+        </nav>
+      </div>
+      <div class="ribbon" aria-hidden="true"></div>
+    </header>
 
-    <!-- Mission Section -->
-    <section class="about-mission">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <div class="section-bar"></div>
-            <p>SAFE Action Fund advances clinical integrity, scientific transparency, and evidence-based public health policy through legislative advocacy, public accountability, and civic engagement. The organization works to ensure that healthcare laws and public health decisions are guided by credible scientific evidence and serve the common good.</p>
-        </div>
-    </section>
-
-    <!-- About SAFE Action Fund Section -->
-    <section class="about-detail">
-        <div class="container">
-            <h2>About SAFE Action Fund</h2>
-            <div class="section-bar"></div>
-            <div class="about-detail-content">
-                <p>SAFE Action Fund advocates for science-based public health policy and works to counter misinformation that threatens clinical integrity and public trust in science. By tracking legislation, engaging citizens, and holding elected officials accountable, the organization works to ensure that public health decisions reflect credible scientific evidence and protect communities.</p>
-                <p>SAFE Action Fund is organized and operated to promote social welfare by advancing clinical integrity, scientific transparency, and evidence-based public health policy. The organization engages in legislative advocacy, candidate accountability, and public education to help ensure that healthcare laws protect the common good and general welfare of the community.</p>
-                <p class="about-note">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    <main>
+        <div class="pagehero">
+            <div class="wrap">
+                <span class="chip">OUR MISSION</span>
+                <h1 style="margin-top:16px;">Protecting science in public policy.</h1>
+                <p class="lede">When science is ignored, public health suffers. SAFE Action Fund works to ensure that evidence, not misinformation, guides the laws that protect our communities.</p>
             </div>
         </div>
-    </section>
 
-    <!-- What We Do Section -->
-    <section class="about-cards">
-        <div class="container">
-            <h2>What We Do</h2>
-            <div class="section-bar"></div>
-            <div class="cards-grid">
-                <div class="card">
-                    <span class="card-icon" aria-hidden="true">&#128203;</span>
-                    <h3>Legislative Monitoring</h3>
-                    <p>SAFE Action Fund tracks state and federal legislation that affects public health, scientific research, and healthcare policy.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon" aria-hidden="true">&#128300;</span>
-                    <h3>Policy Analysis</h3>
-                    <p>We analyze legislative proposals and public health policy to identify where scientific evidence is being ignored, distorted, or misrepresented.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon" aria-hidden="true">&#128499;&#65039;</span>
-                    <h3>Civic Engagement</h3>
-                    <p>We provide tools that allow citizens to contact elected officials and advocate for evidence-based public health decisions.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon" aria-hidden="true">&#9878;&#65039;</span>
-                    <h3>Accountability</h3>
-                    <p>We monitor how policymakers respond to public health legislation and promote transparency in government decision-making.</p>
+        <!-- Mission + About -->
+        <section style="padding-top:16px;">
+            <div class="wrap">
+                <div class="prose">
+                    <h2>Our Mission</h2>
+                    <p>SAFE Action Fund advances clinical integrity, scientific transparency, and evidence-based public health policy through legislative advocacy, public accountability, and civic engagement. The organization works to ensure that healthcare laws and public health decisions are guided by credible scientific evidence and serve the common good.</p>
+
+                    <h2>About SAFE Action Fund</h2>
+                    <p>SAFE Action Fund advocates for science-based public health policy and works to counter misinformation that threatens clinical integrity and public trust in science. By tracking legislation, engaging citizens, and holding elected officials accountable, the organization works to ensure that public health decisions reflect credible scientific evidence and protect communities.</p>
+                    <p>SAFE Action Fund is organized and operated to promote social welfare by advancing clinical integrity, scientific transparency, and evidence-based public health policy. The organization engages in legislative advocacy, candidate accountability, and public education to help ensure that healthcare laws protect the common good and general welfare of the community.</p>
+                    <p class="note">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why This Matters Section -->
-    <section class="about-why">
-        <div class="container">
-            <h2>Why This Matters</h2>
-            <div class="section-bar"></div>
-            <div class="about-why-content">
-                <p>Public health policies shape the safety, well-being, and resilience of communities across the country. Decisions made by lawmakers affect everything from vaccine policy and medical research to healthcare access and the strength of our public health systems.</p>
-                <p>When misinformation or political pressure overrides credible scientific evidence, the consequences can affect entire communities. SAFE Action Fund exists to ensure that science remains central to public policy discussions and that decision-makers remain accountable to the public good.</p>
+        <!-- What We Do -->
+        <section class="watch">
+            <div class="wrap">
+                <div class="sechead">
+                    <h2>What We Do</h2>
+                    <span class="chip">FOUR FRONTS</span>
+                </div>
+                <div class="about-grid">
+                    <div class="step">
+                        <span class="k">01</span>
+                        <div class="star" aria-hidden="true">&#128203;</div>
+                        <h3>Legislative Monitoring</h3>
+                        <p>SAFE Action Fund tracks state and federal legislation that affects public health, scientific research, and healthcare policy.</p>
+                    </div>
+                    <div class="step">
+                        <span class="k">02</span>
+                        <div class="star" aria-hidden="true">&#128300;</div>
+                        <h3>Policy Analysis</h3>
+                        <p>We analyze legislative proposals and public health policy to identify where scientific evidence is being ignored, distorted, or misrepresented.</p>
+                    </div>
+                    <div class="step">
+                        <span class="k">03</span>
+                        <div class="star" aria-hidden="true">&#128499;&#65039;</div>
+                        <h3>Civic Engagement</h3>
+                        <p>We provide tools that allow citizens to contact elected officials and advocate for evidence-based public health decisions.</p>
+                    </div>
+                    <div class="step">
+                        <span class="k">04</span>
+                        <div class="star" aria-hidden="true">&#9878;&#65039;</div>
+                        <h3>Accountability</h3>
+                        <p>We monitor how policymakers respond to public health legislation and promote transparency in government decision-making.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Get Involved Section -->
-    <section class="about-cta">
-        <div class="container">
-            <h2>Get Involved</h2>
-            <div class="section-bar"></div>
-            <p>Protecting science in public policy requires informed citizens and engaged communities. Join SAFE Action Fund and help ensure that evidence - not misinformation - guides the laws that shape our healthcare system.</p>
-            <ul>
-                <li>Track legislation</li>
-                <li>Contact your representatives</li>
-                <li>Stay informed about public health policy</li>
-            </ul>
-            <a href="outreach.html" class="btn-action">Take Action</a>
-        </div>
-    </section>
-
-    <!-- Volunteer Section -->
-    <section class="about-volunteer" id="volunteer">
-        <div class="container">
-            <h2>Volunteer</h2>
-            <div class="section-bar"></div>
-            <p class="about-volunteer-intro">Volunteer your skills to help defend science-based public health policy. Whether you code, design, write, or organize, there's a place for you in the fight for scientific freedom.</p>
-            <form class="volunteer-form" id="volunteer-form">
-                <div id="volunteer-error" class="volunteer-error"></div>
-
-                <div class="form-group">
-                    <label for="volunteer-name">Full Name <span style="color:var(--red)">*</span></label>
-                    <input type="text" id="volunteer-name" name="name" required placeholder="Your full name">
+        <!-- Why This Matters -->
+        <section>
+            <div class="wrap">
+                <div class="prose">
+                    <h2>Why This Matters</h2>
+                    <p>Public health policies shape the safety, well-being, and resilience of communities across the country. Decisions made by lawmakers affect everything from vaccine policy and medical research to healthcare access and the strength of our public health systems.</p>
+                    <p>When misinformation or political pressure overrides credible scientific evidence, the consequences can affect entire communities. SAFE Action Fund exists to ensure that science remains central to public policy discussions and that decision-makers remain accountable to the public good.</p>
                 </div>
-
-                <div class="form-group">
-                    <label for="volunteer-email">Email <span style="color:var(--red)">*</span></label>
-                    <input type="email" id="volunteer-email" name="email" required placeholder="you@example.com">
-                </div>
-
-                <div class="form-group">
-                    <p class="form-group-label">Skills <span style="color:var(--red)">*</span></p>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
-                        <label><input type="checkbox" name="skills" value="Backend Development"> Backend Development</label>
-                        <label><input type="checkbox" name="skills" value="Design"> Design</label>
-                        <label><input type="checkbox" name="skills" value="Product"> Product</label>
-                        <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
-                        <label><input type="checkbox" name="skills" value="Operations"> Operations</label>
-                        <label><input type="checkbox" name="skills" value="Other"> Other</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
-                    <select id="volunteer-availability" name="availability" required>
-                        <option value="">Select availability...</option>
-                        <option value="5">5 hours/month</option>
-                        <option value="10">10 hours/month</option>
-                        <option value="20">20 hours/month</option>
-                        <option value="40+">40+ hours/month</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <p class="form-group-label">Interests</p>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="interests" value="Developing Web Apps"> Developing Web Apps</label>
-                        <label><input type="checkbox" name="interests" value="Developing New Tools"> Developing New Tools</label>
-                        <label><input type="checkbox" name="interests" value="Curating Pipeline"> Curating Pipeline</label>
-                        <label><input type="checkbox" name="interests" value="Research"> Research</label>
-                        <label><input type="checkbox" name="interests" value="Community Building"> Community Building</label>
-                    </div>
-                </div>
-
-                <button type="submit" id="volunteer-submit" class="volunteer-submit">Submit Application</button>
-            </form>
-
-            <div id="volunteer-success" class="volunteer-success" style="display:none;">
-                <h2>Application Submitted!</h2>
-                <p>We'll review your application and get back to you soon.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Donate Section -->
-    <section class="about-donate" id="donate">
-        <div class="container">
-            <h2>Support Our Work</h2>
-            <div class="section-bar"></div>
-            <p class="about-donate-intro">Your contribution funds the tools, research, and advocacy that keep science at the center of public health policy. Every dollar helps us build a more informed, engaged democracy.</p>
-            <div class="donation-box">
-                <!-- Frequency Toggle -->
-                <div class="frequency-toggle">
-                    <button class="active" id="btn-onetime" type="button">One-Time</button>
-                    <button id="btn-monthly" type="button">Monthly</button>
-                </div>
-
-                <!-- Amount Cards -->
-                <div class="amount-grid">
-                    <div class="amount-card" data-amount="10">
-                        <span class="amount">$10</span>
-                        <span class="amount-desc">Helps send action alerts to 100 citizens</span>
+        <!-- Get Involved -->
+        <section style="padding-top:0;">
+            <div class="wrap">
+                <div class="joinbox">
+                    <div>
+                        <h3>Get Involved</h3>
+                        <p>Protecting science in public policy requires informed citizens and engaged communities. Join SAFE Action Fund and help ensure that evidence, not misinformation, guides the laws that shape our healthcare system: track legislation, contact your representatives, and stay informed about public health policy.</p>
                     </div>
-                    <div class="amount-card" data-amount="25">
-                        <span class="amount">$25</span>
-                        <span class="amount-desc">Funds one day of legislative monitoring</span>
-                    </div>
-                    <div class="amount-card selected" data-amount="50">
-                        <span class="amount">$50</span>
-                        <span class="amount-desc">Supports development of new civic tools</span>
-                    </div>
-                    <div class="amount-card" data-amount="100">
-                        <span class="amount">$100</span>
-                        <span class="amount-desc">Covers a week of policy analysis</span>
-                    </div>
-                    <div class="amount-card" data-amount="250">
-                        <span class="amount">$250</span>
-                        <span class="amount-desc">Funds a community outreach campaign</span>
-                    </div>
-                    <div class="amount-card" data-amount="500">
-                        <span class="amount">$500</span>
-                        <span class="amount-desc">Becomes a founding partner for the quarter</span>
+                    <div style="text-align:center;">
+                        <a href="outreach.html" class="btn primary" style="background:var(--gold);color:#231a02;">Take Action</a>
                     </div>
                 </div>
-
-                <!-- Custom Amount -->
-                <div class="custom-amount" id="custom-amount-wrap" style="display:none;">
-                    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-                        <span style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--blue);">$</span>
-                        <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount"
-                            style="width:160px; padding:12px 16px; font-size:1.1rem; font-family:var(--font-body); font-weight:600; border:2px solid var(--blue); border-radius:10px; text-align:center; outline:none;">
-                    </div>
-                </div>
-                <div class="custom-amount">
-                    <a href="#" id="custom-amount-toggle">Enter a custom amount &rarr;</a>
-                </div>
-
-                <!-- Donate Button -->
-                <button type="button" class="donate-cta-btn" id="donate-now-btn">Donate Now</button>
-                <div id="donate-status" style="text-align:center; margin-top:12px; font-family:var(--font-body); font-size:0.95rem; color:var(--text-mid); display:none;"></div>
             </div>
-            <p class="about-donate-disclosure">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
+        <!-- Volunteer -->
+        <section id="volunteer" class="watch">
+            <div class="wrap">
+                <div class="sechead">
+                    <h2>Volunteer</h2>
+                    <span class="chip">SKILLS WANTED</span>
+                </div>
+                <p class="lede" style="color:var(--ink2);max-width:64ch;margin-bottom:24px;">Volunteer your skills to help defend science-based public health policy. Whether you code, design, write, or organize, there's a place for you in the fight for scientific freedom.</p>
+                <form class="card" id="volunteer-form" style="max-width:620px;">
+                    <div id="volunteer-error" class="volunteer-error"></div>
+
+                    <div class="field">
+                        <label for="volunteer-name">Full Name <span style="color:var(--red)">*</span></label>
+                        <input type="text" id="volunteer-name" name="name" required placeholder="Your full name">
+                    </div>
+
+                    <div class="field">
+                        <label for="volunteer-email">Email <span style="color:var(--red)">*</span></label>
+                        <input type="email" id="volunteer-email" name="email" required placeholder="you@example.com">
+                    </div>
+
+                    <div class="field">
+                        <p style="font-weight:700;font-size:14px;margin-bottom:8px;">Skills <span style="color:var(--red)">*</span></p>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+                            <label><input type="checkbox" name="skills" value="Backend Development"> Backend Development</label>
+                            <label><input type="checkbox" name="skills" value="Design"> Design</label>
+                            <label><input type="checkbox" name="skills" value="Product"> Product</label>
+                            <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
+                            <label><input type="checkbox" name="skills" value="Operations"> Operations</label>
+                            <label><input type="checkbox" name="skills" value="Other"> Other</label>
                         </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
                     </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
+
+                    <div class="field">
+                        <label for="volunteer-availability">Monthly Availability <span style="color:var(--red)">*</span></label>
+                        <select id="volunteer-availability" name="availability" required>
+                            <option value="">Select availability...</option>
+                            <option value="5">5 hours/month</option>
+                            <option value="10">10 hours/month</option>
+                            <option value="20">20 hours/month</option>
+                            <option value="40+">40+ hours/month</option>
+                        </select>
                     </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
+
+                    <div class="field">
+                        <p style="font-weight:700;font-size:14px;margin-bottom:8px;">Interests</p>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="interests" value="Developing Web Apps"> Developing Web Apps</label>
+                            <label><input type="checkbox" name="interests" value="Developing New Tools"> Developing New Tools</label>
+                            <label><input type="checkbox" name="interests" value="Curating Pipeline"> Curating Pipeline</label>
+                            <label><input type="checkbox" name="interests" value="Research"> Research</label>
+                            <label><input type="checkbox" name="interests" value="Community Building"> Community Building</label>
+                        </div>
                     </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
+
+                    <button type="submit" id="volunteer-submit" class="btn primary fullbtn">Submit Application</button>
+                </form>
+
+                <div id="volunteer-success" class="volunteer-success card" style="display:none;max-width:620px;">
+                    <h2>Application Submitted!</h2>
+                    <p>We'll review your application and get back to you soon.</p>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
+        </section>
+
+        <!-- Donate -->
+        <section id="donate">
+            <div class="wrap">
+                <div class="sechead">
+                    <h2>Support Our Work</h2>
+                    <span class="chip">SECURE CHECKOUT VIA STRIPE</span>
                 </div>
+                <p class="lede" style="color:var(--ink2);max-width:64ch;margin-bottom:24px;">Your contribution funds the tools, research, and advocacy that keep science at the center of public health policy. Every dollar helps us build a more informed, engaged democracy.</p>
+                <div class="card" style="max-width:720px;padding:32px;">
+                    <!-- Frequency Toggle -->
+                    <div class="frequency-toggle">
+                        <button class="active" id="btn-onetime" type="button">One-Time</button>
+                        <button id="btn-monthly" type="button">Monthly</button>
+                    </div>
+
+                    <!-- Amount Cards -->
+                    <div class="amount-grid">
+                        <div class="amount-card" data-amount="10">
+                            <span class="amount">$10</span>
+                            <span class="amount-desc">Helps send action alerts to 100 citizens</span>
+                        </div>
+                        <div class="amount-card" data-amount="25">
+                            <span class="amount">$25</span>
+                            <span class="amount-desc">Funds one day of legislative monitoring</span>
+                        </div>
+                        <div class="amount-card selected" data-amount="50">
+                            <span class="amount">$50</span>
+                            <span class="amount-desc">Supports development of new civic tools</span>
+                        </div>
+                        <div class="amount-card" data-amount="100">
+                            <span class="amount">$100</span>
+                            <span class="amount-desc">Covers a week of policy analysis</span>
+                        </div>
+                        <div class="amount-card" data-amount="250">
+                            <span class="amount">$250</span>
+                            <span class="amount-desc">Funds a community outreach campaign</span>
+                        </div>
+                        <div class="amount-card" data-amount="500">
+                            <span class="amount">$500</span>
+                            <span class="amount-desc">Becomes a founding partner for the quarter</span>
+                        </div>
+                    </div>
+
+                    <!-- Custom Amount -->
+                    <div class="custom-amount" id="custom-amount-wrap" style="display:none;">
+                        <div class="custom-row">
+                            <span class="cur">$</span>
+                            <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount">
+                        </div>
+                    </div>
+                    <div class="custom-amount">
+                        <a href="#" id="custom-amount-toggle">Enter a custom amount &rarr;</a>
+                    </div>
+
+                    <!-- Donate Button -->
+                    <button type="button" class="btn primary fullbtn" id="donate-now-btn" style="background:var(--red);font-size:17px;">Donate Now</button>
+                    <div id="donate-status"></div>
+                </div>
+                <p class="disclosure" style="margin-left:0;text-align:left;">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
             </div>
+        </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="top">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          <span class="word">SAFE <span class="act">ACTION</span></span>
         </div>
+        <div class="links">
+          <a href="tracker.html">Live Tracker</a>
+          <a href="outreach.html">Take Action</a>
+          <a href="join.html">Join the List</a>
+          <a href="about.html">About</a>
+          <a href="donate.html">Donate</a>
+          <a href="directory.html">Pledge Directory</a>
+          <a href="media.html">Media Kit</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+      </div>
     </footer>
 <script src="js/config.js"></script>
 <script src="js/volunteer.js"></script>

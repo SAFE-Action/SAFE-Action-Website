@@ -9,159 +9,236 @@
     <meta property="og:description" content="Find your reps. Take the most impactful action to defend science.">
     <meta property="og:type" content="website">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+    /* Scoped V6 restyle of legacy classes rendered by my-reps-page.js (load-bearing names kept) */
+    .mobile-tip-banner{display:none;background:var(--navy-deep);color:#9daac6;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:6px 0;text-align:center;}
+    @media(min-width:900px){.mobile-tip-banner{display:block;}}
+    .mobile-tip-banner button{background:none;border:none;color:#9daac6;font-size:14px;cursor:pointer;padding:2px 6px;}
+    .address-lookup{max-width:720px;margin:0 auto;}
+    .address-input-wrap{display:flex;gap:10px;}
+    .address-input-wrap input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:12px 16px;font-size:16px;font-family:var(--sans);color:var(--ink);}
+    .address-input-wrap input:focus-visible{outline:3px solid var(--navy);outline-offset:1px;}
+    .address-input-wrap .btn{flex:none;}
+    .address-privacy{font-size:12.5px;color:var(--muted);margin-top:10px;}
+    @media(max-width:600px){.address-input-wrap{flex-direction:column;}}
+    .saved-address-bar{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);padding:12px 18px;margin-bottom:20px;font-size:14.5px;}
+    .loading-spinner{text-align:center;padding:40px 20px;color:var(--muted);}
+    .spinner{width:44px;height:44px;border:4px solid var(--line);border-top-color:var(--navy);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .btn-primary{background:var(--navy);color:#fff;box-shadow:var(--shadow-1);}
+    .btn-primary:hover{background:#1d3161;transform:translateY(-2px);box-shadow:var(--shadow-2);}
+    .btn-outline{background:transparent;color:var(--navy);border-color:#c9cedb;}
+    .btn-outline:hover{background:#fff;box-shadow:var(--shadow-1);}
+    .btn-sm{padding:8px 14px;font-size:13.5px;}
+    .rep-hub-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0 8px;}
+    @media(min-width:768px){.rep-hub-grid{grid-template-columns:1fr 1fr;}}
+    .rep-hub-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);overflow:hidden;}
+    .rep-hub-card.action-oppose{border-left:5px solid var(--red);}
+    .rep-hub-card.action-pledge{border-left:5px solid var(--navy);}
+    .rep-hub-card-header{display:flex;align-items:center;gap:14px;padding:16px 18px;}
+    .rep-hub-photo,.rep-hub-photo-placeholder{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--line);}
+    .rep-hub-photo-placeholder{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;border:none;}
+    .rep-hub-info{flex:1;min-width:0;}
+    .rep-hub-name{font-size:17px;font-weight:800;margin:0 0 4px;}
+    .rep-hub-office{display:block;font-size:13.5px;color:var(--ink2);margin-top:4px;}
+    .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;background:#edeff3;color:#5d6b80;}
+    .badge-anti,.badge.party-r{background:#fbe4dc;color:#8c3a26;}
+    .badge-pro{background:#fdf8ea;color:var(--gold);}
+    .badge.party-d{background:#eceef3;color:var(--navy);}
+    .badge.party-i{background:var(--gold-soft);color:#7a5a08;}
+    .rep-hub-action{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg);border-top:1px solid var(--line);}
+    .action-icon{font-size:20px;flex:none;color:var(--gold);}
+    .action-content{flex:1;min-width:0;}
+    .action-content strong{display:block;font-size:14.5px;}
+    .action-content p{font-size:12.5px;color:var(--muted);margin:2px 0 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .rep-hub-action .btn{flex:none;padding:8px 14px;font-size:13.5px;}
+    .rep-hub-expand-btn{display:block;width:100%;padding:9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:transparent;border:none;border-top:1px solid var(--line);cursor:pointer;}
+    .rep-hub-expand-btn:hover{background:#f0eee8;}
+    .rep-hub-detail{padding:18px;border-top:1px solid var(--line);}
+    .rep-hub-detail h4{font-size:14px;font-weight:800;margin:0 0 8px;}
+    .rep-hub-bills,.rep-hub-contact,.rep-hub-candidates{margin-bottom:16px;}
+    .rep-bill-item{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;flex-wrap:wrap;}
+    .rep-bill-status{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-left:auto;}
+    .rep-hub-contact p{font-size:13.5px;margin:4px 0;}
+    .rep-hub-template{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+    .rep-hub-template textarea,.phone-script-textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;font-family:var(--sans);line-height:1.5;resize:vertical;}
+    .template-personalize,.template-actions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0;}
+    .template-field{flex:1;min-width:150px;}
+    .template-field input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13.5px;font-family:var(--sans);}
+    .template-field-label,.call-card-script-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:8px 0 4px;}
+    .template-content{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;}
+    pre.template-body{white-space:pre-wrap;font-family:var(--sans);line-height:1.5;margin:0 0 10px;}
+    .candidate-card-list{display:flex;flex-direction:column;gap:10px;}
+    .candidate-action-card{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:10px;padding:12px 14px;}
+    .candidate-action-card.party-r{border-left-color:var(--red);}
+    .candidate-action-card.party-d{border-left-color:var(--navy);}
+    .candidate-action-card.party-i{border-left-color:var(--gold);}
+    .cand-card-header{display:flex;align-items:center;gap:8px;}
+    .cand-card-name{font-weight:700;font-size:14px;}
+    .cand-card-party{font-family:var(--mono);font-size:10.5px;background:#eceef3;color:var(--navy);border-radius:6px;padding:2px 7px;}
+    .cand-card-seat,.cand-subtext{font-size:12.5px;color:var(--muted);margin-bottom:8px;}
+    .cand-template-btn{border:1.5px solid #c9cedb;background:#fff;color:var(--navy);}
+    .cand-template-panel{margin-top:10px;}
+    .cand-fec-link{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;}
+    .email-all-hero{background:var(--navy);border-radius:16px;padding:36px 28px;margin:20px 0 24px;color:#fff;text-align:center;box-shadow:var(--shadow-2);}
+    .hero-emoji{font-size:34px;margin-bottom:6px;}
+    .hero-heading{font-size:clamp(20px,2.6vw,26px);font-weight:800;margin:0 0 8px;letter-spacing:-.01em;}
+    .hero-desc{font-size:14.5px;color:#b9c3da;max-width:56ch;margin:0 auto 20px;line-height:1.5;}
+    .hero-input-row{display:flex;gap:10px;justify-content:center;margin-bottom:18px;flex-wrap:wrap;}
+    .hero-input-group{flex:1;min-width:160px;max-width:230px;}
+    .hero-input{width:100%;border-radius:999px;border:1.5px solid #3a4a74;background:#0d1730;color:#fff;padding:11px 16px;font-size:14.5px;font-family:var(--sans);text-align:center;}
+    .hero-input::placeholder{color:#8894b2;}
+    .hero-input:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+    .hero-btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+    .email-all-hero .btn-primary,.email-all-bar .btn-primary,.call-card .btn-primary{background:var(--gold);color:#231a02;}
+    .email-all-hero .btn-primary:hover,.email-all-bar .btn-primary:hover,.call-card .btn-primary:hover{background:#dba618;}
+    .email-all-hero .btn-outline,.email-all-bar .btn-outline,.call-card .btn-outline{border-color:#3a4a74;color:#e8ecf5;}
+    .pulse-btn{animation:heroPulse 2s ease-in-out infinite;}
+    .pulse-btn:hover{animation:none;}
+    @keyframes heroPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,147,15,.45);}50%{box-shadow:0 0 0 12px rgba(200,147,15,0);}}
+    .email-all-bar{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;color:#fff;box-shadow:var(--shadow-2);}
+    .email-all-inner{display:flex;flex-direction:column;gap:10px;}
+    .email-all-text strong{display:block;font-size:16px;}
+    .email-all-text p{font-size:13.5px;color:#b9c3da;margin:4px 0 0;}
+    .rep-list-toggle-btn{display:block;width:100%;padding:13px 18px;background:transparent;border:1.5px dashed #c9cedb;border-radius:999px;color:var(--navy);font-weight:700;font-size:14.5px;font-family:var(--sans);cursor:pointer;margin-bottom:14px;}
+    .rep-list-toggle-btn:hover{background:#fff;box-shadow:var(--shadow-1);}
+    .toggle-icon{font-size:11px;margin-right:6px;}
+    .anti-spam-notice{background:#fdf8ea;border:1px solid var(--gold-soft);border-radius:10px;padding:10px 14px;margin-bottom:10px;font-size:13.5px;color:#7a5a08;width:100%;}
+    .call-text-overlay{position:fixed;inset:0;background:rgba(16,27,51,.88);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
+    .call-card{background:var(--navy);border-radius:16px;padding:30px 26px;max-width:480px;width:100%;color:#fff;position:relative;box-shadow:var(--shadow-2);}
+    .call-card-done{text-align:center;padding:44px 26px;}
+    .call-card-emoji{font-size:44px;margin-bottom:12px;}
+    .call-card-progress{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#9daac6;margin-bottom:14px;}
+    .call-card-header{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+    .call-card-header h3{font-size:19px;margin:0 0 4px;font-weight:800;}
+    .call-card-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid #3a4a74;}
+    .call-card-meta{font-size:13.5px;color:#b9c3da;margin:0;}
+    .call-card-phone{display:block;text-align:center;font-size:22px;font-weight:800;color:#fff;background:#0d1730;border:2px solid var(--gold);border-radius:12px;padding:14px;margin-bottom:18px;text-decoration:none;}
+    .call-card-script{background:#0d1730;border:1px solid #3a4a74;border-radius:10px;padding:13px 15px;font-size:13.5px;color:#e8ecf5;white-space:pre-wrap;line-height:1.5;cursor:pointer;margin:0 0 18px;font-family:var(--sans);}
+    .call-card-btns{display:flex;gap:10px;flex-wrap:wrap;}
+    .call-card-btns .btn{flex:1;min-width:100px;text-align:center;}
+    .call-card-skip{flex:0 1 auto !important;min-width:70px !important;color:#9daac6 !important;border-color:#3a4a74 !important;}
+    .call-card-close{position:absolute;top:10px;right:14px;background:none;border:none;color:#9daac6;font-size:26px;cursor:pointer;line-height:1;padding:0;}
+    .call-card-close:hover{color:#fff;}
+    .safe-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-deep);color:#fff;padding:13px 22px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:var(--shadow-2);z-index:10000;opacity:0;transition:opacity .3s,transform .3s;max-width:90vw;text-align:center;}
+    .safe-toast-show{opacity:1;transform:translateX(-50%) translateY(0);}
+    .report-modal-overlay{position:fixed;inset:0;background:rgba(16,27,51,.6);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;}
+    .report-modal{background:var(--card);border-radius:var(--radius);padding:24px;max-width:440px;width:100%;position:relative;box-shadow:var(--shadow-2);}
+    .report-modal p{font-size:14px;color:var(--ink2);margin:8px 0 12px;}
+    .report-modal label{display:block;font-weight:700;font-size:13.5px;margin:10px 0 4px;}
+    .report-modal input,.report-modal textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;font-family:var(--sans);}
+    .report-modal textarea{resize:vertical;min-height:60px;}
+    .report-modal-btns{display:flex;gap:10px;justify-content:flex-end;margin-top:16px;}
+    .report-modal-close{position:absolute;top:8px;right:12px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer;}
+    .pwa-install-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:9000;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-2);padding:14px 16px;}
+    .pwa-install-inner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between;}
+    .pwa-dismiss-btn{background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;}
+    </style>
 </head>
 <body>
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link active">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Tracker status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="data-updated-stamp">TAKE ACTION HUB</span>
+        <span class="side">SOURCE: LEGISCAN + GOVINFO + OPENSTATES</span>
+    </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
             </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
-        </div>
-    </div>
-
-    <!-- Mobile recommendation banner (desktop only) -->
-    <div id="mobile-tip-banner" class="mobile-tip-banner" style="display:none;">
-        <div class="container" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-            <span>&#128241; <strong>Tip:</strong> This page works best on your phone - visit <strong>scienceandfreedom.com</strong> on mobile to contact all your reps in under 2 minutes.</span>
-            <button onclick="this.parentElement.parentElement.style.display='none';localStorage.setItem('hideMobileTip','1')" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:0.9rem;cursor:pointer;padding:2px 6px;" title="Dismiss">&times;</button>
-        </div>
-    </div>
-
-    <!-- Hero -->
-    <section class="quiz-hero">
-        <div class="container">
-            <div class="hero-stars-decoration hero-stars-sm" aria-hidden="true">
-                <span class="hero-star">&#9733;</span>
-                <span class="hero-star hero-star-lg">&#9733;</span>
-                <span class="hero-star">&#9733;</span>
+            <div class="navlinks">
+                <a href="tracker.html">Live Tracker</a>
+                <a href="outreach.html" aria-current="page">Take Action</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="join.html">Join the List</a>
             </div>
-            <h1 class="hero-title">Find Your Representatives</h1>
-            <p class="hero-subtitle">Enter your address to see who represents you, which bills threaten science in your area, and exactly what to do about it.</p>
-        </div>
-    </section>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
 
-    <!-- Hub Section -->
-    <section class="tracker-section">
-        <div class="container">
+<!-- Mobile recommendation banner (desktop only) -->
+<div id="mobile-tip-banner" class="mobile-tip-banner" style="display:none;">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
+        <span>&#128241; <strong>Tip:</strong> This page works best on your phone - visit <strong>scienceandfreedom.com</strong> on mobile to contact all your reps in under 2 minutes.</span>
+        <button onclick="this.parentElement.parentElement.style.display='none';localStorage.setItem('hideMobileTip','1')" title="Dismiss">&times;</button>
+    </div>
+</div>
+
+<main>
+    <div class="pagehero">
+        <div class="wrap">
+            <h1>Take Action</h1>
+            <p class="lede">Find your representatives and make your voice heard in two minutes.</p>
+        </div>
+    </div>
+
+    <section style="padding-top:8px;">
+        <div class="wrap">
             <!-- Address Input -->
             <div id="address-section" class="address-lookup">
-                <form id="address-form" class="address-form">
-                    <div class="address-input-wrap">
-                        <input type="text" id="address-input" placeholder="Enter your full address (e.g., 123 Main St, Austin, TX 78701)" autocomplete="street-address" required>
-                        <button type="submit" class="btn btn-primary btn-lg">
-                            <span class="btn-star">&#9733;</span>
-                            Find My Reps
-                        </button>
-                    </div>
-                    <p class="address-privacy">Your address is stored only in your browser and never sent to our servers.</p>
-                </form>
+                <div class="card">
+                    <form id="address-form" class="address-form">
+                        <div class="field" style="margin-bottom:12px;">
+                            <label for="address-input">Your address</label>
+                            <div class="address-input-wrap">
+                                <input type="text" id="address-input" placeholder="Enter your full address (e.g., 123 Main St, Austin, TX 78701)" autocomplete="street-address" required>
+                                <button type="submit" class="btn primary">Find My Reps</button>
+                            </div>
+                        </div>
+                        <p class="address-privacy">Your address is stored only in your browser and never sent to our servers.</p>
+                    </form>
+                </div>
             </div>
 
             <!-- State Fallback (shown when no Civic API key) -->
             <div id="state-fallback" class="state-fallback" style="display:none;">
-                <div class="section-header">
-                    <h2 class="section-title">Select Your State</h2>
-                    <p class="section-desc">Choose your state to see your federal representatives and active bills.</p>
-                </div>
-                <div class="state-selector">
-                    <div class="form-group">
+                <div class="card" style="max-width:520px;margin:0 auto;">
+                    <h2 style="font-weight:800;font-size:22px;margin-bottom:6px;">Select Your State</h2>
+                    <p class="muted" style="font-size:14.5px;margin-bottom:16px;">Choose your state to see your federal representatives and active bills.</p>
+                    <div class="field">
                         <label for="state-select">State</label>
                         <select id="state-select">
                             <option value="">Choose your state...</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary" id="state-lookup-btn">Look Up</button>
+                    <button class="btn primary" id="state-lookup-btn">Look Up</button>
                 </div>
             </div>
 
             <!-- Saved Address Bar -->
             <div id="saved-address-bar" class="saved-address-bar" style="display:none;">
                 <span>Showing representatives for: <strong id="saved-address-text"></strong></span>
-                <button class="btn btn-outline btn-sm" id="change-address-btn">Change Address</button>
+                <button class="btn ghost small" id="change-address-btn">Change Address</button>
             </div>
 
             <!-- Stats Bar -->
-            <div id="hub-stats" class="tracker-impact-bar hub-stats" style="display:none;">
-                <div class="tracker-impact-grid">
-                    <div class="tracker-impact-item">
-                        <span class="tracker-impact-number" id="stat-reps-found">0</span>
-                        <span class="tracker-impact-label">Your Representatives</span>
+            <div id="hub-stats" style="display:none;margin:24px 0 8px;">
+                <div class="statgrid">
+                    <div class="stat">
+                        <div class="num" id="stat-reps-found">0</div>
+                        <div class="lbl">Your Representatives</div>
                     </div>
-                    <div class="tracker-impact-item">
-                        <span class="tracker-impact-number" id="stat-active-bills">0</span>
-                        <span class="tracker-impact-label">Anti-Science Bills</span>
+                    <div class="stat threat">
+                        <div class="num" id="stat-active-bills">0</div>
+                        <div class="lbl">Anti-Science Bills</div>
                     </div>
-                    <div class="tracker-impact-item">
-                        <span class="tracker-impact-number" id="stat-no-pledge">0</span>
-                        <span class="tracker-impact-label">Haven't Taken Pledge</span>
+                    <div class="stat gold">
+                        <div class="num" id="stat-no-pledge">0</div>
+                        <div class="lbl">Haven't Taken Pledge</div>
                     </div>
                 </div>
             </div>
@@ -173,9 +250,9 @@
             </div>
 
             <!-- Error -->
-            <div id="hub-error" class="empty-state" style="display:none;">
-                <h3>Could Not Find Representatives</h3>
-                <p>Please check your address and try again.</p>
+            <div id="hub-error" class="card center" style="display:none;margin-top:20px;">
+                <h3 style="font-weight:800;margin-bottom:6px;">Could Not Find Representatives</h3>
+                <p class="muted">Please check your address and try again.</p>
             </div>
 
             <!-- Rep Cards Section -->
@@ -185,61 +262,31 @@
 
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Join the List</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="media.html">Media Kit</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
-    </footer>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
 
     <script src="js/config.js?v=60"></script>
     <script src="js/legislation-api.js?v=60"></script>

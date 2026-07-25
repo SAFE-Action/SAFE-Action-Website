@@ -13,360 +13,314 @@
     <meta name="twitter:title" content="SAFE Action - Take the Pledge">
     <meta name="twitter:description" content="Take the SAFE Action pledge and appear in our public candidate directory for science and public health positions.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+      /* V6-scoped styles for quiz form states driven by js/quiz.js */
+      .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+      @media(max-width:640px){.form-row{grid-template-columns:1fr;}}
+      #pledge-form .card{margin-bottom:20px;padding:28px;}
+      .cardtitle{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:800;margin-bottom:20px;letter-spacing:-.01em;}
+      .cardnum{flex:none;width:30px;height:30px;border-radius:9px;background:#fdf8ea;border:1px solid var(--gold-soft);
+        color:var(--gold);font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;}
+      .required{color:var(--red);}
+      .optional-label{color:var(--muted);font-weight:400;font-size:12.5px;}
+      .form-help-text{font-size:12.5px;color:var(--muted);margin:-2px 0 8px;}
+      .error-msg{display:block;color:var(--red);font-size:12.5px;min-height:16px;margin-top:4px;}
+      .field input.error,.field select.error,.field textarea.error{border-color:var(--red);}
+      .email-warning{display:none;font-size:12.5px;color:#8c5a00;background:#fdf8ea;border:1px solid var(--gold-soft);
+        border-radius:8px;padding:8px 12px;margin-top:6px;}
+      .email-warning.show{display:block;}
+      .field input.warning{border-color:var(--gold);}
+      .char-count{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);text-align:right;margin-top:4px;}
+      .question-label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;}
+      .radio-group{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+      .radio-option{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;
+        padding:11px 14px;cursor:pointer;background:#fff;font-size:15px;font-weight:600;color:var(--ink);}
+      .radio-option:hover{border-color:#c9cedb;}
+      .radio-option:has(input:checked){border-color:var(--navy);box-shadow:var(--shadow-1);}
+      .radio-option input{accent-color:var(--navy);width:16px;height:16px;flex:none;}
+      .photo-upload-area{position:relative;border:1.5px dashed #c9cedb;border-radius:10px;background:#fff;
+        padding:22px;text-align:center;cursor:pointer;}
+      .photo-upload-area.dragover{border-color:var(--navy);background:#f0f3fa;}
+      .photo-file-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;}
+      .photo-placeholder{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:13.5px;}
+      .photo-formats{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;}
+      .photo-preview{position:relative;display:inline-block;}
+      .photo-preview img{width:120px;height:120px;border-radius:12px;object-fit:cover;border:1px solid var(--line);display:block;}
+      .photo-remove-btn{position:absolute;top:-8px;right:-8px;z-index:2;width:24px;height:24px;border-radius:50%;
+        border:none;background:var(--red);color:#fff;font-size:15px;line-height:1;cursor:pointer;}
+      .form-actions{text-align:center;margin-top:8px;}
+      .btn-star{color:var(--gold);}
+      .form-note{font-size:12.5px;color:var(--muted);margin:14px auto 0;max-width:52ch;}
+      .spinner{border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;}
+      @keyframes spin{to{transform:rotate(360deg);}}
+      .success-message{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-1);
+        padding:40px 28px;text-align:center;max-width:560px;margin:0 auto;}
+      .success-message h2{font-weight:800;font-size:24px;margin:10px 0 8px;letter-spacing:-.01em;}
+      .success-message p{color:var(--ink2);font-size:15px;}
+      .error-banner{background:#fbe4dc;border:1px solid #e5b3a3;color:#7c2a17;border-radius:10px;
+        padding:14px 18px;margin-top:16px;font-weight:600;text-align:center;}
+    </style>
 </head>
 <body>
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html" class="active">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Site status">
+  <div class="wrap">
+    <span class="livedot" aria-hidden="true"></span>
+    <span class="label">SAFE ACTION - CANDIDATE PLEDGE PROGRAM</span>
+    <span class="side">PUBLIC PLEDGE DIRECTORY</span>
+  </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
-        </div>
+<header class="site">
+  <div class="wrap">
+    <nav class="main" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="SAFE Action home">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span class="word">SAFE <span class="act">ACTION</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="tracker.html">Live Tracker</a>
+        <a href="outreach.html">Take Action</a>
+        <a href="about.html">About</a>
+        <a class="btn primary small" href="join.html">Join the List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="pagehero">
+    <div class="wrap">
+      <h1>SAFE Action Candidate Pledge</h1>
+      <p class="lede">Fill out the form below to let voters know where you stand. Verified pledges appear in our public candidate directory.</p>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <a class="btn ghost small" href="directory.html">View the Pledge Directory</a>
+        <span class="chip">VERIFIED BY OFFICIAL EMAIL</span>
+      </div>
     </div>
+  </div>
 
-    <!-- Quiz Hero -->
-    <section class="quiz-hero">
-        <div class="container">
-            <h1 class="hero-title">SAFE Action Candidate Pledge</h1>
-            <p class="hero-subtitle">Fill out the form below to let voters know where you stand.</p>
-        </div>
-    </section>
+  <section style="padding-top:8px;">
+    <div class="wrap">
+      <form id="pledge-form" novalidate>
 
-    <!-- Sub-Nav Tabs -->
-    <div class="tracker-sub-nav">
-        <div class="container">
-            <a href="directory.html" class="sub-nav-link">View Pledges</a>
-            <a href="quiz.html" class="sub-nav-link active">Take the Pledge</a>
+        <!-- Candidate Information -->
+        <div class="card">
+          <h2 class="cardtitle"><span class="cardnum">1</span> Candidate Information</h2>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+              <span class="error-msg" id="firstName-error"></span>
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+              <span class="error-msg" id="lastName-error"></span>
+            </div>
+          </div>
+
+          <!-- Profile Photo Upload -->
+          <div class="field">
+            <label>Profile Photo <span class="optional-label">(Optional)</span></label>
+            <p class="form-help-text">Upload a headshot to appear on your pledge page. Square photos work best.</p>
+            <div class="photo-upload-area" id="photo-upload-area">
+              <div class="photo-preview" id="photo-preview" style="display:none;">
+                <img id="photo-preview-img" alt="Photo preview">
+                <button type="button" class="photo-remove-btn" id="photo-remove" title="Remove photo">&times;</button>
+              </div>
+              <div class="photo-placeholder" id="photo-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span>Click or drag to upload</span>
+                <span class="photo-formats">JPG, PNG, or WebP &middot; Max 5MB</span>
+              </div>
+              <input type="file" id="photoFile" name="photoFile" accept="image/jpeg,image/png,image/webp" class="photo-file-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Official Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="your.name@official-office.gov">
+              <span class="error-msg" id="email-error"></span>
+              <div class="email-warning" id="email-warning">
+                For verification, please use your official government or office email address. Submissions from personal email addresses (gmail.com, yahoo.com, etc.) may require additional verification.
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Official Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+              <span class="error-msg" id="phone-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="party">Party <span class="required">*</span></label>
+              <select id="party" name="party" required>
+                <option value="">Select your party</option>
+                <option value="Republican">Republican</option>
+                <option value="Democrat">Democrat</option>
+                <option value="Libertarian">Libertarian</option>
+                <option value="Independent">Independent</option>
+                <option value="Green">Green</option>
+                <option value="Constitution">Constitution</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-msg" id="party-error"></span>
+            </div>
+            <div class="field">
+              <label for="office">Office Running For <span class="required">*</span></label>
+              <input type="text" id="office" name="office" required placeholder="e.g., U.S. Senate, State Representative">
+              <span class="error-msg" id="office-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="position">Position Running For <span class="required">*</span></label>
+              <input type="text" id="position" name="position" required placeholder="e.g., Senator, Representative, Governor">
+              <span class="error-msg" id="position-error"></span>
+            </div>
+            <div class="field">
+              <label for="district">District <span class="optional-label">(if applicable)</span></label>
+              <input type="text" id="district" name="district" placeholder="e.g., District 5, At-Large">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="city">City <span class="optional-label">(if applicable)</span></label>
+              <input type="text" id="city" name="city" placeholder="e.g., Springfield">
+            </div>
+            <div class="field">
+              <label for="state">State <span class="required">*</span></label>
+              <select id="state" name="state" required>
+                <option value="">Select your state</option>
+              </select>
+              <span class="error-msg" id="state-error"></span>
+            </div>
+          </div>
         </div>
+
+        <!-- Vaccine Question -->
+        <div class="card">
+          <h2 class="cardtitle"><span class="cardnum">2</span> Vaccine Position</h2>
+
+          <div class="field">
+            <label class="question-label">Do you support vaccines? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="vaccineSupport" value="Yes" required>
+                <span class="radio-text">Yes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="vaccineSupport" value="No">
+                <span class="radio-text">No</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="vaccineSupport" value="It depends / Nuanced position">
+                <span class="radio-text">It depends / Nuanced position</span>
+              </label>
+            </div>
+            <span class="error-msg" id="vaccineSupport-error"></span>
+          </div>
+        </div>
+
+        <!-- Short Answer Questions -->
+        <div class="card">
+          <h2 class="cardtitle"><span class="cardnum">3</span> Short Answer Questions</h2>
+
+          <div class="field">
+            <label for="question1">
+              What is your position on medical freedom and informed consent for vaccines?
+              <span class="required">*</span>
+            </label>
+            <textarea id="question1" name="question1" required rows="4" placeholder="Please share your detailed position..." maxlength="2000"></textarea>
+            <div class="char-count"><span id="q1-count">0</span>/2000</div>
+            <span class="error-msg" id="question1-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="question2">
+              What would you do to protect individual health choices if elected?
+              <span class="optional-label">(Optional)</span>
+            </label>
+            <textarea id="question2" name="question2" rows="4" placeholder="Share your plan..." maxlength="2000"></textarea>
+            <div class="char-count"><span id="q2-count">0</span>/2000</div>
+          </div>
+
+          <div class="field">
+            <label for="question3">
+              Is there anything else you would like voters to know about your platform?
+              <span class="optional-label">(Optional)</span>
+            </label>
+            <textarea id="question3" name="question3" rows="4" placeholder="Share additional information..." maxlength="2000"></textarea>
+            <div class="char-count"><span id="q3-count">0</span>/2000</div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button type="submit" class="btn primary" id="submit-btn">
+            <span class="btn-star">&#9733;</span>
+            Submit Your Pledge
+            <span class="btn-star">&#9733;</span>
+          </button>
+          <p class="form-note">After submission, you'll receive a verification email. Your pledge will be publicly visible once verified.</p>
+        </div>
+      </form>
+
+      <!-- Success Message -->
+      <div id="success-message" class="success-message" style="display: none;">
+        <div class="success-icon" style="font-size: 2rem;">&#9993;</div>
+        <h2>Check Your Email to Verify</h2>
+        <p>We've sent a verification link to your official email address. Click the link in the email to make your pledge public in our candidate directory.</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Didn't receive it? Check your spam folder, or <a href="quiz.html" style="color: var(--navy); font-weight: 600;">submit again</a>.</p>
+        <a href="directory.html" class="btn primary" style="margin-top: 20px;">View Candidate Directory</a>
+      </div>
+
+      <!-- Error Message -->
+      <div id="error-message" class="error-banner" style="display: none;">
+        <p>There was an error submitting your pledge. Please try again.</p>
+      </div>
     </div>
+  </section>
+</main>
 
-    <!-- Quiz Form -->
-    <section class="quiz-section">
-        <div class="container">
-            <form id="pledge-form" class="pledge-form" novalidate>
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      <span class="word">SAFE <span class="act">ACTION</span></span>
+    </div>
+    <div class="links">
+      <a href="tracker.html">Live Tracker</a>
+      <a href="outreach.html">Take Action</a>
+      <a href="join.html">Join the List</a>
+      <a href="about.html">About</a>
+      <a href="donate.html">Donate</a>
+      <a href="directory.html">Pledge Directory</a>
+      <a href="media.html">Media Kit</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+  </div>
+</footer>
 
-                <!-- Candidate Information -->
-                <div class="form-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">1</span>
-                        Candidate Information
-                    </h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name <span class="required">*</span></label>
-                            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
-                            <span class="error-msg" id="firstName-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name <span class="required">*</span></label>
-                            <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
-                            <span class="error-msg" id="lastName-error"></span>
-                        </div>
-                    </div>
-
-                    <!-- Profile Photo Upload -->
-                    <div class="form-group photo-upload-group">
-                        <label>Profile Photo <span class="optional-label">(Optional)</span></label>
-                        <p class="form-help-text">Upload a headshot to appear on your pledge page. Square photos work best.</p>
-                        <div class="photo-upload-area" id="photo-upload-area">
-                            <div class="photo-preview" id="photo-preview" style="display:none;">
-                                <img id="photo-preview-img" alt="Photo preview">
-                                <button type="button" class="photo-remove-btn" id="photo-remove" title="Remove photo">&times;</button>
-                            </div>
-                            <div class="photo-placeholder" id="photo-placeholder">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                                <span>Click or drag to upload</span>
-                                <span class="photo-formats">JPG, PNG, or WebP &middot; Max 5MB</span>
-                            </div>
-                            <input type="file" id="photoFile" name="photoFile" accept="image/jpeg,image/png,image/webp" class="photo-file-input">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Official Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="your.name@official-office.gov">
-                            <span class="error-msg" id="email-error"></span>
-                            <div class="email-warning" id="email-warning">
-                                For verification, please use your official government or office email address. Submissions from personal email addresses (gmail.com, yahoo.com, etc.) may require additional verification.
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Official Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                            <span class="error-msg" id="phone-error"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="party">Party <span class="required">*</span></label>
-                            <select id="party" name="party" required>
-                                <option value="">Select your party</option>
-                                <option value="Republican">Republican</option>
-                                <option value="Democrat">Democrat</option>
-                                <option value="Libertarian">Libertarian</option>
-                                <option value="Independent">Independent</option>
-                                <option value="Green">Green</option>
-                                <option value="Constitution">Constitution</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <span class="error-msg" id="party-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="office">Office Running For <span class="required">*</span></label>
-                            <input type="text" id="office" name="office" required placeholder="e.g., U.S. Senate, State Representative">
-                            <span class="error-msg" id="office-error"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="position">Position Running For <span class="required">*</span></label>
-                            <input type="text" id="position" name="position" required placeholder="e.g., Senator, Representative, Governor">
-                            <span class="error-msg" id="position-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="district">District <span class="optional-label">(if applicable)</span></label>
-                            <input type="text" id="district" name="district" placeholder="e.g., District 5, At-Large">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="city">City <span class="optional-label">(if applicable)</span></label>
-                            <input type="text" id="city" name="city" placeholder="e.g., Springfield">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State <span class="required">*</span></label>
-                            <select id="state" name="state" required>
-                                <option value="">Select your state</option>
-                            </select>
-                            <span class="error-msg" id="state-error"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vaccine Question -->
-                <div class="form-card highlight-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">2</span>
-                        Vaccine Position
-                    </h2>
-
-                    <div class="form-group">
-                        <label class="question-label">Do you support vaccines? <span class="required">*</span></label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="Yes" required>
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">Yes</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="No">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">No</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="vaccineSupport" value="It depends / Nuanced position">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text">It depends / Nuanced position</span>
-                            </label>
-                        </div>
-                        <span class="error-msg" id="vaccineSupport-error"></span>
-                    </div>
-                </div>
-
-                <!-- Short Answer Questions -->
-                <div class="form-card">
-                    <h2 class="form-card-title">
-                        <span class="card-number">3</span>
-                        Short Answer Questions
-                    </h2>
-
-                    <div class="form-group">
-                        <label for="question1">
-                            What is your position on medical freedom and informed consent for vaccines?
-                            <span class="required">*</span>
-                        </label>
-                        <textarea id="question1" name="question1" required rows="4" placeholder="Please share your detailed position..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q1-count">0</span>/2000</div>
-                        <span class="error-msg" id="question1-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="question2">
-                            What would you do to protect individual health choices if elected?
-                            <span class="optional-label">(Optional)</span>
-                        </label>
-                        <textarea id="question2" name="question2" rows="4" placeholder="Share your plan..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q2-count">0</span>/2000</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="question3">
-                            Is there anything else you would like voters to know about your platform?
-                            <span class="optional-label">(Optional)</span>
-                        </label>
-                        <textarea id="question3" name="question3" rows="4" placeholder="Share additional information..." maxlength="2000"></textarea>
-                        <div class="char-count"><span id="q3-count">0</span>/2000</div>
-                    </div>
-                </div>
-
-                <!-- Submit -->
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
-                        <span class="btn-star">&#9733;</span>
-                        Submit Your Pledge
-                        <span class="btn-star">&#9733;</span>
-                    </button>
-                    <p class="form-note">After submission, you'll receive a verification email. Your pledge will be publicly visible once verified.</p>
-                </div>
-            </form>
-
-            <!-- Success Message -->
-            <div id="success-message" class="success-message" style="display: none;">
-                <div class="success-icon" style="font-size: 2rem;">&#9993;</div>
-                <h2>Check Your Email to Verify</h2>
-                <p>We've sent a verification link to your official email address. Click the link in the email to make your pledge public in our candidate directory.</p>
-                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 12px;">Didn't receive it? Check your spam folder, or <a href="quiz.html" style="color: var(--primary);">submit again</a>.</p>
-                <a href="directory.html" class="btn btn-primary" style="margin-top: 20px;">View Candidate Directory</a>
-            </div>
-
-            <!-- Error Message -->
-            <div id="error-message" class="error-banner" style="display: none;">
-                <p>There was an error submitting your pledge. Please try again.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/config.js?v=59"></script>
-    <script src="js/sheets.js?v=59"></script>
-    <script src="js/quiz.js?v=59"></script>
-    <script src="js/pwa.js"></script>
+<script src="js/config.js?v=59"></script>
+<script src="js/sheets.js?v=59"></script>
+<script src="js/quiz.js?v=59"></script>
+<script src="js/pwa.js"></script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
 function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}

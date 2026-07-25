@@ -13,87 +13,136 @@
     <meta name="twitter:title" content="SAFE Action - Take Action on a Bill">
     <meta name="twitter:description" content="See where a bill stands and contact your representatives to support evidence-based science and public health policy.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+    /* action page: legacy JS-rendered classes restyled in V6 tokens */
+    :root{--text-mid:var(--ink2);}
+    .back-link{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--ink2);text-decoration:none;margin-bottom:20px;}
+    .back-link:hover{color:var(--ink);text-decoration:underline;}
+    .loading-spinner{text-align:center;padding:64px 0;color:var(--muted);}
+    .spinner{width:34px;height:34px;margin:0 auto 14px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--navy);animation:spin 1s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    #action-content>*+*{margin-top:20px;}
+    .billbanner .sub{align-items:center;}
+    .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px;background:#eceef3;color:var(--navy);}
+    .badge:empty{display:none;}
+    .badge-anti,.badge-stance.anti{background:var(--b1-bg);color:var(--b1-tx);}
+    .badge-pro,.badge-stance.pro{background:#fdf8ea;color:var(--gold);}
+    .badge-stance.monitor{background:var(--b0-bg);color:#5d6b80;}
+    .badge-level.federal{background:var(--gold);color:#231a02;}
+    .badge-impact.high{background:var(--b4-bg);color:var(--b4-tx);}
+    .badge-impact.medium{background:var(--b2-bg);color:var(--b2-tx);}
+    .badge-impact.low{background:var(--b0-bg);color:var(--b0-tx);}
+    .detail-card-title{font-weight:800;font-size:20px;letter-spacing:-.01em;margin-bottom:16px;}
+    .bill-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px 20px;margin-bottom:18px;}
+    .bill-info-item{display:flex;flex-direction:column;gap:2px;}
+    .bill-info-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+    .bill-info-value{font-weight:600;font-size:14.5px;}
+    .bill-summary-full{color:var(--ink2);font-size:15px;margin:0 0 18px;}
+    .status-pipeline{display:flex;flex-wrap:wrap;gap:18px 26px;}
+    .pipeline-step{display:flex;align-items:center;gap:8px;}
+    .pipeline-dot{width:12px;height:12px;border-radius:50%;background:var(--b0-bg);border:2px solid #c9cedb;flex:none;}
+    .pipeline-step.completed .pipeline-dot{background:var(--navy);border-color:var(--navy);}
+    .pipeline-step.current .pipeline-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px var(--gold-soft);}
+    .pipeline-step.dead .pipeline-dot{background:var(--red);border-color:var(--red);}
+    .pipeline-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink2);}
+    .pipeline-step.current .pipeline-label{color:var(--ink);font-weight:700;}
+    .pipeline-step.dead .pipeline-label{color:var(--red);}
+    .btn-primary{background:var(--navy);color:#fff;border:1.5px solid transparent;}
+    .btn-primary:hover{background:#1d3161;}
+    .btn-outline{background:transparent;color:var(--navy);border:1.5px solid #c9cedb;}
+    .btn-outline:hover{background:#fff;box-shadow:var(--shadow-1);}
+    .btn-sm{display:inline-block;font-family:var(--sans);font-weight:700;font-size:13px;border-radius:999px;padding:7px 14px;cursor:pointer;}
+    .selected-rep-contact{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:#f4f2ec;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:16px;}
+    .selected-rep-info{display:flex;flex-direction:column;}
+    .selected-rep-actions{display:flex;gap:8px;flex-wrap:wrap;}
+    .rep-contact-btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:700;font-size:13.5px;border-radius:999px;padding:8px 14px;border:1.5px solid #c9cedb;color:var(--navy);background:#fff;}
+    .rep-contact-btn:hover{box-shadow:var(--shadow-1);}
+    .rep-contact-phone{color:var(--red);}
+    .user-info-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+    .user-info-row input{border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:11px 14px;font-size:15px;font-family:var(--sans);color:var(--ink);}
+    .action-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:12px;}
+    .tab-btn{font-family:var(--sans);font-weight:700;font-size:14px;border:1.5px solid #c9cedb;background:transparent;color:var(--ink2);border-radius:999px;padding:8px 16px;cursor:pointer;}
+    .tab-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+    .tab-panel{display:none;}
+    .tab-panel.active{display:block;}
+    .field textarea{min-height:220px;resize:vertical;}
+    .template-actions{display:flex;align-items:center;gap:12px;}
+    .copy-success{display:none;font-weight:700;color:#1c6b34;font-size:14px;}
+    .copy-success.show{display:inline;}
+    .rep-email-btn{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;text-decoration:none;font-weight:700;font-size:14px;color:var(--navy);border:1.5px solid #c9cedb;border-radius:10px;padding:10px 14px;background:#fff;}
+    .rep-email-btn:hover{box-shadow:var(--shadow-1);}
+    .rep-email-addr{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--muted);}
+    .rep-webform-text{font-size:13.5px;color:var(--ink2);margin-bottom:8px;}
+    .action-confirm-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#fdf8ea;border:1px solid var(--gold-soft);border-radius:10px;padding:12px 16px;font-size:14.5px;margin-top:16px;}
+    .action-confirm-success{background:#eaf5ec;border-color:#cde5d2;color:#1c6b34;}
+    .rep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+    .rep-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-1);}
+    .rep-card.selected{border-color:var(--navy);box-shadow:0 0 0 2px var(--navy),var(--shadow-1);}
+    .rep-card-name{font-weight:800;font-size:15px;}
+    .rep-card-info{font-size:13px;color:var(--ink2);margin-top:4px;}
+    .rep-card-notes{font-size:12.5px;color:var(--muted);margin-top:6px;}
+    .rep-contact{display:flex;flex-direction:column;gap:2px;margin-top:8px;font-size:13px;word-break:break-word;}
+    .rep-actions{margin-top:12px;}
+    .badge-party{background:#eceef3;color:var(--navy);border-radius:6px;padding:2px 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;}
+    .badge-party.republican{background:var(--b1-bg);color:var(--b1-tx);}
+    .badge-party.democratic,.badge-party.democrat{background:#e3e9f6;color:var(--navy);}
+    .signup-success{display:none;font-weight:700;color:#dba618;margin-top:12px;}
+    .signup-success.show{display:block;}
+    .joinbox .list-signup-status{flex-basis:100%;}
+    .joinbox .form-status{color:#8fd6a4;}
+    .joinbox .form-status.error{color:#ff8a7a;}
+    /* report-invalid-email modal (rendered by inline script) */
+    .report-modal-overlay{position:fixed;inset:0;background:rgba(16,27,51,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
+    .report-modal{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-2);padding:28px;max-width:440px;width:100%;position:relative;}
+    .report-modal h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+    .report-modal p{font-size:14px;color:var(--ink2);margin-bottom:14px;}
+    .report-modal label{display:block;font-weight:700;font-size:13px;margin:10px 0 4px;}
+    .report-modal input,.report-modal textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;font-family:var(--sans);}
+    .report-modal-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--muted);}
+    .report-modal-btns{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+    .report-modal-btns .btn{cursor:pointer;}
+    .report-success{font-weight:600;color:#1c6b34;}
+    @media(max-width:560px){.user-info-row{grid-template-columns:1fr;}}
+    </style>
 </head>
 <body>
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
-        </div>
+<div class="statusbar" role="status" aria-label="Tracker status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="data-updated-stamp">BILL ACTION CENTER</span>
+        <span class="side">SOURCE: LEGISCAN + GOVINFO + OPENSTATES</span>
     </div>
+</div>
 
-    <!-- Action Content -->
-    <section class="action-section">
-        <div class="container">
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
+            </a>
+            <div class="navlinks">
+                <a href="tracker.html" aria-current="page">Live Tracker</a>
+                <a href="outreach.html">Take Action</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="join.html">Join the List</a>
+            </div>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+    <section style="padding-top:32px;">
+        <div class="wrap">
             <a href="#" class="back-link" id="back-link">&larr; Back to Tracker</a>
 
             <!-- Loading -->
@@ -105,21 +154,20 @@
             <!-- Main Content (hidden until loaded) -->
             <div id="action-content" style="display: none;">
 
-                <!-- Bill Header -->
-                <div class="candidate-detail-header">
-                    <div>
-                        <div class="candidate-meta-row" style="margin-bottom:8px;">
-                            <span class="badge" id="bill-type-badge"></span>
-                            <span class="badge badge-stance" id="bill-stance-badge"></span>
-                            <span class="badge badge-level" id="bill-level-badge"></span>
-                            <span class="badge badge-impact" id="bill-impact-badge"></span>
-                        </div>
-                        <h1 class="candidate-detail-name" id="bill-heading"></h1>
+                <!-- Bill Banner -->
+                <div class="billbanner">
+                    <span class="k">YOU ARE ACTING ON</span>
+                    <h1 id="bill-heading"></h1>
+                    <div class="sub">
+                        <span class="badge" id="bill-type-badge"></span>
+                        <span class="badge badge-stance" id="bill-stance-badge"></span>
+                        <span class="badge badge-level" id="bill-level-badge"></span>
+                        <span class="badge badge-impact" id="bill-impact-badge"></span>
                     </div>
                 </div>
 
                 <!-- Bill Details -->
-                <div class="detail-card">
+                <div class="card">
                     <h2 class="detail-card-title">Bill Details</h2>
                     <div class="bill-info-grid">
                         <div class="bill-info-item">
@@ -164,24 +212,24 @@
                         </div>
                     </div>
                     <p class="bill-summary-full" id="bill-summary"></p>
-                    <a href="#" class="btn btn-outline" id="bill-full-text" target="_blank" rel="noopener">Read Full Bill Text &rarr;</a>
+                    <a href="#" class="btn ghost" id="bill-full-text" target="_blank" rel="noopener">Read Full Bill Text &rarr;</a>
                 </div>
 
                 <!-- Status Pipeline -->
-                <div class="detail-card">
+                <div class="card">
                     <h2 class="detail-card-title">Bill Progress</h2>
                     <div class="status-pipeline" id="status-pipeline"></div>
                 </div>
 
                 <!-- Take Action -->
-                <div class="detail-card highlight-card" id="take-action-section">
+                <div class="card" id="take-action-section">
                     <h2 class="detail-card-title">Take Action</h2>
 
                     <!-- Selected Rep Contact -->
                     <div id="selected-rep-contact" class="selected-rep-contact" style="display:none;">
                         <div class="selected-rep-info">
                             <strong id="selected-rep-name"></strong>
-                            <span id="selected-rep-detail" style="color:var(--text-mid);font-size:0.9rem;"></span>
+                            <span id="selected-rep-detail" style="color:var(--muted);font-size:0.9rem;"></span>
                         </div>
                         <div class="selected-rep-actions">
                             <a href="#" id="selected-rep-email-btn" class="rep-contact-btn rep-contact-email" style="display:none;">
@@ -198,42 +246,42 @@
 
                     <!-- User Info -->
                     <div class="user-info-row">
-                        <input type="text" id="user-name" placeholder="Your Full Name">
-                        <input type="text" id="user-city" placeholder="Your City">
+                        <input type="text" id="user-name" placeholder="Your Full Name" aria-label="Your full name">
+                        <input type="text" id="user-city" placeholder="Your City" aria-label="Your city">
                     </div>
 
                     <!-- Tabs -->
-                    <div class="action-tabs">
+                    <div class="action-tabs" role="tablist">
                         <button class="tab-btn active" data-tab="email-panel">Email Template</button>
                         <button class="tab-btn" data-tab="phone-panel">Phone Script</button>
                     </div>
 
                     <!-- Email Panel -->
                     <div class="tab-panel active" id="email-panel">
-                        <div class="template-field">
-                            <label>Subject</label>
+                        <div class="field">
+                            <label for="email-subject">Subject</label>
                             <input type="text" id="email-subject">
                         </div>
-                        <div class="template-field">
-                            <label>Body</label>
+                        <div class="field">
+                            <label for="email-body">Body</label>
                             <textarea id="email-body"></textarea>
                         </div>
                         <div id="email-addresses" style="margin-bottom:16px;"></div>
                         <div class="template-actions">
-                            <button class="btn btn-primary" id="copy-email">Copy to Clipboard</button>
+                            <button class="btn primary" id="copy-email">Copy to Clipboard</button>
                             <span class="copy-success" id="copy-email-success">Copied!</span>
                         </div>
                     </div>
 
                     <!-- Phone Panel -->
                     <div class="tab-panel" id="phone-panel">
-                        <div class="template-field">
-                            <label>Phone Script</label>
+                        <div class="field">
+                            <label for="phone-script">Phone Script</label>
                             <textarea id="phone-script"></textarea>
                         </div>
                         <div id="phone-numbers" style="margin-bottom:16px;"></div>
                         <div class="template-actions">
-                            <button class="btn btn-primary" id="copy-phone">Copy Script</button>
+                            <button class="btn primary" id="copy-phone">Copy Script</button>
                             <span class="copy-success" id="copy-phone-success">Copied!</span>
                         </div>
                     </div>
@@ -243,90 +291,67 @@
                 </div>
 
                 <!-- Representatives -->
-                <div class="detail-card">
+                <div class="card">
                     <h2 class="detail-card-title">Your Representatives</h2>
-                    <p style="color:var(--text-mid);margin-bottom:16px;">Select a representative to customize your message.</p>
+                    <p style="color:var(--muted);margin-bottom:16px;">Select a representative to customize your message.</p>
                     <div class="rep-grid" id="rep-grid"></div>
                     <div id="no-reps" style="display:none;">
-                        <p style="color:var(--text-mid);text-align:center;padding:20px;">We need your location to show your representatives. <a href="outreach.html">Find my reps &rarr;</a></p>
+                        <p style="color:var(--muted);text-align:center;padding:20px;">We need your location to show your representatives. <a href="outreach.html">Find my reps &rarr;</a></p>
                     </div>
                 </div>
 
                 <!-- Email Signup -->
-                <div class="signup-section">
-                    <h2>Stay Informed</h2>
-                    <p>Get updates when this bill's status changes.</p>
-                    <form class="signup-form" id="email-signup-form">
-                        <input type="email" id="signup-email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
-                    </form>
-                    <p class="signup-success" id="signup-success">You're signed up! We'll keep you informed.</p>
+                <div class="joinbox">
+                    <div>
+                        <h3>Stay Informed</h3>
+                        <p>Get updates when this bill's status changes.</p>
+                    </div>
+                    <div>
+                        <form class="joinform list-signup-form" id="email-signup-form" data-source="bill-alert" aria-label="Bill alert signup" novalidate>
+                            <label class="sr-only" for="signup-email">Email address</label>
+                            <input type="email" id="signup-email" name="email" placeholder="Your email address" autocomplete="email" required>
+                            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+                            <button type="submit" class="btn">Sign Up</button>
+                            <p class="list-signup-status form-status" style="display:none"></p>
+                        </form>
+                        <p class="signup-success" id="signup-success">You're signed up! We'll keep you informed.</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Not Found -->
-            <div id="action-not-found" class="empty-state" style="display: none;">
-                <h3>Bill Not Found</h3>
-                <p>The bill you're looking for doesn't exist or may have been removed.</p>
-                <a href="tracker.html" class="btn btn-primary">Back to Tracker</a>
+            <div id="action-not-found" class="card center" style="display: none;">
+                <h3 style="font-weight:800;font-size:20px;margin-bottom:8px;">Bill Not Found</h3>
+                <p class="muted" style="margin-bottom:16px;">The bill you're looking for doesn't exist or may have been removed.</p>
+                <a href="tracker.html" class="btn primary">Back to Tracker</a>
             </div>
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Join the List</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="media.html">Media Kit</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
-    </footer>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
 
     <script src="js/config.js"></script>
     <script src="js/legislation-api.js"></script>
@@ -337,5 +362,6 @@ function openReportEmailModal(){var o=document.createElement('div');o.className=
 function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
 </script>
 <script src="js/header.js"></script>
+<script src="js/mailing-list.js"></script>
 </body>
 </html>

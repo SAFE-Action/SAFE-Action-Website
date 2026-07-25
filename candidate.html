@@ -13,87 +13,109 @@
     <meta name="twitter:title" content="SAFE Action - Candidate Response">
     <meta name="twitter:description" content="See where this candidate stands on science and public health, based on their SAFE Action pledge responses.">
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/css/styles.css?v=73">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="/css/theme.css?v=1">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <style>
+    /* Page-scoped: legacy load-bearing classes recreated in V6 language */
+    .back-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--navy);text-decoration:none;margin-bottom:20px;}
+    .back-link:hover{color:var(--red);text-decoration:underline;}
+    .loading-spinner{text-align:center;padding:48px 20px;color:var(--muted);}
+    .spinner{width:44px;height:44px;border:4px solid var(--line);border-top-color:var(--navy);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .detail-head{display:flex;align-items:center;gap:24px;margin-bottom:16px;border-top:4px solid var(--gold);}
+    .candidate-avatar-lg{width:88px;height:88px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:32px;flex:none;box-shadow:var(--shadow-1);}
+    .candidate-avatar-img-lg{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:none;box-shadow:var(--shadow-1);}
+    .candidate-detail-name{font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;margin-bottom:6px;}
+    .candidate-meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:6px;}
+    .meta-item{font-size:14px;color:var(--ink2);font-weight:600;}
+    .badge{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.02em;color:#fff;}
+    .badge-party{background:var(--navy);}
+    .badge-party.republican{background:#b02e23;}
+    .badge-party.democrat{background:#2f56a6;}
+    .badge-party.libertarian{background:#c8930f;color:#231a02;}
+    .badge-party.independent{background:#6b5ea0;}
+    .badge-party.green{background:#1c6b34;}
+    .badge-party.constitution{background:#8b4513;}
+    .candidate-share-section{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+    .share-btn-lg{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;border:1.5px solid #c9cedb;background:var(--card);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:13.5px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s,color .15s;}
+    .share-btn-lg:hover{transform:translateY(-1px);box-shadow:var(--shadow-1);}
+    .share-btn-lg.twitter:hover{border-color:#1DA1F2;color:#1DA1F2;}
+    .share-btn-lg.facebook:hover{border-color:#1877F2;color:#1877F2;}
+    .share-btn-lg.linkedin:hover{border-color:#0A66C2;color:#0A66C2;}
+    .share-btn-lg.copy-link:hover{border-color:#059669;color:#059669;}
+    .detail-card{margin-bottom:16px;}
+    .detail-card-title{font-weight:800;font-size:18px;letter-spacing:-.01em;margin-bottom:14px;}
+    .highlight-card{background:#fdf8ea;border-color:var(--gold-soft);}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+    .contact-label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+    .contact-value{font-weight:600;font-size:15px;color:var(--navy);word-break:break-word;}
+    .vaccine-answer{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;}
+    .vaccine-label{font-weight:600;color:var(--ink2);font-size:14.5px;}
+    .vaccine-value{font-family:var(--display);font-size:24px;color:var(--navy);letter-spacing:.02em;}
+    .response-block{padding:14px 0;border-top:1px solid var(--line);}
+    .response-block:first-of-type{border-top:none;padding-top:0;}
+    .response-question{font-size:15px;font-weight:700;margin-bottom:6px;}
+    .response-answer{font-size:14.5px;color:var(--ink2);}
+    .empty-state{text-align:center;padding:40px 24px;}
+    .empty-state h3{font-weight:800;font-size:20px;margin-bottom:8px;}
+    .empty-state p{color:var(--ink2);margin-bottom:16px;}
+    .btn-primary{background:var(--navy);color:#fff;box-shadow:var(--shadow-1);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-2);background:#1d3161;}
+    .btn-outline{background:transparent;color:var(--navy);border-color:#c9cedb;}
+    .report-modal-overlay{position:fixed;inset:0;background:rgba(16,27,51,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
+    .report-modal{position:relative;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-2);padding:28px;max-width:440px;width:100%;}
+    .report-modal h3{font-weight:800;font-size:18px;margin-bottom:8px;}
+    .report-modal p{font-size:14px;color:var(--ink2);margin-bottom:12px;}
+    .report-modal label{display:block;font-weight:700;font-size:13.5px;margin:12px 0 4px;}
+    .report-modal input,.report-modal textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:10px 12px;font-size:14px;font-family:var(--sans);color:var(--ink);}
+    .report-modal textarea{resize:vertical;min-height:60px;}
+    .report-modal-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;}
+    .report-modal-btns{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;}
+    .report-success{font-weight:600;color:#1c6b34;}
+    @media(max-width:560px){.detail-head{flex-direction:column;align-items:flex-start;gap:14px;}}
+    </style>
 </head>
 <body>
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html" class="active">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Site status">
+  <div class="wrap">
+    <span class="livedot" aria-hidden="true"></span>
+    <span class="label">SAFE ACTION - CANDIDATE PLEDGE RECORD</span>
+    <span class="side">PLEDGE DIRECTORY</span>
+  </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
+<header class="site">
+  <div class="wrap">
+    <nav class="main" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="SAFE Action home">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span class="word">SAFE <span class="act">ACTION</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="tracker.html">Live Tracker</a>
+        <a href="outreach.html">Take Action</a>
+        <a href="about.html">About</a>
+        <a class="btn primary small" href="join.html">Join the List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+    <div class="pagehero">
+        <div class="wrap">
+            <h1>Candidate Pledge Record</h1>
+            <p class="lede">Where this candidate stands on science and public health, in their own words, from their SAFE Action pledge responses.</p>
         </div>
     </div>
 
-    <!-- Candidate Detail -->
-    <section class="candidate-detail-section">
-        <div class="container">
+    <section style="padding-top:0;">
+        <div class="wrap">
             <a href="/directory.html" class="back-link">&larr; Back to Directory</a>
 
             <div id="candidate-loading" class="loading-spinner">
@@ -103,7 +125,7 @@
 
             <div id="candidate-detail" style="display: none;">
                 <!-- Candidate Header -->
-                <div class="candidate-detail-header">
+                <div class="card detail-head">
                     <div id="candidate-avatar-container">
                         <div class="candidate-avatar-lg" id="candidate-avatar"></div>
                     </div>
@@ -142,7 +164,7 @@
                 </div>
 
                 <!-- Contact Info -->
-                <div class="detail-card">
+                <div class="card detail-card">
                     <h2 class="detail-card-title">Contact Information</h2>
                     <div class="contact-grid">
                         <div class="contact-item">
@@ -157,7 +179,7 @@
                 </div>
 
                 <!-- Vaccine Position -->
-                <div class="detail-card highlight-card">
+                <div class="card detail-card highlight-card">
                     <h2 class="detail-card-title">Vaccine Position</h2>
                     <div class="vaccine-answer">
                         <span class="vaccine-label">Do you support vaccines?</span>
@@ -166,7 +188,7 @@
                 </div>
 
                 <!-- Short Answer Responses -->
-                <div class="detail-card">
+                <div class="card detail-card">
                     <h2 class="detail-card-title">Detailed Responses</h2>
 
                     <div class="response-block">
@@ -187,67 +209,36 @@
             </div>
 
             <!-- Not Found -->
-            <div id="candidate-not-found" class="empty-state" style="display: none;">
+            <div id="candidate-not-found" class="card empty-state" style="display: none;">
                 <h3>Candidate Not Found</h3>
                 <p>The candidate you're looking for doesn't exist or may have been removed.</p>
-                <a href="/directory.html" class="btn btn-primary">Back to Directory</a>
+                <a href="/directory.html" class="btn primary">Back to Directory</a>
             </div>
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="/outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="/directory.html">Pledge Directory</a></li>
-                            <li><a href="/quiz.html">Candidate Quiz</a></li>
-                            <li><a href="/media.html">Media Kit</a></li>
-                            <li><a href="/media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="/about.html">Our Mission</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      <span class="word">SAFE <span class="act">ACTION</span></span>
+    </div>
+    <div class="links">
+      <a href="tracker.html">Live Tracker</a>
+      <a href="outreach.html">Take Action</a>
+      <a href="join.html">Join the List</a>
+      <a href="about.html">About</a>
+      <a href="donate.html">Donate</a>
+      <a href="directory.html">Pledge Directory</a>
+      <a href="media.html">Media Kit</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+  </div>
+</footer>
 
     <script src="/js/config.js"></script>
     <script src="/js/sheets.js"></script>

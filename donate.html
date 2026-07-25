@@ -13,487 +13,129 @@
     <meta name="twitter:title" content="SAFE Action Fund - Donate">
     <meta name="twitter:description" content="Become a partner in protecting science. Support legislative advocacy for evidence-based public health policy.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A2744">
+    <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SAFE Action">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
-    <link rel="stylesheet" href="css/styles.css?v=73">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
     <style>
-        /* Donate page hero */
-        .donate-hero {
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--blue-light) 100%);
-            color: var(--white);
-            padding: 80px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .donate-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .donate-hero h1 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .donate-hero p {
-            font-family: var(--font-body);
-            font-size: 1.15rem;
-            max-width: 680px;
-            margin: 0 auto;
-            opacity: 0.92;
-            line-height: 1.7;
-        }
-        .donate-hero .hero-star-accent {
-            font-size: 1.4rem;
-            color: var(--gold);
-            display: block;
-            margin-bottom: 16px;
-            letter-spacing: 12px;
-        }
-
-        /* Impact section */
-        .impact-section {
-            padding: 70px 0;
-            background: var(--off-white);
-        }
-        .impact-section h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--blue);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .impact-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border-top: 4px solid var(--red);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .impact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        .impact-card .impact-icon {
-            font-size: 2.8rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-        .impact-card h3 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--blue);
-            margin-bottom: 12px;
-        }
-        .impact-card p {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--text-mid);
-            line-height: 1.65;
-        }
-
-        /* Donation section */
-        .donation-section {
-            padding: 70px 0;
-            background: var(--white);
-        }
-        .donation-section h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--blue);
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        .donation-section .section-sub {
-            text-align: center;
-            font-family: var(--font-body);
-            color: var(--text-mid);
-            margin-bottom: 36px;
-            font-size: 1.05rem;
-        }
-        .donation-box {
-            max-width: 720px;
-            margin: 0 auto;
-            background: var(--off-white);
-            border-radius: var(--radius-lg);
-            padding: 40px 36px;
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Toggle */
-        .frequency-toggle {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 32px;
-            background: var(--white);
-            border-radius: 50px;
-            padding: 4px;
-            max-width: 280px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 2px solid var(--blue);
-        }
-        .frequency-toggle button {
-            flex: 1;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: transparent;
-            color: var(--blue);
-        }
-        .frequency-toggle button.active {
-            background: var(--blue);
-            color: var(--white);
-        }
-
-        /* Amount grid */
-        .amount-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-        .amount-card {
-            background: var(--white);
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            padding: 20px 14px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .amount-card:hover {
-            border-color: var(--blue);
-            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.12);
-        }
-        .amount-card.selected {
-            border-color: var(--blue);
-            background: rgba(60, 59, 110, 0.06);
-            box-shadow: 0 2px 12px rgba(60, 59, 110, 0.15);
-        }
-        .amount-card .amount {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 1.6rem;
-            color: var(--blue);
-            display: block;
-            margin-bottom: 6px;
-        }
-        .amount-card .amount-desc {
-            font-family: var(--font-body);
-            font-size: 0.8rem;
-            color: var(--text-mid);
-            line-height: 1.4;
-        }
-
-        /* Custom amount */
-        .custom-amount {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .custom-amount a {
-            font-family: var(--font-body);
-            font-weight: 600;
-            color: var(--blue);
-            text-decoration: underline;
-            font-size: 0.95rem;
-        }
-        .custom-amount a:hover {
-            color: var(--blue-dark);
-        }
-
-        /* Donate CTA button */
-        .donate-cta-btn {
-            display: block;
-            width: 100%;
-            padding: 18px 32px;
-            background: var(--red);
-            color: var(--white);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.25rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.15s ease;
-            letter-spacing: 0.02em;
-        }
-        .donate-cta-btn:hover {
-            background: var(--red-dark);
-            transform: translateY(-1px);
-        }
-
-        /* Partnership section */
-        .partnership-section {
-            padding: 70px 0;
-            background: var(--cream);
-        }
-        .partnership-section h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--blue);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .partnership-quote {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 40px 36px;
-            box-shadow: var(--shadow-md);
-            border-left: 5px solid var(--gold);
-            position: relative;
-        }
-        .partnership-quote::before {
-            content: '\201C';
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            color: var(--gold);
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            line-height: 1;
-            opacity: 0.5;
-        }
-        .partnership-quote p {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            line-height: 1.75;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Transparency section */
-        .transparency-section {
-            padding: 70px 0;
-            background: var(--white);
-        }
-        .transparency-section h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--blue);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .breakdown-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .breakdown-item {
-            margin-bottom: 28px;
-        }
-        .breakdown-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-        }
-        .breakdown-label span:first-child {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-        .breakdown-label span:last-child {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--blue);
-        }
-        .breakdown-bar {
-            height: 14px;
-            background: #e8e8f0;
-            border-radius: 7px;
-            overflow: hidden;
-        }
-        .breakdown-fill {
-            height: 100%;
-            border-radius: 7px;
-            transition: width 0.8s ease;
-        }
-        .breakdown-fill.tools { width: 70%; background: var(--blue); }
-        .breakdown-fill.advocacy { width: 20%; background: var(--red); }
-        .breakdown-fill.operations { width: 10%; background: var(--gold); }
-
-        /* Bottom CTA */
-        .bottom-cta {
-            padding: 70px 0;
-            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-            color: var(--white);
-            text-align: center;
-        }
-        .bottom-cta h2 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-        .bottom-cta p {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 560px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-        .bottom-cta .donate-cta-btn {
-            max-width: 320px;
-            margin: 0 auto 20px;
-        }
-        .bottom-cta .disclosure {
-            font-size: 0.82rem;
-            opacity: 0.65;
-            max-width: 480px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .donate-hero h1 { font-size: 2rem; }
-            .donate-hero { padding: 60px 0 45px; }
-            .amount-grid { grid-template-columns: repeat(2, 1fr); }
-            .donation-box { padding: 28px 20px; }
-            .impact-grid { grid-template-columns: 1fr; max-width: 400px; }
+        /* Donate page: legacy load-bearing classes recreated in V6 language */
+        :root{--text-mid:var(--ink2);}
+        .donate-hero[style]{border-radius:16px;margin-top:24px;padding:40px 32px;}
+        .donate-hero[style] h1,.donate-hero[style] p.lede{color:#fff;}
+        .donation-box{max-width:720px;margin:0 auto;}
+        .frequency-toggle{display:flex;max-width:280px;margin:0 auto 28px;
+            background:var(--bg);border:1.5px solid var(--navy);border-radius:999px;padding:4px;}
+        .frequency-toggle button{flex:1;padding:9px 18px;border:none;border-radius:999px;
+            font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;
+            background:transparent;color:var(--navy);transition:background .15s,color .15s;}
+        .frequency-toggle button.active{background:var(--navy);color:#fff;}
+        .amount-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+        .amount-card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;
+            padding:18px 12px;text-align:center;cursor:pointer;
+            transition:border-color .15s,box-shadow .15s,transform .15s;}
+        .amount-card:hover{border-color:var(--navy);box-shadow:var(--shadow-1);transform:translateY(-2px);}
+        .amount-card.selected{border-color:var(--navy);background:#eef0f5;box-shadow:var(--shadow-1);}
+        .amount-card .amount{font-family:var(--display);font-size:28px;color:var(--navy);
+            display:block;margin-bottom:4px;letter-spacing:.02em;}
+        .amount-card .amount-desc{font-size:12.5px;color:var(--ink2);line-height:1.4;}
+        .custom-amount{text-align:center;margin-bottom:24px;}
+        .custom-amount a{font-weight:600;color:var(--navy);font-size:14.5px;}
+        .custom-amount .dollar{font-family:var(--display);font-size:26px;color:var(--navy);}
+        .custom-amount input{width:160px;padding:11px 14px;font-size:17px;font-weight:600;
+            font-family:var(--sans);color:var(--ink);border:1.5px solid var(--navy);
+            border-radius:10px;text-align:center;background:#fff;}
+        .donate-cta-btn{display:block;width:100%;padding:16px 32px;background:var(--red);
+            color:#fff;font-family:var(--sans);font-weight:800;font-size:18px;border:none;
+            border-radius:999px;cursor:pointer;text-align:center;letter-spacing:.02em;
+            transition:transform .15s,box-shadow .15s,background .15s;box-shadow:var(--shadow-1);}
+        .donate-cta-btn:hover{background:#962619;transform:translateY(-2px);box-shadow:var(--shadow-2);}
+        .donate-cta-btn:disabled{opacity:.7;cursor:wait;transform:none;}
+        .quotecard{max-width:700px;border-left:5px solid var(--gold);}
+        .quotecard p{font-size:16.5px;color:var(--ink);line-height:1.75;}
+        .breakdown-container{max-width:600px;}
+        .breakdown-item{margin-bottom:24px;}
+        .breakdown-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;}
+        .breakdown-label span:first-child{font-weight:600;font-size:15px;}
+        .breakdown-label span:last-child{font-family:var(--mono);font-size:13px;color:var(--navy);}
+        .breakdown-bar{height:10px;background:#f0ede6;border-radius:999px;overflow:hidden;}
+        .breakdown-fill{height:100%;border-radius:999px;}
+        .breakdown-fill.tools{width:70%;background:var(--navy);}
+        .breakdown-fill.advocacy{width:20%;background:var(--red);}
+        .breakdown-fill.operations{width:10%;background:var(--gold);}
+        .cta-box{max-width:none;grid-template-columns:1fr;text-align:center;}
+        .cta-box .donate-cta-btn{max-width:320px;margin:20px auto 16px;}
+        .cta-box .disclosure{font-size:12.5px;color:#8894b2;max-width:56ch;margin:0 auto;line-height:1.5;}
+        @media(max-width:640px){
+            .amount-grid{grid-template-columns:repeat(2,1fr);}
         }
     </style>
 </head>
 <body>
-    <!-- Stars background decoration -->
-    <div class="stars-bg" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo-link">
-                    <span class="logo-icon">&#9733;</span>
-                    <span class="logo-text">SAFE <span class="action-word">ACTION</span></span>
-                </a>
-                <nav class="main-nav">
-                    <a href="outreach.html" class="nav2-link">Take Action</a>
-                    <div class="nav2-item">
-                        <a href="directory.html">Vaccine Pledges <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="directory.html">Pledge Directory</a>
-                            <a href="quiz.html">Candidate Quiz</a>
-                            
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="tracker.html">Resources <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="tracker.html">Legislation Tracker</a>
-                            <a href="media.html">Media Kit</a>
-                            <a href="media.html#methodology">How This Works</a>
-                        </div>
-                    </div>
-                    <div class="nav2-item">
-                        <a href="about.html" class="active">About <span class="arrow">&#9660;</span></a>
-                        <div class="nav2-dropdown">
-                            <a href="about.html">Our Mission</a>
-                            <a href="positions.html">Open Positions</a>
-                            <a href="about.html#donate">Donate</a>
-                        </div>
-                    </div>
-                </nav>
-                <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">&#9776;</button>
-            </div>
-        </div>
-    </header>
+<div class="statusbar" role="status" aria-label="Site status">
+  <div class="wrap">
+    <span class="livedot" aria-hidden="true"></span>
+    <span class="label">SAFE ACTION - MEMBER-FUNDED SCIENCE ADVOCACY</span>
+    <span class="side">501(C)(4) - EIN 41-4491870</span>
+  </div>
+</div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <a href="index.html" class="logo-link">
-                <span class="logo-icon">&#9733;</span>
-                <span>SAFE <span class="action-word">ACTION</span></span>
-            </a>
-            <button class="mobile-nav-close" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">&times;</button>
-        </div>
-        <a href="outreach.html" class="mobile-nav-link">Take Action</a>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Vaccine Pledges</span>
-            <a href="directory.html">Pledge Directory</a>
-            <a href="quiz.html">Candidate Quiz</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">Resources</span>
-            <a href="tracker.html">Legislation Tracker</a>
-            <a href="media.html">Media Kit</a>
-            <a href="media.html#methodology">How This Works</a>
-        </div>
-        <div class="mobile-nav-section">
-            <span class="mobile-nav-section-title">About</span>
-            <a href="about.html">Our Mission</a>
-            <a href="positions.html">Open Positions</a>
-            <a href="about.html#donate">Donate</a>
+<header class="site">
+  <div class="wrap">
+    <nav class="main" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="SAFE Action home">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <span class="word">SAFE <span class="act">ACTION</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="tracker.html">Live Tracker</a>
+        <a href="outreach.html">Take Action</a>
+        <a href="about.html">About</a>
+        <a class="btn primary small" href="join.html">Join the List</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <div class="wrap">
+        <div class="pagehero donate-hero">
+            <span class="chip">SUPPORT THE MISSION</span>
+            <h1 style="margin-top:16px;">Become a Partner in <span style="color:var(--red);">Protecting Science</span></h1>
+            <p class="lede">Your contribution funds the tools, research, and advocacy that keep science at the center of public health policy. Every dollar helps us build a more informed, engaged democracy.</p>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="donate-hero">
-        <div class="container">
-            <span class="hero-star-accent" aria-hidden="true">&#9733; &#9733; &#9733;</span>
-            <h1>Become a Partner in Protecting Science</h1>
-            <p>Your contribution funds the tools, research, and advocacy that keep science at the center of public health policy. Every dollar helps us build a more informed, engaged democracy.</p>
-        </div>
-    </section>
-
-    <!-- Your Impact Section -->
-    <section class="impact-section">
-        <div class="container">
-            <h2>What Your Support Makes Possible</h2>
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <span class="impact-icon" aria-hidden="true">&#128736;&#65039;</span>
+    <!-- Your Impact -->
+    <section style="padding-top:24px;">
+        <div class="wrap">
+            <div class="sechead">
+                <h2>What Your Support Makes Possible</h2>
+                <span class="chip">IMPACT</span>
+            </div>
+            <div class="steps" style="margin-bottom:0;">
+                <div class="step">
+                    <span class="k">01</span>
+                    <div class="star" aria-hidden="true">&#128736;&#65039;</div>
                     <h3>Build New Tools</h3>
                     <p>Fund development of legislative tracking tools, representative lookup systems, and civic engagement platforms that make it easy for citizens to take action.</p>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-icon" aria-hidden="true">&#127758;</span>
+                <div class="step">
+                    <span class="k">02</span>
+                    <div class="star" aria-hidden="true">&#127758;</div>
                     <h3>Expand Our Reach</h3>
                     <p>Help us reach more communities, train more volunteers, and bring science-based advocacy to every corner of the country.</p>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-icon" aria-hidden="true">&#128202;</span>
+                <div class="step">
+                    <span class="k">03</span>
+                    <div class="star" aria-hidden="true">&#128202;</div>
                     <h3>Hold Officials Accountable</h3>
                     <p>Support our work monitoring legislation, analyzing policy, and ensuring that elected officials prioritize evidence over ideology.</p>
                 </div>
@@ -501,12 +143,14 @@
         </div>
     </section>
 
-    <!-- Donation Section -->
-    <section class="donation-section">
-        <div class="container">
-            <h2>Support the Movement</h2>
-            <p class="section-sub">Choose an amount to get started. Every contribution makes a difference.</p>
-            <div class="donation-box">
+    <!-- Donation -->
+    <section class="donation-section watch">
+        <div class="wrap">
+            <div class="sechead">
+                <h2>Support the Movement</h2>
+                <span class="chip"><span class="livedot" aria-hidden="true"></span>SECURE STRIPE CHECKOUT</span>
+            </div>
+            <div class="card donation-box">
                 <!-- Frequency Toggle -->
                 <div class="frequency-toggle">
                     <button class="active" id="btn-onetime" type="button">One-Time</button>
@@ -544,9 +188,8 @@
                 <!-- Custom Amount -->
                 <div class="custom-amount" id="custom-amount-wrap" style="display:none;">
                     <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-                        <span style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--blue);">$</span>
-                        <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount"
-                            style="width:160px; padding:12px 16px; font-size:1.1rem; font-family:var(--font-body); font-weight:600; border:2px solid var(--blue); border-radius:10px; text-align:center; outline:none;">
+                        <span class="dollar">$</span>
+                        <input type="number" id="custom-amount-input" min="1" max="50000" placeholder="Enter amount">
                     </div>
                 </div>
                 <div class="custom-amount">
@@ -555,25 +198,30 @@
 
                 <!-- Donate Button -->
                 <button type="button" class="donate-cta-btn" id="donate-now-btn">Donate Now</button>
-                <div id="donate-status" style="text-align:center; margin-top:12px; font-family:var(--font-body); font-size:0.95rem; color:var(--text-mid); display:none;"></div>
+                <div id="donate-status" style="text-align:center; margin-top:12px; font-size:0.95rem; color:var(--text-mid); display:none;"></div>
             </div>
         </div>
     </section>
 
-    <!-- Partnership Section -->
-    <section class="partnership-section">
-        <div class="container">
-            <h2>More Than a Donation - A Partnership</h2>
-            <div class="partnership-quote">
-                <p>When you support SAFE Action Fund, you're not just making a donation - you're becoming a partner in the fight to protect science in public policy. Our supporters are the backbone of everything we do. Together, we ensure that evidence and reason remain at the heart of the decisions that shape our communities, our health, and our future.</p>
+    <!-- Partnership -->
+    <section>
+        <div class="wrap">
+            <div class="sechead">
+                <h2>More Than a Donation, a Partnership</h2>
+            </div>
+            <div class="card quotecard">
+                <p>When you support SAFE Action Fund, you're not just making a donation, you're becoming a partner in the fight to protect science in public policy. Our supporters are the backbone of everything we do. Together, we ensure that evidence and reason remain at the heart of the decisions that shape our communities, our health, and our future.</p>
             </div>
         </div>
     </section>
 
-    <!-- Transparency Section -->
-    <section class="transparency-section">
-        <div class="container">
-            <h2>Where Your Money Goes</h2>
+    <!-- Transparency -->
+    <section style="padding-top:0;">
+        <div class="wrap">
+            <div class="sechead">
+                <h2>Where Your Money Goes</h2>
+                <span class="chip">TRANSPARENCY</span>
+            </div>
             <div class="breakdown-container">
                 <div class="breakdown-item">
                     <div class="breakdown-label">
@@ -607,69 +255,42 @@
     </section>
 
     <!-- Bottom CTA -->
-    <section class="bottom-cta">
-        <div class="container">
-            <h2>Ready to Make a Difference?</h2>
-            <p>Join hundreds of supporters who believe that science should guide public health policy.</p>
-            <button type="button" class="donate-cta-btn" onclick="document.getElementById('donate-now-btn').click(); window.scrollTo({top: document.querySelector('.donation-section').offsetTop, behavior: 'smooth'});">Donate Now</button>
-            <p class="disclosure">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    <section style="padding-top:0;">
+        <div class="wrap">
+            <div class="joinbox cta-box">
+                <div>
+                    <h3>Ready to Make a Difference?</h3>
+                    <p>Join hundreds of supporters who believe that science should guide public health policy.</p>
+                    <button type="button" class="donate-cta-btn" onclick="document.getElementById('donate-now-btn').click(); window.scrollTo({top: document.querySelector('.donation-section').offsetTop, behavior: 'smooth'});">Donate Now</button>
+                    <p class="disclosure">Science and Freedom for Everyone Action Fund is organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-columns">
-                    <div class="footer-col footer-col-brand">
-                        <div class="footer-brand">
-                            <span class="logo-icon">&#9733;</span>
-                            <span>SAFE <span class="action-word">ACTION</span></span>
-                        </div>
-                        <p class="footer-tagline">Science and Freedom for Everyone Action Fund</p>
-                        <p class="footer-opensource">Open source - view our code on <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Take Action</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="outreach.html">Contact Your Reps</a></li>
-                            <li><a href="tracker.html">Legislation Tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="directory.html">Pledge Directory</a></li>
-                            <li><a href="quiz.html">Candidate Quiz</a></li>
-                            <li><a href="media.html">Media Kit</a></li>
-                            <li><a href="media.html#methodology">How This Works</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>About</h4>
-                        <ul class="footer-col-links">
-                            <li><a href="about.html">Our Mission</a></li>
-                            <li><a href="positions.html">Open Positions</a></li>
-                            <li><a href="about.html#donate" class="footer-donate-btn">Support Our Mission</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="footer-copy">&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-                    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
-                    <div class="footer-bottom-right">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <span>Licensed under GPLv3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      <span class="word">SAFE <span class="act">ACTION</span></span>
+    </div>
+    <div class="links">
+      <a href="tracker.html">Live Tracker</a>
+      <a href="outreach.html">Take Action</a>
+      <a href="join.html">Join the List</a>
+      <a href="about.html">About</a>
+      <a href="donate.html">Donate</a>
+      <a href="directory.html">Pledge Directory</a>
+      <a href="media.html">Media Kit</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+    <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+  </div>
+</footer>
 
     <script>
         (function() {
@@ -794,6 +415,5 @@
             }
         })();
     </script>
-<script src="js/header.js"></script>
 </body>
 </html>
