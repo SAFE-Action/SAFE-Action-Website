@@ -54,8 +54,6 @@
         var upd = data.generated_at ? dateLabel(data.generated_at) : '';
         setText('sb-label', 'TRACKING ' + fmt(bills.length) + ' BILLS - UPDATED ' + upd);
         setText('sb-side', stateCount + ' STATES + CONGRESS');
-        setText('lede-states', String(stateCount));
-        setText('hiw-states', String(stateCount));
         setText('chip-updated', 'BILL DATA UPDATED ' + upd);
         setText('watch-updated', 'UPDATED ' + upd);
         setText('lede-bills', fmt(bills.length));
