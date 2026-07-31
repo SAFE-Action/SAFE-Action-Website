@@ -85,7 +85,7 @@ exports.volunteerApply = async (req, res) => {
         try {
             const siteUrl = process.env.SITE_URL || 'https://scienceandfreedom.com';
             await sendEmail({
-                to: process.env.OFFICER_EMAIL || 'greg@scienceandfreedom.com',
+                to: process.env.OFFICER_EMAIL || 'board@scienceandfreedom.com',
                 subject: (typeof position === 'string' && position.trim())
                     ? `New Application (${position.trim().slice(0, 100)}): ${name.trim()}`
                     : `New Volunteer Application: ${name.trim()}`,
