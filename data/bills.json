@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T06:52:19.804689+00:00",
+  "generated_at": "2026-08-09T06:55:47.727122+00:00",
   "source": "govinfo+legiscan",
   "total": 8194,
   "bills": [
@@ -164753,27 +164753,6 @@
       "legiscan_bill_id": 1973186
     },
     {
-      "billId": "PA-HB1923",
-      "state": "PA",
-      "billNumber": "HB1923",
-      "title": "Providing for regulation of the meat packing and food processing industry by creating facility health and safety committees in the workplace; establishing the industry workers' rights coordinator within the Department of Labor and Industry; and imposing penalties.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Providing for regulation of the meat packing and food processing industry by creating facility health and safety committees in the workplace; establishing the industry workers' rights coordinator within the Department of Labor and Industry; and imposing penalties.",
-      "sponsor": "",
-      "lastAction": "Referred to Labor & Industry",
-      "lastActionDate": "2026-02-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/HB1923/2025",
-      "legiscan_bill_id": 2045716
-    },
-    {
       "billId": "PA-HB1202",
       "state": "PA",
       "billNumber": "HB1202",
@@ -164793,6 +164772,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/PA/bill/HB1202/2025",
       "legiscan_bill_id": 2022755
+    },
+    {
+      "billId": "PA-HB1923",
+      "state": "PA",
+      "billNumber": "HB1923",
+      "title": "Providing for regulation of the meat packing and food processing industry by creating facility health and safety committees in the workplace; establishing the industry workers' rights coordinator within the Department of Labor and Industry; and imposing penalties.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Providing for regulation of the meat packing and food processing industry by creating facility health and safety committees in the workplace; establishing the industry workers' rights coordinator within the Department of Labor and Industry; and imposing penalties.",
+      "sponsor": "",
+      "lastAction": "Referred to Labor & Industry",
+      "lastActionDate": "2026-02-13",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/PA/bill/HB1923/2025",
+      "legiscan_bill_id": 2045716
     },
     {
       "billId": "PA-HB1163",
