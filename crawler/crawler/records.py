@@ -143,6 +143,40 @@ def _entries_for_bill(bill: dict) -> list[dict]:
     return out
 
 
+FED_TYPE_PATH = {"HR": "house-bill", "S": "senate-bill", "HJRES": "house-joint-resolution",
+                 "SJRES": "senate-joint-resolution", "HCONRES": "house-concurrent-resolution",
+                 "SCONRES": "senate-concurrent-resolution", "HRES": "house-resolution", "SRES": "senate-resolution"}
+ORDINAL = {1: "st", 2: "nd", 3: "rd"}
+
+
+def _source_url(bill: dict) -> str:
+    u = bill.get("sourceUrl") or bill.get("url") or ""
+    if u:
+        return u
+    # Federal bills from GovInfo sometimes carry no URL; congress.gov has a
+    # stable, predictable address we can derive from the bill id.
+    m = re.match(r"^US-(\d+)-([A-Z]+)(\d+)$", bill.get("billId") or "")
+    if m:
+        congress, btype, num = int(m.group(1)), m.group(2), m.group(3)
+        path = FED_TYPE_PATH.get(btype)
+        if path:
+            suffix = "th" if 10 <= congress % 100 <= 20 else ORDINAL.get(congress % 10, "th")
+            return f"https://www.congress.gov/bill/{congress}{suffix}-congress/{path}/{num}"
+    return ""
+
+
+PARTY_NORMAL = {"d": "Democratic", "democrat": "Democratic", "democratic": "Democratic",
+                "r": "Republican", "republican": "Republican",
+                "i": "Independent", "independent": "Independent", "id": "Independent",
+                "l": "Libertarian", "libertarian": "Libertarian", "g": "Green", "green": "Green",
+                "np": "Nonpartisan", "nonpartisan": "Nonpartisan", "n": "Nonpartisan"}
+
+
+def _party(p) -> str:
+    key = (p or "").strip().lower()
+    return PARTY_NORMAL.get(key, (p or "").strip())
+
+
 def _slug(legislator_id: str) -> str:
     s = re.sub(r"[^a-z0-9-]+", "-", (legislator_id or "").lower())
     return re.sub(r"-+", "-", s).strip("-")
@@ -165,7 +199,7 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
         ln = _last_name(leg.get("name", ""))
         rec = {
             "slug": _slug(lid), "legislator_id": lid,
-            "name": leg.get("name", ""), "party": leg.get("party", ""),
+            "name": leg.get("name", ""), "party": _party(leg.get("party", "")),
             "state": st, "chamber": ch, "district": _district(leg.get("district")),
             "level": leg.get("level", ""), "office": leg.get("office", ""),
             "bioguide_id": leg.get("bioguide_id", "") or "",
@@ -262,7 +296,7 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
                 "level": b.get("level", ""), "title": b.get("title", ""), "billType": bt,
                 "category": b.get("category", ""), "status": b.get("status", ""),
                 "isActive": b.get("isActive", ""), "role": role,
-                "sourceUrl": b.get("sourceUrl") or b.get("url") or "",
+                "sourceUrl": _source_url(b),
                 "lastActionDate": b.get("lastActionDate", "") or "",
             })
             c = rec["counts"]

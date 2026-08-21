@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislative Records - SAFE Action</title>
+    <meta name="description" content="A neutral record of which legislators sponsored or cosponsored bills tracked by SAFE Action, drawn from official legislative sources. Search by state, chamber, party, and name.">
+    <meta property="og:title" content="Legislative Records - SAFE Action">
+    <meta property="og:description" content="Which legislators sponsored or cosponsored the bills SAFE Action tracks, drawn from official legislative sources. A record of legislative activity, not a rating.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://scienceandfreedom.com/records">
+    <meta property="og:url" content="https://scienceandfreedom.com/records">
+    <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legislative Records - SAFE Action">
+    <meta name="twitter:description" content="A neutral record of which legislators sponsored or cosponsored bills tracked by SAFE Action, drawn from official legislative sources.">
+    <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#101b33">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+    /* Page-scoped: dense record table in V6 language */
+    .note p{font-size:14px;color:var(--ink2);max-width:76ch;}
+    .note .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);margin-bottom:6px;}
+    .note.fixture{border-color:var(--gold);background:var(--gold-soft);margin-top:12px;}
+    .filterbar label.chk{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2);padding:6px 4px;cursor:pointer;}
+    .filterbar label.chk input{flex:none;min-width:0;width:16px;height:16px;padding:0;margin:0;border:none;background:none;}
+    .tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);margin-top:12px;}
+    table.rec{width:100%;border-collapse:collapse;font-size:14px;}
+    table.rec th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--bg);}
+    table.rec td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+    table.rec tr:last-child td{border-bottom:none;}
+    table.rec a.name{font-weight:700;color:var(--navy);text-decoration:none;}
+    table.rec a.name:hover{text-decoration:underline;}
+    .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;}
+    td.spons{white-space:nowrap;}
+    td.spons .tot{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;}
+    .badge{display:inline-block;border-radius:6px;padding:2px 8px;margin-left:6px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;white-space:nowrap;}
+    td .badge:first-child{margin-left:0;}
+    </style>
+</head>
+<body data-page="records">
+
+<div class="statusbar" role="status" aria-label="Records status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="sb-label">LEGISLATIVE RECORDS</span>
+        <span class="side">SOURCE: LEGISCAN + GOVINFO + OPENSTATES</span>
+    </div>
+</div>
+
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
+            </a>
+            <div class="navlinks">
+                <a href="tracker.html">Live Tracker</a>
+                <a href="outreach.html">Take Action</a>
+                <a href="directory.html">Vaccine Pledges</a>
+                <a href="records.html" aria-current="page">Records</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="join.html">Join the List</a>
+            </div>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+    <div class="pagehero">
+        <div class="wrap">
+            <h1>Legislative Records</h1>
+            <p class="lede">A record of which legislators sponsored or cosponsored the bills SAFE Action tracks. Each entry links to the official bill record and shows the date of the most recent recorded action. Filter by state, level, chamber, or party, or search by name.</p>
+        </div>
+    </div>
+
+    <section id="records" style="padding-top:8px;">
+        <div class="wrap">
+            <div class="card note">
+                <span class="k">METHODOLOGY</span>
+                <p>This record lists sponsorships and cosponsorships of bills tracked by SAFE Action, drawn from official legislative sources. It is a record of legislative activity, not an endorsement or rating of any candidate or official. Classifications apply to bills, not people.</p>
+            </div>
+            <div id="rec-fixture" class="card note fixture" style="display:none;">
+                <span class="k">DEVELOPMENT FIXTURE</span>
+                <p>The entries shown are placeholder test data. Every name is fictional. This is not a real legislative record.</p>
+            </div>
+
+            <div class="filterbar" role="search" aria-label="Filter legislators" style="margin-top:16px;">
+                <select id="rf-state" aria-label="State"><option value="">All states</option></select>
+                <select id="rf-level" aria-label="Level">
+                    <option value="">All levels</option>
+                    <option value="Federal">Federal</option>
+                    <option value="State">State</option>
+                </select>
+                <select id="rf-chamber" aria-label="Chamber"><option value="">All chambers</option></select>
+                <select id="rf-party" aria-label="Party"><option value="">All parties</option></select>
+                <input type="text" id="rf-search" placeholder="Search by name" aria-label="Search legislators by name">
+                <label class="chk" for="rf-onrecord"><input type="checkbox" id="rf-onrecord" checked> Show only legislators with sponsorships on record</label>
+            </div>
+
+            <div id="rec-summary" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
+            <div id="rec-count" class="mono muted" style="margin:6px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
+
+            <div id="rec-tablewrap" class="tablewrap" style="display:none;">
+                <table class="rec" id="rec-table">
+                    <caption class="sr-only">Legislators and their sponsorships of tracked bills</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Party</th>
+                            <th scope="col">Sponsorships on record</th>
+                            <th scope="col">Running in 2026</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rec-rows"></tbody>
+                </table>
+            </div>
+            <div id="rec-empty" class="card center" style="display:none;margin-top:20px;">
+                <p class="muted">No legislators match those filters. Clear one and try again.</p>
+            </div>
+            <button id="rec-more" class="btn ghost" style="display:none;margin:24px auto 0;width:100%;max-width:320px;">Load more legislators</button>
+            <div id="rec-loading" class="center muted" style="margin-top:24px;">Loading records...</div>
+            <div id="rec-error" class="card center" style="display:none;margin-top:20px;">
+                <p class="muted">Record data is temporarily unavailable. Try again shortly.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
+        </div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Join the List</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="records.html">Legislative Records</a>
+            <a href="media.html">Media Kit</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
+
+<script src="js/records.js?v=1"></script>
+<script src="js/pwa.js?v=100"></script>
+</body>
+</html>
