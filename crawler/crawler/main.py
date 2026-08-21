@@ -144,10 +144,18 @@ async def run_full_crawl(news_only: bool = False):
                 print(f"[2d/5] Fetching {len(pointers)} federal roll calls (House Clerk / Senate LIS)...")
                 fetched = await fetch_federal_roll_calls(pointers, rollcalls["rollcalls"])
                 rollcalls["rollcalls"].update(fetched or {})
+                if not fetched:
+                    print(f"  ERROR federal votes: {len(pointers)} pointers, 0 fetched. Check federal_votes.py against the Clerk/LIS XML.")
+                    rollcalls["last_federal_error"] = {"at": now, "message": f"0 of {len(pointers)} roll calls fetched"}
+                else:
+                    rollcalls.pop("last_federal_error", None)
         except ImportError:
             print("[2d/5] federal_votes module not available; skipping federal votes")
-        except Exception as e:  # never let votes break the crawl
-            print(f"[2d/5] federal votes failed (non-fatal): {e}")
+        except Exception as e:
+            # The crawl must not die on a vote-parse failure, but the failure is
+            # printed as an ERROR and persisted so it is visible in the data.
+            print(f"  ERROR federal votes failed: {type(e).__name__}: {e}")
+            rollcalls["last_federal_error"] = {"at": now, "message": f"{type(e).__name__}: {e}"[:300]}
 
     # ── Step 2d: LLM verification of bill classifications ──
     if not news_only and all_bills and ANTHROPIC_API_KEY:

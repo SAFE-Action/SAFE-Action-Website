@@ -344,8 +344,10 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
     # ---- Votes ----
     bills_by_id = {b.get("billId"): b for b in bills if isinstance(b, dict) and b.get("billId")}
     people = (rollcalls or {}).get("people") or {}
+    people_by_session = (rollcalls or {}).get("people_by_session") or {}
     rc_map = (rollcalls or {}).get("rollcalls") or {}
     votes_unmatched = 0
+    votes_unmatched_detail = []
     for key, rc in rc_map.items():
         if not isinstance(rc, dict):
             continue
@@ -359,9 +361,15 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             if not isinstance(v, dict) or v.get("vote") not in ("Yea", "Nay", "NV", "Absent", "Present"):
                 continue
             if v.get("people_id") is not None:
-                p = people.get(str(v["people_id"]))
+                pid = str(v["people_id"])
+                # The session the roll call belongs to is authoritative for who
+                # that people_id was (district/chamber can change between sessions).
+                p = (people_by_session.get(str(rc.get("session_id") or "")) or {}).get(pid) or people.get(pid)
                 if not p:
                     votes_unmatched += 1
+                    if len(votes_unmatched_detail) < 500:
+                        votes_unmatched_detail.append({"rollCallKey": key, "billId": rc.get("billId"),
+                                                       "people_id": pid, "reason": "no person record"})
                     continue
                 entry = {"name": p.get("name", ""), "first_name": p.get("first_name", ""),
                          "last_name": p.get("last_name", ""), "state": (p.get("state") or rc.get("state") or "").upper(),
@@ -376,6 +384,11 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             rec = resolve(entry, level)
             if rec is None or (rec["level"] == "Federal" and chamber and rec["chamber"] != chamber):
                 votes_unmatched += 1
+                if len(votes_unmatched_detail) < 500:
+                    votes_unmatched_detail.append({"rollCallKey": key, "billId": rc.get("billId"),
+                                                   "name": entry.get("name", ""), "state": entry.get("state", ""),
+                                                   "chamber": entry.get("chamber", ""), "district": entry.get("district", ""),
+                                                   "reason": "unresolved" if rec is None else "chamber mismatch"})
                 continue
             vkey = (key, rec["legislator_id"])
             if vkey in rec["_seen_votes"]:
@@ -420,4 +433,4 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             "unmatched": len(unmatched), "votes_unmatched": votes_unmatched,
         },
         "legislators": legislators_out,
-    }, unmatched)
+    }, unmatched + [dict(u, kind="vote") for u in votes_unmatched_detail])

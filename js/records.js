@@ -195,6 +195,11 @@
     function noteFixture(data) {
         // A development fixture must never be mistaken for a real record.
         if (data && data.fixture === true) show('rec-fixture', true);
+        // Keep a fixture session in fixture mode when navigating back to the list.
+        if (FIXTURE) {
+            var back = document.querySelector('.back-link');
+            if (back) back.setAttribute('href', '/records?fixture=1');
+        }
     }
     function stamp(prefix, data) {
         var upd = dateLabel(data && data.generated_at);
