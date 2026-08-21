@@ -47,8 +47,11 @@
         var pro = bills.filter(function (b) { return b.billType === 'pro' && b.isActive === 'Yes'; });
         var signed = bills.filter(function (b) { return b.status === 'Signed into Law'; });
         var states = {};
+        // DC gets a map tile but is not a state; keep it out of the "states
+        // covered" count so 50 means fifty states.
         bills.forEach(function (b) { if (b.state && b.state !== 'US') states[b.state] = true; });
-        var stateCount = Object.keys(states).length;
+        var stateOnly = Object.keys(states).filter(function (s) { return s !== 'DC'; });
+        var stateCount = stateOnly.length;
 
         // Status bar + hero chips
         var upd = data.generated_at ? dateLabel(data.generated_at) : '';
