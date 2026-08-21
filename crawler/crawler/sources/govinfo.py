@@ -78,11 +78,36 @@ def _parse_bill_xml(xml_text):
             elif "introduced" in atext:
                 status = "Introduced"
     sponsors = []
+    sponsorships = []
     for sp in bill.findall(".//sponsors/item"):
         sponsors.append({
             "name": sp.findtext("fullName", ""),
             "party": sp.findtext("party", ""),
             "state": sp.findtext("state", ""),
+            "bioguide_id": sp.findtext("bioguideId", ""),
+        })
+        sponsorships.append({
+            "bioguide_id": sp.findtext("bioguideId", ""),
+            "name": sp.findtext("fullName", ""),
+            "first_name": sp.findtext("firstName", ""),
+            "last_name": sp.findtext("lastName", ""),
+            "party": sp.findtext("party", ""),
+            "state": sp.findtext("state", ""),
+            "district": sp.findtext("district", ""),
+            "chamber": "Senate" if bill_type.lower().startswith("s") else "House",
+            "type": "primary",
+        })
+    for sp in bill.findall(".//cosponsors/item"):
+        sponsorships.append({
+            "bioguide_id": sp.findtext("bioguideId", ""),
+            "name": sp.findtext("fullName", ""),
+            "first_name": sp.findtext("firstName", ""),
+            "last_name": sp.findtext("lastName", ""),
+            "party": sp.findtext("party", ""),
+            "state": sp.findtext("state", ""),
+            "district": sp.findtext("district", ""),
+            "chamber": "Senate" if bill_type.lower().startswith("s") else "House",
+            "type": "cosponsor",
         })
     committees = []
     for cm in bill.findall(".//committees/item"):
@@ -107,6 +132,7 @@ def _parse_bill_xml(xml_text):
         "stance": stance,
         "committee": committees[0] if committees else "",
         "sponsors": sponsors,
+        "sponsorships": sponsorships,
         "subjects": subjects,
         "url": url,
     }
