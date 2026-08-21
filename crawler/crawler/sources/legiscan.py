@@ -28,21 +28,18 @@ rate_limiter = RateLimiter(LEGISCAN_RATE_LIMIT)
 
 # ── Keywords that signal science/health/vaccine bills ───────────────────
 
+# Broad terms only: getSearch is full-text, so compound phrases like
+# "vaccine exemption" are strict subsets of "vaccine" and only burn budget.
+# 12 queries x 51 jurisdictions = 612 search calls, leaving headroom for
+# enrichment within the daily budget (previously 20 x 51 > budget, which
+# silently cut off every state after SC and starved enrichment to zero).
 SEARCH_QUERIES = [
     "vaccine",
     "vaccination",
     "immunization",
-    "vaccine exemption",
-    "vaccine mandate",
     "medical freedom",
-    "informed consent vaccine",
-    "public health emergency",
-    "school immunization",
-    "childhood vaccination",
-    "vaccine registry",
-    "vaccine injury",
-    "religious exemption vaccine",
     "philosophical exemption",
+    "public health emergency",
     "communicable disease",
     "quarantine",
     "fluoride",
@@ -475,20 +472,27 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
 
     target_states = states or PRIORITY_STATES
     all_bills: dict[str, dict] = {}  # keyed by billId for dedup
-    request_budget = 800  # conservative limit per run (30k/month ÷ 30 days = 1k/day)
+    # 30k/month LegiScan quota ~= 1k/day. Split so a search overrun can
+    # never starve enrichment again: 620 search + 150 enrich + the 200-cap
+    # refresh_tracked_bills pass stays under 1k/day.
+    search_budget = 620
+    request_budget = 800  # total ceiling (search + enrich)
     requests_used = 0
     bills_enriched = 0
 
     async with httpx.AsyncClient() as client:
-        # Phase 1: Search for bills across states and keywords
-        for state in target_states:
-            if requests_used >= request_budget:
-                print(f"  ⚠ Approaching request budget ({requests_used}), stopping search")
+        # Phase 1: Search for bills across states and keywords.
+        # Query-major on purpose: if the budget ever runs out mid-loop we
+        # lose one keyword everywhere, never whole states (the old
+        # state-major loop silently dropped every state after SC).
+        per_state_new: dict[str, int] = {}
+        for query in SEARCH_QUERIES:
+            if requests_used >= search_budget:
+                print(f"  ⚠ Search budget reached ({requests_used}), stopping search")
                 break
 
-            state_new = 0
-            for query in SEARCH_QUERIES:
-                if requests_used >= request_budget:
+            for state in target_states:
+                if requests_used >= search_budget:
                     break
 
                 data = await _api_call(client, "getSearch",
@@ -533,10 +537,10 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
                         "sourceUrl": val.get("url", ""),
                         "relevance": relevance,
                     }
-                    state_new += 1
+                    per_state_new[state.upper()] = per_state_new.get(state.upper(), 0) + 1
 
-            if state_new > 0:
-                print(f"  LegiScan: {state} → {state_new} unique bills")
+        for st in sorted(per_state_new):
+            print(f"  LegiScan: {st} → {per_state_new[st]} unique bills")
 
         # Phase 2: Fetch full details for top bills
         # Sort by relevance (highest first) and enrich the most relevant
