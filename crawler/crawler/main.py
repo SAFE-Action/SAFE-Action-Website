@@ -201,8 +201,10 @@ async def run_full_crawl(news_only: bool = False):
             "bills": all_bills,
         }
 
-    # Legislative records: who sponsored which tracked bills (public, neutral)
-    if all_bills and all_legislators:
+    # Legislative records: who sponsored which tracked bills (public, neutral).
+    # Full crawls only: a news-only run has no fresh bill data and must not
+    # overwrite a good records file with cached data and a new timestamp.
+    if not news_only and all_bills and all_legislators:
         seats_doc = load_cached_data("seats")
         if not seats_doc:
             try:

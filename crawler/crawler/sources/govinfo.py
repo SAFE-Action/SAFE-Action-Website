@@ -39,7 +39,10 @@ def _parse_bill_xml(xml_text):
     bill = root.find("bill")
     if bill is None:
         return None
-    title_el = bill.find(".//title")
+    # Direct children only: BILLSTATUS nests amendments (each with its own
+    # title/actions/sponsors) under <bill>, and a descendant search (".//")
+    # silently merges amendment sponsors into the bill's sponsor list.
+    title_el = bill.find("title")
     title = title_el.text if title_el is not None else ""
     policy_area_el = bill.find(".//policyArea/name")
     policy_area = policy_area_el.text if policy_area_el is not None else ""
@@ -54,7 +57,8 @@ def _parse_bill_xml(xml_text):
     bill_type = bill.findtext("type", "")
     congress = bill.findtext("congress", "")
     url = bill.findtext("legislationUrl", "")
-    actions = bill.findall(".//actions/item")
+    actions_el = bill.find("actions")
+    actions = actions_el.findall("item") if actions_el is not None else []
     last_action = ""
     last_action_date = ""
     status = "Introduced"
@@ -79,7 +83,16 @@ def _parse_bill_xml(xml_text):
                 status = "Introduced"
     sponsors = []
     sponsorships = []
-    for sp in bill.findall(".//sponsors/item"):
+    seen_people = set()
+    sponsors_el = bill.find("sponsors")
+    cosponsors_el = bill.find("cosponsors")
+    for sp in (sponsors_el.findall("item") if sponsors_el is not None else []):
+        if not (sp.findtext("fullName", "") or "").strip():
+            continue
+        key = sp.findtext("bioguideId", "") or sp.findtext("fullName", "")
+        if key in seen_people:
+            continue
+        seen_people.add(key)
         sponsors.append({
             "name": sp.findtext("fullName", ""),
             "party": sp.findtext("party", ""),
@@ -97,7 +110,13 @@ def _parse_bill_xml(xml_text):
             "chamber": "Senate" if bill_type.lower().startswith("s") else "House",
             "type": "primary",
         })
-    for sp in bill.findall(".//cosponsors/item"):
+    for sp in (cosponsors_el.findall("item") if cosponsors_el is not None else []):
+        if not (sp.findtext("fullName", "") or "").strip():
+            continue
+        key = sp.findtext("bioguideId", "") or sp.findtext("fullName", "")
+        if key in seen_people:
+            continue
+        seen_people.add(key)
         sponsorships.append({
             "bioguide_id": sp.findtext("bioguideId", ""),
             "name": sp.findtext("fullName", ""),

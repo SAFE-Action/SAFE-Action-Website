@@ -88,7 +88,7 @@ COMMITTEE_WORDS = {"committee", "rules", "judiciary", "appropriations", "finance
 
 def _looks_like_committee(name: str) -> bool:
     toks = set(_norm(name).split(" "))
-    return bool(toks & COMMITTEE_WORDS) and "," not in name
+    return bool(toks & COMMITTEE_WORDS)
 
 
 def _entries_for_bill(bill: dict) -> list[dict]:
@@ -98,6 +98,8 @@ def _entries_for_bill(bill: dict) -> list[dict]:
     if isinstance(structured, list) and structured:
         for s in structured:
             if not isinstance(s, dict) or not (s.get("name") or s.get("last_name")):
+                continue
+            if not s.get("people_id") and not s.get("bioguide_id") and _looks_like_committee(s.get("name", "")):
                 continue
             out.append({
                 "name": s.get("name", ""),
@@ -113,9 +115,16 @@ def _entries_for_bill(bill: dict) -> list[dict]:
             })
         return out
     legacy = bill.get("sponsors")
+    # Federal: the legacy list came from a descendant XPath that merged
+    # amendment sponsors into the bill's sponsors. Never trust it; only the
+    # structured sponsorships from the corrected GovInfo parser count.
+    if (bill.get("state") or "").upper() == "US":
+        return out
     if isinstance(legacy, list) and legacy:
-        for s in legacy:
+        for idx, s in enumerate(legacy):
             if not isinstance(s, dict) or not s.get("name"):
+                continue
+            if _looks_like_committee(s["name"]):
                 continue
             m = BRACKET_RE.search(s["name"])
             out.append({
@@ -126,7 +135,7 @@ def _entries_for_bill(bill: dict) -> list[dict]:
                 "chamber": ROLE_CHAMBER.get(PREFIX_RE.match(s["name"]).group(1).lower().rstrip(".") if PREFIX_RE.match(s["name"]) else "", ""),
                 "bioguide_id": s.get("bioguide_id", ""),
                 "people_id": None,
-                "role": s.get("type", "primary"),
+                "role": s.get("type") or ("primary" if idx == 0 else "cosponsor"),
             })
         return out
     text = bill.get("sponsor")
@@ -191,6 +200,8 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
     recs: dict[str, dict] = {}
 
     for leg in legislators:
+        if not isinstance(leg, dict):
+            continue
         lid = leg.get("legislator_id") or ""
         if not lid:
             continue
@@ -219,6 +230,8 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
 
     # Seats: incumbent running in 2026
     for seat in seats or []:
+        if not isinstance(seat, dict):
+            continue
         inc = seat.get("incumbent") or {}
         if not isinstance(inc, dict):
             continue
@@ -273,13 +286,26 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
         return None
 
     for b in bills:
+        if not isinstance(b, dict):
+            continue
         entries = _entries_for_bill(b)
         if not entries:
             continue
+        bill_chamber = ""
+        if (b.get("state") or "").upper() == "US":
+            bn = (b.get("billNumber") or "").upper().replace(" ", "")
+            bill_chamber = "Senate" if bn.startswith("S") else ("House" if bn.startswith("H") else "")
         bt = b.get("billType", "monitor")
         level = b.get("level") or ("Federal" if (b.get("state") or "").upper() == "US" else "State")
         for e in entries:
-            rec = resolve(e, level)
+            # A primary sponsor cannot sit in the other chamber; treat a
+            # mismatch as unresolvable rather than attribute it.
+            if bill_chamber and e["role"] == "primary" and e.get("chamber") and e["chamber"] != bill_chamber:
+                rec = None
+            else:
+                rec = resolve(e, level)
+            if rec is not None and bill_chamber and rec["level"] == "Federal" and rec["chamber"] != bill_chamber and e["role"] == "primary":
+                rec = None
             if rec is None:
                 unmatched.append({
                     "billId": b.get("billId"), "state": e["state"], "chamber": e["chamber"],

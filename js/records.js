@@ -136,7 +136,8 @@
                 var n = countOf(l, k);
                 if (!n) return;
                 var label = n + ' bill' + (n === 1 ? '' : 's') + ' classified ' + TYPE_WORD[k];
-                var b = el('span', 'badge ' + TYPE_CLASS[k], n + ' ' + TYPE_WORD[k]);
+                // Visible text names the BILLS explicitly so the chip never reads as a label on the person.
+                var b = el('span', 'badge ' + TYPE_CLASS[k], n + ' ' + TYPE_WORD[k] + ' bill' + (n === 1 ? '' : 's'));
                 b.title = label;
                 b.setAttribute('aria-label', label);
                 td.appendChild(b);
