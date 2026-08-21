@@ -25,7 +25,8 @@
       "data/removed_candidates.json",
       "preview-*.html",
       "command-center-preview.html",
-      "design-overhauls.html"
+      "design-overhauls.html",
+      "data/records.fixture.json"
     ],
     "cleanUrls": true,
     "trailingSlash": false,

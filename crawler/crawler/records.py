@@ -191,8 +191,14 @@ def _slug(legislator_id: str) -> str:
     return re.sub(r"-+", "-", s).strip("-")
 
 
-def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] | None = None):
-    """Return (records_json_dict, unmatched_list)."""
+def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] | None = None,
+                  rollcalls: dict | None = None):
+    """Return (records_json_dict, unmatched_list).
+
+    rollcalls: {"rollcalls": {key: {...,"votes":[...]}}, "people": {people_id: {...}}}
+    from data/rollcalls.json. Votes are joined with the same conservative
+    resolve() used for sponsorships; unresolvable voters are counted, not guessed.
+    """
     by_bioguide: dict[str, dict] = {}
     by_sdcl: dict[tuple, list] = defaultdict(list)   # state, chamber, district, last
     by_scl: dict[tuple, list] = defaultdict(list)    # state, chamber, last
@@ -216,9 +222,13 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             "bioguide_id": leg.get("bioguide_id", "") or "",
             "photo_url": leg.get("photo_url"),
             "up_in_2026": None,
-            "counts": {"total": 0, "primary": 0, "cosponsor": 0, "anti": 0, "pro": 0, "monitor": 0},
+            "counts": {"total": 0, "primary": 0, "cosponsor": 0, "anti": 0, "pro": 0, "monitor": 0,
+                       "votes": 0, "votes_yea": 0, "votes_nay": 0},
             "sponsorships": [],
+            "votes": [],
+            "topics": [],
             "_seen": set(),
+            "_seen_votes": set(),
         }
         recs[lid] = rec
         if rec["bioguide_id"]:
@@ -331,22 +341,96 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             if bt in c:
                 c[bt] += 1
 
+    # ---- Votes ----
+    bills_by_id = {b.get("billId"): b for b in bills if isinstance(b, dict) and b.get("billId")}
+    people = (rollcalls or {}).get("people") or {}
+    people_by_session = (rollcalls or {}).get("people_by_session") or {}
+    rc_map = (rollcalls or {}).get("rollcalls") or {}
+    votes_unmatched = 0
+    votes_unmatched_detail = []
+    for key, rc in rc_map.items():
+        if not isinstance(rc, dict):
+            continue
+        b = bills_by_id.get(rc.get("billId"))
+        if not b:
+            continue  # roll call for a bill we no longer track
+        level = b.get("level") or ("Federal" if (b.get("state") or "").upper() == "US" else "State")
+        bt = b.get("billType", "monitor")
+        chamber = rc.get("chamber") or ""
+        for v in rc.get("votes", []) or []:
+            if not isinstance(v, dict) or v.get("vote") not in ("Yea", "Nay", "NV", "Absent", "Present"):
+                continue
+            if v.get("people_id") is not None:
+                pid = str(v["people_id"])
+                # The session the roll call belongs to is authoritative for who
+                # that people_id was (district/chamber can change between sessions).
+                p = (people_by_session.get(str(rc.get("session_id") or "")) or {}).get(pid) or people.get(pid)
+                if not p:
+                    votes_unmatched += 1
+                    if len(votes_unmatched_detail) < 500:
+                        votes_unmatched_detail.append({"rollCallKey": key, "billId": rc.get("billId"),
+                                                       "people_id": pid, "reason": "no person record"})
+                    continue
+                entry = {"name": p.get("name", ""), "first_name": p.get("first_name", ""),
+                         "last_name": p.get("last_name", ""), "state": (p.get("state") or rc.get("state") or "").upper(),
+                         "district": p.get("district", ""),
+                         "chamber": ROLE_CHAMBER.get(str(p.get("role", "")).lower().rstrip("."), "") or chamber,
+                         "bioguide_id": "", "role": "vote"}
+            else:
+                entry = {"name": v.get("name", ""), "first_name": v.get("first_name", ""),
+                         "last_name": v.get("last_name", ""), "state": (v.get("state") or "").upper(),
+                         "district": v.get("district", ""), "chamber": chamber,
+                         "bioguide_id": v.get("bioguide_id", ""), "role": "vote"}
+            rec = resolve(entry, level)
+            if rec is None or (rec["level"] == "Federal" and chamber and rec["chamber"] != chamber):
+                votes_unmatched += 1
+                if len(votes_unmatched_detail) < 500:
+                    votes_unmatched_detail.append({"rollCallKey": key, "billId": rc.get("billId"),
+                                                   "name": entry.get("name", ""), "state": entry.get("state", ""),
+                                                   "chamber": entry.get("chamber", ""), "district": entry.get("district", ""),
+                                                   "reason": "unresolved" if rec is None else "chamber mismatch"})
+                continue
+            vkey = (key, rec["legislator_id"])
+            if vkey in rec["_seen_votes"]:
+                continue
+            rec["_seen_votes"].add(vkey)
+            rec["votes"].append({
+                "billId": b.get("billId"), "billNumber": b.get("billNumber", ""), "state": (b.get("state") or "").upper(),
+                "level": level, "title": b.get("title", ""), "billType": bt, "category": b.get("category", ""),
+                "rollCallKey": key, "date": rc.get("date", "") or "", "motion": rc.get("desc", "") or "",
+                "chamber": chamber, "vote": v["vote"], "passed": rc.get("passed"),
+                "yea": rc.get("yea", 0), "nay": rc.get("nay", 0), "sourceUrl": rc.get("sourceUrl", "") or "",
+            })
+            c = rec["counts"]
+            c["votes"] += 1
+            if v["vote"] == "Yea":
+                c["votes_yea"] += 1
+            elif v["vote"] == "Nay":
+                c["votes_nay"] += 1
+
     legislators_out = []
     with_records = 0
     total_sp = 0
+    total_votes = 0
     for rec in recs.values():
         rec.pop("_seen", None)
+        rec.pop("_seen_votes", None)
+        rec["votes"].sort(key=lambda s: s.get("date") or "", reverse=True)
+        rec["topics"] = sorted({s.get("category") for s in rec["sponsorships"] if s.get("category")} |
+                               {s.get("category") for s in rec["votes"] if s.get("category")})
+        total_votes += rec["counts"]["votes"]
         rec["sponsorships"].sort(key=lambda s: s.get("lastActionDate") or "", reverse=True)
-        if rec["counts"]["total"]:
+        if rec["counts"]["total"] or rec["counts"]["votes"]:
             with_records += 1
             total_sp += rec["counts"]["total"]
         legislators_out.append(rec)
-    legislators_out.sort(key=lambda r: (-r["counts"]["total"], r["name"]))
+    legislators_out.sort(key=lambda r: (-(r["counts"]["total"] + r["counts"]["votes"]), r["name"]))
 
     return ({
         "summary": {
             "legislators": len(legislators_out), "with_records": with_records,
-            "sponsorships": total_sp, "unmatched": len(unmatched),
+            "sponsorships": total_sp, "votes": total_votes,
+            "unmatched": len(unmatched), "votes_unmatched": votes_unmatched,
         },
         "legislators": legislators_out,
-    }, unmatched)
+    }, unmatched + [dict(u, kind="vote") for u in votes_unmatched_detail])

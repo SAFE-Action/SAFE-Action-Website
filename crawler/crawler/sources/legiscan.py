@@ -348,6 +348,27 @@ def _structured_sponsors(sponsors) -> list[dict]:
     return out
 
 
+def _roll_call_summaries(bill: dict) -> list[dict]:
+    """LegiScan getBill 'votes' -> roll-call summaries (no individual votes)."""
+    out = []
+    for v in bill.get("votes", []) or []:
+        if not isinstance(v, dict) or not v.get("roll_call_id"):
+            continue
+        chamber = (v.get("chamber") or "").upper()
+        out.append({
+            "key": f"LS-{v['roll_call_id']}",
+            "legiscan_roll_call_id": v.get("roll_call_id"),
+            "date": v.get("date", ""),
+            "desc": v.get("desc", ""),
+            "chamber": "Senate" if chamber == "S" else ("House" if chamber == "H" else chamber),
+            "yea": v.get("yea", 0), "nay": v.get("nay", 0), "nv": v.get("nv", 0),
+            "absent": v.get("absent", 0), "total": v.get("total", 0),
+            "passed": bool(v.get("passed")),
+            "sourceUrl": v.get("state_link") or v.get("url") or "",
+        })
+    return out
+
+
 def _normalize_bill(bill: dict, state: str) -> dict:
     """Normalise a LegiScan bill record to the SAFE Action bills.json schema."""
     title = bill.get("title", "")
@@ -397,6 +418,8 @@ def _normalize_bill(bill: dict, state: str) -> dict:
         "summary": description[:300] if description else title,
         "sponsor": sponsor_text,
         "sponsorships": sponsorships,
+        "rollCalls": _roll_call_summaries(bill),
+        "session_id": (bill.get("session") or {}).get("session_id") if isinstance(bill.get("session"), dict) else None,
         "lastAction": last_action,
         "lastActionDate": last_action_date,
         "actionCount": 0,
@@ -671,6 +694,9 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
 
 # ── Refresh existing tracked bills ───────────────────────────────────────
 
+REFRESH_CAP = 140   # was 200; the remaining ~60 daily calls fund roll-call votes (legiscan_votes.py)
+
+
 async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
     """Update status/lastAction for bills that have a ``legiscan_bill_id``.
 
@@ -705,7 +731,7 @@ async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
     order.sort(key=lambda i: _prio(existing_bills[i])[0])
     refresh_set = set()
     for i in order:
-        if existing_bills[i].get("legiscan_bill_id") and len(refresh_set) < 200:
+        if existing_bills[i].get("legiscan_bill_id") and len(refresh_set) < REFRESH_CAP:
             refresh_set.add(i)
 
     updated = list(existing_bills)
@@ -734,6 +760,12 @@ async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
             bill["lastActionDate"] = fresh.get("last_action_date", bill.get("lastActionDate", ""))
             bill["sourceUrl"] = fresh.get("url", "") or bill.get("sourceUrl", "")
 
+            # Roll-call summaries and session id ride along too; keep them.
+            rcs = _roll_call_summaries(fresh)
+            if rcs:
+                bill["rollCalls"] = rcs
+            if isinstance(fresh.get("session"), dict) and fresh["session"].get("session_id"):
+                bill["session_id"] = fresh["session"]["session_id"]
             # Sponsorships ride along on every getBill; keep them.
             sp = _structured_sponsors(fresh.get("sponsors", []))
             if sp:

@@ -16,6 +16,7 @@ from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
 from .analysis.bill_verification import verify_all_bills
 from .records import build_records
+from .sources.legiscan_votes import fetch_state_votes
 from .utils.cache import (
     should_recrawl, update_cache_timestamp,
     save_cached_data, load_cached_data,
@@ -76,7 +77,7 @@ async def run_full_crawl(news_only: bool = False):
     bill_source = "none"
     if not news_only:
         if should_recrawl("bills"):
-            previous_bills = load_cached_data("bills") or []
+            previous_bills = load_cached_data("bills") or _read_data_json("bills.json", "bills") or []
             # GovInfo: free federal bills (no API key needed)
             print("[2b/5] Fetching federal bills from GovInfo (free)...")
             all_bills = await fetch_federal_bills()
@@ -123,6 +124,38 @@ async def run_full_crawl(news_only: bool = False):
     if not news_only and all_bills and LEGISCAN_API_KEY and bill_source != "cache":
         print("[2c/5] Refreshing tracked bill statuses via LegiScan...")
         all_bills = await legiscan_refresh_bills(all_bills)
+
+    # ── Step 2d: Roll-call votes (persisted in data/rollcalls.json; immutable once fetched) ──
+    rollcalls = _read_data_json("rollcalls.json") or {"rollcalls": {}, "people": {}}
+    if not news_only and all_bills and bill_source != "cache":
+        if LEGISCAN_API_KEY:
+            print("[2d/5] Fetching state roll-call votes via LegiScan...")
+            rollcalls = await fetch_state_votes(all_bills, rollcalls, budget=60)
+        try:
+            from .sources.federal_votes import fetch_federal_roll_calls
+            pointers = []
+            for b in all_bills:
+                if (b.get("state") or "").upper() != "US":
+                    continue
+                for rc in b.get("rollCalls", []) or []:
+                    if rc.get("key") and rc["key"] not in rollcalls["rollcalls"]:
+                        pointers.append(dict(rc, billId=b.get("billId")))
+            if pointers:
+                print(f"[2d/5] Fetching {len(pointers)} federal roll calls (House Clerk / Senate LIS)...")
+                fetched = await fetch_federal_roll_calls(pointers, rollcalls["rollcalls"])
+                rollcalls["rollcalls"].update(fetched or {})
+                if not fetched:
+                    print(f"  ERROR federal votes: {len(pointers)} pointers, 0 fetched. Check federal_votes.py against the Clerk/LIS XML.")
+                    rollcalls["last_federal_error"] = {"at": now, "message": f"0 of {len(pointers)} roll calls fetched"}
+                else:
+                    rollcalls.pop("last_federal_error", None)
+        except ImportError:
+            print("[2d/5] federal_votes module not available; skipping federal votes")
+        except Exception as e:
+            # The crawl must not die on a vote-parse failure, but the failure is
+            # printed as an ERROR and persisted so it is visible in the data.
+            print(f"  ERROR federal votes failed: {type(e).__name__}: {e}")
+            rollcalls["last_federal_error"] = {"at": now, "message": f"{type(e).__name__}: {e}"[:300]}
 
     # ── Step 2d: LLM verification of bill classifications ──
     if not news_only and all_bills and ANTHROPIC_API_KEY:
@@ -213,9 +246,11 @@ async def run_full_crawl(news_only: bool = False):
             except Exception:
                 seats_doc = None
         seats = (seats_doc or {}).get("seats", []) if isinstance(seats_doc, dict) else (seats_doc or [])
-        records, unmatched = build_records(all_bills, all_legislators, seats)
+        records, unmatched = build_records(all_bills, all_legislators, seats, rollcalls)
         records["generated_at"] = now
         output_files["records.json"] = records
+        rollcalls["generated_at"] = now
+        output_files["rollcalls.json"] = rollcalls
         output_files["records-unmatched.json"] = {"generated_at": now, "count": len(unmatched), "unmatched": unmatched}
         s = records["summary"]
         print(f"  Records: {s['with_records']} legislators with sponsorships, {s['sponsorships']} sponsorships matched, {s['unmatched']} unmatched")
@@ -227,6 +262,18 @@ async def run_full_crawl(news_only: bool = False):
     bill_msg = f", {len(all_bills)} bills" if all_bills else ""
     print(f"\nDone! {len(all_legislators)} legislators, {len(news_articles)} articles{bill_msg}, {len(pivotal)} pivotal targets")
     print(f"Output: {DATA_DIR}")
+
+
+def _read_data_json(name: str, key: str | None = None):
+    """Read a committed data file (the only state that persists across CI runs)."""
+    try:
+        with open(DATA_DIR / name, encoding="utf-8") as fh:
+            doc = json.load(fh)
+    except Exception:
+        return None
+    if key and isinstance(doc, dict):
+        return doc.get(key)
+    return doc
 
 
 def _carry_forward_sponsorships(fresh: list[dict], previous: list[dict]) -> int:
@@ -247,6 +294,15 @@ def _carry_forward_sponsorships(fresh: list[dict], previous: list[dict]) -> int:
         if not b.get("sponsor") and p.get("sponsor"):
             b["sponsor"] = p["sponsor"]
         carried += 1
+    # Roll-call summaries and session ids are enrichment-only too.
+    for b in fresh:
+        p = prev_by_id.get(b.get("billId"))
+        if not p:
+            continue
+        if not b.get("rollCalls") and p.get("rollCalls"):
+            b["rollCalls"] = p["rollCalls"]
+        if not b.get("session_id") and p.get("session_id"):
+            b["session_id"] = p["session_id"]
     return carried
 
 

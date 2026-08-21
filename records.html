@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legislative Records - SAFE Action</title>
-    <meta name="description" content="A neutral record of which legislators sponsored or cosponsored bills tracked by SAFE Action, drawn from official legislative sources. Search by state, chamber, party, and name.">
+    <meta name="description" content="A neutral record of which legislators sponsored, cosponsored, or cast recorded votes on bills tracked by SAFE Action, drawn from official legislative sources. Filter by state, chamber, party, or topic, or search by name or bill.">
     <meta property="og:title" content="Legislative Records - SAFE Action">
-    <meta property="og:description" content="Which legislators sponsored or cosponsored the bills SAFE Action tracks, drawn from official legislative sources. A record of legislative activity, not a rating.">
+    <meta property="og:description" content="Which legislators sponsored, cosponsored, or cast recorded votes on the bills SAFE Action tracks, drawn from official legislative sources. A record of legislative activity, not a rating.">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://scienceandfreedom.com/records">
     <meta property="og:url" content="https://scienceandfreedom.com/records">
@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Legislative Records - SAFE Action">
-    <meta name="twitter:description" content="A neutral record of which legislators sponsored or cosponsored bills tracked by SAFE Action, drawn from official legislative sources.">
+    <meta name="twitter:description" content="A neutral record of which legislators sponsored, cosponsored, or cast recorded votes on bills tracked by SAFE Action, drawn from official legislative sources.">
     <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -40,6 +40,7 @@
     .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;}
     td.spons{white-space:nowrap;}
     td.spons .tot{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;}
+    td.spons .rec-sub{white-space:nowrap;}
     .badge{display:inline-block;border-radius:6px;padding:2px 8px;margin-left:6px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;white-space:nowrap;}
     td .badge:first-child{margin-left:0;}
     </style>
@@ -80,7 +81,7 @@
     <div class="pagehero">
         <div class="wrap">
             <h1>Legislative Records</h1>
-            <p class="lede">A record of which legislators sponsored or cosponsored the bills SAFE Action tracks. Each entry links to the official bill record and shows the date of the most recent recorded action. Filter by state, level, chamber, or party, or search by name.</p>
+            <p class="lede">A record of which legislators sponsored, cosponsored, or cast recorded votes on the bills SAFE Action tracks. Each entry links to the official bill record and shows the date of the most recent recorded action. Filter by state, level, chamber, party, or topic, or search by name or bill.</p>
         </div>
     </div>
 
@@ -88,7 +89,7 @@
         <div class="wrap">
             <div class="card note">
                 <span class="k">METHODOLOGY</span>
-                <p>This record lists sponsorships and cosponsorships of bills tracked by SAFE Action, drawn from official legislative sources. It is a record of legislative activity, not an endorsement or rating of any candidate or official. Classifications apply to bills, not people.</p>
+                <p>This record lists sponsorships, cosponsorships, and recorded votes on bills tracked by SAFE Action, drawn from official legislative sources. It is a record of legislative activity, not an endorsement or rating of any candidate or official. Classifications apply to bills, not people. Votes are recorded roll-call votes on tracked bills, as published by the legislature; absence of a vote means no recorded roll call, not a position.</p>
             </div>
             <div id="rec-fixture" class="card note fixture" style="display:none;">
                 <span class="k">DEVELOPMENT FIXTURE</span>
@@ -104,8 +105,9 @@
                 </select>
                 <select id="rf-chamber" aria-label="Chamber"><option value="">All chambers</option></select>
                 <select id="rf-party" aria-label="Party"><option value="">All parties</option></select>
-                <input type="text" id="rf-search" placeholder="Search by name" aria-label="Search legislators by name">
-                <label class="chk" for="rf-onrecord"><input type="checkbox" id="rf-onrecord" checked> Show only legislators with sponsorships on record</label>
+                <select id="rf-topic" aria-label="Topic"><option value="">All topics</option></select>
+                <input type="text" id="rf-search" placeholder="Search by name or bill" aria-label="Search by legislator name or bill number or title">
+                <label class="chk" for="rf-onrecord"><input type="checkbox" id="rf-onrecord" checked> Show only legislators with sponsorships or votes on record</label>
             </div>
 
             <div id="rec-summary" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
@@ -113,13 +115,14 @@
 
             <div id="rec-tablewrap" class="tablewrap" style="display:none;">
                 <table class="rec" id="rec-table">
-                    <caption class="sr-only">Legislators and their sponsorships of tracked bills</caption>
+                    <caption class="sr-only">Legislators and their sponsorships of, and recorded votes on, tracked bills</caption>
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Office</th>
                             <th scope="col">Party</th>
                             <th scope="col">Sponsorships on record</th>
+                            <th scope="col">Votes on record</th>
                             <th scope="col">Running in 2026</th>
                         </tr>
                     </thead>
@@ -163,7 +166,7 @@
     </div>
 </footer>
 
-<script src="js/records.js?v=1"></script>
+<script src="js/records.js?v=2"></script>
 <script src="js/pwa.js?v=100"></script>
 </body>
 </html>

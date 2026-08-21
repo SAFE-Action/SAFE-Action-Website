@@ -133,6 +133,7 @@ def _parse_bill_xml(xml_text):
         cname = cm.findtext("name", "")
         if cname:
             committees.append(cname)
+    roll_calls = _parse_recorded_votes(bill)
     stance = _classify_stance(title, policy_area, subjects)
     return {
         "billId": "US-" + str(congress) + "-" + bill_type + number,
@@ -154,7 +155,67 @@ def _parse_bill_xml(xml_text):
         "sponsorships": sponsorships,
         "subjects": subjects,
         "url": url,
+        "rollCalls": roll_calls,
     }
+
+
+def _parse_recorded_votes(bill):
+    """Roll-call pointers from the bill's own <actions>, direct children only.
+
+    BILLSTATUS nests every amendment (each with its own <actions> and
+    <recordedVotes>) under <bill>, so a descendant search (".//") would
+    attach amendment votes to the bill. Only
+    <bill><actions><item><recordedVotes><recordedVote> counts here.
+
+    The same roll call is usually listed twice (the action and its
+    "Passed/agreed to" summary item), so pointers are deduplicated on
+    chamber + congress + session + roll number; the first action text wins.
+    A pointer is emitted only when every identifying field parses. A bad
+    pointer would become a wrong vote downstream, so anything doubtful is
+    logged and dropped.
+    """
+    pointers = []
+    seen = set()
+    actions_el = bill.find("actions")
+    if actions_el is None:
+        return pointers
+    for item in actions_el.findall("item"):
+        votes_el = item.find("recordedVotes")
+        if votes_el is None:
+            continue
+        action_text = (item.findtext("text", "") or "").strip()
+        for rv in votes_el.findall("recordedVote"):
+            chamber = (rv.findtext("chamber", "") or "").strip()
+            raw_ids = {
+                "congress": rv.findtext("congress", ""),
+                "sessionNumber": rv.findtext("sessionNumber", ""),
+                "rollNumber": rv.findtext("rollNumber", ""),
+            }
+            if chamber not in ("House", "Senate"):
+                print("  Warning: recordedVote with unknown chamber " + repr(chamber) + " skipped: " + str(raw_ids))
+                continue
+            try:
+                congress = int(raw_ids["congress"])
+                session = int(raw_ids["sessionNumber"])
+                roll = int(raw_ids["rollNumber"])
+            except (TypeError, ValueError):
+                print("  Warning: recordedVote with unparseable ids skipped: " + str(raw_ids))
+                continue
+            key = "US-" + str(congress) + "-" + chamber[0] + "-" + str(session) + "-" + str(roll)
+            if key in seen:
+                continue
+            seen.add(key)
+            pointers.append({
+                "key": key,
+                "chamber": chamber,
+                "congress": congress,
+                "session": session,
+                "rollNumber": roll,
+                "date": (rv.findtext("date", "") or "").strip(),
+                "sourceUrl": (rv.findtext("url", "") or "").strip(),
+                "desc": action_text,
+            })
+    return pointers
 
 
 def _classify_stance(title, policy_area, subjects):
@@ -172,7 +233,7 @@ def _classify_stance(title, policy_area, subjects):
         "fluoride", "fluoridation",
         "mrna",
     ]
-    # NOTE: "informed consent" is deliberately NOT a gate topic — on its own it
+    # NOTE: "informed consent" is deliberately NOT a gate topic, on its own it
     # matches unrelated bills (e.g. "Ultrasound Informed Consent Act", "Nuclear
     # Waste Informed Consent Act"). It stays in anti_kw below, so it only tips a
     # bill anti-science once real vaccine/fluoride/etc. context has gated it in.
