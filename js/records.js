@@ -455,7 +455,7 @@
         tr.appendChild(el('td', null, ROLE_LABEL[str(s.role)] || str(s.role)));
         tr.appendChild(classCell(s.billType));
         tr.appendChild(el('td', null, str(s.status)));
-        tr.appendChild(el('td', 'mono', str(s.lastActionDate)));
+        tr.appendChild(el('td', 'mono', str(s.lastActionDate).slice(0, 10)));
         return tr;
     }
 
@@ -481,7 +481,7 @@
         }
         tr.appendChild(td);
 
-        tr.appendChild(el('td', 'mono', str(x.date)));
+        tr.appendChild(el('td', 'mono', str(x.date).slice(0, 10)));
         return tr;
     }
 
