@@ -6,8 +6,18 @@
     <title>For Media &amp; Content Creators - SAFE Action</title>
     <meta name="description" content="Resources for journalists, reporters, bloggers, and content creators covering anti-science legislation. Browse bills, download data, and find expert sources.">
     <meta property="og:title" content="SAFE Action - Media &amp; Content Creator Resources">
-    <meta property="og:description" content="The most comprehensive database of anti-science legislation in America. Free resources for journalists and creators.">
+    <meta property="og:description" content="A free, sourced database of anti-science legislation in America. Resources for journalists and creators.">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://scienceandfreedom.com/media">
+    <meta property="og:url" content="https://scienceandfreedom.com/media">
+    <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="For Media &amp; Content Creators - SAFE Action">
+    <meta name="twitter:description" content="Resources for journalists, reporters, bloggers, and content creators covering anti-science legislation. Browse bills, download data, and find expert sources.">
+    <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -52,7 +62,7 @@
   <div class="wrap">
     <span class="livedot" aria-hidden="true"></span>
     <span class="label">SAFE ACTION - MEDIA + CREATOR RESOURCES</span>
-    <span class="side">41 STATES + CONGRESS</span>
+    <span class="side">STATEHOUSES + CONGRESS</span>
   </div>
 </div>
 
@@ -81,7 +91,7 @@
         <div class="wrap">
             <span class="chip"><span class="livedot" aria-hidden="true"></span> FREE FOR JOURNALISTS + CREATORS</span>
             <h1 style="margin-top:16px;">For News, Media &amp; Content Creators</h1>
-            <p class="lede">Free access to the most comprehensive database of anti-science legislation in America. Browse, filter, bookmark, and share.</p>
+            <p class="lede">Free access to our full database of anti-science legislation, sourced from LegiScan, GovInfo, and Open States. Browse, filter, bookmark, and share.</p>
         </div>
     </div>
 
@@ -197,7 +207,7 @@
                         <li><strong>GovInfo</strong> - The U.S. Government Publishing Office's official database for federal bills</li>
                         <li><strong>OpenStates</strong> - An open-source backup that ensures we don't miss anything</li>
                     </ul>
-                    <p>Our sources cover all 50 state legislatures and Congress. The live count of bills currently in the database appears at the top of the <a href="index.html">homepage tracker</a>. The system checks for new bills and status changes automatically every day.</p>
+                    <p>Our sources reach all 50 state legislatures and Congress. The live counts of bills and states currently in the database appear at the top of the <a href="index.html">homepage tracker</a>. The system checks for new bills and status changes automatically every day.</p>
                 </div>
             </div>
 
@@ -334,7 +344,7 @@
                 </div>
                 <div class="card hover">
                     <h3>Hosting &amp; Infrastructure</h3>
-                    <p><strong>GitHub Pages</strong> - The website itself is a static site hosted for free on GitHub. No server-side user tracking.</p>
+                    <p><strong>Firebase Hosting</strong> - The website is a static site served by Firebase Hosting, with a small set of Cloud Functions for the mailing list and volunteer forms. No advertising trackers.</p>
                     <p><strong>Firebase (Google Cloud)</strong> - Cloud functions handle action counting, volunteer applications, and donation processing. Firestore database stores bill data and aggregate counters.</p>
                     <p><strong>GitHub Actions</strong> - Automated daily crawler runs at 6 AM UTC, pulling fresh data from all legislation APIs.</p>
                 </div>
@@ -376,7 +386,7 @@
   </div>
 </footer>
 
-    <script src="js/config.js"></script>
+    <script src="js/config.js?v=100"></script>
     <script>
         // Populate state grid with links
         document.addEventListener('DOMContentLoaded', function() {
@@ -398,6 +408,6 @@
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
 function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
 </script>
-<script src="js/header.js"></script>
+<script src="js/header.js?v=100"></script>
 </body>
 </html>

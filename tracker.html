@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legislation Tracker - SAFE Action</title>
-    <meta name="description" content="The largest database of pro- and anti-science legislation in America. Track every bill that impacts public health, medical freedom, and scientific integrity across the states we cover and Congress.">
+    <meta name="description" content="A free, sourced database of pro- and anti-science legislation in America. Track bills that impact public health, medical freedom, and scientific integrity across the states we cover and Congress.">
     <meta property="og:title" content="SAFE Action - Legislation Tracker">
-    <meta property="og:description" content="Track every science-related bill in America. Filter by state, category, status, and more.">
+    <meta property="og:description" content="Track science legislation across the states we cover and Congress. Filter by state, category, status, and more.">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://scienceandfreedom.com/tracker">
+    <meta property="og:url" content="https://scienceandfreedom.com/tracker">
+    <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legislation Tracker - SAFE Action">
+    <meta name="twitter:description" content="A free, sourced database of pro- and anti-science legislation in America. Track bills that impact public health, medical freedom, and scientific integrity across the states we cover and Congress.">
+    <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#101b33">
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
@@ -49,7 +59,7 @@
     <div class="pagehero">
         <div class="wrap">
             <h1>Legislation Tracker</h1>
-            <p class="lede">The largest database of pro- and anti-science legislation in America. Every bill that touches public health, medical freedom, and scientific integrity, read and classified daily.</p>
+            <p class="lede">A free, sourced database of pro- and anti-science legislation in America. Bills that touch public health, medical freedom, and scientific integrity, read and classified daily.</p>
         </div>
     </div>
 
@@ -134,15 +144,16 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-<script src="js/config.js?v=78"></script>
+<script src="js/config.js?v=100"></script>
 <script>
 if (typeof firebase !== 'undefined' && typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.FIREBASE_CONFIG) {
     firebase.initializeApp(SAFE_CONFIG.FIREBASE_CONFIG);
 }
 </script>
-<script src="js/legislation-api.js?v=78"></script>
-<script src="js/my-reps-page.js?v=78"></script>
-<script src="js/pwa.js"></script>
+<script src="js/legislation-api.js?v=100"></script>
+<script src="js/my-reps.js?v=100"></script>
+<script src="js/my-reps-page.js?v=100"></script>
+<script src="js/pwa.js?v=100"></script>
 <script>
 // Auto-init bill browser on this standalone page
 if (document.readyState === 'loading') {

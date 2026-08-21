@@ -63,6 +63,13 @@ service cloud.firestore {
     }
 
     // Mailing list - admins read (panel/export); ALL writes via Cloud Functions
+    // Pledges: written and read only through Cloud Functions (Admin SDK).
+    match /pledges/{id} {
+      allow read, write: if false;
+    }
+    match /pledgeQuota/{id} {
+      allow read, write: if false;
+    }
     match /subscribers/{docId} {
       allow read: if request.auth != null &&
         exists(/databases/$(database)/documents/admins/$(request.auth.token.email));

@@ -78,7 +78,8 @@ const SAFE_CONFIG = {
     // 4. Enable Cloud Firestore (us-central1)
     // 5. Add scienceandfreedom.com to Auth > Settings > Authorized domains
     // 6. Copy config from Project Settings > General > Your apps > Web app
-    // Base action counts (pre-launch baseline)
+    // Base action counts: baselines carried over from the previous tracker
+    // (operator-confirmed 2026-08). Displayed totals = baseline + live Firestore counts.
     BASE_ACTIONS: 1128,
     BASE_EMAILS: 743,
     BASE_CALLS: 385,

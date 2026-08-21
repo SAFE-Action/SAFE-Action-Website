@@ -31,17 +31,31 @@ function fillTemplate(template, vars) {
     var state = vars.state || '';
     // If city already contains state abbreviation (e.g. "Fallbrook, CA"), don't duplicate
     var cityHasState = city.match(/,\s*[A-Z]{2}\s*$/);
-    return template
-        .replace(/\{city\},?\s*\{state\}/g, cityHasState ? city : (city + ', ' + state))
+    var out = template
+        .replace(/\{city\},?\s*\{state\}/g, cityHasState ? city : (city ? city + ', ' + state : state))
         .replace(/\{name\}/g, vars.name || '')
-        .replace(/\{city\}/g, city)
+        .replace(/\{city\}/g, city || state)
         .replace(/\{state\}/g, state)
         .replace(/\{title\}/g, vars.title || '')
         .replace(/\{lastName\}/g, vars.lastName || '')
         .replace(/\{fullName\}/g, vars.fullName || '')
         .replace(/\{billNumber\}/g, vars.billNumber || '')
         .replace(/\{billTitle\}/g, vars.billTitle || '')
-        .replace(/\{pledgeUrl\}/g, vars.pledgeUrl || 'https://scienceandfreedom.com/quiz');
+        .replace(/\{pledgeUrl\}/g, vars.pledgeUrl || 'https://scienceandfreedom.com/pledge');
+    return tidyPaste(out);
+}
+
+// Pasteable text must never contain bracket placeholders or artifacts from a
+// missing name/city. Collapse what an empty field leaves behind.
+function tidyPaste(s) {
+    return s
+        .replace(/my name is\s+and I'm/g, "I'm")
+        .replace(/ (in|from|of) ,\s+/g, ' $1 ')
+        .replace(/\n(Sincerely|Respectfully|Best regards|Thank you),\n\n/g, '\n$1,\n')
+        .split('\n').map(function (l) { return l.replace(/^,\s+/, ''); }).join('\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/[ \t]+\n/g, '\n')
+        .trim();
 }
 
 // ────────────────────────────────────────────
@@ -393,7 +407,7 @@ var EMAIL_TEMPLATES = {
 
       "Dear {title} {lastName},\n\nAs a resident of {city}, I am deeply concerned about {billNumber} ({billTitle}).\n\nThis bill would weaken public health protections that have been established through decades of scientific research. I believe that our state's health policy should be guided by evidence, not ideology.\n\nPlease oppose this legislation and continue to support science-based public health policy in {state}.\n\nRespectfully,\n{name}\n{city}, {state}",
 
-      "Dear {title} {lastName},\n\nI am writing to express my strong opposition to {billNumber}: {billTitle}.\n\nThis bill goes against established scientific consensus and threatens the public health infrastructure that protects {state} residents. Evidence-based policy should be the standard, and {billNumber} falls short.\n\nI urge you to vote against this legislation.\n\nBest regards,\n{name}\n{city}, {state}",
+      "Dear {title} {lastName},\n\nAs your constituent, I urge you to oppose {billNumber}: {billTitle}.\n\nThis bill goes against established scientific consensus and threatens the public health infrastructure that protects {state} residents. Evidence-based policy should be the standard, and {billNumber} falls short.\n\nI urge you to vote against this legislation.\n\nBest regards,\n{name}\n{city}, {state}",
 
       "Dear {title} {lastName},\n\nThank you for your service to {state}. I'm reaching out about {billNumber} ({billTitle}), which I believe poses a threat to evidence-based public health policy.\n\nAs your constituent, I urge you to carefully consider the scientific evidence and oppose this bill. Our community's health and safety should not be compromised by legislation that contradicts established science.\n\nI appreciate your consideration.\n\n{name}\n{city}, {state}",
 

@@ -1,6 +1,7 @@
 {
   "firestore": {
-    "rules": "firestore.rules"
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   },
   "hosting": {
     "public": ".",
@@ -30,6 +31,22 @@
     "trailingSlash": false,
     "rewrites": [
       {
+        "source": "/api/pledges/list",
+        "function": "pledges"
+      },
+      {
+        "source": "/api/pledges/confirm",
+        "function": "pledges"
+      },
+      {
+        "source": "/api/pledges/submit",
+        "function": "pledges"
+      },
+      {
+        "source": "/pledge",
+        "destination": "/quiz.html"
+      },
+      {
         "source": "/api/list/send",
         "function": "mailingList"
       },
@@ -56,10 +73,6 @@
       {
         "source": "/admin",
         "destination": "/admin.html"
-      },
-      {
-        "source": "/feed",
-        "destination": "/feed.html"
       },
       {
         "source": "/volunteer",
@@ -144,6 +157,73 @@
             "value": "public, max-age=3600"
           }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/feed",
+        "destination": "/tracker",
+        "type": 301
+      },
+      {
+        "source": "/feed.html",
+        "destination": "/tracker",
+        "type": 301
+      },
+      {
+        "source": "/elections",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/elections.html",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/press",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/press.html",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/updates",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/updates.html",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/intelligence",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/intelligence.html",
+        "destination": "/outreach",
+        "type": 301
+      },
+      {
+        "source": "/pledge.html",
+        "destination": "/pledge",
+        "type": 301
+      },
+      {
+        "source": "/quiz",
+        "destination": "/pledge",
+        "type": 301
+      },
+      {
+        "source": "/quiz.html",
+        "destination": "/pledge",
+        "type": 301
       }
     ]
   },

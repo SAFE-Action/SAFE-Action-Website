@@ -146,14 +146,28 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        // Contact
+        // Contact. The public pledge API intentionally omits email and phone,
+        // so hide the rows when absent instead of rendering blanks.
         const emailEl = document.getElementById('candidate-email');
-        emailEl.textContent = c.email;
-        emailEl.href = `mailto:${c.email}`;
-
+        if (emailEl) {
+            if (c.email) {
+                emailEl.textContent = c.email;
+                emailEl.href = `mailto:${c.email}`;
+            } else {
+                const row = emailEl.closest('div');
+                if (row) row.style.display = 'none';
+            }
+        }
         const phoneEl = document.getElementById('candidate-phone');
-        phoneEl.textContent = c.phone;
-        phoneEl.href = `tel:${c.phone.replace(/[^+\d]/g, '')}`;
+        if (phoneEl) {
+            if (c.phone) {
+                phoneEl.textContent = c.phone;
+                phoneEl.href = `tel:${c.phone.replace(/[^+\d]/g, '')}`;
+            } else {
+                const row = phoneEl.closest('div');
+                if (row) row.style.display = 'none';
+            }
+        }
 
         // Vaccine position
         document.getElementById('candidate-vaccine').textContent = c.vaccineSupport;

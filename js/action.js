@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             billNumber: b.billNumber,
             billTitle: b.title,
             state: stateName,
-            yourName: document.getElementById('user-name').value || '[Your Name]',
-            yourCity: document.getElementById('user-city').value || '[Your City]'
+            yourName: document.getElementById('user-name').value || '',
+            yourCity: document.getElementById('user-city').value || ''
         };
 
         // Email
@@ -303,8 +303,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
             document.getElementById('email-subject').value = `Please ${b.stance === 'Support' ? 'SUPPORT' : 'OPPOSE'} ${b.billNumber}`;
             const cityHasState = data.yourCity.match(/,\s*[A-Z]{2}\s*$/);
-            const signoffLoc = data.yourCity && data.yourCity !== '[Your City]' ? (cityHasState ? data.yourCity : data.yourCity + ', ' + stateName) : '[Your City], ' + stateName;
-            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\nSincerely,\n${data.yourName}\n${signoffLoc}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html`;
+            const signoffLoc = data.yourCity ? (cityHasState ? data.yourCity : data.yourCity + ', ' + stateName) : stateName;
+            const signoff = 'Sincerely,' + (data.yourName ? '\n' + data.yourName : '') + '\n' + signoffLoc;
+            document.getElementById('email-body').value = `Dear ${data.repName},\n\nI am writing regarding ${b.billNumber}, the ${b.title}.\n\n[Share your position here]\n\n${signoff}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Take the SAFE Action Pledge at https://scienceandfreedom.com/pledge`;
         }
 
         // Phone

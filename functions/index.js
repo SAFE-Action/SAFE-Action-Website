@@ -4,6 +4,7 @@ admin.initializeApp();
 
 const { districts } = require("./districts");
 const { volunteerApply } = require("./volunteer-apply");
+const { pledgesHandler } = require("./pledges");
 const { adminVolunteers } = require("./admin-volunteers");
 const { volunteerSignNda } = require("./volunteer-sign-nda");
 const { trackAction } = require("./track-action");
@@ -39,6 +40,7 @@ exports.mailingList = onRequest({
     serviceAccount: VOLUNTEER_SA,
     maxInstances: 5,
 }, mailingList);
+exports.pledges = onRequest({ cors: allowedOrigins, serviceAccount: VOLUNTEER_SA, maxInstances: 5 }, pledgesHandler);
 
 // Campaign worker: Firestore-triggered, so it is NOT subject to the Hosting
 // rewrite's 60s HTTP cap. Idempotent via campaigns/{id}/sent markers.
