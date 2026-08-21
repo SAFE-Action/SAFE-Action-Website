@@ -324,6 +324,30 @@ def _determine_impact(bill: dict, bill_type: str) -> str:
     return "Medium"
 
 
+def _structured_sponsors(sponsors) -> list[dict]:
+    """LegiScan getBill sponsors -> compact structured list for records.json."""
+    out = []
+    if not isinstance(sponsors, list):
+        return out
+    for s in sponsors:
+        if not isinstance(s, dict) or not s.get("name"):
+            continue
+        if s.get("committee_sponsor"):
+            continue  # committee sponsors are not people
+        stype = s.get("sponsor_type_id")
+        out.append({
+            "people_id": s.get("people_id"),
+            "name": s.get("name", ""),
+            "first_name": s.get("first_name", ""),
+            "last_name": s.get("last_name", ""),
+            "party": s.get("party", ""),
+            "role": s.get("role", ""),
+            "district": s.get("district", ""),
+            "type": "primary" if stype in (1, "1") else "cosponsor",
+        })
+    return out
+
+
 def _normalize_bill(bill: dict, state: str) -> dict:
     """Normalise a LegiScan bill record to the SAFE Action bills.json schema."""
     title = bill.get("title", "")
@@ -335,8 +359,10 @@ def _normalize_bill(bill: dict, state: str) -> dict:
     bill_number = bill.get("bill_number", "")
     bill_id_str = f"{state.upper()}-{bill_number.replace(' ', '').replace('.', '')}"
 
-    # Sponsor info
+    # Sponsor info: keep the legacy display string AND the structured list
+    # (people_id/role/district) that the legislative-records join needs.
     sponsors = bill.get("sponsors", [])
+    sponsorships = _structured_sponsors(sponsors)
     sponsor_text = ""
     if isinstance(sponsors, list) and sponsors:
         primary = [s for s in sponsors if isinstance(s, dict) and s.get("sponsor_type_id") == 1]
@@ -370,6 +396,7 @@ def _normalize_bill(bill: dict, state: str) -> dict:
         "impact": impact,
         "summary": description[:300] if description else title,
         "sponsor": sponsor_text,
+        "sponsorships": sponsorships,
         "lastAction": last_action,
         "lastActionDate": last_action_date,
         "actionCount": 0,
@@ -654,30 +681,49 @@ async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
         return existing_bills
 
     print(f"  Refreshing {len(existing_bills)} tracked bills via LegiScan...")
-    updated = []
     requests_used = 0
 
+    # Priority: the 200-call cap used to be spent on whatever bills came first
+    # (alphabetically AK/AL), forever. Order so the calls go where they matter
+    # and sponsorship coverage grows every run:
+    #   0 anti/pro active without sponsorships   1 anti/pro active (status refresh)
+    #   2 anti/pro inactive without sponsorships 3 monitor without sponsorships (recent first)
+    #   4 everything else
+    def _prio(b: dict):
+        stance = b.get("billType") in ("anti", "pro")
+        active = b.get("isActive") == "Yes"
+        has_sp = bool(b.get("sponsorships"))
+        if stance and active and not has_sp: tier = 0
+        elif stance and active: tier = 1
+        elif stance and not has_sp: tier = 2
+        elif not has_sp: tier = 3
+        else: tier = 4
+        return (tier,)
+    # Recent-first within a tier, then stable-sort by tier. The returned list
+    # keeps its original order; only the choice of which bills to refresh changes.
+    order = sorted(range(len(existing_bills)), key=lambda i: existing_bills[i].get("lastActionDate") or "", reverse=True)
+    order.sort(key=lambda i: _prio(existing_bills[i])[0])
+    refresh_set = set()
+    for i in order:
+        if existing_bills[i].get("legiscan_bill_id") and len(refresh_set) < 200:
+            refresh_set.add(i)
+
+    updated = list(existing_bills)
     async with httpx.AsyncClient() as client:
-        for bill in existing_bills:
+        for i in sorted(refresh_set):
+            bill = existing_bills[i]
             legiscan_id = bill.get("legiscan_bill_id")
             if not legiscan_id:
-                updated.append(bill)
-                continue
-
-            if requests_used >= 200:  # cap refresh requests
-                updated.append(bill)
                 continue
 
             data = await _api_call(client, "getBill", id=legiscan_id)
             requests_used += 1
 
             if data is None:
-                updated.append(bill)
                 continue
 
             fresh = data.get("bill", {})
             if not fresh:
-                updated.append(bill)
                 continue
 
             # Update mutable fields, keep our classification
@@ -688,7 +734,15 @@ async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
             bill["lastActionDate"] = fresh.get("last_action_date", bill.get("lastActionDate", ""))
             bill["sourceUrl"] = fresh.get("url", "") or bill.get("sourceUrl", "")
 
-            updated.append(bill)
+            # Sponsorships ride along on every getBill; keep them.
+            sp = _structured_sponsors(fresh.get("sponsors", []))
+            if sp:
+                bill["sponsorships"] = sp
+                if not bill.get("sponsor"):
+                    primary = [s for s in sp if s["type"] == "primary"] or sp
+                    bill["sponsor"] = primary[0]["name"] + (f" ({primary[0]['party']})" if primary[0].get("party") else "")
+            updated[i] = bill
 
-    print(f"  Refreshed {requests_used} bills via LegiScan")
+    with_sp = sum(1 for b in updated if b.get("sponsorships"))
+    print(f"  Refreshed {requests_used} bills via LegiScan ({with_sp} bills now carry sponsorships)")
     return updated

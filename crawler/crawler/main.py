@@ -1,5 +1,6 @@
 """Main orchestrator — runs the full crawl and analysis pipeline."""
 
+import json
 import asyncio
 import sys
 from datetime import datetime, timezone
@@ -14,6 +15,7 @@ from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
 from .analysis.bill_verification import verify_all_bills
+from .records import build_records
 from .utils.cache import (
     should_recrawl, update_cache_timestamp,
     save_cached_data, load_cached_data,
@@ -74,6 +76,7 @@ async def run_full_crawl(news_only: bool = False):
     bill_source = "none"
     if not news_only:
         if should_recrawl("bills"):
+            previous_bills = load_cached_data("bills") or []
             # GovInfo: free federal bills (no API key needed)
             print("[2b/5] Fetching federal bills from GovInfo (free)...")
             all_bills = await fetch_federal_bills()
@@ -94,6 +97,9 @@ async def run_full_crawl(news_only: bool = False):
                 bill_source = "govinfo+openstates"
 
             if all_bills:
+                carried = _carry_forward_sponsorships(all_bills, previous_bills)
+                if carried:
+                    print(f"  Carried forward sponsorships for {carried} bills from the previous run")
                 save_cached_data("bills", all_bills)
                 update_cache_timestamp("bills")
                 print(f"  Fetched {len(all_bills)} bills via {bill_source}")
@@ -195,11 +201,53 @@ async def run_full_crawl(news_only: bool = False):
             "bills": all_bills,
         }
 
+    # Legislative records: who sponsored which tracked bills (public, neutral).
+    # Full crawls only: a news-only run has no fresh bill data and must not
+    # overwrite a good records file with cached data and a new timestamp.
+    if not news_only and all_bills and all_legislators:
+        seats_doc = load_cached_data("seats")
+        if not seats_doc:
+            try:
+                with open(DATA_DIR / "seats.json", encoding="utf-8") as fh:
+                    seats_doc = json.load(fh)
+            except Exception:
+                seats_doc = None
+        seats = (seats_doc or {}).get("seats", []) if isinstance(seats_doc, dict) else (seats_doc or [])
+        records, unmatched = build_records(all_bills, all_legislators, seats)
+        records["generated_at"] = now
+        output_files["records.json"] = records
+        output_files["records-unmatched.json"] = {"generated_at": now, "count": len(unmatched), "unmatched": unmatched}
+        s = records["summary"]
+        print(f"  Records: {s['with_records']} legislators with sponsorships, {s['sponsorships']} sponsorships matched, {s['unmatched']} unmatched")
+    elif not news_only:
+        print("INFO: records.json not rebuilt (missing bills or legislators); existing file preserved")
+
     write_json_output(DATA_DIR, output_files)
 
     bill_msg = f", {len(all_bills)} bills" if all_bills else ""
     print(f"\nDone! {len(all_legislators)} legislators, {len(news_articles)} articles{bill_msg}, {len(pivotal)} pivotal targets")
     print(f"Output: {DATA_DIR}")
+
+
+def _carry_forward_sponsorships(fresh: list[dict], previous: list[dict]) -> int:
+    """Copy sponsorship data gathered in earlier runs onto this run's bills.
+
+    Search results never carry sponsors; only the capped getBill calls do.
+    Without this, every run threw away what the last one fetched.
+    """
+    prev_by_id = {b.get("billId"): b for b in previous if isinstance(b, dict) and b.get("billId")}
+    carried = 0
+    for b in fresh:
+        if b.get("sponsorships"):
+            continue
+        p = prev_by_id.get(b.get("billId"))
+        if not p or not p.get("sponsorships"):
+            continue
+        b["sponsorships"] = p["sponsorships"]
+        if not b.get("sponsor") and p.get("sponsor"):
+            b["sponsor"] = p["sponsor"]
+        carried += 1
+    return carried
 
 
 def _serialize_legislator(leg: dict) -> dict:

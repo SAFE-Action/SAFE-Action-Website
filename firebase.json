@@ -71,6 +71,10 @@
         "destination": "/candidate.html"
       },
       {
+        "source": "/record/:slug",
+        "destination": "/record.html"
+      },
+      {
         "source": "/admin",
         "destination": "/admin.html"
       },

@@ -1,0 +1,38 @@
+{
+ "generated_at": "2026-08-21T06:45:10.990428+00:00",
+ "count": 4,
+ "unmatched": [
+  {
+   "billId": "US-119-HR1111",
+   "state": "CA",
+   "chamber": "House",
+   "district": "14",
+   "name": "Rep. Swalwell, Eric [D-CA-14]",
+   "role": "cosponsor"
+  },
+  {
+   "billId": "US-119-HR8153",
+   "state": "FL",
+   "chamber": "House",
+   "district": "20",
+   "name": "Rep. Cherfilus-McCormick, Sheila [D-FL-20]",
+   "role": "cosponsor"
+  },
+  {
+   "billId": "UT-HB0079",
+   "state": "UT",
+   "chamber": "House",
+   "district": "",
+   "name": "Matthew Gwynn",
+   "role": "primary"
+  },
+  {
+   "billId": "AK-SB2",
+   "state": "AK",
+   "chamber": "Senate",
+   "district": "",
+   "name": "Shelley Hughes",
+   "role": "primary"
+  }
+ ]
+}

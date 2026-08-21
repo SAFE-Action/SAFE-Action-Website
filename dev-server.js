@@ -16,6 +16,7 @@ const MIME = {
 // Rewrites matching vercel.json
 const REWRITES = [
     { pattern: /^\/candidates\/([^/]+)$/, dest: (m) => `/candidate.html?slug=${m[1]}` },
+    { pattern: /^\/record\/([^/]+)$/, dest: () => '/record.html' },
     { pattern: /^\/admin$/, dest: () => '/admin.html' },
     { pattern: /^\/feed$/, dest: () => '/feed.html' },
 ];
