@@ -300,8 +300,16 @@ const LegislationAPI = {
             .replace(/\{BILL_NUMBER\}/g, data.billNumber || '[Bill Number]')
             .replace(/\{BILL_TITLE\}/g, data.billTitle || '[Bill Title]')
             .replace(/\{STATE\}/g, data.state || '[State]')
-            .replace(/\{YOUR_NAME\}/g, data.yourName || '[Your Name]')
-            .replace(/\{YOUR_CITY\}/g, data.yourCity || '[Your City]');
+            .replace(/\{YOUR_NAME\}/g, data.yourName || '')
+            .replace(/\{YOUR_CITY\},?\s*\{STATE\}/g, data.yourCity ? data.yourCity + ', ' + (data.state || '') : (data.state || ''))
+            .replace(/\{YOUR_CITY\}/g, data.yourCity || data.state || '')
+            // no bracket placeholders in pasteable text; tidy empty-field artifacts
+            .replace(/my name is\s+and I'm/g, "I'm")
+            .replace(/ (in|from|of) ,\s+/g, ' $1 ')
+            .replace(/\n(Sincerely|Respectfully|Best regards|Thank you),\n\n/g, '\n$1,\n')
+            .split('\n').map(function (l) { return l.replace(/^,\s+/, ''); }).join('\n')
+            .replace(/\n{3,}/g, '\n\n')
+            .trim();
     },
 
     // --- Client-side filter helper (for static fallback) ---
@@ -398,7 +406,7 @@ const LegislationAPI = {
                 type: 'Email',
                 stance: 'Oppose',
                 subject: 'Please OPPOSE {BILL_NUMBER} - {BILL_TITLE}',
-                body: 'Dear {REP_TITLE} {REP_NAME},\n\nI am writing as a concerned constituent from {YOUR_CITY}, {STATE} to urge you to OPPOSE {BILL_NUMBER}, the {BILL_TITLE}.\n\nThis legislation undermines public health by weakening vaccine requirements that protect our communities, especially our children. Vaccines are one of the greatest achievements in modern medicine and have saved millions of lives.\n\nI urge you to stand with science and protect the health of all {STATE} residents by opposing this bill.\n\nThank you for your time and service.\n\nSincerely,\n{YOUR_NAME}\n{YOUR_CITY}, {STATE}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html',
+                body: 'Dear {REP_TITLE} {REP_NAME},\n\nI am writing as a concerned constituent from {YOUR_CITY}, {STATE} to urge you to OPPOSE {BILL_NUMBER}, the {BILL_TITLE}.\n\nThis legislation undermines public health by weakening vaccine requirements that protect our communities, especially our children. Vaccines are one of the greatest achievements in modern medicine and have saved millions of lives.\n\nI urge you to stand with science and protect the health of all {STATE} residents by opposing this bill.\n\nThank you for your time and service.\n\nSincerely,\n{YOUR_NAME}\n{YOUR_CITY}, {STATE}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge',
                 category: 'general'
             },
             {
@@ -414,7 +422,7 @@ const LegislationAPI = {
                 type: 'Email',
                 stance: 'Support',
                 subject: 'Please SUPPORT {BILL_NUMBER} - {BILL_TITLE}',
-                body: 'Dear {REP_TITLE} {REP_NAME},\n\nI am writing as a concerned constituent from {YOUR_CITY}, {STATE} to urge you to SUPPORT {BILL_NUMBER}, the {BILL_TITLE}.\n\nThis legislation strengthens public health protections and advances evidence-based policy for our communities. Supporting science is essential for the well-being of all {STATE} residents.\n\nI urge you to stand with science and vote YES on this important bill.\n\nThank you for your time and service.\n\nSincerely,\n{YOUR_NAME}\n{YOUR_CITY}, {STATE}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge.html',
+                body: 'Dear {REP_TITLE} {REP_NAME},\n\nI am writing as a concerned constituent from {YOUR_CITY}, {STATE} to urge you to SUPPORT {BILL_NUMBER}, the {BILL_TITLE}.\n\nThis legislation strengthens public health protections and advances evidence-based policy for our communities. Supporting science is essential for the well-being of all {STATE} residents.\n\nI urge you to stand with science and vote YES on this important bill.\n\nThank you for your time and service.\n\nSincerely,\n{YOUR_NAME}\n{YOUR_CITY}, {STATE}\n\nP.S. We invite all elected officials to share their science and public health positions publicly. Learn more and take the SAFE Action Pledge at https://scienceandfreedom.com/pledge',
                 category: 'general'
             },
             {

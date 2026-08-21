@@ -1027,13 +1027,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateCandidateTemplate(candidate, userName, userCity) {
         var lastName = candidate.name.split(' ').pop();
         var vars = {
-            name: userName || '[Your Name]',
-            city: userCity || '[Your City]',
+            name: userName || '',
+            city: userCity || '',
             state: candidate.state || '',
             title: candidate.office.includes('Senate') ? 'Senator' : 'Representative',
             lastName: lastName,
             fullName: candidate.name,
-            pledgeUrl: 'https://scienceandfreedom.com/quiz'
+            pledgeUrl: 'https://scienceandfreedom.com/pledge'
         };
 
         var hasLibrary = typeof EMAIL_TEMPLATES !== 'undefined' && typeof getTemplateIndex === 'function' && typeof fillTemplate === 'function';
@@ -1048,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback
         return {
             subject: 'Will you take the SAFE Action pledge on science?',
-            body: 'Dear ' + candidate.name + ',\n\nI am writing as a concerned voter in your district to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits candidates and elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\nThank you for your time.\n\nSincerely,\n' + (userName || '[Your Name]') + '\n' + (userCity || '[Your City]')
+            body: 'Dear ' + candidate.name + ',\n\nI am writing as a concerned voter in your district to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits candidates and elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/pledge\n\nThank you for your time.\n\nSincerely,' + (userName ? '\n' + userName : '') + '\n' + (userCity || candidate.state || '')
         };
     }
 
@@ -1418,9 +1418,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 var emailBody = 'Dear ' + c.name + ',\n\n' +
                     'I am writing to ask you to take the SAFE Action pledge on science and public health policy.\n\n' +
                     'As a candidate for ' + rep.office + ', your position on science-based public health policy matters to voters in our community. The SAFE Action pledge commits candidates to supporting evidence-based public health measures, including maintaining strong vaccination programs.\n\n' +
-                    'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\n' +
+                    'Taking this pledge shows voters that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/pledge\n\n' +
                     'Thank you for your time.\n\n' +
-                    'Sincerely,\n' + (getUserName() || '[Your Name]') + '\n' + (getUserCity() ? getUserCity() + ', ' + rep.state : '[Your City, ' + rep.state + ']');
+                    'Sincerely,' + (getUserName() ? '\n' + getUserName() : '') + '\n' + (getUserCity() ? getUserCity() + ', ' + rep.state : rep.state);
 
                 // Subject line
                 var subjLabel = document.createElement('div');
@@ -1692,13 +1692,13 @@ document.addEventListener('DOMContentLoaded', () => {
         var title = rep.office.includes('Senate') ? 'Senator' : 'Representative';
         var lastName = rep.name.split(' ').pop();
         var vars = {
-            name: userName || '[Your Name]',
-            city: userCity || '[Your City]',
+            name: userName || '',
+            city: userCity || '',
             state: rep.state || '',
             title: title,
             lastName: lastName,
             fullName: rep.name,
-            pledgeUrl: 'https://scienceandfreedom.com/quiz',
+            pledgeUrl: 'https://scienceandfreedom.com/pledge',
             billNumber: '',
             billTitle: ''
         };
@@ -1706,7 +1706,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var cityStr = userCity || '';
         var stateAbbr = rep.state || '';
         var cityHasState = cityStr.match(/,\s*[A-Z]{2}\s*$/);
-        var signoff = (userName || '[Your Name]') + '\n' + (cityStr ? (cityHasState ? cityStr : cityStr + ', ' + stateAbbr) : '[Your City, ' + stateAbbr + ']');
+        var signoff = (userName ? userName + '\n' : '') + (cityStr ? (cityHasState ? cityStr : cityStr + ', ' + stateAbbr) : stateAbbr);
 
         // Use template library if available
         var hasLibrary = typeof EMAIL_TEMPLATES !== 'undefined' && typeof getTemplateIndex === 'function' && typeof fillTemplate === 'function';
@@ -1745,7 +1745,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback
         return {
             subject: pickRandom(_legacyPledgeSubjects),
-            body: 'Dear ' + title + ' ' + lastName + ',\n\nI am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/quiz.html\n\nThank you for your time and service.\n\nSincerely,\n' + signoff
+            body: 'Dear ' + title + ' ' + lastName + ',\n\nI am writing as a concerned constituent to ask you to take the SAFE Action pledge on science and public health policy.\n\nThe SAFE Action pledge commits elected officials to supporting evidence-based public health measures, including maintaining strong vaccination programs that protect our communities.\n\nTaking this pledge shows your constituents that you prioritize science and public health. You can take the pledge at: https://scienceandfreedom.com/pledge\n\nThank you for your time and service.\n\nSincerely,\n' + signoff
         };
     }
 
@@ -1754,7 +1754,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lastName = rep.name.split(' ').pop();
 
         if (action.type === 'oppose-bill' && action.bill) {
-            return `Hello, my name is ${userName || '[Your Name]'} and I'm a constituent from ${userCity || '[Your City]'}.
+            return `Hello, ${userName ? 'my name is ' + userName + ' and ' : ''}I'm a constituent from ${userCity || rep.state}.
 
 I'm calling to ask ${title} ${lastName} to please OPPOSE ${action.bill.billNumber}, "${action.bill.title}".
 
@@ -1763,7 +1763,7 @@ This bill would weaken important public health protections and I believe it puts
 Thank you for taking my call.`;
         }
 
-        return `Hello, my name is ${userName || '[Your Name]'} and I'm a constituent from ${userCity || '[Your City]'}.
+        return `Hello, ${userName ? 'my name is ' + userName + ' and ' : ''}I'm a constituent from ${userCity || rep.state}.
 
 I'm calling to ask ${title} ${lastName} to take the SAFE Action pledge on science and public health.
 

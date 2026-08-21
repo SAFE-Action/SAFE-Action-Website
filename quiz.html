@@ -8,10 +8,16 @@
     <meta property="og:title" content="SAFE Action - Take the Pledge">
     <meta property="og:description" content="Take the SAFE Action pledge and appear in our public candidate directory for science and public health positions.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scienceandfreedom.com/quiz.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://scienceandfreedom.com/pledge">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SAFE Action - Take the Pledge">
     <meta name="twitter:description" content="Take the SAFE Action pledge and appear in our public candidate directory for science and public health positions.">
+    <link rel="canonical" href="https://scienceandfreedom.com/pledge">
+    <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#101b33">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -128,23 +134,6 @@
             </div>
           </div>
 
-          <!-- Profile Photo Upload -->
-          <div class="field">
-            <label>Profile Photo <span class="optional-label">(Optional)</span></label>
-            <p class="form-help-text">Upload a headshot to appear on your pledge page. Square photos work best.</p>
-            <div class="photo-upload-area" id="photo-upload-area">
-              <div class="photo-preview" id="photo-preview" style="display:none;">
-                <img id="photo-preview-img" alt="Photo preview">
-                <button type="button" class="photo-remove-btn" id="photo-remove" title="Remove photo">&times;</button>
-              </div>
-              <div class="photo-placeholder" id="photo-placeholder">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                <span>Click or drag to upload</span>
-                <span class="photo-formats">JPG, PNG, or WebP &middot; Max 5MB</span>
-              </div>
-              <input type="file" id="photoFile" name="photoFile" accept="image/jpeg,image/png,image/webp" class="photo-file-input">
-            </div>
-          </div>
 
           <div class="form-row">
             <div class="field">
@@ -284,7 +273,7 @@
         <div class="success-icon" style="font-size: 2rem;">&#9993;</div>
         <h2>Check Your Email to Verify</h2>
         <p>We've sent a verification link to your official email address. Click the link in the email to make your pledge public in our candidate directory.</p>
-        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Didn't receive it? Check your spam folder, or <a href="quiz.html" style="color: var(--navy); font-weight: 600;">submit again</a>.</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Didn't receive it? Check your spam folder, or <a href="/pledge" style="color: var(--navy); font-weight: 600;">submit again</a>.</p>
         <a href="directory.html" class="btn primary" style="margin-top: 20px;">View Candidate Directory</a>
       </div>
 
@@ -318,14 +307,14 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=59"></script>
-<script src="js/sheets.js?v=59"></script>
-<script src="js/quiz.js?v=59"></script>
-<script src="js/pwa.js"></script>
+<script src="js/config.js?v=100"></script>
+<script src="js/sheets.js?v=100"></script>
+<script src="js/quiz.js?v=100"></script>
+<script src="js/pwa.js?v=100"></script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
 function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
 </script>
-<script src="js/header.js"></script>
+<script src="js/header.js?v=100"></script>
 </body>
 </html>

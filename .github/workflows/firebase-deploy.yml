@@ -33,7 +33,7 @@ jobs:
         run: npm install -g firebase-tools
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --project safe-action-website
+        run: firebase deploy --only hosting,firestore --project safe-action-website
 
       - name: Install Cloud Functions dependencies
         run: cd functions && npm ci
