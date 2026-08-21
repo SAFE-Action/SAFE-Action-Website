@@ -309,7 +309,7 @@
                 <div class="card">
                     <h3>Ongoing Updates</h3>
                     <p>Our system runs <strong>automatically every day</strong>. When a bill's status changes - moves to a new committee, gets amended, passes a chamber, or is signed into law - the tracker updates within 24 hours. New bills are picked up as soon as they're filed.</p>
-                    <p>All of our code is <a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">open source on GitHub</a> under the GPLv3 license. Anyone can inspect, audit, or improve our classification algorithms.</p>
+                    <p>All of our code is <a href="https://github.com/scienceandfreedom/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">open source on GitHub</a> under the GPLv3 license. Anyone can inspect, audit, or improve our classification algorithms.</p>
                 </div>
             </div>
 
@@ -351,13 +351,13 @@
                 <div class="card hover">
                     <h3>Open Source</h3>
                     <p>Our entire codebase - including every keyword list, every AI prompt, every classification algorithm, and this website - is publicly available under the <strong>GPLv3 license</strong>.</p>
-                    <p><a href="https://github.com/SAFE-Action/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">View source code on GitHub &rarr;</a></p>
+                    <p><a href="https://github.com/scienceandfreedom/SAFE-Action-Website" target="_blank" rel="noopener noreferrer">View source code on GitHub &rarr;</a></p>
                     <p>Anyone can audit our methodology, file issues, or submit improvements.</p>
                 </div>
             </div>
 
             <div class="card" style="margin-top:24px;background:#fdf8ea;border-color:var(--gold-soft);">
-                <p style="font-size:14.5px;color:var(--ink2);"><strong style="color:var(--ink);">A note on accuracy:</strong> No automated system is perfect. Our dual-layer approach (keywords + AI verification) with a conservative confidence threshold means we prioritize <strong>precision over recall</strong> - we'd rather leave a borderline bill as "Monitor" than risk mislabeling it. If you believe a bill has been misclassified, please <a href="https://github.com/SAFE-Action/SAFE-Action-Website/issues/new" target="_blank" rel="noopener noreferrer">open an issue on GitHub</a> and we'll review it.</p>
+                <p style="font-size:14.5px;color:var(--ink2);"><strong style="color:var(--ink);">A note on accuracy:</strong> No automated system is perfect. Our dual-layer approach (keywords + AI verification) with a conservative confidence threshold means we prioritize <strong>precision over recall</strong> - we'd rather leave a borderline bill as "Monitor" than risk mislabeling it. If you believe a bill has been misclassified, please <a href="https://github.com/scienceandfreedom/SAFE-Action-Website/issues/new" target="_blank" rel="noopener noreferrer">open an issue on GitHub</a> and we'll review it.</p>
             </div>
         </div>
     </section>
@@ -406,7 +406,7 @@
     </script>
 <script>
 function openReportEmailModal(){var o=document.createElement('div');o.className='report-modal-overlay';o.innerHTML='<div class="report-modal"><button class="report-modal-close" onclick="this.closest(\'.report-modal-overlay\').remove()">&times;</button><h3>\u26A0\uFE0F Report Invalid Email</h3><p>Got a bounced email? Help us clean up our database by reporting it.</p><label>Email that bounced</label><input type="email" id="report-bad-email" placeholder="bad@example.com"><label>Representative / Candidate name (optional)</label><input type="text" id="report-rep-name" placeholder="e.g. John Smith"><label>Details (optional)</label><textarea id="report-details" placeholder="e.g. Email bounced, wrong person, etc."></textarea><div class="report-modal-btns"><button class="btn btn-outline" onclick="this.closest(\'.report-modal-overlay\').remove()">Cancel</button><button class="btn btn-primary" onclick="submitEmailReport()">Report</button></div></div>';document.body.appendChild(o);o.addEventListener('click',function(e){if(e.target===o)o.remove();})}
-function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/SAFE-Action/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
+function submitEmailReport(){var email=document.getElementById('report-bad-email').value.trim();if(!email){document.getElementById('report-bad-email').style.borderColor='#DC2626';return}var name=document.getElementById('report-rep-name').value.trim();var details=document.getElementById('report-details').value.trim();var title='Invalid Email Report: '+(name||email);var body='**Email:** '+email+'\n'+(name?'**Representative/Candidate:** '+name+'\n':'')+(details?'**Details:** '+details+'\n':'')+'\n---\n_Reported from '+window.location.href+' on '+new Date().toLocaleDateString()+'_';var url='https://github.com/scienceandfreedom/SAFE-Action-Website/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels=invalid-email';window.open(url,'_blank');var modal=document.querySelector('.report-modal');if(modal){modal.innerHTML='<div class="report-success">\u2705 Thank you! A report has been opened. You may need to sign into GitHub to complete the submission.</div><div class="report-modal-btns" style="margin-top:16px"><button class="btn btn-primary" onclick="this.closest(\'.report-modal-overlay\').remove()">Close</button></div>'}}
 </script>
 <script src="js/header.js?v=100"></script>
 </body>
