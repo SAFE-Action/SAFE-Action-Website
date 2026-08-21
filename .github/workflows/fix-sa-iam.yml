@@ -1,0 +1,39 @@
+name: Restore SA Token Creator Grant
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: firebase-adminsdk-fbsvc@safe-action-website.iam.gserviceaccount.com
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: safe-action-website
+
+      - name: Show current policy on the volunteers SA
+        run: |
+          gcloud iam service-accounts get-iam-policy \
+            safe-action-volunteers@safe-action-website.iam.gserviceaccount.com \
+            --project safe-action-website || true
+
+      - name: Restore roles/iam.serviceAccountTokenCreator (self-grant)
+        run: |
+          gcloud iam service-accounts add-iam-policy-binding \
+            safe-action-volunteers@safe-action-website.iam.gserviceaccount.com \
+            --member "serviceAccount:safe-action-volunteers@safe-action-website.iam.gserviceaccount.com" \
+            --role "roles/iam.serviceAccountTokenCreator" \
+            --project safe-action-website
