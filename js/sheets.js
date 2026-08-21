@@ -43,7 +43,13 @@ const SheetsAPI = {
     async getCandidateById(id) {
         if (!id) return null;
         const candidates = await this.getCandidates();
-        return candidates.find(c => c.id === id) || null;
+        var wanted = String(id).toLowerCase();
+        return candidates.find(c => c.id === id || SheetsAPI.getSlug(c) === wanted) || null;
+    },
+
+    // Legacy name kept: candidate.html?id=... calls this.
+    async getCandidate(id) {
+        return this.getCandidateById(id);
     },
 
     async getCandidateBySlug(slug) {

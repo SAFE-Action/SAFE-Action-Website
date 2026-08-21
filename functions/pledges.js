@@ -40,6 +40,9 @@ function escapeHtml(s) {
     }[c]));
 }
 
+// Best-effort only: per-instance memory, and x-forwarded-for is partly
+// client-controlled. The real abuse cap is the global Firestore hourly
+// budget below; this map just cheaply absorbs single-source floods.
 const ipHits = new Map();
 function ipLimited(ip) {
     const now = Date.now();
@@ -169,10 +172,37 @@ async function submit(req, res) {
 }
 
 // ----------------------------------------------------------------- confirm
+// GET shows a confirmation page; only the POST from its button mutates.
+// Email scanners and link-preview bots prefetch GETs, and a pledge is a
+// public claim about a real candidate, so a prefetch must never verify it.
+function confirmPageHtml(token) {
+    return (
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\">" +
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+        "<meta name=\"robots\" content=\"noindex\">" +
+        "<title>Verify your pledge - SAFE Action</title></head>" +
+        "<body style=\"font-family:Arial,sans-serif;background:#faf9f6;color:#182238;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;\">" +
+        "<form method=\"POST\" action=\"" + SITE_URL + "/api/pledges/confirm\" " +
+        "style=\"background:#fff;border:1px solid #e3e0d6;border-radius:14px;padding:36px;max-width:440px;text-align:center;\">" +
+        "<h2 style=\"color:#16264d;margin-top:0;\">One last step</h2>" +
+        "<p>Click the button below to verify your email and publish your pledge in the SAFE Action directory.</p>" +
+        "<input type=\"hidden\" name=\"token\" value=\"" + escapeHtml(token) + "\">" +
+        "<button type=\"submit\" style=\"background:#16264d;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:16px;font-weight:bold;cursor:pointer;\">Verify My Pledge</button>" +
+        "</form></body></html>"
+    );
+}
+
 async function confirm(req, res) {
-    const t = String(req.query.token || "");
+    const t = String((req.method === "POST" ? (req.body || {}).token : req.query.token) || "");
     if (!/^[a-f0-9]{48}$/.test(t)) {
         res.redirect(302, SITE_URL + "/directory?invalid=1");
+        return;
+    }
+    if (req.method === "GET") {
+        // Do not reveal whether the token is valid to a prefetching bot;
+        // just render the page. Validity is checked on POST.
+        res.set("Cache-Control", "no-store");
+        res.status(200).send(confirmPageHtml(t));
         return;
     }
     const q = await db().collection("pledges").where("verifyToken", "==", t).limit(1).get();
@@ -201,8 +231,12 @@ async function list(req, res) {
         .where("status", "==", "verified").limit(500).get();
     const candidates = snap.docs.map((d) => {
         const data = d.data();
-        const out = { id: d.id };
+        // Never expose d.id: it is sha256(email), which would let anyone
+        // test whether a known email address has a pledge on file.
+        const out = {};
         for (const f of PUBLIC_FIELDS) out[f] = data[f] || "";
+        out.id = ((data.firstName || "") + "-" + (data.lastName || "")).toLowerCase()
+            .replace(/[^a-z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
         out.timestamp = data.verifiedAt ? data.verifiedAt.toDate().toISOString() : "";
         return out;
     });
@@ -216,7 +250,7 @@ async function pledgesHandler(req, res) {
     const path = (req.path || "").replace(/\/+$/, "");
     try {
         if (req.method === "POST" && path.endsWith("/submit")) return await submit(req, res);
-        if (req.method === "GET" && path.endsWith("/confirm")) return await confirm(req, res);
+        if ((req.method === "GET" || req.method === "POST") && path.endsWith("/confirm")) return await confirm(req, res);
         if (req.method === "GET" && path.endsWith("/list")) return await list(req, res);
         res.status(404).json({ error: "Not found" });
     } catch (e) {
