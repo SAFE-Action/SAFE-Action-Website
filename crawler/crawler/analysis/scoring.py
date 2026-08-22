@@ -3,11 +3,14 @@
 import asyncio
 import json
 from datetime import datetime, timezone
-import anthropic
+try:
+    import anthropic
+except ImportError:  # Anthropic API is not used; keep the module importable
+    anthropic = None
 from tenacity import retry, stop_after_attempt, wait_exponential
 from ..config import ANTHROPIC_API_KEY, REASONING_MODEL, MAX_LEGISLATORS_PER_BATCH
 
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY) if (anthropic and ANTHROPIC_API_KEY) else None
 
 SCORING_SYSTEM_PROMPT = """You are an expert political analyst assessing legislators' persuadability on science and public health policy -- specifically regarding vaccine safety, informed consent, and evidence-based medicine.
 
