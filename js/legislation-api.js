@@ -330,6 +330,8 @@ const LegislationAPI = {
             } else if (filters.status === 'dead') {
                 var deadStatuses = SAFE_CONFIG.DEAD_STATUSES || [];
                 if (deadStatuses.indexOf(bill.status) === -1) return false;
+            } else if (filters.status === 'Passed One Chamber') {
+                if (['Passed One Chamber', 'Passed Senate', 'Passed House'].indexOf(bill.status) === -1) return false;
             } else if (filters.status && bill.status !== filters.status) {
                 return false;
             }
@@ -352,11 +354,27 @@ const LegislationAPI = {
 
     // --- Static Data (fallback) ---
 
+    // One fetch+parse of the 7MB bills.json shared by every caller (getBill,
+    // getLegislation, queryBills, and the tracker's insights module all need
+    // it independently). Without this each call re-downloaded and
+    // re-parsed the whole file.
+    _billsDocPromise: null,
+    async _loadBillsDoc() {
+        if (!this._billsDocPromise) {
+            this._billsDocPromise = fetch('data/bills.json').then(function (resp) {
+                if (!resp.ok) throw new Error('bills.json HTTP ' + resp.status);
+                return resp.json();
+            }).catch(function (err) {
+                console.error('Error loading bills.json:', err);
+                return { bills: [] };
+            });
+        }
+        return this._billsDocPromise;
+    },
+
     async _getStaticLegislation(state) {
         try {
-            var resp = await fetch('data/bills.json');
-            if (!resp.ok) return [];
-            var data = await resp.json();
+            var data = await this._loadBillsDoc();
             var bills = data.bills || [];
             // Surface data freshness anywhere the page provides a slot for it.
             if (data.generated_at) {

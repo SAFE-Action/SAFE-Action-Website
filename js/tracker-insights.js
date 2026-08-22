@@ -409,10 +409,14 @@
 
     // ---------- main ----------
 
-    var load = fetch('data/bills.json').then(function (r) {
-        if (!r.ok) throw new Error('bills.json HTTP ' + r.status);
-        return r.json();
-    });
+    // Share the single fetch+parse with LegislationAPI (BillBrowser needs the
+    // same 7MB file); avoids downloading and parsing it twice on this page.
+    var load = (typeof LegislationAPI !== 'undefined' && LegislationAPI._loadBillsDoc)
+        ? LegislationAPI._loadBillsDoc()
+        : fetch('data/bills.json').then(function (r) {
+            if (!r.ok) throw new Error('bills.json HTTP ' + r.status);
+            return r.json();
+        });
 
     ready(function () {
         wireStats();

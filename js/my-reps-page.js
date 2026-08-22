@@ -2053,8 +2053,17 @@ var BillBrowser = {
     },
 
     loadBills: function(append) {
-        if (this._loading) return;
+        if (this._loading) {
+            // A filter change arrived while a load was already in flight.
+            // Silently dropping it would either lose the request entirely
+            // or let the in-flight promise later overwrite the just-cleared
+            // list with results for the OLD filters. Queue one fresh reload
+            // instead; the in-flight load's result is discarded when it lands.
+            if (!append) this._reloadPending = true;
+            return;
+        }
         this._loading = true;
+        this._reloadPending = false;
 
         var self = this;
         var loading = document.getElementById('bb-loading');
@@ -2073,6 +2082,7 @@ var BillBrowser = {
             LegislationAPI.queryBills(filters, this.PAGE_SIZE, startAfter).then(function(result) {
                 self._loading = false;
                 if (loading) loading.style.display = 'none';
+                if (self._reloadPending) { self._reloadPending = false; self.loadBills(false); return; }
 
                 if (append) {
                     self._allBills = self._allBills.concat(result.bills);
@@ -2095,6 +2105,7 @@ var BillBrowser = {
             LegislationAPI.getLegislation(null).then(function(bills) {
                 self._loading = false;
                 if (loading) loading.style.display = 'none';
+                if (self._reloadPending) { self._reloadPending = false; self.loadBills(false); return; }
                 self._allBills = bills || [];
                 self._hasMore = false;
                 self._lastDoc = null;
@@ -2124,6 +2135,12 @@ var BillBrowser = {
             } else if (filters.status === 'dead') {
                 var deadStatuses = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.DEAD_STATUSES) || [];
                 if (deadStatuses.indexOf(bill.status) === -1) return false;
+            } else if (filters.status === 'Passed One Chamber') {
+                // The stage pipeline groups the federal chamber-specific
+                // statuses under this label (see STATUS_ALIAS in
+                // tracker-insights.js); match the same set here so a click
+                // on that segment returns the bills it counted.
+                if (['Passed One Chamber', 'Passed Senate', 'Passed House'].indexOf(bill.status) === -1) return false;
             } else if (filters.status && bill.status !== filters.status) {
                 return false;
             }

@@ -342,6 +342,7 @@
             if (init.chamber && hasOption(selChamber, init.chamber)) selChamber.value = init.chamber;
             if (init.party && hasOption(selParty, init.party)) selParty.value = init.party;
             if (init.topic && hasOption(selTopic, init.topic)) selTopic.value = init.topic;
+            if (init.all === '0' || init.all === '1') chkAll.checked = init.all === '1';
         }
 
         function applyFilters() {
@@ -366,7 +367,7 @@
             shown = 0;
             clear(tbody);
             renderMore();
-            syncUrl({ view: view, topic: tp, state: st, level: lv, chamber: ch, party: pa });
+            syncUrl({ view: view, topic: tp, state: st, level: lv, chamber: ch, party: pa, all: includeAll ? '1' : '0' });
         }
 
         load(function (data) {
