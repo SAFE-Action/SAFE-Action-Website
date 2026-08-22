@@ -57,7 +57,6 @@ jobs:
 
       - name: Run crawler
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           LEGISCAN_API_KEY: ${{ secrets.LEGISCAN_API_KEY }}
           OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
         run: |

@@ -5,7 +5,8 @@ import asyncio
 import sys
 from datetime import datetime, timezone
 
-from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, ANTHROPIC_API_KEY, OPENSTATES_API_KEY, LEGISCAN_API_KEY
+from .config import DATA_DIR, CACHE_DIR, PRIORITY_STATES, OPENSTATES_API_KEY, LEGISCAN_API_KEY
+ANTHROPIC_API_KEY = ""  # never set: no Anthropic API use in CI (operator decision 2026-08-21)
 from .sources.congress import crawl_congress_members
 from .sources.state_legislatures import crawl_all_state_legislators
 from .sources.govinfo import fetch_federal_bills
@@ -14,7 +15,6 @@ from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, r
 from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
-from .analysis.bill_verification import verify_all_bills, classify_candidate_bills
 from .records import build_records, build_scorecard
 from .sources.legiscan_votes import fetch_state_votes
 from .utils.cache import (
@@ -158,13 +158,10 @@ async def run_full_crawl(news_only: bool = False):
             rollcalls["last_federal_error"] = {"at": now, "message": f"{type(e).__name__}: {e}"[:300]}
 
     # ── Step 2d: LLM verification of bill classifications ──
-    if not news_only and all_bills and ANTHROPIC_API_KEY:
-        print("[2d/5] Running LLM secondary verification on bill classifications...")
-        all_bills = await verify_all_bills(all_bills)
-        # Upgrade relevant "monitor" bills the heuristic could not call (bounded per night;
-        # the backlog is cleared by the classify-bills workflow).
-        print("[2e/5] Classifying relevant monitor bills...")
-        all_bills = await classify_candidate_bills(all_bills, limit=300)
+    # Bill classification is NOT done here. The keyword heuristic labels obvious
+    # bills; everything else in the science-relevant categories is classified by
+    # a Claude Sonnet pass run from Claude Code on the Mac Mini (no API), and
+    # those verdicts are carried forward above. Nothing in CI calls an LLM.
         if all_bills:
             save_cached_data("bills", all_bills)
 
