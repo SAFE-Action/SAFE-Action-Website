@@ -1,0 +1,50 @@
+name: Classify Bills (LLM pass)
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Max bills to classify (blank = all candidates)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install crawler dependencies
+        run: cd crawler && pip install -e .
+      - name: Classify relevant monitor bills and rebuild derived data
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd crawler
+          if [ -n "${{ inputs.limit }}" ]; then python run_classification.py --limit "${{ inputs.limit }}"; else python run_classification.py; fi
+      - name: Commit and push data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "chore: LLM bill classification pass [skip ci]"
+          git push
+      - name: Authenticate to Google Cloud
+        if: github.ref == 'refs/heads/main'
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: firebase-adminsdk-fbsvc@safe-action-website.iam.gserviceaccount.com
+      - name: Install Firebase CLI
+        if: github.ref == 'refs/heads/main'
+        run: npm install -g firebase-tools
+      - name: Deploy refreshed data
+        if: github.ref == 'refs/heads/main'
+        run: firebase deploy --only hosting --project safe-action-website
