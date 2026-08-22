@@ -601,7 +601,7 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
         )
 
         enriched_bills: dict[str, dict] = {}
-        max_enrich = min(len(candidates), 150)  # cap enrichment to control API usage
+        max_enrich = min(len(candidates), 50)  # search-result enrichment; the refresh queue below does the targeted work
 
         print(f"  Enriching top {max_enrich} bills with full details...")
         for entry in candidates[:max_enrich]:
@@ -694,7 +694,7 @@ async def fetch_all_science_bills(states: list[str] | None = None) -> list[dict]
 
 # ── Refresh existing tracked bills ───────────────────────────────────────
 
-REFRESH_CAP = 140   # was 200; the remaining ~60 daily calls fund roll-call votes (legiscan_votes.py)
+REFRESH_CAP = 240   # daily budget: ~612 search + 50 enrich + 240 refresh + 60 votes < 1,000; refresh prioritises anti/pro bills lacking sponsors
 
 
 async def refresh_tracked_bills(existing_bills: list[dict]) -> list[dict]:
