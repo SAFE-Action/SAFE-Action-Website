@@ -15,7 +15,7 @@ from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
 from .analysis.bill_verification import verify_all_bills
-from .records import build_records
+from .records import build_records, build_scorecard
 from .sources.legiscan_votes import fetch_state_votes
 from .utils.cache import (
     should_recrawl, update_cache_timestamp,
@@ -251,6 +251,9 @@ async def run_full_crawl(news_only: bool = False):
         output_files["records.json"] = records
         rollcalls["generated_at"] = now
         output_files["rollcalls.json"] = rollcalls
+        scorecard = build_scorecard(records)
+        scorecard["generated_at"] = now
+        output_files["scorecard.json"] = scorecard
         output_files["records-unmatched.json"] = {"generated_at": now, "count": len(unmatched), "unmatched": unmatched}
         s = records["summary"]
         print(f"  Records: {s['with_records']} legislators with sponsorships, {s['sponsorships']} sponsorships matched, {s['unmatched']} unmatched")
