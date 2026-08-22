@@ -221,7 +221,6 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             "level": leg.get("level", ""), "office": leg.get("office", ""),
             "bioguide_id": leg.get("bioguide_id", "") or "",
             "photo_url": leg.get("photo_url"),
-            "up_in_2026": None,
             "counts": {"total": 0, "primary": 0, "cosponsor": 0, "anti": 0, "pro": 0, "monitor": 0,
                        "votes": 0, "votes_yea": 0, "votes_nay": 0},
             "sponsorships": [],
@@ -238,25 +237,10 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
             by_scl[(st, ch, ln)].append(rec)
             by_sl[(st, leg.get("level", ""), ln)].append(rec)
 
-    # Seats: incumbent running in 2026
-    for seat in seats or []:
-        if not isinstance(seat, dict):
-            continue
-        inc = seat.get("incumbent") or {}
-        if not isinstance(inc, dict):
-            continue
-        target = None
-        if inc.get("bioguideId") and inc["bioguideId"] in by_bioguide:
-            target = by_bioguide[inc["bioguideId"]]
-        else:
-            st = (seat.get("state") or "").upper()
-            body = (seat.get("body") or "").lower()
-            ch = "Senate" if "senate" in body else ("Legislature" if "legislature" in body else "House")
-            c = by_sdcl.get((st, ch, _district(seat.get("district")), _last_name(inc.get("name", ""))), [])
-            if len(c) == 1:
-                target = c[0]
-        if target is not None:
-            target["up_in_2026"] = bool(seat.get("upIn2026"))
+    # NOTE: no ballot/election flag is derived here. data/seats.json marks every
+    # seat as up in 2026 (staggered state senates and Senate classes are wrong),
+    # and identifying incumbents as candidates next to a ranking is the fact
+    # pattern the voter-guide rulings treat as campaign intervention.
 
     unmatched = []
 
@@ -515,7 +499,7 @@ def build_scorecard(records: dict) -> dict:
         rows.append({
             "slug": r["slug"], "name": r["name"], "party": r.get("party", ""), "state": r.get("state", ""),
             "chamber": r.get("chamber", ""), "district": r.get("district", ""), "level": r.get("level", ""),
-            "office": r.get("office", ""), "up_in_2026": r.get("up_in_2026"),
+            "office": r.get("office", ""),
             "pro_sponsored": pro_s, "pro_primary": pro_primary,
             "anti_sponsored": anti_s, "anti_primary": anti_primary,
             "votes_for_pro": v_for_pro, "votes_against_pro": v_against_pro,

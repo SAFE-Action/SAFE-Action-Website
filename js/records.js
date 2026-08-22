@@ -291,8 +291,6 @@
             td.appendChild(el('span', 'tot', fmt(v.votes)));
             if (v.votes) td.appendChild(el('span', 'rec-sub', fmt(v.yea) + ' yea, ' + fmt(v.nay) + ' nay'));
             tr.appendChild(td);
-
-            tr.appendChild(el('td', 'mono', l.up_in_2026 === true ? '2026' : ''));
             return tr;
         }
 
@@ -511,7 +509,6 @@
         if (STATE_NAMES[str(l.state)]) place += ' (' + STATE_NAMES[str(l.state)] + ')';
         setText('rec-place', place);
         setText('rec-level', str(l.level));
-        show('rec-2026', l.up_in_2026 === true);
 
         var v = view(l, '');
         var n = v.total;
