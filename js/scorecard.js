@@ -12,9 +12,10 @@
 // No innerHTML is used anywhere in this file. ES5 only.
 //
 // Topic view: when a topic is chosen, counts come from by_topic[topic]
-// (pro / anti only; the source carries no sponsor-vs-vote split per topic)
-// and rows without that topic are hidden. Ties inside a topic fall back to
-// the legislator's overall primary-sponsorship count, then name.
+// (pro / anti, plus sponsored / primary / votes; the source carries no
+// vote-polarity split per topic) and rows without that topic are hidden.
+// Ranking is competition-style (ties share a rank, "T-3"); order within a
+// tie is alphabetical by name and carries no other meaning.
 // ============================================
 (function () {
     'use strict';
@@ -23,9 +24,9 @@
     var PAGE_SIZE = 100;
     var TOP_N = 10;
     var MIN_BOARD = 3;
-    var DEFAULT_VIEW = 'anti';
+    var DEFAULT_VIEW = 'total';
     var SIDES = ['pro', 'anti'];
-    var SIDE_WORD = { pro: 'pro-science', anti: 'anti-science' };
+    var SIDE_WORD = { pro: 'pro-science', anti: 'anti-science', total: 'total' };
     var STATE_NAMES = { AL:'Alabama', AK:'Alaska', AZ:'Arizona', AR:'Arkansas', CA:'California', CO:'Colorado', CT:'Connecticut', DE:'Delaware', DC:'District of Columbia', FL:'Florida', GA:'Georgia', HI:'Hawaii', ID:'Idaho', IL:'Illinois', IN:'Indiana', IA:'Iowa', KS:'Kansas', KY:'Kentucky', LA:'Louisiana', ME:'Maine', MD:'Maryland', MA:'Massachusetts', MI:'Michigan', MN:'Minnesota', MS:'Mississippi', MO:'Missouri', MT:'Montana', NE:'Nebraska', NV:'Nevada', NH:'New Hampshire', NJ:'New Jersey', NM:'New Mexico', NY:'New York', NC:'North Carolina', ND:'North Dakota', OH:'Ohio', OK:'Oklahoma', OR:'Oregon', PA:'Pennsylvania', RI:'Rhode Island', SC:'South Carolina', SD:'South Dakota', TN:'Tennessee', TX:'Texas', UT:'Utah', VT:'Vermont', VA:'Virginia', WA:'Washington', WV:'West Virginia', WI:'Wisconsin', WY:'Wyoming', AS:'American Samoa', GU:'Guam', MP:'Northern Mariana Islands', PR:'Puerto Rico', VI:'U.S. Virgin Islands', US:'US Congress' };
 
     // Display names for topic slugs (same table as records.js). Unknown slugs
@@ -56,7 +57,6 @@
     function setText(id, v) { var e = $(id); if (e) e.textContent = v; }
     function fmt(n) { return Number(n || 0).toLocaleString(); }
     function plural(n, word) { return fmt(n) + ' ' + word + (n === 1 ? '' : 's'); }
-    function signed(n) { return n > 0 ? '+' + fmt(n) : (n < 0 ? '-' + fmt(-n) : '0'); }
     function dateLabel(iso) {
         if (!iso) return '';
         var d = new Date(iso);
@@ -127,15 +127,30 @@
         return { pro: num(l.pro_acts), anti: num(l.anti_acts) };
     }
     function primaryOf(l, side) { return side === 'pro' ? num(l.pro_primary) : num(l.anti_primary); }
-    // Order: count on that side desc, primary sponsorships desc, then name.
+    // Competition ranking: count on that side desc, then name. Ties share a rank.
     function bySide(side) {
         return function (a, b) {
-            return b[side] - a[side] || primaryOf(b.l, side) - primaryOf(a.l, side) ||
-                str(a.l.name).localeCompare(str(b.l.name));
+            return b[side] - a[side] || str(a.l.name).localeCompare(str(b.l.name));
         };
     }
+    // Competition rank (1 + index of the first row with the same count) for
+    // the row at index i of a list already sorted desc by key. Ties share a
+    // rank, rendered "T-3"; order within a tie is alphabetical and carries
+    // no meaning.
+    function competitionRank(list, i, key) {
+        var r = i;
+        while (r > 0 && list[r - 1][key] === list[i][key]) r--;
+        return r + 1;
+    }
+    function tiedAt(list, i, key) {
+        return (i > 0 && list[i - 1][key] === list[i][key]) ||
+            (i < list.length - 1 && list[i + 1][key] === list[i][key]);
+    }
+    function rankLabel(list, i, key) {
+        return (tiedAt(list, i, key) ? 'T-' : '') + competitionRank(list, i, key);
+    }
     function voteWord(n) { return n === 1 ? 'vote' : 'votes'; }
-    // Text behind a count, e.g. "2 sponsored (1 primary), 1 vote for, 1 vote against anti".
+    // Text behind a count, e.g. "2 sponsored (1 primary), 1 yea on pro, 1 nay on anti".
     function breakdown(l, side, topic, n) {
         if (topic) {
             return fmt(n) + ' ' + SIDE_WORD[side] + ' act' + (n === 1 ? '' : 's') + ' on bills in ' + topicLabel(topic);
@@ -146,16 +161,26 @@
         var vf = pro ? num(l.votes_for_pro) : num(l.votes_for_anti);
         var va = pro ? num(l.votes_against_anti) : num(l.votes_against_pro);
         return fmt(sp) + ' sponsored' + (pr ? ' (' + fmt(pr) + ' primary)' : '') + ', ' +
-            fmt(vf) + ' ' + voteWord(vf) + ' for, ' +
-            fmt(va) + ' ' + voteWord(va) + ' against ' + (pro ? 'anti' : 'pro');
+            fmt(vf) + ' yea on ' + (pro ? 'pro' : 'anti') + ', ' +
+            fmt(va) + ' nay on ' + (pro ? 'anti' : 'pro');
     }
-    // Table sub-line: "1 sponsored, 0 votes" (votes = for this side + against the other).
-    function subline(l, side) {
+    // Table sub-line: "1 primary, 0 cosponsored, 1 yea on pro, 0 nay on anti".
+    // In topic view the source has no vote-polarity split, so it falls back
+    // to by_topic[topic]'s primary/sponsored/votes counts with generic "votes".
+    function subline(l, side, topic) {
         var pro = side === 'pro';
+        if (topic) {
+            var t = (l.by_topic && l.by_topic[topic]) || {};
+            var tsp = num(t.sponsored), tpr = num(t.primary), tv = num(t.votes);
+            return fmt(tpr) + ' primary, ' + fmt(tsp - tpr) + ' cosponsored, ' + fmt(tv) + ' ' + voteWord(tv);
+        }
         var sp = pro ? num(l.pro_sponsored) : num(l.anti_sponsored);
-        var v = pro ? num(l.votes_for_pro) + num(l.votes_against_anti) :
-            num(l.votes_for_anti) + num(l.votes_against_pro);
-        return fmt(sp) + ' sponsored, ' + fmt(v) + ' ' + voteWord(v);
+        var pr = primaryOf(l, side);
+        var vf = pro ? num(l.votes_for_pro) : num(l.votes_for_anti);
+        var va = pro ? num(l.votes_against_anti) : num(l.votes_against_pro);
+        return fmt(pr) + ' primary, ' + fmt(sp - pr) + ' cosponsored, ' +
+            fmt(vf) + ' yea on ' + (pro ? 'pro' : 'anti') + ', ' +
+            fmt(va) + ' nay on ' + (pro ? 'anti' : 'pro');
     }
     function load(onOk, onErr) {
         fetch(DATA_URL).then(function (r) {
@@ -224,10 +249,10 @@
             return a;
         }
 
-        function boardRow(item, rank, side, topic) {
+        function boardRow(item, rankStr, side, topic) {
             var l = item.l;
             var li = document.createElement('li');
-            li.appendChild(el('span', 'rank', String(rank)));
+            li.appendChild(el('span', 'rank', rankStr));
             var who = el('span', 'who');
             var a = el('a', 'name', str(l.name));
             a.href = recordHref(l.slug);
@@ -247,18 +272,19 @@
             show('lb-' + side + '-list', !sparse);
             if (!sparse) {
                 var frag = document.createDocumentFragment();
-                top.forEach(function (r, i) { frag.appendChild(boardRow(r, i + 1, side, topic)); });
+                top.forEach(function (r, i) { frag.appendChild(boardRow(r, rankLabel(top, i, side), side, topic)); });
                 list.appendChild(frag);
             }
             if (card) card.className = 'card lb' + (view === side ? ' active' : '');
         }
 
-        function row(item, rank, topic, view) {
+        function row(item, i, topic, view) {
             var l = item.l;
             var tr = document.createElement('tr');
             // Rank only means something for rows with at least one act in the current view.
-            var rankTd = el('td', 'rank', item[view] > 0 ? fmt(rank) : '');
-            if (!(item[view] > 0)) rankTd.setAttribute('aria-label', 'Unranked');
+            var hasRank = item[view] > 0;
+            var rankTd = el('td', 'rank', hasRank ? rankLabel(filtered, i, view) : '');
+            if (!hasRank) rankTd.setAttribute('aria-label', 'Unranked');
             tr.appendChild(rankTd);
             var td = el('td');
             var a = el('a', 'name', str(l.name));
@@ -275,17 +301,10 @@
             SIDES.forEach(function (side) {
                 var c = el('td', 'num');
                 c.appendChild(countLink(l, side, item[side], topic, 'tot'));
-                // Sub-line only when there is something to break down (records.js does the same for votes).
-                if (!topic && item[side] > 0) c.appendChild(el('span', 'rec-sub', subline(l, side)));
+                // Sub-line whenever there is something to break down (topic view included).
+                if (item[side] > 0) c.appendChild(el('span', 'rec-sub', subline(l, side, topic)));
                 tr.appendChild(c);
             });
-
-            td = el('td', 'net');
-            var n = el('a', null, signed(item.net));
-            n.href = recordHref(l.slug);
-            n.title = 'Pro-science acts minus anti-science acts';
-            td.appendChild(n);
-            tr.appendChild(td);
 
             return tr;
         }
@@ -294,7 +313,7 @@
             var topic = selTopic.value, view = currentView();
             var frag = document.createDocumentFragment();
             var end = Math.min(filtered.length, shown + PAGE_SIZE);
-            for (var i = shown; i < end; i++) frag.appendChild(row(filtered[i], i + 1, topic, view));
+            for (var i = shown; i < end; i++) frag.appendChild(row(filtered[i], i, topic, view));
             tbody.appendChild(frag);
             shown = end;
             setText('sc-count', 'Showing ' + fmt(shown) + ' of ' + plural(filtered.length, 'legislator') +
@@ -317,7 +336,7 @@
         }
         function readUrl() {
             var init = parseQuery(window.location.search);
-            if (init.view === 'pro' || init.view === 'anti') setView(init.view);
+            if (init.view === 'total' || init.view === 'pro' || init.view === 'anti') setView(init.view);
             if (init.level && hasOption(selLevel, init.level)) selLevel.value = init.level;
             if (init.state && hasOption(selState, init.state)) selState.value = init.state;
             if (init.chamber && hasOption(selChamber, init.chamber)) selChamber.value = init.chamber;
@@ -338,12 +357,12 @@
                 var c = counts(l, tp);
                 if (!c) return;
                 if (!includeAll && !c.pro && !c.anti) return;
-                filtered.push({ l: l, pro: c.pro, anti: c.anti, net: c.pro - c.anti });
+                filtered.push({ l: l, pro: c.pro, anti: c.anti, net: c.pro - c.anti, total: c.pro + c.anti });
             });
             renderBoard('pro', tp, view);
             renderBoard('anti', tp, view);
             filtered.sort(bySide(view));
-            setText('sc-table-title', 'Ranked by ' + SIDE_WORD[view] + ' acts' + (tp ? ': ' + topicLabel(tp) : ''));
+            setText('sc-table-title', 'Ordered by ' + SIDE_WORD[view] + ' acts' + (tp ? ': ' + topicLabel(tp) : ''));
             shown = 0;
             clear(tbody);
             renderMore();
@@ -368,9 +387,24 @@
             var nAnti = typeof s.anti_acts === 'number' ? s.anti_acts :
                 all.reduce(function (acc, l) { return acc + num(l.anti_acts); }, 0);
             var upd = stamp('SCIENCE SCORECARD', data);
-            setText('sc-summary', fmt(nLeg) + ' LEGISLATORS ON FILE - ' + fmt(nWith) +
-                ' WITH CLASSIFIED ACTIVITY - ' + fmt(nPro) + ' PRO-SCIENCE ACTS - ' +
-                fmt(nAnti) + ' ANTI-SCIENCE ACTS' + (upd ? ' - UPDATED ' + upd : ''));
+
+            var parts = [fmt(nLeg) + ' LEGISLATORS ON FILE', fmt(nWith) + ' WITH CLASSIFIED ACTIVITY'];
+            if (typeof s.sponsorships === 'number') {
+                var actsPart = fmt(nPro + nAnti) + ' ACTS: ' + fmt(s.sponsorships) + ' SPONSORSHIPS';
+                if (typeof s.primary === 'number' && typeof s.cosponsor === 'number') {
+                    actsPart += ' (' + fmt(s.primary) + ' PRIMARY, ' + fmt(s.cosponsor) + ' COSPONSOR)';
+                }
+                if (typeof s.votes === 'number') actsPart += ', ' + fmt(s.votes) + ' RECORDED VOTES';
+                parts.push(actsPart);
+            }
+            // "Of" only makes sense against a nonzero denominator; omit the clause
+            // rather than print a "N of 0" fraction while roll-call coverage is thin.
+            if (typeof s.bills_with_sponsor_data === 'number' && typeof s.bills_with_roll_calls === 'number' &&
+                s.bills_with_roll_calls > 0) {
+                parts.push('SPONSOR DATA ON ' + fmt(s.bills_with_sponsor_data) + ' OF ' +
+                    fmt(s.bills_with_roll_calls) + ' CLASSIFIED BILLS');
+            }
+            setText('sc-summary', parts.join(' - ') + (upd ? ' - UPDATED ' + upd : ''));
             var method = str(data.method);
             setText('sc-method', method);
             show('sc-method', !!method);

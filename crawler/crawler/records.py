@@ -455,6 +455,8 @@ def _one_vote_per_bill(votes: list[dict]) -> list[dict]:
 
 def build_scorecard(records: dict) -> dict:
     rows = []
+    sponsor_bill_ids = set()
+    vote_bill_ids = set()
     for r in records.get("legislators", []):
         pro_s = anti_s = pro_primary = anti_primary = 0
         for s in r.get("sponsorships", []):
@@ -466,6 +468,8 @@ def build_scorecard(records: dict) -> dict:
                 anti_s += 1
                 if s.get("role") == "primary":
                     anti_primary += 1
+            if s.get("billType") in ("pro", "anti") and s.get("billId"):
+                sponsor_bill_ids.add(s["billId"])
         v_for_pro = v_against_pro = v_for_anti = v_against_anti = 0
         for v in _one_vote_per_bill(r.get("votes", [])):
             bt, vote = v.get("billType"), v.get("vote")
@@ -479,21 +483,27 @@ def build_scorecard(records: dict) -> dict:
                     v_for_anti += 1
                 elif vote == "Nay":
                     v_against_anti += 1
+            if bt in ("pro", "anti") and v.get("billId"):
+                vote_bill_ids.add(v["billId"])
         by_topic = {}
         for s in r.get("sponsorships", []):
             if s.get("billType") in ("pro", "anti") and s.get("category"):
-                t = by_topic.setdefault(s["category"], {"pro": 0, "anti": 0})
+                t = by_topic.setdefault(s["category"], {"pro": 0, "anti": 0, "sponsored": 0, "primary": 0, "votes": 0})
                 t[s["billType"]] += 1
+                t["sponsored"] += 1
+                if s.get("role") == "primary":
+                    t["primary"] += 1
         for v in _one_vote_per_bill(r.get("votes", [])):
             bt, vote, cat = v.get("billType"), v.get("vote"), v.get("category")
             if bt not in ("pro", "anti") or not cat or vote not in ("Yea", "Nay"):
                 continue
-            t = by_topic.setdefault(cat, {"pro": 0, "anti": 0})
+            t = by_topic.setdefault(cat, {"pro": 0, "anti": 0, "sponsored": 0, "primary": 0, "votes": 0})
             # a Yea on a pro bill or a Nay on an anti bill counts as a pro-science act, and vice versa
             if (bt == "pro") == (vote == "Yea"):
                 t["pro"] += 1
             else:
                 t["anti"] += 1
+            t["votes"] += 1
         pro_acts = pro_s + v_for_pro + v_against_anti
         anti_acts = anti_s + v_for_anti + v_against_pro
         rows.append({
@@ -508,10 +518,18 @@ def build_scorecard(records: dict) -> dict:
             "by_topic": by_topic,
         })
     scored = [x for x in rows if x["pro_acts"] or x["anti_acts"]]
+    total_sponsorships = sum(x["pro_sponsored"] + x["anti_sponsored"] for x in rows)
+    total_primary = sum(x["pro_primary"] + x["anti_primary"] for x in rows)
+    total_votes = sum(
+        x["votes_for_pro"] + x["votes_against_pro"] + x["votes_for_anti"] + x["votes_against_anti"] for x in rows
+    )
     return {
         "summary": {
             "legislators": len(rows), "with_classified_activity": len(scored),
             "pro_acts": sum(x["pro_acts"] for x in rows), "anti_acts": sum(x["anti_acts"] for x in rows),
+            "sponsorships": total_sponsorships, "primary": total_primary,
+            "cosponsor": total_sponsorships - total_primary, "votes": total_votes,
+            "bills_with_sponsor_data": len(sponsor_bill_ids), "bills_with_roll_calls": len(vote_bill_ids),
         },
         "method": (
             "Each row counts official acts on bills SAFE Action has classified as pro-science or anti-science: "
@@ -522,7 +540,15 @@ def build_scorecard(records: dict) -> dict:
             "inflate a count. Sponsoring and cosponsoring count the same; primary sponsorships are shown "
             "separately. Counts are unweighted and every count links to the bills and votes behind it. "
             "Classifications apply to bills and are published with the bill list. Every legislator in the "
-            "database is scored the same way, year-round."
+            "database is counted the same way, in every year, regardless of party or seat. A zero means no "
+            "tracked act matched, not that the legislator was reviewed and found neutral; coverage of sponsor "
+            "and vote data is still growing and is shown above. An act that cannot be attributed to exactly one "
+            "legislator is left out and logged for review, never guessed. Counts cover the 119th Congress and "
+            "the 2025-2026 state sessions, including bills that have since died; each act's date is on the "
+            "record page. Bill classifications come from a keyword pass plus an independent review by Claude "
+            "Sonnet with a 0.70 confidence threshold; each bill's classification evidence is published with the "
+            "bill. Legislators with the same count share a rank; order within a tie is alphabetical and carries "
+            "no meaning. The scorecard is refreshed nightly from LegiScan, GovInfo, and Open States."
         ),
         "legislators": rows,
     }

@@ -6,7 +6,7 @@
     <title>Science Scorecard - SAFE Action</title>
     <meta name="description" content="Who is introducing, cosponsoring, and voting on the bills SAFE Action tracks. Counts of official acts on legislation classified as pro-science or anti-science, ordered by count, with every number linked to the legislative record behind it.">
     <meta property="og:title" content="Science Scorecard - SAFE Action">
-    <meta property="og:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, with every number linked to the record behind it. A tally of legislative acts, not a rating of any person.">
+    <meta property="og:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, ordered by count, with every number linked to the record behind it. A tally of legislative acts, not a rating of any person.">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://scienceandfreedom.com/scorecard">
     <meta property="og:url" content="https://scienceandfreedom.com/scorecard">
@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Science Scorecard - SAFE Action">
-    <meta name="twitter:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, with every number linked to the legislative record behind it.">
+    <meta name="twitter:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, ordered by count, with every number linked to the legislative record behind it.">
     <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -72,9 +72,8 @@
     .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;white-space:nowrap;}
     td.rank{font-family:var(--mono);font-size:11px;color:var(--muted);}
     td.num{white-space:nowrap;}
-    td.num a.tot,td.net a{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;color:var(--navy);text-decoration:none;font-variant-numeric:tabular-nums;}
-    td.num a.tot:hover,td.net a:hover{text-decoration:underline;}
-    td.net{white-space:nowrap;}
+    td.num a.tot{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;color:var(--navy);text-decoration:none;font-variant-numeric:tabular-nums;}
+    td.num a.tot:hover{text-decoration:underline;}
     </style>
 </head>
 <body data-page="scorecard">
@@ -123,7 +122,7 @@
             <div class="card note">
                 <span class="k">METHODOLOGY</span>
                 <p id="sc-method"></p>
-                <p>This scorecard is a tally of legislative acts, not a rating of any person, and not an endorsement of or opposition to any candidate.</p>
+                <p>This scorecard is a tally of legislative acts, not a rating of any person. It does not endorse or oppose anyone. It lists every legislator in the database and is refreshed nightly from official legislative sources.</p>
             </div>
 
             <div id="sc-summary" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
@@ -132,8 +131,9 @@
                 <div class="ctl">
                     <span class="k" id="sf-view-label">VIEW</span>
                     <div class="seg" role="radiogroup" aria-labelledby="sf-view-label">
-                        <label><input type="radio" name="sf-view" value="pro"><span>Most pro-science acts</span></label>
-                        <label><input type="radio" name="sf-view" value="anti" checked><span>Most anti-science acts</span></label>
+                        <label><input type="radio" name="sf-view" value="total" checked><span>Order by total acts</span></label>
+                        <label><input type="radio" name="sf-view" value="pro"><span>Order by pro-science acts</span></label>
+                        <label><input type="radio" name="sf-view" value="anti"><span>Order by anti-science acts</span></label>
                     </div>
                 </div>
                 <select id="sf-level" aria-label="Level">
@@ -145,20 +145,20 @@
                 <select id="sf-chamber" aria-label="Chamber"><option value="">All chambers</option></select>
                 <select id="sf-party" aria-label="Party"><option value="">All parties</option></select>
                 <select id="sf-topic" aria-label="Topic"><option value="">All topics</option></select>
-                <label class="chk" for="sf-all"><input type="checkbox" id="sf-all"> Include legislators with no classified activity</label>
+                <label class="chk" for="sf-all"><input type="checkbox" id="sf-all" checked> Include legislators with no classified activity</label>
             </div>
 
             <div class="lb-grid">
                 <div class="card lb" id="lb-pro">
-                    <span class="k">TOP 10 UNDER CURRENT FILTERS</span>
-                    <h2>Most pro-science acts</h2>
+                    <span class="k">TEN HIGHEST COUNTS UNDER CURRENT FILTERS</span>
+                    <h2>Pro-science acts</h2>
                     <p class="def">Sponsorships of pro-science bills, Yea votes on them, and Nay votes on anti-science bills.</p>
                     <ol id="lb-pro-list"></ol>
                     <p class="sparse" id="lb-pro-sparse" style="display:none;">Not enough classified activity under these filters yet.</p>
                 </div>
                 <div class="card lb" id="lb-anti">
-                    <span class="k">TOP 10 UNDER CURRENT FILTERS</span>
-                    <h2>Most anti-science acts</h2>
+                    <span class="k">TEN HIGHEST COUNTS UNDER CURRENT FILTERS</span>
+                    <h2>Anti-science acts</h2>
                     <p class="def">Sponsorships of anti-science bills, Yea votes on them, and Nay votes on pro-science bills.</p>
                     <ol id="lb-anti-list"></ol>
                     <p class="sparse" id="lb-anti-sparse" style="display:none;">Not enough classified activity under these filters yet.</p>
@@ -166,7 +166,7 @@
             </div>
 
             <div class="sechead" style="margin-top:36px;margin-bottom:10px;">
-                <h2 id="sc-table-title">Ranked by anti-science acts</h2>
+                <h2 id="sc-table-title">Ordered by total acts</h2>
             </div>
             <div id="sc-count" class="mono muted" style="margin:0 2px;font-size:12px;letter-spacing:.08em;"></div>
 
@@ -181,7 +181,6 @@
                             <th scope="col">Party</th>
                             <th scope="col">Pro-science acts</th>
                             <th scope="col">Anti-science acts</th>
-                            <th scope="col">Net</th>
                         </tr>
                     </thead>
                     <tbody id="sc-rows"></tbody>
@@ -221,7 +220,7 @@
             <a href="terms.html">Terms</a>
         </div>
         <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
-        <p class="footer-disclaimer">Paid for by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+        <p class="footer-disclaimer">Published by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
     </div>
 </footer>
 
