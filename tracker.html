@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legislation Tracker - SAFE Action</title>
-    <meta name="description" content="A free, sourced database of pro- and anti-science legislation in America. Track bills that impact public health, medical freedom, and scientific integrity across the states we cover and Congress.">
+    <meta name="description" content="Live tracker of pro- and anti-science legislation across the states we cover and Congress. Filter thousands of bills by state, topic, stage, and stance, then act before the vote.">
     <meta property="og:title" content="SAFE Action - Legislation Tracker">
     <meta property="og:description" content="Track science legislation across the states we cover and Congress. Filter by state, category, status, and more.">
     <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Legislation Tracker - SAFE Action">
-    <meta name="twitter:description" content="A free, sourced database of pro- and anti-science legislation in America. Track bills that impact public health, medical freedom, and scientific integrity across the states we cover and Congress.">
+    <meta name="twitter:description" content="Live tracker of pro- and anti-science legislation across the states we cover and Congress. Filter thousands of bills by state, topic, stage, and stance, then act before the vote.">
     <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -23,6 +23,91 @@
     <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+    /* Tracker command center: page-local extensions of the V6 tokens.
+       Every control below is a real <button>; these rules strip the UA
+       button chrome so the theme's .stat / .tile / .chip looks carry over. */
+    .pagehero{padding:44px 0 24px;}
+    .pagehero .chips{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+    .insights-note{margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--red);}
+    main > section{padding:40px 0;}
+    .stats{padding:8px 0 32px;}
+    .stat{position:relative;}
+    button.stat{font:inherit;text-align:left;width:100%;color:var(--ink);cursor:pointer;-webkit-appearance:none;appearance:none;}
+    button.stat::after{content:"FILTER \2192";position:absolute;top:18px;right:20px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);}
+    button.stat.active{border-color:var(--navy);box-shadow:0 0 0 2px var(--navy),var(--shadow-1);}
+    button.stat.active::after{content:"FILTERING";color:var(--navy);font-weight:700;}
+    button.chip{cursor:pointer;line-height:1.5;-webkit-appearance:none;appearance:none;}
+    button.chip:hover{background:#f0eee8;}
+    .cartogrid .tile{border:0;padding:0;font:inherit;-webkit-appearance:none;appearance:none;cursor:pointer;}
+    .cartogrid .tile.nodata{cursor:default;}
+    .cartogrid .tile.nodata:hover{transform:none;box-shadow:none;}
+    .tile.active{outline:3px solid var(--navy);outline-offset:2px;z-index:1;}
+    .fedrow button.fedchip{border:0;font:inherit;font-weight:700;font-size:13px;cursor:pointer;-webkit-appearance:none;appearance:none;}
+    .fedchip.active{outline:3px solid var(--navy);outline-offset:2px;}
+    .rank li{margin-bottom:6px;}
+    .rank li button{display:block;width:100%;border:0;background:none;padding:6px 8px;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:8px;-webkit-appearance:none;appearance:none;}
+    .rank li button:hover{background:#f6f4ee;}
+    .rank li.active button{background:#eceef3;box-shadow:inset 3px 0 0 var(--navy);}
+    .breakdowns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;}
+    .bd{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-1);padding:24px;}
+    .bd h3{font-size:15px;font-weight:800;letter-spacing:.02em;margin-bottom:4px;}
+    .bd p.note{font-size:13.5px;color:var(--ink2);margin-bottom:16px;}
+    .topics{display:flex;flex-wrap:wrap;gap:8px;}
+    .topic{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink2);cursor:pointer;-webkit-appearance:none;appearance:none;transition:transform .12s,box-shadow .12s,background .12s;}
+    .topic:hover{transform:translateY(-1px);box-shadow:var(--shadow-1);background:#fff;}
+    .topic .n{font-weight:700;color:var(--red);}
+    .topic.active{background:var(--navy-deep);border-color:var(--navy-deep);color:#e8ecf5;}
+    .topic.active .n{color:var(--gold);}
+    .pipeline{display:flex;gap:4px;}
+    .stage{flex:1 1 0;min-width:0;border:0;-webkit-appearance:none;appearance:none;background:var(--b0-bg);color:var(--ink);padding:12px 6px 10px;text-align:center;cursor:pointer;font:inherit;border-radius:4px;transition:transform .12s,box-shadow .12s,background .12s;}
+    .stage:first-child{border-radius:10px 4px 4px 10px;}
+    .stage:last-child{border-radius:4px 10px 10px 4px;}
+    .stage:hover{transform:translateY(-2px);box-shadow:var(--shadow-1);}
+    .stage .n{display:block;font-family:var(--display);font-size:clamp(18px,2.2vw,26px);line-height:1;color:var(--navy);}
+    .stage .l{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-top:5px;line-height:1.2;}
+    .stage .bar{display:block;height:5px;border-radius:999px;background:rgba(22,38,77,.12);margin-top:8px;overflow:hidden;}
+    .stage .bar i{display:block;height:100%;background:var(--navy);border-radius:999px;}
+    .stage.active{background:var(--navy-deep);color:#e8ecf5;}
+    .stage.active .n{color:var(--gold);}
+    .stage.active .l{color:#b9c3da;}
+    .stage.active .bar{background:rgba(255,255,255,.18);}
+    .stage.active .bar i{background:var(--gold);}
+    .stage[disabled]{cursor:default;opacity:.55;}
+    .stage[disabled]:hover{transform:none;box-shadow:none;}
+    #browse-bills{scroll-margin-top:48px;}
+    /* Dense bill table, same V6 table language as records.html */
+    .bb-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;}
+    .bb-toolbar .sort{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--muted);}
+    .bb-toolbar select{border:1.5px solid var(--line);border-radius:10px;background:var(--card);padding:7px 10px;font-size:13px;font-family:var(--sans);color:var(--ink);}
+    .tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);margin-top:12px;}
+    table.rec{width:100%;min-width:900px;border-collapse:collapse;font-size:14px;}
+    table.rec th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--bg);}
+    table.rec td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+    table.rec tr:last-child td{border-bottom:none;}
+    table.rec tbody tr:hover td{background:#f6f4ee;}
+    table.rec a.name{font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;}
+    table.rec a.name:hover{text-decoration:underline;}
+    .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;}
+    table.rec td.c-state{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--navy);white-space:nowrap;}
+    table.rec td.c-title{min-width:280px;}
+    table.rec .ttl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    table.rec .badge{display:inline-block;border-radius:6px;padding:2px 8px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;white-space:nowrap;}
+    table.rec td.c-cat,table.rec td.c-status{white-space:nowrap;font-size:13px;color:var(--ink2);}
+    table.rec td.c-date{font-family:var(--mono);font-size:12px;color:var(--ink2);white-space:nowrap;}
+    table.rec a.act{font-weight:700;color:var(--red);text-decoration:none;white-space:nowrap;}
+    table.rec a.act:hover{text-decoration:underline;}
+    .filterwrap{background:var(--bg);}
+    @media(min-width:761px){
+      .filterwrap{position:sticky;top:40px;z-index:40;padding:8px 0;}
+    }
+    @media(max-width:860px){.breakdowns{grid-template-columns:1fr;}}
+    @media(max-width:760px){
+      .pipeline{flex-wrap:wrap;}
+      .stage{flex:1 1 30%;}
+      .stage:first-child,.stage:last-child{border-radius:6px;}
+    }
+    </style>
 </head>
 <body>
 
@@ -49,7 +134,7 @@
                 <a href="directory.html">Vaccine Pledges</a>
                 <a href="records.html">Records</a>
                 <a href="about.html">About</a>
-                <a class="btn primary small" href="join.html">Join the List</a>
+                <a class="btn primary small" href="scorecard.html">Scorecard</a>
             </div>
         </nav>
     </div>
@@ -57,15 +142,130 @@
 </header>
 
 <main>
+    <!-- HERO -->
     <div class="pagehero">
         <div class="wrap">
-            <h1>Legislation Tracker</h1>
-            <p class="lede">A free, sourced database of pro- and anti-science legislation in America. Bills that touch public health, medical freedom, and scientific integrity, read and classified daily.</p>
+            <h1>Live Legislation Tracker</h1>
+            <p class="lede">Every bill that touches vaccines, public health, and research, read and classified daily. Click any number, state, topic, or stage below to filter the list.</p>
+            <div class="chips">
+                <span class="chip" id="chip-updated"><span class="livedot" aria-hidden="true"></span>BILL DATA UPDATED DAILY</span>
+                <span class="chip" id="chip-coverage">STATES + CONGRESS</span>
+            </div>
+            <p class="insights-note" id="insights-note" role="status" style="display:none;">Bill data temporarily unavailable. The bill list below still works; the map and counts will return shortly.</p>
         </div>
     </div>
 
-    <section id="browse-bills" style="padding-top:8px;">
+    <!-- STATS -->
+    <div class="stats" aria-label="Tracker statistics">
         <div class="wrap">
+            <div class="statgrid">
+                <div class="stat">
+                    <div class="num" id="stat-bills">...</div>
+                    <div class="lbl">Bills tracked</div>
+                    <div class="sub">EVERY SESSION, EVERY CHAMBER</div>
+                </div>
+                <button type="button" class="stat threat" id="tile-threats" aria-pressed="false">
+                    <div class="num" id="stat-threats">...</div>
+                    <div class="lbl">Active anti-science threats</div>
+                    <div class="sub">FLAGGED AND MONITORED NOW</div>
+                </button>
+                <button type="button" class="stat gold" id="tile-pro" aria-pressed="false">
+                    <div class="num" id="stat-pro">...</div>
+                    <div class="lbl">Pro-science bills moving</div>
+                    <div class="sub">WORTH YOUR SUPPORT</div>
+                </button>
+                <button type="button" class="stat" id="tile-signed" aria-pressed="false">
+                    <div class="num" id="stat-signed">...</div>
+                    <div class="lbl">Tracked bills signed into law</div>
+                    <div class="sub">OF ALL BILLS WE MONITOR</div>
+                </button>
+                <div class="stat">
+                    <div class="num" id="stat-states">...</div>
+                    <div class="lbl">States covered, plus Congress</div>
+                    <div class="sub">STATEHOUSE TO CAPITOL HILL</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="stat-matching" aria-live="polite">...</div>
+                    <div class="lbl">Matching your filters</div>
+                    <div class="sub">IN THE LIST BELOW</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATE THREAT MAP -->
+    <section id="map" class="insight" aria-labelledby="map-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="map-h">Where the threats are</h2>
+                <span class="chip"><span class="livedot" aria-hidden="true"></span><span id="map-chip">ACTIVE THREATS</span></span>
+            </div>
+            <div class="mapcard">
+                <div>
+                    <div class="cartogrid" id="cartogrid" role="group" aria-label="Tile map of active anti-science bills per state; each tile filters the list."></div>
+                    <div class="fedrow">
+                        <button type="button" class="fedchip" id="fedchip" aria-pressed="false">US CONGRESS</button>
+                        <button type="button" class="chip" id="clear-state" style="display:none;">CLEAR STATE</button>
+                    </div>
+                    <div class="legend" aria-label="Legend: active anti-science bills per state">
+                        <span class="li"><span class="sw" style="background:repeating-linear-gradient(45deg,#f2f0ea,#f2f0ea 4px,#e9e6dd 4px,#e9e6dd 8px)"></span>no data</span>
+                        <span class="li"><span class="sw" style="background:var(--b0-bg)"></span>0</span>
+                        <span class="li"><span class="sw" style="background:var(--b1-bg)"></span>1-2</span>
+                        <span class="li"><span class="sw" style="background:var(--b2-bg)"></span>3-6</span>
+                        <span class="li"><span class="sw" style="background:var(--b3-bg)"></span>7-12</span>
+                        <span class="li"><span class="sw" style="background:var(--b4-bg)"></span>13+</span>
+                    </div>
+                </div>
+                <div class="mapside">
+                    <h3>Most targeted right now</h3>
+                    <p class="note" id="rank-note">Active anti-science bills by jurisdiction.</p>
+                    <ol class="rank" id="rank"></ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BREAKDOWNS -->
+    <section id="breakdowns" class="insight" aria-labelledby="bd-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="bd-h">Topics and stages</h2>
+                <span class="chip">CLICK TO FILTER</span>
+            </div>
+            <div class="breakdowns">
+                <div class="bd">
+                    <h3>By topic</h3>
+                    <p class="note">Active anti- and pro-science bills by topic.</p>
+                    <div class="topics" id="topics" role="group" aria-label="Filter by topic"></div>
+                </div>
+                <div class="bd">
+                    <h3>By stage</h3>
+                    <p class="note">All tracked bills by stage in the process.</p>
+                    <div class="pipeline" id="pipeline" role="group" aria-label="Filter by stage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WATCHLIST -->
+    <section class="watch insight" aria-labelledby="watch-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="watch-h">Moving now</h2>
+                <span class="chip"><span class="livedot" aria-hidden="true"></span><span id="watch-updated">LIVE</span></span>
+            </div>
+            <div class="bills" id="bills-live"></div>
+        </div>
+    </section>
+
+    <!-- BILL BROWSER -->
+    <section id="browse-bills" aria-labelledby="browse-h">
+        <div class="wrap">
+            <div class="sechead">
+                <h2 id="browse-h">Browse bills</h2>
+                <button type="button" class="chip" id="reset-filters">RESET FILTERS</button>
+            </div>
+            <div class="filterwrap">
             <div class="filterbar" role="search" aria-label="Filter bills">
                 <select id="bb-state" aria-label="State"><option value="">All States</option></select>
                 <select id="bb-stance" aria-label="Type">
@@ -107,9 +307,35 @@
                 </select>
                 <input type="text" id="bb-search" placeholder="Search bills: 'raw milk', 'HB 422', 'exemption'..." aria-label="Search bills">
             </div>
+            </div>
 
-            <div id="bb-count" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
-            <div id="bb-grid" class="bill-grid"></div>
+            <div class="bb-toolbar">
+                <div id="bb-count" class="mono muted" style="margin:0 2px;font-size:12px;letter-spacing:.08em;"></div>
+                <label class="sort" for="bb-sort">SORT
+                    <select id="bb-sort" aria-label="Sort bills">
+                        <option value="">Last action, newest first</option>
+                        <option value="stage">Status stage, furthest along first</option>
+                        <option value="bill">Bill number</option>
+                    </select>
+                </label>
+            </div>
+            <div class="tablewrap" id="bb-tablewrap">
+                <table class="rec" id="bb-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Bill</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Classification</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Last action</th>
+                            <th scope="col">Act</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bb-grid"></tbody>
+                </table>
+            </div>
             <div id="bb-empty" class="card center" style="display:none;margin-top:20px;">
                 <p class="muted">No bills match those filters. Clear one and try again.</p>
             </div>
@@ -130,11 +356,12 @@
         <div class="links">
             <a href="tracker.html">Live Tracker</a>
             <a href="outreach.html">Take Action</a>
-            <a href="join.html">Join the List</a>
+            <a href="join.html">Email updates</a>
             <a href="about.html">About</a>
             <a href="donate.html">Donate</a>
             <a href="directory.html">Pledge Directory</a>
             <a href="records.html">Legislative Records</a>
+            <a href="scorecard.html">Science Scorecard</a>
             <a href="media.html">Media Kit</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
@@ -164,5 +391,6 @@ if (document.readyState === 'loading') {
     BillBrowser.init();
 }
 </script>
+<script src="js/tracker-insights.js?v=100"></script>
 </body>
 </html>

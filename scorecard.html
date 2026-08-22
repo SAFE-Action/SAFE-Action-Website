@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Scorecard - SAFE Action</title>
+    <meta name="description" content="Who is introducing, cosponsoring, and voting on the bills SAFE Action tracks. Counts of official acts on legislation classified as pro-science or anti-science, ordered by count, with every number linked to the legislative record behind it.">
+    <meta property="og:title" content="Science Scorecard - SAFE Action">
+    <meta property="og:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, ordered by count, with every number linked to the record behind it. A tally of legislative acts, not a rating of any person.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://scienceandfreedom.com/scorecard">
+    <meta property="og:url" content="https://scienceandfreedom.com/scorecard">
+    <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Science Scorecard - SAFE Action">
+    <meta name="twitter:description" content="Counts of official acts on bills SAFE Action classifies as pro-science or anti-science, ordered by count, with every number linked to the legislative record behind it.">
+    <meta name="twitter:image" content="https://scienceandfreedom.com/icons/og-card.png">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#101b33">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css?v=1">
+    <style>
+    /* Page-scoped: scorecard leaderboards + dense table in V6 language */
+    .note p{font-size:14px;color:var(--ink2);max-width:76ch;}
+    .note p + p{margin-top:10px;}
+    .note .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);margin-bottom:6px;}
+    .filterbar{align-items:center;}
+    .filterbar .ctl{display:inline-flex;align-items:center;gap:10px;}
+    .filterbar .ctl .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);}
+    /* View switch: two radios styled as a segmented pill. The input stays in the tab order; only its box is hidden. */
+    .seg{display:inline-flex;gap:2px;padding:3px;background:var(--bg);border:1.5px solid var(--line);border-radius:999px;}
+    .seg label{position:relative;cursor:pointer;}
+    .filterbar .seg input{position:absolute;opacity:0;width:1px;height:1px;min-width:0;margin:0;padding:0;border:0;flex:none;}
+    .seg span{display:inline-block;border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--ink2);white-space:nowrap;transition:background .15s,color .15s;}
+    .seg label:hover span{background:#f0eee8;color:var(--ink);}
+    .seg input:checked + span{background:var(--navy);color:#fff;}
+    .seg input:focus-visible + span{outline:3px solid var(--navy);outline-offset:2px;}
+    .filterbar label.chk{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2);padding:6px 4px;cursor:pointer;}
+    .filterbar label.chk input{flex:none;min-width:0;width:16px;height:16px;padding:0;margin:0;border:none;background:none;}
+    /* Leaderboards: two cards, top 10 each under the current filters */
+    .lb-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+    .lb{padding:22px 24px 16px;}
+    .lb.active{border-color:var(--navy);}
+    .lb .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);margin-bottom:4px;}
+    .lb h2{font-weight:800;font-size:20px;letter-spacing:-.01em;}
+    .lb .def{font-size:13px;color:var(--muted);margin:4px 0 10px;}
+    .lb ol{list-style:none;}
+    .lb li{display:grid;grid-template-columns:2.4em minmax(0,1fr) auto auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);}
+    .lb li:last-child{border-bottom:none;}
+    .lb .rank{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);}
+    .lb a.name{font-weight:700;color:var(--navy);text-decoration:none;}
+    .lb a.name:hover{text-decoration:underline;}
+    .lb .sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;}
+    .lb .party{font-size:13px;color:var(--ink2);white-space:nowrap;}
+    .lb a.n{font-family:var(--mono);font-weight:700;font-size:17px;color:var(--navy);min-width:2.6em;text-align:right;text-decoration:none;font-variant-numeric:tabular-nums;}
+    .lb a.n:hover{text-decoration:underline;}
+    .lb .sparse{font-size:14px;color:var(--ink2);padding:8px 0 6px;}
+    @media(max-width:760px){.lb-grid{grid-template-columns:1fr;}}
+    @media(max-width:480px){.lb li{gap:8px;}.lb{padding:18px 16px 12px;}}
+    /* Dense table (same language as records.html) */
+    .tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-1);margin-top:12px;}
+    table.rec{width:100%;border-collapse:collapse;font-size:14px;}
+    table.rec th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--bg);}
+    table.rec td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+    table.rec tr:last-child td{border-bottom:none;}
+    table.rec a.name{font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;}
+    table.rec td.who{white-space:nowrap;}
+    table.rec td.rank{white-space:nowrap;}
+    /* The act sub-lines are the widest cells; keep them compact so the table
+       fits a laptop without horizontal scrolling. */
+    .rec-sub{font-size:10.5px;}
+    table.rec a.name:hover{text-decoration:underline;}
+    .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;white-space:nowrap;}
+    td.rank{font-family:var(--mono);font-size:11px;color:var(--muted);}
+    td.num{white-space:nowrap;}
+    td.num a.tot{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;color:var(--navy);text-decoration:none;font-variant-numeric:tabular-nums;}
+    td.num a.tot:hover{text-decoration:underline;}
+    .card.note details.method{margin-top:12px;border-top:1px solid var(--line);padding-top:10px;}
+    .card.note details.method summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--navy);}
+    .card.note details.method summary::-webkit-details-marker{display:none;}
+    .card.note details.method summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--muted);}
+    .card.note details.method[open] summary::after{content:"-";}
+    .card.note details.method p{margin-top:10px;}
+    </style>
+</head>
+<body data-page="scorecard">
+
+<div class="statusbar" role="status" aria-label="Scorecard status">
+    <div class="wrap">
+        <span class="livedot" aria-hidden="true"></span>
+        <span class="label" id="sb-label">SCIENCE SCORECARD</span>
+        <span class="side">SOURCE: LEGISCAN + GOVINFO + OPENSTATES</span>
+    </div>
+</div>
+
+<header class="site">
+    <div class="wrap">
+        <nav class="main" aria-label="Primary">
+            <a class="brand" href="index.html" aria-label="SAFE Action home">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+                <span class="word">SAFE <span class="act">ACTION</span></span>
+            </a>
+            <div class="navlinks">
+                <a href="tracker.html">Live Tracker</a>
+                <a href="outreach.html">Take Action</a>
+                <a href="directory.html">Vaccine Pledges</a>
+                <a href="records.html">Records</a>
+                <a href="about.html">About</a>
+                <a class="btn primary small" href="scorecard.html" aria-current="page">Scorecard</a>
+            </div>
+        </nav>
+    </div>
+    <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<main>
+    <div class="pagehero">
+        <div class="wrap">
+            <h1>Science Scorecard</h1>
+            <p class="lede">Who is introducing, cosponsoring, and voting on the bills we track. Counts of official acts on legislation SAFE Action classifies as pro-science or anti-science, with every number linked to the record behind it.</p>
+        </div>
+    </div>
+
+    <section id="scorecard" style="padding-top:8px;">
+        <div class="wrap">
+            <div class="card note">
+                <p>This scorecard is a tally of legislative acts, not a rating of any person. It does not endorse or oppose anyone. It lists every legislator in the database and is refreshed nightly from official legislative sources.</p>
+                <details class="method">
+                    <summary><span class="k">METHODOLOGY</span> How these counts are made</summary>
+                    <p id="sc-method"></p>
+                </details>
+            </div>
+
+            <div id="sc-summary" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
+
+            <div class="filterbar" role="search" aria-label="Filter the scorecard" style="margin-top:16px;">
+                <div class="ctl">
+                    <span class="k" id="sf-view-label">VIEW</span>
+                    <div class="seg" role="radiogroup" aria-labelledby="sf-view-label">
+                        <label><input type="radio" name="sf-view" value="total" checked><span>Order by total acts</span></label>
+                        <label><input type="radio" name="sf-view" value="pro"><span>Order by pro-science acts</span></label>
+                        <label><input type="radio" name="sf-view" value="anti"><span>Order by anti-science acts</span></label>
+                    </div>
+                </div>
+                <select id="sf-level" aria-label="Level">
+                    <option value="">All levels</option>
+                    <option value="Federal">Federal</option>
+                    <option value="State">State</option>
+                </select>
+                <select id="sf-state" aria-label="State"><option value="">All states</option></select>
+                <select id="sf-chamber" aria-label="Chamber"><option value="">All chambers</option></select>
+                <select id="sf-party" aria-label="Party"><option value="">All parties</option></select>
+                <select id="sf-topic" aria-label="Topic"><option value="">All topics</option></select>
+                <label class="chk" for="sf-all"><input type="checkbox" id="sf-all" checked> Include legislators with no classified activity</label>
+            </div>
+
+            <div class="lb-grid">
+                <div class="card lb" id="lb-pro">
+                    <span class="k">TEN HIGHEST COUNTS UNDER CURRENT FILTERS</span>
+                    <h2>Pro-science acts</h2>
+                    <p class="def">Sponsorships of pro-science bills, Yea votes on them, and Nay votes on anti-science bills.</p>
+                    <ol id="lb-pro-list"></ol>
+                    <p class="sparse" id="lb-pro-sparse" style="display:none;">Not enough classified activity under these filters yet.</p>
+                </div>
+                <div class="card lb" id="lb-anti">
+                    <span class="k">TEN HIGHEST COUNTS UNDER CURRENT FILTERS</span>
+                    <h2>Anti-science acts</h2>
+                    <p class="def">Sponsorships of anti-science bills, Yea votes on them, and Nay votes on pro-science bills.</p>
+                    <ol id="lb-anti-list"></ol>
+                    <p class="sparse" id="lb-anti-sparse" style="display:none;">Not enough classified activity under these filters yet.</p>
+                </div>
+            </div>
+
+            <div class="sechead" style="margin-top:36px;margin-bottom:10px;">
+                <h2 id="sc-table-title">Ordered by total acts</h2>
+            </div>
+            <div id="sc-count" class="mono muted" style="margin:0 2px;font-size:12px;letter-spacing:.08em;"></div>
+
+            <div id="sc-tablewrap" class="tablewrap" style="display:none;">
+                <table class="rec" id="sc-table">
+                    <caption class="sr-only">Legislators ordered by counts of official acts on bills classified pro-science or anti-science</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><abbr title="Rank">#</abbr></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Party</th>
+                            <th scope="col">Pro-science acts</th>
+                            <th scope="col">Anti-science acts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sc-rows"></tbody>
+                </table>
+            </div>
+            <div id="sc-empty" class="card center" style="display:none;margin-top:20px;">
+                <p class="muted">No legislators match those filters. Clear one and try again.</p>
+            </div>
+            <button id="sc-more" class="btn ghost" style="display:none;margin:24px auto 0;width:100%;max-width:320px;">Load more legislators</button>
+            <div id="sc-loading" class="center muted" style="margin-top:24px;">Loading scorecard...</div>
+            <div id="sc-error" class="card center" style="display:none;margin-top:20px;">
+                <p class="muted">Scorecard data is temporarily unavailable. Try again shortly.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div class="top">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.6l3 6.4 7 .85-5.15 4.85 1.35 6.9L12 17.1l-6.2 3.5 1.35-6.9L2 8.85 9 8z" fill="#c8930f" stroke="#16264d" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span class="word">SAFE <span class="act">ACTION</span></span>
+        </div>
+        <div class="links">
+            <a href="tracker.html">Live Tracker</a>
+            <a href="outreach.html">Take Action</a>
+            <a href="join.html">Email updates</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="directory.html">Pledge Directory</a>
+            <a href="records.html">Legislative Records</a>
+            <a href="scorecard.html">Science Scorecard</a>
+            <a href="media.html">Media Kit</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+        <p>&copy; 2026 Science and Freedom for Everyone Action Fund</p>
+        <p class="footer-disclaimer">Published by Science and Freedom for Everyone Action Fund. Organized as a 501(c)(4) social welfare organization (EIN 41-4491870). Contributions are not tax-deductible as charitable contributions.</p>
+    </div>
+</footer>
+
+<script src="js/scorecard.js?v=1"></script>
+<script src="js/pwa.js?v=100"></script>
+</body>
+</html>

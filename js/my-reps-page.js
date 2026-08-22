@@ -1990,6 +1990,15 @@ var BillBrowser = {
             });
         }
 
+        // Sort control (table mode): re-render the loaded bills, no refetch
+        var sortEl = document.getElementById('bb-sort');
+        if (sortEl) {
+            sortEl.addEventListener('change', function() {
+                self._syncFiltersToURL();
+                self.render();
+            });
+        }
+
         // Load More button
         var loadMoreBtn = document.getElementById('bb-load-more');
         if (loadMoreBtn) {
@@ -2002,7 +2011,7 @@ var BillBrowser = {
         this.loadBills(false);
     },
 
-    _filterParamMap: { 'bb-state': 'state', 'bb-stance': 'type', 'bb-status': 'status', 'bb-impact': 'priority', 'bb-category': 'category', 'bb-search': 'q' },
+    _filterParamMap: { 'bb-state': 'state', 'bb-stance': 'type', 'bb-status': 'status', 'bb-impact': 'priority', 'bb-category': 'category', 'bb-search': 'q', 'bb-sort': 'sort' },
 
     _restoreFiltersFromURL: function() {
         var params = new URLSearchParams(window.location.search);
@@ -2044,8 +2053,17 @@ var BillBrowser = {
     },
 
     loadBills: function(append) {
-        if (this._loading) return;
+        if (this._loading) {
+            // A filter change arrived while a load was already in flight.
+            // Silently dropping it would either lose the request entirely
+            // or let the in-flight promise later overwrite the just-cleared
+            // list with results for the OLD filters. Queue one fresh reload
+            // instead; the in-flight load's result is discarded when it lands.
+            if (!append) this._reloadPending = true;
+            return;
+        }
         this._loading = true;
+        this._reloadPending = false;
 
         var self = this;
         var loading = document.getElementById('bb-loading');
@@ -2064,6 +2082,7 @@ var BillBrowser = {
             LegislationAPI.queryBills(filters, this.PAGE_SIZE, startAfter).then(function(result) {
                 self._loading = false;
                 if (loading) loading.style.display = 'none';
+                if (self._reloadPending) { self._reloadPending = false; self.loadBills(false); return; }
 
                 if (append) {
                     self._allBills = self._allBills.concat(result.bills);
@@ -2086,6 +2105,7 @@ var BillBrowser = {
             LegislationAPI.getLegislation(null).then(function(bills) {
                 self._loading = false;
                 if (loading) loading.style.display = 'none';
+                if (self._reloadPending) { self._reloadPending = false; self.loadBills(false); return; }
                 self._allBills = bills || [];
                 self._hasMore = false;
                 self._lastDoc = null;
@@ -2115,6 +2135,12 @@ var BillBrowser = {
             } else if (filters.status === 'dead') {
                 var deadStatuses = (typeof SAFE_CONFIG !== 'undefined' && SAFE_CONFIG.DEAD_STATUSES) || [];
                 if (deadStatuses.indexOf(bill.status) === -1) return false;
+            } else if (filters.status === 'Passed One Chamber') {
+                // The stage pipeline groups the federal chamber-specific
+                // statuses under this label (see STATUS_ALIAS in
+                // tracker-insights.js); match the same set here so a click
+                // on that segment returns the bills it counted.
+                if (['Passed One Chamber', 'Passed Senate', 'Passed House'].indexOf(bill.status) === -1) return false;
             } else if (filters.status && bill.status !== filters.status) {
                 return false;
             }
@@ -2144,6 +2170,11 @@ var BillBrowser = {
 
         var bills = this.getFilteredBills();
 
+        // Table mode: tracker.html renders rows into <tbody id="bb-grid">
+        var tableMode = grid.tagName === 'TBODY';
+        var tableWrap = document.getElementById('bb-tablewrap');
+        if (tableWrap) tableWrap.style.display = bills.length ? '' : 'none';
+
         // Update count
         if (countEl) {
             var countText = bills.length + (this._hasMore ? '+' : '') + ' bill' + (bills.length !== 1 ? 's' : '') + ' found';
@@ -2162,25 +2193,142 @@ var BillBrowser = {
         }
         if (emptyEl) emptyEl.style.display = 'none';
 
-        // Sort: high impact first, then by state
-        var impactOrder = { 'High': 0, 'Medium': 1, 'Low': 2 };
-        bills.sort(function(a, b) {
-            var ia = impactOrder[a.impact] !== undefined ? impactOrder[a.impact] : 3;
-            var ib = impactOrder[b.impact] !== undefined ? impactOrder[b.impact] : 3;
-            if (ia !== ib) return ia - ib;
-            return (a.state || '').localeCompare(b.state || '');
-        });
+        if (tableMode) {
+            this._sortRows(bills);
+        } else {
+            // Sort: high impact first, then by state
+            var impactOrder = { 'High': 0, 'Medium': 1, 'Low': 2 };
+            bills.sort(function(a, b) {
+                var ia = impactOrder[a.impact] !== undefined ? impactOrder[a.impact] : 3;
+                var ib = impactOrder[b.impact] !== undefined ? impactOrder[b.impact] : 3;
+                if (ia !== ib) return ia - ib;
+                return (a.state || '').localeCompare(b.state || '');
+            });
+        }
 
-        // Render cards
+        // Render rows (table mode) or cards
         var self = this;
         bills.forEach(function(bill) {
-            grid.appendChild(self.buildCard(bill));
+            grid.appendChild(tableMode ? self.buildRow(bill) : self.buildCard(bill));
         });
 
         // Show/hide Load More button
         if (loadMoreBtn) {
             loadMoreBtn.style.display = this._hasMore ? '' : 'none';
         }
+    },
+
+    // ---- Table renderer (tracker.html: <table id="bb-table"> with <tbody id="bb-grid">) ----
+    _catLabels: {
+        'vaccine-exemption': 'Vaccine Exemptions',
+        'vaccine-mandate': 'Vaccine Mandates',
+        'medical-freedom': 'Medical Freedom',
+        'informed-consent': 'Informed Consent',
+        'vaccine-discrimination': 'Vaccine Discrimination',
+        'mRNA-reclassification': 'mRNA Reclassification',
+        'vaccine-injury': 'Vaccine Injury',
+        'raw-milk': 'Raw Milk',
+        'fluoride': 'Fluoride',
+        'geoengineering': 'Geoengineering',
+        'public-health': 'Public Health'
+    },
+
+    // Pipeline position for the "Status stage" sort; stopped bills sort last.
+    _stageRank: {
+        'Signed into Law': 9, 'Sent to Governor': 8, 'Passed Both Chambers': 7, 'In Conference': 6,
+        'Passed One Chamber': 5, 'Passed Senate': 5, 'Passed House': 5, 'Floor Vote Scheduled': 4,
+        'Passed Committee': 3, 'In Committee': 2, 'Introduced': 1, 'Pre-filed': 0
+    },
+
+    _sortRows: function(bills) {
+        var mode = (document.getElementById('bb-sort') || {}).value || '';
+        var rank = this._stageRank;
+        function date(b) { return String(b.lastActionDate || ''); }
+        function state(b) { return String(b.state || ''); }
+        function num(b) { return String(b.billNumber || ''); }
+        if (mode === 'stage') {
+            bills.sort(function(a, b) {
+                var ra = rank[a.status] !== undefined ? rank[a.status] : -1;
+                var rb = rank[b.status] !== undefined ? rank[b.status] : -1;
+                return (rb - ra) || date(b).localeCompare(date(a)) || state(a).localeCompare(state(b));
+            });
+        } else if (mode === 'bill') {
+            bills.sort(function(a, b) {
+                return state(a).localeCompare(state(b)) || num(a).localeCompare(num(b), undefined, { numeric: true });
+            });
+        } else {
+            // Default: last action, newest first; bills with no date sort last.
+            bills.sort(function(a, b) {
+                return date(b).localeCompare(date(a)) || state(a).localeCompare(state(b)) ||
+                    num(a).localeCompare(num(b), undefined, { numeric: true });
+            });
+        }
+    },
+
+    _cell: function(tr, cls, text) {
+        var td = document.createElement('td');
+        if (cls) td.className = cls;
+        if (text !== undefined && text !== null) td.textContent = text;
+        tr.appendChild(td);
+        return td;
+    },
+
+    buildRow: function(bill) {
+        var href = 'action.html?bill=' + encodeURIComponent(bill.billId || '') +
+            (bill.state && bill.state !== 'US' ? '&state=' + encodeURIComponent(bill.state) : '');
+        function remember() {
+            try { sessionStorage.setItem('safe_tracker_return', window.location.pathname + window.location.search); } catch(e) {}
+        }
+        var tr = document.createElement('tr');
+
+        // Bill number, linked to the action page
+        var td = this._cell(tr, 'c-bill');
+        var link = document.createElement('a');
+        link.className = 'name';
+        link.href = href;
+        link.textContent = bill.billNumber || 'Unknown';
+        link.addEventListener('click', remember);
+        td.appendChild(link);
+
+        // State with level sub-label
+        td = this._cell(tr, 'c-state', bill.state || '');
+        var lvl = document.createElement('span');
+        lvl.className = 'rec-sub';
+        lvl.textContent = String(bill.level || (bill.state === 'US' ? 'Federal' : 'State')).toUpperCase();
+        td.appendChild(lvl);
+
+        // Title, verbatim; CSS clamps it to two lines, full text on hover
+        td = this._cell(tr, 'c-title');
+        var ttl = document.createElement('div');
+        ttl.className = 'ttl';
+        ttl.textContent = bill.title || 'Untitled';
+        ttl.title = bill.title || '';
+        td.appendChild(ttl);
+
+        // Classification badge
+        td = this._cell(tr, 'c-class');
+        var badge = document.createElement('span');
+        if (bill.billType === 'anti') { badge.className = 'badge badge-anti'; badge.textContent = 'Anti-science'; }
+        else if (bill.billType === 'pro') { badge.className = 'badge badge-pro'; badge.textContent = 'Pro-science'; }
+        else { badge.className = 'badge badge-monitor'; badge.textContent = 'Monitoring'; }
+        td.appendChild(badge);
+
+        // Category, status, last action
+        this._cell(tr, 'c-cat', bill.category ? (this._catLabels[bill.category] || bill.category) : '');
+        this._cell(tr, 'c-status', bill.status || 'Unknown');
+        var when = String(bill.lastActionDate || '');
+        this._cell(tr, 'c-date', /^\d{4}-\d{2}-\d{2}/.test(when) ? when.slice(0, 10) : '');
+
+        // Act
+        td = this._cell(tr, 'c-act');
+        var act = document.createElement('a');
+        act.className = 'act';
+        act.href = href;
+        act.textContent = 'Act →';
+        act.addEventListener('click', remember);
+        td.appendChild(act);
+
+        return tr;
     },
 
     buildCard: function(bill) {
