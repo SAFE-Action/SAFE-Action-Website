@@ -286,7 +286,7 @@
             var rankTd = el('td', 'rank', hasRank ? rankLabel(filtered, i, view) : '');
             if (!hasRank) rankTd.setAttribute('aria-label', 'Unranked');
             tr.appendChild(rankTd);
-            var td = el('td');
+            var td = el('td', 'who');
             var a = el('a', 'name', str(l.name));
             a.href = recordHref(l.slug);
             td.appendChild(a);

@@ -67,13 +67,24 @@
     table.rec th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--bg);}
     table.rec td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
     table.rec tr:last-child td{border-bottom:none;}
-    table.rec a.name{font-weight:700;color:var(--navy);text-decoration:none;}
+    table.rec a.name{font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;}
+    table.rec td.who{white-space:nowrap;}
+    table.rec td.rank{white-space:nowrap;}
+    /* The act sub-lines are the widest cells; keep them compact so the table
+       fits a laptop without horizontal scrolling. */
+    .rec-sub{font-size:10.5px;}
     table.rec a.name:hover{text-decoration:underline;}
     .rec-sub{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:2px;white-space:nowrap;}
     td.rank{font-family:var(--mono);font-size:11px;color:var(--muted);}
     td.num{white-space:nowrap;}
     td.num a.tot{display:inline-block;font-family:var(--mono);font-weight:700;min-width:2.2em;color:var(--navy);text-decoration:none;font-variant-numeric:tabular-nums;}
     td.num a.tot:hover{text-decoration:underline;}
+    .card.note details.method{margin-top:12px;border-top:1px solid var(--line);padding-top:10px;}
+    .card.note details.method summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--navy);}
+    .card.note details.method summary::-webkit-details-marker{display:none;}
+    .card.note details.method summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--muted);}
+    .card.note details.method[open] summary::after{content:"-";}
+    .card.note details.method p{margin-top:10px;}
     </style>
 </head>
 <body data-page="scorecard">
@@ -119,9 +130,11 @@
     <section id="scorecard" style="padding-top:8px;">
         <div class="wrap">
             <div class="card note">
-                <span class="k">METHODOLOGY</span>
-                <p id="sc-method"></p>
                 <p>This scorecard is a tally of legislative acts, not a rating of any person. It does not endorse or oppose anyone. It lists every legislator in the database and is refreshed nightly from official legislative sources.</p>
+                <details class="method">
+                    <summary><span class="k">METHODOLOGY</span> How these counts are made</summary>
+                    <p id="sc-method"></p>
+                </details>
             </div>
 
             <div id="sc-summary" class="mono muted" style="margin:16px 2px 0;font-size:12px;letter-spacing:.08em;"></div>
