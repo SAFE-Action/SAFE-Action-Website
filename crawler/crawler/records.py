@@ -442,6 +442,33 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
 # traceable to rows on the legislator's record page. Legislators with no
 # classified activity are still listed (zeros) so coverage is equal.
 
+PASSAGE_RE = re.compile(r"on passage|passed|on agreeing|concur|final passage|bill passed|third reading", re.I)
+
+
+def _one_vote_per_bill(votes: list[dict]) -> list[dict]:
+    """Collapse a legislator's votes to at most one per bill.
+
+    Bills can have many roll calls (HR 5371 had 21, mostly cloture and
+    motions). Counting each would let one bill dominate a tally. The vote on
+    final passage is used when there is one; otherwise the most recent
+    recorded vote on that bill.
+    """
+    best: dict = {}
+    for v in votes:
+        key = v.get("billId")
+        if not key or v.get("vote") not in ("Yea", "Nay"):
+            continue
+        is_passage = bool(PASSAGE_RE.search(v.get("motion") or ""))
+        cur = best.get(key)
+        if cur is None:
+            best[key] = (is_passage, v.get("date") or "", v)
+            continue
+        cur_passage, cur_date, _ = cur
+        if (is_passage and not cur_passage) or (is_passage == cur_passage and (v.get("date") or "") > cur_date):
+            best[key] = (is_passage, v.get("date") or "", v)
+    return [x[2] for x in best.values()]
+
+
 def build_scorecard(records: dict) -> dict:
     rows = []
     for r in records.get("legislators", []):
@@ -456,7 +483,7 @@ def build_scorecard(records: dict) -> dict:
                 if s.get("role") == "primary":
                     anti_primary += 1
         v_for_pro = v_against_pro = v_for_anti = v_against_anti = 0
-        for v in r.get("votes", []):
+        for v in _one_vote_per_bill(r.get("votes", [])):
             bt, vote = v.get("billType"), v.get("vote")
             if bt == "pro":
                 if vote == "Yea":
@@ -473,7 +500,7 @@ def build_scorecard(records: dict) -> dict:
             if s.get("billType") in ("pro", "anti") and s.get("category"):
                 t = by_topic.setdefault(s["category"], {"pro": 0, "anti": 0})
                 t[s["billType"]] += 1
-        for v in r.get("votes", []):
+        for v in _one_vote_per_bill(r.get("votes", [])):
             bt, vote, cat = v.get("billType"), v.get("vote"), v.get("category")
             if bt not in ("pro", "anti") or not cat or vote not in ("Yea", "Nay"):
                 continue
@@ -506,7 +533,10 @@ def build_scorecard(records: dict) -> dict:
             "Each row counts official acts on bills SAFE Action has classified as pro-science or anti-science: "
             "sponsorships and cosponsorships, plus recorded roll-call votes. A pro-science act is sponsoring a "
             "pro-science bill, voting Yea on one, or voting Nay on an anti-science bill. An anti-science act is "
-            "the reverse. Counts are unweighted and every count links to the bills and votes behind it. "
+            "the reverse. Each bill counts at most once per legislator as a vote: the vote on final passage when "
+            "there is one, otherwise the most recent recorded vote on that bill, so procedural roll calls cannot "
+            "inflate a count. Sponsoring and cosponsoring count the same; primary sponsorships are shown "
+            "separately. Counts are unweighted and every count links to the bills and votes behind it. "
             "Classifications apply to bills and are published with the bill list. Every legislator in the "
             "database is scored the same way, year-round."
         ),
