@@ -35,8 +35,13 @@ const LegislationAPI = {
             return this._billCache[cacheKey];
         }
 
-        // Try Firestore first
-        var db = this._getDb();
+        // Bills: static data/bills.json only. Firestore's bills collection is
+        // never synced from the daily crawl and drifts from the published data
+        // (verified 2026-08-22: Firestore returned 36 active anti-science bills
+        // for TX against 24 in the same day's bills.json), so a visitor could
+        // see the map disagree with the list it links to. Do not route bill
+        // reads through Firestore until a sync job keeps it current.
+        var db = null;
         if (db) {
             try {
                 var query = db.collection('bills');
@@ -65,7 +70,9 @@ const LegislationAPI = {
     // --- Paginated Query (Firestore only, with static fallback) ---
 
     async queryBills(filters, pageSize, startAfterDoc) {
-        var db = this._getDb();
+        // See the note in getLegislation: bills never sync to Firestore, so
+        // this path is intentionally disabled and always uses the static file.
+        var db = null;
         if (db) {
             try {
                 var query = db.collection('bills');
@@ -177,8 +184,8 @@ const LegislationAPI = {
             }
         }
 
-        // Try Firestore direct lookup
-        var db = this._getDb();
+        // Try Firestore direct lookup (disabled: see the note above; bills never sync)
+        var db = null;
         if (db) {
             try {
                 var doc = await db.collection('bills').doc(billId).get();
