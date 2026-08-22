@@ -1,1178 +1,1542 @@
 {
- "generated_at": "2026-08-21T06:45:10.990428+00:00",
- "count": 118,
- "unmatched": [
-  {
-   "billId": "US-119-HR1111",
-   "state": "CA",
-   "chamber": "House",
-   "district": "14",
-   "name": "Rep. Swalwell, Eric [D-CA-14]",
-   "role": "cosponsor"
-  },
-  {
-   "billId": "US-119-HR8153",
-   "state": "FL",
-   "chamber": "House",
-   "district": "20",
-   "name": "Rep. Cherfilus-McCormick, Sheila [D-FL-20]",
-   "role": "cosponsor"
-  },
-  {
-   "billId": "UT-HB0079",
-   "state": "UT",
-   "chamber": "House",
-   "district": "",
-   "name": "Matthew Gwynn",
-   "role": "primary"
-  },
-  {
-   "billId": "AK-SB2",
-   "state": "AK",
-   "chamber": "Senate",
-   "district": "",
-   "name": "Shelley Hughes",
-   "role": "primary"
-  },
-  {
-   "rollCallKey": "US-119-H-1-285",
-   "billId": "US-119-HR5371",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-285",
-   "billId": "US-119-HR5371",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-285",
-   "billId": "US-119-HR5371",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-285",
-   "billId": "US-119-HR5371",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-285",
-   "billId": "US-119-HR5371",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-618",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-617",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-611",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-610",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-603",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-590",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-581",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-576",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-573",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-572",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-571",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-558",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-551",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-545",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-543",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-537",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-535",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-528",
-   "billId": "US-119-HR5371",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-281",
-   "billId": "US-119-HR5371",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-281",
-   "billId": "US-119-HR5371",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-281",
-   "billId": "US-119-HR5371",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-281",
-   "billId": "US-119-HR5371",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-281",
-   "billId": "US-119-HR5371",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-280",
-   "billId": "US-119-HR5371",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-280",
-   "billId": "US-119-HR5371",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-280",
-   "billId": "US-119-HR5371",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-280",
-   "billId": "US-119-HR5371",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-280",
-   "billId": "US-119-HR5371",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-411",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-403",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-401",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-399",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-398",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-396",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-395",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-394",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-392",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-391",
-   "billId": "US-119-HR4",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-168",
-   "billId": "US-119-HR4",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-167",
-   "billId": "US-119-HR4",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-28",
-   "billId": "US-119-HR7006",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-28",
-   "billId": "US-119-HR7006",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-28",
-   "billId": "US-119-HR7006",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-133",
-   "billId": "US-119-HR1968",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-128",
-   "billId": "US-119-HR1968",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Connolly",
-   "state": "VA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-70",
-   "billId": "US-119-HR1968",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Connolly",
-   "state": "VA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-69",
-   "billId": "US-119-HR1968",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-2-11",
-   "billId": "US-119-HR6938",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-2-10",
-   "billId": "US-119-HR6938",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-2-7",
-   "billId": "US-119-HR6938",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-7",
-   "billId": "US-119-HR6938",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-7",
-   "billId": "US-119-HR6938",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-7",
-   "billId": "US-119-HR6938",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-6",
-   "billId": "US-119-HR6938",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-6",
-   "billId": "US-119-HR6938",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-6",
-   "billId": "US-119-HR6938",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-5",
-   "billId": "US-119-HR6938",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-5",
-   "billId": "US-119-HR6938",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-5",
-   "billId": "US-119-HR6938",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-263",
-   "billId": "US-119-HR3944",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-263",
-   "billId": "US-119-HR3944",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-263",
-   "billId": "US-119-HR3944",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-263",
-   "billId": "US-119-HR3944",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-263",
-   "billId": "US-119-HR3944",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-480",
-   "billId": "US-119-HR3944",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-428",
-   "billId": "US-119-HR3944",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-1-423",
-   "billId": "US-119-HR3944",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-182",
-   "billId": "US-119-HR3944",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "Green (TN)",
-   "state": "TN",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "LaMalfa",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "Sherrill",
-   "state": "NJ",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-1-181",
-   "billId": "US-119-HR3944",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-53",
-   "billId": "US-119-HR7148",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-53",
-   "billId": "US-119-HR7148",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-53",
-   "billId": "US-119-HR7148",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-2-20",
-   "billId": "US-119-HR7148",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-S-2-13",
-   "billId": "US-119-HR7148",
-   "name": "Mullin (R-OK)",
-   "state": "OK",
-   "chamber": "Senate",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-45",
-   "billId": "US-119-HR7148",
-   "name": "Cherfilus-McCormick",
-   "state": "FL",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-45",
-   "billId": "US-119-HR7148",
-   "name": "Gonzales, Tony",
-   "state": "TX",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  },
-  {
-   "rollCallKey": "US-119-H-2-45",
-   "billId": "US-119-HR7148",
-   "name": "Swalwell",
-   "state": "CA",
-   "chamber": "House",
-   "district": "",
-   "reason": "unresolved",
-   "kind": "vote"
-  }
- ]
+  "generated_at": "2026-08-22T06:58:09.858395+00:00",
+  "count": 158,
+  "unmatched": [
+    {
+      "billId": "US-119-HR1111",
+      "state": "CA",
+      "chamber": "House",
+      "district": "14",
+      "name": "Rep. Swalwell, Eric [D-CA-14]",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "US-119-HR1131",
+      "state": "CA",
+      "chamber": "House",
+      "district": "1",
+      "name": "Rep. LaMalfa, Doug [R-CA-1]",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "US-119-HR8153",
+      "state": "FL",
+      "chamber": "House",
+      "district": "20",
+      "name": "Rep. Cherfilus-McCormick, Sheila [D-FL-20]",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "MD-HB1135",
+      "state": "MD",
+      "chamber": "House",
+      "district": "HD-033",
+      "name": "Heather Bagnall",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "OH-HB664",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "name": "Meredith Lawson-Rowe",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "TX-HB4535",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "name": "Kelly Hancock",
+      "role": "primary"
+    },
+    {
+      "billId": "TX-HB4535",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "name": "Charles Creighton",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "MD-HB637",
+      "state": "MD",
+      "chamber": "House",
+      "district": "HD-033",
+      "name": "Heather Bagnall",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "NH-HB1811",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-01-HIL",
+      "name": "Tom Mannion",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "NY-S01570",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-047",
+      "name": "Brad Hoylman-Sigal",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "NY-S00453",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-047",
+      "name": "Brad Hoylman-Sigal",
+      "role": "primary"
+    },
+    {
+      "billId": "TX-HB3441",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "name": "Nate Schatzline",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "TX-HB1356",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "name": "Nate Schatzline",
+      "role": "primary"
+    },
+    {
+      "billId": "WV-HB5090",
+      "state": "WV",
+      "chamber": "House",
+      "district": "HD-094",
+      "name": "Larry Kump",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "WV-HB4947",
+      "state": "WV",
+      "chamber": "House",
+      "district": "HD-031",
+      "name": "Margitta Mazzocchi",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "WV-HB4947",
+      "state": "WV",
+      "chamber": "House",
+      "district": "HD-050",
+      "name": "Elliott Pritt",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "WV-HB4510",
+      "state": "WV",
+      "chamber": "House",
+      "district": "HD-050",
+      "name": "Elliott Pritt",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "WV-HB4681",
+      "state": "WV",
+      "chamber": "House",
+      "district": "HD-094",
+      "name": "Larry Kump",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "ME-LD727",
+      "state": "ME",
+      "chamber": "House",
+      "district": "HD-029",
+      "name": "Kathy Javner",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "NY-S03200",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-047",
+      "name": "Brad Hoylman-Sigal",
+      "role": "primary"
+    },
+    {
+      "billId": "PA-HB94",
+      "state": "PA",
+      "chamber": "House",
+      "district": "HD-012",
+      "name": "Stephenie Scialabba",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "MN-SF3424",
+      "state": "MN",
+      "chamber": "Senate",
+      "district": "SD-029",
+      "name": "Bruce Anderson",
+      "role": "cosponsor"
+    },
+    {
+      "rollCallKey": "US-119-H-1-285",
+      "billId": "US-119-HR5371",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-285",
+      "billId": "US-119-HR5371",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-285",
+      "billId": "US-119-HR5371",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-285",
+      "billId": "US-119-HR5371",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-285",
+      "billId": "US-119-HR5371",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-618",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-617",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-611",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-610",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-603",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-590",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-581",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-576",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-573",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-572",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-571",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-558",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-551",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-545",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-543",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-537",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-535",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-528",
+      "billId": "US-119-HR5371",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-281",
+      "billId": "US-119-HR5371",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-281",
+      "billId": "US-119-HR5371",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-281",
+      "billId": "US-119-HR5371",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-281",
+      "billId": "US-119-HR5371",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-281",
+      "billId": "US-119-HR5371",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-280",
+      "billId": "US-119-HR5371",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-280",
+      "billId": "US-119-HR5371",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-280",
+      "billId": "US-119-HR5371",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-280",
+      "billId": "US-119-HR5371",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-280",
+      "billId": "US-119-HR5371",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-411",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-403",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-401",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-399",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-398",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-396",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-395",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-394",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-392",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-391",
+      "billId": "US-119-HR4",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-168",
+      "billId": "US-119-HR4",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-167",
+      "billId": "US-119-HR4",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-28",
+      "billId": "US-119-HR7006",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-28",
+      "billId": "US-119-HR7006",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-28",
+      "billId": "US-119-HR7006",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-133",
+      "billId": "US-119-HR1968",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-128",
+      "billId": "US-119-HR1968",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Connolly",
+      "state": "VA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-70",
+      "billId": "US-119-HR1968",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Connolly",
+      "state": "VA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-69",
+      "billId": "US-119-HR1968",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-2-11",
+      "billId": "US-119-HR6938",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-2-10",
+      "billId": "US-119-HR6938",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-2-7",
+      "billId": "US-119-HR6938",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-7",
+      "billId": "US-119-HR6938",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-7",
+      "billId": "US-119-HR6938",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-7",
+      "billId": "US-119-HR6938",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-6",
+      "billId": "US-119-HR6938",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-6",
+      "billId": "US-119-HR6938",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-6",
+      "billId": "US-119-HR6938",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-5",
+      "billId": "US-119-HR6938",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-5",
+      "billId": "US-119-HR6938",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-5",
+      "billId": "US-119-HR6938",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-263",
+      "billId": "US-119-HR3944",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-263",
+      "billId": "US-119-HR3944",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-263",
+      "billId": "US-119-HR3944",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-263",
+      "billId": "US-119-HR3944",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-263",
+      "billId": "US-119-HR3944",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-480",
+      "billId": "US-119-HR3944",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-428",
+      "billId": "US-119-HR3944",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-1-423",
+      "billId": "US-119-HR3944",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-182",
+      "billId": "US-119-HR3944",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "Green (TN)",
+      "state": "TN",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "LaMalfa",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "Sherrill",
+      "state": "NJ",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-1-181",
+      "billId": "US-119-HR3944",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-53",
+      "billId": "US-119-HR7148",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-53",
+      "billId": "US-119-HR7148",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-53",
+      "billId": "US-119-HR7148",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-2-20",
+      "billId": "US-119-HR7148",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-S-2-13",
+      "billId": "US-119-HR7148",
+      "name": "Mullin (R-OK)",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-45",
+      "billId": "US-119-HR7148",
+      "name": "Cherfilus-McCormick",
+      "state": "FL",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-45",
+      "billId": "US-119-HR7148",
+      "name": "Gonzales, Tony",
+      "state": "TX",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "US-119-H-2-45",
+      "billId": "US-119-HR7148",
+      "name": "Swalwell",
+      "state": "CA",
+      "chamber": "House",
+      "district": "",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Gary Daniels",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-43-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Suzanne Vail",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-06-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Harry Bean",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-06-BEL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Jaci Grote",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-24-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "William Dolan",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-09-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Linda Haskins",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-11-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Tom Mannion",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-01-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Sandra Panek",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-01-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Suraj Budathoki",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-40-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Erica deVries",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-29-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Tim Mannion",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-01-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Jonathan Morton",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-39-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Matt Sabourin",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-30-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1585574",
+      "billId": "NY-A08680",
+      "name": "Zohran Kwame Mamdani",
+      "state": "NY",
+      "chamber": "House",
+      "district": "HD-036",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1586070",
+      "billId": "NY-A08680",
+      "name": "Harvey Epstein",
+      "state": "NY",
+      "chamber": "House",
+      "district": "HD-074",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1588938",
+      "billId": "NY-A08680",
+      "name": "D. Billy Jones",
+      "state": "NY",
+      "chamber": "House",
+      "district": "HD-115",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1588938",
+      "billId": "NY-A08680",
+      "name": "Harvey Epstein",
+      "state": "NY",
+      "chamber": "House",
+      "district": "HD-074",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1588938",
+      "billId": "NY-A08680",
+      "name": "Zohran Kwame Mamdani",
+      "state": "NY",
+      "chamber": "House",
+      "district": "HD-036",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1696545",
+      "billId": "LA-HB926",
+      "name": "Kellee Dickerson",
+      "state": "LA",
+      "chamber": "House",
+      "district": "HD-064",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1663593",
+      "billId": "OK-SB2028",
+      "name": "Darrell Weaver",
+      "state": "OK",
+      "chamber": "Senate",
+      "district": "SD-024",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1680986",
+      "billId": "OK-SB2028",
+      "name": "Arturo Alonso-Sandoval",
+      "state": "OK",
+      "chamber": "House",
+      "district": "HD-089",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1692885",
+      "billId": "OK-SB2028",
+      "name": "Arturo Alonso-Sandoval",
+      "state": "OK",
+      "chamber": "House",
+      "district": "HD-089",
+      "reason": "unresolved",
+      "kind": "vote"
+    }
+  ]
 }
