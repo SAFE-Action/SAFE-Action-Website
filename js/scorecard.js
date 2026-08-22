@@ -257,7 +257,9 @@
             var l = item.l;
             var tr = document.createElement('tr');
             // Rank only means something for rows with at least one act in the current view.
-            tr.appendChild(el('td', 'rank', item[view] > 0 ? fmt(rank) : ''));
+            var rankTd = el('td', 'rank', item[view] > 0 ? fmt(rank) : '');
+            if (!(item[view] > 0)) rankTd.setAttribute('aria-label', 'Unranked');
+            tr.appendChild(rankTd);
             var td = el('td');
             var a = el('a', 'name', str(l.name));
             a.href = recordHref(l.slug);
@@ -285,7 +287,6 @@
             td.appendChild(n);
             tr.appendChild(td);
 
-            tr.appendChild(el('td', 'mono', l.up_in_2026 === true ? '2026' : ''));
             return tr;
         }
 
@@ -367,7 +368,7 @@
             var nAnti = typeof s.anti_acts === 'number' ? s.anti_acts :
                 all.reduce(function (acc, l) { return acc + num(l.anti_acts); }, 0);
             var upd = stamp('SCIENCE SCORECARD', data);
-            setText('sc-summary', fmt(nLeg) + ' LEGISLATORS SCORED - ' + fmt(nWith) +
+            setText('sc-summary', fmt(nLeg) + ' LEGISLATORS ON FILE - ' + fmt(nWith) +
                 ' WITH CLASSIFIED ACTIVITY - ' + fmt(nPro) + ' PRO-SCIENCE ACTS - ' +
                 fmt(nAnti) + ' ANTI-SCIENCE ACTS' + (upd ? ' - UPDATED ' + upd : ''));
             var method = str(data.method);
