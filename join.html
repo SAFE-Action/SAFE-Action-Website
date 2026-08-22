@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the List - SAFE Action</title>
-    <meta name="description" content="Get science legislation alerts, actions that matter, and wins from SAFE Action. Join the email list.">
-    <meta property="og:title" content="SAFE Action - Join the Movement">
-    <meta property="og:description" content="Science legislation alerts, actions that matter, and the wins we get together.">
+    <title>Occasional Updates - SAFE Action</title>
+    <meta name="description" content="A few emails a year from SAFE Action when something on the legislation tracker matters. No newsletter, unsubscribe anytime.">
+    <meta property="og:title" content="SAFE Action - Occasional Updates">
+    <meta property="og:description" content="A few emails a year when something on the legislation tracker matters. No newsletter.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://scienceandfreedom.com/join">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SAFE Action - Join the Movement">
-    <meta name="twitter:description" content="Science legislation alerts, actions that matter, and the wins we get together.">
+    <meta name="twitter:title" content="SAFE Action - Occasional Updates">
+    <meta name="twitter:description" content="A few emails a year when something on the legislation tracker matters. No newsletter.">
     <link rel="canonical" href="https://scienceandfreedom.com/join">
     <meta property="og:image" content="https://scienceandfreedom.com/icons/og-card.png">
     <meta property="og:image:width" content="1200">
@@ -72,9 +72,9 @@
 <main class="join-main">
     <div class="wrap join-narrow">
         <section class="pagehero">
-            <span class="chip"><span class="livedot" aria-hidden="true"></span>EMAIL LIST</span>
-            <h1>Join the Movement</h1>
-            <p class="lede">One email when it matters: science legislation alerts in your state, actions that take two minutes, and the wins we get together. No spam, unsubscribe anytime.</p>
+            <span class="chip">OCCASIONAL UPDATES</span>
+            <h1>Occasional updates from SAFE Action</h1>
+            <p class="lede">A few emails a year, when something on the legislation tracker matters. No newsletter, no alert stream, unsubscribe anytime.</p>
         </section>
 
         <div id="join-status-banner" class="join-status-banner" style="display:none;"></div>
@@ -91,7 +91,7 @@
                 </div>
                 <!-- honeypot: humans never see this -->
                 <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-                <button type="submit" class="btn primary">Join the List</button>
+                <button type="submit" class="btn primary">Sign up for occasional updates</button>
                 <p class="list-signup-status form-status" style="display:none;"></p>
             </form>
             <p class="join-card-note">We send occasional updates from SAFE Action. Every email includes a one-click unsubscribe link.</p>
@@ -130,7 +130,7 @@
         var banner = document.getElementById('join-status-banner');
         if (!banner) return;
         if (params.get('confirmed')) {
-            banner.textContent = "You're confirmed. Welcome to the movement!";
+            banner.textContent = "You're confirmed. We'll only write when it matters.";
             banner.classList.add('ok');
         } else if (params.get('unsubscribed')) {
             banner.textContent = "You've been unsubscribed. You won't hear from us again unless you rejoin.";
