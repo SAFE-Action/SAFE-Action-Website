@@ -434,3 +434,81 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
         },
         "legislators": legislators_out,
     }, unmatched + [dict(u, kind="vote") for u in votes_unmatched_detail])
+
+
+# ---------------------------------------------------------------- scorecard
+# Counts of official acts on bills SAFE Action classifies as pro- or
+# anti-science. Deliberately arithmetic: no weights, no grades, every number
+# traceable to rows on the legislator's record page. Legislators with no
+# classified activity are still listed (zeros) so coverage is equal.
+
+def build_scorecard(records: dict) -> dict:
+    rows = []
+    for r in records.get("legislators", []):
+        pro_s = anti_s = pro_primary = anti_primary = 0
+        for s in r.get("sponsorships", []):
+            if s.get("billType") == "pro":
+                pro_s += 1
+                if s.get("role") == "primary":
+                    pro_primary += 1
+            elif s.get("billType") == "anti":
+                anti_s += 1
+                if s.get("role") == "primary":
+                    anti_primary += 1
+        v_for_pro = v_against_pro = v_for_anti = v_against_anti = 0
+        for v in r.get("votes", []):
+            bt, vote = v.get("billType"), v.get("vote")
+            if bt == "pro":
+                if vote == "Yea":
+                    v_for_pro += 1
+                elif vote == "Nay":
+                    v_against_pro += 1
+            elif bt == "anti":
+                if vote == "Yea":
+                    v_for_anti += 1
+                elif vote == "Nay":
+                    v_against_anti += 1
+        by_topic = {}
+        for s in r.get("sponsorships", []):
+            if s.get("billType") in ("pro", "anti") and s.get("category"):
+                t = by_topic.setdefault(s["category"], {"pro": 0, "anti": 0})
+                t[s["billType"]] += 1
+        for v in r.get("votes", []):
+            bt, vote, cat = v.get("billType"), v.get("vote"), v.get("category")
+            if bt not in ("pro", "anti") or not cat or vote not in ("Yea", "Nay"):
+                continue
+            t = by_topic.setdefault(cat, {"pro": 0, "anti": 0})
+            # a Yea on a pro bill or a Nay on an anti bill counts as a pro-science act, and vice versa
+            if (bt == "pro") == (vote == "Yea"):
+                t["pro"] += 1
+            else:
+                t["anti"] += 1
+        pro_acts = pro_s + v_for_pro + v_against_anti
+        anti_acts = anti_s + v_for_anti + v_against_pro
+        rows.append({
+            "slug": r["slug"], "name": r["name"], "party": r.get("party", ""), "state": r.get("state", ""),
+            "chamber": r.get("chamber", ""), "district": r.get("district", ""), "level": r.get("level", ""),
+            "office": r.get("office", ""), "up_in_2026": r.get("up_in_2026"),
+            "pro_sponsored": pro_s, "pro_primary": pro_primary,
+            "anti_sponsored": anti_s, "anti_primary": anti_primary,
+            "votes_for_pro": v_for_pro, "votes_against_pro": v_against_pro,
+            "votes_for_anti": v_for_anti, "votes_against_anti": v_against_anti,
+            "pro_acts": pro_acts, "anti_acts": anti_acts, "net": pro_acts - anti_acts,
+            "by_topic": by_topic,
+        })
+    scored = [x for x in rows if x["pro_acts"] or x["anti_acts"]]
+    return {
+        "summary": {
+            "legislators": len(rows), "with_classified_activity": len(scored),
+            "pro_acts": sum(x["pro_acts"] for x in rows), "anti_acts": sum(x["anti_acts"] for x in rows),
+        },
+        "method": (
+            "Each row counts official acts on bills SAFE Action has classified as pro-science or anti-science: "
+            "sponsorships and cosponsorships, plus recorded roll-call votes. A pro-science act is sponsoring a "
+            "pro-science bill, voting Yea on one, or voting Nay on an anti-science bill. An anti-science act is "
+            "the reverse. Counts are unweighted and every count links to the bills and votes behind it. "
+            "Classifications apply to bills and are published with the bill list. Every legislator in the "
+            "database is scored the same way, year-round."
+        ),
+        "legislators": rows,
+    }

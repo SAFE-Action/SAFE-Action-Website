@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timezone
 import anthropic
 from tenacity import retry, stop_after_attempt, wait_exponential
-from ..config import ANTHROPIC_API_KEY, EXTRACTION_MODEL
+from ..config import ANTHROPIC_API_KEY, EXTRACTION_MODEL, MODEL_FALLBACKS
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -59,17 +59,28 @@ Return ONLY valid JSON — an array of objects."""
        retry=lambda retry_state: not isinstance(retry_state.outcome.exception(), anthropic.AuthenticationError))
 async def _call_llm(user_prompt: str) -> str:
     """Call Claude via Anthropic API with retry logic.
-    Does NOT retry on AuthenticationError (bad API key)."""
-    response = client.messages.create(
-        model=EXTRACTION_MODEL,
-        max_tokens=4096,
-        temperature=0.1,  # low temp for consistent classification
-        system=VERIFICATION_SYSTEM_PROMPT,
-        messages=[
-            {"role": "user", "content": user_prompt},
-        ],
-    )
-    return response.content[0].text
+    Does NOT retry on AuthenticationError (bad API key). Falls through the
+    configured model list if a model id is rejected."""
+    last_err = None
+    for model in [EXTRACTION_MODEL] + [m for m in MODEL_FALLBACKS if m != EXTRACTION_MODEL]:
+        try:
+            response = client.messages.create(
+                model=model,
+                max_tokens=4096,
+                temperature=0.1,  # low temp for consistent classification
+                system=VERIFICATION_SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_prompt}],
+            )
+            return response.content[0].text
+        except anthropic.AuthenticationError:
+            raise
+        except (anthropic.NotFoundError, anthropic.BadRequestError) as e:
+            # Unknown/retired model id: try the next one. Anything else propagates.
+            if "model" not in str(e).lower():
+                raise
+            print(f"    model {model} rejected ({e.__class__.__name__}); trying next")
+            last_err = e
+    raise last_err or RuntimeError("no usable model")
 
 
 async def verify_bill_batch(bills: list[dict]) -> list[dict]:
@@ -163,8 +174,10 @@ async def verify_all_bills(bills: list[dict]) -> list[dict]:
         print("  Skipping bill verification (no ANTHROPIC_API_KEY)")
         return bills
 
-    # Only verify bills that were classified as anti or pro (not monitor)
-    classified = [b for b in bills if b.get("billType") in ("anti", "pro")]
+    # Only verify anti/pro bills that have not already been checked. Verdicts
+    # persist across runs (main.py carries them forward), so this is only the
+    # day's new bills, not the whole set every night.
+    classified = [b for b in bills if b.get("billType") in ("anti", "pro") and not b.get("verification")]
     if not classified:
         print("  No anti/pro bills to verify")
         return bills
@@ -288,4 +301,81 @@ async def verify_all_bills(bills: list[dict]) -> list[dict]:
             print(f"      Evidence: {', '.join(d['evidence'][:3])}")
             print(f"      Reason: {d['explanation']}")
 
+    return bills
+
+
+# ── Classification pass: upgrade relevant "monitor" bills ───────────────────
+# The keyword heuristic only labels a bill anti/pro on explicit phrases, so
+# most bills in the science-relevant categories sit in "monitor" with no
+# direction. This asks the model for an independent verdict on those and
+# upgrades the confident ones. Every processed bill gets a verification
+# record either way, so it is never re-asked.
+
+RELEVANT_CATEGORIES = {
+    "vaccine-mandate", "vaccine-exemption", "vaccine-injury", "vaccine-discrimination",
+    "medical-freedom", "informed-consent", "mRNA-reclassification", "fluoride",
+    "raw-milk", "geoengineering",
+}
+STANCE_LABEL = {"anti": "Oppose", "pro": "Support", "monitor": "Monitor"}
+
+
+def classification_candidates(bills: list[dict]) -> list[dict]:
+    cands = [b for b in bills
+             if b.get("billType") == "monitor"
+             and b.get("category") in RELEVANT_CATEGORIES
+             and not b.get("verification")]
+    # Active bills first, then most recent action.
+    cands.sort(key=lambda b: (0 if b.get("isActive") == "Yes" else 1, b.get("lastActionDate") or ""), reverse=False)
+    cands.sort(key=lambda b: b.get("lastActionDate") or "", reverse=True)
+    cands.sort(key=lambda b: 0 if b.get("isActive") == "Yes" else 1)
+    return cands
+
+
+async def classify_candidate_bills(bills: list[dict], limit: int | None = None) -> list[dict]:
+    """Classify relevant monitor bills in place. Returns the bill list."""
+    if not ANTHROPIC_API_KEY:
+        print("  Skipping bill classification (no ANTHROPIC_API_KEY)")
+        return bills
+    cands = classification_candidates(bills)
+    if limit:
+        cands = cands[:limit]
+    if not cands:
+        print("  No unclassified relevant bills")
+        return bills
+    print(f"  Classifying {len(cands)} relevant monitor bills with Claude...")
+    by_id = {b.get("billId"): b for b in cands}
+    upgraded = 0
+    processed = 0
+    total_batches = (len(cands) + BILLS_PER_BATCH - 1) // BILLS_PER_BATCH
+    for i in range(0, len(cands), BILLS_PER_BATCH):
+        batch = cands[i:i + BILLS_PER_BATCH]
+        if i > 0:
+            await asyncio.sleep(INTER_BATCH_DELAY)
+        print(f"    Classifying batch {(i // BILLS_PER_BATCH) + 1}/{total_batches}...")
+        results = await verify_bill_batch(batch)
+        for r in results:
+            b = by_id.get(r["bill_id"])
+            if not b:
+                continue
+            processed += 1
+            llm_class = r["llm_classification"] if r["llm_classification"] in ("anti", "pro", "monitor") else "monitor"
+            conf = r["confidence"]
+            b["verification"] = {
+                "llm_classification": llm_class,
+                "confidence": conf,
+                "evidence": r["evidence"],
+                "explanation": r["explanation"],
+                "verified_at": datetime.now(timezone.utc).isoformat(),
+                "status": "monitor_confirmed",
+            }
+            if llm_class in ("anti", "pro") and conf >= CONFIDENCE_THRESHOLD:
+                b["verification"]["status"] = "llm_upgrade"
+                b["verification"]["original_billType"] = "monitor"
+                b["billType"] = llm_class
+                b["stance"] = STANCE_LABEL[llm_class]
+                upgraded += 1
+    print(f"  Classification: {processed} processed, {upgraded} upgraded to anti/pro "
+          f"({len(cands) - processed} failed and will be retried next run)")
+    if cands and processed == 0:
+        print("  ERROR classification: 0 of the batch processed. Check the model id / SDK version.")
     return bills

@@ -15,7 +15,9 @@ CACHE_DIR = Path(__file__).parent.parent / ".cache"
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 # Claude models for analysis
-EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "claude-sonnet-4-20250514")
+EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL", "claude-sonnet-5")
+# Tried in order if the primary model id is rejected by the API.
+MODEL_FALLBACKS = [m for m in os.getenv("MODEL_FALLBACKS", "claude-haiku-4-5-20251001,claude-sonnet-4-20250514").split(",") if m]
 REASONING_MODEL = os.getenv("REASONING_MODEL", "claude-sonnet-4-20250514")
 
 # Debug: log if API key is present (not the key itself)

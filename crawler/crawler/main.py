@@ -14,8 +14,8 @@ from .sources.legiscan import fetch_all_science_bills as legiscan_fetch_bills, r
 from .sources.news import crawl_news_articles
 from .analysis.scoring import score_legislators_batch
 from .analysis.pivotal import identify_pivotal_legislators
-from .analysis.bill_verification import verify_all_bills
-from .records import build_records
+from .analysis.bill_verification import verify_all_bills, classify_candidate_bills
+from .records import build_records, build_scorecard
 from .sources.legiscan_votes import fetch_state_votes
 from .utils.cache import (
     should_recrawl, update_cache_timestamp,
@@ -161,6 +161,10 @@ async def run_full_crawl(news_only: bool = False):
     if not news_only and all_bills and ANTHROPIC_API_KEY:
         print("[2d/5] Running LLM secondary verification on bill classifications...")
         all_bills = await verify_all_bills(all_bills)
+        # Upgrade relevant "monitor" bills the heuristic could not call (bounded per night;
+        # the backlog is cleared by the classify-bills workflow).
+        print("[2e/5] Classifying relevant monitor bills...")
+        all_bills = await classify_candidate_bills(all_bills, limit=300)
         if all_bills:
             save_cached_data("bills", all_bills)
 
@@ -251,6 +255,9 @@ async def run_full_crawl(news_only: bool = False):
         output_files["records.json"] = records
         rollcalls["generated_at"] = now
         output_files["rollcalls.json"] = rollcalls
+        scorecard = build_scorecard(records)
+        scorecard["generated_at"] = now
+        output_files["scorecard.json"] = scorecard
         output_files["records-unmatched.json"] = {"generated_at": now, "count": len(unmatched), "unmatched": unmatched}
         s = records["summary"]
         print(f"  Records: {s['with_records']} legislators with sponsorships, {s['sponsorships']} sponsorships matched, {s['unmatched']} unmatched")
@@ -294,6 +301,18 @@ def _carry_forward_sponsorships(fresh: list[dict], previous: list[dict]) -> int:
         if not b.get("sponsor") and p.get("sponsor"):
             b["sponsor"] = p["sponsor"]
         carried += 1
+    # LLM verdicts are expensive and sticky: if the title is unchanged, the
+    # previous run's classification (and its verification record) wins over
+    # this run's keyword heuristic. Without this, every upgrade would be
+    # undone the next night.
+    for b in fresh:
+        p = prev_by_id.get(b.get("billId"))
+        if not p or not p.get("verification"):
+            continue
+        if (p.get("title") or "").strip() == (b.get("title") or "").strip():
+            b["verification"] = p["verification"]
+            b["billType"] = p.get("billType", b.get("billType"))
+            b["stance"] = p.get("stance", b.get("stance"))
     # Roll-call summaries and session ids are enrichment-only too.
     for b in fresh:
         p = prev_by_id.get(b.get("billId"))
