@@ -410,10 +410,13 @@ def build_records(bills: list[dict], legislators: list[dict], seats: list[dict] 
         legislators_out.append(rec)
     legislators_out.sort(key=lambda r: (-(r["counts"]["total"] + r["counts"]["votes"]), r["name"]))
 
+    classified = [b for b in bills if isinstance(b, dict) and b.get("billType") in ("anti", "pro")]
+    classified_with_sponsors = sum(1 for b in classified if b.get("sponsorships") or b.get("sponsor") or b.get("sponsors"))
     return ({
         "summary": {
             "legislators": len(legislators_out), "with_records": with_records,
             "sponsorships": total_sp, "votes": total_votes,
+            "classified_bills": len(classified), "classified_bills_with_sponsor_data": classified_with_sponsors,
             "unmatched": len(unmatched), "votes_unmatched": votes_unmatched,
         },
         "legislators": legislators_out,
@@ -526,6 +529,8 @@ def build_scorecard(records: dict) -> dict:
     return {
         "summary": {
             "legislators": len(rows), "with_classified_activity": len(scored),
+            "classified_bills": (records.get("summary") or {}).get("classified_bills", 0),
+            "classified_bills_with_sponsor_data": (records.get("summary") or {}).get("classified_bills_with_sponsor_data", 0),
             "pro_acts": sum(x["pro_acts"] for x in rows), "anti_acts": sum(x["anti_acts"] for x in rows),
             "sponsorships": total_sponsorships, "primary": total_primary,
             "cosponsor": total_sponsorships - total_primary, "votes": total_votes,

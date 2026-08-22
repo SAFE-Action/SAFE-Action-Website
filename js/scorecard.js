@@ -399,10 +399,10 @@
             }
             // "Of" only makes sense against a nonzero denominator; omit the clause
             // rather than print a "N of 0" fraction while roll-call coverage is thin.
-            if (typeof s.bills_with_sponsor_data === 'number' && typeof s.bills_with_roll_calls === 'number' &&
-                s.bills_with_roll_calls > 0) {
-                parts.push('SPONSOR DATA ON ' + fmt(s.bills_with_sponsor_data) + ' OF ' +
-                    fmt(s.bills_with_roll_calls) + ' CLASSIFIED BILLS');
+            if (typeof s.classified_bills_with_sponsor_data === 'number' && typeof s.classified_bills === 'number' &&
+                s.classified_bills > 0) {
+                parts.push('SPONSOR DATA ON ' + fmt(s.classified_bills_with_sponsor_data) + ' OF ' +
+                    fmt(s.classified_bills) + ' CLASSIFIED BILLS');
             }
             setText('sc-summary', parts.join(' - ') + (upd ? ' - UPDATED ' + upd : ''));
             var method = str(data.method);
