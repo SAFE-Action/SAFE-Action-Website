@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T06:39:38.863605+00:00",
-  "count": 271,
+  "generated_at": "2026-08-24T06:57:00.015364+00:00",
+  "count": 354,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -2665,6 +2665,836 @@
       "state": "TX",
       "chamber": "Senate",
       "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578156",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578156",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578156",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578157",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578157",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578157",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578158",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578158",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578158",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578785",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578785",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578785",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578786",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578786",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578786",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578787",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578787",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578787",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578788",
+      "billId": "TX-HB4076",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578788",
+      "billId": "TX-HB4076",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578788",
+      "billId": "TX-HB4076",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570785",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570785",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570786",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570786",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570787",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570787",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570788",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570788",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570789",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570789",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570923",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1570923",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1571090",
+      "billId": "TX-HB1586",
+      "name": "Claudia Ordaz Perez",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-079",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1571090",
+      "billId": "TX-HB1586",
+      "name": "Nate Schatzline",
+      "state": "TX",
+      "chamber": "House",
+      "district": "HD-093",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578459",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578459",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578459",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578460",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578460",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578460",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578461",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578461",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578461",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578835",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578835",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578835",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578836",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578836",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578836",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578837",
+      "billId": "TX-HB1586",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578837",
+      "billId": "TX-HB1586",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1578837",
+      "billId": "TX-HB1586",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1498218",
+      "billId": "ND-HB1454",
+      "name": "Cynthia Schreiber-Beck",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-025",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1498218",
+      "billId": "ND-HB1454",
+      "name": "Emily O'Brien",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-042",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1498218",
+      "billId": "ND-HB1454",
+      "name": "Mike Beltz",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1498218",
+      "billId": "ND-HB1454",
+      "name": "Jared Hagert",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1498218",
+      "billId": "ND-HB1454",
+      "name": "Liz Conmy",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-011",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1558470",
+      "billId": "ND-HB1454",
+      "name": "Cynthia Schreiber-Beck",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-025",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1558470",
+      "billId": "ND-HB1454",
+      "name": "Emily O'Brien",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-042",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1558470",
+      "billId": "ND-HB1454",
+      "name": "Mike Beltz",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1558470",
+      "billId": "ND-HB1454",
+      "name": "Jared Hagert",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1558470",
+      "billId": "ND-HB1454",
+      "name": "Liz Conmy",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-011",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565496",
+      "billId": "TX-SB2119",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565496",
+      "billId": "TX-SB2119",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565496",
+      "billId": "TX-SB2119",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565497",
+      "billId": "TX-SB2119",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565497",
+      "billId": "TX-SB2119",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1565497",
+      "billId": "TX-SB2119",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566188",
+      "billId": "TX-SB2119",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566188",
+      "billId": "TX-SB2119",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566188",
+      "billId": "TX-SB2119",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545748",
+      "billId": "TX-SB95",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545748",
+      "billId": "TX-SB95",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545748",
+      "billId": "TX-SB95",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545749",
+      "billId": "TX-SB95",
+      "name": "Charles Creighton",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-004",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545749",
+      "billId": "TX-SB95",
+      "name": "Kelly Hancock",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-009",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545749",
+      "billId": "TX-SB95",
+      "name": "Brian Birdwell",
+      "state": "TX",
+      "chamber": "Senate",
+      "district": "SD-022",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1606376",
+      "billId": "OK-HB2152",
+      "name": "Ajay Pittman",
+      "state": "OK",
+      "chamber": "House",
+      "district": "HD-099",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1606377",
+      "billId": "OK-HB2152",
+      "name": "Ajay Pittman",
+      "state": "OK",
+      "chamber": "House",
+      "district": "HD-099",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1627425",
+      "billId": "NM-HB156",
+      "name": "Susan Herrera",
+      "state": "NM",
+      "chamber": "House",
+      "district": "HD-041",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1675666",
+      "billId": "ME-LD2071",
+      "name": "Tiffany Roberts-Lovell",
+      "state": "ME",
+      "chamber": "House",
+      "district": "HD-149",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1630818",
+      "billId": "FL-H0339",
+      "name": "Michele Rayner-Goolsby",
+      "state": "FL",
+      "chamber": "House",
+      "district": "HD-062",
       "reason": "unresolved",
       "kind": "vote"
     }

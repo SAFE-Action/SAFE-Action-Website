@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T06:39:38.863605+00:00",
+  "generated_at": "2026-08-24T06:57:00.015364+00:00",
   "source": "govinfo+legiscan",
   "total": 9534,
   "bills": [
@@ -23428,27 +23428,6 @@
       "legiscan_bill_id": 1982219
     },
     {
-      "billId": "CA-AB1918",
-      "state": "CA",
-      "billNumber": "AB1918",
-      "title": "Human trafficking: body art practitioners.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Human trafficking: body art practitioners.",
-      "sponsor": "",
-      "lastAction": "Read third time and amended. Ordered to second reading.",
-      "lastActionDate": "2026-08-21",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1918/2025",
-      "legiscan_bill_id": 2116300
-    },
-    {
       "billId": "CA-AB928",
       "state": "CA",
       "billNumber": "AB928",
@@ -23489,6 +23468,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB682/2025",
       "legiscan_bill_id": 1980412
+    },
+    {
+      "billId": "CA-AB1918",
+      "state": "CA",
+      "billNumber": "AB1918",
+      "title": "Human trafficking: body art practitioners.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Human trafficking: body art practitioners.",
+      "sponsor": "",
+      "lastAction": "Read third time and amended. Ordered to second reading.",
+      "lastActionDate": "2026-08-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1918/2025",
+      "legiscan_bill_id": 2116300
     },
     {
       "billId": "CA-AB2208",
@@ -23722,27 +23722,6 @@
       "legiscan_bill_id": 1971721
     },
     {
-      "billId": "CA-AB1558",
-      "state": "CA",
-      "billNumber": "AB1558",
-      "title": "Uniform Emergency Volunteer Health Practitioners Act.",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Uniform Emergency Volunteer Health Practitioners Act.",
-      "sponsor": "",
-      "lastAction": "In committee: Held under submission.",
-      "lastActionDate": "2026-05-14",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1558/2025",
-      "legiscan_bill_id": 2069195
-    },
-    {
       "billId": "CA-SB1377",
       "state": "CA",
       "billNumber": "SB1377",
@@ -23791,6 +23770,27 @@
         }
       ],
       "session_id": 2172
+    },
+    {
+      "billId": "CA-AB1558",
+      "state": "CA",
+      "billNumber": "AB1558",
+      "title": "Uniform Emergency Volunteer Health Practitioners Act.",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Uniform Emergency Volunteer Health Practitioners Act.",
+      "sponsor": "",
+      "lastAction": "In committee: Held under submission.",
+      "lastActionDate": "2026-05-14",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1558/2025",
+      "legiscan_bill_id": 2069195
     },
     {
       "billId": "CA-AB116",
@@ -24524,7 +24524,7 @@
       "state": "FL",
       "billNumber": "H0339",
       "title": "Advertisement of a Harmful Vaccine",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -24539,23 +24539,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/FL/bill/H0339/2026",
       "legiscan_bill_id": 2051585,
-      "rollCalls": [
-        {
-          "key": "LS-1630818",
-          "legiscan_roll_call_id": 1630818,
-          "date": "2026-02-11",
-          "desc": "House Civil Justice & Claims Subcommittee",
-          "chamber": "House",
-          "yea": 12,
-          "nay": 4,
-          "nv": 0,
-          "absent": 2,
-          "total": 18,
-          "passed": true,
-          "sourceUrl": "https://www.flhouse.gov/Sections/Committees/billvote.aspx?VoteId=76376&IsPCB=0&BillId=82901"
-        }
-      ],
-      "session_id": 2220,
       "sponsorships": [
         {
           "people_id": 25379,
@@ -24597,7 +24580,24 @@
           "district": "HD-037",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "rollCalls": [
+        {
+          "key": "LS-1630818",
+          "legiscan_roll_call_id": 1630818,
+          "date": "2026-02-11",
+          "desc": "House Civil Justice & Claims Subcommittee",
+          "chamber": "House",
+          "yea": 12,
+          "nay": 4,
+          "nv": 0,
+          "absent": 2,
+          "total": 18,
+          "passed": true,
+          "sourceUrl": "https://www.flhouse.gov/Sections/Committees/billvote.aspx?VoteId=76376&IsPCB=0&BillId=82901"
+        }
+      ],
+      "session_id": 2220
     },
     {
       "billId": "FL-S1382",
@@ -24646,7 +24646,7 @@
       "state": "FL",
       "billNumber": "S0408",
       "title": "Advertisement of a Harmful Vaccine",
-      "status": "Died in Committee",
+      "status": "Signed into Law",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -24654,13 +24654,52 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Advertisement of a Harmful Vaccine",
-      "sponsor": "",
+      "sponsor": "Erin Grall (R)",
       "lastAction": "Died in Health Policy",
       "lastActionDate": "2026-03-13",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/FL/bill/S0408/2026",
-      "legiscan_bill_id": 2051647
+      "legiscan_bill_id": 2051647,
+      "rollCalls": [
+        {
+          "key": "LS-1614410",
+          "legiscan_roll_call_id": 1614410,
+          "date": "2026-01-20",
+          "desc": "Senate Regulated Industries",
+          "chamber": "Senate",
+          "yea": 5,
+          "nay": 3,
+          "nv": 0,
+          "absent": 1,
+          "total": 9,
+          "passed": true,
+          "sourceUrl": "https://www.flsenate.gov/Session/Bill/2026/408/Vote/2026-01-20%200930AM~S00408%20Vote%20Record.PDF"
+        }
+      ],
+      "session_id": 2220,
+      "sponsorships": [
+        {
+          "people_id": 19064,
+          "name": "Erin Grall",
+          "first_name": "Erin",
+          "last_name": "Grall",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "primary"
+        },
+        {
+          "people_id": 19070,
+          "name": "Clay Yarborough",
+          "first_name": "Clay",
+          "last_name": "Yarborough",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "FL-H1521",
@@ -35912,7 +35951,7 @@
       "state": "MS",
       "billNumber": "HB1244",
       "title": "Vaccine exemption; authorize for religious, philosophical or conscientious reasons.",
-      "status": "Died in Committee",
+      "status": "Signed into Law",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -35920,13 +35959,26 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Vaccine exemption; authorize for religious, philosophical or conscientious reasons.",
-      "sponsor": "",
+      "sponsor": "Carolyn Crawford (R)",
       "lastAction": "Died In Committee",
       "lastActionDate": "2026-02-03",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MS/bill/HB1244/2026",
-      "legiscan_bill_id": 2087241
+      "legiscan_bill_id": 2087241,
+      "session_id": 2249,
+      "sponsorships": [
+        {
+          "people_id": 13776,
+          "name": "Carolyn Crawford",
+          "first_name": "Carolyn",
+          "last_name": "Crawford",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-121",
+          "type": "primary"
+        }
+      ]
     },
     {
       "billId": "MS-HB783",
@@ -35967,7 +36019,7 @@
       "state": "MS",
       "billNumber": "HB645",
       "title": "COVID-19 mRNA vaccinations; prohibit until Health Department conducts study and determines they are safe.",
-      "status": "Died in Committee",
+      "status": "Signed into Law",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -35975,7 +36027,7 @@
       "level": "State",
       "impact": "Medium",
       "summary": "COVID-19 mRNA vaccinations; prohibit until Health Department conducts study and determines they are safe.",
-      "sponsor": "",
+      "sponsor": "Randy Boyd (R)",
       "lastAction": "Died In Committee",
       "lastActionDate": "2026-02-03",
       "actionCount": 0,
@@ -35995,7 +36047,20 @@
         "status": "llm_upgrade",
         "second_pass": "Prohibits COVID-19 mRNA vaccinations until a state safety study is completed, restricting vaccine availability.",
         "original_billType": "monitor"
-      }
+      },
+      "session_id": 2249,
+      "sponsorships": [
+        {
+          "people_id": 13791,
+          "name": "Randy Boyd",
+          "first_name": "Randy",
+          "last_name": "Boyd",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-019",
+          "type": "primary"
+        }
+      ]
     },
     {
       "billId": "MS-HB811",
@@ -49803,36 +49868,289 @@
       "state": "SD",
       "billNumber": "HB1171",
       "title": "Establish provisions related to the disclosure of COVID-19 and mRNA vaccination status and blood donations.",
-      "status": "Died in Committee",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-discrimination",
       "level": "State",
       "impact": "Medium",
       "summary": "Establish provisions related to the disclosure of COVID-19 and mRNA vaccination status and blood donations.",
-      "sponsor": "",
+      "sponsor": "Josephine Garcia (R)",
       "lastAction": "House of Representatives Do Pass, Failed, YEAS 23, NAYS 42. H.J. 340",
       "lastActionDate": "2026-02-17",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/SD/bill/HB1171/2026",
-      "legiscan_bill_id": 2095191
+      "legiscan_bill_id": 2095191,
+      "rollCalls": [
+        {
+          "key": "LS-1631557",
+          "legiscan_roll_call_id": 1631557,
+          "date": "2026-02-12",
+          "desc": "Do Pass",
+          "chamber": "House",
+          "yea": 7,
+          "nay": 5,
+          "nv": 0,
+          "absent": 1,
+          "total": 13,
+          "passed": true,
+          "sourceUrl": "https://sdlegislature.gov/api/Votes/83689"
+        },
+        {
+          "key": "LS-1635612",
+          "legiscan_roll_call_id": 1635612,
+          "date": "2026-02-17",
+          "desc": "Do Pass",
+          "chamber": "House",
+          "yea": 23,
+          "nay": 42,
+          "nv": 0,
+          "absent": 5,
+          "total": 70,
+          "passed": false,
+          "sourceUrl": "https://sdlegislature.gov/api/Votes/83780"
+        }
+      ],
+      "session_id": 2231,
+      "sponsorships": [
+        {
+          "people_id": 25634,
+          "name": "Josephine Garcia",
+          "first_name": "Josephine",
+          "last_name": "Garcia",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-005",
+          "type": "primary"
+        },
+        {
+          "people_id": 25631,
+          "name": "Bobbi Andera",
+          "first_name": "Bobbi",
+          "last_name": "Andera",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-010",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24487,
+          "name": "Julie Auch",
+          "first_name": "Julie",
+          "last_name": "Auch",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22449,
+          "name": "Aaron Aylward",
+          "first_name": "Aaron",
+          "last_name": "Aylward",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-006",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25633,
+          "name": "Heather Baxter",
+          "first_name": "Heather",
+          "last_name": "Baxter",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-034",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25655,
+          "name": "John Carley",
+          "first_name": "John",
+          "last_name": "Carley",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25656,
+          "name": "Tamara Grove",
+          "first_name": "Tamara",
+          "last_name": "Grove",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-026",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25637,
+          "name": "Jana Hunt",
+          "first_name": "Jana",
+          "last_name": "Hunt",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-028",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25638,
+          "name": "Travis Ismay",
+          "first_name": "Travis",
+          "last_name": "Ismay",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-028",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 8222,
+          "name": "Phil Jensen",
+          "first_name": "Phil",
+          "last_name": "Jensen",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-033",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25639,
+          "name": "Dylan Jordan",
+          "first_name": "Dylan",
+          "last_name": "Jordan",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25640,
+          "name": "Terri Jorgenson",
+          "first_name": "Terri",
+          "last_name": "Jorgenson",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25642,
+          "name": "Logan Manhart",
+          "first_name": "Logan",
+          "last_name": "Manhart",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-001",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25660,
+          "name": "Lauren Nelson",
+          "first_name": "Lauren",
+          "last_name": "Nelson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20539,
+          "name": "Carl Perry",
+          "first_name": "Carl",
+          "last_name": "Perry",
+          "party": "R",
+          "role": "Rep",
+          "district": "SD-003",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 18701,
+          "name": "Tom Pischke",
+          "first_name": "Tom",
+          "last_name": "Pischke",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-025",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19905,
+          "name": "Tony Randolph",
+          "first_name": "Tony",
+          "last_name": "Randolph",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-035",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25646,
+          "name": "Kathy Rice",
+          "first_name": "Kathy",
+          "last_name": "Rice",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24260,
+          "name": "Brandei Schaefbauer",
+          "first_name": "Brandei",
+          "last_name": "Schaefbauer",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-003",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25649,
+          "name": "Tesa Schwans",
+          "first_name": "Tesa",
+          "last_name": "Schwans",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-009",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24400,
+          "name": "John Sjaarda",
+          "first_name": "John",
+          "last_name": "Sjaarda",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-002",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25662,
+          "name": "Curt Voight",
+          "first_name": "Curt",
+          "last_name": "Voight",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-033",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "SD-HB1210",
       "state": "SD",
       "billNumber": "HB1210",
       "title": "Prohibit COVID-19 vaccination requirements and to provide a penalty therefor.",
-      "status": "Died in Committee",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
       "level": "State",
       "impact": "Medium",
       "summary": "Prohibit COVID-19 vaccination requirements and to provide a penalty therefor.",
-      "sponsor": "",
+      "sponsor": "Josephine Garcia (R)",
       "lastAction": "House of Representatives Do Pass, Failed, YEAS 32, NAYS 35. H.J. 393",
       "lastActionDate": "2026-02-20",
       "actionCount": 0,
@@ -49853,7 +50171,140 @@
         "status": "llm_upgrade",
         "second_pass": "Prohibits COVID-19 vaccination requirements and provides a penalty, restricting a vaccine mandate.",
         "original_billType": "monitor"
-      }
+      },
+      "rollCalls": [
+        {
+          "key": "LS-1638546",
+          "legiscan_roll_call_id": 1638546,
+          "date": "2026-02-19",
+          "desc": "Do Pass",
+          "chamber": "House",
+          "yea": 8,
+          "nay": 5,
+          "nv": 0,
+          "absent": 0,
+          "total": 13,
+          "passed": true,
+          "sourceUrl": "https://sdlegislature.gov/api/Votes/83898"
+        },
+        {
+          "key": "LS-1639992",
+          "legiscan_roll_call_id": 1639992,
+          "date": "2026-02-20",
+          "desc": "Do Pass",
+          "chamber": "House",
+          "yea": 32,
+          "nay": 35,
+          "nv": 0,
+          "absent": 3,
+          "total": 70,
+          "passed": false,
+          "sourceUrl": "https://sdlegislature.gov/api/Votes/84027"
+        }
+      ],
+      "session_id": 2231,
+      "sponsorships": [
+        {
+          "people_id": 25634,
+          "name": "Josephine Garcia",
+          "first_name": "Josephine",
+          "last_name": "Garcia",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-005",
+          "type": "primary"
+        },
+        {
+          "people_id": 25631,
+          "name": "Bobbi Andera",
+          "first_name": "Bobbi",
+          "last_name": "Andera",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-010",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22449,
+          "name": "Aaron Aylward",
+          "first_name": "Aaron",
+          "last_name": "Aylward",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-006",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25655,
+          "name": "John Carley",
+          "first_name": "John",
+          "last_name": "Carley",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25638,
+          "name": "Travis Ismay",
+          "first_name": "Travis",
+          "last_name": "Ismay",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-028",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 8222,
+          "name": "Phil Jensen",
+          "first_name": "Phil",
+          "last_name": "Jensen",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-033",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25641,
+          "name": "Tony Kayser",
+          "first_name": "Tony",
+          "last_name": "Kayser",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-014",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25642,
+          "name": "Logan Manhart",
+          "first_name": "Logan",
+          "last_name": "Manhart",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-001",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19905,
+          "name": "Tony Randolph",
+          "first_name": "Tony",
+          "last_name": "Randolph",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-035",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24260,
+          "name": "Brandei Schaefbauer",
+          "first_name": "Brandei",
+          "last_name": "Schaefbauer",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-003",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "SD-SB124",
@@ -59164,7 +59615,7 @@
       "state": "WI",
       "billNumber": "SJR89",
       "title": "Recognizing October as Vaccine Injury Awareness Month in Wisconsin.",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -59179,23 +59630,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/WI/bill/SJR89/2025",
       "legiscan_bill_id": 2045638,
-      "rollCalls": [
-        {
-          "key": "LS-1630625",
-          "legiscan_roll_call_id": 1630625,
-          "date": "2026-02-11",
-          "desc": "Senate: Adopted",
-          "chamber": "Senate",
-          "yea": 18,
-          "nay": 15,
-          "nv": 0,
-          "absent": 0,
-          "total": 33,
-          "passed": true,
-          "sourceUrl": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0183"
-        }
-      ],
-      "session_id": 2197,
       "sponsorships": [
         {
           "people_id": 3946,
@@ -59337,14 +59771,31 @@
           "district": "HD-084",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "rollCalls": [
+        {
+          "key": "LS-1630625",
+          "legiscan_roll_call_id": 1630625,
+          "date": "2026-02-11",
+          "desc": "Senate: Adopted",
+          "chamber": "Senate",
+          "yea": 18,
+          "nay": 15,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0183"
+        }
+      ],
+      "session_id": 2197
     },
     {
       "billId": "WI-AJR100",
       "state": "WI",
       "billNumber": "AJR100",
       "title": "Recognizing October as Vaccine Injury Awareness Month in Wisconsin.",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -59359,7 +59810,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/WI/bill/AJR100/2025",
       "legiscan_bill_id": 2046029,
-      "session_id": 2197,
       "sponsorships": [
         {
           "people_id": 21997,
@@ -59491,7 +59941,8 @@
           "district": "SD-011",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "session_id": 2197
     },
     {
       "billId": "WI-SJR85",
@@ -59624,7 +60075,7 @@
       "state": "WI",
       "billNumber": "AB891",
       "title": "Eliminating personal conviction exemption from immunizations.",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -59639,7 +60090,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/WI/bill/AB891/2025",
       "legiscan_bill_id": 2092208,
-      "session_id": 2197,
       "sponsorships": [
         {
           "people_id": 16428,
@@ -59711,14 +60161,15 @@
           "district": "SD-015",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "session_id": 2197
     },
     {
       "billId": "WI-SB950",
       "state": "WI",
       "billNumber": "SB950",
       "title": "Eliminating personal conviction exemption from immunizations.",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -59733,7 +60184,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/WI/bill/SB950/2025",
       "legiscan_bill_id": 2110936,
-      "session_id": 2197,
       "sponsorships": [
         {
           "people_id": 12304,
@@ -59815,7 +60265,8 @@
           "district": "HD-019",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "session_id": 2197
     },
     {
       "billId": "WI-AB772",
@@ -137218,27 +137669,6 @@
       "legiscan_bill_id": 2091391
     },
     {
-      "billId": "CA-AB1200",
-      "state": "CA",
-      "billNumber": "AB1200",
-      "title": "Emergency services: disaster preparedness.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Emergency services: disaster preparedness.",
-      "sponsor": "",
-      "lastAction": "Consideration of Governor's veto stricken from file.",
-      "lastActionDate": "2026-01-22",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
-      "legiscan_bill_id": 1980097
-    },
-    {
       "billId": "CA-SB36",
       "state": "CA",
       "billNumber": "SB36",
@@ -137258,6 +137688,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB36/2025",
       "legiscan_bill_id": 1894446
+    },
+    {
+      "billId": "CA-AB1200",
+      "state": "CA",
+      "billNumber": "AB1200",
+      "title": "Emergency services: disaster preparedness.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Emergency services: disaster preparedness.",
+      "sponsor": "",
+      "lastAction": "Consideration of Governor's veto stricken from file.",
+      "lastActionDate": "2026-01-22",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
+      "legiscan_bill_id": 1980097
     },
     {
       "billId": "CA-AB468",
@@ -177896,7 +178347,7 @@
       "state": "WY",
       "billNumber": "HB0012",
       "title": "Clean Air and Geoengineering Prohibition Act.",
-      "status": "Died in Committee",
+      "status": "Signed into Law",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -177910,7 +178361,24 @@
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/WY/bill/HB0012/2026",
-      "legiscan_bill_id": 2057184
+      "legiscan_bill_id": 2057184,
+      "rollCalls": [
+        {
+          "key": "LS-1627678",
+          "legiscan_roll_call_id": 1627678,
+          "date": "2026-02-09",
+          "desc": "Failed Introduction 24-38-0-0-0",
+          "chamber": "House",
+          "yea": 24,
+          "nay": 38,
+          "nv": 0,
+          "absent": 0,
+          "total": 62,
+          "passed": false,
+          "sourceUrl": "https://www.wyoleg.gov/Legislation/2026/HB0012#5044"
+        }
+      ],
+      "session_id": 2213
     },
     {
       "billId": "WY-HB0129",
@@ -209697,8 +210165,8 @@
       "state": "AZ",
       "billNumber": "SB1019",
       "title": "Public water systems; fluoride; prohibition",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Died in Committee",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "fluoride",
@@ -209712,6 +210180,18 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/AZ/bill/SB1019/2026",
       "legiscan_bill_id": 2057797,
+      "sponsorships": [
+        {
+          "people_id": 23642,
+          "name": "Janae Shamp",
+          "first_name": "Janae",
+          "last_name": "Shamp",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "primary"
+        }
+      ],
       "rollCalls": [
         {
           "key": "LS-1618256",
@@ -209770,19 +210250,7 @@
           "sourceUrl": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83594&billStatusActionId=244740&includeVotes=true"
         }
       ],
-      "session_id": 2235,
-      "sponsorships": [
-        {
-          "people_id": 23642,
-          "name": "Janae Shamp",
-          "first_name": "Janae",
-          "last_name": "Shamp",
-          "party": "R",
-          "role": "Sen",
-          "district": "SD-029",
-          "type": "primary"
-        }
-      ]
+      "session_id": 2235
     },
     {
       "billId": "CA-SR82",
@@ -223315,6 +223783,27 @@
       "legiscan_bill_id": 2140590
     },
     {
+      "billId": "CA-AB1129",
+      "state": "CA",
+      "billNumber": "AB1129",
+      "title": "Birth conditions monitoring.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Birth conditions monitoring.",
+      "sponsor": "",
+      "lastAction": "Read second time and amended. Ordered returned to second reading.",
+      "lastActionDate": "2026-08-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1129/2025",
+      "legiscan_bill_id": 1978664
+    },
+    {
       "billId": "CA-SB915",
       "state": "CA",
       "billNumber": "SB915",
@@ -223334,27 +223823,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB915/2025",
       "legiscan_bill_id": 2095320
-    },
-    {
-      "billId": "CA-AB1129",
-      "state": "CA",
-      "billNumber": "AB1129",
-      "title": "Birth defects monitoring.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Birth defects monitoring.",
-      "sponsor": "",
-      "lastAction": "Read second time and amended. Ordered returned to second reading.",
-      "lastActionDate": "2026-08-21",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1129/2025",
-      "legiscan_bill_id": 1978664
     },
     {
       "billId": "CA-AB1415",
@@ -232941,27 +233409,6 @@
       "legiscan_bill_id": 1997594
     },
     {
-      "billId": "MA-H4530",
-      "state": "MA",
-      "billNumber": "H4530",
-      "title": "Making appropriations for fiscal year 2025 to provide for supplementing certain existing appropriations and for certain other activities and projects",
-      "status": "Signed into Law",
-      "isActive": "No",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Making appropriations for fiscal year 2025 to provide for supplementing certain existing appropriations and for certain other activities and projects",
-      "sponsor": "",
-      "lastAction": "Signed by the Governor, Chapter 33 of the Acts of 2025",
-      "lastActionDate": "2025-09-22",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H4530/2025",
-      "legiscan_bill_id": 2044124
-    },
-    {
       "billId": "MA-H5555",
       "state": "MA",
       "billNumber": "H5555",
@@ -232995,6 +233442,27 @@
         "status": "monitor_confirmed",
         "second_pass": ""
       }
+    },
+    {
+      "billId": "MA-H4530",
+      "state": "MA",
+      "billNumber": "H4530",
+      "title": "Making appropriations for fiscal year 2025 to provide for supplementing certain existing appropriations and for certain other activities and projects",
+      "status": "Signed into Law",
+      "isActive": "No",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Making appropriations for fiscal year 2025 to provide for supplementing certain existing appropriations and for certain other activities and projects",
+      "sponsor": "",
+      "lastAction": "Signed by the Governor, Chapter 33 of the Acts of 2025",
+      "lastActionDate": "2025-09-22",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H4530/2025",
+      "legiscan_bill_id": 2044124
     },
     {
       "billId": "MA-H2",
