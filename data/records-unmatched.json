@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-24T06:57:00.015364+00:00",
-  "count": 354,
+  "generated_at": "2026-08-26T06:48:47.521563+00:00",
+  "count": 371,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -3495,6 +3495,176 @@
       "state": "FL",
       "chamber": "House",
       "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566124",
+      "billId": "ME-LD174",
+      "name": "Kristen Cloutier",
+      "state": "ME",
+      "chamber": "House",
+      "district": "HD-094",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566124",
+      "billId": "ME-LD174",
+      "name": "Kathy Javner",
+      "state": "ME",
+      "chamber": "House",
+      "district": "HD-029",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1566124",
+      "billId": "ME-LD174",
+      "name": "Tiffany Roberts-Lovell",
+      "state": "ME",
+      "chamber": "House",
+      "district": "HD-149",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1617892",
+      "billId": "AZ-HB2086",
+      "name": "Joseph Chaplik",
+      "state": "AZ",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1645300",
+      "billId": "AZ-HB2086",
+      "name": "Joseph Chaplik",
+      "state": "AZ",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1645300",
+      "billId": "AZ-HB2086",
+      "name": "David Marshall",
+      "state": "AZ",
+      "chamber": "House",
+      "district": "HD-007",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1620126",
+      "billId": "UT-HB0152",
+      "name": "Tyler Clancy",
+      "state": "UT",
+      "chamber": "House",
+      "district": "HD-060",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1620127",
+      "billId": "UT-HB0152",
+      "name": "Tyler Clancy",
+      "state": "UT",
+      "chamber": "House",
+      "district": "HD-060",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1598847",
+      "billId": "CA-SB602",
+      "name": "James Gallagher",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "chamber mismatch",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1598847",
+      "billId": "CA-SB602",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1619719",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1620953",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1620954",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1620955",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1622883",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1624332",
+      "billId": "CO-SB032",
+      "name": "Dafna Michaelson Jenet",
+      "state": "CO",
+      "chamber": "Senate",
+      "district": "SD-021",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1719235",
+      "billId": "IL-HB5411",
+      "name": "Harry Benton",
+      "state": "IL",
+      "chamber": "House",
+      "district": "HD-097",
       "reason": "unresolved",
       "kind": "vote"
     }
