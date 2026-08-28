@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T17:22:40.968602+00:00",
-  "count": 426,
+  "generated_at": "2026-08-28T18:15:39.218356+00:00",
+  "count": 440,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -4215,6 +4215,146 @@
       "state": "NV",
       "chamber": "Senate",
       "district": "SD-001",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1541893",
+      "billId": "MT-SB474",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1544434",
+      "billId": "MT-SB474",
+      "name": "Bill Mercer",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-046",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545784",
+      "billId": "MT-SB474",
+      "name": "Julie Dooling",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-070",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545784",
+      "billId": "MT-SB474",
+      "name": "Bill Mercer",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-046",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545784",
+      "billId": "MT-SB474",
+      "name": "Marta Bertoglio",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-075",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1545784",
+      "billId": "MT-SB474",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1487354",
+      "billId": "MT-HB371",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1493459",
+      "billId": "MT-HB371",
+      "name": "Julie Dooling",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-070",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1493459",
+      "billId": "MT-HB371",
+      "name": "Bill Mercer",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-046",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1493459",
+      "billId": "MT-HB371",
+      "name": "Marta Bertoglio",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-075",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1493459",
+      "billId": "MT-HB371",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1493459",
+      "billId": "MT-HB371",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1559084",
+      "billId": "MT-HB371",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1499410",
+      "billId": "MT-HB418",
+      "name": "Julie Dooling",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-070",
       "reason": "unresolved",
       "kind": "vote"
     }

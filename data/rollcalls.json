@@ -189661,6 +189661,2353 @@
           "vote": "Yea"
         }
       ]
+    },
+    "LS-1501994": {
+      "key": "LS-1501994",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-02-27",
+      "desc": "(S) Education and Cultural Resources--Do Pass As Amended",
+      "yea": 8,
+      "nay": 6,
+      "nv": 0,
+      "absent": 0,
+      "total": 14,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#48437",
+      "votes": [
+        {
+          "people_id": 7986,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16353,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16356,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16563,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18373,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18387,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18552,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22194,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25430,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1506229": {
+      "key": "LS-1506229",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-03-05",
+      "desc": "(S) 2nd Reading Motion to Amend Carried",
+      "yea": 35,
+      "nay": 15,
+      "nv": 0,
+      "absent": 0,
+      "total": 50,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#52100",
+      "votes": [
+        {
+          "people_id": 7926,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7986,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11953,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12051,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14173,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14259,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14331,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14338,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14351,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16313,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16341,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16342,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16353,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16355,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16356,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16375,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16445,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16563,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16656,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16658,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18028,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18044,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18373,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18381,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18387,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18388,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18515,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18552,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19734,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19916,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20371,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20496,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20498,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20677,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20760,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22194,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22195,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23146,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23607,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23635,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25407,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25429,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25430,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25431,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25432,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1506230": {
+      "key": "LS-1506230",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-03-05",
+      "desc": "(S) 2nd Reading Motion to Amend Failed",
+      "yea": 22,
+      "nay": 28,
+      "nv": 0,
+      "absent": 0,
+      "total": 50,
+      "passed": false,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#52114",
+      "votes": [
+        {
+          "people_id": 7926,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7986,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11953,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 12051,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14173,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14259,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14331,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14338,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14351,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16313,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16341,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16342,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16353,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16355,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16356,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16375,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16445,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16562,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16563,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16656,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16658,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18028,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18044,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18373,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18381,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18387,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18388,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18389,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18515,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18552,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19734,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19916,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20371,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20496,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20498,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20677,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20760,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22194,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22195,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23146,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23607,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23635,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25407,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25429,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25430,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25431,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25432,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1506231": {
+      "key": "LS-1506231",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-03-05",
+      "desc": "(S) 2nd Reading Passed as Amended",
+      "yea": 29,
+      "nay": 21,
+      "nv": 0,
+      "absent": 0,
+      "total": 50,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#52124",
+      "votes": [
+        {
+          "people_id": 7926,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7986,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 11953,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12051,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14173,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14259,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14331,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14338,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14351,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16313,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16341,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16342,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16353,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16355,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16356,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16375,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16445,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16563,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16656,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16658,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18028,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18044,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18373,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18381,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18387,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18388,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18515,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18552,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19734,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19916,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20371,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20496,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20498,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20677,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20760,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22194,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22195,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23146,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23607,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23635,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25407,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25429,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25430,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25431,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25432,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1507972": {
+      "key": "LS-1507972",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-03-06",
+      "desc": "(S) 3rd Reading Passed",
+      "yea": 28,
+      "nay": 21,
+      "nv": 0,
+      "absent": 1,
+      "total": 50,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#53189",
+      "votes": [
+        {
+          "people_id": 7926,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7986,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 11953,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12051,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 14173,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14259,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14331,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14338,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14351,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16313,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16341,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16342,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16353,
+          "vote": "Absent"
+        },
+        {
+          "people_id": 16355,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16356,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16375,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16445,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16563,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16656,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16658,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18028,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18044,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18373,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18381,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 18387,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18388,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18515,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 18552,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19734,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19916,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20371,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20496,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20498,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20677,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20760,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22194,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22195,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23146,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23607,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23635,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25407,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25429,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25430,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25431,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25432,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1541893": {
+      "key": "LS-1541893",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-04-09",
+      "desc": "(H) Judiciary--Be Concurred In As Amended",
+      "yea": 12,
+      "nay": 8,
+      "nv": 0,
+      "absent": 0,
+      "total": 20,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#72330",
+      "votes": [
+        {
+          "people_id": 16672,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21982,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22187,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22190,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23335,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23631,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23632,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23638,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25411,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25416,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25422,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25732,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1544434": {
+      "key": "LS-1544434",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-04-10",
+      "desc": "(H) Appropriations--To Table",
+      "yea": 16,
+      "nay": 7,
+      "nv": 0,
+      "absent": 0,
+      "total": 23,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#73949",
+      "votes": [
+        {
+          "people_id": 7855,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7923,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19742,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20497,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20501,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21433,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21771,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21773,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21896,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21897,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22177,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22178,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23315,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23326,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23334,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23372,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23637,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25390,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25395,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25413,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25414,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25418,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25427,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1545784": {
+      "key": "LS-1545784",
+      "billId": "MT-SB474",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-04-11",
+      "desc": "(H) Taken from Committee; Placed on 2nd Reading",
+      "yea": 42,
+      "nay": 55,
+      "nv": 0,
+      "absent": 3,
+      "total": 100,
+      "passed": false,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1427?open_tab=status#74751",
+      "votes": [
+        {
+          "people_id": 7855,
+          "vote": "Absent"
+        },
+        {
+          "people_id": 7872,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7923,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 10396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 10405,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 11962,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16672,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19742,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19909,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19910,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19911,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20372,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20497,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20501,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20502,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21433,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21762,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21770,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21771,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21773,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21774,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21896,
+          "vote": "Absent"
+        },
+        {
+          "people_id": 21897,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21982,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22118,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22177,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22178,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22184,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22186,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22187,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22190,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22192,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22193,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22198,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22201,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22943,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23191,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23292,
+          "vote": "Absent"
+        },
+        {
+          "people_id": 23296,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23313,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23315,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23326,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23334,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23335,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23336,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23337,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23363,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23372,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23630,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23631,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23632,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23633,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23634,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23637,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23638,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23639,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25390,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25391,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25392,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25393,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25394,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25395,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25397,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25398,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25399,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25400,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25401,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25402,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25404,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25408,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25409,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25410,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25411,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25412,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25413,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25414,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25415,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25416,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25417,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25418,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25419,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25420,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25421,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25422,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25423,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25424,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25425,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25426,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25427,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25428,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25732,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 26438,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1502834": {
+      "key": "LS-1502834",
+      "billId": "MT-SB382",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2025-02-28",
+      "desc": "(S) Public Health, Welfare and Safety--To Table",
+      "yea": 11,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 11,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC0069?open_tab=status#49178",
+      "votes": [
+        {
+          "people_id": 7926,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 7994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14331,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14338,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16445,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20498,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23146,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23370,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23635,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25431,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1487354": {
+      "key": "LS-1487354",
+      "billId": "MT-HB371",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-02-12",
+      "desc": "(H) Judiciary--Do Pass As Amended",
+      "yea": 12,
+      "nay": 8,
+      "nv": 0,
+      "absent": 0,
+      "total": 20,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1463?open_tab=status#35383",
+      "votes": [
+        {
+          "people_id": 16672,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21982,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22187,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22190,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23335,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23631,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23632,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23638,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25411,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25416,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25422,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25732,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1493459": {
+      "key": "LS-1493459",
+      "billId": "MT-HB371",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-02-19",
+      "desc": "(H) 2nd Reading Not Passed",
+      "yea": 34,
+      "nay": 66,
+      "nv": 0,
+      "absent": 0,
+      "total": 100,
+      "passed": false,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1463?open_tab=status#40270",
+      "votes": [
+        {
+          "people_id": 7855,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7872,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 7923,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 10396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 10405,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 11962,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 16672,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19742,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19909,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19910,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 19911,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20372,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20497,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20501,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 20502,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21433,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21762,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21770,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21771,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21773,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21774,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21896,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21897,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 21982,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22021,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22118,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22177,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22178,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22184,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22186,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22187,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22190,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22192,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22193,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22196,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22198,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22201,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22943,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23191,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23292,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23296,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23313,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23315,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23326,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23334,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23335,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23336,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23337,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23363,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23372,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23630,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23631,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23632,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23633,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23634,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23637,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23638,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23639,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25390,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25391,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25392,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25393,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25394,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25395,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25397,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25398,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25399,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25400,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25401,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25402,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25404,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25408,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25409,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25410,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25411,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25412,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25413,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25414,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25415,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25416,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25417,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25418,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25419,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25420,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25421,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25422,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25423,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25424,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25425,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25426,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25427,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25428,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25732,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1559084": {
+      "key": "LS-1559084",
+      "billId": "MT-HB371",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-02-12",
+      "desc": "(H) Judiciary--Do Pass As Amended",
+      "yea": 12,
+      "nay": 8,
+      "nv": 0,
+      "absent": 0,
+      "total": 20,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1463?open_tab=status#84876",
+      "votes": [
+        {
+          "people_id": 16672,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21982,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22187,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22190,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23335,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23631,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23632,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 23638,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25396,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 25405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25411,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25416,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25422,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25732,
+          "vote": "Nay"
+        }
+      ]
+    },
+    "LS-1499410": {
+      "key": "LS-1499410",
+      "billId": "MT-HB418",
+      "state": "MT",
+      "session_id": "2159",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-02-25",
+      "desc": "(H) Agriculture--To Table",
+      "yea": 17,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 17,
+      "passed": true,
+      "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1464?open_tab=status#46437",
+      "votes": [
+        {
+          "people_id": 10405,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19909,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22084,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22198,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23292,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23336,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23363,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23629,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23630,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23634,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23639,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25403,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25406,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25415,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25425,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25426,
+          "vote": "Yea"
+        }
+      ]
     }
   },
   "people": {
@@ -239490,7 +241837,7 @@
     "2252",
     "2253"
   ],
-  "generated_at": "2026-08-27T17:22:40.968602+00:00",
+  "generated_at": "2026-08-28T18:15:39.218356+00:00",
   "people_by_session": {
     "2236": {
       "4747": {
