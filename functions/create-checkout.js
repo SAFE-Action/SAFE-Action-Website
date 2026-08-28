@@ -92,7 +92,7 @@ async function createCheckout(req, res) {
             params["line_items[0][price_data][currency]"] = "usd";
             params["line_items[0][price_data][unit_amount]"] = String(amount * 100);
             params["line_items[0][price_data][recurring][interval]"] = "month";
-            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Fund Monthly Donation";
+            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Monthly Donation";
             params["line_items[0][price_data][product_data][description]"] = "$" + amount + "/month recurring donation";
             params["line_items[0][quantity]"] = "1";
         } else {
@@ -100,7 +100,7 @@ async function createCheckout(req, res) {
             params["submit_type"] = "donate";
             params["line_items[0][price_data][currency]"] = "usd";
             params["line_items[0][price_data][unit_amount]"] = String(amount * 100);
-            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Fund Donation";
+            params["line_items[0][price_data][product_data][name]"] = "SAFE Action Donation";
             params["line_items[0][price_data][product_data][description]"] = "One-time $" + amount + " donation";
             params["line_items[0][quantity]"] = "1";
         }
