@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-28T18:15:39.218356+00:00",
-  "count": 440,
+  "generated_at": "2026-08-29T12:23:54.755551+00:00",
+  "count": 463,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -4355,6 +4355,236 @@
       "state": "MT",
       "chamber": "House",
       "district": "HD-070",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1503015",
+      "billId": "MT-HB807",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1507740",
+      "billId": "MT-HB807",
+      "name": "Julie Dooling",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-070",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1507740",
+      "billId": "MT-HB807",
+      "name": "Bill Mercer",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-046",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1507740",
+      "billId": "MT-HB807",
+      "name": "Marta Bertoglio",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-075",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1507740",
+      "billId": "MT-HB807",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1507740",
+      "billId": "MT-HB807",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1508582",
+      "billId": "MT-HB807",
+      "name": "Julie Dooling",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-070",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1508582",
+      "billId": "MT-HB807",
+      "name": "Bill Mercer",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-046",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1508582",
+      "billId": "MT-HB807",
+      "name": "Marta Bertoglio",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-075",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1508582",
+      "billId": "MT-HB807",
+      "name": "Ed Stafman",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-062",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1508582",
+      "billId": "MT-HB807",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494270",
+      "billId": "ND-HB1457",
+      "name": "Cynthia Schreiber-Beck",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-025",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494270",
+      "billId": "ND-HB1457",
+      "name": "Emily O'Brien",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-042",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494270",
+      "billId": "ND-HB1457",
+      "name": "Mike Beltz",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494270",
+      "billId": "ND-HB1457",
+      "name": "Jared Hagert",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494270",
+      "billId": "ND-HB1457",
+      "name": "Liz Conmy",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-011",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1495855",
+      "billId": "ND-HB1457",
+      "name": "Cynthia Schreiber-Beck",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-025",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1495855",
+      "billId": "ND-HB1457",
+      "name": "Emily O'Brien",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-042",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1495855",
+      "billId": "ND-HB1457",
+      "name": "Mike Beltz",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1495855",
+      "billId": "ND-HB1457",
+      "name": "Jared Hagert",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1495855",
+      "billId": "ND-HB1457",
+      "name": "Liz Conmy",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-011",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1503068",
+      "billId": "MT-HB747",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1499419",
+      "billId": "MT-HB498",
+      "name": "Ron Marshall",
+      "state": "MT",
+      "chamber": "House",
+      "district": "HD-087",
       "reason": "unresolved",
       "kind": "vote"
     }
