@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T12:23:54.755551+00:00",
-  "count": 463,
+  "generated_at": "2026-08-30T11:22:29.567223+00:00",
+  "count": 474,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -4585,6 +4585,116 @@
       "state": "MT",
       "chamber": "House",
       "district": "HD-087",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494351",
+      "billId": "ND-HB1605",
+      "name": "Cynthia Schreiber-Beck",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-025",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494351",
+      "billId": "ND-HB1605",
+      "name": "Emily O'Brien",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-042",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494351",
+      "billId": "ND-HB1605",
+      "name": "Mike Beltz",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494351",
+      "billId": "ND-HB1605",
+      "name": "Jared Hagert",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-020",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1494351",
+      "billId": "ND-HB1605",
+      "name": "Liz Conmy",
+      "state": "ND",
+      "chamber": "House",
+      "district": "HD-011",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1609766",
+      "billId": "OH-HB455",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1708669",
+      "billId": "OH-HB455",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1708877",
+      "billId": "OH-SB276",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1584904",
+      "billId": "OH-HB210",
+      "name": "Sedrick Denson",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-026",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1584904",
+      "billId": "OH-HB210",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1708770",
+      "billId": "OH-HB210",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
       "reason": "unresolved",
       "kind": "vote"
     }

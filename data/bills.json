@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T12:23:54.755551+00:00",
+  "generated_at": "2026-08-30T11:22:29.567223+00:00",
   "source": "govinfo+legiscan",
   "total": 9542,
   "bills": [
@@ -38467,8 +38467,8 @@
       "state": "MT",
       "billNumber": "HB807",
       "title": "Prohibiting vaccines allowed under an emergency use authorization or undergoing safety trials to be required",
-      "status": "Passed Both Chambers",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
@@ -38482,6 +38482,18 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MT/bill/HB807/2025",
       "legiscan_bill_id": 1984177,
+      "sponsorships": [
+        {
+          "people_id": 16672,
+          "name": "Jedediah Hinkle",
+          "first_name": "Jedediah",
+          "last_name": "Hinkle",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-067",
+          "type": "primary"
+        }
+      ],
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -38582,19 +38594,7 @@
           "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC2455?open_tab=status#81411"
         }
       ],
-      "session_id": 2159,
-      "sponsorships": [
-        {
-          "people_id": 16672,
-          "name": "Jedediah Hinkle",
-          "first_name": "Jedediah",
-          "last_name": "Hinkle",
-          "party": "R",
-          "role": "Rep",
-          "district": "HD-067",
-          "type": "primary"
-        }
-      ]
+      "session_id": 2159
     },
     {
       "billId": "MT-SB474",
@@ -46038,8 +46038,8 @@
       "state": "ND",
       "billNumber": "HB1457",
       "title": "An exemption to required vaccines.",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Died in Committee",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-exemption",
@@ -46053,37 +46053,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/ND/bill/HB1457/2025",
       "legiscan_bill_id": 1924686,
-      "rollCalls": [
-        {
-          "key": "LS-1494270",
-          "legiscan_roll_call_id": 1494270,
-          "date": "2025-02-19",
-          "desc": "House Second reading",
-          "chamber": "House",
-          "yea": 44,
-          "nay": 48,
-          "nv": 0,
-          "absent": 1,
-          "total": 93,
-          "passed": false,
-          "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-30.pdf#Page714"
-        },
-        {
-          "key": "LS-1495855",
-          "legiscan_roll_call_id": 1495855,
-          "date": "2025-02-20",
-          "desc": "House Second reading",
-          "chamber": "House",
-          "yea": 45,
-          "nay": 42,
-          "nv": 0,
-          "absent": 6,
-          "total": 93,
-          "passed": false,
-          "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-31.pdf#Page728"
-        }
-      ],
-      "session_id": 2140,
       "sponsorships": [
         {
           "people_id": 23800,
@@ -46175,7 +46144,38 @@
           "district": "SD-015",
           "type": "cosponsor"
         }
-      ]
+      ],
+      "rollCalls": [
+        {
+          "key": "LS-1494270",
+          "legiscan_roll_call_id": 1494270,
+          "date": "2025-02-19",
+          "desc": "House Second reading",
+          "chamber": "House",
+          "yea": 44,
+          "nay": 48,
+          "nv": 0,
+          "absent": 1,
+          "total": 93,
+          "passed": false,
+          "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-30.pdf#Page714"
+        },
+        {
+          "key": "LS-1495855",
+          "legiscan_roll_call_id": 1495855,
+          "date": "2025-02-20",
+          "desc": "House Second reading",
+          "chamber": "House",
+          "yea": 45,
+          "nay": 42,
+          "nv": 0,
+          "absent": 6,
+          "total": 93,
+          "passed": false,
+          "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-31.pdf#Page728"
+        }
+      ],
+      "session_id": 2140
     },
     {
       "billId": "ND-SB2328",
@@ -46544,7 +46544,7 @@
       "state": "OH",
       "billNumber": "HB455",
       "title": "Regards the operation of public schools and the DEW",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -46552,13 +46552,178 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Regards the operation of public schools and the DEW",
-      "sponsor": "",
+      "sponsor": "Gayle Manning (R)",
       "lastAction": "Effective ",
       "lastActionDate": "2026-10-09",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB455/2025",
-      "legiscan_bill_id": 2044413
+      "legiscan_bill_id": 2044413,
+      "rollCalls": [
+        {
+          "key": "LS-1609550",
+          "legiscan_roll_call_id": 1609550,
+          "date": "2025-11-18",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 11,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 11,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb455/votes"
+        },
+        {
+          "key": "LS-1609766",
+          "legiscan_roll_call_id": 1609766,
+          "date": "2025-11-19",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 87,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 87,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb455/votes"
+        },
+        {
+          "key": "LS-1708421",
+          "legiscan_roll_call_id": 1708421,
+          "date": "2026-06-10",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 5,
+          "nay": 2,
+          "nv": 0,
+          "absent": 0,
+          "total": 7,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb455/votes"
+        },
+        {
+          "key": "LS-1708422",
+          "legiscan_roll_call_id": 1708422,
+          "date": "2026-06-10",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 24,
+          "nay": 9,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb455/votes"
+        },
+        {
+          "key": "LS-1708669",
+          "legiscan_roll_call_id": 1708669,
+          "date": "2026-06-10",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 63,
+          "nay": 31,
+          "nv": 0,
+          "absent": 0,
+          "total": 94,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb455/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 12036,
+          "name": "Gayle Manning",
+          "first_name": "Gayle",
+          "last_name": "Manning",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-052",
+          "type": "primary"
+        },
+        {
+          "people_id": 22871,
+          "name": "Adam Bird",
+          "first_name": "Adam",
+          "last_name": "Bird",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-063",
+          "type": "primary"
+        },
+        {
+          "people_id": 10994,
+          "name": "Andrew Brenner",
+          "first_name": "Andrew",
+          "last_name": "Brenner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-019",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 17973,
+          "name": "Theresa Gavarone",
+          "first_name": "Theresa",
+          "last_name": "Gavarone",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-002",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11547,
+          "name": "Terry Johnson",
+          "first_name": "Terry",
+          "last_name": "Johnson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-014",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19413,
+          "name": "George Lang",
+          "first_name": "George",
+          "last_name": "Lang",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 581,
+          "name": "Thomas Patton",
+          "first_name": "Thomas",
+          "last_name": "Patton",
+          "party": "R",
+          "role": "Sen",
+          "district": "HD-017",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 634,
+          "name": "Timothy Schaffer",
+          "first_name": "Timothy",
+          "last_name": "Schaffer",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-020",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OK-SB807",
@@ -65201,27 +65366,6 @@
       "legiscan_bill_id": 2112359
     },
     {
-      "billId": "CA-SB150",
-      "state": "CA",
-      "billNumber": "SB150",
-      "title": "Early care and education.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Early care and education.",
-      "sponsor": "",
-      "lastAction": "Re-referred to Com. on BUDGET pursuant to Assembly Rule 97.",
-      "lastActionDate": "2026-07-02",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB150/2025",
-      "legiscan_bill_id": 1939247
-    },
-    {
       "billId": "CA-AB1170",
       "state": "CA",
       "billNumber": "AB1170",
@@ -65241,6 +65385,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1170/2025",
       "legiscan_bill_id": 1980067
+    },
+    {
+      "billId": "CA-SB150",
+      "state": "CA",
+      "billNumber": "SB150",
+      "title": "Early care and education.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Early care and education.",
+      "sponsor": "",
+      "lastAction": "Re-referred to Com. on BUDGET pursuant to Assembly Rule 97.",
+      "lastActionDate": "2026-07-02",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB150/2025",
+      "legiscan_bill_id": 1939247
     },
     {
       "billId": "CA-SB911",
@@ -65325,6 +65490,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB454/2025",
       "legiscan_bill_id": 1976536
+    },
+    {
+      "billId": "CA-AB1943",
+      "state": "CA",
+      "billNumber": "AB1943",
+      "title": "Pupil safety: notifications: firearms.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Pupil safety: notifications: firearms.",
+      "sponsor": "",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 78. Noes 0.).",
+      "lastActionDate": "2026-08-26",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1943/2025",
+      "legiscan_bill_id": 2117102
     },
     {
       "billId": "CA-AB369",
@@ -65464,27 +65650,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2187/2025",
       "legiscan_bill_id": 2120661
-    },
-    {
-      "billId": "CA-AB1943",
-      "state": "CA",
-      "billNumber": "AB1943",
-      "title": "Pupil safety: notifications: firearms.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Pupil safety: notifications: firearms.",
-      "sponsor": "",
-      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 78. Noes 0.).",
-      "lastActionDate": "2026-08-26",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1943/2025",
-      "legiscan_bill_id": 2117102
     },
     {
       "billId": "CA-SB190",
@@ -86684,7 +86849,7 @@
       "state": "MT",
       "billNumber": "HB747",
       "title": "Authorize certain day-care centers to adopt policy regarding certain immunization exemptions",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -86699,6 +86864,18 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MT/bill/HB747/2025",
       "legiscan_bill_id": 1982950,
+      "sponsorships": [
+        {
+          "people_id": 7923,
+          "name": "Mary Caferro",
+          "first_name": "Mary",
+          "last_name": "Caferro",
+          "party": "D",
+          "role": "Rep",
+          "district": "HD-082",
+          "type": "primary"
+        }
+      ],
       "rollCalls": [
         {
           "key": "LS-1503068",
@@ -86729,19 +86906,7 @@
           "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC4298?open_tab=status#51149"
         }
       ],
-      "session_id": 2159,
-      "sponsorships": [
-        {
-          "people_id": 7923,
-          "name": "Mary Caferro",
-          "first_name": "Mary",
-          "last_name": "Caferro",
-          "party": "D",
-          "role": "Rep",
-          "district": "HD-082",
-          "type": "primary"
-        }
-      ]
+      "session_id": 2159
     },
     {
       "billId": "MT-SB417",
@@ -94572,7 +94737,7 @@
       "state": "OH",
       "billNumber": "SB276",
       "title": "Ratify the Interstate Compact for School Psychologists",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -94580,13 +94745,208 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Ratify the Interstate Compact for School Psychologists",
-      "sponsor": "",
+      "sponsor": "Kristina Roegner (R)",
       "lastAction": "Effective ",
       "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/SB276/2025",
-      "legiscan_bill_id": 2045382
+      "legiscan_bill_id": 2045382,
+      "rollCalls": [
+        {
+          "key": "LS-1609099",
+          "legiscan_roll_call_id": 1609099,
+          "date": "2025-11-05",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 6,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 6,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb276/votes"
+        },
+        {
+          "key": "LS-1609250",
+          "legiscan_roll_call_id": 1609250,
+          "date": "2025-11-12",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 31,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 31,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb276/votes"
+        },
+        {
+          "key": "LS-1707780",
+          "legiscan_roll_call_id": 1707780,
+          "date": "2026-06-09",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 8,
+          "nay": 4,
+          "nv": 0,
+          "absent": 0,
+          "total": 12,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb276/votes"
+        },
+        {
+          "key": "LS-1708485",
+          "legiscan_roll_call_id": 1708485,
+          "date": "2026-06-10",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 24,
+          "nay": 9,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb276/votes"
+        },
+        {
+          "key": "LS-1708877",
+          "legiscan_roll_call_id": 1708877,
+          "date": "2026-06-10",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 60,
+          "nay": 38,
+          "nv": 0,
+          "absent": 0,
+          "total": 98,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb276/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 11003,
+          "name": "Kristina Roegner",
+          "first_name": "Kristina",
+          "last_name": "Roegner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-027",
+          "type": "primary"
+        },
+        {
+          "people_id": 10994,
+          "name": "Andrew Brenner",
+          "first_name": "Andrew",
+          "last_name": "Brenner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-019",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 17973,
+          "name": "Theresa Gavarone",
+          "first_name": "Theresa",
+          "last_name": "Gavarone",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-002",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16989,
+          "name": "Stephen Huffman",
+          "first_name": "Stephen",
+          "last_name": "Huffman",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-005",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19413,
+          "name": "George Lang",
+          "first_name": "George",
+          "last_name": "Lang",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22760,
+          "name": "Sandra O'Brien",
+          "first_name": "Sandra",
+          "last_name": "O'Brien",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-032",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 581,
+          "name": "Thomas Patton",
+          "first_name": "Thomas",
+          "last_name": "Patton",
+          "party": "R",
+          "role": "Sen",
+          "district": "HD-017",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16967,
+          "name": "Bill Reineke",
+          "first_name": "William",
+          "last_name": "Reineke",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-026",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24479,
+          "name": "Michele Reynolds",
+          "first_name": "Michele",
+          "last_name": "Reynolds",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-003",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 26397,
+          "name": "Jane Timken",
+          "first_name": "Jane",
+          "last_name": "Timken",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19660,
+          "name": "Shane Wilkin",
+          "first_name": "Shane",
+          "last_name": "Wilkin",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-017",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OH-SB230",
@@ -95228,7 +95588,7 @@
       "state": "OH",
       "billNumber": "HB210",
       "title": "Regards the sale of used catalytic converters",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -95236,13 +95596,228 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Regards the sale of used catalytic converters",
-      "sponsor": "",
+      "sponsor": "Bill Roemer (R)",
       "lastAction": "Effective ",
       "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB210/2025",
-      "legiscan_bill_id": 2018059
+      "legiscan_bill_id": 2018059,
+      "rollCalls": [
+        {
+          "key": "LS-1584139",
+          "legiscan_roll_call_id": 1584139,
+          "date": "2025-06-03",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 10,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 10,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb210/votes"
+        },
+        {
+          "key": "LS-1584904",
+          "legiscan_roll_call_id": 1584904,
+          "date": "2025-06-04",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 91,
+          "nay": 2,
+          "nv": 0,
+          "absent": 0,
+          "total": 93,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb210/votes"
+        },
+        {
+          "key": "LS-1708463",
+          "legiscan_roll_call_id": 1708463,
+          "date": "2026-06-10",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 7,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 7,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb210/votes"
+        },
+        {
+          "key": "LS-1708464",
+          "legiscan_roll_call_id": 1708464,
+          "date": "2026-06-10",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 32,
+          "nay": 1,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb210/votes"
+        },
+        {
+          "key": "LS-1708770",
+          "legiscan_roll_call_id": 1708770,
+          "date": "2026-06-10",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 92,
+          "nay": 2,
+          "nv": 0,
+          "absent": 0,
+          "total": 94,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb210/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 20309,
+          "name": "Bill Roemer",
+          "first_name": "Bill",
+          "last_name": "Roemer",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-031",
+          "type": "primary"
+        },
+        {
+          "people_id": 20326,
+          "name": "Phil Plummer",
+          "first_name": "Phil",
+          "last_name": "Plummer",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-039",
+          "type": "primary"
+        },
+        {
+          "people_id": 11943,
+          "name": "Nickie Antonio",
+          "first_name": "Nickie",
+          "last_name": "Antonio",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-023",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16972,
+          "name": "Hearcel Craig",
+          "first_name": "Hearcel",
+          "last_name": "Craig",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-015",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24480,
+          "name": "William DeMora",
+          "first_name": "William",
+          "last_name": "DeMora",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-025",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20325,
+          "name": "Paula Hicks-Hudson",
+          "first_name": "Paula",
+          "last_name": "Hicks-Hudson",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-011",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11547,
+          "name": "Terry Johnson",
+          "first_name": "Terry",
+          "last_name": "Johnson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-014",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19413,
+          "name": "George Lang",
+          "first_name": "George",
+          "last_name": "Lang",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22760,
+          "name": "Sandra O'Brien",
+          "first_name": "Sandra",
+          "last_name": "O'Brien",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-032",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 581,
+          "name": "Thomas Patton",
+          "first_name": "Thomas",
+          "last_name": "Patton",
+          "party": "R",
+          "role": "Sen",
+          "district": "HD-017",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16967,
+          "name": "Bill Reineke",
+          "first_name": "William",
+          "last_name": "Reineke",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-026",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11003,
+          "name": "Kristina Roegner",
+          "first_name": "Kristina",
+          "last_name": "Roegner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-027",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 634,
+          "name": "Timothy Schaffer",
+          "first_name": "Timothy",
+          "last_name": "Schaffer",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-020",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OH-HB347",
@@ -111300,6 +111875,27 @@
       "legiscan_bill_id": 2072053
     },
     {
+      "billId": "CA-AB163",
+      "state": "CA",
+      "billNumber": "AB163",
+      "title": "Developmental services.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Developmental services.",
+      "sponsor": "",
+      "lastAction": "Ordered to inactive file at the request of Senator Laird.",
+      "lastActionDate": "2026-08-06",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB163/2025",
+      "legiscan_bill_id": 1908148
+    },
+    {
       "billId": "CA-AB1161",
       "state": "CA",
       "billNumber": "AB1161",
@@ -111340,27 +111936,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1500/2025",
       "legiscan_bill_id": 1980397
-    },
-    {
-      "billId": "CA-AB163",
-      "state": "CA",
-      "billNumber": "AB163",
-      "title": "Developmental services.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Developmental services.",
-      "sponsor": "",
-      "lastAction": "Ordered to inactive file at the request of Senator Laird.",
-      "lastActionDate": "2026-08-06",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB163/2025",
-      "legiscan_bill_id": 1908148
     },
     {
       "billId": "CA-ACR207",
@@ -138464,27 +139039,6 @@
       "legiscan_bill_id": 1908158
     },
     {
-      "billId": "CA-AB645",
-      "state": "CA",
-      "billNumber": "AB645",
-      "title": "Emergency medical services: dispatcher training.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Emergency medical services: dispatcher training.",
-      "sponsor": "",
-      "lastAction": "Chaptered by Secretary of State - Chapter 273, Statutes of 2025.",
-      "lastActionDate": "2025-10-03",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB645/2025",
-      "legiscan_bill_id": 1970433
-    },
-    {
       "billId": "CA-AB1348",
       "state": "CA",
       "billNumber": "AB1348",
@@ -138519,12 +139073,33 @@
       "impact": "Medium",
       "summary": "Mental health: involuntary commitment.",
       "sponsor": "",
-      "lastAction": "Joint Rule 61(b)(16) suspended.",
-      "lastActionDate": "2026-08-27",
+      "lastAction": "Ordered to third reading.",
+      "lastActionDate": "2026-08-28",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB16/2025",
       "legiscan_bill_id": 1893428
+    },
+    {
+      "billId": "CA-AB645",
+      "state": "CA",
+      "billNumber": "AB645",
+      "title": "Emergency medical services: dispatcher training.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Emergency medical services: dispatcher training.",
+      "sponsor": "",
+      "lastAction": "Chaptered by Secretary of State - Chapter 273, Statutes of 2025.",
+      "lastActionDate": "2025-10-03",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB645/2025",
+      "legiscan_bill_id": 1970433
     },
     {
       "billId": "CA-SB352",
@@ -181439,27 +182014,6 @@
       "legiscan_bill_id": 2117108
     },
     {
-      "billId": "CA-ACR156",
-      "state": "CA",
-      "billNumber": "ACR156",
-      "title": "National Day of Play.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "National Day of Play.",
-      "sponsor": "",
-      "lastAction": "Chaptered by Secretary of State - Res. Chapter 48, Statutes of 2026.",
-      "lastActionDate": "2026-04-21",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/ACR156/2025",
-      "legiscan_bill_id": 2128676
-    },
-    {
       "billId": "CA-AB350",
       "state": "CA",
       "billNumber": "AB350",
@@ -181494,6 +182048,27 @@
       }
     },
     {
+      "billId": "CA-ACR156",
+      "state": "CA",
+      "billNumber": "ACR156",
+      "title": "National Day of Play.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "National Day of Play.",
+      "sponsor": "",
+      "lastAction": "Chaptered by Secretary of State - Res. Chapter 48, Statutes of 2026.",
+      "lastActionDate": "2026-04-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/ACR156/2025",
+      "legiscan_bill_id": 2128676
+    },
+    {
       "billId": "CA-SB944",
       "state": "CA",
       "billNumber": "SB944",
@@ -181515,25 +182090,25 @@
       "legiscan_bill_id": 2104444
     },
     {
-      "billId": "CA-SB1280",
+      "billId": "CA-AB371",
       "state": "CA",
-      "billNumber": "SB1280",
-      "title": "Health care coverage for mental health and substance use disorders.",
-      "status": "Introduced",
+      "billNumber": "AB371",
+      "title": "Dental coverage.",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "Health care coverage for mental health and substance use disorders.",
+      "summary": "Dental coverage.",
       "sponsor": "",
-      "lastAction": "April 22 set for first hearing canceled at the request of author.",
-      "lastActionDate": "2026-04-22",
+      "lastAction": "From committee: Filed with the Chief Clerk pursuant to Joint Rule 56.",
+      "lastActionDate": "2026-02-02",
       "actionCount": 0,
       "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB1280/2025",
-      "legiscan_bill_id": 2121864
+      "sourceUrl": "https://legiscan.com/CA/bill/AB371/2025",
+      "legiscan_bill_id": 1953060
     },
     {
       "billId": "CO-HB1276",
@@ -213310,7 +213885,7 @@
       "state": "MT",
       "billNumber": "HB498",
       "title": "Prohibit adding fluoride to public water supply systems",
-      "status": "Signed into Law",
+      "status": "Died in Committee",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -213325,6 +213900,18 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/MT/bill/HB498/2025",
       "legiscan_bill_id": 1970034,
+      "sponsorships": [
+        {
+          "people_id": 25420,
+          "name": "Lukas Schubert",
+          "first_name": "Lukas",
+          "last_name": "Schubert",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-008",
+          "type": "primary"
+        }
+      ],
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -213355,19 +213942,7 @@
           "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC1978?open_tab=status#46417"
         }
       ],
-      "session_id": 2159,
-      "sponsorships": [
-        {
-          "people_id": 25420,
-          "name": "Lukas Schubert",
-          "first_name": "Lukas",
-          "last_name": "Schubert",
-          "party": "R",
-          "role": "Rep",
-          "district": "HD-008",
-          "type": "primary"
-        }
-      ]
+      "session_id": 2159
     },
     {
       "billId": "MT-HB321",
@@ -214129,21 +214704,110 @@
       "state": "ND",
       "billNumber": "HB1605",
       "title": "The prohibition on water fluoridation; to provide a penalty; and to provide an effective date.",
-      "status": "Died in Committee",
-      "isActive": "No",
+      "status": "Introduced",
+      "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
       "category": "fluoride",
       "level": "State",
       "impact": "Medium",
       "summary": "The prohibition on water fluoridation; to provide a penalty; and to provide an effective date.",
-      "sponsor": "",
+      "sponsor": "Matthew Heilman (R)",
       "lastAction": "Second reading, failed to pass, yeas 40 nays 53",
       "lastActionDate": "2025-02-19",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/ND/bill/HB1605/2025",
-      "legiscan_bill_id": 1930736
+      "legiscan_bill_id": 1930736,
+      "rollCalls": [
+        {
+          "key": "LS-1494351",
+          "legiscan_roll_call_id": 1494351,
+          "date": "2025-02-19",
+          "desc": "House Second reading",
+          "chamber": "House",
+          "yea": 40,
+          "nay": 53,
+          "nv": 0,
+          "absent": 0,
+          "total": 93,
+          "passed": false,
+          "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-30.pdf#Page712"
+        }
+      ],
+      "session_id": 2140,
+      "sponsorships": [
+        {
+          "people_id": 23701,
+          "name": "Matthew Heilman",
+          "first_name": "Matthew",
+          "last_name": "Heilman",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-007",
+          "type": "primary"
+        },
+        {
+          "people_id": 18477,
+          "name": "Daniel Johnston",
+          "first_name": "Daniel",
+          "last_name": "Johnston",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-024",
+          "type": "primary"
+        },
+        {
+          "people_id": 14243,
+          "name": "Nathan Toman",
+          "first_name": "Nathan",
+          "last_name": "Toman",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-034",
+          "type": "primary"
+        },
+        {
+          "people_id": 23803,
+          "name": "Lori VanWinkle",
+          "first_name": "Lori",
+          "last_name": "VanWinkle",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-003",
+          "type": "primary"
+        },
+        {
+          "people_id": 18417,
+          "name": "Jeffery Magrum",
+          "first_name": "Jeffery",
+          "last_name": "Magrum",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-008",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19952,
+          "name": "Bob Paulson",
+          "first_name": "Bob",
+          "last_name": "Paulson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-003",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 25697,
+          "name": "Desiree Van Oosting",
+          "first_name": "Desiree",
+          "last_name": "Van Oosting",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-036",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "ND-SB2217",
@@ -224821,7 +225485,7 @@
       "impact": "Medium",
       "summary": "Health care services: artificial intelligence.",
       "sponsor": "",
-      "lastAction": "Reconsideration granted. (Ayes 40. Noes 0.)",
+      "lastAction": "Read third time and amended. Ordered to second reading.",
       "lastActionDate": "2026-08-28",
       "actionCount": 0,
       "stoppedWithAction": false,
@@ -225115,27 +225779,6 @@
       "legiscan_bill_id": 1939232
     },
     {
-      "billId": "CA-SB1001",
-      "state": "CA",
-      "billNumber": "SB1001",
-      "title": "Local agency, public utility, or mutual water company: personnel access: Personal Identity Verification-Interoperable.",
-      "status": "In Committee",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Local agency, public utility, or mutual water company: personnel access: Personal Identity Verification-Interoperable.",
-      "sponsor": "",
-      "lastAction": "May 14 hearing: Held in committee and under submission.",
-      "lastActionDate": "2026-05-14",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB1001/2025",
-      "legiscan_bill_id": 2112396
-    },
-    {
       "billId": "CA-AB152",
       "state": "CA",
       "billNumber": "AB152",
@@ -225155,6 +225798,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB152/2025",
       "legiscan_bill_id": 1908137
+    },
+    {
+      "billId": "CA-SB1001",
+      "state": "CA",
+      "billNumber": "SB1001",
+      "title": "Local agency, public utility, or mutual water company: personnel access: Personal Identity Verification-Interoperable.",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Local agency, public utility, or mutual water company: personnel access: Personal Identity Verification-Interoperable.",
+      "sponsor": "",
+      "lastAction": "May 14 hearing: Held in committee and under submission.",
+      "lastActionDate": "2026-05-14",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB1001/2025",
+      "legiscan_bill_id": 2112396
     },
     {
       "billId": "CA-SB402",
