@@ -1,17 +1,17 @@
 {
   "summary": {
     "legislators": 7890,
-    "with_classified_activity": 3066,
-    "classified_bills": 287,
-    "classified_bills_with_sponsor_data": 280,
-    "pro_acts": 3531,
-    "anti_acts": 4317,
-    "sponsorships": 1626,
-    "primary": 388,
-    "cosponsor": 1238,
-    "votes": 6222,
-    "bills_with_sponsor_data": 279,
-    "bills_with_roll_calls": 63
+    "with_classified_activity": 3037,
+    "classified_bills": 284,
+    "classified_bills_with_sponsor_data": 277,
+    "pro_acts": 3516,
+    "anti_acts": 4290,
+    "sponsorships": 1622,
+    "primary": 385,
+    "cosponsor": 1237,
+    "votes": 6184,
+    "bills_with_sponsor_data": 276,
+    "bills_with_roll_calls": 62
   },
   "method": "Each row counts official acts on bills SAFE Action has classified as pro-science or anti-science: sponsorships and cosponsorships, plus recorded roll-call votes. A pro-science act is sponsoring a pro-science bill, voting Yea on one, or voting Nay on an anti-science bill. An anti-science act is the reverse. Each bill counts at most once per legislator as a vote: the vote on final passage when there is one, otherwise the most recent recorded vote on that bill, so procedural roll calls cannot inflate a count. Sponsoring and cosponsoring count the same; primary sponsorships are shown separately. Counts are unweighted and every count links to the bills and votes behind it. Classifications apply to bills and are published with the bill list. Every legislator in the database is counted the same way, in every year, regardless of party or seat. A zero means no tracked act matched, not that the legislator was reviewed and found neutral; coverage of sponsor and vote data is still growing and is shown above. An act that cannot be attributed to exactly one legislator is left out and logged for review, never guessed. Counts cover the 119th Congress and the 2025-2026 state sessions, including bills that have since died; each act's date is on the record page. Bill classifications come from a keyword pass plus an independent review by Claude Sonnet with a 0.70 confidence threshold; each bill's classification evidence is published with the bill. Legislators with the same count share a rank; order within a tie is alphabetical and carries no meaning. The scorecard is refreshed nightly from LegiScan, GovInfo, and Open States.",
   "legislators": [
@@ -36632,18 +36632,18 @@
           "primary": 0,
           "votes": 0
         },
-        "vaccine-mandate": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 1,
-          "primary": 0,
-          "votes": 0
-        },
         "vaccine-exemption": {
           "pro": 0,
           "anti": 1,
           "sponsored": 1,
           "primary": 1,
+          "votes": 0
+        },
+        "vaccine-mandate": {
+          "pro": 0,
+          "anti": 1,
+          "sponsored": 1,
+          "primary": 0,
           "votes": 0
         }
       }
@@ -40757,20 +40757,20 @@
       "office": "State House",
       "pro_sponsored": 0,
       "pro_primary": 0,
-      "anti_sponsored": 6,
+      "anti_sponsored": 5,
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 6,
-      "net": -6,
+      "anti_acts": 5,
+      "net": -5,
       "by_topic": {
         "vaccine-exemption": {
           "pro": 0,
-          "anti": 4,
-          "sponsored": 4,
+          "anti": 3,
+          "sponsored": 3,
           "primary": 0,
           "votes": 0
         },
@@ -58010,20 +58010,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "pa-state-house-parker-198",
@@ -60205,11 +60197,11 @@
       "anti_primary": 1,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 2,
-      "net": -2,
+      "anti_acts": 1,
+      "net": -1,
       "by_topic": {
         "public-health": {
           "pro": 0,
@@ -60217,13 +60209,6 @@
           "sponsored": 1,
           "primary": 1,
           "votes": 0
-        },
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
         }
       }
     },
@@ -60827,19 +60812,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "nh-state-house-smith-strafford-21",
@@ -62399,19 +62376,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 2,
+      "votes_for_anti": 1,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 2,
-      "net": -2,
+      "anti_acts": 1,
+      "net": -1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 0,
           "anti": 1,
@@ -62473,19 +62443,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 2,
+      "votes_for_anti": 1,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 2,
-      "net": -2,
+      "anti_acts": 1,
+      "net": -1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 0,
           "anti": 1,
@@ -62569,20 +62532,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "nh-state-house-jeudy-hillsborough-23",
@@ -67854,19 +67809,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "co-state-house-goldstein-29",
@@ -78493,18 +78440,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 2,
-      "pro_acts": 2,
+      "votes_against_anti": 1,
+      "pro_acts": 1,
       "anti_acts": 0,
-      "net": 2,
+      "net": 1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 1,
           "anti": 0,
@@ -79895,6 +79835,13 @@
       "anti_acts": 3,
       "net": -3,
       "by_topic": {
+        "informed-consent": {
+          "pro": 0,
+          "anti": 1,
+          "sponsored": 1,
+          "primary": 0,
+          "votes": 0
+        },
         "fluoride": {
           "pro": 0,
           "anti": 1,
@@ -79907,13 +79854,6 @@
           "anti": 1,
           "sponsored": 1,
           "primary": 1,
-          "votes": 0
-        },
-        "informed-consent": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 1,
-          "primary": 0,
           "votes": 0
         }
       }
@@ -80369,15 +80309,15 @@
       "office": "State Senate",
       "pro_sponsored": 0,
       "pro_primary": 0,
-      "anti_sponsored": 2,
-      "anti_primary": 1,
+      "anti_sponsored": 1,
+      "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 3,
-      "net": -3,
+      "anti_acts": 1,
+      "net": -1,
       "by_topic": {
         "public-health": {
           "pro": 0,
@@ -80385,13 +80325,6 @@
           "sponsored": 1,
           "primary": 0,
           "votes": 0
-        },
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 2,
-          "sponsored": 1,
-          "primary": 1,
-          "votes": 1
         }
       }
     },
@@ -80441,19 +80374,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "az-state-house-hernandez-21",
@@ -80843,19 +80768,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "vt-state-house-bosch-rutland-2",
@@ -81296,20 +81213,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "nd-state-senate-schaible-31",
@@ -81607,20 +81516,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "pa-state-house-neilson-174",
@@ -82404,20 +82305,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "tn-state-house-rudder-39",
@@ -83162,19 +83055,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 2,
+      "votes_for_anti": 1,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 2,
-      "net": -2,
+      "anti_acts": 1,
+      "net": -1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 0,
           "anti": 1,
@@ -83459,19 +83345,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 1,
       "pro_acts": 1,
-      "anti_acts": 1,
-      "net": 0,
+      "anti_acts": 0,
+      "net": 1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 1,
           "anti": 0,
@@ -84175,20 +84054,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ok-state-senate-wingard-13",
@@ -84627,21 +84498,21 @@
       "office": "State House",
       "pro_sponsored": 0,
       "pro_primary": 0,
-      "anti_sponsored": 3,
-      "anti_primary": 3,
+      "anti_sponsored": 2,
+      "anti_primary": 2,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 3,
-      "net": -3,
+      "anti_acts": 2,
+      "net": -2,
       "by_topic": {
         "vaccine-exemption": {
           "pro": 0,
-          "anti": 3,
-          "sponsored": 3,
-          "primary": 3,
+          "anti": 2,
+          "sponsored": 2,
+          "primary": 2,
           "votes": 0
         }
       }
@@ -84661,20 +84532,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "md-state-senate-hester-9",
@@ -87510,20 +87373,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ct-state-house-gauthier-38",
@@ -88217,20 +88072,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "co-state-house-keltie-16",
@@ -88738,19 +88585,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "pa-state-house-diamond-102",
@@ -89628,14 +89467,14 @@
       "anti_acts": 3,
       "net": -3,
       "by_topic": {
-        "vaccine-discrimination": {
+        "vaccine-exemption": {
           "pro": 0,
           "anti": 1,
           "sponsored": 1,
           "primary": 1,
           "votes": 0
         },
-        "vaccine-exemption": {
+        "vaccine-discrimination": {
           "pro": 0,
           "anti": 1,
           "sponsored": 1,
@@ -90863,20 +90702,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ok-state-house-hasenbeck-65",
@@ -90975,19 +90806,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "sd-state-house-ladner-30",
@@ -92211,19 +92034,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ri-state-senate-quezada-2",
@@ -93221,19 +93036,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "la-state-house-beaullieu-48",
@@ -94773,19 +94580,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ct-state-house-hall-59",
@@ -95567,18 +95366,18 @@
       "anti_acts": 2,
       "net": -2,
       "by_topic": {
-        "vaccine-injury": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 1,
-          "primary": 0,
-          "votes": 0
-        },
         "vaccine-mandate": {
           "pro": 0,
           "anti": 1,
           "sponsored": 1,
           "primary": 1,
+          "votes": 0
+        },
+        "vaccine-injury": {
+          "pro": 0,
+          "anti": 1,
+          "sponsored": 1,
+          "primary": 0,
           "votes": 0
         }
       }
@@ -96401,20 +96200,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "or-state-house-boice-1",
@@ -97785,19 +97576,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 1,
       "pro_acts": 1,
-      "anti_acts": 1,
-      "net": 0,
+      "anti_acts": 0,
+      "net": 1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 1,
           "anti": 0,
@@ -106373,18 +106157,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 1,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 1,
-      "net": 0,
+      "net": -1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 0,
           "anti": 1,
@@ -107699,18 +107476,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 1,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 1,
-      "net": 0,
+      "net": -1,
       "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        },
         "public-health": {
           "pro": 0,
           "anti": 1,
@@ -114305,19 +114075,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "la-state-house-broussard-37",
@@ -114446,20 +114208,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "hi-state-senate-chang-9",
@@ -115975,19 +115729,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "nd-state-senate-beard-23",
@@ -116241,20 +115987,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ia-state-house-moore-18",
@@ -116722,16 +116460,16 @@
       "anti_acts": 1,
       "net": 0,
       "by_topic": {
-        "fluoride": {
-          "pro": 1,
-          "anti": 0,
+        "vaccine-mandate": {
+          "pro": 0,
+          "anti": 1,
           "sponsored": 1,
           "primary": 1,
           "votes": 0
         },
-        "vaccine-mandate": {
-          "pro": 0,
-          "anti": 1,
+        "fluoride": {
+          "pro": 1,
+          "anti": 0,
           "sponsored": 1,
           "primary": 1,
           "votes": 0
@@ -119766,20 +119504,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "mn-state-house-davis-6a",
@@ -132524,20 +132254,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "nj-state-senate-lagana-38",
@@ -135332,20 +135054,12 @@
       "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
-      "votes_for_anti": 1,
+      "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "wa-state-senate-wagoner-39",
@@ -136127,19 +135841,11 @@
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
-      "votes_against_anti": 1,
-      "pro_acts": 1,
+      "votes_against_anti": 0,
+      "pro_acts": 0,
       "anti_acts": 0,
-      "net": 1,
-      "by_topic": {
-        "medical-freedom": {
-          "pro": 1,
-          "anti": 0,
-          "sponsored": 0,
-          "primary": 0,
-          "votes": 1
-        }
-      }
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "ok-state-senate-thompson-22",
@@ -144680,24 +144386,16 @@
       "office": "State House",
       "pro_sponsored": 0,
       "pro_primary": 0,
-      "anti_sponsored": 1,
-      "anti_primary": 1,
+      "anti_sponsored": 0,
+      "anti_primary": 0,
       "votes_for_pro": 0,
       "votes_against_pro": 0,
       "votes_for_anti": 0,
       "votes_against_anti": 0,
       "pro_acts": 0,
-      "anti_acts": 1,
-      "net": -1,
-      "by_topic": {
-        "vaccine-exemption": {
-          "pro": 0,
-          "anti": 1,
-          "sponsored": 1,
-          "primary": 1,
-          "votes": 0
-        }
-      }
+      "anti_acts": 0,
+      "net": 0,
+      "by_topic": {}
     },
     {
       "slug": "mi-state-senate-singh-28",
@@ -212460,5 +212158,5 @@
       "by_topic": {}
     }
   ],
-  "generated_at": "2026-08-30T11:22:29.567223+00:00"
+  "generated_at": "2026-08-31T12:51:56.896178+00:00"
 }
