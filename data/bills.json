@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-31T12:51:56.896178+00:00",
+  "generated_at": "2026-09-01T11:11:57.933346+00:00",
   "source": "govinfo+legiscan",
-  "total": 9527,
+  "total": 9541,
   "bills": [
     {
       "billId": "US-119-HR120",
@@ -11810,6 +11810,28 @@
           "district": "1",
           "chamber": "House",
           "type": "cosponsor"
+        },
+        {
+          "bioguide_id": "W000788",
+          "name": "Rep. Williams, Nikema [D-GA-5]",
+          "first_name": "Nikema",
+          "last_name": "Williams",
+          "party": "D",
+          "state": "GA",
+          "district": "5",
+          "chamber": "House",
+          "type": "cosponsor"
+        },
+        {
+          "bioguide_id": "D000530",
+          "name": "Rep. Deluzio, Christopher R. [D-PA-17]",
+          "first_name": "Christopher",
+          "last_name": "Deluzio",
+          "party": "D",
+          "state": "PA",
+          "district": "17",
+          "chamber": "House",
+          "type": "cosponsor"
         }
       ],
       "subjects": [],
@@ -14951,11 +14973,6 @@
       "impact": "Medium",
       "summary": "Influenza vaccination; to require private health insurance and the Alabama Medicaid program to pay or reimburse for influenza shots",
       "sponsor": "Bobby Singleton (D)",
-      "lastAction": "Pending Senate Banking and Insurance",
-      "lastActionDate": "2026-02-10",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/AL/bill/SB278/2026",
       "sponsorships": [
         {
           "people_id": 3482,
@@ -14968,6 +14985,14 @@
           "type": "primary"
         }
       ],
+      "rollCalls": [],
+      "session_id": 2218,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/AL/bill/SB278/2026",
+      "legiscan_bill_id": 2113378,
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -14981,8 +15006,7 @@
         "status": "llm_upgrade",
         "second_pass": "Requires private insurance and Medicaid to pay for influenza vaccination, funding immunization access.",
         "original_billType": "monitor"
-      },
-      "session_id": 2218
+      }
     },
     {
       "billId": "AK-HB279",
@@ -14996,13 +15020,8 @@
       "category": "vaccine-mandate",
       "level": "State",
       "impact": "Medium",
-      "summary": "Vaccination Requirements; Information",
+      "summary": "An Act relating to the power of the commissioner of health to require certain immunizations; relating to immunizations required to participate in youth athletics; relating to immunizations required by the University of Alaska; relating to the provision of vaccine information to the parents of minor ",
       "sponsor": "Rebecca Schwanke (R)",
-      "lastAction": "REFERRED TO HEALTH & SOCIAL SERVICES",
-      "lastActionDate": "2026-01-23",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/AK/bill/HB279/2025",
       "sponsorships": [
         {
           "people_id": 26353,
@@ -15015,6 +15034,14 @@
           "type": "primary"
         }
       ],
+      "rollCalls": [],
+      "session_id": 2171,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/AK/bill/HB279/2025",
+      "legiscan_bill_id": 2091976,
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -15028,28 +15055,22 @@
         "verified_at": "2026-08-22T00:39:28.270414+00:00",
         "status": "monitor_confirmed",
         "second_pass": ""
-      },
-      "session_id": 2171
+      }
     },
     {
       "billId": "AZ-HB2086",
       "state": "AZ",
       "billNumber": "HB2086",
       "title": "Vaccination mandates; masks; prohibition",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Vetoed",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Vaccination mandates; masks; prohibition",
       "sponsor": "Khyl Powell (R)",
-      "lastAction": "Governor Vetoed",
-      "lastActionDate": "2026-06-19",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/AZ/bill/HB2086/2026",
       "sponsorships": [
         {
           "people_id": 25445,
@@ -15204,27 +15225,28 @@
           "sourceUrl": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83702&billStatusActionId=246022&includeVotes=true"
         }
       ],
-      "session_id": 2235
+      "session_id": 2235,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/AZ/bill/HB2086/2026",
+      "legiscan_bill_id": 2060761
     },
     {
       "billId": "CA-SB602",
       "state": "CA",
       "billNumber": "SB602",
       "title": "Veterinarians: veterinarian-client-patient relationship.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Veterinarians: veterinarian-client-patient relationship.",
+      "impact": "High",
+      "summary": "An act to amend Section 4826.7 of the Business and Professions Code, relating to veterinary medicine.",
       "sponsor": "Dave Cortese (D)",
-      "lastAction": "Chaptered by Secretary of State. Chapter 589, Statutes of 2025.",
-      "lastActionDate": "2025-10-10",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB602/2025",
       "sponsorships": [
         {
           "people_id": 21725,
@@ -15323,27 +15345,28 @@
           "sourceUrl": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB602"
         }
       ],
-      "session_id": 2172
+      "session_id": 2172,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB602/2025",
+      "legiscan_bill_id": 1978835
     },
     {
       "billId": "CO-SB032",
       "state": "CO",
       "billNumber": "SB032",
       "title": "Promoting Immunization Access",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Promoting Immunization Access",
+      "impact": "High",
+      "summary": "Concerning the promotion of immunization access.",
       "sponsor": "Lindsey Daugherty (D)",
-      "lastAction": "House Third Reading Passed with Amendments - Floor",
-      "lastActionDate": "2026-03-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CO/bill/SB032/2026",
       "sponsorships": [
         {
           "people_id": 22223,
@@ -16034,27 +16057,28 @@
           "sourceUrl": "https://leg.colorado.gov/bill_votes/28726"
         }
       ],
-      "session_id": 2243
+      "session_id": 2243,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CO/bill/SB032/2026",
+      "legiscan_bill_id": 2093866
     },
     {
       "billId": "CT-HB05044",
       "state": "CT",
       "billNumber": "HB05044",
       "title": "An Act Establishing Connecticut Vaccine Standards.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "An Act Establishing Connecticut Vaccine Standards.",
+      "impact": "High",
+      "summary": "To implement the Governor's budget recommendations.",
       "sponsor": "Martha Marx",
-      "lastAction": "Transmitted by Secretary of the State to Governor",
-      "lastActionDate": "2026-05-04",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CT/bill/HB05044/2026",
       "sponsorships": [
         {
           "people_id": 23572,
@@ -16295,7 +16319,13 @@
           "sourceUrl": "https://www.cga.ct.gov/2026/VOTE/S/PDF/2026SV-00154-R00HB05044-SV.PDF"
         }
       ],
-      "session_id": 2244
+      "session_id": 2244,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CT/bill/HB05044/2026",
+      "legiscan_bill_id": 2107910
     },
     {
       "billId": "DE-HB422",
@@ -16308,14 +16338,9 @@
       "stance": "Oppose",
       "category": "informed-consent",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "An Act To Amend Title 16 Of The Delaware Code Relating To Enhanced Informed Consent For Infant Vaccinations And Documentation In Sudden Unexpected Infant Death Investigations.",
       "sponsor": "Jeff Hilovsky (R)",
-      "lastAction": "Adopted in lieu of the original bill HB 422, and Assigned to Health & Human Development Committee in House",
-      "lastActionDate": "2026-06-16",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/DE/bill/HB422/2025",
       "sponsorships": [
         {
           "people_id": 23364,
@@ -16388,27 +16413,29 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2163
+      "rollCalls": [],
+      "session_id": 2163,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/DE/bill/HB422/2025",
+      "legiscan_bill_id": 2151204
     },
     {
       "billId": "FL-S1756",
       "state": "FL",
       "billNumber": "S1756",
       "title": "Medical Freedom",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
+      "status": "Signed into Law",
+      "isActive": "No",
+      "billType": "anti",
+      "stance": "Oppose",
       "category": "medical-freedom",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Medical Freedom",
+      "impact": "High",
+      "summary": "Citing this act as the \"Medical Freedom Act\"; repealing a provison relating to the future repeal of the definition of the term \"messenger ribonucleic acid vaccine\"; prohibiting a vaccine manufacturer from offering or paying, and a health care practitioner from receiving, specified financial incentiv",
       "sponsor": "Rules",
-      "lastAction": "Died in Messages",
-      "lastActionDate": "2026-03-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/FL/bill/S1756/2026",
       "sponsorships": [
         {
           "people_id": 19070,
@@ -16479,7 +16506,13 @@
           "sourceUrl": "https://www.flsenate.gov/Session/Bill/2026/1756/Vote/SenateVote_s01756e1004.PDF"
         }
       ],
-      "session_id": 2220
+      "session_id": 2220,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/FL/bill/S1756/2026",
+      "legiscan_bill_id": 2071719
     },
     {
       "billId": "GA-HR1476",
@@ -16493,13 +16526,8 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "National Immunization Awareness Month; August; recognize",
+      "summary": "A RESOLUTION recognizing August as National Immunization Awareness Month; and for other purposes.",
       "sponsor": "Sharon Cooper (R)",
-      "lastAction": "House Second Readers",
-      "lastActionDate": "2026-03-03",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/GA/bill/HR1476/2025",
       "sponsorships": [
         {
           "people_id": 1813,
@@ -16542,7 +16570,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2167
+      "rollCalls": [],
+      "session_id": 2167,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/GA/bill/HR1476/2025",
+      "legiscan_bill_id": 2124858
     },
     {
       "billId": "HI-HB2166",
@@ -16551,18 +16586,13 @@
       "title": "Relating To Immunizations.",
       "status": "Introduced",
       "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
+      "billType": "anti",
+      "stance": "Oppose",
+      "category": "vaccine-exemption",
       "level": "State",
       "impact": "Medium",
-      "summary": "Relating To Immunizations.",
+      "summary": "Requires, rather than authorizes, schools to provide an exemption from required immunizations. Specifies that for purposes of the Department of Health's rulemaking authority and authority regarding infectious and communicable diseases, no child shall be subjected to medical examination, vaccination,",
       "sponsor": "Sam Kong (D)",
-      "lastAction": "Referred to HLT, EDN, JHA, referral sheet 5",
-      "lastActionDate": "2026-01-30",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/HI/bill/HB2166/2026",
       "sponsorships": [
         {
           "people_id": 17297,
@@ -16575,27 +16605,29 @@
           "type": "primary"
         }
       ],
-      "session_id": 2245
+      "rollCalls": [],
+      "session_id": 2245,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/HI/bill/HB2166/2026",
+      "legiscan_bill_id": 2093791
     },
     {
       "billId": "ID-S1401",
       "state": "ID",
       "billNumber": "S1401",
       "title": "Relates to the appropriation to the Department of Health and Welfare for fiscal year 2027.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Relates to the appropriation to the Department of Health and Welfare for fiscal year 2027.",
+      "impact": "High",
+      "summary": "APPROPRIATIONS -- HEALTH AND WELFARE -- PUBLIC HEALTH SERVICES -- Relates to the appropriation to the Department of Health and Welfare for fiscal year 2027.",
       "sponsor": "Finance Committee",
-      "lastAction": "Returned from House Failed; to Secretary of Senate",
-      "lastActionDate": "2026-03-31",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/ID/bill/S1401/2026",
       "sponsorships": [
         {
           "people_id": 22668,
@@ -16648,27 +16680,28 @@
           "sourceUrl": "https://legislature.idaho.gov/sessioninfo/2026/legislation/S1401/"
         }
       ],
-      "session_id": 2246
+      "session_id": 2246,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/ID/bill/S1401/2026",
+      "legiscan_bill_id": 2135635
     },
     {
       "billId": "IL-HB5411",
       "state": "IL",
       "billNumber": "HB5411",
       "title": "RABIES VACCINES IN SHELTERS",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
-      "category": "public-health",
+      "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "RABIES VACCINES IN SHELTERS",
+      "impact": "High",
+      "summary": "Amends the Veterinary Medicine and Surgery Practice Act of 2004. Provides that a certified veterinary technician who has completed the required 2-hour rabies vaccination continuing education course may administer rabies vaccinations only under the direct supervision of a licensed veterinarian, and o",
       "sponsor": "Kelly Cassidy (D)",
-      "lastAction": "Public Act . . . . . . . . . 104-0522",
-      "lastActionDate": "2026-06-26",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/IL/bill/HB5411/2025",
       "sponsorships": [
         {
           "people_id": 13122,
@@ -16731,19 +16764,6 @@
           "type": "primary"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "monitor",
-        "confidence": 0.65,
-        "evidence": [
-          "certified veterinary technician who has completed the required 2-hour rabies vaccination continuing education course may administer rabies vaccinations"
-        ],
-        "explanation": "Routine veterinary occupational-licensing bill on who may administer animal rabies vaccines, not human vaccination policy.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "monitor_confirmed",
-        "second_pass": ""
-      },
       "rollCalls": [
         {
           "key": "LS-1719232",
@@ -16802,7 +16822,26 @@
           "sourceUrl": "https://www.ilga.gov/Documents/legislation/votehistory/104/house/10400HB5411_04172026_005000T.pdf"
         }
       ],
-      "session_id": 2176
+      "session_id": 2176,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/IL/bill/HB5411/2025",
+      "legiscan_bill_id": 2110495,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "monitor",
+        "confidence": 0.65,
+        "evidence": [
+          "certified veterinary technician who has completed the required 2-hour rabies vaccination continuing education course may administer rabies vaccinations"
+        ],
+        "explanation": "Routine veterinary occupational-licensing bill on who may administer animal rabies vaccines, not human vaccination policy.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "monitor_confirmed",
+        "second_pass": ""
+      }
     },
     {
       "billId": "IN-HB1224",
@@ -16813,16 +16852,11 @@
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
-      "category": "vaccine-injury",
+      "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Indiana vaccination adverse event reporting system.",
+      "impact": "High",
+      "summary": "Indiana vaccination adverse event reporting system. Requires the Indiana department of health (department) to establish an Indiana vaccination adverse event reporting system (IVAERS) for reporting the occurrence of adverse events relating to childhood vaccines. Provides that IVAERS must enable a hea",
       "sponsor": "Bruce Borders (R)",
-      "lastAction": "First reading: referred to Committee on Public Health",
-      "lastActionDate": "2026-01-05",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/IN/bill/HB1224/2026",
       "sponsorships": [
         {
           "people_id": 5576,
@@ -16835,6 +16869,14 @@
           "type": "primary"
         }
       ],
+      "rollCalls": [],
+      "session_id": 2234,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/IN/bill/HB1224/2026",
+      "legiscan_bill_id": 2065052,
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -16847,8 +16889,7 @@
         "verified_at": "2026-08-22T00:39:28.270414+00:00",
         "status": "monitor_confirmed",
         "second_pass": ""
-      },
-      "session_id": 2234
+      }
     },
     {
       "billId": "IA-SF2154",
@@ -16864,11 +16905,6 @@
       "impact": "Medium",
       "summary": "A bill for an act relating to the distribution of gene-based vaccines and providing penalties.",
       "sponsor": "Doug Campbell (R)",
-      "lastAction": "Subcommittee: Sweeney, Petersen, and Webster. S.J. 199.",
-      "lastActionDate": "2026-02-04",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/IA/bill/SF2154/2025",
       "sponsorships": [
         {
           "people_id": 26319,
@@ -16881,7 +16917,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2177
+      "rollCalls": [],
+      "session_id": 2177,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/IA/bill/SF2154/2025",
+      "legiscan_bill_id": 2101917
     },
     {
       "billId": "KS-HB2369",
@@ -16896,33 +16939,31 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Allowing pharmacists to administer certain vaccines to children and adults pursuant to a vaccination protocol.",
-      "sponsor": "",
-      "lastAction": "House Withdrawn from Committee on Health and Human Services; Rereferred to Committee on Insurance",
-      "lastActionDate": "2026-04-09",
+      "sponsor": "Health and Human Services",
+      "sponsorships": [],
+      "rollCalls": [],
+      "session_id": 2178,
+      "lastAction": "",
+      "lastActionDate": "",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/KS/bill/HB2369/2025",
-      "session_id": 2178
+      "legiscan_bill_id": 1962015
     },
     {
       "billId": "KY-HB212",
       "state": "KY",
       "billNumber": "HB212",
       "title": "AN ACT relating to rabies vaccinations.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
-      "category": "public-health",
+      "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "AN ACT relating to rabies vaccinations.",
+      "impact": "High",
+      "summary": "Amend KRS 258.005 to define \"veterinarian\" and \"veterinary technician\"; amend KRS 258.015 to authorize a Kentucky-licensed veterinary technician to vaccinate a dog, cat, or ferret against rabies; require that a Kentucky-licensed veterinary technician authorized to vaccinate a dog, cat, or ferret aga",
       "sponsor": "Susan Tyler Witten (R)",
-      "lastAction": "signed by Governor (Acts Ch. 104)",
-      "lastActionDate": "2026-04-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/KY/bill/HB212/2026",
       "sponsorships": [
         {
           "people_id": 23699,
@@ -16965,19 +17006,6 @@
           "type": "cosponsor"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "monitor",
-        "confidence": 0.65,
-        "evidence": [
-          "authorize a Kentucky-licensed veterinary technician to vaccinate a dog, cat, or ferret against rabies"
-        ],
-        "explanation": "Veterinary licensing bill expanding who may administer animal rabies vaccines, routine and not human vaccine policy.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "monitor_confirmed",
-        "second_pass": ""
-      },
       "rollCalls": [
         {
           "key": "LS-1625566",
@@ -17008,27 +17036,41 @@
           "sourceUrl": "https://apps.legislature.ky.gov/record/26RS/hb212/vote_history.pdf"
         }
       ],
-      "session_id": 2247
+      "session_id": 2247,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/KY/bill/HB212/2026",
+      "legiscan_bill_id": 2067769,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "monitor",
+        "confidence": 0.65,
+        "evidence": [
+          "authorize a Kentucky-licensed veterinary technician to vaccinate a dog, cat, or ferret against rabies"
+        ],
+        "explanation": "Veterinary licensing bill expanding who may administer animal rabies vaccines, routine and not human vaccine policy.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "monitor_confirmed",
+        "second_pass": ""
+      }
     },
     {
       "billId": "LA-SCR37",
       "state": "LA",
       "billNumber": "SCR37",
       "title": "Requests the surgeon general to develop a plan relative to informed consent.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "informed-consent",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Requests the surgeon general to develop a plan relative to informed consent.",
       "sponsor": "Michael Fesi (R)",
-      "lastAction": "Sent to the Secretary of State by the Secretary of the Senate on 6/2/2026.",
-      "lastActionDate": "2026-06-01",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/LA/bill/SCR37/2026",
       "sponsorships": [
         {
           "people_id": 21586,
@@ -17041,19 +17083,6 @@
           "type": "primary"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "monitor",
-        "confidence": 0.7,
-        "evidence": [
-          "Requests the surgeon general to develop a plan relative to informed consent"
-        ],
-        "explanation": "Vague resolution requesting a plan with no stated direction on vaccine policy.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "monitor_confirmed",
-        "second_pass": ""
-      },
       "rollCalls": [
         {
           "key": "LS-1691574",
@@ -17084,27 +17113,41 @@
           "sourceUrl": "https://www.legis.la.gov/Legis/ViewDocument.aspx?d=1477872"
         }
       ],
-      "session_id": 2248
+      "session_id": 2248,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/LA/bill/SCR37/2026",
+      "legiscan_bill_id": 2144140,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "monitor",
+        "confidence": 0.7,
+        "evidence": [
+          "Requests the surgeon general to develop a plan relative to informed consent"
+        ],
+        "explanation": "Vague resolution requesting a plan with no stated direction on vaccine policy.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "monitor_confirmed",
+        "second_pass": ""
+      }
     },
     {
       "billId": "ME-LD528",
       "state": "ME",
       "billNumber": "LD528",
       "title": "An Act to Address the Rise in Rabies in Animals by Appointing Certified Rabies Vaccine Administrators",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "An Act to Address the Rise in Rabies in Animals by Appointing Certified Rabies Vaccine Administrators",
       "sponsor": "Victoria Doudera (D)",
-      "lastAction": "PASSED TO BE ENACTED, in concurrence.",
-      "lastActionDate": "2025-05-27",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/ME/bill/LD528/2025",
       "sponsorships": [
         {
           "people_id": 21203,
@@ -17187,27 +17230,29 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2181
+      "rollCalls": [],
+      "session_id": 2181,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/ME/bill/LD528/2025",
+      "legiscan_bill_id": 1963387
     },
     {
       "billId": "MD-HB1135",
       "state": "MD",
       "billNumber": "HB1135",
       "title": "Health Occupations - Pharmacists - Vaccination Orders",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Health Occupations - Pharmacists - Vaccination Orders",
+      "impact": "High",
+      "summary": "Authorizing a pharmacist to order certain vaccinations for individuals who are at least 3 years old without having to also administer the vaccination.",
       "sponsor": "Lesley Lopez (D)",
-      "lastAction": "Approved by the Governor - Chapter 270",
-      "lastActionDate": "2026-04-28",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MD/bill/HB1135/2026",
       "sponsorships": [
         {
           "people_id": 20793,
@@ -17434,7 +17479,13 @@
           "sourceUrl": "https://mgaleg.maryland.gov/2026RS/votes/House/1278.pdf"
         }
       ],
-      "session_id": 2240
+      "session_id": 2240,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MD/bill/HB1135/2026",
+      "legiscan_bill_id": 2113955
     },
     {
       "billId": "MA-H3072",
@@ -17448,13 +17499,8 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "For an enabling authority - Vaccination Tax Credit",
+      "summary": "Relative to providing certain individuals with a vaccination tax credit. Revenue.",
       "sponsor": "Michael Day (D)",
-      "lastAction": "Accompanied a study order, see H5318",
-      "lastActionDate": "2026-04-02",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H3072/2025",
       "sponsorships": [
         {
           "people_id": 17656,
@@ -17467,7 +17513,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2182
+      "rollCalls": [],
+      "session_id": 2182,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H3072/2025",
+      "legiscan_bill_id": 2001480
     },
     {
       "billId": "MA-H3070",
@@ -17481,13 +17534,8 @@
       "category": "public-health",
       "level": "State",
       "impact": "Medium",
-      "summary": "For a COVID-19 vaccination tax credit",
+      "summary": "Relative to a COVID-19 vaccination tax credit. Revenue.",
       "sponsor": "Michael Day (D)",
-      "lastAction": "Accompanied a study order, see H5309",
-      "lastActionDate": "2026-04-02",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MA/bill/H3070/2025",
       "sponsorships": [
         {
           "people_id": 17656,
@@ -17500,7 +17548,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2182
+      "rollCalls": [],
+      "session_id": 2182,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MA/bill/H3070/2025",
+      "legiscan_bill_id": 2001611
     },
     {
       "billId": "MI-HB4475",
@@ -17513,14 +17568,9 @@
       "stance": "Oppose",
       "category": "vaccine-discrimination",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Civil rights: employment discrimination; discrimination based on certain vaccination status; prohibit. Amends title of 1976 PA 453 (MCL 37.2101 - 37.2804) & adds art. 5A.",
       "sponsor": "James DeSana (R)",
-      "lastAction": "Bill Electronically Reproduced 05/08/2025",
-      "lastActionDate": "2025-05-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MI/bill/HB4475/2025",
       "sponsorships": [
         {
           "people_id": 24366,
@@ -17883,7 +17933,14 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2183
+      "rollCalls": [],
+      "session_id": 2183,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MI/bill/HB4475/2025",
+      "legiscan_bill_id": 2029667
     },
     {
       "billId": "MN-SF694",
@@ -17899,11 +17956,6 @@
       "impact": "Medium",
       "summary": "Vaccine recipient bill of rights establishment",
       "sponsor": "Glenn Gruenhagen (R)",
-      "lastAction": "Referred to Health and Human Services",
-      "lastActionDate": "2025-01-27",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MN/bill/SF694/2025",
       "sponsorships": [
         {
           "people_id": 10522,
@@ -17916,7 +17968,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2151
+      "rollCalls": [],
+      "session_id": 2151,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MN/bill/SF694/2025",
+      "legiscan_bill_id": 1941436
     },
     {
       "billId": "MN-HF92",
@@ -17932,11 +17991,6 @@
       "impact": "Medium",
       "summary": "Vaccine recipient bill of rights established.",
       "sponsor": "Dawn Gillman (R)",
-      "lastAction": "Author added Knudsen",
-      "lastActionDate": "2025-02-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MN/bill/HF92/2025",
       "sponsorships": [
         {
           "people_id": 23679,
@@ -17959,27 +18013,29 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2151
+      "rollCalls": [],
+      "session_id": 2151,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MN/bill/HF92/2025",
+      "legiscan_bill_id": 1935073
     },
     {
       "billId": "MS-HB747",
       "state": "MS",
       "billNumber": "HB747",
       "title": "Immunization/vaccination requirements by governmental entities; prohibit if not recommended by the CDC.",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Immunization/vaccination requirements by governmental entities; prohibit if not recommended by the CDC.",
+      "impact": "High",
+      "summary": "An Act To Prohibit State Agencies, Public Officials, State Institution Of Higher Learning, Public Community Colleges, Counties, Municipalities, School Districts And Other Political Subdivisions Of The State From Requiring Children, Adolescents Or Adults To Receive Any Vaccination Or Immunization Tha",
       "sponsor": "William Arnold (R)",
-      "lastAction": "Died In Committee",
-      "lastActionDate": "2026-02-03",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MS/bill/HB747/2026",
       "sponsorships": [
         {
           "people_id": 13679,
@@ -17992,6 +18048,14 @@
           "type": "primary"
         }
       ],
+      "rollCalls": [],
+      "session_id": 2249,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MS/bill/HB747/2026",
+      "legiscan_bill_id": 2083929,
       "verification": {
         "provider": "claude-sonnet via Claude Code",
         "model": "claude-sonnet",
@@ -18006,8 +18070,7 @@
         "status": "llm_upgrade",
         "second_pass": "Prohibits government entities from requiring any vaccine not recommended by the CDC, narrowing state and local mandate authority to only federally recommended vaccines.",
         "original_billType": "monitor"
-      },
-      "session_id": 2249
+      }
     },
     {
       "billId": "MO-HB1976",
@@ -18023,11 +18086,6 @@
       "impact": "Medium",
       "summary": "Modifies provisions relating to the ordering and administration of vaccines by pharmacists",
       "sponsor": "Bennie Cook (R)",
-      "lastAction": "Referred: Emerging Issues(H)",
-      "lastActionDate": "2026-05-15",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MO/bill/HB1976/2026",
       "sponsorships": [
         {
           "people_id": 22390,
@@ -18040,27 +18098,29 @@
           "type": "primary"
         }
       ],
-      "session_id": 2239
+      "rollCalls": [],
+      "session_id": 2239,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MO/bill/HB1976/2026",
+      "legiscan_bill_id": 2054996
     },
     {
       "billId": "MT-SB285",
       "state": "MT",
       "billNumber": "SB285",
       "title": "Generally revise child care administrative rules",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Generally revise child care administrative rules",
       "sponsor": "Dennis Lenz (R)",
-      "lastAction": "(S) Died in Process",
-      "lastActionDate": "2025-05-23",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/MT/bill/SB285/2025",
       "sponsorships": [
         {
           "people_id": 14338,
@@ -18117,27 +18177,28 @@
           "sourceUrl": "https://bills.legmt.gov/#/laws/bill/2/LC0464?open_tab=status#52052"
         }
       ],
-      "session_id": 2159
+      "session_id": 2159,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/MT/bill/SB285/2025",
+      "legiscan_bill_id": 1962515
     },
     {
       "billId": "NE-LB455",
       "state": "NE",
       "billNumber": "LB455",
       "title": "Change provisions of the Nebraska Workers' Compensation Act relating to injury reports and workers' compensation insurance policies and deductibles",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Change provisions of the Nebraska Workers' Compensation Act relating to injury reports and workers' compensation insurance policies and deductibles",
       "sponsor": "Robert Hallstrom (N)",
-      "lastAction": "Provisions/portions of LB1077 amended into LB455 by AM2401",
-      "lastActionDate": "2026-04-17",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NE/bill/LB455/2025",
       "sponsorships": [
         {
           "people_id": 26038,
@@ -18236,27 +18297,29 @@
           "sourceUrl": "https://nebraskalegislature.gov/bills/view_votes.php?KeyID=14203"
         }
       ],
-      "session_id": 2185
+      "session_id": 2185,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NE/bill/LB455/2025",
+      "legiscan_bill_id": 1930826
     },
     {
       "billId": "NV-AB487",
       "state": "NV",
       "billNumber": "AB487",
       "title": "Directs the Joint Interim Standing Committee on Natural Resources to conduct a study during the 2025-2026 interim concerning the sale of cats and dogs by retail pet stores in this State. (BDR S-1096)",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Directs the Joint Interim Standing Committee on Natural Resources to conduct a study during the 2025-2026 interim concerning the sale of cats and dogs by retail pet stores in this State. (BDR S-1096)",
-      "sponsor": "",
-      "lastAction": "(No further action taken.)",
-      "lastActionDate": "2025-06-03",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NV/bill/AB487/2025",
+      "impact": "High",
+      "summary": "AN ACT relating to animals; directing the Joint Interim Standing Committee on Natural Resources to conduct a study during the 2025-2026 interim concerning the sale of cats and dogs by retail pet stores in this State; and providing other matters properly relating thereto.",
+      "sponsor": "Natural Resources",
+      "sponsorships": [],
       "rollCalls": [
         {
           "key": "LS-1552805",
@@ -18287,27 +18350,28 @@
           "sourceUrl": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/GetBillVoteMembers?voteKey=13004&voteResultPanel=All"
         }
       ],
-      "session_id": 2144
+      "session_id": 2144,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NV/bill/AB487/2025",
+      "legiscan_bill_id": 2013428
     },
     {
       "billId": "NH-HB1407",
       "state": "NH",
       "billNumber": "HB1407",
       "title": "Enabling veterinary technicians to provide rabies vaccinations while indirectly supervised by a veterinarian.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Enabling veterinary technicians to provide rabies vaccinations while indirectly supervised by a veterinarian.",
       "sponsor": "Patrick Long (D)",
-      "lastAction": "Conference Committee Report; Not Signed Off; Senate Journal 14",
-      "lastActionDate": "2026-06-02",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NH/bill/HB1407/2026",
       "sponsorships": [
         {
           "people_id": 25571,
@@ -18320,7 +18384,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2236
+      "rollCalls": [],
+      "session_id": 2236,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NH/bill/HB1407/2026",
+      "legiscan_bill_id": 2056426
     },
     {
       "billId": "NJ-A2630",
@@ -18336,11 +18407,6 @@
       "impact": "Medium",
       "summary": "\"Informed Consent for Vaccination Act\"; revises requirements for administration of vaccines to patients.",
       "sponsor": "Christopher DePhillips (R)",
-      "lastAction": "Introduced, Referred to Assembly Health Committee",
-      "lastActionDate": "2026-01-13",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NJ/bill/A2630/2026",
       "sponsorships": [
         {
           "people_id": 19521,
@@ -18353,27 +18419,29 @@
           "type": "primary"
         }
       ],
-      "session_id": 2250
+      "rollCalls": [],
+      "session_id": 2250,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NJ/bill/A2630/2026",
+      "legiscan_bill_id": 2096266
     },
     {
       "billId": "NM-HB156",
       "state": "NM",
       "billNumber": "HB156",
       "title": "Repeal Special Session Vaccination Laws",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Repeal Special Session Vaccination Laws",
       "sponsor": "Dayan Hochman-Vigil (D)",
-      "lastAction": "Signed by Governor - Chapter 42 - Mar. 6",
-      "lastActionDate": "2026-03-06",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NM/bill/HB156/2026",
       "sponsorships": [
         {
           "people_id": 20922,
@@ -18426,27 +18494,28 @@
           "sourceUrl": "https://www.nmlegis.gov/Sessions/26%20Regular/votes/HB0156SVOTE.pdf"
         }
       ],
-      "session_id": 2251
+      "session_id": 2251,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NM/bill/HB156/2026",
+      "legiscan_bill_id": 2093670
     },
     {
       "billId": "NY-J01608",
       "state": "NY",
       "billNumber": "J01608",
       "title": "Memorializing Governor Kathy Hochul to proclaim June 2026, as Meningitis B Awareness Month in the State of New York",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Memorializing Governor Kathy Hochul to proclaim June 2026, as Meningitis B Awareness Month in the State of New York",
       "sponsor": "Gustavo Rivera (D)",
-      "lastAction": "ADOPTED",
-      "lastActionDate": "2026-02-25",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NY/bill/J01608/2025",
       "sponsorships": [
         {
           "people_id": 11116,
@@ -18459,7 +18528,14 @@
           "type": "primary"
         }
       ],
-      "session_id": 2188
+      "rollCalls": [],
+      "session_id": 2188,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NY/bill/J01608/2025",
+      "legiscan_bill_id": 2119095
     },
     {
       "billId": "NC-H803",
@@ -18472,14 +18548,9 @@
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "3-Year FDA Approval for New Childhood Vaxx",
       "sponsor": "Hugh Blackwell (R)",
-      "lastAction": "Ref to the Com on Health, if favorable, Education - K-12, if favorable, Rules, Calendar, and Operations of the House",
-      "lastActionDate": "2025-04-08",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/NC/bill/H803/2025",
       "sponsorships": [
         {
           "people_id": 2031,
@@ -18542,7 +18613,14 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2189
+      "rollCalls": [],
+      "session_id": 2189,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/NC/bill/H803/2025",
+      "legiscan_bill_id": 2021027
     },
     {
       "billId": "ND-HB1519",
@@ -18555,14 +18633,9 @@
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Death and vaccination records.",
+      "impact": "High",
+      "summary": "A BILL for an Act to create and enact a new section to chapter 23-02.1 of the North Dakota Century Code, relating to death and vaccination records.",
       "sponsor": "Karen Rohr (R)",
-      "lastAction": "Second reading, failed to pass, yeas 33 nays 54",
-      "lastActionDate": "2025-02-20",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/ND/bill/HB1519/2025",
       "sponsorships": [
         {
           "people_id": 10895,
@@ -18691,27 +18764,28 @@
           "sourceUrl": "https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-31.pdf#Page736"
         }
       ],
-      "session_id": 2140
+      "session_id": 2140,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/ND/bill/HB1519/2025",
+      "legiscan_bill_id": 1930238
     },
     {
       "billId": "OH-HB664",
       "state": "OH",
       "billNumber": "HB664",
       "title": "Regards registered veterinary technician authority",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Regards registered veterinary technician authority",
+      "impact": "High",
+      "summary": "To amend section 4741.19 and to enact section 4741.191 of the Revised Code to establish procedures that allow a registered veterinary technician to establish an assess and treat relationship on behalf of a veterinarian to dispense and administer vaccines and antiparasitic medication to a shelter dog",
       "sponsor": "Tex Fischer (R)",
-      "lastAction": "Introduced",
-      "lastActionDate": "2026-06-11",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/OH/bill/HB664/2025",
       "sponsorships": [
         {
           "people_id": 25208,
@@ -18954,7 +19028,13 @@
           "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb664/votes"
         }
       ],
-      "session_id": 2190
+      "session_id": 2190,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/OH/bill/HB664/2025",
+      "legiscan_bill_id": 2101841
     },
     {
       "billId": "OK-SB14",
@@ -18970,11 +19050,6 @@
       "impact": "Medium",
       "summary": "Vaccinations and immunizations; requiring a certification of disclosure exemption be provided. Emergency.",
       "sponsor": "David Bullard (R)",
-      "lastAction": "Coauthored by Representative Adams (principal House author)",
-      "lastActionDate": "2025-03-06",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/OK/bill/SB14/2026",
       "sponsorships": [
         {
           "people_id": 19705,
@@ -18997,27 +19072,29 @@
           "type": "primary"
         }
       ],
-      "session_id": 2219
+      "rollCalls": [],
+      "session_id": 2219,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/OK/bill/SB14/2026",
+      "legiscan_bill_id": 2050073
     },
     {
       "billId": "OR-HB4135",
       "state": "OR",
       "billNumber": "HB4135",
       "title": "Relating to HPV Awareness Day; and declaring an emergency.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Relating to HPV Awareness Day; and declaring an emergency.",
+      "impact": "High",
+      "summary": "Makes March 4th of each year HPV Awareness Day. (Flesch Readability Score: 84.9). Designates March 4th of each year as HPV Awareness Day. Declares an emergency, effective on passage.",
       "sponsor": "Annessa Hartman (D)",
-      "lastAction": "Chapter 4, (2026 Laws): Effective date March 4, 2026.",
-      "lastActionDate": "2026-03-17",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/OR/bill/HB4135/2026",
       "sponsorships": [
         {
           "people_id": 23850,
@@ -19418,7 +19495,13 @@
           "sourceUrl": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/MeasureVotes?id=669635"
         }
       ],
-      "session_id": 2252
+      "session_id": 2252,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/OR/bill/HB4135/2026",
+      "legiscan_bill_id": 2101325
     },
     {
       "billId": "PA-HB2378",
@@ -19431,14 +19514,9 @@
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Further providing for definitions, for vaccination offered to eligible persons and for responsibilities of department; and making editorial changes.",
+      "impact": "High",
+      "summary": "An Act amending the act of July 15, 2004 (P.L.731, No.85), known as the Elderly Immunization Act, further providing for definitions, for vaccination offered to eligible persons and for responsibilities of department; and making editorial changes.",
       "sponsor": "Maureen Madden (D)",
-      "lastAction": "Re-committed to Appropriations",
-      "lastActionDate": "2026-07-01",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/HB2378/2025",
       "sponsorships": [
         {
           "people_id": 18228,
@@ -19595,27 +19673,28 @@
           "sourceUrl": "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=67&rollcallid=2706&sessYr=2025&sessInd=0"
         }
       ],
-      "session_id": 2192
+      "session_id": 2192,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/PA/bill/HB2378/2025",
+      "legiscan_bill_id": 2142304
     },
     {
       "billId": "RI-S2379",
       "state": "RI",
       "billNumber": "S2379",
       "title": "Commencing January 1, 2027, mandates insurers provide health insurance coverage without cost-share requirements for vaccinations recommended by the DOH and mandates the coverage for the medical assistance program and managed care organizations.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
       "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Commencing January 1, 2027, mandates insurers provide health insurance coverage without cost-share requirements for vaccinations recommended by the DOH and mandates the coverage for the medical assistance program and managed care organizations.",
+      "impact": "High",
+      "summary": "HEALTH AND SAFETY -- DEPARTMENT OF HEALTH - Commencing January 1, 2027, mandates insurers provide health insurance coverage without cost-share requirements for vaccinations recommended by the DOH and mandates the coverage for the medical assistance program and managed care organizations.",
       "sponsor": "Linda Ujifusa (D)",
-      "lastAction": "Signed by Governor",
-      "lastActionDate": "2026-06-23",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/RI/bill/S2379/2026",
       "sponsorships": [
         {
           "people_id": 24481,
@@ -19718,20 +19797,6 @@
           "type": "cosponsor"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "pro",
-        "confidence": 0.8,
-        "evidence": [
-          "mandates insurers provide health insurance coverage without cost-share requirements for vaccinations recommended by the DOH"
-        ],
-        "explanation": "Requires no-cost insurance coverage for DOH-recommended vaccinations, directly funding and protecting immunization access.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "llm_upgrade",
-        "second_pass": "Mandates no-cost-share insurance coverage for DOH-recommended vaccines, protecting immunization access.",
-        "original_billType": "monitor"
-      },
       "rollCalls": [
         {
           "key": "LS-1647186",
@@ -19804,7 +19869,27 @@
           "sourceUrl": "https://status.rilegislature.gov/committee_vote_detail.aspx?id=43343"
         }
       ],
-      "session_id": 2253
+      "session_id": 2253,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/RI/bill/S2379/2026",
+      "legiscan_bill_id": 2102914,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "pro",
+        "confidence": 0.8,
+        "evidence": [
+          "mandates insurers provide health insurance coverage without cost-share requirements for vaccinations recommended by the DOH"
+        ],
+        "explanation": "Requires no-cost insurance coverage for DOH-recommended vaccinations, directly funding and protecting immunization access.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "llm_upgrade",
+        "second_pass": "Mandates no-cost-share insurance coverage for DOH-recommended vaccines, protecting immunization access.",
+        "original_billType": "monitor"
+      }
     },
     {
       "billId": "SC-S0343",
@@ -19817,14 +19902,9 @@
       "stance": "Oppose",
       "category": "informed-consent",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Informed Consent to COVID 19 Vaccine",
+      "impact": "High",
+      "summary": "Amend The South Carolina Code Of Laws By Adding Section 44-29-175 So As To Establish An Informed Consent Protocol That Must Be Followed Prior To A Certain Covid-19 Vaccine Being Administered Or Received.",
       "sponsor": "Thomas Corbin (R)",
-      "lastAction": "Committee report: Favorable with amendment Medical Affairs",
-      "lastActionDate": "2026-02-19",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/SC/bill/S0343/2025",
       "sponsorships": [
         {
           "people_id": 11118,
@@ -19907,7 +19987,14 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2194
+      "rollCalls": [],
+      "session_id": 2194,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/SC/bill/S0343/2025",
+      "legiscan_bill_id": 1969510
     },
     {
       "billId": "SD-HB1163",
@@ -19920,14 +20007,9 @@
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Prohibit certain persons from requiring genetic-based vaccinations.",
       "sponsor": "Bobbi Andera (R)",
-      "lastAction": "House of Representatives Do Pass, Failed, YEAS 32, NAYS 35. H.J. 393",
-      "lastActionDate": "2026-02-20",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/SD/bill/HB1163/2026",
       "sponsorships": [
         {
           "people_id": 25631,
@@ -20000,27 +20082,28 @@
           "sourceUrl": "https://sdlegislature.gov/api/Votes/84026"
         }
       ],
-      "session_id": 2231
+      "session_id": 2231,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/SD/bill/HB1163/2026",
+      "legiscan_bill_id": 2094896
     },
     {
       "billId": "TN-HJR0098",
       "state": "TN",
       "billNumber": "HJR0098",
       "title": "A RESOLUTION to urge the United States Congress to require the U.S. Department of Veterans Affairs to add COVID-19 treatments and anthrax vaccinations as pre-qualifying for care under the PACT Act.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
-      "summary": "A RESOLUTION to urge the United States Congress to require the U.S. Department of Veterans Affairs to add COVID-19 treatments and anthrax vaccinations as pre-qualifying for care under the PACT Act.",
+      "impact": "High",
+      "summary": "Urges Congress to require the Department of Veterans Affairs to add certain COVID-19 treatments and anthrax vaccinations as pre-qualifying for care under the PACT Act.",
       "sponsor": "Monty Fritts (R)",
-      "lastAction": "Signed by Governor.",
-      "lastActionDate": "2025-05-05",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/TN/bill/HJR0098/2025",
       "sponsorships": [
         {
           "people_id": 23186,
@@ -20153,19 +20236,6 @@
           "type": "cosponsor"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "monitor",
-        "confidence": 0.65,
-        "evidence": [
-          "require the U.S. Department of Veterans Affairs to add COVID-19 treatments and anthrax vaccinations as pre-qualifying for care under the PACT Act"
-        ],
-        "explanation": "Resolution about VA benefit eligibility for vaccine-related care, an injury/benefits administration matter rather than vaccine policy itself.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "monitor_confirmed",
-        "second_pass": ""
-      },
       "rollCalls": [
         {
           "key": "LS-1506145",
@@ -20238,27 +20308,41 @@
           "sourceUrl": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HJR0098&ga=114"
         }
       ],
-      "session_id": 2161
+      "session_id": 2161,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/TN/bill/HJR0098/2025",
+      "legiscan_bill_id": 1952415,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "monitor",
+        "confidence": 0.65,
+        "evidence": [
+          "require the U.S. Department of Veterans Affairs to add COVID-19 treatments and anthrax vaccinations as pre-qualifying for care under the PACT Act"
+        ],
+        "explanation": "Resolution about VA benefit eligibility for vaccine-related care, an injury/benefits administration matter rather than vaccine policy itself.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "monitor_confirmed",
+        "second_pass": ""
+      }
     },
     {
       "billId": "TX-HB4535",
       "state": "TX",
       "billNumber": "HB4535",
       "title": "Relating to COVID-19 vaccine administration requirements.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "vaccine-mandate",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Relating to COVID-19 vaccine administration requirements.",
       "sponsor": "John McQueeney (R)",
-      "lastAction": "Effective on 9/1/25",
-      "lastActionDate": "2025-06-20",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/TX/bill/HB4535/2025",
       "sponsorships": [
         {
           "people_id": 26336,
@@ -20811,19 +20895,6 @@
           "type": "cosponsor"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "monitor",
-        "confidence": 0.55,
-        "evidence": [
-          "Relating to COVID-19 vaccine administration requirements"
-        ],
-        "explanation": "Title states only the topic without indicating whether administration requirements are being expanded or restricted.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "monitor_confirmed",
-        "second_pass": ""
-      },
       "rollCalls": [
         {
           "key": "LS-1571425",
@@ -20924,27 +20995,41 @@
           "sourceUrl": "https://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ05-25-F.PDF#page=10"
         }
       ],
-      "session_id": 2160
+      "session_id": 2160,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/TX/bill/HB4535/2025",
+      "legiscan_bill_id": 2001080,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "monitor",
+        "confidence": 0.55,
+        "evidence": [
+          "Relating to COVID-19 vaccine administration requirements"
+        ],
+        "explanation": "Title states only the topic without indicating whether administration requirements are being expanded or restricted.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "monitor_confirmed",
+        "second_pass": ""
+      }
     },
     {
       "billId": "UT-HB0152",
       "state": "UT",
       "billNumber": "HB0152",
       "title": "Educational Vaccine Exemption Amendments",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-exemption",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Educational Vaccine Exemption Amendments",
       "sponsor": "Trevor Lee (R)",
-      "lastAction": "House/ filed in House file for bills not passed",
-      "lastActionDate": "2026-03-06",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/UT/bill/HB0152/2026",
       "sponsorships": [
         {
           "people_id": 23788,
@@ -20987,27 +21072,28 @@
           "sourceUrl": "https://le.utah.gov/mtgvotes.jsp?voteid=39232"
         }
       ],
-      "session_id": 2214
+      "session_id": 2214,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/UT/bill/HB0152/2026",
+      "legiscan_bill_id": 2066106
     },
     {
       "billId": "VT-H0545",
       "state": "VT",
       "billNumber": "H0545",
       "title": "An act relating to issuing immunization recommendations",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "An act relating to issuing immunization recommendations",
       "sponsor": "Theresa Wood (D)",
-      "lastAction": "House message: Governor approved bill on March 24, 2026",
-      "lastActionDate": "2026-03-25",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/VT/bill/H0545/2025",
       "sponsorships": [
         {
           "people_id": 17787,
@@ -21060,7 +21146,13 @@
           "sourceUrl": "https://legislature.vermont.gov/bill/roll-call/2026/100"
         }
       ],
-      "session_id": 2195
+      "session_id": 2195,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/VT/bill/H0545/2025",
+      "legiscan_bill_id": 2065431
     },
     {
       "billId": "VA-HB983",
@@ -21074,13 +21166,8 @@
       "category": "vaccine-mandate",
       "level": "State",
       "impact": "Medium",
-      "summary": "Immunization requirements for children; removes hepatitis B vaccine.",
+      "summary": "Immunization requirements for children; hepatitis B vaccine. Removes the hepatitis B vaccine from the list of required immunizations for children in the Commonwealth, removes the extended conditional enrollment period for students requiring more than two doses of the hepatitis B vaccine, and directs",
       "sponsor": "Thomas Garrett (R)",
-      "lastAction": "Left in Committee Health and Human Services",
-      "lastActionDate": "2026-02-18",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/VA/bill/HB983/2026",
       "sponsorships": [
         {
           "people_id": 13783,
@@ -21093,21 +21180,6 @@
           "type": "primary"
         }
       ],
-      "verification": {
-        "provider": "claude-sonnet via Claude Code",
-        "model": "claude-sonnet",
-        "llm_classification": "anti",
-        "confidence": 0.85,
-        "evidence": [
-          "removes hepatitis B vaccine",
-          "Removes the hepatitis B vaccine from the list of required immunizations for children"
-        ],
-        "explanation": "Explicitly removes hepatitis B from the required childhood immunization list, narrowing vaccination requirements.",
-        "verified_at": "2026-08-22T00:39:28.270414+00:00",
-        "status": "llm_upgrade",
-        "second_pass": "Removes hepatitis B vaccine from the state's required childhood immunization list, narrowing an existing vaccine mandate.",
-        "original_billType": "monitor"
-      },
       "rollCalls": [
         {
           "key": "LS-1629766",
@@ -21124,27 +21196,43 @@
           "sourceUrl": "https://lis.virginia.gov/vote-details/HB983/20261/H24001V2612496"
         }
       ],
-      "session_id": 2237
+      "session_id": 2237,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/VA/bill/HB983/2026",
+      "legiscan_bill_id": 2077615,
+      "verification": {
+        "provider": "claude-sonnet via Claude Code",
+        "model": "claude-sonnet",
+        "llm_classification": "anti",
+        "confidence": 0.85,
+        "evidence": [
+          "removes hepatitis B vaccine",
+          "Removes the hepatitis B vaccine from the list of required immunizations for children"
+        ],
+        "explanation": "Explicitly removes hepatitis B from the required childhood immunization list, narrowing vaccination requirements.",
+        "verified_at": "2026-08-22T00:39:28.270414+00:00",
+        "status": "llm_upgrade",
+        "second_pass": "Removes hepatitis B vaccine from the state's required childhood immunization list, narrowing an existing vaccine mandate.",
+        "original_billType": "monitor"
+      }
     },
     {
       "billId": "WA-HB2242",
       "state": "WA",
       "billNumber": "HB2242",
       "title": "Preserving access to preventive services by clarifying state authority and definitions.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
+      "impact": "High",
       "summary": "Preserving access to preventive services by clarifying state authority and definitions.",
       "sponsor": "Dan Bronoske (D)",
-      "lastAction": "Effective date 3/9/2026.",
-      "lastActionDate": "2026-03-09",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/WA/bill/HB2242/2025",
       "sponsorships": [
         {
           "people_id": 22370,
@@ -21365,7 +21453,13 @@
           "sourceUrl": "https://app.leg.wa.gov/billsummary/rollcall/vote?legId=135468&chamber=Senate&actionHistoryDate=02-26-2026&indexOnDayByChamber=1&billNumber=2242&isInit=False&biennium=2025-26"
         }
       ],
-      "session_id": 2166
+      "session_id": 2166,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/HB2242/2025",
+      "legiscan_bill_id": 2064925
     },
     {
       "billId": "WV-HB4146",
@@ -21374,18 +21468,13 @@
       "title": "To require compulsory vaccinations for anyone employed by the public school system in this state.",
       "status": "Introduced",
       "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "vaccine-mandate",
+      "billType": "anti",
+      "stance": "Oppose",
+      "category": "vaccine-exemption",
       "level": "State",
-      "impact": "Medium",
-      "summary": "To require compulsory vaccinations for anyone employed by the public school system in this state.",
+      "impact": "High",
+      "summary": "The purpose of this bill is to require vaccinations for anyone employed by the public school system in this state, to be done in accordance with the pediatric schedule. The bill prohibits religious or philosophical exemptions by school personnel. The bill requires a 21-day quarantine period for anyo",
       "sponsor": "Kathie Crouse (R)",
-      "lastAction": "To House Public Education",
-      "lastActionDate": "2026-01-19",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/WV/bill/HB4146/2026",
       "sponsorships": [
         {
           "people_id": 23025,
@@ -21408,27 +21497,29 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2254
+      "rollCalls": [],
+      "session_id": 2254,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WV/bill/HB4146/2026",
+      "legiscan_bill_id": 2078681
     },
     {
       "billId": "WI-SB1044",
       "state": "WI",
       "billNumber": "SB1044",
       "title": "Health insurance coverage of vaccines if recommended by certain organizations and consideration of recommendations of certain organizations regarding the state immunization program vaccination schedule.",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "pro",
       "stance": "Support",
       "category": "public-health",
       "level": "State",
-      "impact": "Medium",
-      "summary": "Health insurance coverage of vaccines if recommended by certain organizations and consideration of recommendations of certain organizations regarding the state immunization program vaccination schedule.",
+      "impact": "High",
+      "summary": "An Act to amend 252.04 (1), 609.88 (title), 632.895 (14) (title) and 632.895 (14) (b); to create 609.883 and 632.895 (14c) of the statutes; Relating to: health insurance coverage of vaccines if recommended by certain organizations and consideration of recommendations of certain organizations regardi",
       "sponsor": "Dora Drake (D)",
-      "lastAction": "Failed to pass pursuant to Senate Joint Resolution 1",
-      "lastActionDate": "2026-03-23",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/WI/bill/SB1044/2025",
       "sponsorships": [
         {
           "people_id": 21994,
@@ -21651,7 +21742,14 @@
           "type": "cosponsor"
         }
       ],
-      "session_id": 2197
+      "rollCalls": [],
+      "session_id": 2197,
+      "lastAction": "",
+      "lastActionDate": "",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WI/bill/SB1044/2025",
+      "legiscan_bill_id": 2122970
     },
     {
       "billId": "AL-HB24",
@@ -22151,7 +22249,7 @@
       "state": "AZ",
       "billNumber": "SB1194",
       "title": "Vaccination status; denial; prohibition",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -22438,7 +22536,7 @@
       "state": "AZ",
       "billNumber": "HB2334",
       "title": "Food; mRNA prohibition; labeling",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -23575,8 +23673,8 @@
       "impact": "Medium",
       "summary": "California Science and Health Research Bond Act.",
       "sponsor": "",
-      "lastAction": "Ordered to third reading.",
-      "lastActionDate": "2026-08-27",
+      "lastAction": "Assembly amendments concurred in. (Ayes 28. Noes 9.) Ordered to engrossing and enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB895/2025",
@@ -25529,7 +25627,7 @@
       "state": "GA",
       "billNumber": "HB522",
       "title": "Health; prohibit certain health care providers and facilities from discriminating against potential organ transplant recipients due solely to their vaccine status",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -27600,7 +27698,7 @@
       "state": "IL",
       "billNumber": "HB2597",
       "title": "COVID-19 RELIGIOUS EXEMPTION",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -27711,7 +27809,7 @@
       "state": "IL",
       "billNumber": "HB2600",
       "title": "PROHIBIT COVID-19 VAX MANDATE",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -28641,7 +28739,7 @@
       "state": "IA",
       "billNumber": "HF712",
       "title": "A bill for an act relating to liability for injuries caused by vaccines.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -28675,7 +28773,7 @@
       "state": "IA",
       "billNumber": "HF2287",
       "title": "A bill for an act relating to liability for injuries caused by vaccines.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -29064,7 +29162,7 @@
       "state": "IA",
       "billNumber": "SF2095",
       "title": "A bill for an act relating to vaccination exemptions for certain students in clinical rotations and the qualification of postsecondary schools as eligible institutions for Iowa tuition grants.(See SF 2424.)",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -29136,7 +29234,7 @@
       "state": "IA",
       "billNumber": "SF2211",
       "title": "A bill for an act relating to the Iowa medical freedom Act, including limitations on requiring medical interventions by businesses, governmental entities, and educational institutions, modifying state authority during public health disasters, and including effective date provisions.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -29185,7 +29283,7 @@
       "state": "IA",
       "billNumber": "HF2368",
       "title": "A bill for an act relating to the Iowa medical freedom Act, including limitations on requiring medical interventions by businesses, governmental entities, and educational institutions, modifying state authority during public health disasters, and including effective date provisions.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -29234,7 +29332,7 @@
       "state": "IA",
       "billNumber": "HF35",
       "title": "A bill for an act relating to postsecondary schools and COVID-19 vaccine exemptions for clinical students.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -31073,8 +31171,8 @@
       "state": "ME",
       "billNumber": "LD871",
       "title": "An Act to Exempt All Persons, Including Health Care and Emergency Services Personnel, from COVID-19 Vaccine Requirements",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
@@ -31252,7 +31350,7 @@
       "state": "MD",
       "billNumber": "SB385",
       "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -31421,7 +31519,7 @@
       "state": "MD",
       "billNumber": "HB637",
       "title": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -37380,7 +37478,7 @@
       "state": "MO",
       "billNumber": "SB1428",
       "title": "Prohibits educational institutions from mandating COVID-19 vaccines or gene therapy treatments",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -39938,7 +40036,7 @@
       "state": "NH",
       "billNumber": "HB1719",
       "title": "Removing Hepatitis B from the list of diseases for which immunization is required under state law.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -40301,7 +40399,7 @@
       "state": "NH",
       "billNumber": "HB1022",
       "title": "Relative to religious exemption from immunization requirements.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -40616,7 +40714,7 @@
       "state": "NJ",
       "billNumber": "SR23",
       "title": "Urges Congress to compel Department of Health and Human Services to fulfill its obligations pursuant to National Childhood Vaccine Injury Act of 1986.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -40650,7 +40748,7 @@
       "state": "NJ",
       "billNumber": "AR16",
       "title": "Urges Congress to compel Department of Health and Human Services to fulfill its obligations pursuant to the National Childhood Vaccine Injury Act of 1986.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -40862,7 +40960,7 @@
       "state": "NJ",
       "billNumber": "A845",
       "title": "Restricts establishment of mandates to become vaccinated against coronavirus disease 2019 (COVID-19); establishes reimbursement program to cover certain out-of-pocket costs incurred in obtaining COVID-19 vaccine.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -40981,7 +41079,7 @@
       "state": "NJ",
       "billNumber": "A3221",
       "title": "Prohibits discrimination against pregnant women who have not received COVID-19 vaccine.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -41039,7 +41137,7 @@
       "state": "NJ",
       "billNumber": "S69",
       "title": "Prohibits discrimination against individuals who have not received COVID-19 vaccine.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -41117,7 +41215,7 @@
       "state": "NJ",
       "billNumber": "A872",
       "title": "Prohibits discrimination against individuals who have not received COVID-19 vaccine.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -41245,7 +41343,7 @@
       "state": "NJ",
       "billNumber": "S2629",
       "title": "Requires health insurance carriers to reimburse health care providers for vaccines at rate no less than CDC cost per dose rate.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -42287,7 +42385,7 @@
       "state": "NY",
       "billNumber": "S05852",
       "title": "Requires insurance reimbursement for the total direct and indirect practice expenses associated with vaccinations.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -42590,7 +42688,7 @@
       "state": "NY",
       "billNumber": "S08334",
       "title": "Requires insurance reimbursement for vaccination for severe acute respiratory syndrome coronavirus 2.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -43065,7 +43163,7 @@
       "state": "NY",
       "billNumber": "S06744",
       "title": "Permits dentists to administer influenza and COVID vaccinations and vaccinations related to a declared public health emergency; requires dentists to report such vaccinations.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -43188,7 +43286,7 @@
       "state": "NY",
       "billNumber": "A09140",
       "title": "Provides liability protections for health care providers who issue vaccines so long as such vaccination does not arise out of willful misconduct or gross negligence.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -44284,7 +44382,7 @@
       "state": "NY",
       "billNumber": "A00765",
       "title": "Requires that a health care provider who administers an immunization to a person nineteen years of age or older must report such information to the department of health or to the New York city citywide immunization registry unless the person receiving the immunization objects to such reporting.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -45810,7 +45908,7 @@
       "state": "ND",
       "billNumber": "HB1454",
       "title": "An opt-out procedure for required vaccines.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -48191,7 +48289,7 @@
       "state": "PA",
       "billNumber": "HB1881",
       "title": "Further providing for pharmacy technician and pharmacy technician trainee registration, qualifications and supervision; providing for administration of injectable medications, biologicals and immunizations, for clinical laboratory certificate and for report on pharmacy-administered vaccines; and making a repeal.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -49960,7 +50058,7 @@
       "state": "SC",
       "billNumber": "S1029",
       "title": "Vaccine Exemptions",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -50004,7 +50102,7 @@
       "state": "SC",
       "billNumber": "S0897",
       "title": "Measels Vaccine Required to Attend Public School",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -50156,7 +50254,7 @@
       "state": "SC",
       "billNumber": "S0741",
       "title": "Vaccine Prohibition for Babies",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -52100,7 +52198,7 @@
       "state": "TX",
       "billNumber": "HB3441",
       "title": "Relating to the liability of vaccine manufacturers that advertise a harmful vaccine.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -53172,7 +53270,7 @@
       "state": "TX",
       "billNumber": "HB4076",
       "title": "Relating to prohibiting organ transplant recipient discrimination on the basis of vaccination status.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -54152,7 +54250,7 @@
       "state": "TX",
       "billNumber": "SB95",
       "title": "Relating to the administration of immunizations to children, including required written informed consent to those immunizations and civil liability for failure to obtain the consent; providing an administrative penalty.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -56251,7 +56349,7 @@
       "state": "VT",
       "billNumber": "H0274",
       "title": "An act relating to a hospital patient’s right not to be denied care based on vaccination status",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -61159,13 +61257,26 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Vaccine Administration Protection Amendment Act of 2026",
-      "sponsor": "",
+      "sponsor": "Phil Mendelson (D)",
       "lastAction": "Public Hearing",
       "lastActionDate": "2026-09-24",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/DC/bill/B26-0606/2025",
-      "legiscan_bill_id": 2127387
+      "legiscan_bill_id": 2127387,
+      "session_id": 2198,
+      "sponsorships": [
+        {
+          "people_id": 14679,
+          "name": "Phil Mendelson",
+          "first_name": "Phil",
+          "last_name": "Mendelson",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-000",
+          "type": "primary"
+        }
+      ]
     },
     {
       "billId": "DC-B26-0605",
@@ -64967,8 +65078,8 @@
       "impact": "Medium",
       "summary": "Peace officers: tribal police.",
       "sponsor": "",
-      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 78. Noes 0.).",
-      "lastActionDate": "2026-08-25",
+      "lastAction": "Enrolled and presented to the Governor at 4 p.m.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB31/2025",
@@ -73453,7 +73564,7 @@
       "state": "IA",
       "billNumber": "HF2171",
       "title": "A bill for an act striking elementary and secondary student immunization requirements.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -73501,8 +73612,8 @@
       "state": "IA",
       "billNumber": "HF299",
       "title": "A bill for an act relating to the provision of information relating to immunization exemptions. (Formerly HF 34.) Effective date: 07/01/2025.",
-      "status": "Signed into Law",
-      "isActive": "No",
+      "status": "Passed Both Chambers",
+      "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-exemption",
@@ -73731,7 +73842,7 @@
       "state": "IA",
       "billNumber": "SF2345",
       "title": "A bill for an act relating to notice of immunization exemptions and providing civil penalties.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -73765,7 +73876,7 @@
       "state": "IA",
       "billNumber": "HSB605",
       "title": "A bill for an act relating to requirements for immunization exemption notifications by public health agencies.(See HF 2347.)",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -78101,8 +78212,8 @@
       "state": "ME",
       "billNumber": "LD174",
       "title": "An Act to Restore Religious Exemptions to Immunization Requirements",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-exemption",
@@ -78547,8 +78658,8 @@
       "state": "ME",
       "billNumber": "LD727",
       "title": "An Act to Repeal Certain Immunization Requirements for Schools",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "vaccine-mandate",
@@ -81680,7 +81791,7 @@
       "state": "MI",
       "billNumber": "SB0798",
       "title": "Health: immunizations; promulgation of certain rules that are more stringent than the requirements for claiming exemption from immunizations; prohibit. Amends sec. 1177 of 1976 PA 451 (MCL 380.1177). TIE BAR WITH: SB 0797'26",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -82231,7 +82342,7 @@
       "state": "MI",
       "billNumber": "SB0797",
       "title": "Health: immunizations; promulgation of certain rules that are more stringent than the requirements for claiming exemption from immunizations; prohibit. Amends sec. 9215 of 1978 PA 368 (MCL 333.9215).",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -90060,7 +90171,7 @@
       "state": "NJ",
       "billNumber": "A1099",
       "title": "Immunizes from civil liability first responders who forcibly enter property to provide emergency assistance.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -90312,7 +90423,7 @@
       "state": "NJ",
       "billNumber": "A4433",
       "title": "Repeals law that revises coverage for certain immunizations and reference to Advisory Committee on Immunization Practices.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -90366,7 +90477,7 @@
       "state": "NJ",
       "billNumber": "S3965",
       "title": "Repeals law that revises coverage for certain immunizations and reference to Advisory Committee on Immunization Practices.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -92358,7 +92469,7 @@
       "state": "NY",
       "billNumber": "A03254",
       "title": "Requires children enrolled in an overnight camp, summer day camp, or travelling summer day camp to be vaccinated against a specified list of diseases.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -93423,8 +93534,8 @@
       "impact": "Medium",
       "summary": "Expedited Removal of Unauthorized Persons",
       "sponsor": "",
-      "lastAction": "Re-ref Com On Rules, Calendar, and Operations of the House",
-      "lastActionDate": "2025-08-26",
+      "lastAction": "Placed On Cal For 09/02/2026",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/NC/bill/H96/2025",
@@ -97990,27 +98101,6 @@
       "legiscan_bill_id": 2014038
     },
     {
-      "billId": "PA-SB54",
-      "state": "PA",
-      "billNumber": "SB54",
-      "title": "In limitation of time, further providing for six months limitation; in matters affecting government units, further providing for exceptions to sovereign immunity, for limitations on damages and for exceptions to governmental immunity and providing for claims for compensation for wrongful conviction; in general administration, providing for services after wrongful conviction; and, in Pennsylvania Board of Probation and Parole, further providing for powers and duties of department.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "In limitation of time, further providing for six months limitation; in matters affecting government units, further providing for exceptions to sovereign immunity, for limitations on damages and for exceptions to governmental immunity and providing for claims for compensation for wrongful conviction; in general administration, providing for services after wrongful conviction; and, in Pennsylvania Board of Probation and Parole, further providing for powers and duties of department.",
-      "sponsor": "",
-      "lastAction": "Referred to Judiciary",
-      "lastActionDate": "2025-03-21",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/PA/bill/SB54/2025",
-      "legiscan_bill_id": 2012442
-    },
-    {
       "billId": "PA-HB2707",
       "state": "PA",
       "billNumber": "HB2707",
@@ -98043,6 +98133,27 @@
         "status": "monitor_confirmed",
         "second_pass": ""
       }
+    },
+    {
+      "billId": "PA-SB54",
+      "state": "PA",
+      "billNumber": "SB54",
+      "title": "In limitation of time, further providing for six months limitation; in matters affecting government units, further providing for exceptions to sovereign immunity, for limitations on damages and for exceptions to governmental immunity and providing for claims for compensation for wrongful conviction; in general administration, providing for services after wrongful conviction; and, in Pennsylvania Board of Probation and Parole, further providing for powers and duties of department.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "In limitation of time, further providing for six months limitation; in matters affecting government units, further providing for exceptions to sovereign immunity, for limitations on damages and for exceptions to governmental immunity and providing for claims for compensation for wrongful conviction; in general administration, providing for services after wrongful conviction; and, in Pennsylvania Board of Probation and Parole, further providing for powers and duties of department.",
+      "sponsor": "",
+      "lastAction": "Referred to Judiciary",
+      "lastActionDate": "2025-03-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/PA/bill/SB54/2025",
+      "legiscan_bill_id": 2012442
     },
     {
       "billId": "PA-HB545",
@@ -98503,7 +98614,7 @@
       "state": "RI",
       "billNumber": "S2856",
       "title": "Includes routine, scheduled or recommended immunizations to individuals between the ages of three (3) and eighteen (18) years, under the consent and reporting provisions required for pharmacy administered immunizations.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -101933,7 +102044,7 @@
       "state": "TX",
       "billNumber": "HB1586",
       "title": "Relating to an exemption from required immunizations for school enrollment.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -102789,7 +102900,7 @@
       "state": "TX",
       "billNumber": "SB2119",
       "title": "Relating to an exemption from certain immunization requirements for medical and veterinary students.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -111077,8 +111188,8 @@
       "impact": "Medium",
       "summary": "Civil detainees.",
       "sponsor": "",
-      "lastAction": "Assembly amendments concurred in. (Ayes 31. Noes 5.) Ordered to engrossing and enrolling.",
-      "lastActionDate": "2026-08-26",
+      "lastAction": "Enrolled and presented to the Governor at 6 p.m.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB942/2025",
@@ -111791,8 +111902,8 @@
       "impact": "Medium",
       "summary": "Lanterman Developmental Disabilities Services Act.",
       "sponsor": "",
-      "lastAction": "In Assembly. Concurrence in Senate amendments pending.",
-      "lastActionDate": "2026-08-27",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1575/2025",
@@ -138585,8 +138696,8 @@
       "impact": "Medium",
       "summary": "Planning and Zoning Law: postentitlement phase permits: Housing Accountability Act.",
       "sponsor": "",
-      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 76. Noes 0.).",
-      "lastActionDate": "2026-08-25",
+      "lastAction": "Enrolled and presented to the Governor at 4 p.m.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1621/2025",
@@ -138639,7 +138750,7 @@
       "state": "CA",
       "billNumber": "SB1330",
       "title": "Assault and battery: utility workers.",
-      "status": "Introduced",
+      "status": "Passed One Chamber",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -138648,8 +138759,8 @@
       "impact": "Medium",
       "summary": "Assault and battery: utility workers.",
       "sponsor": "",
-      "lastAction": "Read second time. Ordered to third reading.",
-      "lastActionDate": "2026-08-13",
+      "lastAction": "Read third time. Passed. Ordered to the Senate.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB1330/2025",
@@ -138837,8 +138948,8 @@
       "impact": "Medium",
       "summary": "Real property tax: welfare exemption: moderate-income housing.",
       "sponsor": "",
-      "lastAction": "Ordered to the unfinished business file.",
-      "lastActionDate": "2026-08-30",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1294/2025",
@@ -138879,27 +138990,6 @@
       "legiscan_bill_id": 1961077
     },
     {
-      "billId": "CA-AB1200",
-      "state": "CA",
-      "billNumber": "AB1200",
-      "title": "Emergency services: disaster preparedness.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Emergency services: disaster preparedness.",
-      "sponsor": "",
-      "lastAction": "Consideration of Governor's veto stricken from file.",
-      "lastActionDate": "2026-01-22",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
-      "legiscan_bill_id": 1980097
-    },
-    {
       "billId": "CA-SB660",
       "state": "CA",
       "billNumber": "SB660",
@@ -138919,6 +139009,27 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB660/2025",
       "legiscan_bill_id": 1978893
+    },
+    {
+      "billId": "CA-AB1200",
+      "state": "CA",
+      "billNumber": "AB1200",
+      "title": "Emergency services: disaster preparedness.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Emergency services: disaster preparedness.",
+      "sponsor": "",
+      "lastAction": "Consideration of Governor's veto stricken from file.",
+      "lastActionDate": "2026-01-22",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/AB1200/2025",
+      "legiscan_bill_id": 1980097
     },
     {
       "billId": "CA-AB100",
@@ -179481,7 +179592,7 @@
       "state": "WY",
       "billNumber": "HB0012",
       "title": "Clean Air and Geoengineering Prohibition Act.",
-      "status": "Died in Committee",
+      "status": "Signed into Law",
       "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
@@ -179759,8 +179870,8 @@
       "impact": "Medium",
       "summary": "Medical Debt Mitigation Amendment Act of 2025",
       "sponsor": "",
-      "lastAction": "Law Number L26-0172 Effective from Aug 20, 2026",
-      "lastActionDate": "2026-08-20",
+      "lastAction": "Law L26-0172, Effective from Aug 20, 2026 Published in DC Register Vol 73 and Page 012067",
+      "lastActionDate": "2026-08-28",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/DC/bill/B26-0438/2025",
@@ -181484,8 +181595,8 @@
       "impact": "Medium",
       "summary": "Multifamily Housing Program: Homekey: adaptive reuse.",
       "sponsor": "",
-      "lastAction": "In Assembly. Concurrence in Senate amendments pending.",
-      "lastActionDate": "2026-08-19",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2320/2025",
@@ -181841,6 +181952,27 @@
       "legiscan_bill_id": 2117108
     },
     {
+      "billId": "CA-SB944",
+      "state": "CA",
+      "billNumber": "SB944",
+      "title": "Medi-Cal: acupuncture.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Medi-Cal: acupuncture.",
+      "sponsor": "",
+      "lastAction": "Assembly amendments concurred in. (Ayes 39. Noes 0.) Ordered to engrossing and enrolling.",
+      "lastActionDate": "2026-08-28",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB944/2025",
+      "legiscan_bill_id": 2104444
+    },
+    {
       "billId": "CA-AB1629",
       "state": "CA",
       "billNumber": "AB1629",
@@ -181936,27 +182068,6 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB627/2025",
       "legiscan_bill_id": 1978860
-    },
-    {
-      "billId": "CA-SB944",
-      "state": "CA",
-      "billNumber": "SB944",
-      "title": "Medi-Cal: acupuncture.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Medi-Cal: acupuncture.",
-      "sponsor": "",
-      "lastAction": "Assembly amendments concurred in. (Ayes 39. Noes 0.) Ordered to engrossing and enrolling.",
-      "lastActionDate": "2026-08-28",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB944/2025",
-      "legiscan_bill_id": 2104444
     },
     {
       "billId": "CA-ACR156",
@@ -197919,7 +198030,7 @@
       "state": "OH",
       "billNumber": "HB292",
       "title": "Establish the Ohio Defense Commission",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -197927,13 +198038,268 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Establish the Ohio Defense Commission",
-      "sponsor": "",
+      "sponsor": "Ty Mathews (R)",
       "lastAction": "Effective Appropriations effective July 7, 2026",
       "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB292/2025",
-      "legiscan_bill_id": 2032630
+      "legiscan_bill_id": 2032630,
+      "rollCalls": [
+        {
+          "key": "LS-1645491",
+          "legiscan_roll_call_id": 1645491,
+          "date": "2026-02-25",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 12,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 12,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb292/votes"
+        },
+        {
+          "key": "LS-1653319",
+          "legiscan_roll_call_id": 1653319,
+          "date": "2026-03-04",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 82,
+          "nay": 10,
+          "nv": 0,
+          "absent": 0,
+          "total": 92,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb292/votes"
+        },
+        {
+          "key": "LS-1707331",
+          "legiscan_roll_call_id": 1707331,
+          "date": "2026-06-09",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 6,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 6,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb292/votes"
+        },
+        {
+          "key": "LS-1708308",
+          "legiscan_roll_call_id": 1708308,
+          "date": "2026-06-10",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 33,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb292/votes"
+        },
+        {
+          "key": "LS-1709002",
+          "legiscan_roll_call_id": 1709002,
+          "date": "2026-06-10",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 86,
+          "nay": 7,
+          "nv": 0,
+          "absent": 0,
+          "total": 93,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb292/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 26117,
+          "name": "Ty Mathews",
+          "first_name": "Ty",
+          "last_name": "Mathews",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-083",
+          "type": "primary"
+        },
+        {
+          "people_id": 24474,
+          "name": "Nick Santucci",
+          "first_name": "Nick",
+          "last_name": "Santucci",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-064",
+          "type": "primary"
+        },
+        {
+          "people_id": 22788,
+          "name": "Willis Blackshear",
+          "first_name": "Willis",
+          "last_name": "Blackshear",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-006",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 10994,
+          "name": "Andrew Brenner",
+          "first_name": "Andrew",
+          "last_name": "Brenner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-019",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24993,
+          "name": "Brian Chavez",
+          "first_name": "Brian",
+          "last_name": "Chavez",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-030",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 17973,
+          "name": "Theresa Gavarone",
+          "first_name": "Theresa",
+          "last_name": "Gavarone",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-002",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20325,
+          "name": "Paula Hicks-Hudson",
+          "first_name": "Paula",
+          "last_name": "Hicks-Hudson",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-011",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19076,
+          "name": "Catherine Ingram",
+          "first_name": "Catherine",
+          "last_name": "Ingram",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-009",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11547,
+          "name": "Terry Johnson",
+          "first_name": "Terry",
+          "last_name": "Johnson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-014",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16978,
+          "name": "Kyle Koehler",
+          "first_name": "Kyle",
+          "last_name": "Koehler",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-010",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19413,
+          "name": "George Lang",
+          "first_name": "George",
+          "last_name": "Lang",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22760,
+          "name": "Sandra O'Brien",
+          "first_name": "Sandra",
+          "last_name": "O'Brien",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-032",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 581,
+          "name": "Thomas Patton",
+          "first_name": "Thomas",
+          "last_name": "Patton",
+          "party": "R",
+          "role": "Sen",
+          "district": "HD-017",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16967,
+          "name": "Bill Reineke",
+          "first_name": "William",
+          "last_name": "Reineke",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-026",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11003,
+          "name": "Kristina Roegner",
+          "first_name": "Kristina",
+          "last_name": "Roegner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-027",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 634,
+          "name": "Timothy Schaffer",
+          "first_name": "Timothy",
+          "last_name": "Schaffer",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-020",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 26397,
+          "name": "Jane Timken",
+          "first_name": "Jane",
+          "last_name": "Timken",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OH-SB176",
@@ -200536,7 +200902,7 @@
       "state": "RI",
       "billNumber": "H7924",
       "title": "Permits and legalize the sale of raw milk.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -206834,7 +207200,7 @@
       "state": "CA",
       "billNumber": "AB190",
       "title": "Early care and education.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -206843,8 +207209,8 @@
       "impact": "Medium",
       "summary": "Early care and education.",
       "sponsor": "",
-      "lastAction": "From committee chair, with author's amendments: Amend, and re-refer to committee. Read second time, amended, and re-referred to Com. on B. & F. R.",
-      "lastActionDate": "2026-08-28",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB190/2025",
@@ -206897,7 +207263,7 @@
       "state": "CA",
       "billNumber": "AB1981",
       "title": "Subsidized childcare: reimbursement rates: reporting.",
-      "status": "Passed One Chamber",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -206906,8 +207272,8 @@
       "impact": "Medium",
       "summary": "Subsidized childcare: reimbursement rates: reporting.",
       "sponsor": "",
-      "lastAction": "Read third time. Urgency clause adopted. Passed. Ordered to the Assembly. (Ayes 40. Noes 0.).",
-      "lastActionDate": "2026-08-30",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1981/2025",
@@ -206927,8 +207293,8 @@
       "impact": "Medium",
       "summary": "Carpet recycling.",
       "sponsor": "",
-      "lastAction": "Read second time. Ordered to third reading.",
-      "lastActionDate": "2026-08-28",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB904/2025",
@@ -211484,8 +211850,8 @@
       "impact": "Medium",
       "summary": "Dentistry.",
       "sponsor": "",
-      "lastAction": "Enrolled and presented to the Governor at 4 p.m.",
-      "lastActionDate": "2026-08-20",
+      "lastAction": "Chaptered by Secretary of State - Chapter 167, Statutes of 2026.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB1760/2025",
@@ -212247,7 +212613,7 @@
       "state": "KS",
       "billNumber": "SB333",
       "title": "Prohibiting the use of fluoride additives in public water supplies.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -212304,7 +212670,7 @@
       "state": "KY",
       "billNumber": "SB55",
       "title": "AN ACT relating to water fluoridation programs.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -212484,8 +212850,8 @@
       "state": "ME",
       "billNumber": "LD1570",
       "title": "An Act to Prohibit Fluoridation of the Public Water Supply",
-      "status": "Introduced",
-      "isActive": "Yes",
+      "status": "Signed into Law",
+      "isActive": "No",
       "billType": "anti",
       "stance": "Oppose",
       "category": "fluoride",
@@ -213035,7 +213401,7 @@
       "state": "MA",
       "billNumber": "S2627",
       "title": "Allowing the town of Somerset to prohibit water fluoridation",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -214096,7 +214462,7 @@
       "state": "NY",
       "billNumber": "A08680",
       "title": "Requires cities that fluoridate public water supplies to comply with certain provisions of law relating to fluoridation, and to publish a notice in local newspapers and on the city's website and social media pages at least ninety days prior to discontinuing such fluoridation.",
-      "status": "Introduced",
+      "status": "In Committee",
       "isActive": "Yes",
       "billType": "pro",
       "stance": "Support",
@@ -214759,7 +215125,7 @@
       "state": "OH",
       "billNumber": "HB182",
       "title": "Prohibit public water system from adding fluoride to its water",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -215689,7 +216055,7 @@
       "state": "TX",
       "billNumber": "SB2653",
       "title": "Relating to the prohibition on water fluoridation; creating a penalty.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -215757,7 +216123,7 @@
       "state": "VT",
       "billNumber": "H0675",
       "title": "An act relating to prohibiting the fluoridation of public water supplies",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -215825,7 +216191,7 @@
       "state": "VA",
       "billNumber": "HB537",
       "title": "Regulations governing waterworks; prohibition on fluoridation of water.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -216787,7 +217153,7 @@
       "state": "CA",
       "billNumber": "AB133",
       "title": "Education finance: education omnibus trailer bill.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -216796,8 +217162,8 @@
       "impact": "Medium",
       "summary": "Education finance: education omnibus trailer bill.",
       "sponsor": "",
-      "lastAction": "From committee chair, with author's amendments: Amend, and re-refer to committee. Read second time, amended, and re-referred to Com. on B. & F. R.",
-      "lastActionDate": "2026-08-28",
+      "lastAction": "Read second time. Ordered to third reading.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB133/2025",
@@ -220553,7 +220919,7 @@
       "state": "NJ",
       "billNumber": "A4997",
       "title": "Permits sale of raw milk under certain conditions and establishes raw milk permit program.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -220601,7 +220967,7 @@
       "state": "NJ",
       "billNumber": "S920",
       "title": "Permits sale of raw milk under certain conditions and establishes raw milk permit program.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -221273,7 +221639,7 @@
       "state": "OH",
       "billNumber": "HB406",
       "title": "Enact the Farm-to-Consumer Access to Raw Milk Act",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -221457,7 +221823,7 @@
       "state": "OH",
       "billNumber": "HB195",
       "title": "Revise the Ohio Uniform Commercial Code",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -221465,20 +221831,165 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Revise the Ohio Uniform Commercial Code",
-      "sponsor": "",
+      "sponsor": "Dani Isaacsohn (D)",
       "lastAction": "Effective ",
       "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/HB195/2025",
-      "legiscan_bill_id": 2013768
+      "legiscan_bill_id": 2013768,
+      "rollCalls": [
+        {
+          "key": "LS-1604920",
+          "legiscan_roll_call_id": 1604920,
+          "date": "2025-10-29",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 12,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 12,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb195/votes"
+        },
+        {
+          "key": "LS-1609076",
+          "legiscan_roll_call_id": 1609076,
+          "date": "2025-11-05",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 83,
+          "nay": 7,
+          "nv": 0,
+          "absent": 0,
+          "total": 90,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb195/votes"
+        },
+        {
+          "key": "LS-1705059",
+          "legiscan_roll_call_id": 1705059,
+          "date": "2026-06-03",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 7,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 7,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb195/votes"
+        },
+        {
+          "key": "LS-1705060",
+          "legiscan_roll_call_id": 1705060,
+          "date": "2026-06-03",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 31,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 31,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb195/votes"
+        },
+        {
+          "key": "LS-1707820",
+          "legiscan_roll_call_id": 1707820,
+          "date": "2026-06-09",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 93,
+          "nay": 2,
+          "nv": 0,
+          "absent": 0,
+          "total": 95,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb195/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 24465,
+          "name": "Dani Isaacsohn",
+          "first_name": "Dani",
+          "last_name": "Isaacsohn",
+          "party": "D",
+          "role": "Rep",
+          "district": "HD-024",
+          "type": "primary"
+        },
+        {
+          "people_id": 24469,
+          "name": "Adam Mathews",
+          "first_name": "Adam",
+          "last_name": "Mathews",
+          "party": "R",
+          "role": "Rep",
+          "district": "HD-056",
+          "type": "primary"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16972,
+          "name": "Hearcel Craig",
+          "first_name": "Hearcel",
+          "last_name": "Craig",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-015",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20325,
+          "name": "Paula Hicks-Hudson",
+          "first_name": "Paula",
+          "last_name": "Hicks-Hudson",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-011",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19076,
+          "name": "Catherine Ingram",
+          "first_name": "Catherine",
+          "last_name": "Ingram",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-009",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 26397,
+          "name": "Jane Timken",
+          "first_name": "Jane",
+          "last_name": "Timken",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OK-SB2028",
       "state": "OK",
       "billNumber": "SB2028",
       "title": "Oklahoma Milk and Milk Products Act; authorizing certain sale of raw milk products. Emergency.",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -221881,7 +222392,7 @@
       "state": "OK",
       "billNumber": "HB2152",
       "title": "Agriculture; Homemade Food Freedom Act; definitions; unpasteurized milk labeling; effective date.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "anti",
       "stance": "Oppose",
@@ -225366,7 +225877,7 @@
       "state": "CA",
       "billNumber": "AB2575",
       "title": "Health care services: artificial intelligence.",
-      "status": "Introduced",
+      "status": "Passed One Chamber",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -225375,8 +225886,8 @@
       "impact": "Medium",
       "summary": "Health care services: artificial intelligence.",
       "sponsor": "",
-      "lastAction": "Read second time. Ordered to third reading.",
-      "lastActionDate": "2026-08-30",
+      "lastAction": "Read third time. Passed. Ordered to the Assembly. (Ayes 21. Noes 10.).",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2575/2025",
@@ -225501,8 +226012,8 @@
       "impact": "Medium",
       "summary": "Hazardous materials: reactive chemicals: methyl methacrylate: facilities.",
       "sponsor": "",
-      "lastAction": "Ordered to third reading.",
-      "lastActionDate": "2026-08-27",
+      "lastAction": "Assembly amendments concurred in. (Ayes 38. Noes 0.) Ordered to engrossing and enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB883/2025",
@@ -225598,8 +226109,8 @@
       "impact": "Medium",
       "summary": "Prisons.",
       "sponsor": "",
-      "lastAction": "Ordered to third reading.",
-      "lastActionDate": "2026-08-20",
+      "lastAction": "Assembly amendments concurred in. (Ayes 39. Noes 0.) Ordered to engrossing and enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/SB337/2025",
@@ -225732,6 +226243,27 @@
       "legiscan_bill_id": 1971778
     },
     {
+      "billId": "CA-SB848",
+      "state": "CA",
+      "billNumber": "SB848",
+      "title": "Pupil safety: school employee misconduct: child abuse prevention.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Pupil safety: school employee misconduct: child abuse prevention.",
+      "sponsor": "",
+      "lastAction": "Chaptered by Secretary of State. Chapter 460, Statutes of 2025.",
+      "lastActionDate": "2025-10-07",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/CA/bill/SB848/2025",
+      "legiscan_bill_id": 1980578
+    },
+    {
       "billId": "CA-SB1054",
       "state": "CA",
       "billNumber": "SB1054",
@@ -225764,27 +226296,6 @@
         "status": "monitor_confirmed",
         "second_pass": ""
       }
-    },
-    {
-      "billId": "CA-SB848",
-      "state": "CA",
-      "billNumber": "SB848",
-      "title": "Pupil safety: school employee misconduct: child abuse prevention.",
-      "status": "Introduced",
-      "isActive": "Yes",
-      "billType": "monitor",
-      "stance": "Monitor",
-      "category": "public-health",
-      "level": "State",
-      "impact": "Medium",
-      "summary": "Pupil safety: school employee misconduct: child abuse prevention.",
-      "sponsor": "",
-      "lastAction": "Chaptered by Secretary of State. Chapter 460, Statutes of 2025.",
-      "lastActionDate": "2025-10-07",
-      "actionCount": 0,
-      "stoppedWithAction": false,
-      "sourceUrl": "https://legiscan.com/CA/bill/SB848/2025",
-      "legiscan_bill_id": 1980578
     },
     {
       "billId": "CA-SB318",
@@ -225896,7 +226407,7 @@
       "state": "CA",
       "billNumber": "AB2478",
       "title": "Kinship family approval.",
-      "status": "Passed One Chamber",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -225905,8 +226416,8 @@
       "impact": "Medium",
       "summary": "Kinship family approval.",
       "sponsor": "",
-      "lastAction": "Read third time. Passed. Ordered to the Assembly. (Ayes 39. Noes 0.).",
-      "lastActionDate": "2026-08-30",
+      "lastAction": "Senate amendments concurred in. To Engrossing and Enrolling.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB2478/2025",
@@ -244227,7 +244738,7 @@
       "state": "OH",
       "billNumber": "SB315",
       "title": "Enact the Enhanced Cybersecurity for SNAP Act",
-      "status": "Introduced",
+      "status": "Passed Both Chambers",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -244235,13 +244746,308 @@
       "level": "State",
       "impact": "Medium",
       "summary": "Enact the Enhanced Cybersecurity for SNAP Act",
-      "sponsor": "",
+      "sponsor": "Timothy Schaffer (R)",
       "lastAction": "Effective ",
       "lastActionDate": "2026-10-06",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/OH/bill/SB315/2025",
-      "legiscan_bill_id": 2051663
+      "legiscan_bill_id": 2051663,
+      "rollCalls": [
+        {
+          "key": "LS-1700726",
+          "legiscan_roll_call_id": 1700726,
+          "date": "2026-05-20",
+          "desc": "Senate Favorable Passage",
+          "chamber": "Senate",
+          "yea": 13,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 13,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb315/votes"
+        },
+        {
+          "key": "LS-1700727",
+          "legiscan_roll_call_id": 1700727,
+          "date": "2026-05-20",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 30,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 30,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb315/votes"
+        },
+        {
+          "key": "LS-1708419",
+          "legiscan_roll_call_id": 1708419,
+          "date": "2026-06-10",
+          "desc": "Senate Passed",
+          "chamber": "Senate",
+          "yea": 33,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 33,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb315/votes"
+        },
+        {
+          "key": "LS-1708774",
+          "legiscan_roll_call_id": 1708774,
+          "date": "2026-06-10",
+          "desc": "House Favorable Passage",
+          "chamber": "House",
+          "yea": 31,
+          "nay": 0,
+          "nv": 0,
+          "absent": 0,
+          "total": 31,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb315/votes"
+        },
+        {
+          "key": "LS-1708775",
+          "legiscan_roll_call_id": 1708775,
+          "date": "2026-06-10",
+          "desc": "House Passed",
+          "chamber": "House",
+          "yea": 88,
+          "nay": 10,
+          "nv": 0,
+          "absent": 0,
+          "total": 98,
+          "passed": true,
+          "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/sb315/votes"
+        }
+      ],
+      "session_id": 2190,
+      "sponsorships": [
+        {
+          "people_id": 634,
+          "name": "Timothy Schaffer",
+          "first_name": "Timothy",
+          "last_name": "Schaffer",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-020",
+          "type": "primary"
+        },
+        {
+          "people_id": 16972,
+          "name": "Hearcel Craig",
+          "first_name": "Hearcel",
+          "last_name": "Craig",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-015",
+          "type": "primary"
+        },
+        {
+          "people_id": 11943,
+          "name": "Nickie Antonio",
+          "first_name": "Nickie",
+          "last_name": "Antonio",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-023",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22788,
+          "name": "Willis Blackshear",
+          "first_name": "Willis",
+          "last_name": "Blackshear",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-006",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 10994,
+          "name": "Andrew Brenner",
+          "first_name": "Andrew",
+          "last_name": "Brenner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-019",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22630,
+          "name": "Jerry Cirino",
+          "first_name": "Jerry",
+          "last_name": "Cirino",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-018",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24480,
+          "name": "William DeMora",
+          "first_name": "William",
+          "last_name": "DeMora",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-025",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20325,
+          "name": "Paula Hicks-Hudson",
+          "first_name": "Paula",
+          "last_name": "Hicks-Hudson",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-011",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19076,
+          "name": "Catherine Ingram",
+          "first_name": "Catherine",
+          "last_name": "Ingram",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-009",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11547,
+          "name": "Terry Johnson",
+          "first_name": "Terry",
+          "last_name": "Johnson",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-014",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16978,
+          "name": "Kyle Koehler",
+          "first_name": "Kyle",
+          "last_name": "Koehler",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-010",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 19413,
+          "name": "George Lang",
+          "first_name": "George",
+          "last_name": "Lang",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-004",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20308,
+          "name": "Beth Liston",
+          "first_name": "Beth",
+          "last_name": "Liston",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-016",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 22760,
+          "name": "Sandra O'Brien",
+          "first_name": "Sandra",
+          "last_name": "O'Brien",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-032",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 581,
+          "name": "Thomas Patton",
+          "first_name": "Thomas",
+          "last_name": "Patton",
+          "party": "R",
+          "role": "Sen",
+          "district": "HD-017",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16967,
+          "name": "Bill Reineke",
+          "first_name": "William",
+          "last_name": "Reineke",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-026",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 24479,
+          "name": "Michele Reynolds",
+          "first_name": "Michele",
+          "last_name": "Reynolds",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-003",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 11003,
+          "name": "Kristina Roegner",
+          "first_name": "Kristina",
+          "last_name": "Roegner",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-027",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 14663,
+          "name": "Mark Romanchuk",
+          "first_name": "Mark",
+          "last_name": "Romanchuk",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-022",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 16977,
+          "name": "Kent Smith",
+          "first_name": "Kent",
+          "last_name": "Smith",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-021",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 26397,
+          "name": "Jane Timken",
+          "first_name": "Jane",
+          "last_name": "Timken",
+          "party": "R",
+          "role": "Sen",
+          "district": "SD-029",
+          "type": "cosponsor"
+        },
+        {
+          "people_id": 20312,
+          "name": "Casey Weinstein",
+          "first_name": "Casey",
+          "last_name": "Weinstein",
+          "party": "D",
+          "role": "Sen",
+          "district": "SD-028",
+          "type": "cosponsor"
+        }
+      ]
     },
     {
       "billId": "OH-HB707",
@@ -253644,7 +254450,7 @@
       "state": "CA",
       "billNumber": "AB114",
       "title": "Budget Acts of 2022, 2023, 2024, and 2025.",
-      "status": "In Committee",
+      "status": "Introduced",
       "isActive": "Yes",
       "billType": "monitor",
       "stance": "Monitor",
@@ -253653,8 +254459,8 @@
       "impact": "Medium",
       "summary": "Budget Acts of 2022, 2023, 2024, and 2025.",
       "sponsor": "",
-      "lastAction": "From committee chair, with author's amendments: Amend, and re-refer to committee. Read second time, amended, and re-referred to Com. on B. & F. R.",
-      "lastActionDate": "2026-08-28",
+      "lastAction": "Read second time. Ordered to third reading.",
+      "lastActionDate": "2026-08-31",
       "actionCount": 0,
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/CA/bill/AB114/2025",
@@ -254806,6 +255612,300 @@
       "stoppedWithAction": false,
       "sourceUrl": "https://legiscan.com/PA/bill/SB466/2025",
       "legiscan_bill_id": 2010099
+    },
+    {
+      "billId": "TX-HB3554",
+      "state": "TX",
+      "billNumber": "HB3554",
+      "title": "Relating to establishment of the Texas Rare Disease Advisory Council.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Relating to establishment of the Texas Rare Disease Advisory Council.",
+      "sponsor": "",
+      "lastAction": "Received from the House",
+      "lastActionDate": "0000-00-00",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/TX/bill/HB3554/2025",
+      "legiscan_bill_id": 1988837
+    },
+    {
+      "billId": "TX-HR4",
+      "state": "TX",
+      "billNumber": "HR4",
+      "title": "Adopting the House Rules of Procedure for the 89th Legislature.",
+      "status": "Signed into Law",
+      "isActive": "No",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Adopting the House Rules of Procedure for the 89th Legislature.",
+      "sponsor": "",
+      "lastAction": "Signed in the House",
+      "lastActionDate": "2025-01-28",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/TX/bill/HR4/2025",
+      "legiscan_bill_id": 1936766
+    },
+    {
+      "billId": "VA-SJR81",
+      "state": "VA",
+      "billNumber": "SJR81",
+      "title": "Commending the Virginia Hospital & Healthcare Association.",
+      "status": "Passed One Chamber",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Commending the Virginia Hospital & Healthcare Association.",
+      "sponsor": "",
+      "lastAction": "Bill text as passed Senate and House (SJ81ER)",
+      "lastActionDate": "2026-02-10",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/VA/bill/SJR81/2026",
+      "legiscan_bill_id": 2107519
+    },
+    {
+      "billId": "VA-HJR206",
+      "state": "VA",
+      "billNumber": "HJR206",
+      "title": "Commending the Virginia Hospital & Healthcare Association.",
+      "status": "Passed One Chamber",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Commending the Virginia Hospital & Healthcare Association.",
+      "sponsor": "",
+      "lastAction": "Bill text as passed House and Senate (HJ206ER)",
+      "lastActionDate": "2026-04-09",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/VA/bill/HJR206/2026",
+      "legiscan_bill_id": 2128012
+    },
+    {
+      "billId": "VA-HR143",
+      "state": "VA",
+      "billNumber": "HR143",
+      "title": "Commending Joe Carter.",
+      "status": "Passed One Chamber",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Commending Joe Carter.",
+      "sponsor": "",
+      "lastAction": "Bill text as passed House (HR143ER)",
+      "lastActionDate": "2026-04-16",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/VA/bill/HR143/2026",
+      "legiscan_bill_id": 2120297
+    },
+    {
+      "billId": "WA-HR4663",
+      "state": "WA",
+      "billNumber": "HR4663",
+      "title": "Honoring the public health legacy of Mary Selecky.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Honoring the public health legacy of Mary Selecky.",
+      "sponsor": "",
+      "lastAction": "Adopted.",
+      "lastActionDate": "2025-04-23",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/HR4663/2025",
+      "legiscan_bill_id": 2026120
+    },
+    {
+      "billId": "WA-SB5551",
+      "state": "WA",
+      "billNumber": "SB5551",
+      "title": "Concerning school library information and technology programs.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Concerning school library information and technology programs.",
+      "sponsor": "",
+      "lastAction": "By resolution, reintroduced and retained in present status.",
+      "lastActionDate": "2026-01-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/SB5551/2025",
+      "legiscan_bill_id": 1943383
+    },
+    {
+      "billId": "WA-HB1727",
+      "state": "WA",
+      "billNumber": "HB1727",
+      "title": "Concerning school library information and technology programs.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Concerning school library information and technology programs.",
+      "sponsor": "",
+      "lastAction": "By resolution, reintroduced and retained in present status.",
+      "lastActionDate": "2026-01-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/HB1727/2025",
+      "legiscan_bill_id": 1946766
+    },
+    {
+      "billId": "WA-HB1226",
+      "state": "WA",
+      "billNumber": "HB1226",
+      "title": "Making supplemental transportation appropriations for the 2023-2025 fiscal biennium.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Making supplemental transportation appropriations for the 2023-2025 fiscal biennium.",
+      "sponsor": "",
+      "lastAction": "By resolution, reintroduced and retained in present status.",
+      "lastActionDate": "2026-01-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/HB1226/2025",
+      "legiscan_bill_id": 1909743
+    },
+    {
+      "billId": "WA-HB1227",
+      "state": "WA",
+      "billNumber": "HB1227",
+      "title": "Revised for 1st substitute: Making transportation appropriations.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Revised for 1st substitute: Making transportation appropriations.",
+      "sponsor": "",
+      "lastAction": "House Rules \"X\" file.",
+      "lastActionDate": "2026-01-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/HB1227/2025",
+      "legiscan_bill_id": 1909602
+    },
+    {
+      "billId": "WA-SB5160",
+      "state": "WA",
+      "billNumber": "SB5160",
+      "title": "Revised for 1st substitute: Concerning additive transportation funding and appropriations.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Revised for 1st substitute: Concerning additive transportation funding and appropriations.",
+      "sponsor": "",
+      "lastAction": "Senate Rules \"X\" file.",
+      "lastActionDate": "2026-01-12",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/SB5160/2025",
+      "legiscan_bill_id": 1904734
+    },
+    {
+      "billId": "WA-SB5161",
+      "state": "WA",
+      "billNumber": "SB5161",
+      "title": "Revised for 1st substitute: Addressing transportation fiscal matters.",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Revised for 1st substitute: Addressing transportation fiscal matters.",
+      "sponsor": "",
+      "lastAction": "Effective date 5/20/2025*.",
+      "lastActionDate": "2025-05-20",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WA/bill/SB5161/2025",
+      "legiscan_bill_id": 1904772
+    },
+    {
+      "billId": "WV-HB4027",
+      "state": "WV",
+      "billNumber": "HB4027",
+      "title": "Budget Bill",
+      "status": "Introduced",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Budget Bill",
+      "sponsor": "",
+      "lastAction": "On 2nd reading, House Calendar",
+      "lastActionDate": "2026-02-25",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/WV/bill/HB4027/2026",
+      "legiscan_bill_id": 2080467
+    },
+    {
+      "billId": "DC-PR26-0624",
+      "state": "DC",
+      "billNumber": "PR26-0624",
+      "title": "Commission on African-American Affairs Gloria Dunbar Confirmation Resolution of 2026",
+      "status": "In Committee",
+      "isActive": "Yes",
+      "billType": "monitor",
+      "stance": "Monitor",
+      "category": "public-health",
+      "level": "State",
+      "impact": "Medium",
+      "summary": "Commission on African-American Affairs Gloria Dunbar Confirmation Resolution of 2026",
+      "sponsor": "",
+      "lastAction": "Referred to Committee on Youth Affairs",
+      "lastActionDate": "2026-04-21",
+      "actionCount": 0,
+      "stoppedWithAction": false,
+      "sourceUrl": "https://legiscan.com/DC/bill/PR26-0624/2025",
+      "legiscan_bill_id": 2140844
     }
   ]
 }

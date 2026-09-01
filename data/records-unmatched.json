@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-31T12:51:56.896178+00:00",
-  "count": 474,
+  "generated_at": "2026-09-01T11:11:57.933346+00:00",
+  "count": 476,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -3181,16 +3181,6 @@
     {
       "rollCallKey": "LS-1498218",
       "billId": "ND-HB1454",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1498218",
-      "billId": "ND-HB1454",
       "name": "Jared Hagert",
       "state": "ND",
       "chamber": "House",
@@ -3235,16 +3225,6 @@
       "state": "ND",
       "chamber": "House",
       "district": "HD-042",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1558470",
-      "billId": "ND-HB1454",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -3549,6 +3529,26 @@
       "kind": "vote"
     },
     {
+      "rollCallKey": "LS-1652471",
+      "billId": "FL-S1756",
+      "name": "Bryan Avila",
+      "state": "FL",
+      "chamber": "Senate",
+      "district": "SD-039",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1657421",
+      "billId": "FL-S1756",
+      "name": "Bryan Avila",
+      "state": "FL",
+      "chamber": "Senate",
+      "district": "SD-039",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
       "rollCallKey": "LS-1620126",
       "billId": "UT-HB0152",
       "name": "Tyler Clancy",
@@ -3845,16 +3845,6 @@
       "state": "ND",
       "chamber": "House",
       "district": "HD-042",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1495895",
-      "billId": "ND-HB1519",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -4491,16 +4481,6 @@
     {
       "rollCallKey": "LS-1494270",
       "billId": "ND-HB1457",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1494270",
-      "billId": "ND-HB1457",
       "name": "Jared Hagert",
       "state": "ND",
       "chamber": "House",
@@ -4535,16 +4515,6 @@
       "state": "ND",
       "chamber": "House",
       "district": "HD-042",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1495855",
-      "billId": "ND-HB1457",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -4605,16 +4575,6 @@
       "state": "ND",
       "chamber": "House",
       "district": "HD-042",
-      "reason": "unresolved",
-      "kind": "vote"
-    },
-    {
-      "rollCallKey": "LS-1494351",
-      "billId": "ND-HB1605",
-      "name": "Mike Beltz",
-      "state": "ND",
-      "chamber": "House",
-      "district": "HD-020",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -4691,6 +4651,66 @@
     {
       "rollCallKey": "LS-1708770",
       "billId": "OH-HB210",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1645491",
+      "billId": "OH-HB292",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1653319",
+      "billId": "OH-HB292",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1709002",
+      "billId": "OH-HB292",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1609076",
+      "billId": "OH-HB195",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1707820",
+      "billId": "OH-HB195",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1708775",
+      "billId": "OH-SB315",
       "name": "Meredith Lawson-Rowe",
       "state": "OH",
       "chamber": "House",

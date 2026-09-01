@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-31T12:51:56.896178+00:00",
-  "total_legislators": 7894,
+  "generated_at": "2026-09-01T11:11:57.933346+00:00",
+  "total_legislators": 7893,
   "by_category": {
     "champion": 0,
     "likely-win": 0,
     "fence-sitter": 0,
     "unlikely": 0,
     "opposed": 0,
-    "unscored": 7894
+    "unscored": 7893
   },
   "top_outreach_targets": [],
   "state_summaries": {
@@ -126,7 +126,7 @@
       "opposed": 0
     },
     "FL": {
-      "total": 186,
+      "total": 184,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
@@ -234,7 +234,7 @@
       "opposed": 0
     },
     "ND": {
-      "total": 143,
+      "total": 144,
       "fence_sitters": 0,
       "champions": 0,
       "opposed": 0
