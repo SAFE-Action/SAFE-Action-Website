@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T11:11:57.933346+00:00",
+  "generated_at": "2026-09-02T10:45:15.036511+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -94520,24 +94520,6 @@
       }
     },
     {
-      "legislator_id": "NY-State-Senate-Gianaris-12",
-      "name": "Mike Gianaris",
-      "state": "NY",
-      "party": "Democratic/Working Families",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "NY-State-House-Novakhov-45",
       "name": "Misha Novakhov",
       "state": "NY",
@@ -96142,24 +96124,6 @@
     {
       "legislator_id": "NC-State-Senate-Brinson-3",
       "name": "Bob Brinson",
-      "state": "NC",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NC-State-Senate-Hanig-1",
-      "name": "Bobby Hanig",
       "state": "NC",
       "party": "Republican",
       "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",

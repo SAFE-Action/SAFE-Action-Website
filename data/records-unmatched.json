@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-01T11:11:57.933346+00:00",
-  "count": 476,
+  "generated_at": "2026-09-02T10:45:15.036511+00:00",
+  "count": 488,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -1439,6 +1439,16 @@
       "kind": "vote"
     },
     {
+      "rollCallKey": "LS-1706267",
+      "billId": "NY-A09140",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
       "rollCallKey": "LS-1585574",
       "billId": "NY-A08680",
       "name": "Zohran Kwame Mamdani",
@@ -1485,6 +1495,36 @@
       "state": "NY",
       "chamber": "House",
       "district": "HD-036",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1705196",
+      "billId": "NY-A08680",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1699998",
+      "billId": "NY-A03254",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1689755",
+      "billId": "NY-A10711",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1839,6 +1879,26 @@
       "kind": "vote"
     },
     {
+      "rollCallKey": "LS-1655324",
+      "billId": "NY-S05852",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1587066",
+      "billId": "NY-S08334",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
       "rollCallKey": "LS-1587066",
       "billId": "NY-S08334",
       "name": "Brad Hoylman-Sigal",
@@ -1851,10 +1911,30 @@
     {
       "rollCallKey": "LS-1587067",
       "billId": "NY-S08334",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1587067",
+      "billId": "NY-S08334",
       "name": "Brad Hoylman-Sigal",
       "state": "NY",
       "chamber": "Senate",
       "district": "SD-047",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1655722",
+      "billId": "NY-S08334",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1965,6 +2045,16 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-30-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1576188",
+      "billId": "NY-S06744",
+      "name": "Michael Gianaris",
+      "state": "NY",
+      "chamber": "Senate",
+      "district": "SD-012",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -4711,6 +4801,36 @@
     {
       "rollCallKey": "LS-1708775",
       "billId": "OH-SB315",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1604402",
+      "billId": "OH-HB268",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1645462",
+      "billId": "OH-HB479",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1708720",
+      "billId": "OH-HB479",
       "name": "Meredith Lawson-Rowe",
       "state": "OH",
       "chamber": "House",

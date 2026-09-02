@@ -200790,6 +200790,1756 @@
           "vote": "Nay"
         }
       ]
+    },
+    "LS-1604125": {
+      "key": "LS-1604125",
+      "billId": "OH-HB268",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-10-22",
+      "desc": "House Favorable Passage",
+      "yea": 10,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 10,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb268/votes",
+      "votes": [
+        {
+          "people_id": 20333,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21345,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22777,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26110,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26113,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26114,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26116,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26124,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26126,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1604402": {
+      "key": "LS-1604402",
+      "billId": "OH-HB268",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "House",
+      "date": "2025-10-29",
+      "desc": "House Passed",
+      "yea": 93,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 93,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb268/votes",
+      "votes": [
+        {
+          "people_id": 562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 578,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10995,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12036,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 13938,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19550,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19551,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19689,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20309,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20316,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20320,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20326,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20333,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20334,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21168,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21345,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21367,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21384,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21390,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22770,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22771,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22772,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22774,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22775,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22776,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22777,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22780,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22781,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22783,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22784,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22785,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22786,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22803,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22871,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22872,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22958,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23183,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24454,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24455,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24456,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24457,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24458,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24459,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24461,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24464,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24465,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24466,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24467,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24468,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24469,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24471,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24472,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24473,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24474,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24475,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24476,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24477,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24478,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24940,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25029,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25136,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25208,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26107,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26108,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26109,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26110,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26111,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26112,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26113,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26114,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26115,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26116,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26117,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26119,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26120,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26121,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26122,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26123,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26124,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26125,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26126,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26127,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26128,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26129,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26130,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26140,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26485,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26501,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1699962": {
+      "key": "LS-1699962",
+      "billId": "OH-HB268",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2026-05-19",
+      "desc": "Senate Favorable Passage",
+      "yea": 4,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 4,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb268/votes",
+      "votes": [
+        {
+          "people_id": 16978,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19076,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22788,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24479,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1705061": {
+      "key": "LS-1705061",
+      "billId": "OH-HB268",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2026-06-03",
+      "desc": "Senate Passed",
+      "yea": 31,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 31,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb268/votes",
+      "votes": [
+        {
+          "people_id": 581,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 634,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11547,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11949,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14653,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14663,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16967,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16972,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16977,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16978,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16982,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16984,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16989,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 17973,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19076,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19140,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19413,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19660,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20308,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20325,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20332,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21650,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22630,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22760,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22788,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24479,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24480,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24993,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26397,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1637529": {
+      "key": "LS-1637529",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "House",
+      "date": "2026-02-18",
+      "desc": "House Favorable Passage",
+      "yea": 12,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 12,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 22773,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22781,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22785,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24455,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24456,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24464,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24466,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24471,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24475,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26107,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26109,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26111,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1645462": {
+      "key": "LS-1645462",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "House",
+      "date": "2026-02-25",
+      "desc": "House Passed",
+      "yea": 92,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 92,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 578,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10995,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12036,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 13938,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19550,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19551,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19689,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20307,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20309,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20316,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20320,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20326,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20334,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21168,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21345,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21367,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21384,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21390,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22770,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22771,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22772,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22773,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22774,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22775,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22776,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22777,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22780,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22781,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22783,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22784,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22785,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22786,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22803,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22871,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22872,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22958,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23183,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24454,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24455,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24456,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24457,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24458,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24459,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24461,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24464,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24465,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24466,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24467,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24468,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24469,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24470,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24471,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24472,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24473,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24474,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24475,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24476,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24477,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24940,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25029,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25208,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26107,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26108,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26109,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26110,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26111,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26112,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26113,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26114,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26115,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26116,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26117,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26118,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26119,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26120,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26121,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26122,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26123,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26124,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26125,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26126,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26127,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26130,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26140,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26485,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26501,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1700774": {
+      "key": "LS-1700774",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2026-05-20",
+      "desc": "Senate Favorable Passage",
+      "yea": 7,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 7,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 11003,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11547,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14663,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16989,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19076,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20308,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20332,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1707603": {
+      "key": "LS-1707603",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2026-06-09",
+      "desc": "Senate Favorable Passage",
+      "yea": 13,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 13,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 581,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11943,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14653,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14663,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16972,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16982,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 17973,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19076,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19413,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19660,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22630,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24993,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1708444": {
+      "key": "LS-1708444",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "Senate",
+      "date": "2026-06-10",
+      "desc": "Senate Passed",
+      "yea": 33,
+      "nay": 0,
+      "nv": 0,
+      "absent": 0,
+      "total": 33,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 581,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 634,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11003,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11547,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11943,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 11949,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14653,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 14663,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16967,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16972,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16977,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16978,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16982,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16984,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16989,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 17973,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19076,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19140,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19413,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19660,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20308,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20312,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20325,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20332,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21650,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22630,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22760,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22788,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24479,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24480,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24993,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26397,
+          "vote": "Yea"
+        }
+      ]
+    },
+    "LS-1708720": {
+      "key": "LS-1708720",
+      "billId": "OH-HB479",
+      "state": "OH",
+      "session_id": "2190",
+      "level": "State",
+      "chamber": "House",
+      "date": "2026-06-10",
+      "desc": "House Passed",
+      "yea": 90,
+      "nay": 5,
+      "nv": 0,
+      "absent": 0,
+      "total": 95,
+      "passed": true,
+      "sourceUrl": "https://www.legislature.ohio.gov/legislation/136/hb479/votes",
+      "votes": [
+        {
+          "people_id": 562,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 578,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 10995,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 12036,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 13938,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 16994,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19550,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19551,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 19689,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20307,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20309,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20316,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20320,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20322,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20326,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20327,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20333,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 20334,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21168,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21345,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21367,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21384,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21389,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 21390,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22770,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22771,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22772,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22774,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22776,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22777,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22780,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22781,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22783,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22784,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22785,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22786,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22803,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 22871,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22872,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 22958,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 23183,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24454,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24455,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24456,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24457,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24458,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24459,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24461,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24464,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24465,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24466,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24467,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24468,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 24469,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24470,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24471,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24472,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24473,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24474,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24475,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24476,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24477,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24478,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 24940,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 24941,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25029,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25136,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25196,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 25208,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26107,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26108,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26109,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26110,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 26113,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26114,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26115,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26116,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26117,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26118,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26119,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26120,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26121,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26122,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26123,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26124,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26125,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26126,
+          "vote": "Nay"
+        },
+        {
+          "people_id": 26127,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26128,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26129,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26130,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26140,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26485,
+          "vote": "Yea"
+        },
+        {
+          "people_id": 26501,
+          "vote": "Yea"
+        }
+      ]
     }
   },
   "people": {
@@ -250619,7 +252369,7 @@
     "2252",
     "2253"
   ],
-  "generated_at": "2026-09-01T11:11:57.933346+00:00",
+  "generated_at": "2026-09-02T10:45:15.036511+00:00",
   "people_by_session": {
     "2236": {
       "4747": {
