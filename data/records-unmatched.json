@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T10:45:15.036511+00:00",
-  "count": 488,
+  "generated_at": "2026-09-03T10:45:42.742225+00:00",
+  "count": 513,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -144,6 +144,14 @@
       "chamber": "House",
       "district": "HD-094",
       "name": "Larry Kump",
+      "role": "cosponsor"
+    },
+    {
+      "billId": "CA-SB747",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "name": "Tasha Boerner Horvath",
       "role": "cosponsor"
     },
     {
@@ -1331,6 +1339,26 @@
     {
       "rollCallKey": "LS-1631618",
       "billId": "NH-HB1584",
+      "name": "Kate Murray",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-22-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Charlie St. Clair",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-05-BEL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
       "name": "Harry Bean",
       "state": "NH",
       "chamber": "House",
@@ -1411,6 +1439,16 @@
     {
       "rollCallKey": "LS-1631618",
       "billId": "NH-HB1584",
+      "name": "Tim Hartnett",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-41-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
       "name": "Tim Mannion",
       "state": "NH",
       "chamber": "House",
@@ -1425,6 +1463,16 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-39-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1631618",
+      "billId": "NH-HB1584",
+      "name": "Thomas Oppel",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-09-GRA",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1531,6 +1579,16 @@
     {
       "rollCallKey": "LS-1696545",
       "billId": "LA-HB926",
+      "name": "Joseph Stagni",
+      "state": "LA",
+      "chamber": "House",
+      "district": "HD-092",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1696545",
+      "billId": "LA-HB926",
       "name": "Kellee Dickerson",
       "state": "LA",
       "chamber": "House",
@@ -1575,6 +1633,26 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-06-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1660769",
+      "billId": "NH-HB1022",
+      "name": "Kate Murray",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-22-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1660769",
+      "billId": "NH-HB1022",
+      "name": "Charlie St. Clair",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-05-BEL",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1641,6 +1719,16 @@
     {
       "rollCallKey": "LS-1660769",
       "billId": "NH-HB1022",
+      "name": "Tim Hartnett",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-41-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1660769",
+      "billId": "NH-HB1022",
       "name": "Tim Mannion",
       "state": "NH",
       "chamber": "House",
@@ -1661,6 +1749,16 @@
     {
       "rollCallKey": "LS-1660769",
       "billId": "NH-HB1022",
+      "name": "Thomas Oppel",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-09-GRA",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1660769",
+      "billId": "NH-HB1022",
       "name": "Matt Sabourin",
       "state": "NH",
       "chamber": "House",
@@ -1675,6 +1773,26 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-06-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1632295",
+      "billId": "NH-HB1719",
+      "name": "Kate Murray",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-22-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1632295",
+      "billId": "NH-HB1719",
+      "name": "Charlie St. Clair",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-05-BEL",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1761,6 +1879,16 @@
     {
       "rollCallKey": "LS-1632295",
       "billId": "NH-HB1719",
+      "name": "Tim Hartnett",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-41-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1632295",
+      "billId": "NH-HB1719",
       "name": "Tim Mannion",
       "state": "NH",
       "chamber": "House",
@@ -1775,6 +1903,16 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-39-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1632295",
+      "billId": "NH-HB1719",
+      "name": "Thomas Oppel",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-09-GRA",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -1951,6 +2089,26 @@
     {
       "rollCallKey": "LS-1638723",
       "billId": "NH-HB1811",
+      "name": "Kate Murray",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-22-ROC",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1638723",
+      "billId": "NH-HB1811",
+      "name": "Charlie St. Clair",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-05-BEL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1638723",
+      "billId": "NH-HB1811",
       "name": "Jaci Grote",
       "state": "NH",
       "chamber": "House",
@@ -2021,6 +2179,16 @@
     {
       "rollCallKey": "LS-1638723",
       "billId": "NH-HB1811",
+      "name": "Tim Hartnett",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-41-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1638723",
+      "billId": "NH-HB1811",
       "name": "Tim Mannion",
       "state": "NH",
       "chamber": "House",
@@ -2035,6 +2203,16 @@
       "state": "NH",
       "chamber": "House",
       "district": "HD-39-HIL",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1638723",
+      "billId": "NH-HB1811",
+      "name": "Thomas Oppel",
+      "state": "NH",
+      "chamber": "House",
+      "district": "HD-09-GRA",
       "reason": "unresolved",
       "kind": "vote"
     },
@@ -3871,6 +4049,16 @@
     {
       "rollCallKey": "LS-1703691",
       "billId": "LA-SCR37",
+      "name": "Joseph Stagni",
+      "state": "LA",
+      "chamber": "House",
+      "district": "HD-092",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1703691",
+      "billId": "LA-SCR37",
       "name": "Kellee Dickerson",
       "state": "LA",
       "chamber": "House",
@@ -4835,6 +5023,66 @@
       "state": "OH",
       "chamber": "House",
       "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1707782",
+      "billId": "OH-SB273",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1588986",
+      "billId": "OH-HB31",
+      "name": "Sedrick Denson",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-026",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1588986",
+      "billId": "OH-HB31",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1700739",
+      "billId": "OH-HB31",
+      "name": "Meredith Lawson-Rowe",
+      "state": "OH",
+      "chamber": "House",
+      "district": "HD-005",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1726009",
+      "billId": "CA-SB747",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1726263",
+      "billId": "CA-SB1004",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
       "reason": "unresolved",
       "kind": "vote"
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T10:45:15.036511+00:00",
+  "generated_at": "2026-09-03T10:45:42.742225+00:00",
   "targets": [
     {
       "legislator_id": "RI-Senate-Whitehouse",
@@ -4533,7 +4533,7 @@
         "is_health_committee": true,
         "has_science_background": false,
         "background_type": null,
-        "is_ranking_member": false,
+        "is_ranking_member": true,
         "committee_relevance": "House Committee on Education and Workforce - Workforce Protections"
       }
     },
@@ -4823,24 +4823,6 @@
         "background_type": null,
         "is_ranking_member": false,
         "committee_relevance": "House Committee on Energy and Commerce - Communications and Technology"
-      }
-    },
-    {
-      "legislator_id": "NH-House-Goodlander-2",
-      "name": "Maggie Goodlander",
-      "state": "NH",
-      "party": "Democrat",
-      "reason": "Health committee member (House Committee on Veterans' Affairs - Health) + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 2,
-      "recommended_approach": "Focus on their committee influence. Provide constituent health data for their district. Emphasize the committee's role in protecting public health.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": true,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": "House Committee on Veterans' Affairs - Health"
       }
     },
     {
@@ -9272,6 +9254,24 @@
       }
     },
     {
+      "legislator_id": "NH-House-Goodlander-2",
+      "name": "Maggie Goodlander",
+      "state": "NH",
+      "party": "Democrat",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
       "legislator_id": "NJ-House-Pou-9",
       "name": "Nellie Pou",
       "state": "NJ",
@@ -9658,6 +9658,42 @@
       "persuadability_category": "unknown",
       "outreach_priority": 3,
       "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "GA-House-Jr.-13",
+      "name": "Everton Blair Jr.",
+      "state": "GA",
+      "party": "Democrat",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
+      "flags": {
+        "is_committee_chair": false,
+        "is_health_committee": false,
+        "has_science_background": false,
+        "background_type": null,
+        "is_ranking_member": false,
+        "committee_relevance": null
+      }
+    },
+    {
+      "legislator_id": "CA-House-Wahab-14",
+      "name": "Aisha Wahab",
+      "state": "CA",
+      "party": "Democrat",
+      "reason": "Fence-sitter — persuadable",
+      "persuadability_category": "unknown",
+      "outreach_priority": 3,
+      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
       "flags": {
         "is_committee_chair": false,
         "is_health_committee": false,
@@ -51230,24 +51266,6 @@
       }
     },
     {
-      "legislator_id": "LA-State-House-Stagni-92",
-      "name": "Joe Stagni",
-      "state": "LA",
-      "party": "Republican",
-      "reason": "Republican — cross-aisle potential + Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Frame science policy as individual liberty and parental rights. Emphasize informed consent and government transparency over mandates.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "LA-State-House-Orgeron-54",
       "name": "Joe Orgeron",
       "state": "LA",
@@ -81200,24 +81218,6 @@
       }
     },
     {
-      "legislator_id": "NH-State-House-Clair-Belknap-5",
-      "name": "Charlie St. Clair",
-      "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
       "legislator_id": "NH-State-House-Muns-Rockingham-29",
       "name": "Chris Muns",
       "state": "NH",
@@ -83866,24 +83866,6 @@
     {
       "legislator_id": "NH-State-House-McGhee-Hillsborough-35",
       "name": "Kat McGhee",
-      "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NH-State-House-Murray-Rockingham-22",
-      "name": "Kate Murray",
       "state": "NH",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
@@ -87232,42 +87214,6 @@
     {
       "legislator_id": "NH-State-House-Southworth-Strafford-11",
       "name": "Tom Southworth",
-      "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NH-State-House-Oppel-Grafton-9",
-      "name": "Thomas Oppel",
-      "state": "NH",
-      "party": "Democratic",
-      "reason": "Fence-sitter — persuadable",
-      "persuadability_category": "unknown",
-      "outreach_priority": 3,
-      "recommended_approach": "Share constituent stories and local health data. Focus on common ground and the practical impact on their district.",
-      "flags": {
-        "is_committee_chair": false,
-        "is_health_committee": false,
-        "has_science_background": false,
-        "background_type": null,
-        "is_ranking_member": false,
-        "committee_relevance": null
-      }
-    },
-    {
-      "legislator_id": "NH-State-House-Hartnett-Hillsborough-41",
-      "name": "Tim Hartnett",
       "state": "NH",
       "party": "Democratic",
       "reason": "Fence-sitter — persuadable",
