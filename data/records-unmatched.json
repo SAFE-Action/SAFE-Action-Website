@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-03T10:45:42.742225+00:00",
-  "count": 513,
+  "generated_at": "2026-09-04T10:43:57.367644+00:00",
+  "count": 523,
   "unmatched": [
     {
       "billId": "US-119-HR1111",
@@ -5079,6 +5079,106 @@
     {
       "rollCallKey": "LS-1726263",
       "billId": "CA-SB1004",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1725776",
+      "billId": "CA-SB1089",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1702645",
+      "billId": "CA-AB1603",
+      "name": "James Gallagher",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "chamber mismatch",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1702645",
+      "billId": "CA-AB1603",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1726180",
+      "billId": "CA-AB1603",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1702617",
+      "billId": "CA-AB2510",
+      "name": "James Gallagher",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "chamber mismatch",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1702617",
+      "billId": "CA-AB2510",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1726329",
+      "billId": "CA-AB2510",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1701264",
+      "billId": "CA-AB1932",
+      "name": "James Gallagher",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-003",
+      "reason": "chamber mismatch",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1701264",
+      "billId": "CA-AB1932",
+      "name": "Tasha Boerner Horvath",
+      "state": "CA",
+      "chamber": "House",
+      "district": "HD-077",
+      "reason": "unresolved",
+      "kind": "vote"
+    },
+    {
+      "rollCallKey": "LS-1726319",
+      "billId": "CA-AB1932",
       "name": "Tasha Boerner Horvath",
       "state": "CA",
       "chamber": "House",
